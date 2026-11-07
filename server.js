@@ -1,0 +1,109 @@
+import http from 'node:http';
+import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
+import { PixelhueClient, fail } from './lib/pixelhue.js';
+import { readInputs, applyInputs } from './lib/inputs.js';
+
+const publicFiles = new Map([
+  ['/', ['index.html', 'text/html']], ['/app.js', ['app.js', 'text/javascript']],
+  ['/editor.js', ['editor.js', 'text/javascript']], ['/style.css', ['style.css', 'text/css']],
+  ['/inputs.js', ['inputs.js', 'text/javascript']], ['/inputs.css', ['inputs.css', 'text/css']],
+  ['/connection.css', ['connection.css', 'text/css']],
+  ['/mvr-geometry.js', ['mvr-geometry.js', 'text/javascript']],
+  ['/fonts/Rewir-Light.woff', ['fonts/Rewir-Light.woff', 'font/woff']],
+  ['/fonts/Rewir-Light.ttf', ['fonts/Rewir-Light.ttf', 'font/ttf']],
+  ['/fonts/OFL.txt', ['fonts/OFL.txt', 'text/plain']],
+  ['/fonts/README.txt', ['fonts/README.txt', 'text/plain']],
+]);
+
+async function readJson(request) {
+  if (!request.headers['content-type']?.startsWith('application/json')) throw fail('JSON content type required.', 415);
+  let body = '';
+  for await (const chunk of request) {
+    body += chunk;
+    if (body.length > 256_000) throw fail('Request is too large.', 413);
+  }
+  try { return JSON.parse(body); } catch { throw fail('Invalid JSON.'); }
+}
+
+export function createApp() {
+  let client = null;
+  let queue = Promise.resolve();
+  function exclusive(action) {
+    const next = queue.then(action);
+    queue = next.catch(() => {});
+    return next;
+  }
+  return http.createServer(async (request, response) => {
+    const json = (status, data) => {
+      response.writeHead(status, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+      response.end(JSON.stringify(data));
+    };
+    try {
+      const url = new URL(request.url, 'http://localhost');
+      // Only the UI served by this process may operate it, including when LAN binding is enabled.
+      const origin = request.headers.origin;
+      if (origin && origin !== `http://${request.headers.host}`) throw fail('Cross-origin request refused.', 403);
+      if (request.headers['sec-fetch-site'] === 'cross-site') throw fail('Cross-site request refused.', 403);
+      if (url.pathname.startsWith('/api/')) {
+        if (request.method === 'POST' && url.pathname === '/api/connect') {
+          const options = await readJson(request);
+          if (!options || typeof options !== 'object') throw fail('Connection settings required.');
+          return json(200, await exclusive(async () => {
+            const next = new PixelhueClient();
+            const state = await next.connect(options);
+            client = next;
+            return state;
+          }));
+        }
+        if (request.method === 'GET' && url.pathname === '/api/state') {
+          return json(200, await exclusive(() => {
+            if (!client) throw fail('Connect to a device first.', 409);
+            return client.read();
+          }));
+        }
+        if (request.method === 'PUT' && url.pathname === '/api/windows') {
+          const body = await readJson(request);
+          return json(200, await exclusive(() => {
+            if (!client || body?.session !== client.session) {
+              throw fail('Connection changed. Refresh before applying your layout.', 409);
+            }
+            return client.apply(body.changes);
+          }));
+        }
+        if (request.method === 'GET' && url.pathname === '/api/inputs') {
+          return json(200, await exclusive(() => {
+            if (!client) throw fail('Connect to a device first.', 409);
+            if (url.searchParams.get('session') !== client.session) throw fail('Connection changed. Refresh the Multiviewer tab or reconnect before loading inputs.', 409);
+            return readInputs(client);
+          }));
+        }
+        if (request.method === 'PUT' && url.pathname === '/api/inputs') {
+          const body = await readJson(request);
+          return json(200, await exclusive(() => {
+            if (!client || body?.session !== client.session) throw fail('Connection changed. Reconnect before applying inputs.', 409);
+            return applyInputs(client, body.changes);
+          }));
+        }
+        throw fail('API route not found.', 404);
+      }
+      const file = publicFiles.get(url.pathname);
+      if (!file || request.method !== 'GET') throw fail('Not found.', 404);
+      const data = await readFile(new URL(`./public/${file[0]}`, import.meta.url));
+      response.writeHead(200, { 'Content-Type': file[1].startsWith('text/') ? `${file[1]}; charset=utf-8` : file[1], 'Cache-Control': 'no-store',
+        'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer',
+        'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; img-src 'self' blob:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'" });
+      response.end(data);
+    } catch (error) {
+      json(error.status || 500, { error: error.message, ...(error.snapshot ? { snapshot: error.snapshot } : {}) });
+    }
+  });
+}
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const port = Number(process.env.PORT || 3210);
+  const host = process.env.HOST || '127.0.0.1';
+  createApp().listen(port, host, () => console.log(`Pixelhue Studio: http://${host}:${port}`))
+    .on('error', (error) => { console.error(error.message); process.exitCode = 1; });
+}

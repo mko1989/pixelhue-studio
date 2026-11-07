@@ -1,0 +1,18 @@
+.connection-controls { display: grid; gap: 6px; min-width: 0; margin-left: auto; }
+.masthead .connection-state { justify-self: end; max-width: 500px; text-align: right; overflow-wrap: anywhere; }
+.studio-tabs button:disabled { opacity: .45; cursor: default; }
+@media (max-width: 900px) {
+  .masthead { flex-wrap: wrap; gap: 12px; }
+  .brand { font-size: 24px; }
+}
+@media (max-width: 700px) {
+  .connection-controls { width: 100%; margin-left: 0; }
+  .connect-bar { flex-wrap: wrap; }
+  .host-field { flex: 1; width: auto; min-width: 150px; }
+  .advanced { order: 3; }
+  .masthead .connection-state { justify-self: start; text-align: left; }
+}
+@media (max-width: 450px) {
+  .advanced { width: 100%; margin-bottom: 0; }
+  .advanced-fields { left: 0; right: auto; max-width: calc(100vw - 26px); }
+}

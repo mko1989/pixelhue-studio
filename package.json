@@ -1,0 +1,9 @@
+{
+  "name": "pixelhue-mvr-editor",
+  "version": "1.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Local Pixelhue P10/P20/P80/Q8 input editor and P20/Q8 multiviewer editor",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node server.js", "test": "node --test", "build:dist": "node scripts/build-dist.mjs", "verify:dist": "node scripts/verify-dist.mjs" }
+}
