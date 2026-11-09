@@ -6,6 +6,7 @@ import { PixelhueClient, fail } from './lib/pixelhue.js';
 import { readInputs, applyInputs } from './lib/inputs.js';
 import { discoverPixelhue } from './lib/discovery.js';
 import { studioRoutes } from './lib/studio-routes.js';
+import { applyMvrLayer } from './lib/mvr-layers.js';
 
 const publicFiles = new Map([
   ['/', ['index.html', 'text/html']], ['/app.js', ['app.js', 'text/javascript']],
@@ -13,7 +14,7 @@ const publicFiles = new Map([
   ['/inputs.js', ['inputs.js', 'text/javascript']], ['/inputs.css', ['inputs.css', 'text/css']],
   ['/connection.css', ['connection.css', 'text/css']],
   ['/mvr-geometry.js', ['mvr-geometry.js', 'text/javascript']],
-  ...['mvr-sync.js', 'mvr-reconcile.js', 'device-ui.js', 'device-maintenance-ui.js', 'outputs-ui.js', 'screens-ui.js', 'programming-ui.js', 'program-stage.js', 'presets-ui.js', 'ui.js', 'studio-panels.js', 'discovery-ui.js'].map(file => [`/${file}`, [file, 'text/javascript']]),
+  ...['mvr-sync.js', 'mvr-reconcile.js', 'mvr-sources.js', 'device-ui.js', 'device-maintenance-ui.js', 'outputs-ui.js', 'screens-ui.js', 'programming-ui.js', 'program-stage.js', 'presets-ui.js', 'ui.js', 'studio-panels.js', 'discovery-ui.js'].map(file => [`/${file}`, [file, 'text/javascript']]),
   ['/studio.css', ['studio.css', 'text/css']],
   ['/fonts/Rewir-Light.woff', ['fonts/Rewir-Light.woff', 'font/woff']],
   ['/fonts/Rewir-Light.ttf', ['fonts/Rewir-Light.ttf', 'font/ttf']],
@@ -77,6 +78,13 @@ export function createApp({ discover = discoverPixelhue } = {}) {
               throw fail('Connection changed. Refresh before applying your layout.', 409);
             }
             return client.apply(body.changes);
+          }));
+        }
+        if (request.method === 'PUT' && url.pathname === '/api/mvr-layers') {
+          const body = await readJson(request);
+          return json(200, await exclusive(() => {
+            if (!client || body?.session !== client.session) throw fail('Connection changed. Refresh before changing MVR windows.', 409);
+            return applyMvrLayer(client, body);
           }));
         }
         if (request.method === 'GET' && url.pathname === '/api/inputs') {

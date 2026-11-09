@@ -19,3 +19,4 @@
 | WO-017 | Full PixelFlow programming capability in a faster UI | [Plan](work-orders/017_WO_pixelflow-programming-parity.md) | OPEN |
 | WO-018 | Preset save rejected for disabled screen (code 8210); how screens get enabled | [Investigation and verification](work-orders/018_WO_preset-disabled-screen.md) | DONE (save/Take skip disabled screens; enable mechanism → WO-019) |
 | WO-019 | Studio screens were disabled placeholders and mapping hit 8212; fixed from PixelFlow traffic capture; live Screen 3 test drive | [Investigation and verification](work-orders/019_WO_screen-create-enable.md) | DONE (live P20 end-to-end, 109 tests; preset loss and AUX remark open) |
+| WO-020 | MVR: add screen PGM/PVW and input windows, swap source, delete | [Investigation and verification](work-orders/020_WO_mvr-add-windows.md) | DONE (112 tests, mock Chrome, live read-only; physical MVR write QA pending) |

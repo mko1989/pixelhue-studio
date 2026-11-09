@@ -108,3 +108,7 @@ This section supersedes manual MVR Apply instructions above for v1.6.0-alpha.1; 
 - [ ] Physical: Take/Cut with two screens shown changes both screens together.
 - [ ] Physical: load an existing preset (e.g. "ppt") to PVW, then to PGM. Save a new preset from PVW, rename it, delete it, and confirm it in PixelFlow.
 - [ ] Physical: + OUTPUT 2-3 to Screen 1 (placed right of OUTPUT 1), Apply, and confirm the mosaic spans both outputs.
+
+## MVR windows (WO-020)
+- [ ] Physical: drag Screen 2 PVW and Screen 2 PGM from Add to MVR into empty space; confirm the windows and UMD labels on the MVR output.
+- [ ] Physical: drop a source onto an existing window to swap it; use the inspector Source menu; Delete window. Then confirm moving/resizing (autosave) still works on the new windows.

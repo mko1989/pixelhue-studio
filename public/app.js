@@ -5,9 +5,11 @@ import { reconcileMvr, sameEdit } from './mvr-reconcile.js';
 import { createStudioPanels } from './studio-panels.js';
 import { createDiscoveryUI } from './discovery-ui.js';
 import { canPlace, fixAspectRatios, ratioSize, sourceSignal, matchesRatio } from './mvr-geometry.js';
+import { renderMvrSources, placeWindow, sourceOptions, parseKey, MVR_SOURCE } from './mvr-sources.js';
 
 const $ = (id) => document.getElementById(id);
 const color = () => '#aebdcb';
+const sourceLabel = (layer) => `${layer.source || ''}${layer.sourceType === 3 ? ' PGM' : layer.sourceType === 4 ? ' PVW' : ''}`.trim();
 let state, base, screenId, selectedId, busy = false, drag;
 let undo = [], redo = [];
 let activeTab = 'device', mvrStale = false, inputsStale = false;
@@ -134,7 +136,7 @@ function renderList() {
     row.setAttribute('aria-pressed', String(layer.id === selectedId));
     const swatch = document.createElement('span'); swatch.className = 'swatch'; swatch.style.background = color(layer);
     const text = document.createElement('span');
-    const name = document.createElement('span'); name.className = 'row-name'; name.textContent = layer.name;
+    const name = document.createElement('span'); name.className = 'row-name'; name.textContent = sourceLabel(layer) || layer.name;
     const size = document.createElement('span'); size.className = 'row-size'; size.textContent = `${layer.window.width} × ${layer.window.height}`;
     text.append(name, size); row.append(swatch, text);
     if (!sameEdit(layer, base.layers.find((item) => item.id === layer.id))) {
@@ -159,7 +161,7 @@ function renderStage() {
     Object.assign(node.style, { left: `${100 * x / screen().width}%`, top: `${100 * y / screen().height}%`,
       width: `${100 * width / screen().width}%`, height: `${100 * height / screen().height}%` });
     const name = document.createElement('span'); name.className = 'window-title'; name.textContent = layer.name;
-    const source = document.createElement('span'); source.className = 'window-source'; source.textContent = layer.source;
+    const source = document.createElement('span'); source.className = 'window-source'; source.textContent = sourceLabel(layer);
     const number = document.createElement('span'); number.className = 'window-number'; number.textContent = String(i + 1).padStart(2, '0');
     node.append(number, name, source);
     if (layer.umdHeight > 0) {
@@ -173,8 +175,24 @@ function renderStage() {
     stage.append(node);
   });
   if (!windows().length) {
-    const hint = document.createElement('div'); hint.className = 'welcome'; hint.textContent = 'No MVR windows. Choose a layout in PixelFlow, then refresh.'; stage.append(hint);
+    const hint = document.createElement('div'); hint.className = 'welcome'; hint.textContent = 'No MVR windows. Drag a screen or input from Add to MVR.'; stage.append(hint);
   }
+}
+
+// MVR structure changes (WO-020): saves pending geometry first, then rereads the device.
+async function mvrStructure(request, success) {
+  if (busy || !state) return;
+  if (!(await finishMvrSave())) { notice('Save or retry pending MVR edits before adding or removing windows.', 'error'); return; }
+  await operation(async () => {
+    const next = await api('mvr-layers', { session: state.session, screenId, ...request }, 'PUT');
+    adopt(next); if (next.changedId) selectedId = next.changedId;
+    notice(success, 'success');
+  });
+}
+function addSource(source, point) {
+  const window = placeWindow(source, screen(), windows(), point);
+  if (!window) { notice('No free space in this MVR output. Shrink or delete a window first.', 'error'); return; }
+  mvrStructure({ action: 'create', source: { type: source.type, id: source.id }, window }, `${source.name} added to the MVR.`);
 }
 
 function render(keepEditing = false) {
@@ -190,7 +208,7 @@ function render(keepEditing = false) {
   $('inspector').hidden = !selected();
   if (selected()) {
     $('selected-name').textContent = selected().name;
-    $('selected-source').textContent = selected().source || 'MVR window';
+    $('selected-source').textContent = sourceLabel(selected()) || 'MVR window';
     $('selected-swatch').style.background = color(selected());
     $('layer-id').textContent = `Window ID ${selected().id}`;
     for (const key of keys) if (!keepEditing || document.activeElement !== $(key)) $(key).value = selected().window[key];
@@ -202,6 +220,9 @@ function render(keepEditing = false) {
     const signal = sourceSignal(selected(), state.signals || []);
     $('aspect-info').textContent = [signal?.connected ? `${selected().sourceType === 2 ? 'Input' : 'Screen'} ${signal.width} × ${signal.height}` : '', selected().umdHeight === null ? 'UMD height unavailable' : selected().umdHeight ? `UMD ${selected().umdHeight} px` : '', selected().aspectLock ? 'Content ratio locked' : ''].filter(Boolean).join(' · ');
   }
+  if (selected()) sourceOptions($('mvr-source'), state.sources, selected());
+  renderMvrSources($('mvr-sources'), state.sources, { busy, onAdd: source => addSource(source),
+    onSelect: id => { if (windows().some(l => l.id === id)) { selectedId = id; render(); } } });
   renderList(); renderStage();
 }
 
@@ -321,6 +342,18 @@ function endDrag(event) {
   if ($('stage').hasPointerCapture(event.pointerId)) $('stage').releasePointerCapture(event.pointerId);
   render();
 }
+$('stage').ondragover = (event) => { if (!busy && state && event.dataTransfer.types.includes(MVR_SOURCE)) { event.preventDefault(); event.dataTransfer.dropEffect = 'copy'; } };
+$('stage').ondrop = (event) => {
+  const key = event.dataTransfer.getData(MVR_SOURCE); if (!key || busy || !screen()) return;
+  event.preventDefault();
+  const source = state.sources.find(s => `${s.type}:${s.id}` === key); if (!source) return;
+  const target = event.target.closest('.window');
+  if (target) { mvrStructure({ action: 'source', layerId: Number(target.dataset.id), source: parseKey(key) }, `Window source changed to ${source.name}.`); return; }
+  const rect = $('stage').getBoundingClientRect();
+  addSource(source, { x: (event.clientX - rect.left) * screen().width / rect.width, y: (event.clientY - rect.top) * screen().height / rect.height });
+};
+$('mvr-source').onchange = () => { if ($('mvr-source').value && selected()) mvrStructure({ action: 'source', layerId: selected().id, source: parseKey($('mvr-source').value) }, 'Window source changed.'); };
+$('delete-window').onclick = () => { const layer = selected(); if (layer && window.confirm(`Delete MVR window ${layer.source || layer.name}?`)) mvrStructure({ action: 'delete', layerId: layer.id }, 'MVR window deleted.'); };
 $('stage').onpointerup = endDrag;
 $('stage').onpointercancel = endDrag;
 

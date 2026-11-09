@@ -17,6 +17,7 @@ export function createMockStudio({ model = 'P20' } = {}) {
     i.colorDepth = { preset: 8, actual: 8 }; i.hdcp = { enable: 0, preset: 1, actual: 1 };
     i.testPattern = { enable: 0, type: 5, bright: 3, grid: 7 };
   }
+  screens[0].guid = 'mvr-screen';
   screens.push({ screenId: 1, guid: 'main-screen', screenIdObj: { type: 2 }, general: { name: 'Main screen' },
     mosaic: { type: 2, window: { x: -100, y: 50, width: 1920, height: 1080 }, outputs: [] }, enable: 1, freeze: 0, ftb: { enable: 0 }, keyPosition: [1] },
   { screenId: 2, guid: 'aux-screen', screenIdObj: { type: 4 }, general: { name: 'AUX screen' },

@@ -55,6 +55,7 @@
       <label class="output-label" for="screen">MVR output</label>
       <select id="screen" disabled><option>Choose a connection</option></select>
       <div id="window-list" class="window-list"><p class="empty-hint">No connection.</p></div>
+      <div class="mvr-add"><h2>Add to MVR</h2><p class="empty-hint">Drag onto the layout, or double-click to place. Drop on a window to swap its source.</p><div id="mvr-sources" class="mvr-source-list"></div></div>
     </aside>
 
     <section class="canvas-panel" aria-label="Layout editor">
@@ -93,6 +94,8 @@
           <button id="center-x" class="button secondary" title="Center horizontally">Center X</button>
           <button id="center-y" class="button secondary" title="Center vertically">Center Y</button>
         </div></div>
+        <div class="property-section"><h3>Source</h3><select id="mvr-source" aria-label="MVR window source"></select>
+          <button id="delete-window" class="button danger" type="button">Delete window</button></div>
         <p id="layer-id" class="layer-id"></p>
       </fieldset>
     </aside>
