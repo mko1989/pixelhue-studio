@@ -30,15 +30,17 @@ export function createMockStudio({ model = 'P20' } = {}) {
     general: { name: 'Studio device' }, version: 'V2.0.0', mode: { workMode: 4, masterSlave: 0 }, layerMode: 0,
     fanMode: 2, deviceBeacon: 0, genlock: { type: 0, sourceId: 0, phase: { enable: 0 } }, online: 1,
     subcards: base.cards.map(c => ({ slotId: c.slotId, modelId: c.modelId, online: 1, cardType: c.cardType })) };
+  const ethernet = { mode: 0, infos: [{ index: 0, mac: '54:B5:6C:00:00:01', dhcp: 0, ip: '192.168.0.20', netmask: '255.255.255.0', gateway: '192.168.0.1', interfaceType: 25, autoDNS: 0, dns: [] }] };
   behavior.geometryDelay = 0; behavior.ignoreSetup = false;
   const config = umdXml.replace('<Features>', `<DCS><Device><Features><Device>
     <LayerModes Support="1" Editable="1"><Enum Value="0"/><Enum Value="1"/></LayerModes>
     <FanMode Support="1" Editable="1"><Enum Value="1"/><Enum Value="2"/></FanMode></Device>
     <DeviceModes Support="1" Editable="1"><DeviceMode Value="4"/><DeviceMode Value="8"/></DeviceModes>
+    <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
     .replace('</Features>', '</Features></Device></DCS>');
-  const customGets = ['node/detail', 'node/config-file'];
-  const customPuts = ['node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+  const customGets = ['node/detail', 'node/config-file', 'node/ethernet'];
+  const customPuts = ['node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
@@ -52,11 +54,13 @@ export function createMockStudio({ model = 'P20' } = {}) {
     if (!request.headers.authorization) { response.writeHead(401).end(); return; }
     if (request.method === 'GET') {
       if (path === 'node/detail') return send(node);
+      if (path === 'node/ethernet') return send({ nodeId: 1, state: 0, ethernet });
       response.setHeader('Content-Type', 'application/xml'); response.end(config); return;
     }
     let raw = ''; for await (const chunk of request) raw += chunk;
     const body = JSON.parse(raw); writes.push({ path, body, method: request.method });
     if (behavior.ignoreSetup && path.startsWith('node/')) return send({});
+    if (path === 'node/ethernet') ethernet.infos[0] = { ...ethernet.infos[0], ...body.ethernet.infos[0] };
     if (path === 'node/general') node.general = body.general;
     if (path === 'node/beacon') node.deviceBeacon = body.enable;
     if (path === 'node/fan/mode') node.fanMode = body.mode;
@@ -92,5 +96,5 @@ export function createMockStudio({ model = 'P20' } = {}) {
     }
     return send({});
   });
-  return { ...base, server, node, primary };
+  return { ...base, server, node, primary, ethernet };
 }

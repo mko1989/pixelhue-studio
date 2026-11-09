@@ -1,4 +1,5 @@
-import { $, el, text, button, input, select, field, cell, table, panelHeader, sessionPath, setDisabled } from './ui.js';
+import { $, el, text, button, input, select, field, panelHeader, sessionPath, setDisabled } from './ui.js';
+import { renderLayerProfile, renderNetwork, renderMaintenance, renderCards, reconnectHint } from './device-maintenance-ui.js';
 
 export function createDeviceUI({ api, notice, operation, getSession, invalidate }) {
   const root = $('device-settings');
@@ -23,6 +24,13 @@ export function createDeviceUI({ api, notice, operation, getSession, invalidate 
     await operation(async () => {
       state = await api('device', { session, changes }, 'PUT');
       invalidate('device'); render(); notice('Device settings saved.', 'success');
+    });
+  }
+  async function act(body) {
+    await operation(async () => {
+      const result = await api('device-action', { session, ...body }, 'PUT');
+      if (result.reconnect) { reconnectHint(result, notice); return; }
+      state = result; invalidate('device'); render(); notice('Network settings saved.', 'success');
     });
   }
   function render() {
@@ -50,28 +58,19 @@ export function createDeviceUI({ api, notice, operation, getSession, invalidate 
     }
     const save = button('Save device settings', () => { const changes = values(); if (Object.keys(changes).length) apply(changes); });
     form.onsubmit = event => { event.preventDefault(); save.click(); }; form.append(save); root.append(form);
-    if (options.workModes.length > 1 || options.layerModes.length > 1) {
+    if (options.workModes.length > 1) {
       const modes = el('section', { className: 'settings-block' }); modes.append(el('h2', {}, 'Operating mode'));
-      if (options.workModes.length > 1) {
-        const choice = select(options.workModes.map(m => [m.value, m.label]), node.mode?.workMode, 'Device operating mode');
-        modes.append(field('Mode', choice), button('Change mode', () => {
-          if (Number(choice.value) === node.mode?.workMode) return;
-          if (window.confirm('Changing device mode can reset screens and routing. Change mode?')) apply({ workMode: Number(choice.value), confirmModeChange: true });
-        }));
-      }
-      if (options.layerModes.length > 1) {
-        const profile = select(options.layerModes.map(v => [v, `Profile ${v + 1}`]), node.layerMode, 'Layer profile');
-        modes.append(field('Layer profile', profile), button('Change layer profile', () => {
-          if (Number(profile.value) !== node.layerMode && window.confirm('Changing the layer profile can recreate layers. Change profile?')) apply({ layerMode: Number(profile.value) });
-        }));
-      }
+      const choice = select(options.workModes.map(m => [m.value, m.label]), node.mode?.workMode, 'Device operating mode');
+      modes.append(field('Mode', choice), button('Change mode', () => {
+        if (Number(choice.value) === node.mode?.workMode) return;
+        if (window.confirm('Changing device mode can reset screens and routing. Change mode?')) apply({ workMode: Number(choice.value), confirmModeChange: true });
+      }));
       root.append(modes);
     }
-    if (node.subcards.length) {
-      const cards = table(['Slot', 'Card model', 'State']);
-      for (const card of node.subcards) { const row = el('tr'); cell(row, document.createTextNode(String(card.slotId))); cell(row, document.createTextNode(String(card.modelId))); cell(row, document.createTextNode(card.online === 0 ? 'Offline' : 'Online')); cards.body.append(row); }
-      root.append(el('h2', {}, 'Installed cards'), cards.wrap);
-    }
+    if (options.layerModes.length > 1) root.append(renderLayerProfile(state, apply));
+    root.append(renderNetwork(state.network, act));
+    if (node.subcards.length) root.append(renderCards(node.subcards));
+    root.append(renderMaintenance(options, device, act));
     if (!state.configurationAvailable) root.append(text('Capability information is unavailable. Only reported settings are shown.'));
     setDisabled(root, busy);
   }

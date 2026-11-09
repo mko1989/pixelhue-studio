@@ -92,3 +92,11 @@ This section supersedes manual MVR Apply instructions above for v1.6.0-alpha.1; 
 - [ ] Physical screens: create Main/AUX, map/unmap outputs, set global origin/dimensions, tile outputs and verify physical mapping/freeze/blackout/deletion.
 - [ ] Physical programming: create PVW layers, route inputs/other screens, drag/resize, stack/delete; verify Take/Cut duration and swap/copy behavior on physical outputs and MVR.
 - [ ] Run alpha portable builds on Apple Silicon, Windows and Ubuntu; Intel Mac launcher is checked locally during distribution verification.
+
+## Device tab detail and compact chrome (WO-015)
+
+- [x] Offline tests and live P20 read-only Device tab: layer profiles named with MAIN/PIP/HDR, Ethernet settings loaded, five cards labelled with rear-panel ports; write routes blocked, no writes performed.
+- [ ] Physical: change gateway only (same IP) and confirm Save network reads back; then change IP and reconnect at the new address. Have console/serial access before trying DHCP.
+- [ ] Physical: Restart device and reconnect. Shut down only when someone can power the unit on.
+- [ ] Physical (backed-up configuration only): factory reset "Keep network settings only" and confirm the device stays at its address.
+- [ ] Kiosk 1920×1080: confirm the single-row header and tabs are comfortable to use by touch/mouse.
