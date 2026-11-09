@@ -43,7 +43,7 @@ test('presets list, load, save from a scene, rename and delete with documented p
   const posts = () => mock.writes.filter(w => w.path.startsWith('preset/'));
   await applyProgramming(client, { action: 'preset-load', guid: 'preset-a', target: 2 });
   assert.deepEqual(posts()[0], { path: 'preset/apply', method: 'POST', body: { serial: 1, presetId: 'preset-a', targetRegion: 2,
-    auxiliary: { keyFrame: { enable: 1 }, switchEffect: { type: 0, time: 0 }, swapEnable: 1, effect: { enable: 1 } } } });
+    auxiliary: { keyFrame: { enable: 1 }, switchEffect: { type: 1, time: 0 }, swapEnable: 1, effect: { enable: 1 } } } });
   state = await applyProgramming(client, { action: 'preset-save', name: 'Keynote', scene: 4, screenIds: [1] });
   const created = posts().find(w => w.path === 'preset/create').body;
   const pvw = mock.layers.filter(l => l.layerIdObj.attachScreenId === 1 && l.layerIdObj.sceneType === 4);
@@ -163,4 +163,75 @@ test('new layers are created aspect-locked to the source; lock toggles; resource
   mock.behavior.resourceShort = true;
   await assert.rejects(applyProgramming(client, { action: 'source', screenId: 1, id: created.id, source: { id: source.id, type: 2 } }), /no free layer resources/);
   await assert.rejects(applyProgramming(client, { action: 'create', screenId: 1, scene: 4, source: { id: source.id, type: 2 } }), /no free layer resources/);
+});
+
+test('layer keyframe and aspect presets write PixelFlow bodies with readback; invalid values write nothing (WO-024)', async t => {
+  const { client, mock } = await fixture(t);
+  let state = await readProgramming(client);
+  const layer = state.layers.find(l => l.screenId === 1 && l.scene === 4);
+  assert.deepEqual(layer.keyFrame, { enable: 0, speedType: 3, startTime: 0, animationTime: 1000 });
+  state = await applyProgramming(client, { action: 'keyframe', screenId: 1, id: layer.id, keyFrame: { enable: 1, speedType: 0, animationTime: 500 } });
+  assert.deepEqual(mock.writes.at(-1).body, [{ layerId: layer.id, keyFrame: { enable: 1, speedType: 0, startTime: 0, animationTime: 500 } }]);
+  assert.equal(state.layers.find(l => l.id === layer.id).keyFrame.animationTime, 500);
+  state = await applyProgramming(client, { action: 'aspect', screenId: 1, id: layer.id, mode: 3, locked: true });
+  assert.deepEqual(mock.writes.at(-1).body, [{ layerId: layer.id, aspectRatio: 3, locked: 1 }]);
+  const writes = mock.writes.length;
+  await assert.rejects(applyProgramming(client, { action: 'keyframe', screenId: 1, id: layer.id, keyFrame: { animationTime: 0 } }), /animationTime/);
+  await assert.rejects(applyProgramming(client, { action: 'keyframe', screenId: 1, id: layer.id, keyFrame: { speed: 1 } }), /Unsupported/);
+  await assert.rejects(applyProgramming(client, { action: 'aspect', screenId: 1, id: layer.id, mode: 6 }), /Unsupported/);
+  assert.equal(mock.writes.length, writes);
+});
+
+test('relative presets store chosen layers and parameter groups; load flags follow PixelFlow (WO-024)', async t => {
+  const { client, mock } = await fixture(t);
+  const state = await readProgramming(client);
+  const pvw = state.layers.filter(l => l.screenId === 1 && l.scene === 4);
+  await applyProgramming(client, { action: 'preset-save', name: 'Rel', scene: 4, serial: 5, relative: true, params: ['3-3', '3-4', '3-12'], layerIds: [pvw[0].id], screenIds: [1, 2] });
+  const body = mock.writes.filter(w => w.path === 'preset/create').at(-1).body;
+  assert.deepEqual([body.loadType, body.params, body.screens.length, body.screens[0].layers.map(l => l.serial)], [2, ['3-3', '3-4', '3-12'], 1, [mock.layers.find(l => l.layerId === pvw[0].id).serial]]);
+  const writes = mock.writes.length;
+  await assert.rejects(applyProgramming(client, { action: 'preset-save', name: 'R2', scene: 4, relative: true, params: [], layerIds: [pvw[0].id], screenIds: [1] }), /settings a relative/);
+  await assert.rejects(applyProgramming(client, { action: 'preset-save', name: 'R2', scene: 4, relative: true, params: ['3-9'], layerIds: [], screenIds: [1] }), /Choose the layers/);
+  await assert.rejects(applyProgramming(client, { action: 'preset-save', name: 'R2', scene: 4, relative: true, params: ['9-9'], layerIds: [pvw[0].id], screenIds: [1] }), /settings a relative/);
+  assert.equal(mock.writes.length, writes);
+  await applyProgramming(client, { action: 'preset-load', guid: 'preset-5', target: 2, keyframes: true, effect: true, time: 800 });
+  assert.deepEqual(mock.writes.at(-1).body.auxiliary, { keyFrame: { enable: 0 }, switchEffect: { type: 1, time: 800 }, swapEnable: 1, effect: { enable: 0 } });
+  await applyProgramming(client, { action: 'preset-load', guid: 'preset-5', target: 2, keyframes: true, effect: false });
+  assert.equal(mock.writes.at(-1).body.auxiliary.keyFrame.enable, 1, 'keyframes only run with the take effect');
+});
+
+test('auto-take loads to PVW, waits for the stored layout, then takes the preset screens; no Take without confirmation (WO-024)', async t => {
+  const { client, mock } = await fixture(t);
+  let state = await readProgramming(client);
+  const layer = state.layers.find(l => l.screenId === 1 && l.scene === 4);
+  await applyProgramming(client, { action: 'window', screenId: 1, id: layer.id, window: { ...layer.window, x: 300 } });
+  await applyProgramming(client, { action: 'preset-save', name: 'Look', scene: 4, serial: 6, screenIds: [1] });
+  await applyProgramming(client, { action: 'window', screenId: 1, id: layer.id, window: { ...layer.window, x: 900 } });
+  mock.behavior.presetApplyDelay = 600;
+  state = await applyProgramming(client, { action: 'preset-autotake', guid: 'preset-6', time: 400 });
+  const apply = mock.writes.findLastIndex(w => w.path === 'preset/apply'), take = mock.writes.findLastIndex(w => w.path === 'screen/take');
+  assert.ok(apply >= 0 && take > apply, 'apply then take');
+  assert.equal(mock.writes[apply].body.targetRegion, 4);
+  assert.deepEqual(mock.writes[take].body.map(b => [b.screenId, b.switchEffect.time]), [[1, 400]]);
+  assert.ok(state.autoTake.loadedMs >= 500, 'waited for the delayed load');
+  mock.behavior.presetApplyDelay = 0; mock.behavior.ignorePresetApply = true;
+  await applyProgramming(client, { action: 'window', screenId: 1, id: layer.id, window: { ...layer.window, x: 1200 } });
+  const takes = mock.writes.filter(w => w.path === 'screen/take').length;
+  await assert.rejects(applyProgramming(client, { action: 'preset-autotake', guid: 'preset-6' }), /not confirmed.*Take was not sent/);
+  assert.equal(mock.writes.filter(w => w.path === 'screen/take').length, takes);
+});
+
+test('layer panel geometry helpers: align, fill output, native 1:1 (WO-024)', async () => {
+  const { alignWindow, outputTile, nativeWindow } = await import('../public/layer-inspector.js');
+  const screen = { x: -100, y: 50, width: 3840, height: 1080, outputs: [
+    { pos: { x: -100, y: 50, width: 1920, height: 1080 } }, { pos: { x: 1820, y: 50, width: 1920, height: 1080 } }] };
+  const w = { x: 2500, y: 300, width: 640, height: 360 };
+  assert.deepEqual(alignWindow(w, screen, 'left'), { ...w, x: 0 });
+  assert.deepEqual(alignWindow(w, screen, 'right'), { ...w, x: 3200 });
+  assert.deepEqual(alignWindow(w, screen, 'bottom'), { ...w, y: 720 });
+  assert.deepEqual(alignWindow(w, screen, 'center'), { ...w, x: 1600, y: 360 });
+  assert.deepEqual(outputTile(w, screen), { x: 1920, y: 0, width: 1920, height: 1080 }, 'tile under the layer centre');
+  assert.equal(outputTile(w, { ...screen, outputs: [] }), null);
+  assert.deepEqual(nativeWindow(w, { width: 1280, height: 720 }), { x: 2180, y: 120, width: 1280, height: 720 });
+  assert.equal(nativeWindow(w, { width: null }), null);
 });

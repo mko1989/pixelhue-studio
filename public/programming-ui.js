@@ -1,6 +1,7 @@
 import { $, el, text, button, input, select, field, sessionPath, setDisabled } from './ui.js';
 import { paintStage, bindStage, dropWindow, canvasOf, SOURCE_MIME } from './program-stage.js';
 import { renderPresets } from './presets-ui.js';
+import { renderLayerPanel } from './layer-inspector.js';
 
 // Programming (WO-016): several screens at once, PGM band on top and PVW below, drag sources
 // onto a stage to create layers, free layer roaming, preset bank.
@@ -8,7 +9,7 @@ const STORE = 'program-screens';
 export function createProgrammingUI({ api, notice, operation, getSession, invalidate }) {
   const root = $('programming-content');
   let state, session, selectedId, sourceKey, busy = false, refreshTimer, durationMs = 500, shouldSwap = true;
-  let shown = null, loadTarget = 4, savingFrom = null, editingPresets = false; const stages = [];
+  let shown = null, loadTarget = 4, savingFrom = null, editingPresets = false, loadOptions = { keyframes: false, effect: false }; const stages = [];
   try { shown = JSON.parse(localStorage.getItem(STORE) || 'null'); } catch {}
   const visible = () => state.screens.filter(s => shown.includes(s.id));
   const layer = () => state?.layers.find(l => l.id === selectedId);
@@ -46,6 +47,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
       notice(next.skipped?.length ? `${success} Skipped disabled ${next.skipped.join(', ')}.` : success, 'success');
       if (['take', 'cut'].includes(request.action)) scheduleRefresh(request.action === 'take' ? (request.time || 500) + 150 : 150);
       if (request.action === 'preset-load') scheduleRefresh(600);
+      if (request.action === 'preset-autotake') scheduleRefresh((request.time || 500) + 150);
     });
     setDisabled(root, busy);
   }
@@ -141,6 +143,8 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     const views = el('section', { className: 'program-views' });
     views.append(band(2, 'PGM'), band(4, 'PVW'), renderPresets({ presets: state.presets, loadTarget, saving: savingFrom, editing: editingPresets,
       setLoadTarget: r => { loadTarget = r; render(); }, setSaving: v => { savingFrom = v; render(); },
+      loadOptions, setLoadOptions: v => { loadOptions = { ...loadOptions, ...v }; render(); },
+      transition: () => ({ time: durationMs, swap: shouldSwap }), layersFor: scene => visible().flatMap(s => state.layers.filter(l => l.screenId === s.id && l.scene === scene).map(l => ({ ...l, screenName: s.name }))),
       setEditing: v => { editingPresets = v; render(); }, command, screenIds: ids }));
     workspace.append(sources, views, el('aside', { id: 'program-properties', className: 'program-properties' })); root.append(workspace);
     paintAll(); renderInspector(); setDisabled(root, busy);
@@ -153,30 +157,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
       node.append(el('strong', {}, l.name), text(`${screen.name} · ${l.scene === 2 ? 'PGM' : 'PVW'}`));
       const lockedLayer = l.scene === 2 && screen.pgmLocked;
       if (lockedLayer) node.append(text('PGM is locked: unlock it above the PGM view to edit this layer.', 'lock-note'));
-      const options = state.sources.filter(s => s.type === 2 || s.id !== l.screenId).map(s => [`${s.type}:${s.id}`, s.name]);
-      const current = `${l.sourceType}:${l.sourceId}`; if (!options.some(([key]) => key === current)) options.unshift([current, l.sourceName || 'Current source']);
-      const routing = select(options, current, 'Selected layer source');
-      routing.onchange = () => { const [type, id] = routing.value.split(':').map(Number); command({ action: 'source', screenId: l.screenId, id: l.id, source: { id, type } }, 'Layer source saved.'); };
-      const geometry = el('div', { className: 'field-grid' }), ratio = l.window.width / l.window.height;
-      for (const [key, label] of [['x', 'X'], ['y', 'Y'], ['width', 'Width'], ['height', 'Height']]) {
-        const control = input(l.window[key], `Layer ${label}`, 'number'); if (key === 'width' || key === 'height') control.min = 64;
-        control.onchange = () => {
-          const next = { ...l.window, [key]: Number(control.value) };
-          if (l.aspectLocked && key === 'width') next.height = Math.max(64, Math.round(next.width / ratio));
-          if (l.aspectLocked && key === 'height') next.width = Math.max(64, Math.round(next.height * ratio));
-          command({ action: 'window', screenId: l.screenId, id: l.id, window: next }, 'Layer position saved.');
-        };
-        geometry.append(field(label, control));
-      }
-      const keep = input('', 'Keep aspect ratio', 'checkbox'); keep.checked = Boolean(l.aspectLocked);
-      keep.onchange = () => command({ action: 'aspect', screenId: l.screenId, id: l.id, locked: keep.checked }, keep.checked ? 'Aspect ratio locked to the source.' : 'Aspect ratio unlocked.');
-      const keepLabel = el('label', { className: 'checkbox-label' }); keepLabel.append(keep, document.createTextNode(' Keep aspect ratio'));
-      geometry.append(keepLabel);
-      const fill = button('Fill screen', () => command({ action: 'window', screenId: l.screenId, id: l.id, window: { x: 0, y: 0, width: screen.width, height: screen.height } }, 'Layer position saved.'));
-      node.append(field('Source', routing), geometry, fill,
-        button('Bring to front', () => command({ action: 'zorder', screenId: l.screenId, id: l.id, to: 3 })),
-        button('Send to back', () => command({ action: 'zorder', screenId: l.screenId, id: l.id, to: 4 })),
-        button('Delete layer', () => command({ action: 'delete', screenId: l.screenId, id: l.id }, 'Layer deleted.'), 'button danger'));
+      renderLayerPanel(node, { state, layer: l, screen, command });
       if (lockedLayer) for (const control of node.querySelectorAll('input,select,button')) control.dataset.fixed = 'true';
     }
     const s = active(); if (!s) return;
@@ -187,6 +168,14 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     }
     node.append(list); setDisabled(node, busy);
   }
+  // Arrow keys nudge the selected layer (1 px, Shift 10 px) while a stage has focus (WO-024).
+  root.addEventListener('keydown', event => {
+    const keys = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[event.key];
+    const l = layer(); if (!keys || !l || busy || !event.target.closest?.('.program-stage')) return;
+    const scr = state.screens.find(s => s.id === l.screenId); if (l.scene === 2 && scr?.pgmLocked) return;
+    event.preventDefault(); const step = event.shiftKey ? 10 : 1;
+    command({ action: 'window', screenId: l.screenId, id: l.id, window: { ...l.window, x: l.window.x + keys[0] * step, y: l.window.y + keys[1] * step } }, 'Layer position saved.');
+  });
   render();
   return { open: () => state ? undefined : refresh(), refresh, hasChanges: () => stages.some(s => s.dragging()),
     reset(next) { if (session === next) return; clearTimeout(refreshTimer); session = next; state = undefined; render(); },

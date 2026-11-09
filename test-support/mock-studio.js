@@ -36,7 +36,9 @@ export function createMockStudio({ model = 'P20' } = {}) {
     subcards: base.cards.map(c => ({ slotId: c.slotId, modelId: c.modelId, online: 1, cardType: c.cardType })) };
   const presets = [{ guid: 'preset-a', serial: 1, name: 'Opening', type: 1, loadType: 1, sourceRegion: 4, params: ['3'],
     screens: [{ guid: 'main-screen', name: 'Main screen', layers: [{ serial: 1, type: 2 }] }], interfaces: [] }];
-  layers.forEach((l, i) => { l.serial ??= i + 1; });
+  // Serials are per screen and scene on the P20 (live: PGM and PVW each have serial 1, WO-024).
+  const nextSerial = (screenId, scene) => 1 + Math.max(0, ...layers.filter(l => l.layerIdObj?.attachScreenId === screenId && l.layerIdObj?.sceneType === scene && l.serial != null).map(l => l.serial));
+  for (const l of layers) l.serial ??= nextSerial(l.layerIdObj?.attachScreenId, l.layerIdObj?.sceneType);
   const ethernet = { mode: 0, infos: [{ index: 0, mac: '54:B5:6C:00:00:01', dhcp: 0, ip: '192.168.0.20', netmask: '255.255.255.0', gateway: '192.168.0.1', interfaceType: 25, autoDNS: 0, dns: [] }] };
   behavior.geometryDelay = 0; behavior.ignoreSetup = false;
   const config = umdXml.replace('<Features>', `<DCS><Device><Features><Device>
@@ -47,7 +49,7 @@ export function createMockStudio({ model = 'P20' } = {}) {
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
     .replace('</Features>', '</Features></Device></DCS>');
   const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset'];
-  const customPuts = ['screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+  const customPuts = ['layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
@@ -68,6 +70,15 @@ export function createMockStudio({ model = 'P20' } = {}) {
     let raw = ''; for await (const chunk of request) raw += chunk;
     const body = JSON.parse(raw); writes.push({ path, body, method: request.method });
     if (behavior.ignoreSetup && path.startsWith('node/')) return send({});
+    if (path === 'layers/key-frame') for (const change of body) layers.find(l => l.layerId === change.layerId).keyFrame = change.keyFrame;
+    if (path === 'preset/apply' && body.targetRegion === 4 && !behavior.ignorePresetApply) {
+      // Load the stored windows into PVW by serial, after an optional delay (asynchronous on hardware).
+      const preset = presets.find(p => p.guid === body.presetId), load = () => { for (const entry of preset?.screens || []) {
+        const scr = screens.find(x => x.guid === entry.guid);
+        for (const l of entry.layers) { const live = layers.find(x => x.layerIdObj.attachScreenId === scr?.screenId && x.layerIdObj.sceneType === 4 && x.serial === l.serial); if (live && l.window) live.window = structuredClone(l.window); }
+      } };
+      if (behavior.presetApplyDelay) setTimeout(load, behavior.presetApplyDelay); else load();
+    }
     if (path === 'screen/pgm-edit') for (const change of body) screens.find(x => x.screenId === change.screenId).pgmEdit = change.pgmEdit;
     if (path === 'preset/create') {
       // Device rule seen on P20 V2.0.0 (WO-018): presets may only name enabled screens.
@@ -75,7 +86,11 @@ export function createMockStudio({ model = 'P20' } = {}) {
       if (off) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: `manage param invalid: check screen faild: screen ${off?.screenId} is not enabled` })); return; }
       // P20 replaces an existing serial (WO-022 live test).
       const same = presets.findIndex(p => p.serial === body.serial); if (same >= 0) presets.splice(same, 1);
-      presets.push({ ...body, guid: same >= 0 ? `preset-${body.serial}-overwritten` : `preset-${body.serial}` });
+      // The device stores each layer's window (live GET preset shows screens[].layers[].window).
+      const stored = { ...body, screens: body.screens.map(entry => { const scr = screens.find(x => x.guid === entry.guid); return { ...entry, name: scr?.general?.name,
+        layers: entry.layers.map(l => { const live = layers.find(x => x.layerIdObj.attachScreenId === scr?.screenId && x.layerIdObj.sceneType === body.sourceRegion && x.serial === l.serial);
+          return { ...l, window: live && structuredClone(live.window), enable: 1 }; }) }; }) };
+      presets.push({ ...stored, guid: same >= 0 ? `preset-${body.serial}-overwritten` : `preset-${body.serial}` });
     }
     if (path === 'preset/update-name') for (const change of body) presets.find(p => p.guid === change.guid).name = change.name;
     if (path === 'preset/delete') for (const guid of body) presets.splice(presets.findIndex(p => p.guid === guid), 1);
@@ -117,7 +132,7 @@ export function createMockStudio({ model = 'P20' } = {}) {
     }
     if (path === 'layers/create') {
       const id = Math.max(...layers.map(l => l.layerId)) + 1;
-      layers.push({ ...body, layerId: id, zorder: layers.filter(l => l.layerIdObj.attachScreenId === body.layerIdObj.attachScreenId).length + 1 });
+      layers.push({ ...body, layerId: id, serial: nextSerial(body.layerIdObj.attachScreenId, body.layerIdObj.sceneType), zorder: layers.filter(l => l.layerIdObj.attachScreenId === body.layerIdObj.attachScreenId).length + 1 });
     }
     if (path === 'layers/source') for (const change of body) layers.find(l => l.layerId === change.layerId).source = change.source;
     if (path === 'layers') for (const change of body) layers.splice(layers.findIndex(l => l.layerId === change.layerId), 1);

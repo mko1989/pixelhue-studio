@@ -85,3 +85,9 @@
 .screen-frame { position: absolute; border: 1px dashed #8e9ba6; background: #151a1f; pointer-events: none; z-index: 0; }
 .program-stage { background: #0b0b0b; }.program-layer.replace-target { outline: 2px dashed #edcd89; outline-offset: -3px; }
 .program-layer.aspect-locked::after { content: ''; position: absolute; right: 3px; bottom: 3px; width: 6px; height: 6px; border-right: 1px solid #c7d0d8; border-bottom: 1px solid #c7d0d8; }
+.inspector-section { display: grid; gap: 6px; padding-top: 10px; border-top: 1px solid var(--border); }.inspector-section h3 { margin: 0; font-size: 14px; }
+.align-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }.align-grid .button { min-height: 28px; padding: 3px 4px; font-size: 12px; white-space: normal; }
+.preset-options { display: flex; gap: 10px; align-items: center; }.preset-options .checkbox-label { margin: 0; font-size: 12px; }
+.preset-relative { display: flex; flex-wrap: wrap; gap: 10px; width: 100%; }
+.preset-checks { border: 1px solid var(--border); padding: 6px 8px; display: flex; flex-wrap: wrap; gap: 4px 12px; max-width: 100%; }
+.preset-checks legend { color: var(--muted); font-size: 12px; padding: 0 4px; }.preset-checks .checkbox-label { margin: 0; font-size: 12px; }

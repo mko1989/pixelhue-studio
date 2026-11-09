@@ -23,3 +23,4 @@
 | WO-021 | P10/P20: AUX screens removed from MVR sources (they fail on hardware) | [Investigation and verification](work-orders/021_WO_mvr-no-aux-sources.md) | DONE (113 tests, mock + live read-only) |
 | WO-022 | Presets: separate Save from PVW/PGM, slot menu with overwrite; PGM lock per screen | [Investigation and verification](work-orders/022_WO_preset-slots-pgm-lock.md) | DONE (115 tests, mock Chrome, live Screen-3 probes + read-only UI) |
 | WO-023 | Programming: drop-on-layer source swap, canvas margin, native-size aspect-locked layers | [Investigation and verification](work-orders/023_WO_layer-drop-canvas-aspect.md) | DONE (116 tests, mock Chrome, live probes restored) |
+| WO-024 | Layer position/size panel, keyframes, relative presets, confirmed preset auto-take | [Investigation and verification](work-orders/024_WO_layer-position-keyframes-autotake.md) | DONE (120 tests, mock Chrome, live Screen-3 auto-take) |
