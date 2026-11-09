@@ -11,15 +11,16 @@ export function fit(window, screen) {
   return { x: bound(window.x, 0, screen.width - width), y: bound(window.y, 0, screen.height - height), width, height };
 }
 
-export function dragWindow(original, dx, dy, screen, handle, snap = 1, lockAspect = false, umdHeight = 0) {
+export function dragWindow(original, dx, dy, screen, handle, snap = 1, lockAspect = false, umdHeight = 0, max = null) {
   const snapTo = (n) => Math.round(n / snap) * snap;
   if (!handle) return fit({ ...original, x: snapTo(original.x + dx), y: snapTo(original.y + dy) }, screen);
   const leftHandle = handle.includes('w');
   const topHandle = handle.includes('n');
   const anchorX = leftHandle ? original.x + original.width : original.x;
   const anchorY = topHandle ? original.y + original.height : original.y;
-  const limitW = leftHandle ? anchorX : screen.width - anchorX;
-  const limitH = topHandle ? anchorY : screen.height - anchorY;
+  // max: per-window size cap (WO-028 input window limit), on top of the output bounds.
+  const limitW = Math.min(leftHandle ? anchorX : screen.width - anchorX, max?.width ?? Infinity);
+  const limitH = Math.min(topHandle ? anchorY : screen.height - anchorY, max?.height ?? Infinity);
   let width = bound(snapTo(original.width + (leftHandle ? -dx : dx)), 64, limitW);
   let height = bound(snapTo(original.height + (topHandle ? -dy : dy)), 64, limitH);
   if (lockAspect) {

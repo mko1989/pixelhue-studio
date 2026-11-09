@@ -75,3 +75,22 @@ export function fixAspectRatios(layers, signals, screen) {
   if (hasOverlap(result)) throw new Error('A non-overlapping aspect correction could not be found.');
   return { layers: result, fixed, skipped };
 }
+
+// Owner rule (WO-028): on P10/P20 an MVR window showing an input (sourceType 2) must not exceed 512 × 480,
+// the largest size the owner found glitch-free. Not advertised by layer_8.xml (Max 131070), so it is policy.
+// Screen PGM/PVW windows are not limited.
+export const INPUT_WINDOW_LIMIT = { P10: { width: 512, height: 480 }, P20: { width: 512, height: 480 } };
+export const windowLimit = (model, sourceType) => (sourceType === 2 && INPUT_WINDOW_LIMIT[model]) || null;
+export const withinLimit = (window, limit) => !limit || (window.width <= limit.width && window.height <= limit.height);
+// A change grows past the limit when a dimension exceeds it and is larger than before (moving or shrinking
+// an existing oversized window stays allowed, keeping WO-006/007 established-geometry edits working).
+export const growsPastLimit = (next, before, limit) => Boolean(limit) && ((next.width > limit.width && next.width > (before?.width ?? 0)) || (next.height > limit.height && next.height > (before?.height ?? 0)));
+// Largest window inside the limit, top-left kept; locked layers keep their content ratio (UMD strip included).
+export function shrinkToLimit(window, limit, lock = null, umdHeight = 0) {
+  if (withinLimit(window, limit)) return window;
+  if (lock) {
+    const size = ratioSize(lock, limit.width, limit.height, limit.width, umdHeight ?? 0);
+    if (size) return { x: window.x, y: window.y, ...size };
+  }
+  return { x: window.x, y: window.y, width: Math.min(window.width, limit.width), height: Math.min(window.height, limit.height) };
+}

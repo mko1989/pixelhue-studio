@@ -4,7 +4,7 @@ import { createMvrSync } from './mvr-sync.js';
 import { reconcileMvr, sameEdit } from './mvr-reconcile.js';
 import { createStudioPanels } from './studio-panels.js';
 import { createDiscoveryUI } from './discovery-ui.js';
-import { canPlace, fixAspectRatios, ratioSize, sourceSignal, matchesRatio } from './mvr-geometry.js';
+import { canPlace, fixAspectRatios, ratioSize, sourceSignal, matchesRatio, windowLimit, growsPastLimit, shrinkToLimit } from './mvr-geometry.js';
 import { renderMvrSources, placeWindow, sourceOptions, parseKey, MVR_SOURCE } from './mvr-sources.js';
 
 const $ = (id) => document.getElementById(id);
@@ -97,9 +97,17 @@ function restore(layout) {
   }
 }
 
+const limitOf = (layer) => windowLimit(state?.device?.model, layer?.sourceType);
+// While resizing, never grow past the limit; an already larger window can only shrink (cap = its start size).
+const dragLimit = () => { const limit = limitOf(selected()); return limit && drag ? { width: Math.max(limit.width, drag.window.width), height: Math.max(limit.height, drag.window.height) } : null; };
 function edit(window) {
   if (busy || !selected() || sameWindow(window, selected().window)) return;
-  const next = fit(window, screen());
+  const limit = limitOf(selected());
+  let next = fit(window, screen());
+  if (growsPastLimit(next, selected().window, limit)) {
+    next = shrinkToLimit(next, limit, selected().aspectLock, selected().umdHeight);
+    notice(`Input windows are limited to ${limit.width} × ${limit.height} on ${state.device.model} (glitch-free size). Resized to ${next.width} × ${next.height}.`);
+  }
   if (!canPlace(selected(), next, state.layers)) { notice('MVR windows cannot overlap. Choose a smaller size or a free position.', 'error'); render(); return; }
   const resized = next.width !== selected().window.width || next.height !== selected().window.height;
   if (resized && selected().aspectLock && !matchesRatio(next, selected().aspectLock, selected().umdHeight)) { notice('This size cannot fit while keeping the locked aspect ratio.', 'error'); render(); return; }
@@ -190,7 +198,7 @@ async function mvrStructure(request, success) {
   });
 }
 function addSource(source, point) {
-  const window = placeWindow(source, screen(), windows(), point);
+  const window = placeWindow(source, screen(), windows(), point, windowLimit(state.device.model, source.type));
   if (!window) { notice('No free space in this MVR output. Shrink or delete a window first.', 'error'); return; }
   mvrStructure({ action: 'create', source: { type: source.type, id: source.id }, window }, `${source.name} added to the MVR.`);
 }
@@ -282,7 +290,8 @@ for (const key of keys) $(key).onchange = () => {
     const ratio = selected().aspectLock;
     const offset = selected().umdHeight;
     const desiredWidth = key === 'width' ? value : (value - (offset ?? 0)) * ratio;
-    const size = ratioSize(ratio, screen().width - next.x, screen().height - next.y, Math.max(64, Math.ceil(Math.max(1, 64 - (offset ?? 0)) * ratio), desiredWidth), offset);
+    const limit = limitOf(selected());
+    const size = ratioSize(ratio, Math.min(screen().width - next.x, limit?.width ?? Infinity), Math.min(screen().height - next.y, limit?.height ?? Infinity), Math.max(64, Math.ceil(Math.max(1, 64 - (offset ?? 0)) * ratio), desiredWidth), offset);
     if (!size) { notice('No room for this locked aspect ratio at the minimum window size.', 'error'); render(); return; }
     next = { ...next, ...size };
   }
@@ -328,7 +337,7 @@ $('stage').onpointerdown = (event) => {
 $('stage').onpointermove = (event) => {
   if (!drag || busy) return;
   const next = dragWindow(drag.window, (event.clientX - drag.x) * screen().width / drag.rect.width,
-    (event.clientY - drag.y) * screen().height / drag.rect.height, screen(), drag.handle, Number($('snap').value), selected().aspectLock || false, selected().umdHeight);
+    (event.clientY - drag.y) * screen().height / drag.rect.height, screen(), drag.handle, Number($('snap').value), selected().aspectLock || false, selected().umdHeight, dragLimit());
   drag.blocked = !canPlace(selected(), next, state.layers);
   if (!drag.blocked) selected().window = next;
   render();
@@ -396,6 +405,8 @@ $('layout-file').onchange = async () => {
     let document;
     try { document = JSON.parse(await file.text()); } catch { throw new Error('Layout file is not valid JSON.'); }
     const layout = readLayout(document, state, screenId);
+    const tooBig = layout.find(item => { const layer = state.layers.find(l => l.id === item.id); return growsPastLimit(item.window, layer.window, limitOf(layer)); });
+    if (tooBig) { const limit = limitOf(state.layers.find(l => l.id === tooBig.id)); throw new Error(`This layout makes an input window larger than ${limit.width} × ${limit.height}, the glitch-free limit on ${state.device.model}. Not loaded.`); }
     remember(); restore(layout); render(); sync.schedule(0); notice('Layout loaded. Saving…');
   });
 };

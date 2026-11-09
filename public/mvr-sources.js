@@ -4,9 +4,10 @@ import { overlaps } from './mvr-geometry.js';
 // space to add a window, onto a window to change its source; double-click places automatically.
 export const MVR_SOURCE = 'text/x-pixelhue-mvr-source';
 
-export function placeWindow(source, screen, layers, point) {
+export function placeWindow(source, screen, layers, point, limit = null) {
   const ratio = source.width && source.height ? source.width / source.height : 16 / 9;
   let width = Math.round(screen.width / 4);
+  if (limit) width = Math.min(width, limit.width, Math.floor(limit.height * ratio)); // WO-028 input window limit
   const free = w => !layers.some(l => overlaps(w, l.window));
   for (let attempt = 0; attempt < 12 && width >= 64; attempt++, width = Math.round(width * 0.8)) {
     const height = Math.max(64, Math.round(width / ratio));
