@@ -49,7 +49,7 @@ export function createMockStudio({ model = 'P20' } = {}) {
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
     .replace('</Features>', '</Features></Device></DCS>');
   const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset'];
-  const customPuts = ['layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+  const customPuts = ['layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
@@ -70,6 +70,7 @@ export function createMockStudio({ model = 'P20' } = {}) {
     let raw = ''; for await (const chunk of request) raw += chunk;
     const body = JSON.parse(raw); writes.push({ path, body, method: request.method });
     if (behavior.ignoreSetup && path.startsWith('node/')) return send({});
+    if (path === 'layers/general') for (const change of body) layers.find(l => l.layerId === change.layerId).general = { ...layers.find(l => l.layerId === change.layerId).general, ...change.general };
     if (path === 'layers/key-frame') for (const change of body) layers.find(l => l.layerId === change.layerId).keyFrame = change.keyFrame;
     if (path === 'preset/apply' && body.targetRegion === 4 && !behavior.ignorePresetApply) {
       // Load the stored windows into PVW by serial, after an optional delay (asynchronous on hardware).

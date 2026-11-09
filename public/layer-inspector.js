@@ -1,4 +1,5 @@
 import { el, text, button, input, select, field } from './ui.js';
+import { groupOf, unionWindow, groupSize } from './group-geometry.js';
 
 // Selected-layer panel (WO-024), PixelFlow parity for position/size: X/Y/W/H with aspect lock, aspect
 // presets (layer_2.xml AspectRatioType), align to screen, fill screen / fill output / native 1:1, stacking,
@@ -27,8 +28,20 @@ export function nativeWindow(w, source) {
 }
 
 export function renderLayerPanel(node, { state, layer: l, screen, command }) {
-  const save = (window, message = 'Layer position saved.') => command({ action: 'window', screenId: l.screenId, id: l.id, window }, message);
-  const source = state.sources.find(s => s.type === l.sourceType && s.id === l.sourceId);
+  // Grouped inputs (WO-025): position/size tools act on the group's combined rectangle.
+  const group = groupOf(state.layers, l), win = group ? unionWindow(group.a.window, group.b.window) : l.window;
+  const save = (window, message = 'Layer position saved.') => command(group ? { action: 'group-window', screenId: l.screenId, id: l.id, window }
+    : { action: 'window', screenId: l.screenId, id: l.id, window }, group ? message.replace('Layer', 'Group') : message);
+  const sourceOf = layer => state.sources.find(s => s.type === layer.sourceType && s.id === layer.sourceId);
+  const source = sourceOf(l);
+  if (group) {
+    const info = el('section', { className: 'inspector-section group-info' });
+    info.append(el('h3', {}, `Group ${group.group} · ${group.orient === 'H' ? 'side by side' : 'top / bottom'}`),
+      text(`${group.orient === 'H' ? 'Left' : 'Top'}: ${group.a.sourceName || group.a.name} · ${group.orient === 'H' ? 'Right' : 'Bottom'}: ${group.b.sourceName || group.b.name}`),
+      text('Move, resize, align and fill act on both layers. Source and keyframe below apply to the selected member.'),
+      button('Ungroup', () => command({ action: 'group-ungroup', screenId: l.screenId, id: l.id }, 'Layers ungrouped.'), 'button quiet'));
+    node.append(info);
+  }
   const options = state.sources.filter(s => s.type === 2 || s.id !== l.screenId).map(s => [`${s.type}:${s.id}`, s.name]);
   const current = `${l.sourceType}:${l.sourceId}`; if (!options.some(([key]) => key === current)) options.unshift([current, l.sourceName || 'Current source']);
   const routing = select(options, current, 'Selected layer source');
@@ -36,13 +49,13 @@ export function renderLayerPanel(node, { state, layer: l, screen, command }) {
   node.append(field('Source', routing));
 
   const pos = el('section', { className: 'inspector-section' }); pos.append(el('h3', {}, 'Position & size'));
-  const geometry = el('div', { className: 'field-grid' }), ratio = l.window.width / l.window.height;
+  const geometry = el('div', { className: 'field-grid' }), ratio = win.width / win.height, keepRatio = group ? group.a.aspectLocked || group.b.aspectLocked : l.aspectLocked;
   for (const [key, label] of [['x', 'X'], ['y', 'Y'], ['width', 'Width'], ['height', 'Height']]) {
-    const control = input(l.window[key], `Layer ${label}`, 'number'); if (key === 'width' || key === 'height') control.min = 64;
+    const control = input(win[key], `Layer ${label}`, 'number'); if (key === 'width' || key === 'height') control.min = 64;
     control.onchange = () => {
-      const next = { ...l.window, [key]: Number(control.value) };
-      if (l.aspectLocked && key === 'width') next.height = Math.max(64, Math.round(next.width / ratio));
-      if (l.aspectLocked && key === 'height') next.width = Math.max(64, Math.round(next.height * ratio));
+      const next = { ...win, [key]: Number(control.value) };
+      if (keepRatio && key === 'width') next.height = Math.max(64, Math.round(next.width / ratio));
+      if (keepRatio && key === 'height') next.width = Math.max(64, Math.round(next.height * ratio));
       save(next);
     };
     geometry.append(field(label, control));
@@ -59,9 +72,10 @@ export function renderLayerPanel(node, { state, layer: l, screen, command }) {
   pos.append(geometry, field('Aspect ratio', aspect), keepLabel);
   const align = el('div', { className: 'align-grid', role: 'group', 'aria-label': 'Align to screen' });
   for (const [where, label] of [['left', 'Left'], ['hcenter', 'Centre H'], ['right', 'Right'], ['top', 'Top'], ['vcenter', 'Centre V'], ['bottom', 'Bottom'], ['center', 'Centre']]) {
-    align.append(button(label, () => save(alignWindow(l.window, screen, where), `Layer aligned ${label.toLowerCase()}.`), 'button secondary'));
+    align.append(button(label, () => save(alignWindow(win, screen, where), `Layer aligned ${label.toLowerCase()}.`), 'button secondary'));
   }
-  const tile = outputTile(l.window, screen), native = nativeWindow(l.window, source);
+  const tile = outputTile(win, screen);
+  const native = group ? nativeWindow(win, groupSize(sourceOf(group.a), sourceOf(group.b), group.orient)) : nativeWindow(l.window, source);
   const fills = el('div', { className: 'align-grid' });
   fills.append(button('Fill screen', () => save({ x: 0, y: 0, width: screen.width, height: screen.height }, 'Layer fills the screen.')),
     button('Fill output', () => tile && save(tile, 'Layer fills its output.')), button('Native 1:1', () => native && save(native, 'Layer set to the source resolution.')));

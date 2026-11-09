@@ -91,3 +91,7 @@
 .preset-relative { display: flex; flex-wrap: wrap; gap: 10px; width: 100%; }
 .preset-checks { border: 1px solid var(--border); padding: 6px 8px; display: flex; flex-wrap: wrap; gap: 4px 12px; max-width: 100%; }
 .preset-checks legend { color: var(--muted); font-size: 12px; padding: 0 4px; }.preset-checks .checkbox-label { margin: 0; font-size: 12px; }
+.program-layer.grouped { border-style: dashed; }.group-frame { position: absolute; z-index: 50; outline: 2px solid #9fd0ff; outline-offset: -1px; background: transparent; pointer-events: none; }
+.group-frame .handle { z-index: 51; pointer-events: auto; }.group-form { border-top: 1px solid var(--border); padding-top: 8px; display: grid; gap: 6px; }
+.group-form summary { cursor: pointer; color: var(--muted); font-size: 13px; }.group-form label { display: grid; gap: 3px; font-size: 12px; color: var(--muted); }
+.group-info h3 { color: #9fd0ff; }

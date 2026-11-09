@@ -2,6 +2,7 @@ import { $, el, text, button, input, select, field, sessionPath, setDisabled } f
 import { paintStage, bindStage, dropWindow, canvasOf, SOURCE_MIME } from './program-stage.js';
 import { renderPresets } from './presets-ui.js';
 import { renderLayerPanel } from './layer-inspector.js';
+import { groupOf, unionWindow } from './group-geometry.js';
 
 // Programming (WO-016): several screens at once, PGM band on top and PVW below, drag sources
 // onto a stage to create layers, free layer roaming, preset bank.
@@ -90,6 +91,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
         locked: () => scene === 2 && Boolean(state.screens.find(s => s.id === screen.id)?.pgmLocked),
         onLocked: () => notice(`PGM of ${screen.name} is locked. Unlock it to edit.`, 'error'),
         commit: (l, window) => command({ action: 'window', screenId: screen.id, id: l.id, window }, 'Layer position saved.'),
+        commitGroup: (l, window) => command({ action: 'group-window', screenId: screen.id, id: l.id, window }, 'Group position saved.'),
         drop: (key, point) => addLayer(key, screen, scene, point),
         replace: (key, l) => {
           const source = sourceFor(key); if (!source) return;
@@ -139,7 +141,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
       row.append(text(`${item.width || '?'} × ${item.height || '?'}${item.type === 2 && !item.connected ? ' · No signal' : ''}`)); list.append(row);
     }
     search.oninput = () => { for (const row of list.children) row.hidden = !row.dataset.search.includes(search.value.toLowerCase()); };
-    sources.append(list);
+    sources.append(list, groupForm());
     const views = el('section', { className: 'program-views' });
     views.append(band(2, 'PGM'), band(4, 'PVW'), renderPresets({ presets: state.presets, loadTarget, saving: savingFrom, editing: editingPresets,
       setLoadTarget: r => { loadTarget = r; render(); }, setSaving: v => { savingFrom = v; render(); },
@@ -148,6 +150,20 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
       setEditing: v => { editingPresets = v; render(); }, command, screenIds: ids }));
     workspace.append(sources, views, el('aside', { id: 'program-properties', className: 'program-properties' })); root.append(workspace);
     paintAll(); renderInspector(); setDisabled(root, busy);
+  }
+  // Grouped inputs (WO-025): two sources as one layer pair on the active screen.
+  function groupForm() {
+    const box = el('details', { className: 'group-form' }); box.append(el('summary', {}, 'Group two sources…'));
+    const options = state.sources.map(s => [`${s.type}:${s.id}`, s.name]), s = active();
+    const a = select(options, sourceKey || options[0]?.[0], 'Group source A'), b = select(options, options[1]?.[0], 'Group source B');
+    const orient = select([['H', 'Side by side'], ['V', 'Top / bottom']], 'H', 'Group layout'), scene = select([[4, 'PVW'], [2, 'PGM']], 4, 'Group target');
+    const create = button('Create group', () => {
+      if (a.value === b.value) { notice('Choose two different sources.', 'error'); return; }
+      const pick = v => { const [type, id] = v.split(':').map(Number); return { type, id }; };
+      command({ action: 'group-create', screenId: s.id, scene: Number(scene.value), orientation: orient.value, sources: [pick(a.value), pick(b.value)] }, 'Group created.');
+    }, 'button primary');
+    box.append(field(orient.value === 'H' ? 'Left (A)' : 'Top (A)', a), field('Right / bottom (B)', b), field('Layout', orient), field(`Target on ${s?.name || 'screen'}`, scene), create);
+    return box;
   }
   function renderInspector() {
     const node = $('program-properties'); if (!node) return; node.replaceChildren(el('h2', {}, 'Layer'));
@@ -173,8 +189,9 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     const keys = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[event.key];
     const l = layer(); if (!keys || !l || busy || !event.target.closest?.('.program-stage')) return;
     const scr = state.screens.find(s => s.id === l.screenId); if (l.scene === 2 && scr?.pgmLocked) return;
-    event.preventDefault(); const step = event.shiftKey ? 10 : 1;
-    command({ action: 'window', screenId: l.screenId, id: l.id, window: { ...l.window, x: l.window.x + keys[0] * step, y: l.window.y + keys[1] * step } }, 'Layer position saved.');
+    event.preventDefault(); const step = event.shiftKey ? 10 : 1, group = groupOf(state.layers, l);
+    const w = group ? unionWindow(group.a.window, group.b.window) : l.window, moved = { ...w, x: w.x + keys[0] * step, y: w.y + keys[1] * step };
+    command(group ? { action: 'group-window', screenId: l.screenId, id: l.id, window: moved } : { action: 'window', screenId: l.screenId, id: l.id, window: moved }, 'Layer position saved.');
   });
   render();
   return { open: () => state ? undefined : refresh(), refresh, hasChanges: () => stages.some(s => s.dragging()),

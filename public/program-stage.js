@@ -1,4 +1,5 @@
 import { el, text } from './ui.js';
+import { groupOf, unionWindow, splitWindow } from './group-geometry.js';
 
 // Program-layer stages (WO-016, WO-023): layers roam freely like PixelFlow (device X/Y ±500000) and
 // snap to screen edges/centre and other layers (hold Alt to place without snapping).
@@ -81,8 +82,18 @@ export function paintStage(stage, screen, layers, selectedId) {
     Object.assign(node.style, { left: pct(l.window.x + c.mx, c.width), top: pct(l.window.y + c.my, c.height),
       width: pct(l.window.width, c.width), height: pct(l.window.height, c.height), zIndex: index + 1, opacity: l.enabled ? '1' : '.5' });
     node.append(el('span', { className: 'window-title' }, l.name), text(l.sourceName || `Source ${l.sourceId}`));
-    if (l.id === selectedId) for (const corner of ['nw', 'ne', 'sw', 'se']) node.append(el('span', { className: `handle ${corner}`, 'data-handle': corner }));
+    const group = groupOf(layers, l);
+    if (group) node.classList.add('grouped');
+    if (l.id === selectedId && !group) for (const corner of ['nw', 'ne', 'sw', 'se']) node.append(el('span', { className: `handle ${corner}`, 'data-handle': corner }));
     stage.append(node);
+  }
+  // Grouped inputs (WO-025): one frame with handles around both members of the selected group.
+  const selected = layers.find(l => l.id === selectedId), group = selected && groupOf(layers, selected);
+  if (group) {
+    const u = unionWindow(group.a.window, group.b.window), frame = el('div', { className: 'group-frame', 'data-id': selected.id });
+    Object.assign(frame.style, { left: pct(u.x + c.mx, c.width), top: pct(u.y + c.my, c.height), width: pct(u.width, c.width), height: pct(u.height, c.height) });
+    for (const corner of ['nw', 'ne', 'sw', 'se']) frame.append(el('span', { className: `handle ${corner}`, 'data-handle': corner }));
+    stage.append(frame);
   }
 }
 
@@ -93,27 +104,37 @@ export function bindStage(stage, screen, ctx) {
   const local = (event, rect) => ({ x: (event.clientX - rect.left) * c.width / rect.width - c.mx, y: (event.clientY - rect.top) * c.height / rect.height - c.my });
   stage.onpointerdown = event => {
     if (ctx.busy() || event.button !== 0) return;
-    const target = event.target.closest('.program-layer'); if (!target) return;
+    const target = event.target.closest('.program-layer, .group-frame'); if (!target) return;
     const layer = ctx.layers().find(l => l.id === Number(target.dataset.id)); if (!layer) return;
     ctx.select(layer.id);
     if (ctx.locked?.()) return; // PGM lock (WO-022): select only, no move/resize.
-    drag = { layer, before: structuredClone(layer.window), x: event.clientX, y: event.clientY, handle: event.target.dataset.handle, rect: stage.getBoundingClientRect(),
-      ratio: layer.aspectLocked ? layer.window.width / layer.window.height : null };
+    const group = groupOf(ctx.layers(), layer);
+    const before = group ? unionWindow(group.a.window, group.b.window) : structuredClone(layer.window);
+    const locked = group ? group.a.aspectLocked || group.b.aspectLocked : layer.aspectLocked;
+    drag = { layer, group, before, x: event.clientX, y: event.clientY, handle: event.target.dataset.handle, rect: stage.getBoundingClientRect(),
+      ratio: locked ? before.width / before.height : null,
+      share: group && (group.orient === 'H' ? group.a.window.width / before.width : group.a.window.height / before.height),
+      originals: group && [structuredClone(group.a.window), structuredClone(group.b.window)] };
     stage.setPointerCapture(event.pointerId); event.preventDefault();
   };
   stage.onpointermove = event => {
     if (!drag) return;
     const sx = c.width / drag.rect.width, sy = c.height / drag.rect.height;
     let next = moveWindow(drag.before, (event.clientX - drag.x) * sx, (event.clientY - drag.y) * sy, drag.handle, drag.ratio);
-    if (!event.altKey) next = snapWindow(next, screen, ctx.layers().filter(l => l.id !== drag.layer.id).map(l => l.window), 10 * sx, drag.handle, drag.ratio);
-    drag.layer.window = next; ctx.repaint();
+    const others = ctx.layers().filter(l => l.id !== drag.layer.id && (!drag.group || ![drag.group.a.id, drag.group.b.id].includes(l.id))).map(l => l.window);
+    if (!event.altKey) next = snapWindow(next, screen, others, 10 * sx, drag.handle, drag.ratio);
+    if (drag.group) { [drag.group.a.window, drag.group.b.window] = splitWindow(next, drag.group.orient, drag.share); drag.next = next; }
+    else drag.layer.window = next;
+    ctx.repaint();
   };
   const end = event => {
     if (!drag) return;
-    const { layer, before } = drag, next = structuredClone(layer.window); drag = null;
+    const { layer, before, group, originals } = drag, next = group ? drag.next || before : structuredClone(layer.window); drag = null;
     if (stage.hasPointerCapture(event.pointerId)) stage.releasePointerCapture(event.pointerId);
-    layer.window = before;
-    if (event.type !== 'pointercancel' && JSON.stringify(before) !== JSON.stringify(next)) ctx.commit(layer, next);
+    if (group) { group.a.window = originals[0]; group.b.window = originals[1]; } else layer.window = before;
+    const changed = event.type !== 'pointercancel' && JSON.stringify(before) !== JSON.stringify(next);
+    if (changed && group) ctx.commitGroup(layer, next);
+    else if (changed) ctx.commit(layer, next);
     else ctx.repaint();
   };
   stage.onpointerup = end; stage.onpointercancel = end;
