@@ -3,7 +3,8 @@
 A small local Node.js app for configuring Pixelhue inputs in bulk and arranging P20/Q8 multiviewer windows. Portable distributions include Node.js. Running from source requires Node.js 22 or newer, with no npm dependencies or UI build step.
 
 ```sh
-cd mvr-app
+git clone https://github.com/mko1989/pixelhue-studio.git
+cd pixelhue-studio
 npm start
 ```
 
@@ -27,13 +28,17 @@ The app detects the model from the serial-verified discovery record, or authenti
 
 Arrow keys move the selected window by 1 pixel; Shift moves by 10. Ctrl/Cmd+Z undoes an edit, Ctrl/Cmd+Shift+Z redoes it. The Snap menu controls drag snapping; Keep aspect ratio applies to the selected window independently. Save layout downloads JSON with the current geometry and ratio locks, including pending edits. Load layout stages the file for the same device serial, MVR output, resolution, and window IDs; it does not apply it automatically. Refresh rereads the device and discards pending edits after confirmation.
 
-**Fix aspect ratios** reads the actual resolution of connected direct-input sources on the selected MVR output, fits their windows to those ratios, and locks each one for subsequent numeric/corner resizing. It uses signal timing, not the EDID setting. Disconnected inputs, invalid/missing signal timings, cropped/other source types, and PGM/PVW windows are left unchanged. The inspector shows connected input resolution.
+**Fix aspect ratios** reads actual connected-input timing and the dimensions of referenced PGM/PVW screens. It fits each window's video area to its source ratio, preserves its centre, and locks the content ratio for numeric and corner resizing. Screen IDs are resolved separately from input IDs, so Screen 2, Screen 3 and later screens work regardless of their window order.
 
-The action normally shrinks within each window's existing rectangle while retaining its centre. If the ratio cannot fit there at the 64×64 minimum, it tries a minimum-size placement in nearby free output space. Unfittable windows are reported and kept unchanged. It stages the correction as one undoable action; click Apply layout to send geometry and native `layers/aspect-ratio` locks (OriginalRatio=8, locked=1), then verify readback. New source-ratio locks require a connected direct input; resizing a connected input with stale ratio settings requires running the fix again.
+Enabled UMD strips occupy part of the total window height. The app reads the exact height from authenticated device configuration XML, including per-source-type values, and subtracts it when calculating the video area. The P20 checked on 2026-11-09 reports **24 output pixels** for input, PGM and PVW UMD strips. Disabled UMD adds zero height. The inspector shows the detected height and the canvas marks the strip. If configuration does not provide a height, enabled-UMD windows are skipped with an explanation rather than using an estimated value; reconnect to retry configuration discovery.
 
-Windows cannot overlap: pointer movement/resizing, numeric edits, alignment, keyboard movement, imported layouts and server writes all check this. Edge touching is allowed. The server orders geometry changes so shrinking/moving neighbours free space before another window uses it. A direct swap with no collision-free write order is rejected; move one window into free space and Apply first. Ratio locks are included in undo/redo and JSON layouts; applied locks are recovered from device readback on Refresh.
+The correction normally shrinks within the existing full window rectangle. If the ratio cannot fit at the 64×64 minimum, it tries a minimum-size placement in nearby free output space. Full rectangles, including UMD, must never overlap. Unfittable windows, disconnected inputs and missing/invalid screen resolutions remain unchanged. The fix stages one undoable action; click **Apply layout** to send it and verify readback.
 
-Existing source-ratio locks on disconnected inputs or PGM/PVW windows remain editable using their retained window ratio. Position-only moves do not require a current input signal or a new aspect-lock command. If a connected input changes ratio, run Fix aspect ratios before resizing to its new ratio, or turn off Keep aspect ratio. Save layout downloads JSON locally and does not write to the device or change any locks.
+UMD-compensated windows use native Custom=5 locks, with the app retaining the content ratio plus fixed label height during resizing. Windows without UMD use native Original=8 locks. The app reads back geometry and lock state after Apply. Source ratios are restored precisely when rounded content geometry matches the source within one pixel.
+
+Windows cannot overlap: pointer movement/resizing, numeric edits, alignment, keyboard movement, imports and server writes check the complete rectangles. Edge touching is allowed. Geometry writes are ordered to free space before neighbours use it. A direct swap with no collision-free write order requires an intermediate free position and Apply.
+
+Existing locks remain movable when a signal disappears or changes. Run Fix aspect ratios after changing source resolutions or toggling UMD. Ratio locks are included in undo/redo, Save/Load and Refresh. Saved layouts record UMD height and reject incompatible current UMD settings. Older layouts preserve their rectangle geometry while converting their locks to account for the current strip. Save only downloads JSON locally.
 
 The canvas is a geometry preview, not a video monitor. Create the initial MVR windows by selecting a layout in PixelFlow. The Multiviewer tab moves/resizes existing windows; it does not create windows or change sources, templates, PGM, or PVW layers. Saved layouts depend on stable window IDs; recreate them if PixelFlow regenerates the windows.
 
@@ -87,16 +92,16 @@ By default the web server listens only on `127.0.0.1`. `PORT=3211 npm start` cha
 
 The UI uses locally embedded [Rewir Light](https://github.com/warszawskie-kroje/rewir) throughout, including controls and numeric fields. Font files, attribution and the SIL Open Font License are included under `public/fonts`; no external font service or system font installation is needed.
 
-Prepared archives are in [dist](dist/README.md), with a bundled Node.js runtime and launchers:
+Download [v1.5.0](https://github.com/mko1989/pixelhue-studio/releases/tag/v1.5.0), with a bundled Node.js runtime and launchers:
 
-- Intel Mac: `Pixelhue-Studio-1.4.0-macos-intel.zip`
-- Apple Silicon Mac: `Pixelhue-Studio-1.4.0-macos-silicon.zip`
-- Windows x64: `Pixelhue-Studio-1.4.0-windows-x64.zip`
-- Ubuntu x64: `Pixelhue-Studio-1.4.0-ubuntu-x64.tar.gz`
+- [Intel Mac](https://github.com/mko1989/pixelhue-studio/releases/download/v1.5.0/Pixelhue-Studio-1.5.0-macos-intel.zip)
+- [Apple Silicon Mac](https://github.com/mko1989/pixelhue-studio/releases/download/v1.5.0/Pixelhue-Studio-1.5.0-macos-silicon.zip)
+- [Windows x64](https://github.com/mko1989/pixelhue-studio/releases/download/v1.5.0/Pixelhue-Studio-1.5.0-windows-x64.zip)
+- [Ubuntu x64](https://github.com/mko1989/pixelhue-studio/releases/download/v1.5.0/Pixelhue-Studio-1.5.0-ubuntu-x64.tar.gz)
 
 Extract the full archive, then launch `Start Pixelhue Studio.command` on Mac, `Start Pixelhue Studio.cmd` on Windows, or `Start Pixelhue Studio.sh` on Ubuntu. The launcher opens your browser and prints the URL; keep the terminal window open and use Ctrl+C to stop. No separate Node/npm installation is required. The default port is 3210, with automatic fallback through 3220 if occupied. `PORT` overrides this choice; `PIXELHUE_NO_BROWSER=1` disables automatic browser opening.
 
-These are portable folders, not signed installers or notarized macOS `.app` bundles. Runtime compatibility follows [Node 22's platform requirements](https://github.com/nodejs/node/blob/v22.23.4/BUILDING.md#platform-list). See each archive's `README.txt` and `build-info.json` for usage and runtime provenance. `dist/SHASUMS256.txt` and `manifest.json` describe archive checksums; `verification.json` records performed checks and native execution limits.
+These are portable folders, not signed installers or notarized macOS `.app` bundles. Runtime compatibility follows [Node 22's platform requirements](https://github.com/nodejs/node/blob/v22.23.4/BUILDING.md#platform-list). See each archive's `README.txt` and `build-info.json` for usage and runtime provenance. The release includes `SHASUMS256.txt` and `manifest.json` with archive checksums, plus `verification.json` recording performed checks and native execution limits. Local builds are written to `dist/`.
 
 To rebuild on macOS/Linux with Node 22+, `tar`, `zip`, and `unzip`:
 
@@ -113,6 +118,6 @@ The builder downloads pinned official Node 22.23.4 runtimes and checks their SHA
 npm test
 ```
 
-The Node test suite covers authentication, IP-only discovery in the presence of another device, serial/model verification, MVR membership, geometry limits, rejected and ignored writes, P10/P20/P80/Q8 input mapping and batch writes, P10/P80 MVR rejection, resource assessment, refreshed interface IDs, EDID payloads, stale sessions, origin checks, resize math, and layout import validation. Tests need permission to listen on local loopback sockets.
+The Node test suite covers authentication, IP-only discovery in the presence of another device, serial/model verification, MVR membership, geometry limits, rejected and ignored writes, P10/P20/P80/Q8 input mapping and batch writes, P10/P80 MVR rejection, resource assessment, refreshed interface IDs, EDID payloads, stale sessions, origin checks, resize math, layout import validation, PGM/PVW screen-source resolution, device XML UMD heights and UMD-aware resize/save/readback. Tests need permission to listen on local loopback sockets.
 
-See [WO-008](../work/work-orders/008_WO_ui-rewir.md) for the UI/font update, [WO-007](../work/work-orders/007_WO_mvr-repeat-apply.md) for the repeated Apply/source-lock fix and [the checklist](../work/checklist-mvr.md) for hardware QA.
+Version 1.5.0 passes 79 tests. Browser checks cover input and PGM/PVW screen correction, UMD-aware resizing, Undo/Redo, Save/Load and repeated Apply. P20 device configuration was read to confirm the 24-pixel UMD height; physical output verification after Apply remains necessary.

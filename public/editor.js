@@ -1,4 +1,4 @@
-import { hasOverlap, ratioSize } from './mvr-geometry.js';
+import { hasOverlap, ratioSize, matchesRatio } from './mvr-geometry.js';
 
 export const keys = ['x', 'y', 'width', 'height'];
 export const sameWindow = (a, b) => a && b && keys.every((key) => a[key] === b[key]);
@@ -11,7 +11,7 @@ export function fit(window, screen) {
   return { x: bound(window.x, 0, screen.width - width), y: bound(window.y, 0, screen.height - height), width, height };
 }
 
-export function dragWindow(original, dx, dy, screen, handle, snap = 1, lockAspect = false) {
+export function dragWindow(original, dx, dy, screen, handle, snap = 1, lockAspect = false, umdHeight = 0) {
   const snapTo = (n) => Math.round(n / snap) * snap;
   if (!handle) return fit({ ...original, x: snapTo(original.x + dx), y: snapTo(original.y + dy) }, screen);
   const leftHandle = handle.includes('w');
@@ -23,8 +23,8 @@ export function dragWindow(original, dx, dy, screen, handle, snap = 1, lockAspec
   let width = bound(snapTo(original.width + (leftHandle ? -dx : dx)), 64, limitW);
   let height = bound(snapTo(original.height + (topHandle ? -dy : dy)), 64, limitH);
   if (lockAspect) {
-    const ratio = typeof lockAspect === 'number' ? lockAspect : original.width / original.height;
-    const size = ratioSize(ratio, limitW, limitH, Math.max(64, Math.ceil(64 * ratio), width, height * ratio));
+    const ratio = typeof lockAspect === 'number' ? lockAspect : original.width / (original.height - (umdHeight ?? 0));
+    const size = ratioSize(ratio, limitW, limitH, Math.max(64, Math.ceil(Math.max(1, 64 - umdHeight) * ratio), width, (height - umdHeight) * ratio), umdHeight);
     if (!size) return { ...original };
     ({ width, height } = size);
   }
@@ -49,11 +49,16 @@ export function readLayout(document, state, screenId) {
       throw new Error('The layout contains an unknown window, duplicate ID, or invalid geometry.');
     }
     seen.add(item.id);
-    const lock = item.aspectLock;
-    if (lock != null && (typeof lock !== 'number' || !Number.isFinite(lock) || lock < 1 / 256 || lock > 256 || Math.abs(item.window.height - item.window.width / lock) > 1)) throw new Error('The layout contains an invalid aspect ratio lock.');
+    const layer = current.find((layer) => layer.id === item.id), offset = layer.umdHeight ?? 0;
+    if (Object.hasOwn(item, 'umdHeight') && item.umdHeight !== layer.umdHeight) throw new Error('The window UMD settings changed. Refresh and save a new layout.');
+    let lock = item.aspectLock, mode = item.aspectMode ?? 5;
+    // Old layouts stored the ratio of the whole rectangle. Preserve their geometry
+    // while converting the lock to a content ratio for the current UMD strip.
+    if (lock && !Object.hasOwn(item, 'umdHeight') && offset) { lock = item.window.width / (item.window.height - offset); mode = 5; }
+    if (lock != null && (typeof lock !== 'number' || !Number.isFinite(lock) || lock < 1 / 256 || lock > 256 || !matchesRatio(item.window, lock, offset))) throw new Error('The layout contains an invalid aspect ratio lock.');
     if (Object.hasOwn(item, 'aspectMode') && ![5, 8].includes(item.aspectMode)) throw new Error('The layout contains an invalid aspect mode.');
     return { id: item.id, window: Object.fromEntries(keys.map((key) => [key, item.window[key]])),
-      ...(Object.hasOwn(item, 'aspectLock') ? { aspectLock: lock ?? null, aspectMode: item.aspectMode ?? 5 } : {}) };
+      ...(Object.hasOwn(item, 'aspectLock') ? { aspectLock: lock ?? null, aspectMode: mode } : {}) };
   });
   if (hasOverlap(layout.map((item) => ({ ...item, screenId })))) throw new Error('The layout contains overlapping MVR windows.');
   return layout;

@@ -1,6 +1,6 @@
 {
   "name": "pixelhue-mvr-editor",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
   "type": "module",
   "description": "Local Pixelhue P10/P20/P80/Q8 input editor and P20/Q8 multiviewer editor",

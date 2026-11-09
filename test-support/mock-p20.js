@@ -1,4 +1,5 @@
 import http from 'node:http';
+import { umdXml } from './mvr-umd.js';
 
 export const createMockP20 = () => createMockDevice({ model: 'P20' });
 
@@ -45,7 +46,7 @@ export function createMockDevice({ model = 'P20' } = {}) {
     sdiCard.connectors.push({ index: firstOptical, type: 24, capacityMode: 2, workMode: 0 }, { index: firstOptical + 1, type: 24, capacityMode: 2, workMode: 0 });
   }
   const writes = [], requests = [];
-  const behavior = { assessmentState: 0, rejectPath: '', ignoreEdid: false, ignoreAspectLock: false, regenerateIds: false };
+  const behavior = { assessmentState: 0, rejectPath: '', ignoreEdid: false, ignoreAspectLock: false, regenerateIds: false, umdXml };
   const screens = [{ screenId: 8, screenIdObj: { type: 8 }, general: { name: 'Multiviewer' }, timing: { horizontal: { addTime: 1920 }, vertical: { addTime: 1080 } } }];
   const layers = [{ layerId: 10, layerIdObj: { attachScreenId: 8 }, general: { name: 'Camera 1' },
     source: { general: { sourceType: 2, sourceId: interfaces.find((input) => input.auxiliaryInfo.connectorInfo.interfaceType === 2 && input.auxiliaryInfo.connectorInfo.workMode === 0).interfaceId } },
@@ -57,6 +58,7 @@ export function createMockDevice({ model = 'P20' } = {}) {
     if (path === 'node/open-detail') return send({ sn: `${model}-MOCK`, startTime: '12345' });
     if (!request.headers.authorization) { response.writeHead(401).end(); return; }
     if (request.method === 'GET') {
+      if (path === 'node/config-file') { response.setHeader('Content-Type', 'application/xml'); response.end(behavior.umdXml); return; }
       if (path === 'node/detail') return send({ configInfo: { modeId: modelId } });
       if (path === 'screen/list-detail') return send({ list: screens });
       if (path === 'layers/list-detail') return send({ list: layers });

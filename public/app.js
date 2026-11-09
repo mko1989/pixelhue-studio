@@ -1,6 +1,6 @@
 import { keys, sameWindow, clone, fit, dragWindow, readLayout } from './editor.js';
 import { createInputsUI } from './inputs.js';
-import { canPlace, fixAspectRatios, ratioSize } from './mvr-geometry.js';
+import { canPlace, fixAspectRatios, ratioSize, sourceSignal, matchesRatio } from './mvr-geometry.js';
 
 const $ = (id) => document.getElementById(id);
 const color = () => '#aebdcb';
@@ -90,7 +90,7 @@ function edit(window) {
   const next = fit(window, screen());
   if (!canPlace(selected(), next, state.layers)) { notice('MVR windows cannot overlap. Choose a smaller size or a free position.', 'error'); render(); return; }
   const resized = next.width !== selected().window.width || next.height !== selected().window.height;
-  if (resized && selected().aspectLock && Math.abs(next.height - next.width / selected().aspectLock) > 1) { notice('This size cannot fit while keeping the locked aspect ratio.', 'error'); render(); return; }
+  if (resized && selected().aspectLock && !matchesRatio(next, selected().aspectLock, selected().umdHeight)) { notice('This size cannot fit while keeping the locked aspect ratio.', 'error'); render(); return; }
   remember(); selected().window = next; render();
 }
 
@@ -151,6 +151,11 @@ function renderStage() {
     const source = document.createElement('span'); source.className = 'window-source'; source.textContent = layer.source;
     const number = document.createElement('span'); number.className = 'window-number'; number.textContent = String(i + 1).padStart(2, '0');
     node.append(number, name, source);
+    if (layer.umdHeight > 0) {
+      const strip = document.createElement('span'); strip.className = 'window-umd';
+      strip.style.height = `${100 * layer.umdHeight / height}%`; strip.title = `UMD: ${layer.umdHeight} output pixels`;
+      node.append(strip);
+    }
     if (layer.id === selectedId) for (const direction of ['nw', 'ne', 'sw', 'se']) {
       const handle = document.createElement('span'); handle.className = `handle ${direction}`; handle.dataset.handle = direction; node.append(handle);
     }
@@ -183,8 +188,8 @@ function render() {
     $('width').max = screen().width - selected().window.x;
     $('height').max = screen().height - selected().window.y;
     $('aspect').checked = Boolean(selected().aspectLock);
-    const signal = state.signals?.find((signal) => signal.id === selected().sourceId && signal.connected);
-    $('aspect-info').textContent = selected().sourceType === 2 && signal ? `Input ${signal.width} × ${signal.height}${selected().aspectLock ? ' · locked' : ''}` : selected().aspectLock ? 'Window ratio locked' : '';
+    const signal = sourceSignal(selected(), state.signals || []);
+    $('aspect-info').textContent = [signal?.connected ? `${selected().sourceType === 2 ? 'Input' : 'Screen'} ${signal.width} × ${signal.height}` : '', selected().umdHeight === null ? 'UMD height unavailable' : selected().umdHeight ? `UMD ${selected().umdHeight} px` : '', selected().aspectLock ? 'Content ratio locked' : ''].filter(Boolean).join(' · ');
   }
   renderList(); renderStage();
 }
@@ -222,8 +227,9 @@ for (const key of keys) $(key).onchange = () => {
   let next = { ...selected().window, [key]: value };
   if (selected().aspectLock && (key === 'width' || key === 'height')) {
     const ratio = selected().aspectLock;
-    const desiredWidth = key === 'width' ? value : value * ratio;
-    const size = ratioSize(ratio, screen().width - next.x, screen().height - next.y, Math.max(64, Math.ceil(64 * ratio), desiredWidth));
+    const offset = selected().umdHeight;
+    const desiredWidth = key === 'width' ? value : (value - (offset ?? 0)) * ratio;
+    const size = ratioSize(ratio, screen().width - next.x, screen().height - next.y, Math.max(64, Math.ceil(Math.max(1, 64 - (offset ?? 0)) * ratio), desiredWidth), offset);
     if (!size) { notice('No room for this locked aspect ratio at the minimum window size.', 'error'); render(); return; }
     next = { ...next, ...size };
   }
@@ -233,24 +239,25 @@ $('center-x').onclick = () => { if (selected()) edit({ ...selected().window, x: 
 $('center-y').onclick = () => { if (selected()) edit({ ...selected().window, y: Math.round((screen().height - selected().window.height) / 2) }); };
 $('aspect').onchange = () => {
   if (!selected() || busy) return;
-  remember(); selected().aspectLock = $('aspect').checked ? selected().window.width / selected().window.height : null;
+  if ($('aspect').checked && selected().umdHeight === null) { notice('UMD height is unavailable. Reconnect to read device configuration before locking the content ratio.', 'error'); render(); return; }
+  remember(); selected().aspectLock = $('aspect').checked ? selected().window.width / (selected().window.height - (selected().umdHeight ?? 0)) : null;
   selected().aspectMode = 5; render();
 };
 $('fix-aspect').onclick = () => operation(async () => {
-  notice('Reading connected input resolutions…');
+  notice('Reading input and screen resolutions…');
   const fresh = await api('state');
   const output = fresh.screens.find((item) => item.id === screenId);
   if (fresh.session !== state.session || output?.width !== screen().width || output?.height !== screen().height ||
     fresh.layers.filter((layer) => layer.screenId === screenId).length !== windows().length || windows().some((layer) => {
       const actual = fresh.layers.find((item) => item.id === layer.id), original = base.layers.find((item) => item.id === layer.id);
-      return !actual || !sameWindow(actual.window, original.window) || actual.sourceId !== layer.sourceId || actual.sourceType !== layer.sourceType;
+      return !actual || !sameWindow(actual.window, original.window) || actual.sourceId !== layer.sourceId || actual.sourceType !== layer.sourceType || actual.umdHeight !== layer.umdHeight;
     })) throw new Error('The device layout or connection changed. Refresh before fixing aspect ratios.');
   const result = fixAspectRatios(windows(), fresh.signals || [], screen());
   if (result.layers.some((layer) => !sameEdit(layer, state.layers.find((item) => item.id === layer.id)))) { remember(); restore(result.layers); }
   state.signals = fresh.signals;
   const tooSmall = result.skipped.filter((item) => item.reason.includes('64 px')).length;
-  notice(result.fixed.length ? `Fixed and locked ${result.fixed.length} connected-input windows; ${result.skipped.length} other windows unchanged.${tooSmall ? ` ${tooSmall} cannot fit the 64 px minimum.` : ''} Apply to send these changes.` :
-    tooSmall ? 'Connected input ratios cannot fit inside their current windows at the 64 px minimum. Make room first.' : 'No connected direct-input windows with valid actual resolution were found.');
+  notice(result.fixed.length ? `Fixed and locked ${result.fixed.length} input/screen windows; ${result.skipped.length} other windows unchanged.${tooSmall ? ` ${tooSmall} cannot fit the 64 px minimum.` : ''} Apply to send these changes.${result.skipped.some((item) => item.reason.includes('UMD')) ? ' Some windows were skipped because the device UMD height is unavailable.' : ''}` :
+    tooSmall ? 'Source ratios cannot fit at the 64 px minimum. Make room first.' : 'No connected inputs or screen sources with usable resolution and UMD height were found.');
 });
 
 $('stage').onpointerdown = (event) => {
@@ -265,7 +272,7 @@ $('stage').onpointerdown = (event) => {
 $('stage').onpointermove = (event) => {
   if (!drag || busy) return;
   const next = dragWindow(drag.window, (event.clientX - drag.x) * screen().width / drag.rect.width,
-    (event.clientY - drag.y) * screen().height / drag.rect.height, screen(), drag.handle, Number($('snap').value), selected().aspectLock || false);
+    (event.clientY - drag.y) * screen().height / drag.rect.height, screen(), drag.handle, Number($('snap').value), selected().aspectLock || false, selected().umdHeight);
   drag.blocked = !canPlace(selected(), next, state.layers);
   if (!drag.blocked) selected().window = next;
   render();
@@ -310,7 +317,7 @@ $('apply').onclick = () => operation(async () => {
 });
 $('save').onclick = () => {
   const document = { format: 'pixelhue-mvr-layout', version: 1, serial: state.device.serial, screenId,
-    width: screen().width, height: screen().height, windows: windows().map(({ id, window, aspectLock, aspectMode }) => ({ id, window, aspectLock, aspectMode })) };
+    width: screen().width, height: screen().height, windows: windows().map(({ id, window, aspectLock, aspectMode, umdHeight }) => ({ id, window, aspectLock, aspectMode, umdHeight })) };
   const url = URL.createObjectURL(new Blob([JSON.stringify(document, null, 2)], { type: 'application/json' }));
   const link = window.document.createElement('a'); link.href = url; link.download = `mvr-layout-${screenId}.json`; link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);

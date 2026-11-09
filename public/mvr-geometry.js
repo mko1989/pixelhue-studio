@@ -10,12 +10,17 @@ export function canPlace(layer, window, layers) {
   return !layers.some((other) => other.id !== layer.id && other.screenId === layer.screenId && overlaps(window, other.window));
 }
 
-export function ratioSize(ratio, maxWidth, maxHeight, desiredWidth = maxWidth) {
-  if (!Number.isFinite(ratio) || ratio <= 0) return null;
+export const sourceSignal = (layer, signals) => signals.find((signal) => signal.id === layer.sourceId &&
+  (signal.sourceType ?? 2) === layer.sourceType);
+export const matchesRatio = (window, ratio, umdHeight = 0) => umdHeight !== null &&
+  window.height > umdHeight && Math.abs(window.height - umdHeight - window.width / ratio) <= 1;
+
+export function ratioSize(ratio, maxWidth, maxHeight, desiredWidth = maxWidth, umdHeight = 0) {
+  if (!Number.isFinite(ratio) || ratio <= 0 || umdHeight === null || maxHeight <= umdHeight) return null;
   let width = Math.min(Math.round(desiredWidth), Math.floor(maxWidth));
-  let height = Math.round(width / ratio);
-  if (height > maxHeight) { height = Math.floor(maxHeight); width = Math.round(height * ratio); }
-  if (width < 64 || height < 64 || width > maxWidth || height > maxHeight) return null;
+  let height = Math.round(width / ratio) + umdHeight;
+  if (height > maxHeight) { height = Math.floor(maxHeight); width = Math.round((height - umdHeight) * ratio); }
+  if (width < 64 || height < 64 || width > maxWidth || height > maxHeight || height <= umdHeight) return null;
   return { width, height };
 }
 
@@ -47,22 +52,25 @@ export function fixAspectRatios(layers, signals, screen) {
   if (hasOverlap(layers)) throw new Error('Resolve the existing window overlaps before fixing aspect ratios.');
   const result = structuredClone(layers), fixed = [], skipped = [], needsSpace = [];
   for (const layer of result) {
-    const signal = signals.find((signal) => signal.id === layer.sourceId);
-    if (layer.sourceType !== 2 || !signal?.connected || !signal.width || !signal.height) {
-      skipped.push({ id: layer.id, reason: 'No connected direct-input signal' }); continue;
+    const signal = sourceSignal(layer, signals);
+    if (!signal?.connected || !signal.width || !signal.height) {
+      skipped.push({ id: layer.id, reason: 'No connected input or valid screen resolution' }); continue;
     }
-    const ratio = signal.width / signal.height, size = ratioSize(ratio, layer.window.width, layer.window.height);
+    if (layer.umdHeight === null) { skipped.push({ id: layer.id, reason: 'UMD height unavailable from device configuration' }); continue; }
+    const offset = layer.umdHeight ?? 0;
+    const ratio = signal.width / signal.height, size = ratioSize(ratio, layer.window.width, layer.window.height, layer.window.width, offset);
     if (!size) { needsSpace.push({ layer, ratio }); continue; }
     layer.window = { x: layer.window.x + Math.floor((layer.window.width - size.width) / 2),
       y: layer.window.y + Math.floor((layer.window.height - size.height) / 2), ...size };
-    layer.aspectLock = ratio; layer.aspectMode = 8; fixed.push(layer.id);
+    layer.aspectLock = ratio; layer.aspectMode = offset ? 5 : 8; fixed.push(layer.id);
   }
   // First shrink ordinary fits, then use any freed space for minimum-size fits.
   for (const { layer, ratio } of needsSpace) {
-    const size = screen && ratioSize(ratio, screen.width, screen.height, Math.max(64, Math.ceil(64 * ratio)));
+    const offset = layer.umdHeight ?? 0;
+    const size = screen && ratioSize(ratio, screen.width, screen.height, Math.max(64, Math.ceil(Math.max(1, 64 - offset) * ratio)), offset);
     const window = size && nearbySpace(layer, size, result, screen);
     if (!window) { skipped.push({ id: layer.id, reason: 'No free space for this ratio at the 64 px minimum' }); continue; }
-    layer.window = window; layer.aspectLock = ratio; layer.aspectMode = 8; fixed.push(layer.id);
+    layer.window = window; layer.aspectLock = ratio; layer.aspectMode = offset ? 5 : 8; fixed.push(layer.id);
   }
   if (hasOverlap(result)) throw new Error('A non-overlapping aspect correction could not be found.');
   return { layers: result, fixed, skipped };

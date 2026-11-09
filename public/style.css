@@ -82,6 +82,7 @@ input:hover, select:hover { border-color: #999; }
 .window-title { max-width: 90%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: clamp(11px, 1.1vw, 16px); }
 .window-source { margin-top: 4px; max-width: 90%; overflow: hidden; white-space: nowrap; font-size: 13px; color: #bfc8d1; }
 .window-number { position: absolute; top: 4px; left: 6px; color: #c1c7ce; font-size: 12px; }
+.window-umd { position: absolute; bottom: 0; left: 0; right: 0; background: #101010; border-top: 1px solid #777; pointer-events: none; }
 .handle { position: absolute; width: 8px; height: 8px; border: 1px solid #151515; background: #f0f0f0; z-index: 3; }
 .handle.nw { left: -5px; top: -5px; cursor: nwse-resize; }
 .handle.ne { right: -5px; top: -5px; cursor: nesw-resize; }

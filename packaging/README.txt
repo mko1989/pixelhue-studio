@@ -37,18 +37,17 @@ Fill only stages changes. Apply inputs sends them and checks device readback.
 SDI has no EDID; its routing is preserved. Capacity/port changes can interrupt
 input signals. Device-managed capacities remain unchanged.
 
-MVR: Fix aspect ratios reads actual connected input resolutions on the current
-output, corrects their window sizes without overlaps, and locks each input ratio.
-Disconnected inputs and PGM/PVW windows stay unchanged. Review, then click Apply
-layout to write geometry/native aspect locks and verify device readback. Locks
-survive resize, undo/redo, layout save/load and refresh after Apply.
-Manual geometry edits/imports also reject overlaps. Touching edges are allowed.
-If a ratio cannot fit at the 64 px minimum, free space is tried before skipping
-that window. Impossible direct position swaps need an intermediate free position.
-Established source-ratio locks stay editable when an input disconnects and on
-PGM/PVW windows. If a connected input changes ratio, run Fix aspect ratios before
-resizing, or turn off Keep aspect ratio. Save layout only downloads a local JSON
-file; it does not write device settings or change locks.
+MVR: Fix aspect ratios fits connected inputs and PGM/PVW screen sources to their
+actual source dimensions. Enabled UMD height comes from the device configuration
+XML (the tested P20 reports 24 output pixels). Disabled UMD adds no height.
+The video ratio uses window height minus UMD height. The inspector shows the
+height and the canvas marks the strip. Unknown heights are reported and skipped.
+Apply layout writes geometry and locks, then verifies device readback.
+Numeric/corner resizing retains the video ratio and fixed strip height.
+Full rectangles, including UMD, cannot overlap. Touching edges are allowed.
+Undo/redo and Save/Load retain locks. Save downloads a local JSON file and does
+not write device settings. Old layouts retain geometry with upgraded ratio locks.
+After changing sources or UMD, Refresh and run Fix aspect ratios again.
 
 The interface uses embedded Rewir Light. No internet connection or font
 installation is needed. Attribution and SIL Open Font License text are included
