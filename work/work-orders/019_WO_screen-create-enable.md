@@ -36,6 +36,6 @@ Authorised writes: Screen 3 and OUTPUT 2-3 (interface 7) only. Evidence came fro
 - `npm test` 109/109; `check:size` and `build:client` pass. Mock Chrome full-client check passes.
 - Final device state: Screen 3 (id 5) enabled, OUTPUT 2-3 at origin 3000,0, 3072×1024, with its Input 8 layer in PGM. Screen 4 (id 9) stays a hidden disabled placeholder. Nothing else was written.
 
-## Open
-- Preset loss: when and how (see 6). If the device purges presets on screen deletion, Studio's Delete screen must warn about it.
-- Owner remark "the two auxes are ran in copy mode so it also read that wrong": live data shows AUX -1/-2 as primaries (wm 0) feeding AUX Screen 1/2, and AUX -3/-4 as copies (wm 1, copyInfo 34/35). The misread is not yet identified; asked the owner.
+## Resolved follow-ups (owner, 2026-11-09)
+- **Preset loss:** the owner deleted the four presets. Screen deletion did not purge them, so Delete screen needs no preset warning.
+- **AUX remark:** the owner saw four AUX outputs in the Screens tab earlier and only two now. The current data is correct: AUX -3/-4 are copies (wm 1, copyInfo 34/35), and `readScreens` offers only primaries (`workMode === 0`), so AUX -1/-2 remain mappable. No defect.
