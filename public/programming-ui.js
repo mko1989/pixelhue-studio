@@ -19,7 +19,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     state = next; session = next.session;
     const ids = next.screens.map(s => s.id);
     shown = (shown || []).filter(id => ids.includes(id));
-    if (!shown.length) shown = next.screens.filter(s => s.outputs.length).map(s => s.id);
+    if (!shown.length) shown = next.screens.filter(s => s.enabled && s.outputs.length).map(s => s.id);
     if (!shown.length) shown = ids.slice(0, 1);
     if (!next.layers.some(l => l.id === selectedId)) selectedId = undefined;
     sourceKey ||= next.sources.find(s => s.type === 2) ? `2:${next.sources.find(s => s.type === 2).id}` : undefined;
@@ -42,7 +42,8 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
       const before = new Set(state.layers.map(l => l.id));
       const next = await api('programming', { session, ...request }, 'PUT');
       if (request.action === 'create') selectedId = next.layers.find(l => !before.has(l.id))?.id ?? selectedId;
-      adopt(next); invalidate('programming'); notice(success, 'success');
+      adopt(next); invalidate('programming');
+      notice(next.skipped?.length ? `${success} Skipped disabled ${next.skipped.join(', ')}.` : success, 'success');
       if (['take', 'cut'].includes(request.action)) scheduleRefresh(request.action === 'take' ? (request.time || 500) + 150 : 150);
       if (request.action === 'preset-load') scheduleRefresh(600);
     });
@@ -92,8 +93,10 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
         shown = on ? shown.filter(id => id !== s.id) : [...shown, s.id];
         if (!shown.length) shown = [s.id];
         shown.sort((a, b) => state.screens.findIndex(x => x.id === a) - state.screens.findIndex(x => x.id === b)); remember(); render();
-      }, `button chip${on ? ' active' : ''}`);
-      chip.setAttribute('aria-pressed', String(on)); chips.append(chip);
+      }, `button chip${on ? ' active' : ''}${s.enabled ? '' : ' disabled-screen'}`);
+      chip.setAttribute('aria-pressed', String(on));
+      if (!s.enabled) { chip.title = 'Disabled on the device: shown for editing, but presets and Take/Cut skip it (PixelFlow hides it).'; chip.append(el('small', {}, ' off')); }
+      chips.append(chip);
     }
     const duration = input(durationMs, 'Transition duration ms', 'number'); duration.min = 0; duration.max = 10000;
     duration.onchange = () => { durationMs = Number(duration.value); };

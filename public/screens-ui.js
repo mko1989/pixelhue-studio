@@ -74,11 +74,12 @@ export function createScreensUI({ api, notice, operation, getSession, invalidate
     createBar.append(field('Name prefix', prefix), field('Type', type), button('Create screen', () => command({ action: 'create', name: prefix.value, type: Number(type.value) })));
     root.append(createBar);
     const layout = el('div', { className: 'screen-editor' }), list = el('aside', { className: 'screen-list' });
-    for (const s of state.screens) list.append(button(`${s.name} · ${s.width} × ${s.height}`, () => { selectedId = s.id; render(); }, `button screen-choice${s.id === selectedId ? ' selected' : ''}`));
+    for (const s of state.screens) list.append(button(`${s.name} · ${s.width} × ${s.height}${s.enabled ? '' : ' · off'}`, () => { selectedId = s.id; render(); }, `button screen-choice${s.id === selectedId ? ' selected' : ''}`));
     layout.append(list); const content = el('div', { className: 'screen-editor-main' }); layout.append(content); root.append(layout);
     const screen = selected(); if (!screen) { content.append(text('Create a screen to start mapping outputs.')); setDisabled(root, busy); return; }
     const draft = drafts.get(screen.id);
     const heading = el('div', { className: 'tool-heading' }); heading.append(el('h2', {}, screen.name), text(screen.type === 4 ? 'AUX' : screen.type === 32 ? 'LED' : 'Main'));
+    if (!screen.enabled) heading.append(el('span', { className: 'screen-off', title: 'The device reports enable 0 for this screen. PixelFlow hides such screens; presets and Take/Cut skip it.' }, 'Disabled on device'));
     heading.append(button(screen.freeze ? 'Unfreeze' : 'Freeze', () => command({ action: 'freeze', id: screen.id, enable: screen.freeze ? 0 : 1 }, true)),
       button(screen.ftb ? 'Clear blackout' : 'Blackout', () => command({ action: 'ftb', id: screen.id, enable: screen.ftb ? 0 : 1 }, true)),
       button('Delete screen', () => { if (window.confirm(`Delete ${screen.name} and its layers?`)) command({ action: 'delete', id: screen.id }); }, 'button danger'));

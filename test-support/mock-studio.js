@@ -20,7 +20,10 @@ export function createMockStudio({ model = 'P20' } = {}) {
   screens.push({ screenId: 1, guid: 'main-screen', screenIdObj: { type: 2 }, general: { name: 'Main screen' },
     mosaic: { type: 2, window: { x: -100, y: 50, width: 1920, height: 1080 }, outputs: [] }, enable: 1, freeze: 0, ftb: { enable: 0 }, keyPosition: [1] },
   { screenId: 2, guid: 'aux-screen', screenIdObj: { type: 4 }, general: { name: 'AUX screen' },
-    mosaic: { type: 2, window: { x: 0, y: 0, width: 1280, height: 720 }, outputs: [] }, enable: 1, freeze: 0, ftb: { enable: 0 }, keyPosition: [2] });
+    mosaic: { type: 2, window: { x: 0, y: 0, width: 1280, height: 720 }, outputs: [] }, enable: 1, freeze: 0, ftb: { enable: 0 }, keyPosition: [2] },
+  // P20 placeholder Main screen reported with enable 0 (live Screen 2/3/4, WO-018).
+  { screenId: 5, guid: 'spare-screen', screenIdObj: { type: 2 }, general: { name: 'Spare screen' },
+    mosaic: { type: 0, window: { x: 0, y: 0, width: 1920, height: 1080 }, outputs: [] }, enable: 0, freeze: 0, ftb: { enable: 0 }, keyPosition: [3] });
   const source = layers[0].source.general;
   for (const [id, scene, x] of [[20, 2, -80], [21, 4, -60]]) layers.push({ layerId: id,
     layerIdObj: { attachScreenId: 1, attachScreenType: 0, sceneType: scene, screenGuid: 'main-screen', type: 2 },
@@ -64,7 +67,12 @@ export function createMockStudio({ model = 'P20' } = {}) {
     let raw = ''; for await (const chunk of request) raw += chunk;
     const body = JSON.parse(raw); writes.push({ path, body, method: request.method });
     if (behavior.ignoreSetup && path.startsWith('node/')) return send({});
-    if (path === 'preset/create') presets.push({ ...body, guid: `preset-${body.serial}` });
+    if (path === 'preset/create') {
+      // Device rule seen on P20 V2.0.0 (WO-018): presets may only name enabled screens.
+      const off = body.screens.map(b => screens.find(x => x.guid === b.guid)).find(x => !x || x.enable === 0);
+      if (off) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: `manage param invalid: check screen faild: screen ${off?.screenId} is not enabled` })); return; }
+      presets.push({ ...body, guid: `preset-${body.serial}` });
+    }
     if (path === 'preset/update-name') for (const change of body) presets.find(p => p.guid === change.guid).name = change.name;
     if (path === 'preset/delete') for (const guid of body) presets.splice(presets.findIndex(p => p.guid === guid), 1);
     if (path === 'node/ethernet') ethernet.infos[0] = { ...ethernet.infos[0], ...body.ethernet.infos[0] };

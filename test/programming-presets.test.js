@@ -72,3 +72,20 @@ test('stage geometry: free move/resize, snapping to edges and neighbours, centre
   assert.deepEqual(dropWindow({ width: 3840, height: 2160 }, screen, { x: 960, y: 540 }), { x: 0, y: 0, width: 1920, height: 1080 });
   assert.deepEqual(dropWindow({}, screen, { x: 100, y: 100 }), { x: -380, y: -170, width: 960, height: 540 });
 });
+
+test('disabled screens (enable 0) are skipped by preset save and Take/Cut, never sent to the device (WO-018)', async t => {
+  const { client, mock } = await fixture(t);
+  const state = await readProgramming(client);
+  assert.equal(state.screens.find(s => s.id === 5).enabled, false);
+  const saved = await applyProgramming(client, { action: 'preset-save', name: 'Mixed', scene: 4, screenIds: [1, 5] });
+  assert.deepEqual(saved.skipped, ['Spare screen']);
+  assert.deepEqual(mock.writes.find(w => w.path === 'preset/create').body.screens.map(s => s.guid), ['main-screen']);
+  const writes = mock.writes.length;
+  await assert.rejects(applyProgramming(client, { action: 'preset-save', name: 'Spare only', scene: 4, screenIds: [5] }), /Spare screen is disabled on the device/);
+  await assert.rejects(applyProgramming(client, { action: 'take', screenIds: [5] }), /disabled on the device/);
+  assert.equal(mock.writes.length, writes);
+  await applyProgramming(client, { action: 'cut', screenIds: [1, 5] });
+  assert.deepEqual(mock.writes.at(-1).body.map(b => b.screenId), [1]);
+  // The mock enforces the device rule itself, so a regression that sends a disabled screen fails here.
+  await assert.rejects(client.call('preset/create', { serial: 9, name: 'raw', screens: [{ guid: 'spare-screen', layers: [] }] }, { method: 'POST' }), /code 8210/);
+});
