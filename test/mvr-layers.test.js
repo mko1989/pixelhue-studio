@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { once } from 'node:events';
 import { PixelhueClient } from '../lib/pixelhue.js';
-import { applyMvrLayer } from '../lib/mvr-layers.js';
+import { applyMvrLayer, mvrSources } from '../lib/mvr-layers.js';
 import { placeWindow } from '../public/mvr-sources.js';
 import { createMockStudio } from '../test-support/mock-studio.js';
 
@@ -16,7 +16,8 @@ async function fixture(t) {
 test('MVR sources list enabled screen PGM/PVW and inputs, marking ones already in the MVR (WO-020)', async t => {
   const { state } = await fixture(t);
   const names = state.sources.map(s => s.name);
-  assert.ok(names.includes('Main screen PGM') && names.includes('Main screen PVW') && names.includes('AUX screen PGM'));
+  assert.ok(names.includes('Main screen PGM') && names.includes('Main screen PVW'));
+  assert.ok(!names.some(n => n.startsWith('AUX screen')), 'P20 cannot show AUX screens in the MVR (WO-021)');
   assert.ok(!names.some(n => n.startsWith('Spare screen')), 'disabled placeholder screens are not sources');
   const used = state.sources.filter(s => s.usedBy); assert.deepEqual(used.map(s => s.usedBy), [10]);
 });
@@ -38,12 +39,20 @@ test('add a screen PVW window, change a source, delete; overlap/out-of-bounds/du
   await assert.rejects(applyMvrLayer(client, { action: 'create', screenId: 8, source: { type: 4, id: 1 }, window: { ...window, y: 0 } }), /already in the MVR/);
   await assert.rejects(applyMvrLayer(client, { action: 'source', screenId: 8, layerId: 10, source: { type: 4, id: 1 } }), /already in the MVR/);
   await assert.rejects(applyMvrLayer(client, { action: 'create', screenId: 8, source: { type: 4, id: 5 }, window: { ...window, y: 0 } }), /Choose a current/);
+  await assert.rejects(applyMvrLayer(client, { action: 'create', screenId: 8, source: { type: 4, id: 2 }, window: { ...window, y: 0 } }), /Choose a current/);
   assert.equal(mock.writes.length, writes);
   next = await applyMvrLayer(client, { action: 'source', screenId: 8, layerId: added.id, source: { type: 3, id: 1 } });
   assert.deepEqual(mock.writes.at(-1).body, [{ layerId: added.id, source: { general: { sourceId: 1, sourceType: 3 } } }]);
   next = await applyMvrLayer(client, { action: 'delete', screenId: 8, layerId: added.id });
   assert.ok(!next.layers.some(l => l.id === added.id)); assert.equal(next.sources.find(s => s.type === 3 && s.id === 1).usedBy, null);
   assert.equal(state.layers.length, next.layers.length);
+});
+
+test('AUX screens stay MVR sources on models without the P10/P20 restriction', () => {
+  const screens = [{ screenId: 3, screenIdObj: { type: 4 }, general: { name: 'AUX' }, enable: 1, mosaic: { window: { width: 1920, height: 1080 } } }];
+  assert.deepEqual(mvrSources(screens, [], [], 'P20').length, 0);
+  assert.deepEqual(mvrSources(screens, [], [], 'P10').length, 0);
+  assert.deepEqual(mvrSources(screens, [], [], 'Q8').map(s => s.name), ['AUX PGM', 'AUX PVW']);
 });
 
 test('placeWindow keeps the drop point when free, else finds the nearest free spot, else shrinks', () => {
