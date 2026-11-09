@@ -87,16 +87,24 @@ export function createMockStudio({ model = 'P20' } = {}) {
       const field = { 'color-depth': 'colorDepth', hdcp: 'hdcp', 'test-pattern': 'testPattern' }[key]; row[field] = { ...row[field], ...change[field] };
     }
     if (path === 'screen/create-empty-screen') {
-      const id = Math.max(...screens.map(s => s.screenId)) + 1;
-      screens.push({ screenId: id, guid: `screen-${id}`, screenIdObj: { type: body.type }, general: { name: body.namePrefix + id },
-        mosaic: { window: { x: 0, y: 0, width: 1920, height: 1080 }, outputs: [] }, keyPosition: body.keyPosition, enable: 0 });
+      // P20 rule (WO-019): only the full ucenter body (snList/guid/name) yields an enabled screen.
+      const id = Math.max(...screens.map(s => s.screenId)) + 1, full = Array.isArray(body.snList) && body.snList.length && body.guid && body.name;
+      screens.push({ screenId: id, guid: body.guid || `screen-${id}`, screenIdObj: { type: body.type }, general: { name: body.name || body.namePrefix + id },
+        mosaic: { window: { x: 0, y: 0, width: 0, height: 0 }, outputs: [] }, keyPosition: body.keyPosition, enable: full ? 1 : 0 });
+    }
+    if (path === 'screen/crop-mosaic' && body.some(c => c.mosaic.outputs.length && c.mosaic.interfaceId !== c.mosaic.outputs[0].interfaceId)) {
+      response.setHeader('Content-Type', 'application/json');
+      response.end(JSON.stringify({ code: 8212, message: 'manage mio error: creatCropMosaicsNewScreen get ref interfaceId[0] connector info err' })); return;
     }
     if (path === 'screen/crop-mosaic') for (const change of body) screens.find(s => s.screenId === change.screenId).mosaic = change.mosaic;
     if (['screen/freeze', 'screen/ftb'].includes(path)) for (const change of body) {
       const key = path.split('/')[1]; screens.find(s => s.screenId === change.screenId)[key] = change[key];
     }
     if (path === 'screen') for (const change of body) {
-      screens.splice(screens.findIndex(s => s.screenId === change.screenId), 1);
+      // P20 keeps deleted Main screens as disabled placeholders (WO-019).
+      const gone = screens.find(s => s.screenId === change.screenId);
+      if (gone.screenIdObj.type === 2) Object.assign(gone, { enable: 0, mosaic: { type: 0, window: { x: 0, y: 0, width: 0, height: 0 }, outputs: [] } });
+      else screens.splice(screens.indexOf(gone), 1);
       for (let i = layers.length - 1; i >= 0; i--) if (layers[i].layerIdObj.attachScreenId === change.screenId) layers.splice(i, 1);
     }
     if (path === 'layers/create') {

@@ -69,9 +69,10 @@ export function createScreensUI({ api, notice, operation, getSession, invalidate
   function render() {
     root.replaceChildren(); if (!state) { root.append(text('Connect a device to configure screens.')); return; }
     root.append(panelHeader('Screens', refresh));
-    const createBar = el('div', { className: 'studio-bulk' }), prefix = input('Screen', 'New screen name prefix');
+    let next = 1; while (state.screens.some(s => s.name === `Screen ${next}`)) next++;
+    const createBar = el('div', { className: 'studio-bulk' }), prefix = input(`Screen ${next}`, 'New screen name');
     const type = select([[2, 'Main screen'], [4, 'AUX screen']], 2, 'New screen type');
-    createBar.append(field('Name prefix', prefix), field('Type', type), button('Create screen', () => command({ action: 'create', name: prefix.value, type: Number(type.value) })));
+    createBar.append(field('Name', prefix), field('Type', type), button('Create screen', () => command({ action: 'create', name: prefix.value, type: Number(type.value) })));
     root.append(createBar);
     const layout = el('div', { className: 'screen-editor' }), list = el('aside', { className: 'screen-list' });
     for (const s of state.screens) list.append(button(`${s.name} · ${s.width} × ${s.height}${s.enabled ? '' : ' · off'}`, () => { selectedId = s.id; render(); }, `button screen-choice${s.id === selectedId ? ' selected' : ''}`));

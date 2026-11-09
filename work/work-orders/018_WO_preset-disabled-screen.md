@@ -1,6 +1,6 @@
 # WO-018 — Preset save rejected: "screen 2 is not enabled" (code 8210)
 
-**Status: IN PROGRESS (save/Take fix DONE 2026-11-09, 108 offline tests; how the device enables a screen is still OPEN, see below)**
+**Status: DONE (2026-11-09; save/Take skip disabled screens). The enable mechanism was found in WO-019 (successor): create-empty-screen needs the ucenter body; delete leaves an enable-0 placeholder.**
 
 Owner (2026-11-09) on the WO-016 preset bank: `Device rejected /unico/v1/preset/create: manage param invalid: check screen faild: screen 2 is not enabled (code 8210).` "how did tests not pick that up? i did configure the screen and applied so it should be configured."
 

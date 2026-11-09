@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { once } from 'node:events';
 import { PixelhueClient } from '../lib/pixelhue.js';
 import { readProgramming, applyProgramming } from '../lib/studio-programming.js';
+import { applyScreens } from '../lib/studio-screens.js';
 import { moveWindow, snapWindow, dropWindow } from '../public/program-stage.js';
 import { createMockStudio } from '../test-support/mock-studio.js';
 
@@ -73,19 +74,34 @@ test('stage geometry: free move/resize, snapping to edges and neighbours, centre
   assert.deepEqual(dropWindow({}, screen, { x: 100, y: 100 }), { x: -380, y: -170, width: 960, height: 540 });
 });
 
-test('disabled screens (enable 0) are skipped by preset save and Take/Cut, never sent to the device (WO-018)', async t => {
+test('disabled placeholder Main screens are hidden like PixelFlow and never reach the device (WO-018/019)', async t => {
   const { client, mock } = await fixture(t);
   const state = await readProgramming(client);
-  assert.equal(state.screens.find(s => s.id === 5).enabled, false);
-  const saved = await applyProgramming(client, { action: 'preset-save', name: 'Mixed', scene: 4, screenIds: [1, 5] });
-  assert.deepEqual(saved.skipped, ['Spare screen']);
-  assert.deepEqual(mock.writes.find(w => w.path === 'preset/create').body.screens.map(s => s.guid), ['main-screen']);
+  assert.ok(!state.screens.some(s => s.id === 5), 'enable-0 Main screen hidden');
   const writes = mock.writes.length;
-  await assert.rejects(applyProgramming(client, { action: 'preset-save', name: 'Spare only', scene: 4, screenIds: [5] }), /Spare screen is disabled on the device/);
-  await assert.rejects(applyProgramming(client, { action: 'take', screenIds: [5] }), /disabled on the device/);
+  await assert.rejects(applyProgramming(client, { action: 'preset-save', name: 'Spare', scene: 4, screenIds: [1, 5] }), /Choose the screens/);
+  await assert.rejects(applyProgramming(client, { action: 'take', screenIds: [5] }), /current screens/);
   assert.equal(mock.writes.length, writes);
-  await applyProgramming(client, { action: 'cut', screenIds: [1, 5] });
-  assert.deepEqual(mock.writes.at(-1).body.map(b => b.screenId), [1]);
   // The mock enforces the device rule itself, so a regression that sends a disabled screen fails here.
   await assert.rejects(client.call('preset/create', { serial: 9, name: 'raw', screens: [{ guid: 'spare-screen', layers: [] }] }, { method: 'POST' }), /code 8210/);
+});
+
+test('screens are created enabled with the ucenter body, mapped with a reference interface, and delete leaves a hidden placeholder (WO-019)', async t => {
+  const { client, mock } = await fixture(t);
+  let state = await applyScreens(client, { action: 'create', name: 'Screen 3', type: 2 });
+  const created = state.screens.find(s => s.name === 'Screen 3'); assert.ok(created);
+  const body = mock.writes.find(w => w.path === 'screen/create-empty-screen').body;
+  assert.deepEqual({ ...body, guid: typeof body.guid }, { type: 2, namePrefix: '', name: 'Screen 3', layout: { x: 0, y: 0 }, guid: 'string',
+    CanvasList: null, snList: [client.serial], workMode: 0, createType: 0, operationType: 0, keyPosition: null });
+  assert.equal(mock.screens.find(s => s.screenId === created.id).enable, 1);
+  await assert.rejects(applyScreens(client, { action: 'create', name: 'Screen 3', type: 2 }), /already exists/);
+  const output = state.outputs.find(o => o.role === 'Output' && !state.screens.some(s => s.outputs.some(x => x.id === o.id)));
+  state = await applyScreens(client, { action: 'update', id: created.id, window: { x: 2900, y: 0, width: 1920, height: 1080 },
+    outputs: [{ id: output.id, pos: { x: 0, y: 0, width: 1920, height: 1080 } }] });
+  const mosaic = mock.writes.filter(w => w.path === 'screen/crop-mosaic').at(-1).body[0].mosaic;
+  assert.equal(mosaic.interfaceId, output.id); assert.deepEqual(mosaic.outputs[0].area, [{ index: 0, x: 0, y: 0, width: 1920, height: 1080, enable: 1 }]);
+  assert.equal(state.screens.find(s => s.id === created.id).outputs[0].pos.x, 2900);
+  await assert.rejects(client.call('screen/crop-mosaic', [{ screenId: created.id, mosaic: { ...mosaic, interfaceId: 0 } }]), /code 8212/);
+  state = await applyScreens(client, { action: 'delete', id: created.id });
+  assert.ok(!state.screens.some(s => s.id === created.id)); assert.equal(mock.screens.find(s => s.screenId === created.id).enable, 0);
 });
