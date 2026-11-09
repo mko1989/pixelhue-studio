@@ -13,4 +13,4 @@
 | WO-011 | Connect GitHub repository and publish v1.5.0 | [Investigation and verification](work-orders/011_WO_github-release.md) | DONE (main/tag pushed; public latest release and seven asset hashes verified) |
 | WO-012 | Access device web UI without PixelFlow desktop | [Investigation and verification](work-orders/012_WO_standalone-webui.md) | DEPRECATED (redirect target returns 404; working UI not established) |
 | WO-013 | Searchable JSON API library for Node.js and AI agents | [Investigation and verification](work-orders/013_WO_api-catalog.md) | DONE (722 operations; 87 tests, deterministic build and offline package verified; pushed 9640220) |
-| WO-014 | New project, full-client tabs, discovery and automatic MVR writes | [Investigation and verification](work-orders/014_WO_full-client.md) | IN PROGRESS |
+| WO-014 | New project, full-client tabs, discovery and automatic MVR writes | [Investigation and verification](work-orders/014_WO_full-client.md) | DONE (98 tests, mock/live-read-only browser and four alpha archives verified; physical write/other-OS QA pending) |
