@@ -1,0 +1,13 @@
+{
+  "page": 142,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\n6: LOGO image.\n7: IPC type.\n8: Cropped source type.\n9: Mosaic source.\n10: IPC mosaic screen.\n11: Internal source.\n12: Internal shape source.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit Meter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.\nConnector type (valid\nwhen the source is from\nan input connector): 0:\nINVALID 1: EXP 2: Single\nLink DVI 3: Dual Link\nDVI 4: HDMI 1.3 5: HDMI\n├─ intege 1.4 6: HDMI 2.0 7: Single\nYes\nconnectorType r Link DP 1.1 8: DP 1.2 9:\n3G-SDI 10: VGA 11:\nCVBS 12: YPbPr 13: 12G-\nSDI 14: 6G-SDI 15:\nUSB 16: HDBaseT 17:\nDual Link DP 1.1 18:\nDVI_Fiber 19: DVI 1.4\n├─ sourceName string Yes Source name\n├─ Source capacity: [0: SL\nintege\nconnectCapacity Yes 1: DL\nr\nNum 2: 4K",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "6: LOGO image.\n7: IPC type.\n8: Cropped source type.\n9: Mosaic source.\n10: IPC mosaic screen.\n11: Internal source.\n12: Internal shape source.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit Meter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.", ""],
+      ["├─\nconnectorType", "intege\nr", "Yes", "", "Connector type (valid\nwhen the source is from\nan input connector): 0:\nINVALID 1: EXP 2: Single\nLink DVI 3: Dual Link\nDVI 4: HDMI 1.3 5: HDMI\n1.4 6: HDMI 2.0 7: Single\nLink DP 1.1 8: DP 1.2 9:\n3G-SDI 10: VGA 11:\nCVBS 12: YPbPr 13: 12G-\nSDI 14: 6G-SDI 15:\nUSB 16: HDBaseT 17:\nDual Link DP 1.1 18:\nDVI_Fiber 19: DVI 1.4", ""],
+      ["├─ sourceName", "string", "Yes", "", "Source name", ""],
+      ["├─\nconnectCapacity\nNum", "intege\nr", "Yes", "", "Source capacity: [0: SL\n1: DL\n2: 4K", ""]
+    ]}
+  ]
+}

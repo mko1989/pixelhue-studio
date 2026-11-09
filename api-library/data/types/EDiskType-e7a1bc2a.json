@@ -1,0 +1,9 @@
+{
+  "id": "EDiskType-e7a1bc2a",
+  "name": "EDiskType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/components/SourcePanel/components/UDiskAttr/enum.ts",
+  "sourceMap": "index-BJcacpMZ.js.map",
+  "line": 1,
+  "declaration": "enum EDiskType {\n  usb, // u 盘\n  local, // 本地存储\n}"
+}

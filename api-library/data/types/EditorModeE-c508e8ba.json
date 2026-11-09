@@ -1,0 +1,9 @@
+{
+  "id": "EditorModeE-c508e8ba",
+  "name": "EditorModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 127,
+  "declaration": "enum EditorModeE {\n  normal = 1, // 普通模式\n  mergedSourceEdit = 2, // 拼接源编辑模式\n}"
+}

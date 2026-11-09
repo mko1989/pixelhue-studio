@@ -1,0 +1,9 @@
+{
+  "id": "EUnicoInputMode-c2dc5eb9",
+  "name": "EUnicoInputMode",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 510,
+  "declaration": "enum EUnicoInputMode {\n  number,\n  text, // 文本（包含数字）\n}"
+}

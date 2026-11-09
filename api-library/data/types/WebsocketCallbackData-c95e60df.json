@@ -1,0 +1,8 @@
+{
+  "id": "WebsocketCallbackData-c95e60df",
+  "name": "WebsocketCallbackData",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/WebsocketCallbackData.ts",
+  "line": 1,
+  "declaration": "interface WebsocketCallbackData {\n\ttype: EWebsocketCallbackType // <- report or panel\n\ttag: number // message type\n\tsubType?: number\n\theader: Record<string, unknown>\n\tdata: any\n}"
+}

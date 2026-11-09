@@ -1,0 +1,8 @@
+{
+  "id": "Layer-363d596e",
+  "name": "Layer",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Layer.ts",
+  "line": 11,
+  "declaration": "interface Layer {\n\tlayerId: number\n\tgeneral: LayerGeneral\n\tsource: LayerSource\n\tselected: 0 | 1\n\tserial: number\n\tlayerIdObj: LayerIdObj\n\twindow: LayerBounds\n\tUMD: LayerUMD[]\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-SubcardVersionMatchResponseT-2eebd25a",
+  "name": "SubcardVersionMatchResponseT",
+  "availability": "referenced-only",
+  "references": [{"name":"SubcardVersionMatchResponseT","source":"src/api/production/index.ts","line":283},{"name":"SubcardVersionMatchResponseT","source":"src/api/production/index.ts","line":284}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

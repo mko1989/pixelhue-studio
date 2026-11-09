@@ -1,0 +1,21 @@
+{
+  "page": 21,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nAdjusting. 2:\nSync\nsuccessful. 3:\nSync failed.\nFrame rate\nmismatch. 4:\nSync failed. Sync\nsignal lost. 5:\nSync failed. No\navailable\nscreens. 6: Sync\nfailed. Bandwidth\nexceeded.\n7: Sync failed.\nSync frame ＞\n240Hz\n├─ deviceBackup object Yes Device backup\nPrimary device\n├─ master object Yes\ninformation\n├─ sn string Yes MAC address\n├─ mac string Yes Device SN\n├─ ip string Yes Device IP\n├─ name string Yes Device name\nintege\n├─ modeId Yes Node modeId\nr\nItem type:\nobject Backup device\n├─ slave Yes\nobject\n[] SN\n├─ sn string Yes MAC address\n├─ mac string Yes Device SN\n├─ ip string Yes Device IP",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "Adjusting. 2:\nSync\nsuccessful. 3:\nSync failed.\nFrame rate\nmismatch. 4:\nSync failed. Sync\nsignal lost. 5:\nSync failed. No\navailable\nscreens. 6: Sync\nfailed. Bandwidth\nexceeded.\n7: Sync failed.\nSync frame ＞\n240Hz", ""],
+      ["├─ deviceBackup", "object", "Yes", "", "Device backup", ""],
+      ["├─ master", "object", "Yes", "", "Primary device\ninformation", ""],
+      ["├─ sn", "string", "Yes", "", "MAC address", ""],
+      ["├─ mac", "string", "Yes", "", "Device SN", ""],
+      ["├─ ip", "string", "Yes", "", "Device IP", ""],
+      ["├─ name", "string", "Yes", "", "Device name", ""],
+      ["├─ modeId", "intege\nr", "Yes", "", "Node modeId", ""],
+      ["├─ slave", "object\n[]", "Yes", "", "Backup device\nSN", "Item type:\nobject"],
+      ["├─ sn", "string", "Yes", "", "MAC address", ""],
+      ["├─ mac", "string", "Yes", "", "Device SN", ""],
+      ["├─ ip", "string", "Yes", "", "Device IP", ""]
+    ]}
+  ]
+}

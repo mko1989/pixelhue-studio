@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/screen/selected/preview",
+  "group": "screen",
+  "summary": "res",
+  "tags": ["screen","selected","preview"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"screen/selected/preview","dynamic":false,"source":"src/api/screen/screen.ts","line":1367,"client":"API","symbol":"res","comment":"屏幕设置上屏模式","parameters":["data: ScreenPreviewReqT","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq ?? 0,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'screen/selected/preview',\n    data,\n    headers: {\n      seq: seq ?? 0,\n    },\n  }","context":"async (\n  data: ScreenPreviewReqT,\n  seq?: number,\n): Promise<IResponseData<string>> => {\n  const res = await API.request<IResponseData<string>>({\n    method: 'PUT',\n    url: 'screen/selected/preview',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-screen-selected-preview",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

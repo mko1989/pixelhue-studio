@@ -1,0 +1,7 @@
+{
+  "id": "reference-PresetCreateDataT-9fe70127",
+  "name": "PresetCreateDataT",
+  "availability": "referenced-only",
+  "references": [{"name":"PresetCreateDataT","source":"src/api/production/burn-in-test.ts","line":263}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

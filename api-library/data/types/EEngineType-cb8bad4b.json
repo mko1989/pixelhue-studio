@@ -1,0 +1,9 @@
+{
+  "id": "EEngineType-cb8bad4b",
+  "name": "EEngineType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 294,
+  "declaration": "enum EEngineType {\n  normal, // 普通工程\n  default, // 默认工程\n  local = 99,\n}"
+}

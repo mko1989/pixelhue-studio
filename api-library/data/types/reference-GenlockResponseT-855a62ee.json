@@ -1,0 +1,7 @@
+{
+  "id": "reference-GenlockResponseT-855a62ee",
+  "name": "GenlockResponseT",
+  "availability": "referenced-only",
+  "references": [{"name":"GenlockResponseT","source":"src/api/production/index.ts","line":237},{"name":"GenlockResponseT","source":"src/api/production/index.ts","line":238}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "CanvasShowResultE-bd93dbdf",
+  "name": "CanvasShowResultE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/correction/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 109,
+  "declaration": "enum CanvasShowResultE {\n  /****失败***/\n  Failed,\n  /****成功***/\n  Success,\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EMidiType-8354d169",
+  "name": "EMidiType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 136,
+  "declaration": "enum EMidiType {\n  knob = 1, // 1： 旋钮\n  pushRod = 2, // 2： 推杆\n}"
+}

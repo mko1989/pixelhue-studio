@@ -1,0 +1,7 @@
+{
+  "id": "reference-MvrCardInfoT-6a828873",
+  "name": "MvrCardInfoT",
+  "availability": "referenced-only",
+  "references": [{"name":"MvrCardInfoT","source":"src/api/device/device-subcard.ts","line":37},{"name":"MvrCardInfoT","source":"src/api/device/device-subcard.ts","line":46}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

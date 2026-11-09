@@ -1,0 +1,7 @@
+{
+  "id": "reference-upgradeProtocolParamsI-912ad863",
+  "name": "upgradeProtocolParamsI",
+  "availability": "referenced-only",
+  "references": [{"name":"upgradeProtocolParamsI","source":"src/api/device/device-upgrade.ts","line":69},{"name":"upgradeProtocolParamsI","source":"src/api/device/device-upgrade.ts","line":82},{"name":"upgradeProtocolParamsI","source":"src/api/device/device-upgrade.ts","line":98}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

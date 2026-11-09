@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerZOrder-b19c0689",
+  "name": "LayerZOrder",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerZOrder","source":"src/api/layer/layer.ts","line":528}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

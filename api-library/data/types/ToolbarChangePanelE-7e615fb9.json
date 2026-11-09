@@ -1,0 +1,9 @@
+{
+  "id": "ToolbarChangePanelE-7e615fb9",
+  "name": "ToolbarChangePanelE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 70,
+  "declaration": "enum ToolbarChangePanelE {\n  swap, // swap切换\n  frz, // 冻结\n  ftb, // 黑屏\n}"
+}

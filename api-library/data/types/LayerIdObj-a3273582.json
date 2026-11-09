@@ -1,0 +1,8 @@
+{
+  "id": "LayerIdObj-a3273582",
+  "name": "LayerIdObj",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Layer.ts",
+  "line": 22,
+  "declaration": "interface LayerIdObj {\n\tattachScreenId: number\n\tsceneType: number\n}"
+}

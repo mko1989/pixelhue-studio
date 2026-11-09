@@ -1,0 +1,9 @@
+{
+  "id": "EPtpSyncStatus-184c8e52",
+  "name": "EPtpSyncStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 973,
+  "declaration": "enum EPtpSyncStatus {\n  unlocked,\n  locked,\n  locking,\n  closed,\n}"
+}

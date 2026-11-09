@@ -1,0 +1,9 @@
+{
+  "id": "IMemoryTime-64093965",
+  "name": "IMemoryTime",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/setting/setting.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 268,
+  "declaration": "interface IMemoryTime {\n  userBit: string;\n  isFrameDisplay: number;\n  isKeepOutput: number;\n}"
+}

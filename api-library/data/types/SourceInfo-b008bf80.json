@@ -1,0 +1,8 @@
+{
+  "id": "SourceInfo-b008bf80",
+  "name": "SourceInfo",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Interface.ts",
+  "line": 34,
+  "declaration": "interface SourceInfo {\n\tidentify: string\n\tsourceId: number\n\tsourceType: number\n}"
+}

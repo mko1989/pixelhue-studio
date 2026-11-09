@@ -1,0 +1,9 @@
+{
+  "id": "BIZ_MESSAGE_TYPE-4b607380",
+  "name": "BIZ_MESSAGE_TYPE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 659,
+  "declaration": "enum BIZ_MESSAGE_TYPE {\n  /** 抓拍保存结果 */\n  capture_save_result,\n}"
+}

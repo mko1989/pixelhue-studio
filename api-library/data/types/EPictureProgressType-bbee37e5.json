@@ -1,0 +1,9 @@
+{
+  "id": "EPictureProgressType-bbee37e5",
+  "name": "EPictureProgressType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 226,
+  "declaration": "enum EPictureProgressType {\n  import, // 导入\n  capture, // 抓图\n  save, // 保存\n}"
+}

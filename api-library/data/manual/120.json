@@ -1,0 +1,19 @@
+{
+  "page": 120,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nsequence value\nWhether the\ncurrent screen is\nintege\n├─ state Yes blocked:\nr\n0: Not blocked.\n1: Blocked.\nScreen order,\nused to record\nintege the display order\n├─ order Yes\nr of screens, with\na minimum\nvalue of 1\nThe layer\n├─ template object Yes template used\nby the screen\nnumb Layer template\n├─ id Yes\ner ID\nLayer template\nnumb module:\n├─ moduleType Yes\ner 0: MVR.\n1: Layer.\nTemplate type:\n0: Built-in\nnumb\n├─ type Yes template.\ner\n1: Custom\ntemplate.\n├─ customGamut object Yes\n├─ name string Yes\n├─ colorGamutInfo object Yes",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "sequence value", ""],
+      ["├─ state", "intege\nr", "Yes", "", "Whether the\ncurrent screen is\nblocked:\n0: Not blocked.\n1: Blocked.", ""],
+      ["├─ order", "intege\nr", "Yes", "", "Screen order,\nused to record\nthe display order\nof screens, with\na minimum\nvalue of 1", ""],
+      ["├─ template", "object", "Yes", "", "The layer\ntemplate used\nby the screen", ""],
+      ["├─ id", "numb\ner", "Yes", "", "Layer template\nID", ""],
+      ["├─ moduleType", "numb\ner", "Yes", "", "Layer template\nmodule:\n0: MVR.\n1: Layer.", ""],
+      ["├─ type", "numb\ner", "Yes", "", "Template type:\n0: Built-in\ntemplate.\n1: Custom\ntemplate.", ""],
+      ["├─ customGamut", "object", "Yes", "", "", ""],
+      ["├─ name", "string", "Yes", "", "", ""],
+      ["├─ colorGamutInfo", "object", "Yes", "", "", ""]
+    ]}
+  ]
+}

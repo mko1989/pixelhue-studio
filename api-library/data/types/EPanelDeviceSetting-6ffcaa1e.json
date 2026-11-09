@@ -1,0 +1,9 @@
+{
+  "id": "EPanelDeviceSetting-6ffcaa1e",
+  "name": "EPanelDeviceSetting",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 355,
+  "declaration": "enum EPanelDeviceSetting {\n  /** 设备关机、重启 */\n  closeDevice = 528,\n}"
+}

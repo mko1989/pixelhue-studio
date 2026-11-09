@@ -1,0 +1,18 @@
+{
+  "page": 42,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nTiming type:\nEnumerati\nnumb 0: presetThumbTiming.\n├─ select Yes\non: 0, 1, 2\ner 1: presetTiming.\n2: edidFile.\n├─ objec\nYes\nimageQuality t\nImage quality mode (image\nquality preset):\n├─\nnumb 0: Standard mode.\nimageQualityM Yes\ner 1: Document mode.\node\n2: Conference mode.\n3: Video mode.\nEye comfort mode switch:\nnumb\n├─ eyeCare Yes 0: Disable.\ner\n1: Enable.\nnumb\n├─ hue Yes Hue\ner\nnumb\n├─ saturation Yes Saturation\ner\nGamma value in image\nnumb quality. Gamma value\n├─ gamma Yes\ner [1.00~4.00]*100, to two\ndecimal places.\nScale ratio multiplier:\n├─ numb 1: No scaling.\nYes\ngammaScale er 100: Scaling down by a\nfactor of 100.\nobjec\n├─ contrast Yes Contrast\nt",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ select", "numb\ner", "Yes", "", "Timing type:\n0: presetThumbTiming.\n1: presetTiming.\n2: edidFile.", "Enumerati\non: 0, 1, 2"],
+      ["├─\nimageQuality", "objec\nt", "Yes", "", "", ""],
+      ["├─\nimageQualityM\node", "numb\ner", "Yes", "", "Image quality mode (image\nquality preset):\n0: Standard mode.\n1: Document mode.\n2: Conference mode.\n3: Video mode.", ""],
+      ["├─ eyeCare", "numb\ner", "Yes", "", "Eye comfort mode switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ hue", "numb\ner", "Yes", "", "Hue", ""],
+      ["├─ saturation", "numb\ner", "Yes", "", "Saturation", ""],
+      ["├─ gamma", "numb\ner", "Yes", "", "Gamma value in image\nquality. Gamma value\n[1.00~4.00]*100, to two\ndecimal places.", ""],
+      ["├─\ngammaScale", "numb\ner", "Yes", "", "Scale ratio multiplier:\n1: No scaling.\n100: Scaling down by a\nfactor of 100.", ""],
+      ["├─ contrast", "objec\nt", "Yes", "", "Contrast", ""]
+    ]}
+  ]
+}

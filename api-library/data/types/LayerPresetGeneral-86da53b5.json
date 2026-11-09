@@ -1,0 +1,8 @@
+{
+  "id": "LayerPresetGeneral-86da53b5",
+  "name": "LayerPresetGeneral",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/LayerPreset.ts",
+  "line": 11,
+  "declaration": "interface LayerPresetGeneral {\n\tname: string\n\tlabelColor: LayerPresetLabelColor\n}"
+}

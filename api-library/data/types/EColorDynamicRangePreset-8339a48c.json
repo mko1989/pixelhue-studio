@@ -1,0 +1,9 @@
+{
+  "id": "EColorDynamicRangePreset-8339a48c",
+  "name": "EColorDynamicRangePreset",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 189,
+  "declaration": "enum EColorDynamicRangePreset {\n  SDR = 0,\n  HDR10,\n  HLG,\n  AUTO = 255,\n}"
+}

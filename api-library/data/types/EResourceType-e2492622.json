@@ -1,0 +1,9 @@
+{
+  "id": "EResourceType-e2492622",
+  "name": "EResourceType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 86,
+  "declaration": "enum EResourceType {\n  interface,\n  cropSource,\n  splitSource,\n  groupSource,\n  internalSource,\n  picture,\n  screen,\n  layer,\n  preset,\n  groupPreset,\n}"
+}

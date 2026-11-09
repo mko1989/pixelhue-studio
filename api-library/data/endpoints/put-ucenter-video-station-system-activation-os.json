@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/system/activation-os",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","system","activation-os"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/system/activation-os","dynamic":false,"source":"src/api/console-production/index.ts","line":37,"client":"API","symbol":"response","comment":"*\n * OS激活\n * @returns","parameters":["data: IOsActiveReq"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      isLoading: true,\n    }","configExpression":"{\n    method: 'put',\n    url: 'ucenter/video-station/system/activation-os',\n    data: data,\n    timeout: 60000, // OS激活超时时间，超时时间为60s\n    headers: {\n      isLoading: true,\n    },\n  }","context":"async (data: IOsActiveReq): Promise<IResponseData<IOsActiveState>> => {\n  const response = await API.request<IResponseData<IOsActiveState>>({\n    method: 'put',\n    url: 'ucenter/video-station/system/activation-os',\n    data: data,\n    timeout: 60000, // OS激活超时时间，超时时间为60s\n    headers: {\n      isLoading: true,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-system-activation-os",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

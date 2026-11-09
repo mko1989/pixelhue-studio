@@ -1,0 +1,7 @@
+{
+  "id": "reference-KeyboardPositionT-7085e73b",
+  "name": "KeyboardPositionT",
+  "availability": "referenced-only",
+  "references": [{"name":"KeyboardPositionT","source":"src/api/keyboard/index.ts","line":28}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

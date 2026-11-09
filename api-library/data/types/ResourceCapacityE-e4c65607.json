@@ -1,0 +1,9 @@
+{
+  "id": "ResourceCapacityE-e4c65607",
+  "name": "ResourceCapacityE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 661,
+  "declaration": "enum ResourceCapacityE {\n  SL,\n  DL,\n  _4K,\n  auto = 65535,\n}"
+}

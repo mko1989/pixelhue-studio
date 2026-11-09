@@ -1,0 +1,7 @@
+{
+  "id": "reference-TSystemRestoreFactory-96a02ce0",
+  "name": "TSystemRestoreFactory",
+  "availability": "referenced-only",
+  "references": [{"name":"TSystemRestoreFactory","source":"src/api/device/deviceInfo.ts","line":191},{"name":"TSystemRestoreFactory","source":"src/api/device/deviceInfo.ts","line":204}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

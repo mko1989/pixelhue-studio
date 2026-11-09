@@ -1,0 +1,28 @@
+{
+  "page": 178,
+  "text": "Default\nName Type Required Remarks More\nValue\n0: SL.\n1: DL.\n2: 4K.\n65535: Auto.\n5.4 Set Layer Source\n Basic Information\nPath: /v1/layers/source\nMethod: PUT\nDescription:\nInternal shape name Enumeration\nCircle 1\nSquare 2\nRectangle 3\nEllipse 4\nTriangle 5\nDiamond 6\nHeart 7\nCloud 8\nFour-pointed star 9\nFive-pointed star 10\nInvalid 255\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "0: SL.\n1: DL.\n2: 4K.\n65535: Auto.", ""]
+    ]},
+    {"contextBefore": "5.4 Set Layer Source\n Basic Information\nPath: /v1/layers/source\nMethod: PUT\nDescription:", "rows": [
+      ["Internal shape name", "Enumeration"],
+      ["Circle", "1"],
+      ["Square", "2"],
+      ["Rectangle", "3"],
+      ["Ellipse", "4"],
+      ["Triangle", "5"],
+      ["Diamond", "6"],
+      ["Heart", "7"],
+      ["Cloud", "8"],
+      ["Four-pointed star", "9"],
+      ["Five-pointed star", "10"],
+      ["Invalid", "255"]
+    ]},
+    {"contextBefore": " Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ColorSpacePresetE-a3911e0d",
+  "name": "ColorSpacePresetE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1022,
+  "declaration": "enum ColorSpacePresetE {\n  'RGB 4:4:4' = 0,\n  'YCbCr 4:2:2',\n  'YCbCr 4:4:4',\n  'YCbCr 4:2:0',\n  AUTO = 255,\n}"
+}

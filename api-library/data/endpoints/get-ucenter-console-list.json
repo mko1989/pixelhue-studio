@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/console-list",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","console-list"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/console-list","dynamic":false,"source":"src/api/custom/index.ts","line":290,"client":"API","symbol":"response","comment":"*\n * 通知寻找可分享的设备列表","parameters":["params: {\n  modelIds: string;\n}"],"bodyExpression":null,"queryExpression":"params","headerExpression":null,"configExpression":"{\n    method: 'GET',\n    // url: 'ucenter/video-station/key/custom/getDeviceList',\n    url: 'ucenter/console-list',\n    params,\n  }","context":"async (params: {\n  modelIds: string;\n}): Promise<IResponseData<null>> => {\n  const response = await API.request<IResponseData<null>>({\n    method: 'GET',\n    // url: 'ucenter/video-station/key/custom/getDeviceList',\n    url: 'ucenter/console-list',\n    params,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-console-list",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

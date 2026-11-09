@@ -1,0 +1,7 @@
+{
+  "id": "reference-IBrightnessOverdriveRequest-d250d506",
+  "name": "IBrightnessOverdriveRequest",
+  "availability": "referenced-only",
+  "references": [{"name":"IBrightnessOverdriveRequest","source":"src/api/screen/screen-adjust.ts","line":407}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

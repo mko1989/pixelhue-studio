@@ -1,0 +1,7 @@
+{
+  "id": "reference-ISignalList-955ab6ee",
+  "name": "ISignalList",
+  "availability": "referenced-only",
+  "references": [{"name":"ISignalList","source":"src/api/setting/setting.ts","line":350},{"name":"ISignalList","source":"src/api/setting/setting.ts","line":364},{"name":"ISignalList","source":"src/api/setting/setting.ts","line":394},{"name":"ISignalList","source":"src/api/setting/setting.ts","line":395},{"name":"ISignalList","source":"src/api/setting/setting.ts","line":410},{"name":"ISignalList","source":"src/api/setting/setting.ts","line":411}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

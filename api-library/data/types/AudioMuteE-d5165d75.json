@@ -1,0 +1,9 @@
+{
+  "id": "AudioMuteE-d5165d75",
+  "name": "AudioMuteE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 141,
+  "declaration": "enum AudioMuteE {\n  /** 正常 */\n  normal,\n  /** 静音 */\n  mute,\n}"
+}

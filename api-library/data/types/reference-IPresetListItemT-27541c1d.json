@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPresetListItemT-27541c1d",
+  "name": "IPresetListItemT",
+  "availability": "referenced-only",
+  "references": [{"name":"IPresetListItemT","source":"src/api/setting/setting.ts","line":440}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

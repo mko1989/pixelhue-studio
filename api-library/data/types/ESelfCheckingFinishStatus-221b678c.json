@@ -1,0 +1,9 @@
+{
+  "id": "ESelfCheckingFinishStatus-221b678c",
+  "name": "ESelfCheckingFinishStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 125,
+  "declaration": "enum ESelfCheckingFinishStatus {\n  success = 2,\n  abnormal = 3,\n}"
+}

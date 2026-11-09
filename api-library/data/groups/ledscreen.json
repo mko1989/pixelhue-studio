@@ -1,0 +1,4 @@
+{
+  "group": "ledscreen",
+  "endpoints": [{"id":"delete-ledscreen","method":"DELETE","path":"/unico/v1/ledscreen","group":"ledscreen","summary":"res","tags":["ledscreen"],"models":[],"symbols":["res"],"keywords":" data: {\n  ledScreenIds: number[];\n} data","serverKind":"device","manual":false,"file":"endpoints/delete-ledscreen.json"},{"id":"put-ledscreen","method":"PUT","path":"/unico/v1/ledscreen","group":"ledscreen","summary":"res","tags":["ledscreen"],"models":[],"symbols":["res"],"keywords":" data: IUpdateLedChildScreen data","serverKind":"device","manual":false,"file":"endpoints/put-ledscreen.json"},{"id":"put-ledscreen-display-mode","method":"PUT","path":"/unico/v1/ledscreen/display-mode","group":"ledscreen","summary":"response","tags":["ledscreen","display-mode"],"models":[],"symbols":["response"],"keywords":" data: TLEDScreenDisplayMode[] data","serverKind":"device","manual":false,"file":"endpoints/put-ledscreen-display-mode.json"}]
+}

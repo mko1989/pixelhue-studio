@@ -1,0 +1,7 @@
+{
+  "id": "reference-FactoryParamsT-e69aa183",
+  "name": "FactoryParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"FactoryParamsT","source":"src/api/production/index.ts","line":178},{"name":"FactoryParamsT","source":"src/api/production/index.ts","line":177},{"name":"FactoryParamsT","source":"src/api/production/index.ts","line":179}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

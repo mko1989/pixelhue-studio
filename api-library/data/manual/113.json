@@ -1,0 +1,17 @@
+{
+  "page": 113,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nBooster levels:\n0~16\nmagicGray\n├─ magicGray object Yes\ninformation\n22Bit+ enable:\nintege\n├─ xbitEnable Yes 0: Disable.\nr\n1: Enable.\nPrecise\nGrayscale\n├─ intege\nYes enable:\npreciseGrayscaleEnable r\n0: Disable.\n1: Enable.\nScreen function\n├─ functionList object Yes\nlist\nWhether Precise\nGrayscale is\n├─\nintege supported:\nisSupportPreciseGrayscal Yes\nr 0: Not\ne\nsupported.\n1: Supported.\nWhether 22bit+\nis supported:\nintege\n├─ isSupport22BitPlus Yes 0: Not\nr\nsupported.\n1: Supported.\nWhether\nDynamic\n├─ intege\nYes Booster is\nisSupportDynamicBooster r\nsupported:\n0: Not",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "Booster levels:\n0~16", ""],
+      ["├─ magicGray", "object", "Yes", "", "magicGray\ninformation", ""],
+      ["├─ xbitEnable", "intege\nr", "Yes", "", "22Bit+ enable:\n0: Disable.\n1: Enable.", ""],
+      ["├─\npreciseGrayscaleEnable", "intege\nr", "Yes", "", "Precise\nGrayscale\nenable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ functionList", "object", "Yes", "", "Screen function\nlist", ""],
+      ["├─\nisSupportPreciseGrayscal\ne", "intege\nr", "Yes", "", "Whether Precise\nGrayscale is\nsupported:\n0: Not\nsupported.\n1: Supported.", ""],
+      ["├─ isSupport22BitPlus", "intege\nr", "Yes", "", "Whether 22bit+\nis supported:\n0: Not\nsupported.\n1: Supported.", ""],
+      ["├─\nisSupportDynamicBooster", "intege\nr", "Yes", "", "Whether\nDynamic\nBooster is\nsupported:\n0: Not", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "LayerTypeE-348c4ae2",
+  "name": "LayerTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 605,
+  "declaration": "enum LayerTypeE {\n  /** 普通图层 */\n  normal = 2,\n  /** AUX图层 */\n  aux = 4,\n  /** MVR 图层 */\n  mvr = 8,\n  /** BKG 图层 */\n  /** logo 图层 */\n  bkg = 16,\n  logo = 32,\n  /** 回显图层，上位机不关心 */\n  echo = 64,\n  /** cut fill 图层 */\n  cut = 128,\n  fill = 256,\n  osd = 512,\n}"
+}

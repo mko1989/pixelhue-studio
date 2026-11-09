@@ -1,0 +1,9 @@
+{
+  "id": "ELayerMask-a7e6d369",
+  "name": "ELayerMask",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1131,
+  "declaration": "enum ELayerMask {\n  maskTop = 'top', // top\n  maskBottom = 'buttom', // bottom\n  maskLeft = 'left', // left\n  maskRight = 'right', // right\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-TScreenCutBodyT-f2d82615",
+  "name": "TScreenCutBodyT",
+  "availability": "referenced-only",
+  "references": [{"name":"TScreenCutBodyT","source":"src/api/screen/screen.ts","line":807}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

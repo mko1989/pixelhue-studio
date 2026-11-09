@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/layers/template/select",
+  "group": "layers",
+  "summary": "Apply Layer Templates",
+  "tags": ["layers","template","select"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [{"method":"PUT","path":"v1/layers/template/select","section":"5.3","title":"Apply Layer Templates","firstPage":173,"lastPage":178,"firmware":"not specified per operation","modelScope":["P10","P20","Q8","P80"],"source":"PixelFlow-OpenAPI Manual-V2.0.1-2.pdf"}],
+  "vendorEvidence": [{"method":"PUT","path":"layers/template/select","dynamic":false,"source":"src/api/screen/screen.ts","line":586,"client":"API","symbol":"response","comment":"","parameters":["data: setLayersTmpParamsT","seq?: number","options?: ExtraReqParamsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n      seq: seq || 0,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'layers/template/select',\n    data,\n    timeout: 20000,\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n      seq: seq || 0,\n    },\n  }","context":"async (\n  data: setLayersTmpParamsT,\n  seq?: number,\n  options?: ExtraReqParamsT,\n): Promise<IResponseData<mvrTemplateI>> => {\n  const response = await API.request<IResponseData<mvrTemplateI>>({\n    method: 'PUT',\n    url: 'layers/template/select',","sourceMap":"main-Cpb41LiE.js.map"},{"method":"PUT","path":"layers/template/select","dynamic":false,"source":"src/api/layer/layer.ts","line":1120,"client":"API","symbol":"res","comment":"*\n * @description 应用模板","parameters":["data: ApplyLayoutTemplateT"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'layers/template/select',\n    data,\n  }","context":"async (\n  data: ApplyLayoutTemplateT,\n): Promise<IResponseData<ApplyTemplateResT[]>> => {\n  const res = await API.request<IResponseData<ApplyTemplateResT[]>>({\n    method: 'PUT',\n    url: 'layers/template/select',\n    data,\n  });","sourceMap":"main-Cpb41LiE.js.map"},{"method":"PUT","path":"layers/template/select","dynamic":false,"source":"src/api/production/burn-in-test.ts","line":387,"client":"API","symbol":"response","comment":"","parameters":["ip: string","port: number","nodeId: number","sn: string","data: setLayersTmpParamsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      Authorization: token,\n      ip,\n      port,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'layers/template/select',\n    data,\n    headers: {\n      Authorization: token,\n      ip,\n      port,\n    },\n    timeout: 10000,\n  }","context":"async (\n  ip: string,\n  port: number,\n  nodeId: number,\n  sn: string,\n  data: setLayersTmpParamsT,\n): Promise<IResponseData<string>> => {\n  const token = getLocalTokenBySn(sn) ?? '';","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":["P10","P20","P80","Q8"],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-layers-template-select",
+  "contractStatus": "manual tables and observed source contracts",
+  "pathParameters": []
+}

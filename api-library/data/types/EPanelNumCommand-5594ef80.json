@@ -1,0 +1,9 @@
+{
+  "id": "EPanelNumCommand-5594ef80",
+  "name": "EPanelNumCommand",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 360,
+  "declaration": "enum EPanelNumCommand {\n  // Unico需要计算加减操作，计算公式操作，失去焦点后模式切换到上一次协议推送的模式（记录模式切换状态）\n  /**　数字０ */\n  num0 = 534,\n  /**　数字１ */\n  num1,\n  /**　数字２ */\n  num2,\n  /**　数字３ */\n  num3,\n  /**　数字４ */\n  num4,\n  /**　数字５ */\n  num5,\n  /**　数字６ */\n  num6,\n  /**　数字７ */\n  num7,\n  /**　数字８ */\n  num8,\n  /**　数字９ */\n  num9,\n  /** 数字点 */\n  point,\n  /** 加操作 */\n  add,\n  /** 减操作 */\n  minus,\n  /** 返回 */\n  back,\n  /** 回车 */\n  enter,\n  /** 上翻页 */\n  pageUp,\n  /** 下翻页 */\n  pageDown,\n}"
+}

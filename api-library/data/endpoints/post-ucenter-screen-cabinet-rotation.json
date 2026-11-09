@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/cabinet-rotation",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","cabinet-rotation"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/screen/cabinet-rotation","dynamic":false,"source":"src/api/screen/controller.ts","line":423,"client":"API","symbol":"response","comment":"*\n * 修改箱体或者箱体组旋转\n * @param data\n * @returns","parameters":["data: UpdateCabinetRotationParamsT[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'POST',\n    url: 'ucenter/screen/cabinet-rotation',\n    data,\n    timeout: 30000, // todo 设置超时时间为30s\n  }","context":"async (\n  data: UpdateCabinetRotationParamsT[],\n): Promise<IResponseData<string>> => {\n  const response = await API.request<IResponseData<string>>({\n    method: 'POST',\n    url: 'ucenter/screen/cabinet-rotation',\n    data,\n    timeout: 30000, // todo 设置超时时间为30s","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-cabinet-rotation",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

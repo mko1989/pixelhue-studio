@@ -1,0 +1,7 @@
+{
+  "id": "reference-UploadCoefficientPathPropsT-0c7df48e",
+  "name": "UploadCoefficientPathPropsT",
+  "availability": "referenced-only",
+  "references": [{"name":"UploadCoefficientPathPropsT","source":"src/api/correction/index.ts","line":173},{"name":"UploadCoefficientPathPropsT","source":"src/api/correction/index.ts","line":185}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

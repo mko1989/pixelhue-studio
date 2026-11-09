@@ -1,0 +1,9 @@
+{
+  "id": "ELayerBorderColor-a322523c",
+  "name": "ELayerBorderColor",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 159,
+  "declaration": "enum ELayerBorderColor {\n  '#C0797E',\n  '#BE9067',\n  '#B4B37F',\n  '#82C398',\n  '#97AEC3',\n  '#B1B3FB',\n  '#B476C8',\n  '#8FC0C0',\n}"
+}

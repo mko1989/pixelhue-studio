@@ -1,0 +1,9 @@
+{
+  "id": "LayerNumTypeE-875c4ced",
+  "name": "LayerNumTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1253,
+  "declaration": "enum LayerNumTypeE {\n  LayerId = 'LayerId', // 二合一\n  Serial = 'Serial', // 切换器\n}"
+}

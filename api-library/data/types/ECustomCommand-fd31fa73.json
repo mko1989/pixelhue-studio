@@ -1,0 +1,9 @@
+{
+  "id": "ECustomCommand-fd31fa73",
+  "name": "ECustomCommand",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 463,
+  "declaration": "enum ECustomCommand {\n  binding = 'binding', // tabr状态：是否开始\n  unbinding = 'unBinding', // tabr状态：是否开始\n  pushProgressValue = 'pushProgressValue', // 滑杆进度值\n  midiValue = 'midi-values', // 旋钮和推杆计算结果\n  deleteBottomOutput = 'deleteBottomOutput', // 更新底部接口使用状态\n}"
+}

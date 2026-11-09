@@ -1,0 +1,7 @@
+{
+  "id": "reference-IWisdomTimecodes-137657c8",
+  "name": "IWisdomTimecodes",
+  "availability": "referenced-only",
+  "references": [{"name":"IWisdomTimecodes","source":"src/api/setting/setting.ts","line":167},{"name":"IWisdomTimecodes","source":"src/api/setting/setting.ts","line":168},{"name":"IWisdomTimecodes","source":"src/api/setting/setting.ts","line":177},{"name":"IWisdomTimecodes","source":"src/api/setting/setting.ts","line":178}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

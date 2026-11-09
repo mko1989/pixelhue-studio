@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/keyboard/test-mode",
+  "group": "keyboard",
+  "summary": "response",
+  "tags": ["keyboard"],
+  "authentication": "device-token",
+  "serverKind": "keyboard",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"test-mode","dynamic":false,"source":"src/api/keyboard/index.ts","line":44,"client":"THIRD_API","symbol":"response","comment":"*\n * @description 设置键盘的显示模式 true: 只要获取焦点就显示， false: 只有touch的时候获取焦点才显示\n * @param data\n * @returns","parameters":["data: KeyboardTestModeT"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'post',\n    url: 'test-mode',\n    data,\n  }","context":"async (data: KeyboardTestModeT): Promise<IRespData<string>> => {\n  const response = await THIRD_API.request<IRespData<string>>({\n    method: 'post',\n    url: 'test-mode',\n    data,\n  });\n\n  return response.data;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-keyboard-test-mode",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

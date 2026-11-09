@@ -1,0 +1,22 @@
+{
+  "page": 146,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\n├─ imageQuality object Yes\nImage quality mode\n(image quality preset):\n├─\nnumb 0: Standard mode.\nimageQualityMod Yes\ner 1: Document mode.\ne\n2: Conference mode.\n3: Video mode.\nEye comfort mode switch:\nnumb\n├─ eyeCare Yes 0: Disable.\ner\n1: Enable.\nnumb\n├─ hue Yes Hue\ner\nnumb\n├─ saturation Yes Saturation\ner\nThe image quality gamma\nnumb\n├─ gamma Yes value, a floating-point\ner\nnumber, range: 1.00~4.00\n├─ contrast object Yes Contrast\nnumb\n├─ R Yes Red component\ner\nnumb\n├─ G Yes Green component\ner\nnumb\n├─ B Yes Blue component\ner\nnumb\n├─ coefficient Yes Coefficients\ner\n├─ brightness object Yes Brightness\nnumb\n├─ R Yes Red component\ner",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ imageQuality", "object", "Yes", "", "", ""],
+      ["├─\nimageQualityMod\ne", "numb\ner", "Yes", "", "Image quality mode\n(image quality preset):\n0: Standard mode.\n1: Document mode.\n2: Conference mode.\n3: Video mode.", ""],
+      ["├─ eyeCare", "numb\ner", "Yes", "", "Eye comfort mode switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ hue", "numb\ner", "Yes", "", "Hue", ""],
+      ["├─ saturation", "numb\ner", "Yes", "", "Saturation", ""],
+      ["├─ gamma", "numb\ner", "Yes", "", "The image quality gamma\nvalue, a floating-point\nnumber, range: 1.00~4.00", ""],
+      ["├─ contrast", "object", "Yes", "", "Contrast", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Red component", ""],
+      ["├─ G", "numb\ner", "Yes", "", "Green component", ""],
+      ["├─ B", "numb\ner", "Yes", "", "Blue component", ""],
+      ["├─ coefficient", "numb\ner", "Yes", "", "Coefficients", ""],
+      ["├─ brightness", "object", "Yes", "", "Brightness", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Red component", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ExtraSyncLockTypeDesE-1b79669b",
+  "name": "ExtraSyncLockTypeDesE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 722,
+  "declaration": "enum ExtraSyncLockTypeDesE {\n  genlock = 'genlock',\n  followInputSource = 'followInputSource',\n  internalFrame = 'internalFrame',\n}"
+}

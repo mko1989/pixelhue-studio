@@ -1,0 +1,9 @@
+{
+  "id": "ResponseT-94b003ff",
+  "name": "ResponseT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/screen/screen.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 520,
+  "declaration": "interface ResponseT {\n  code: number;\n  message: string;\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "MappingEnabled-1a474a15",
+  "name": "MappingEnabled",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 119,
+  "declaration": "enum MappingEnabled {\n  disable = 0,\n  enable = 1,\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-IDeviceOccupyReq-d4c4fca9",
+  "name": "IDeviceOccupyReq",
+  "availability": "referenced-only",
+  "references": [{"name":"IDeviceOccupyReq","source":"src/api/device/device-occupancy.ts","line":30}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

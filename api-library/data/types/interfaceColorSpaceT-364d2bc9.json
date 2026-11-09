@@ -1,0 +1,9 @@
+{
+  "id": "interfaceColorSpaceT-364d2bc9",
+  "name": "interfaceColorSpaceT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 66,
+  "declaration": "interface interfaceColorSpaceT {\n  interfaceId: number | string;\n  colorSpace: dataObjT;\n}"
+}

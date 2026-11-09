@@ -1,0 +1,9 @@
+{
+  "id": "ETestScreen-0b0d61bf",
+  "name": "ETestScreen",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 239,
+  "declaration": "enum ETestScreen {\n  bright = 'bright', // 亮度\n  grid = 'grid', // 网络间距\n  gridLineWidth = 'gridLineWidth', // 网络线宽\n  speed = 'speed', // 速度\n  horizontalSpace = 'horizontalSpace', // 水平间距（新测试画面）\n  verticalSpace = 'verticalSpace', // 垂直间距（新测试画面）\n}"
+}

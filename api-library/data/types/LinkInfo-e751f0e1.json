@@ -1,0 +1,8 @@
+{
+  "id": "LinkInfo-e751f0e1",
+  "name": "LinkInfo",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Interface.ts",
+  "line": 28,
+  "declaration": "interface LinkInfo {\n\tisLink: 0 | 1\n\tshared?: number\n\tsourceInfo?: SourceInfo\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-IBinds-6c18df95",
+  "name": "IBinds",
+  "availability": "referenced-only",
+  "references": [{"name":"IBinds","source":"src/api/controls/binding.ts","line":4},{"name":"IBinds","source":"src/api/controls/binding.ts","line":5}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

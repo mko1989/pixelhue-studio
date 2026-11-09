@@ -1,0 +1,9 @@
+{
+  "id": "ETimingState-dcb3cb02",
+  "name": "ETimingState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 511,
+  "declaration": "enum ETimingState {\n  standard,\n  nonstandard,\n}"
+}

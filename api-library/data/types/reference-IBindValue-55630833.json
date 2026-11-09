@@ -1,0 +1,7 @@
+{
+  "id": "reference-IBindValue-55630833",
+  "name": "IBindValue",
+  "availability": "referenced-only",
+  "references": [{"name":"IBindValue","source":"src/api/controls/binding.ts","line":21},{"name":"IBindValue","source":"src/api/controls/binding.ts","line":21},{"name":"IBindValue","source":"src/api/controls/binding.ts","line":22}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "setLayersWindowT-d27784e4",
+  "name": "setLayersWindowT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/screen/screen.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 843,
+  "declaration": "interface setLayersWindowT {\n  layerId: number;\n  window: RectProps; // 0 未选择 1 已选择\n}"
+}

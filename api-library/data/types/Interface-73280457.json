@@ -1,0 +1,8 @@
+{
+  "id": "Interface-73280457",
+  "name": "Interface",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Interface.ts",
+  "line": 6,
+  "declaration": "interface Interface {\n\tauxiliaryInfo: InterfaceAuxiliaryInfo\n\tgeneral: InterfaceGeneral\n\tinterfaceId: number\n\tstate: number\n\tlinkInfo: LinkInfo\n}"
+}

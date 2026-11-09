@@ -1,0 +1,9 @@
+{
+  "id": "IEngineMsg-3941f964",
+  "name": "IEngineMsg",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/engine/engine.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 19,
+  "declaration": "interface IEngineMsg {\n  identify: string;\n  name: string;\n  updateTime: number;\n  snList: string[];\n}"
+}

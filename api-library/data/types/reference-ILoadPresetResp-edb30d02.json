@@ -1,0 +1,7 @@
+{
+  "id": "reference-ILoadPresetResp-edb30d02",
+  "name": "ILoadPresetResp",
+  "availability": "referenced-only",
+  "references": [{"name":"ILoadPresetResp","source":"src/api/preset/index.ts","line":142},{"name":"ILoadPresetResp","source":"src/api/preset/index.ts","line":143},{"name":"ILoadPresetResp","source":"src/api/production/burn-in-test.ts","line":412},{"name":"ILoadPresetResp","source":"src/api/production/burn-in-test.ts","line":414}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

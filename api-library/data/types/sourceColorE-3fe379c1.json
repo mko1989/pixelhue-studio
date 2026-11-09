@@ -1,0 +1,9 @@
+{
+  "id": "sourceColorE-3fe379c1",
+  "name": "sourceColorE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 628,
+  "declaration": "enum sourceColorE {\n  min,\n  max = 4095,\n}"
+}

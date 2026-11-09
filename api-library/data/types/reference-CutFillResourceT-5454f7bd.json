@@ -1,0 +1,7 @@
+{
+  "id": "reference-CutFillResourceT-5454f7bd",
+  "name": "CutFillResourceT",
+  "availability": "referenced-only",
+  "references": [{"name":"CutFillResourceT","source":"src/api/layer/layer.ts","line":691}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

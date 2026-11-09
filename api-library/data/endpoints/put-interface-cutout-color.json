@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/interface/cutout/color",
+  "group": "interface",
+  "summary": "response",
+  "tags": ["interface","cutout","color"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"interface/cutout/color","dynamic":false,"source":"src/api/device/deviceInterface.ts","line":164,"client":"API","symbol":"response","comment":"*获取抠图颜色*","parameters":["data: interfaceCutoutGetT","seq?"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq || 1,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'interface/cutout/color',\n    data,\n    headers: {\n      seq: seq || 1,\n    },\n  }","context":"async (\n  data: interfaceCutoutGetT,\n  seq?,\n): Promise<IResponseData<CutoutColorT>> => {\n  const response = await API.request<IResponseData<CutoutColorT>>({\n    method: 'PUT',\n    url: 'interface/cutout/color',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-interface-cutout-color",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

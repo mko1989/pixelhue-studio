@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/cabinet/correction/line/coefficient",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","cabinet","correction","line","coefficient"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/cabinet/correction/line/coefficient","dynamic":false,"source":"src/api/ctl-fix/index.ts","line":168,"client":"API","symbol":"response","comment":"* 设置亮暗线系数","parameters":["data: CabinetLineCoefficientParamsT[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\r\n    method: 'put',\r\n    url: 'ucenter/cabinet/correction/line/coefficient',\r\n    data,\r\n    timeout: 60000,\r\n  }","context":"async (\r\n  data: CabinetLineCoefficientParamsT[],\r\n): Promise<IResponseData<unknown>> => {\r\n  const response = await API.request<IResponseData<unknown>>({\r\n    method: 'put',\r\n    url: 'ucenter/cabinet/correction/line/coefficient',\r\n    data,\r\n    timeout: 60000,\r","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-cabinet-correction-line-coefficient",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

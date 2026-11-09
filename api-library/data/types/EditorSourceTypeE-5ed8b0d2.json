@@ -1,0 +1,9 @@
+{
+  "id": "EditorSourceTypeE-5ed8b0d2",
+  "name": "EditorSourceTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 132,
+  "declaration": "enum EditorSourceTypeE {\n  /** 视频源 */\n  'source-video-input',\n  /** U盘源 */\n  'video-source-udisk',\n  /** 拼接源 */\n  'mosaic-merged-source',\n  /** 共享源 */\n  'video-source-global',\n}"
+}

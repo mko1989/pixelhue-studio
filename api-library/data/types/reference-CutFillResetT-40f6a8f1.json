@@ -1,0 +1,7 @@
+{
+  "id": "reference-CutFillResetT-40f6a8f1",
+  "name": "CutFillResetT",
+  "availability": "referenced-only",
+  "references": [{"name":"CutFillResetT","source":"src/api/layer/layer.ts","line":979}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

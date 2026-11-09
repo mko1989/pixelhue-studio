@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/player/disk-info",
+  "group": "player",
+  "summary": "response",
+  "tags": ["player","disk-info"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"player/disk-info","dynamic":false,"source":"src/api/u-disk/index.ts","line":207,"client":"API","symbol":"response","comment":"*\n * 设置播放器磁盘信息","parameters":["data: {\n    interfaceId: number;\n    diskType: EDiskType;\n    filePath: string[];\n  }[]","options: ExtraReqParamsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'player/disk-info',\n    data,\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    },\n  }","context":"async (\n  data: {\n    interfaceId: number;\n    diskType: EDiskType;\n    filePath: string[];\n  }[],\n  options: ExtraReqParamsT,\n): Promise<IResponseData<null>> => {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-player-disk-info",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

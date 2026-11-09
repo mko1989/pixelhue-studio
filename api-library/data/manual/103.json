@@ -1,0 +1,18 @@
+{
+  "page": 103,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nr\nintege\n├─ percentageScale Yes Ratio of fraction\nr\nintege\n├─ lineCount Yes Number of rows\nr\nintege\n├─ pixel Yes Pixel\nr\nReference\nsource ID:\nWhen type=1,\nnumb sourceId=nodeI\n├─ sourceId Yes\ner d.\nWhen type=2,\nsourceId=interfa\nceId.\nCurrent Genlock\n├─ genlockStatus object Yes\nstatus\nCurrent Genlock\nstatus:\n0: Not enabled.\n1: Adjusting.\nnumb\n├─ status Yes 2: Synchronized\ner\nsuccessfully.\n3:\nSynchronization\nfailed.\n├─ edge object Yes Edge blending\nnumb Enable status:\n├─ enable Yes\ner 0: Disable.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "r", "", "", "", ""],
+      ["├─ percentageScale", "intege\nr", "Yes", "", "Ratio of fraction", ""],
+      ["├─ lineCount", "intege\nr", "Yes", "", "Number of rows", ""],
+      ["├─ pixel", "intege\nr", "Yes", "", "Pixel", ""],
+      ["├─ sourceId", "numb\ner", "Yes", "", "Reference\nsource ID:\nWhen type=1,\nsourceId=nodeI\nd.\nWhen type=2,\nsourceId=interfa\nceId.", ""],
+      ["├─ genlockStatus", "object", "Yes", "", "Current Genlock\nstatus", ""],
+      ["├─ status", "numb\ner", "Yes", "", "Current Genlock\nstatus:\n0: Not enabled.\n1: Adjusting.\n2: Synchronized\nsuccessfully.\n3:\nSynchronization\nfailed.", ""],
+      ["├─ edge", "object", "Yes", "", "Edge blending", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Enable status:\n0: Disable.", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EMediaState-eaaa5cf2",
+  "name": "EMediaState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/external-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 37,
+  "declaration": "enum EMediaState {\n  DEFAULT = 620, // 无media\n  CLOSE, // 621 - 关闭，有源黄色\n  OPEN, // 622 - 打开，有源绿色\n}"
+}

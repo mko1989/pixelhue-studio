@@ -1,0 +1,16 @@
+{
+  "page": 25,
+  "text": "2.2 Factory Rest\n Basic Information\nPath: /v1/system/restore-factory\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nAuthorization Yes token\nBody\nDefault\nName Type Required Remarks More\nValue\nItem\nobject\ntype:\nrestoreFactory Yes Factory reset\n[]\nobject\nThe meaning of the para\nfield for different type\nvalues:\nWhen type=0, para\nmeans condition\nconfiguration restart.\nWhen type=1, para\n├─ type number Yes means IP setting\nconfiguration.\nWhen type=2, para\nmeans EDID settings.\nWhen type=3, para\nmeans gallery data.\nWhen type=4, para\nmeans language",
+  "tables": [
+    {"contextBefore": "2.2 Factory Rest\n Basic Information\nPath: /v1/system/restore-factory\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""],
+      ["Authorization", "", "Yes", "", "token"]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["restoreFactory", "object\n[]", "Yes", "", "Factory reset", "Item\ntype:\nobject"],
+      ["├─ type", "number", "Yes", "", "The meaning of the para\nfield for different type\nvalues:\nWhen type=0, para\nmeans condition\nconfiguration restart.\nWhen type=1, para\nmeans IP setting\nconfiguration.\nWhen type=2, para\nmeans EDID settings.\nWhen type=3, para\nmeans gallery data.\nWhen type=4, para\nmeans language", ""]
+    ]}
+  ]
+}

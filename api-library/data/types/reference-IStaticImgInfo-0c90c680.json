@@ -1,0 +1,7 @@
+{
+  "id": "reference-IStaticImgInfo-0c90c680",
+  "name": "IStaticImgInfo",
+  "availability": "referenced-only",
+  "references": [{"name":"IStaticImgInfo","source":"src/api/setting/setting.ts","line":110},{"name":"IStaticImgInfo","source":"src/api/setting/setting.ts","line":115},{"name":"IStaticImgInfo","source":"src/api/setting/setting.ts","line":139},{"name":"IStaticImgInfo","source":"src/api/setting/setting.ts","line":138},{"name":"IStaticImgInfo","source":"src/api/setting/setting.ts","line":140}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

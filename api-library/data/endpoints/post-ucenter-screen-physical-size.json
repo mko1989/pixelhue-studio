@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/physical-size",
+  "group": "ucenter",
+  "summary": "res",
+  "tags": ["ucenter","screen","physical-size"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/screen/physical-size","dynamic":false,"source":"src/api/screen/screen.ts","line":1332,"client":"API","symbol":"res","comment":"屏幕设置虚拟点数","parameters":["data: ScreenPhysicalSizeParamsT","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq ?? 0,\n    }","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/screen/physical-size',\n    data,\n    headers: {\n      seq: seq ?? 0,\n    },\n  }","context":"async (\n  data: ScreenPhysicalSizeParamsT,\n  seq?: number,\n): Promise<IResponseData<string>> => {\n  const res = await API.request<IResponseData<string>>({\n    method: 'POST',\n    url: 'ucenter/screen/physical-size',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-physical-size",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

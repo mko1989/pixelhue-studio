@@ -1,0 +1,9 @@
+{
+  "id": "ELinkState-e7b7cb36",
+  "name": "ELinkState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 214,
+  "declaration": "enum ELinkState {\n  notOK, // 0：不通过\n  ok, // 1：通过\n}"
+}

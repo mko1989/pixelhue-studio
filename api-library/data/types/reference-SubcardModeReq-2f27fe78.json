@@ -1,0 +1,7 @@
+{
+  "id": "reference-SubcardModeReq-2f27fe78",
+  "name": "SubcardModeReq",
+  "availability": "referenced-only",
+  "references": [{"name":"SubcardModeReq","source":"src/api/device/deviceList.ts","line":406},{"name":"SubcardModeReq","source":"src/api/layer/layer.ts","line":720}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/device/upgrade-subcard/stream",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","device","upgrade-subcard","stream"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/device/upgrade-subcard/stream","dynamic":false,"source":"src/api/device/device-upgrade.ts","line":102,"client":"API_U_CENTER","symbol":"response","comment":"*\n * 设备升级上传文件\n * @returns","parameters":["data: upgradeProtocolParamsI","protocol"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{\n      isLoading: true,\n      'Content-Type': 'multipart/form-data',\n      protocol,\n    }","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/device/upgrade-subcard/stream',\n    timeout: 600000,\n    headers: {\n      isLoading: true,\n      'Content-Type': 'multipart/form-data',\n      protocol,\n    },\n    data: formData,\n  }","context":"async (data: upgradeProtocolParamsI, protocol) => {\n  const formData = new FormData();\n  formData.append('deviceConfigList', JSON.stringify(data.deviceConfigList));\n  formData.append('file', data.file);\n  const response = await API_U_CENTER.request<IResponseData<string>>({\n    method: 'POST',\n    url: 'ucenter/device/upgrade-subcard/stream',\n    timeout: 600000,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-device-upgrade-subcard-stream",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

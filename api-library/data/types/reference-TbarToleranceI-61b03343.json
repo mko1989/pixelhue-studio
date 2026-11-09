@@ -1,0 +1,7 @@
+{
+  "id": "reference-TbarToleranceI-61b03343",
+  "name": "TbarToleranceI",
+  "availability": "referenced-only",
+  "references": [{"name":"TbarToleranceI","source":"src/api/custom/index.ts","line":72},{"name":"TbarToleranceI","source":"src/api/custom/index.ts","line":85},{"name":"TbarToleranceI","source":"src/api/custom/index.ts","line":86}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

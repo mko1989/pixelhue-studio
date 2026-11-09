@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/data-change",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","data-change"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/data-change","dynamic":false,"source":"src/api/panel/panel.ts","line":20,"client":"API","symbol":"response","comment":"* 下发控台全量业务数据","parameters":["data: IPanelMsg"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: 'ucenter/video-station/data-change',\n    data,\n  }","context":"async (data: IPanelMsg) => {\n  console.info('向控台推送全量业务数据 =>>>>>>>>>>>>>> ', data);\n  const response = await API.request({\n    method: 'put',\n    url: 'ucenter/video-station/data-change',\n    data,\n  });\n  return response.data;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-data-change",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

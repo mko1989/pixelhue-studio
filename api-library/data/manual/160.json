@@ -1,0 +1,19 @@
+{
+  "page": 160,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nr corresponding to the Fill\nlayer\nnumb\n├─ osdId Yes OSD ID\ner\nScreen working mode:\nintege\n├─ screenMode Yes 0: All-In-One Controller.\nr\n1: Send-Only Controller.\nnumb\n├─ serial Yes Layer number\ner\n├─ keyFrame object Yes KeyFrame properties\nThe switch:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\nKeyFrame curve speed\ntype:\nnumb 0: S-curve.\n├─ speedType Yes\ner 1: Logarithmic curve.\n2: Exponential curve.\n3: Linear curve.\nStart time (relative to the\nnumb Take time as a\n├─ startTime Yes\ner percentage, coefficient:\n1000)\nAnimation duration\n├─ numb (relative to the Take time\nYes\nanimationTime er as a percentage,\ncoefficient: 1000)\nItem\nobject\n├─ safeFrames Yes Safe area information type:\n[]\nobject",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "r", "", "", "corresponding to the Fill\nlayer", ""],
+      ["├─ osdId", "numb\ner", "Yes", "", "OSD ID", ""],
+      ["├─ screenMode", "intege\nr", "Yes", "", "Screen working mode:\n0: All-In-One Controller.\n1: Send-Only Controller.", ""],
+      ["├─ serial", "numb\ner", "Yes", "", "Layer number", ""],
+      ["├─ keyFrame", "object", "Yes", "", "KeyFrame properties", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "The switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ speedType", "numb\ner", "Yes", "", "KeyFrame curve speed\ntype:\n0: S-curve.\n1: Logarithmic curve.\n2: Exponential curve.\n3: Linear curve.", ""],
+      ["├─ startTime", "numb\ner", "Yes", "", "Start time (relative to the\nTake time as a\npercentage, coefficient:\n1000)", ""],
+      ["├─\nanimationTime", "numb\ner", "Yes", "", "Animation duration\n(relative to the Take time\nas a percentage,\ncoefficient: 1000)", ""],
+      ["├─ safeFrames", "object\n[]", "Yes", "", "Safe area information", "Item\ntype:\nobject"]
+    ]}
+  ]
+}

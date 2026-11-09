@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceHdmiOutputModeT-6d04d520",
+  "name": "InterfaceHdmiOutputModeT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 646,
+  "declaration": "interface InterfaceHdmiOutputModeT {\n  interfaceId: number | string;\n  mode: number;\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EInputOrOutput-42fe3ce5",
+  "name": "EInputOrOutput",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 111,
+  "declaration": "enum EInputOrOutput {\n  input = 'input', // 输入测试\n  out = 'output', // 输出测试\n  aging = 'aging', // 老化测试\n}"
+}

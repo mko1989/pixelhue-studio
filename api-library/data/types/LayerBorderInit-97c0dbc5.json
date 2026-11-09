@@ -1,0 +1,9 @@
+{
+  "id": "LayerBorderInit-97c0dbc5",
+  "name": "LayerBorderInit",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 76,
+  "declaration": "enum LayerBorderInit {\n  min = 0,\n  max = 512,\n}"
+}

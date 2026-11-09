@@ -1,0 +1,9 @@
+{
+  "id": "CorrectionObjectE-af762df8",
+  "name": "CorrectionObjectE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/correction/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 68,
+  "declaration": "enum CorrectionObjectE {\n  /****全屏***/\n  Screen = 1,\n  /****箱体***/\n  Cabinet = 2,\n  /****模组***/\n  Modules = 3,\n}"
+}

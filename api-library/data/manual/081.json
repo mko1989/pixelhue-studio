@@ -1,0 +1,18 @@
+{
+  "page": 81,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nThe position of\nnumb the cropping\n├─ x Yes\ner area in X\ndirection\nThe position of\nnumb the cropping\n├─ y Yes\ner area in Y\ndirection\nnumb The width of the\n├─ width Yes\ner cropping area\nThe height of\nnumb\n├─ height Yes the cropping\ner\narea\nRotation\n├─ rotate object Yes\ninformation\nRotation switch\n├─ enable string Yes\nenable\nAngle of\n├─ angle string Yes\nrotation\nConnector\nItem type:\nobject\n├─ Yes feathering area\nobject\n[]\ninformation\nArea starting x-\ncoordinate (with\nthe top-left\nnumb\n├─ x Yes corner as the\ner\nreference point\nwithin the\nconnector)",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ x", "numb\ner", "Yes", "", "The position of\nthe cropping\narea in X\ndirection", ""],
+      ["├─ y", "numb\ner", "Yes", "", "The position of\nthe cropping\narea in Y\ndirection", ""],
+      ["├─ width", "numb\ner", "Yes", "", "The width of the\ncropping area", ""],
+      ["├─ height", "numb\ner", "Yes", "", "The height of\nthe cropping\narea", ""],
+      ["├─ rotate", "object", "Yes", "", "Rotation\ninformation", ""],
+      ["├─ enable", "string", "Yes", "", "Rotation switch\nenable", ""],
+      ["├─ angle", "string", "Yes", "", "Angle of\nrotation", ""],
+      ["├─", "object\n[]", "Yes", "", "Connector\nfeathering area\ninformation", "Item type:\nobject"],
+      ["├─ x", "numb\ner", "Yes", "", "Area starting x-\ncoordinate (with\nthe top-left\ncorner as the\nreference point\nwithin the\nconnector)", ""]
+    ]}
+  ]
+}

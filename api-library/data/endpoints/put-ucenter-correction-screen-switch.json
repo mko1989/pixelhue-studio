@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/correction/screen/switch",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","correction","screen","switch"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/correction/screen/switch","dynamic":false,"source":"src/api/ctl-fix/index.ts","line":192,"client":"API","symbol":"response","comment":"****设置屏幕校正开关***","parameters":["data: CorrectionScreenSwitchParamsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\r\n    method: 'put',\r\n    url: 'ucenter/correction/screen/switch',\r\n    data,\r\n  }","context":"async (\r\n  data: CorrectionScreenSwitchParamsT,\r\n): Promise<IResponseData<unknown>> => {\r\n  const response = await API.request<IResponseData<unknown>>({\r\n    method: 'put',\r\n    url: 'ucenter/correction/screen/switch',\r\n    data,\r\n  });\r","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-correction-screen-switch",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

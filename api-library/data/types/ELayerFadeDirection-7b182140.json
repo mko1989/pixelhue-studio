@@ -1,0 +1,9 @@
+{
+  "id": "ELayerFadeDirection-7b182140",
+  "name": "ELayerFadeDirection",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1204,
+  "declaration": "enum ELayerFadeDirection {\n  fadeIn = 0,\n  fadeOut = 1,\n}"
+}

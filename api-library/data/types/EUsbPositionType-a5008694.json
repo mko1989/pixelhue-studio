@@ -1,0 +1,9 @@
+{
+  "id": "EUsbPositionType-a5008694",
+  "name": "EUsbPositionType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 280,
+  "declaration": "enum EUsbPositionType {\n  back, // 后背板\n  front, // 前面板\n}"
+}

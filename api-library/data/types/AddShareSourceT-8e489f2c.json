@@ -1,0 +1,9 @@
+{
+  "id": "AddShareSourceT-8e489f2c",
+  "name": "AddShareSourceT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/types/device/link.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 36,
+  "declaration": "type AddShareSourceT = {\n  shareIds: LinkShareIdsT[];\n};"
+}

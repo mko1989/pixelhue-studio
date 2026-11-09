@@ -1,0 +1,24 @@
+{
+  "page": 159,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\n├─ start object Yes Starting coordinates\nintege\n├─ x Yes x-coordinate\nr\nintege\n├─ y Yes y-coordinate\nr\n├─ end object Yes End coordinates\nintege\n├─ x Yes x-coordinate\nr\nintege\n├─ y Yes y-coordinate\nr\nRelative coordinates of\n├─ relative object Yes\nthe Cut layer\nintege\n├─ x Yes x-coordinate\nr\nintege\n├─ y Yes y-coordinate\nr\nintege\n├─ width Yes Width\nr\nintege\n├─ height Yes Height\nr\nItem\nintege The key position index,\n├─ keyPosition Yes type:\nr [] starting from 0\ninteger\n├─ No Position sequence value\nThe Fill layer ID\nintege\n├─ fillId Yes corresponding to the Cut\nr\nlayer\n├─ cutId intege Yes The Cut layer ID",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ start", "object", "Yes", "", "Starting coordinates", ""],
+      ["├─ x", "intege\nr", "Yes", "", "x-coordinate", ""],
+      ["├─ y", "intege\nr", "Yes", "", "y-coordinate", ""],
+      ["├─ end", "object", "Yes", "", "End coordinates", ""],
+      ["├─ x", "intege\nr", "Yes", "", "x-coordinate", ""],
+      ["├─ y", "intege\nr", "Yes", "", "y-coordinate", ""],
+      ["├─ relative", "object", "Yes", "", "Relative coordinates of\nthe Cut layer", ""],
+      ["├─ x", "intege\nr", "Yes", "", "x-coordinate", ""],
+      ["├─ y", "intege\nr", "Yes", "", "y-coordinate", ""],
+      ["├─ width", "intege\nr", "Yes", "", "Width", ""],
+      ["├─ height", "intege\nr", "Yes", "", "Height", ""],
+      ["├─ keyPosition", "intege\nr []", "Yes", "", "The key position index,\nstarting from 0", "Item\ntype:\ninteger"],
+      ["├─", "", "No", "", "Position sequence value", ""],
+      ["├─ fillId", "intege\nr", "Yes", "", "The Fill layer ID\ncorresponding to the Cut\nlayer", ""],
+      ["├─ cutId", "intege", "Yes", "", "The Cut layer ID", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-NormalScreenT-018c01f2",
+  "name": "NormalScreenT",
+  "availability": "referenced-only",
+  "references": [{"name":"NormalScreenT","source":"src/api/screen/screen.ts","line":306},{"name":"NormalScreenT","source":"src/api/screen/screen.ts","line":307},{"name":"NormalScreenT","source":"src/api/screen/screen.ts","line":336},{"name":"NormalScreenT","source":"src/api/screen/screen.ts","line":337},{"name":"NormalScreenT","source":"src/api/screen/screen.ts","line":353},{"name":"NormalScreenT","source":"src/api/screen/screen.ts","line":354}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

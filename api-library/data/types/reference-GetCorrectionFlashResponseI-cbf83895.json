@@ -1,0 +1,7 @@
+{
+  "id": "reference-GetCorrectionFlashResponseI-cbf83895",
+  "name": "GetCorrectionFlashResponseI",
+  "availability": "referenced-only",
+  "references": [{"name":"GetCorrectionFlashResponseI","source":"src/api/correction/index.ts","line":146},{"name":"GetCorrectionFlashResponseI","source":"src/api/correction/index.ts","line":147}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

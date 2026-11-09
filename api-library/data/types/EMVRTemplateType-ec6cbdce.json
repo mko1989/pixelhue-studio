@@ -1,0 +1,9 @@
+{
+  "id": "EMVRTemplateType-ec6cbdce",
+  "name": "EMVRTemplateType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 267,
+  "declaration": "enum EMVRTemplateType {\n  presetTemplate = 1, // 预设模板\n  customTemplate, // 自定义模板\n  agingTestTemplate, // 老化测试模板\n}"
+}

@@ -1,0 +1,16 @@
+{
+  "page": 6,
+  "text": "2. Device\n2.1 Read Node Information\n Basic Information\nPath: /v1/node/detail\nMethod: GET\nDescription:\nWorking mode of the node (indicated by bit position)\nDevice\nDescript\n7 6 5 4 3 2 1 0 Examp\nion\nle\nVide\nDe o Fiber\nByPas Play Switc Controll\nco wall conver\ns er her er\nder splic ter\ner\nFiber\n√ converte\nr\nMX\n√ √ √\nseries\n√ QD\nTaurus\nseries\n√ multime TU/TB\ndia\nplayer\nP10/2\n√ √ NP\n0\n√ √ H series H",
+  "tables": [
+    {"contextBefore": "2. Device\n2.1 Read Node Information\n Basic Information\nPath: /v1/node/detail\nMethod: GET\nDescription:\nWorking mode of the node (indicated by bit position)", "rows": [
+      ["7", "6", "5", "4", "3", "2", "1", "0", "Descript\nion", "Device\nExamp\nle"],
+      ["", "ByPas\ns", "De\nco\nder", "Play\ner", "Vide\no\nwall\nsplic\ner", "Switc\nher", "Controll\ner", "Fiber\nconver\nter", "", ""],
+      ["", "", "", "", "", "", "", "√", "Fiber\nconverte\nr", ""],
+      ["", "√", "", "", "", "", "√", "√", "MX\nseries", ""],
+      ["", "", "", "", "", "√", "", "", "QD", ""],
+      ["", "", "", "", "", "", "√", "", "Taurus\nseries\nmultime\ndia\nplayer", "TU/TB"],
+      ["", "", "", "", "√", "√", "", "", "NP", "P10/2\n0"],
+      ["", "", "", "", "√", "", "√", "", "H series", "H"]
+    ]}
+  ]
+}

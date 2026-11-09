@@ -1,0 +1,7 @@
+{
+  "id": "reference-IpcImportT-6551f61c",
+  "name": "IpcImportT",
+  "availability": "referenced-only",
+  "references": [{"name":"IpcImportT","source":"src/api/ipc/index.ts","line":135}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

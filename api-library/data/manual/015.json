@@ -1,0 +1,13 @@
+{
+  "page": 15,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nnumb\n├─ slotId Yes Slot No.\ner\nItem type:\nobject\n├─ status Yes\nobject\n[]\nMonitoring type:\nWhen type=0, it\nindicates power\nvoltage.\nWhen type=1, it\nindicates\ntemperature.\nnumb When type=2, it\n├─ type Yes\ner indicates fan\nspeed.\nWhen type=3, it\nindicates fan\nduty cycle.\nWhen type=4, it\nindicates power\nsignal status.\nNumber:\nWhen Type=0,\nindex indicates\npower number.\nWhen Type=1,\nindex indicates\nnumb\n├─ index Yes sensor number.\ner\nWhen Type=2,\nindex indicates\nfan number.\nWhen Type=3,\nindex indicates\nfan number.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["├─ slotId", "numb\ner", "Yes", "", "Slot No.", ""],
+      ["├─ status", "object\n[]", "Yes", "", "", "Item type:\nobject"],
+      ["├─ type", "numb\ner", "Yes", "", "Monitoring type:\nWhen type=0, it\nindicates power\nvoltage.\nWhen type=1, it\nindicates\ntemperature.\nWhen type=2, it\nindicates fan\nspeed.\nWhen type=3, it\nindicates fan\nduty cycle.\nWhen type=4, it\nindicates power\nsignal status.", ""],
+      ["├─ index", "numb\ner", "Yes", "", "Number:\nWhen Type=0,\nindex indicates\npower number.\nWhen Type=1,\nindex indicates\nsensor number.\nWhen Type=2,\nindex indicates\nfan number.\nWhen Type=3,\nindex indicates\nfan number.", ""]
+    ]}
+  ]
+}

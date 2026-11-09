@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/screen/netport-backup-enable",
+  "group": "screen",
+  "summary": "res",
+  "tags": ["screen","netport-backup-enable"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"screen/netport-backup-enable","dynamic":false,"source":"src/api/screen/controller.ts","line":500,"client":"API","symbol":"res","comment":"*\n * 设置网口备份验证","parameters":["data: {\n    guid: string;\n    sn?: string;\n    enableType: NetPortBackupEnableE;\n  }[]","guid: string"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ...(guid ? { guid } : {}),\n      ...getExtraReqIpParamsByGuid(guid),\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'screen/netport-backup-enable',\n    data,\n    headers: {\n      ...(guid ? { guid } : {}),\n      ...getExtraReqIpParamsByGuid(guid),\n    },\n  }","context":"async (\n  data: {\n    guid: string;\n    sn?: string;\n    enableType: NetPortBackupEnableE;\n  }[],\n  guid: string,\n): Promise<IResponseData<never>> => {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-screen-netport-backup-enable",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

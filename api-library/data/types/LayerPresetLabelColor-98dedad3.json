@@ -1,0 +1,8 @@
+{
+  "id": "LayerPresetLabelColor-98dedad3",
+  "name": "LayerPresetLabelColor",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/LayerPreset.ts",
+  "line": 16,
+  "declaration": "interface LayerPresetLabelColor {\n\tR: number\n\tG: number\n\tB: number\n}"
+}

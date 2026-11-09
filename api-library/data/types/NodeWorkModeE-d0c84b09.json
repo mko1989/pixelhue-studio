@@ -1,0 +1,9 @@
+{
+  "id": "NodeWorkModeE-d0c84b09",
+  "name": "NodeWorkModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 832,
+  "declaration": "enum NodeWorkModeE {\n  photolectricTransducer = 0b1, // 光电转换器\n  controller = 0b10, // 控制器\n  switcher = 0b100, // 切换器\n  splicer = 0b1000, // 拼接器\n  player = 0b10000, // 播放器\n  controllerWithPlaybackFunction = 0b10010, // 带播放功能的控制器\n  switcherWithSplicerProperty = 0b1100, // 带拼接器属性的切换器\n  _2In1Splicer = 0b1010, // 二合一拼接器\n  _2In1Switcher = 0b110, // 二合一切换器\n  decoderSeat = 0b100000, // 解码器坐席\n  decoderLargeScreen = 0b1000000, // 解码器大屏\n}"
+}

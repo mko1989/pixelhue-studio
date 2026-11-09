@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/video-station/peripheral/light",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","peripheral","light"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/video-station/peripheral/light","dynamic":false,"source":"src/api/setting/setting.ts","line":34,"client":"API","symbol":"response","comment":"* 获取控台灯的信息","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'GET',\n    url: 'ucenter/video-station/peripheral/light',\n  }","context":"async (): Promise<IResponseData<ILightStatus[]>> => {\n  const response = await API.request<IResponseData<ILightStatus[]>>({\n    method: 'GET',\n    url: 'ucenter/video-station/peripheral/light',\n  });\n\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-video-station-peripheral-light",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

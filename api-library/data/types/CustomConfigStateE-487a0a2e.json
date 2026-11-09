@@ -1,0 +1,9 @@
+{
+  "id": "CustomConfigStateE-487a0a2e",
+  "name": "CustomConfigStateE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 125,
+  "declaration": "enum CustomConfigStateE {\n  unuse, //0： 未使用\n  used, //1： 使用\n}"
+}

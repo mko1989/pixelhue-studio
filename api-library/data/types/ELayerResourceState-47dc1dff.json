@@ -1,0 +1,9 @@
+{
+  "id": "ELayerResourceState-47dc1dff",
+  "name": "ELayerResourceState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1069,
+  "declaration": "enum ELayerResourceState {\n  notOver = 0, // 未超限\n  isResourceOver = 1, // 已超限\n  isNumberOver = 2,\n  isMainResourceOver = 3, // 标识main资源超限\n  isCutMoreThanFill = 4, // cut源大于fill源\n  isCutResourceOver = 5, // 标识cut源超限\n  isLiveBKGNoOutputResourceOver = 7, // LiveBKG不占用输出资源的资源超限（P80）\n}"
+}

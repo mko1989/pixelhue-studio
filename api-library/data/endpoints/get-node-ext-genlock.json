@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/node/ext-genlock",
+  "group": "node",
+  "summary": "response",
+  "tags": ["node","ext-genlock"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"node/ext-genlock","dynamic":false,"source":"src/api/device/deviceList.ts","line":560,"client":"API","symbol":"response","comment":"*\n * 获取 系统 genlock 状态\n * @returns","parameters":["nodeId: number","options?: ExtraReqParamsT"],"bodyExpression":null,"queryExpression":"{ nodeId }","headerExpression":"{\n      Authorization: options?.token || '',\n      ip: options?.ip || '',\n      port: options?.port || '',\n      protocol: options?.protocol || '',\n    }","configExpression":"{\n    method: 'GET',\n    url: 'node/ext-genlock',\n    params: { nodeId },\n    headers: {\n      Authorization: options?.token || '',\n      ip: options?.ip || '',\n      port: options?.port || '',\n      protocol: options?.protocol || '',\n    },\n  }","context":"async (\n  nodeId: number,\n  options?: ExtraReqParamsT,\n): Promise<IResponseData<GenlockRes[]>> => {\n  const response = await API.request<IResponseData<GenlockRes[]>>({\n    method: 'GET',\n    url: 'node/ext-genlock',\n    params: { nodeId },","sourceMap":"main-Cpb41LiE.js.map"},{"method":"GET","path":"node/ext-genlock","dynamic":false,"source":"src/api/production/index.ts","line":238,"client":"API","symbol":"response","comment":"*\n * 获取外部Genlock连接状态\n * @param params\n * @returns","parameters":["{ nodeId }"],"bodyExpression":null,"queryExpression":"{ nodeId }","headerExpression":null,"configExpression":"{\n    method: 'GET',\n    url: 'node/ext-genlock',\n    params: { nodeId },\n  }","context":"async ({ nodeId }): Promise<IResponseData<GenlockResponseT[]>> => {\n  const response = await API.request<IResponseData<GenlockResponseT[]>>({\n    method: 'GET',\n    url: 'node/ext-genlock',\n    params: { nodeId },\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-node-ext-genlock",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

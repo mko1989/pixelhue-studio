@@ -1,0 +1,9 @@
+{
+  "id": "ncpPageStateE-4bd79833",
+  "name": "ncpPageStateE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/ncpLibrary/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 26,
+  "declaration": "enum ncpPageStateE {\n  close,\n  list,\n  manage,\n}"
+}

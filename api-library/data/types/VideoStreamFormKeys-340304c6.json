@@ -1,0 +1,9 @@
+{
+  "id": "VideoStreamFormKeys-340304c6",
+  "name": "VideoStreamFormKeys",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1182,
+  "declaration": "enum VideoStreamFormKeys {\n  resolution = 'resolution',\n  colorSpace = 'colorSpace',\n  colorDepth = 'colorDepth',\n  interlaced = 'interlaced',\n  frame = 'frame',\n  width = 'width',\n  height = 'height',\n  streamInfo = 'streamInfo',\n}"
+}

@@ -1,0 +1,22 @@
+{
+  "page": 125,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nThe screen\n├─ group object Yes group\ninformation\nGroup ID: uuid;\n├─ id string Yes\nUngrouped as \"”\nintege The group order,\n├─ order Yes\nr 0 if ungrouped\nGroup name, \"\" if\n├─ name string Yes\nungrouped\nintege The update\n├─ updateTime Yes\nr timestamp\n├─ edgeFusion object Yes Edge blending\nnumb 0: Disable.\n├─ enable Yes\ner 1: Enable.\n0: Basic mode.\n├─ mode string Yes 1: Advanced\nmode.\n├─ edgeFusionFlag object Yes\nEdge marker\nnumb switch:\n├─ enable Yes\ner 0: Disable.\n1: Enable.\nThe marker\n├─ color object Yes\ncolor\nnumb\n├─ R Yes R\ner\nnumb\n├─ G Yes G\ner",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ group", "object", "Yes", "", "The screen\ngroup\ninformation", ""],
+      ["├─ id", "string", "Yes", "", "Group ID: uuid;\nUngrouped as \"”", ""],
+      ["├─ order", "intege\nr", "Yes", "", "The group order,\n0 if ungrouped", ""],
+      ["├─ name", "string", "Yes", "", "Group name, \"\" if\nungrouped", ""],
+      ["├─ updateTime", "intege\nr", "Yes", "", "The update\ntimestamp", ""],
+      ["├─ edgeFusion", "object", "Yes", "", "Edge blending", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "0: Disable.\n1: Enable.", ""],
+      ["├─ mode", "string", "Yes", "", "0: Basic mode.\n1: Advanced\nmode.", ""],
+      ["├─ edgeFusionFlag", "object", "Yes", "", "", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Edge marker\nswitch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ color", "object", "Yes", "", "The marker\ncolor", ""],
+      ["├─ R", "numb\ner", "Yes", "", "R", ""],
+      ["├─ G", "numb\ner", "Yes", "", "G", ""]
+    ]}
+  ]
+}

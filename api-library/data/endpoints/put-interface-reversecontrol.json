@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/interface/reverseControl",
+  "group": "interface",
+  "summary": "response",
+  "tags": ["interface","reverseControl"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"/interface/reverseControl","dynamic":false,"source":"src/api/device/device-source.ts","line":231,"client":"API","symbol":"response","comment":"*\n * 设置反控信息","parameters":["data: IReqReverseCtl[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: '/interface/reverseControl',\n    data,\n  }","context":"async (data: IReqReverseCtl[]) => {\n  const response = await API.request<IResponseData<[]>>({\n    method: 'PUT',\n    url: '/interface/reverseControl',\n    data,\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-interface-reversecontrol",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

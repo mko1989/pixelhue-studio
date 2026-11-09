@@ -1,0 +1,7 @@
+{
+  "id": "reference-PdfPreviewT-81d09218",
+  "name": "PdfPreviewT",
+  "availability": "referenced-only",
+  "references": [{"name":"PdfPreviewT","source":"src/api/setting/setting.ts","line":877},{"name":"PdfPreviewT","source":"src/api/setting/setting.ts","line":878},{"name":"PdfPreviewT","source":"src/api/setting/setting.ts","line":889},{"name":"PdfPreviewT","source":"src/api/setting/setting.ts","line":889},{"name":"PdfPreviewT","source":"src/api/setting/setting.ts","line":890},{"name":"PdfPreviewT","source":"src/api/setting/setting.ts","line":904},{"name":"PdfPreviewT","source":"src/api/setting/setting.ts","line":905},{"name":"PdfPreviewT","source":"src/api/setting/setting.ts","line":917},{"name":"PdfPreviewT","source":"src/api/setting/setting.ts","line":917},{"name":"PdfPreviewT","source":"src/api/setting/setting.ts","line":918}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

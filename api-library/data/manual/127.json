@@ -1,0 +1,23 @@
+{
+  "page": 127,
+  "text": " Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nItem\nobject\ntype:\nNo\n[]\nobject\nThe screen ID. Provide at\nleast one of screenId or\n├─\nnumber No screenName; if both are\nscreenId\nprovided, screenId takes\nprecedence.\n├─\nstring Yes The screen guid\nscreenGuid\nScreen freeze switch:\n├─ freeze number Yes 0: Unfreeze.\n1: Freeze.\nThe screen name. Provide\nat least one of screenId or\n├─\nstring No screenName; if both are\nscreenName\nprovided, screenId takes\nprecedence.\n Return Data\nDefault\nName Type Required Remarks More\nValue\ncode integer Yes Response code\nResponse\nmessage string Yes\nmessage",
+  "tables": [
+    {"contextBefore": " Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "object\n[]", "No", "", "", "Item\ntype:\nobject"],
+      ["├─\nscreenId", "number", "No", "", "The screen ID. Provide at\nleast one of screenId or\nscreenName; if both are\nprovided, screenId takes\nprecedence.", ""],
+      ["├─\nscreenGuid", "string", "Yes", "", "The screen guid", ""],
+      ["├─ freeze", "number", "Yes", "", "Screen freeze switch:\n0: Unfreeze.\n1: Freeze.", ""],
+      ["├─\nscreenName", "string", "No", "", "The screen name. Provide\nat least one of screenId or\nscreenName; if both are\nprovided, screenId takes\nprecedence.", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response\nmessage", ""]
+    ]}
+  ]
+}

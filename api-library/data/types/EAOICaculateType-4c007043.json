@@ -1,0 +1,9 @@
+{
+  "id": "EAOICaculateType-4c007043",
+  "name": "EAOICaculateType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 288,
+  "declaration": "enum EAOICaculateType {\n  device_n, // N系列设备\n  device_not_n, // 非N系列设备\n}"
+}

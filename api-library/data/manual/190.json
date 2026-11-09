@@ -1,0 +1,17 @@
+{
+  "page": 190,
+  "text": "Require Defaul\nName Type Remarks More\nd t Value\n├─ layerIdObj object Yes The layer identifier\nmock:\n├─ id integer Yes The layer ID @intege\nr\nLayer type: [2:\nmock:\nCommon layer; 4: AUX\n├─ type integer Yes layer; 8: MVR layer; 16: @intege\nr\nBKG layer; 32: Logo\nlayer]\nWhere the layer\nbelongs: [1: Not\nmock:\nbelonging to PGM or\n├─ sceneType integer Yes @intege\nPVW; 2: Belonging to\nr\nPGM; 4: Belonging to\nPVW]\nThe IDs for different\ntypes of the screens\n[ attachScreenType==\nmock:\n├─ 0, it indicates\n@intege\ninteger Yes\nattachScreenId screenId;\nr\nattachScreenType==1,\nit indicates\nledScreenId]\n├─ Screen type: [0: Screen mock:\n@intege\nattachScreenTyp integer Yes with video connectors;\nr\ne 1: LED screen]\nThe layer basic\n├─ general object Yes\ninformation\nmock:\n├─ name string Yes The layer name\n@string",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Require\nd", "Defaul\nt Value", "Remarks", "More"],
+      ["├─ layerIdObj", "object", "Yes", "", "The layer identifier", ""],
+      ["├─ id", "integer", "Yes", "", "The layer ID", "mock:\n@intege\nr"],
+      ["├─ type", "integer", "Yes", "", "Layer type: [2:\nCommon layer; 4: AUX\nlayer; 8: MVR layer; 16:\nBKG layer; 32: Logo\nlayer]", "mock:\n@intege\nr"],
+      ["├─ sceneType", "integer", "Yes", "", "Where the layer\nbelongs: [1: Not\nbelonging to PGM or\nPVW; 2: Belonging to\nPGM; 4: Belonging to\nPVW]", "mock:\n@intege\nr"],
+      ["├─\nattachScreenId", "integer", "Yes", "", "The IDs for different\ntypes of the screens\n[ attachScreenType==\n0, it indicates\nscreenId;\nattachScreenType==1,\nit indicates\nledScreenId]", "mock:\n@intege\nr"],
+      ["├─\nattachScreenTyp\ne", "integer", "Yes", "", "Screen type: [0: Screen\nwith video connectors;\n1: LED screen]", "mock:\n@intege\nr"],
+      ["├─ general", "object", "Yes", "", "The layer basic\ninformation", ""],
+      ["├─ name", "string", "Yes", "", "The layer name", "mock:\n@string"]
+    ]}
+  ]
+}

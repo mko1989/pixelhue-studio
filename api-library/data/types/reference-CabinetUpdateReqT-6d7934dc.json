@@ -1,0 +1,7 @@
+{
+  "id": "reference-CabinetUpdateReqT-6d7934dc",
+  "name": "CabinetUpdateReqT",
+  "availability": "referenced-only",
+  "references": [{"name":"CabinetUpdateReqT","source":"src/api/device/cabinet-pack.ts","line":299}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

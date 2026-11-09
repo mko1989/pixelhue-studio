@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/preset/play-id",
+  "group": "preset",
+  "summary": "response",
+  "tags": ["preset","play-id"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"preset/play-id","dynamic":false,"source":"src/api/preset/index.ts","line":159,"client":"API","symbol":"response","comment":"*\n * 当前播放场景信息\n * @param params\n * @returns","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'preset/play-id',\n  }","context":"async (): Promise<IResponseData<IPlayPreset>> => {\n  const response = await API.request<IResponseData<IPlayPreset>>({\n    method: 'get',\n    url: 'preset/play-id',\n  });\n\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-preset-play-id",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

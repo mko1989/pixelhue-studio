@@ -1,0 +1,7 @@
+{
+  "id": "reference-ScreenEdgeCheckOverParamsT-abfcf4e4",
+  "name": "ScreenEdgeCheckOverParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"ScreenEdgeCheckOverParamsT","source":"src/api/screen/screen.ts","line":668},{"name":"ScreenEdgeCheckOverParamsT","source":"src/api/screen/screen.ts","line":681}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

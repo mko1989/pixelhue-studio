@@ -1,0 +1,7 @@
+{
+  "id": "reference-SubScreenUpdateNameT-a00c8f3c",
+  "name": "SubScreenUpdateNameT",
+  "availability": "referenced-only",
+  "references": [{"name":"SubScreenUpdateNameT","source":"src/api/screen/screen.ts","line":1795}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

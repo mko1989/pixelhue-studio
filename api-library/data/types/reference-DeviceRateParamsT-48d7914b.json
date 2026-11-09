@@ -1,0 +1,7 @@
+{
+  "id": "reference-DeviceRateParamsT-48d7914b",
+  "name": "DeviceRateParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"DeviceRateParamsT","source":"src/api/device/deviceList.ts","line":1074}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

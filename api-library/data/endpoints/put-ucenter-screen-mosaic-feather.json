@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/screen/mosaic/feather",
+  "group": "ucenter",
+  "summary": "res",
+  "tags": ["ucenter","screen","mosaic","feather"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/screen/mosaic/feather","dynamic":false,"source":"src/api/screen/screen.ts","line":1316,"client":"API","symbol":"res","comment":"屏幕设置接口融合","parameters":["data: ScreenFusionT[]","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq ?? 0,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/screen/mosaic/feather',\n    data,\n    headers: {\n      seq: seq ?? 0,\n    },\n  }","context":"async (\n  data: ScreenFusionT[],\n  seq?: number,\n): Promise<IResponseData<string>> => {\n  const res = await API.request<IResponseData<string>>({\n    method: 'PUT',\n    url: 'ucenter/screen/mosaic/feather',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-screen-mosaic-feather",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

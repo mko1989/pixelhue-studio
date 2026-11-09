@@ -1,0 +1,7 @@
+{
+  "id": "reference-IEdgeMark-cb46a02a",
+  "name": "IEdgeMark",
+  "availability": "referenced-only",
+  "references": [{"name":"IEdgeMark","source":"src/api/screen/screen.ts","line":1674}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

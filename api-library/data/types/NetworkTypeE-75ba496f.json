@@ -1,0 +1,9 @@
+{
+  "id": "NetworkTypeE-75ba496f",
+  "name": "NetworkTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/device-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 127,
+  "declaration": "enum NetworkTypeE {\n  manual = 0,\n  automatic = 1,\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ST2110CardStatusE-bcfed7a6",
+  "name": "ST2110CardStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 781,
+  "declaration": "enum ST2110CardStatusE {\n  NMOS = 1,\n  FEC = 2,\n  IGMP,\n}"
+}

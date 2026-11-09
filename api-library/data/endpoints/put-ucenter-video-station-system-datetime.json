@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/system/datetime",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","system","datetime"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/system/datetime","dynamic":false,"source":"src/api/setting/setting.ts","line":298,"client":"API","symbol":"response","comment":"*设置控台当前时间","parameters":["data: IPanelTimeInfo"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/system/datetime',\n    data,\n    timeout: 10000,\n  }","context":"async (\n  data: IPanelTimeInfo,\n): Promise<IResponseData<IPanelTimeInfo>> => {\n  const response = await API.request<IResponseData<IPanelTimeInfo>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/system/datetime',\n    data,\n    timeout: 10000,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-system-datetime",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

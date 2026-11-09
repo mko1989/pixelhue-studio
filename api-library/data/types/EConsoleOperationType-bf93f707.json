@@ -1,0 +1,9 @@
+{
+  "id": "EConsoleOperationType-bf93f707",
+  "name": "EConsoleOperationType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 187,
+  "declaration": "enum EConsoleOperationType {\n  startConsole = 0, // 0：进入老化工具通知\n  usb_plug, // 1：USB（Type-A）插拔测试流程\n  usb_read_write, // 2：USB（Type-A）读写测试流程\n  usb_test, // 3：USB（Type-B）测试流程\n  newwork_link, // 4：回路网口测试流程\n  keyboard, // 5：外接键盘测试流程\n  screen_bad_spot, // 6: 屏幕坏点测试流程\n  screen_touch, // 7: 屏幕触摸测试（主屏和智慧屏）\n  ltc_mtc, // 8：时间码接口测试\n  physical_key, // 9: 物理按键测试\n  interface_test, // 10：接口测试测试流程\n  screen_test, // 11：老化测试-屏幕测试\n}"
+}

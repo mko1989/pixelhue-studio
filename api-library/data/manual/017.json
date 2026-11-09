@@ -1,0 +1,16 @@
+{
+  "page": 17,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nautomatic time\nsynchronization.\n1: NTP.\n2: GPS.\n3: LORA.\nGPS time\n├─ gps object Yes synchronization\nstructure\n├─ lora object Yes\nGroup ID.\nAssigned by\nusers for device\n12121 grouping (string\n├─ groupId string Yes\n2 format, up to 10\nbytes, limited by\nthe control\ncomputer).\nNTP time\n├─ ntp object Yes synchronization\nstructure\nNTP time\n├─ server string Yes synchronization\nserver\nNetwork type of\nthe current\nterminal:\nMax: 5\n0: No network.\nnumb\n├─ networkType Yes 1 1: Wired network. Min: 0\ner\n2: Wi-Fi.\nmock: 1\n3: 2G.\n4: 3G.\n5: 4G.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "automatic time\nsynchronization.\n1: NTP.\n2: GPS.\n3: LORA.", ""],
+      ["├─ gps", "object", "Yes", "", "GPS time\nsynchronization\nstructure", ""],
+      ["├─ lora", "object", "Yes", "", "", ""],
+      ["├─ groupId", "string", "Yes", "12121\n2", "Group ID.\nAssigned by\nusers for device\ngrouping (string\nformat, up to 10\nbytes, limited by\nthe control\ncomputer).", ""],
+      ["├─ ntp", "object", "Yes", "", "NTP time\nsynchronization\nstructure", ""],
+      ["├─ server", "string", "Yes", "", "NTP time\nsynchronization\nserver", ""],
+      ["├─ networkType", "numb\ner", "Yes", "1", "Network type of\nthe current\nterminal:\n0: No network.\n1: Wired network.\n2: Wi-Fi.\n3: 2G.\n4: 3G.\n5: 4G.", "Max: 5\nMin: 0\nmock: 1"]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ECheckType-c1ebc464",
+  "name": "ECheckType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 968,
+  "declaration": "enum ECheckType {\n  selfCheck, //0: 开机自检\n  deviceCheck, //1:设备自检\n}"
+}

@@ -1,0 +1,15 @@
+{
+  "page": 233,
+  "text": "Default\nName Type Required Remarks More\nValue\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n10: IPC mosaic\nscreen.\n11: Internal source.\n12: Internal shape\nsource.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.\n├─ dve object No dve\nType: Type:\n1. Push.\n├─ type integer No\n2. Squeeze.\n3. Material effect.\nImage: Based on the\n├─ image integer No UI, from left to right\nand top to bottom.\n├─ brightness integer No Clip\n├─ softness integer No Softness",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n10: IPC mosaic\nscreen.\n11: Internal source.\n12: Internal shape\nsource.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.", ""],
+      ["├─ dve", "object", "No", "", "dve", ""],
+      ["├─ type", "integer", "No", "", "Type: Type:\n1. Push.\n2. Squeeze.\n3. Material effect.", ""],
+      ["├─ image", "integer", "No", "", "Image: Based on the\nUI, from left to right\nand top to bottom.", ""],
+      ["├─ brightness", "integer", "No", "", "Clip", ""],
+      ["├─ softness", "integer", "No", "", "Softness", ""]
+    ]}
+  ]
+}

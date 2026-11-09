@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceCapacityTypeE-5dba0667",
+  "name": "InterfaceCapacityTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 910,
+  "declaration": "enum InterfaceCapacityTypeE {\n  SL = 0, // single lind 单链\n  DL = 1, // dual lind 双链\n  _4k = 2, // 4k\n  invalid = 255, // 无效值\n}"
+}

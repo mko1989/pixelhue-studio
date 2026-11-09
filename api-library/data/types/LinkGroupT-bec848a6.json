@@ -1,0 +1,9 @@
+{
+  "id": "LinkGroupT-bec848a6",
+  "name": "LinkGroupT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/types/device/link.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 45,
+  "declaration": "type LinkGroupT = {\n  /** Link组信息  */\n  linkInfo: LinSourceT;\n  /** 组内设备的SN列表 */\n  deviceSNList: string[];\n  /** 组内不在线设备的SN列表 */\n  offLineSNList?: string[];\n};"
+}

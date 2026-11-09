@@ -1,0 +1,8 @@
+{
+  "id": "SourceBackup-7fb329e6",
+  "name": "SourceBackup",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/SourceBackup.ts",
+  "line": 1,
+  "declaration": "interface SourceBackup {\n\tsourceBackup: {\n\t\tbackup: Backup[]\n\t\tenable: number\n\t\tprimaryFirst: number\n\t}\n}"
+}

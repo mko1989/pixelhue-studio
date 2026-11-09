@@ -1,0 +1,9 @@
+{
+  "id": "PositionE-f868ef4d",
+  "name": "PositionE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 84,
+  "declaration": "enum PositionE {\n  align,\n  arrangement,\n}"
+}

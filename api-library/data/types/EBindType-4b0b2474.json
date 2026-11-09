@@ -1,0 +1,9 @@
+{
+  "id": "EBindType-4b0b2474",
+  "name": "EBindType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 506,
+  "declaration": "enum EBindType {\n  UNBOUND, // 0：未绑定\n  KNOK, // 1：旋钮\n  PUSH_ROD, // 2：推杆\n}"
+}

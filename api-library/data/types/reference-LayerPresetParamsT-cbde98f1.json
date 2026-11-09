@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerPresetParamsT-cbde98f1",
+  "name": "LayerPresetParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerPresetParamsT","source":"src/api/layer-preset/index.ts","line":18}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

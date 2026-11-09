@@ -1,0 +1,17 @@
+{
+  "page": 136,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\n1: Selected.\nNote: The \"selected\"\nstatus includes two\nfunctions.\nIf the JSON issued by the\nsoftware includes only\none selected layer, the\nselection box will blink in\nthe Multiviewer window.\nIf the JSON includes\nmultiple selected layers,\nthe selection box will not\nblink in the Multiviewer\nwindow.\nnumb\n├─ zorder Yes Z order\ner\nLayer disabled status:\nnumb\n├─ covered Yes 0: Not disabled.\ner\n1: Disabled.\nLayer lock status:\nnumb\n├─ isLock Yes 0: Unlocked.\ner\n1: Locked.\nLayer opacity information,\nnumb in percentage. For\n├─ opacity Yes\ner example, 100 represents\n100% opacity.\n├─ threeD object Yes Layer 3D related\nThe layer 3D switch:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\n├─ aspectRatio object Yes Layer aspect ratio",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "1: Selected.\nNote: The \"selected\"\nstatus includes two\nfunctions.\nIf the JSON issued by the\nsoftware includes only\none selected layer, the\nselection box will blink in\nthe Multiviewer window.\nIf the JSON includes\nmultiple selected layers,\nthe selection box will not\nblink in the Multiviewer\nwindow.", ""],
+      ["├─ zorder", "numb\ner", "Yes", "", "Z order", ""],
+      ["├─ covered", "numb\ner", "Yes", "", "Layer disabled status:\n0: Not disabled.\n1: Disabled.", ""],
+      ["├─ isLock", "numb\ner", "Yes", "", "Layer lock status:\n0: Unlocked.\n1: Locked.", ""],
+      ["├─ opacity", "numb\ner", "Yes", "", "Layer opacity information,\nin percentage. For\nexample, 100 represents\n100% opacity.", ""],
+      ["├─ threeD", "object", "Yes", "", "Layer 3D related", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "The layer 3D switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ aspectRatio", "object", "Yes", "", "Layer aspect ratio", ""]
+    ]}
+  ]
+}

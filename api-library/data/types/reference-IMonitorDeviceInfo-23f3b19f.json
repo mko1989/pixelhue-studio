@@ -1,0 +1,7 @@
+{
+  "id": "reference-IMonitorDeviceInfo-23f3b19f",
+  "name": "IMonitorDeviceInfo",
+  "availability": "referenced-only",
+  "references": [{"name":"IMonitorDeviceInfo","source":"src/api/monitor/index.ts","line":42},{"name":"IMonitorDeviceInfo","source":"src/api/monitor/index.ts","line":43}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

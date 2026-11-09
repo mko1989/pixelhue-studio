@@ -1,0 +1,20 @@
+{
+  "page": 23,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nAuthorization\nnumb start time,\n├─ startTimestamp Yes\ner timestamp, in\nmilliseconds\nAuthorization\n├─ numb duration,\nYes\ndurationTimestamp er timestamp, in\nmilliseconds\n0: Permanent\nauthorization.\nintege 1: Temporary\n├─ flag Yes\nr authorization.\n2: Authorization\nexpired.\n0: Unknown.\n1: Standard\nnumb mode.\n├─ fanMode Yes\ner 2: High-\nperformance\nmode.\nPlugin\n├─ plugin object Yes\ninformation\nResource\n├─ resource object Yes\nevaluation plugin\nPlugin download\n├─ url string Yes\nURL\n├─ md5 string Yes Plugin md5 value\nPlugin version\n├─ version string Yes\n1.0.0\n├─ mvr object Yes MVR information\n├─ mode numb Yes MVR mode",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["├─ startTimestamp", "numb\ner", "Yes", "", "Authorization\nstart time,\ntimestamp, in\nmilliseconds", ""],
+      ["├─\ndurationTimestamp", "numb\ner", "Yes", "", "Authorization\nduration,\ntimestamp, in\nmilliseconds", ""],
+      ["├─ flag", "intege\nr", "Yes", "", "0: Permanent\nauthorization.\n1: Temporary\nauthorization.\n2: Authorization\nexpired.", ""],
+      ["├─ fanMode", "numb\ner", "Yes", "", "0: Unknown.\n1: Standard\nmode.\n2: High-\nperformance\nmode.", ""],
+      ["├─ plugin", "object", "Yes", "", "Plugin\ninformation", ""],
+      ["├─ resource", "object", "Yes", "", "Resource\nevaluation plugin", ""],
+      ["├─ url", "string", "Yes", "", "Plugin download\nURL", ""],
+      ["├─ md5", "string", "Yes", "", "Plugin md5 value", ""],
+      ["├─ version", "string", "Yes", "", "Plugin version\n1.0.0", ""],
+      ["├─ mvr", "object", "Yes", "", "MVR information", ""],
+      ["├─ mode", "numb", "Yes", "", "MVR mode", ""]
+    ]}
+  ]
+}

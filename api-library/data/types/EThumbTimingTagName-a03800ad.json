@@ -1,0 +1,9 @@
+{
+  "id": "EThumbTimingTagName-a03800ad",
+  "name": "EThumbTimingTagName",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1054,
+  "declaration": "enum EThumbTimingTagName {\n  colorSpace,\n  colorDepth,\n  interlaced,\n  frame,\n  width,\n  height,\n  dynamicRange,\n}"
+}

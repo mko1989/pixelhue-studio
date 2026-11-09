@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/interface/driver",
+  "group": "interface",
+  "summary": "response",
+  "tags": ["interface","driver"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"interface/driver","dynamic":false,"source":"src/api/device/deviceInterface.ts","line":695,"client":"API","symbol":"response","comment":"*获取接口驱动详细信息*","parameters":["params?: {\n  interfaceId?: number;\n  ip?: string;\n  port?: number;\n  protocol?: string;\n  token?: string;\n}"],"bodyExpression":null,"queryExpression":"params?.interfaceId ? { interfaceId: params.interfaceId } : undefined","headerExpression":"{\n      ...(params?.ip && { ip: params.ip }),\n      ...(params?.port && { port: params.port }),\n      ...(params?.protocol && { protocol: params.protocol }),\n      ...(params?.token && { Authorization: `${params.token}` }),\n    }","configExpression":"{\n    method: 'GET',\n    url: 'interface/driver',\n    params: params?.interfaceId ? { interfaceId: params.interfaceId } : undefined,\n    headers: {\n      ...(params?.ip && { ip: params.ip }),\n      ...(params?.port && { port: params.port }),\n      ...(params?.protocol && { protocol: params.protocol }),\n      ...(params?.token && { Authorization: `${params.token}` }),\n    },\n  }","context":"async (params?: {\n  interfaceId?: number;\n  ip?: string;\n  port?: number;\n  protocol?: string;\n  token?: string;\n}): Promise<IResponseData<any>> => {\n  const response = await API.request<IResponseData<any>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-interface-driver",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-CabinetCorrectionCoefficientPropsI-dc4532d5",
+  "name": "CabinetCorrectionCoefficientPropsI",
+  "availability": "referenced-only",
+  "references": [{"name":"CabinetCorrectionCoefficientPropsI","source":"src/api/ctl-fix/index.ts","line":178},{"name":"CabinetCorrectionCoefficientPropsI","source":"src/api/correction/index.ts","line":91}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

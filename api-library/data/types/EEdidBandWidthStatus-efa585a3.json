@@ -1,0 +1,9 @@
+{
+  "id": "EEdidBandWidthStatus-efa585a3",
+  "name": "EEdidBandWidthStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 516,
+  "declaration": "enum EEdidBandWidthStatus {\n  notOver,\n  isOverMax,\n  isOverMin,\n}"
+}

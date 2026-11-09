@@ -1,0 +1,9 @@
+{
+  "id": "ETimingSelect-0b1096c7",
+  "name": "ETimingSelect",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1161,
+  "declaration": "enum ETimingSelect {\n  presetThumbTiming,\n  presetTiming,\n  edidFile,\n  custom,\n}"
+}

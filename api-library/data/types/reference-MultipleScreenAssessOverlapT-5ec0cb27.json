@@ -1,0 +1,7 @@
+{
+  "id": "reference-MultipleScreenAssessOverlapT-5ec0cb27",
+  "name": "MultipleScreenAssessOverlapT",
+  "availability": "referenced-only",
+  "references": [{"name":"MultipleScreenAssessOverlapT","source":"src/api/screen/screen.ts","line":1647}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

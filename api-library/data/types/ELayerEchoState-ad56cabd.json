@@ -1,0 +1,9 @@
+{
+  "id": "ELayerEchoState-ad56cabd",
+  "name": "ELayerEchoState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1167,
+  "declaration": "enum ELayerEchoState {\n  updating = 0, // 0：开始更新回显\n  completed = 1, // 1：回显更新完成\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-ErrorBitInfoRes-958b669e",
+  "name": "ErrorBitInfoRes",
+  "availability": "referenced-only",
+  "references": [{"name":"ErrorBitInfoRes","source":"src/api/monitor/monitor-log.ts","line":61},{"name":"ErrorBitInfoRes","source":"src/api/monitor/monitor-log.ts","line":66}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

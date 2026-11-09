@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/ftb",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","ftb"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/screen/ftb","dynamic":false,"source":"src/api/screen/screen.ts","line":1026,"client":"API_U_CENTER","symbol":"response","comment":"// 0x06-设置选中屏幕FTB","parameters":["data: TFtbData"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'POST',\n    url: 'ucenter/screen/ftb',\n    data,\n    timeout: 15000,\n  }","context":"async (data: TFtbData): Promise<IResponseData<ResponseT>> => {\n  const response = await API_U_CENTER.request<IResponseData<ResponseT>>({\n    method: 'POST',\n    url: 'ucenter/screen/ftb',\n    data,\n    timeout: 15000,\n  });\n  return response.data;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-ftb",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

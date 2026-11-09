@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/screen/pgm-edit",
+  "group": "screen",
+  "summary": "response",
+  "tags": ["screen","pgm-edit"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"screen/pgm-edit","dynamic":false,"source":"src/api/screen/screen.ts","line":399,"client":"API","symbol":"response","comment":"","parameters":["data: {\n    screenId: number;\n    pgmEdit: EnableE;\n  }[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: 'screen/pgm-edit',\n    data,\n  }","context":"async (\n  data: {\n    screenId: number;\n    pgmEdit: EnableE;\n  }[],\n): Promise<IResponseData<ScreenPgmEditT[]>> => {\n  const response = await API.request<IResponseData<ScreenPgmEditT[]>>({\n    method: 'put',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-screen-pgm-edit",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

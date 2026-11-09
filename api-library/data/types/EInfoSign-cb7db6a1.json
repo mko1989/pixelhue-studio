@@ -1,0 +1,9 @@
+{
+  "id": "EInfoSign-cb7db6a1",
+  "name": "EInfoSign",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 516,
+  "declaration": "enum EInfoSign {\n  /**工程id */\n  projectId = 1,\n  /**设备ip */\n  devicieIp = 2,\n  /**设备名称 */\n  deviceName = 3,\n  /**设备sn */\n  deviceSn = 4,\n  /**take、cut效果 */\n  takeCutEffect = 5,\n  /**当前激活的源类型*/\n  signalType = 6,\n}"
+}

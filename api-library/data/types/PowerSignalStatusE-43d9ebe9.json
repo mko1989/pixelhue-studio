@@ -1,0 +1,9 @@
+{
+  "id": "PowerSignalStatusE-43d9ebe9",
+  "name": "PowerSignalStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 791,
+  "declaration": "enum PowerSignalStatusE {\n  NoAccess, // 未接入\n  Access, // 已接入\n}"
+}

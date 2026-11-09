@@ -1,0 +1,23 @@
+{
+  "page": 169,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nintege\n├─ page Yes Current page number\nr\nintege\n├─ totalCount Yes Total number of items\nr\nintege\n├─ totalPage Yes Total pages\nr\n5.2 Retrieve Layer Templates\n Basic Information\nPath: /v1/layers/template\nMethod: GET\nDescription:\n Request Parameters\nQuery\nName Required Example Remarks\nData associated function module: 0: Multiviewer.\nmoduleType No 1\n1: Layer.\ntemplateId No 1 Template ID. If not provided, query based on type.\n Return Data\nDefault\nName Type Required Remarks More\nValue\n0: Normal.\ncode number Yes 8212: Business\nexception.\nmessage number Yes\nobject Item\ndata Yes\n[] type:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ page", "intege\nr", "Yes", "", "Current page number", ""],
+      ["├─ totalCount", "intege\nr", "Yes", "", "Total number of items", ""],
+      ["├─ totalPage", "intege\nr", "Yes", "", "Total pages", ""]
+    ]},
+    {"contextBefore": "5.2 Retrieve Layer Templates\n Basic Information\nPath: /v1/layers/template\nMethod: GET\nDescription:\n Request Parameters\nQuery", "rows": [
+      ["Name", "Required", "Example", "Remarks"],
+      ["moduleType", "No", "1", "Data associated function module: 0: Multiviewer.\n1: Layer."],
+      ["templateId", "No", "1", "Template ID. If not provided, query based on type."]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "number", "Yes", "", "0: Normal.\n8212: Business\nexception.", ""],
+      ["message", "number", "Yes", "", "", ""],
+      ["data", "object\n[]", "Yes", "", "", "Item\ntype:"]
+    ]}
+  ]
+}

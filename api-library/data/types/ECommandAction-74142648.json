@@ -1,0 +1,9 @@
+{
+  "id": "ECommandAction-74142648",
+  "name": "ECommandAction",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 474,
+  "declaration": "enum ECommandAction {\n  before = 'before',\n  start = 'start',\n  finish = 'finish',\n  message = 'message',\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "CorrectionOpTypeE-b2450a20",
+  "name": "CorrectionOpTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/correction/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 11,
+  "declaration": "enum CorrectionOpTypeE {\n  /****重置***/\n  Reset,\n  /****清除***/\n  Clear,\n  /****保存***/\n  Save,\n}"
+}

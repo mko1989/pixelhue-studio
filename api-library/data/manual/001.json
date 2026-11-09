@@ -1,0 +1,15 @@
+{
+  "page": 1,
+  "text": "PixelFlow-OpenAPI\nRelease\nVersion Description Note\nDate\nV1.0.0 First release 2025-04-30\n1. Added the screen-specific logic and removed the\nselected screen logic.\n2. Added the complete and relative presets.\n3. Added the connector module protocol.\nSupported\n4. Added the layer module protocol.\nV2.0.0 2025-07-28 devices\n5. Added the gallery module protocol.\n(P10, P20, Q8)\n6. Added the screen chapter 4.1 and preset chapter 6.1,\nadapted for device versions earlier than V1.7.0.\n7. Added the screen chapter 4.2 and preset chapter 6.2,\nadapted for devices versions V1.7.0 and later.\nSupported\ndevices\nV2.0.1 1. Added the supported device model P80. 2025-10-14\n(P10, P20, Q8,\nP80)",
+  "tables": [
+    {"contextBefore": "PixelFlow-OpenAPI", "rows": [
+      ["", "", "", null, null, ""],
+      ["Version", "Description", "", "Release", "", "Note"],
+      [null, null, null, "Date", null, null],
+      ["", "", "", null, null, ""],
+      ["V1.0.0", "First release", "2025-04-30", null, null, ""],
+      ["V2.0.0", "1. Added the screen-specific logic and removed the\nselected screen logic.\n2. Added the complete and relative presets.\n3. Added the connector module protocol.\n4. Added the layer module protocol.\n5. Added the gallery module protocol.\n6. Added the screen chapter 4.1 and preset chapter 6.1,\nadapted for device versions earlier than V1.7.0.\n7. Added the screen chapter 4.2 and preset chapter 6.2,\nadapted for devices versions V1.7.0 and later.", "2025-07-28", null, null, "Supported\ndevices\n(P10, P20, Q8)"],
+      ["V2.0.1", "1. Added the supported device model P80.", "2025-10-14", null, null, "Supported\ndevices\n(P10, P20, Q8,\nP80)"]
+    ]}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-OSDTemplateDetailT-5483bd9e",
+  "name": "OSDTemplateDetailT",
+  "availability": "referenced-only",
+  "references": [{"name":"OSDTemplateDetailT","source":"src/api/osd/template/index.ts","line":66},{"name":"OSDTemplateDetailT","source":"src/api/osd/template/index.ts","line":67}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

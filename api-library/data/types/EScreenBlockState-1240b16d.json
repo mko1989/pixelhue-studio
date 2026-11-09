@@ -1,0 +1,9 @@
+{
+  "id": "EScreenBlockState-1240b16d",
+  "name": "EScreenBlockState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1261,
+  "declaration": "enum EScreenBlockState {\n  /** 无阻塞 */\n  none,\n  /** take */\n  take,\n  /** cut */\n  cut,\n  /** tbar */\n  tbar,\n  /** keyFrame */\n  keyFrame,\n}"
+}

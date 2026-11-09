@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/{protocol}://{ip}:{port}/unico/v1/cabinet/formatpainter-file",
+  "group": "{protocol}:",
+  "summary": "response",
+  "tags": ["{protocol}:","","{ip}:{port}","unico","v1","cabinet","formatpainter-file"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"{protocol}://{ip}:{port}/unico/v1/cabinet/formatpainter-file","dynamic":true,"pathParameters":[{"name":"protocol","expression":"protocol"},{"name":"ip","expression":"ip"},{"name":"port","expression":"port"}],"source":"src/api/setting/setting.ts","line":510,"client":"API","symbol":"response","comment":"*\n * 读取接收卡配置文件和程序包","parameters":["cabinetId: string","token: string","protocol: string","ip: string","port: number"],"bodyExpression":null,"queryExpression":"{ cabinetId }","headerExpression":"{\n      Authorization: token,\n      ip,\n      port,\n    }","configExpression":"{\n    method: 'GET',\n    url: `${protocol}://${ip}:${port}/unico/v1/cabinet/formatpainter-file`,\n    params: { cabinetId },\n    headers: {\n      Authorization: token,\n      ip,\n      port,\n    },\n  }","context":"async (\n  cabinetId: string,\n  token: string,\n  protocol: string,\n  ip: string,\n  port: number,\n): Promise<IResponseData<string>> => {\n  const response = await API.request<IResponseData<string>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-protocol-ip-port-unico-v1-cabinet-formatpainter-file",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": ["protocol","ip","port"]
+}

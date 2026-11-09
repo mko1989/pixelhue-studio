@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPanelTimeInfo-b8378c47",
+  "name": "IPanelTimeInfo",
+  "availability": "referenced-only",
+  "references": [{"name":"IPanelTimeInfo","source":"src/api/setting/setting.ts","line":286},{"name":"IPanelTimeInfo","source":"src/api/setting/setting.ts","line":287},{"name":"IPanelTimeInfo","source":"src/api/setting/setting.ts","line":297},{"name":"IPanelTimeInfo","source":"src/api/setting/setting.ts","line":296},{"name":"IPanelTimeInfo","source":"src/api/setting/setting.ts","line":298}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "SpaceDefaultValueE-924f7811",
+  "name": "SpaceDefaultValueE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 725,
+  "declaration": "enum SpaceDefaultValueE {\n  _8 = 8,\n}"
+}

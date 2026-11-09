@@ -1,0 +1,16 @@
+{
+  "page": 208,
+  "text": "Default\nName Type Required Remarks More\nValue\n2. Single-screen\npreset.\n3. Multi-screen\npreset.\n4. Screen preset\n(screen template).\nPreset saved from\nPVW or PGM\nsourceRegion integer Yes\n2: PGM.\n4: PVW.\nThe global transition\nswitchEffect object Yes\neffect\nThe transition\n├─ time number Yes\nduration (unit: ms)\nTransition effects:\n0: Cut.\n1: Fade.\n├─ type number Yes 2. Dip.\n3. Wipe.\n4. Stinger.\n5. DVE.\n├─ wipe object No Wipe\nPattern settings:\n1. Vertical rectangle:\nThe height remains\nconstant while the\nwidth increases from\n├─ image integer No\nleft to right, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "2. Single-screen\npreset.\n3. Multi-screen\npreset.\n4. Screen preset\n(screen template).", ""],
+      ["sourceRegion", "integer", "Yes", "", "Preset saved from\nPVW or PGM\n2: PGM.\n4: PVW.", ""],
+      ["switchEffect", "object", "Yes", "", "The global transition\neffect", ""],
+      ["├─ time", "number", "Yes", "", "The transition\nduration (unit: ms)", ""],
+      ["├─ type", "number", "Yes", "", "Transition effects:\n0: Cut.\n1: Fade.\n2. Dip.\n3. Wipe.\n4. Stinger.\n5. DVE.", ""],
+      ["├─ wipe", "object", "No", "", "Wipe", ""],
+      ["├─ image", "integer", "No", "", "Pattern settings:\n1. Vertical rectangle:\nThe height remains\nconstant while the\nwidth increases from\nleft to right, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only", ""]
+    ]}
+  ]
+}

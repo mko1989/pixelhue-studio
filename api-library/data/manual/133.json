@@ -1,0 +1,21 @@
+{
+  "page": 133,
+  "text": "5. Layer\n5.1 Retrieve Layer Information\n Basic Information\nPath: /v1/layers/list-detail\nMethod: GET\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nQuery\nName Required Example Remarks\nlimit No The maximum number of items per page\npage No Query page number\nThe unique ID of a layer. If this field is\nlayerId No\nabsent, it indicates the IDs of all layers.\nSpecify the layer ID under the layer type. If\nid No\nthis field is absent, it is ignored.\nSpecified the layer type. If this field is absent,\ntype No\nit is ignored.\nThe ID of the screen to which the layer is\nattachScreenId No\nattached. If this field is absent, it is ignored.\nThe type of screen to which the layer is\nattachScreenType No\nattached. If this field is absent, it is ignored.\nThe layer type. If this field is absent, it is\nsceneType No\nignored.\nBody",
+  "tables": [
+    {"contextBefore": "5. Layer\n5.1 Retrieve Layer Information\n Basic Information\nPath: /v1/layers/list-detail\nMethod: GET\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Query", "rows": [
+      ["Name", "Required", "Example", "Remarks"],
+      ["limit", "No", "", "The maximum number of items per page"],
+      ["page", "No", "", "Query page number"],
+      ["layerId", "No", "", "The unique ID of a layer. If this field is\nabsent, it indicates the IDs of all layers."],
+      ["id", "No", "", "Specify the layer ID under the layer type. If\nthis field is absent, it is ignored."],
+      ["type", "No", "", "Specified the layer type. If this field is absent,\nit is ignored."],
+      ["attachScreenId", "No", "", "The ID of the screen to which the layer is\nattached. If this field is absent, it is ignored."],
+      ["attachScreenType", "No", "", "The type of screen to which the layer is\nattached. If this field is absent, it is ignored."],
+      ["sceneType", "No", "", "The layer type. If this field is absent, it is\nignored."]
+    ]}
+  ]
+}

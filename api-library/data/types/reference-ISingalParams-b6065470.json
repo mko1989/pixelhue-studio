@@ -1,0 +1,7 @@
+{
+  "id": "reference-ISingalParams-b6065470",
+  "name": "ISingalParams",
+  "availability": "referenced-only",
+  "references": [{"name":"ISingalParams","source":"src/api/setting/setting.ts","line":393},{"name":"ISingalParams","source":"src/api/setting/setting.ts","line":409}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

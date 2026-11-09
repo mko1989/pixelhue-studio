@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/cabinet/packet/list",
+  "group": "cabinet",
+  "summary": "response",
+  "tags": ["cabinet","packet","list"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"/cabinet/packet/list","dynamic":false,"pathParameters":[],"source":"src/api/device/cabinet-pack.ts","line":314,"client":"API","symbol":"response","comment":"*\n *\n * @param headers 0x10-获取箱体库文件列表\n * @returns","parameters":["options: ExtraReqParamsT"],"bodyExpression":null,"queryExpression":null,"headerExpression":"{\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    }","configExpression":"{\n    method: 'GET',\n    url: `/cabinet/packet/list`,\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    },\n  }","context":"async (options: ExtraReqParamsT) => {\n  const response = await API.request<IResponseData<CabinetLibraryT>>({\n    method: 'GET',\n    url: `/cabinet/packet/list`,\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-cabinet-packet-list",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

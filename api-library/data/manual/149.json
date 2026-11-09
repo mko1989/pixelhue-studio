@@ -1,0 +1,20 @@
+{
+  "page": 149,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nmock:\nintege\n├─ width Yes Width @integ\nr\ner\nmock:\nintege\n├─ height Yes Height @integ\nr\ner\nmock:\nintege\n├─ x Yes Horizontal offset @integ\nr\ner\nmock:\nintege\n├─ y Yes Vertical offset @integ\nr\ner\n├─ color object Yes Shadow color\nmock:\nintege Component value\n├─ R Yes @integ\nr Red component value\ner\nmock:\nintege Component value\n├─ G Yes @integ\nr Green component value\ner\nmock:\nintege Component value\n├─ B Yes @integ\nr Blue component value\ner\nmock:\nintege\n├─ opacity Yes Opacity @integ\nr\ner\n├─ crop object Yes Layer cropping\n├─ enable intege Yes Crop enable: mock:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ width", "intege\nr", "Yes", "", "Width", "mock:\n@integ\ner"],
+      ["├─ height", "intege\nr", "Yes", "", "Height", "mock:\n@integ\ner"],
+      ["├─ x", "intege\nr", "Yes", "", "Horizontal offset", "mock:\n@integ\ner"],
+      ["├─ y", "intege\nr", "Yes", "", "Vertical offset", "mock:\n@integ\ner"],
+      ["├─ color", "object", "Yes", "", "Shadow color", ""],
+      ["├─ R", "intege\nr", "Yes", "", "Component value\nRed component value", "mock:\n@integ\ner"],
+      ["├─ G", "intege\nr", "Yes", "", "Component value\nGreen component value", "mock:\n@integ\ner"],
+      ["├─ B", "intege\nr", "Yes", "", "Component value\nBlue component value", "mock:\n@integ\ner"],
+      ["├─ opacity", "intege\nr", "Yes", "", "Opacity", "mock:\n@integ\ner"],
+      ["├─ crop", "object", "Yes", "", "Layer cropping", ""],
+      ["├─ enable", "intege", "Yes", "", "Crop enable:", "mock:"]
+    ]}
+  ]
+}

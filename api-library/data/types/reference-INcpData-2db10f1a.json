@@ -1,0 +1,7 @@
+{
+  "id": "reference-INcpData-2db10f1a",
+  "name": "INcpData",
+  "availability": "referenced-only",
+  "references": [{"name":"INcpData","source":"src/api/device/cabinet-pack.ts","line":60},{"name":"INcpData","source":"src/api/device/cabinet-pack.ts","line":78},{"name":"INcpData","source":"src/api/device/cabinet-pack.ts","line":92},{"name":"INcpData","source":"src/api/device/cabinet-pack.ts","line":146},{"name":"INcpData","source":"src/api/device/cabinet-pack.ts","line":159}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

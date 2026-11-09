@@ -1,0 +1,9 @@
+{
+  "id": "RefreshE-4b1f94a0",
+  "name": "RefreshE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 569,
+  "declaration": "enum RefreshE {\n  _2398 = 2398,\n  _2400 = 2400,\n  _2500 = 2500,\n  _2997 = 2997,\n  _3000 = 3000,\n  _4795 = 4795,\n  _4800 = 4800,\n  _5000 = 5000,\n  _5600 = 5600,\n  _5994 = 5994,\n  _6000 = 6000,\n  _7000 = 7000,\n  _7193 = 7193,\n  _7200 = 7200,\n  _7500 = 7500,\n  _8500 = 8500,\n  _10000 = 10000,\n  _11988 = 11988,\n  _12000 = 12000,\n}"
+}

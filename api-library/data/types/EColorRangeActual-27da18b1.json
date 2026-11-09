@@ -1,0 +1,9 @@
+{
+  "id": "EColorRangeActual-27da18b1",
+  "name": "EColorRangeActual",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 148,
+  "declaration": "enum EColorRangeActual {\n  LIMIT = 0,\n  FULL,\n}"
+}

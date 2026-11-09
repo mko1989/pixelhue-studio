@@ -1,0 +1,23 @@
+{
+  "page": 61,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nobjec\n├─ netInfo Yes Optical port IP\nt\nWhether to enable DHCP:\nnumb\n├─ dhcp Yes 0: Static IP.\ner\n1: Dynamic IP.\n├─ ip string Yes Connector IP\n├─ netmask string Yes Subnet mask\n├─ gateway string Yes Gateway\nEthernet port’s MAC\n├─ mac string Yes\naddress\nobjec File information imported to\n├─ fileInfo Yes\nt connectors\nSDP file information (The\nfiled name for version\n├─ fileName string Yes\ncompatibility is not\ndisplayed temporarily.)\n├─\nstring Yes EDID file name\nedidFileName\n├─ objec Source reverse control\nYes\nreverseControl t information\n├─ ip string Yes Source reverse control IP\ninteg\n├─ port Yes Source reverse control port\ner\nReverse control switch:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\n├─ integ EDID compatibility mode:\nYes\ncompatibilityM er 0: Normal mode (default).",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ netInfo", "objec\nt", "Yes", "", "Optical port IP", ""],
+      ["├─ dhcp", "numb\ner", "Yes", "", "Whether to enable DHCP:\n0: Static IP.\n1: Dynamic IP.", ""],
+      ["├─ ip", "string", "Yes", "", "Connector IP", ""],
+      ["├─ netmask", "string", "Yes", "", "Subnet mask", ""],
+      ["├─ gateway", "string", "Yes", "", "Gateway", ""],
+      ["├─ mac", "string", "Yes", "", "Ethernet port’s MAC\naddress", ""],
+      ["├─ fileInfo", "objec\nt", "Yes", "", "File information imported to\nconnectors", ""],
+      ["├─ fileName", "string", "Yes", "", "SDP file information (The\nfiled name for version\ncompatibility is not\ndisplayed temporarily.)", ""],
+      ["├─\nedidFileName", "string", "Yes", "", "EDID file name", ""],
+      ["├─\nreverseControl", "objec\nt", "Yes", "", "Source reverse control\ninformation", ""],
+      ["├─ ip", "string", "Yes", "", "Source reverse control IP", ""],
+      ["├─ port", "integ\ner", "Yes", "", "Source reverse control port", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Reverse control switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─\ncompatibilityM", "integ\ner", "Yes", "", "EDID compatibility mode:\n0: Normal mode (default).", ""]
+    ]}
+  ]
+}

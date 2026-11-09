@@ -1,0 +1,9 @@
+{
+  "id": "NeedSendTbarE-8e9b508f",
+  "name": "NeedSendTbarE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 189,
+  "declaration": "enum NeedSendTbarE {\n  need,\n  not,\n}"
+}

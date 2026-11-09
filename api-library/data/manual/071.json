@@ -1,0 +1,22 @@
+{
+  "page": 71,
+  "text": "4. Screen\n4.1 v1\n4.1.1 FTB\n Basic Information\nPath: /v1/screen/selected/ftb\nMethod: PUT\nDescription:\nSystem global FTB\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nftb object Yes\n├─ FTB switch: [0: Disable, return to\nnumber Yes\nenable normal display; 1: Enable.]\n├─ The duration for the FTB effect,\nnumber Yes\ntime which cannot be zero\n Return Data\nName Type Required Default Value Remarks More\ncode integer Yes Response code\nmessage string Yes Response message\ndata object Yes",
+  "tables": [
+    {"contextBefore": "4. Screen\n4.1 v1\n4.1.1 FTB\n Basic Information\nPath: /v1/screen/selected/ftb\nMethod: PUT\nDescription:\nSystem global FTB\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["ftb", "object", "Yes", "", "", ""],
+      ["├─\nenable", "number", "Yes", "", "FTB switch: [0: Disable, return to\nnormal display; 1: Enable.]", ""],
+      ["├─\ntime", "number", "Yes", "", "The duration for the FTB effect,\nwhich cannot be zero", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response message", ""],
+      ["data", "object", "Yes", "", "", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "page": 128,
+  "text": "Default\nName Type Required Remarks More\nValue\nItem type:\nobject\ndata Yes\nobject\n[]\n4.2.3 FTB\n Basic Information\nPath: /v1/screen/ftb\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nItem\nobject\ntype:\nNo\n[]\nobject\nThe screen ID. Provide at\nleast one of screenId or\n├─\nnumber No screenName; if both are\nscreenId\nprovided, screenId takes\nprecedence.\n├─\nstring No The screen guid\nscreenGuid\nThe screen name. Provide\n├─ at least one of screenId or\nstring No\nscreenName screenName; if both are\nprovided, screenId takes",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["data", "object\n[]", "Yes", "", "", "Item type:\nobject"]
+    ]},
+    {"contextBefore": "4.2.3 FTB\n Basic Information\nPath: /v1/screen/ftb\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "object\n[]", "No", "", "", "Item\ntype:\nobject"],
+      ["├─\nscreenId", "number", "No", "", "The screen ID. Provide at\nleast one of screenId or\nscreenName; if both are\nprovided, screenId takes\nprecedence.", ""],
+      ["├─\nscreenGuid", "string", "No", "", "The screen guid", ""],
+      ["├─\nscreenName", "string", "No", "", "The screen name. Provide\nat least one of screenId or\nscreenName; if both are\nprovided, screenId takes", ""]
+    ]}
+  ]
+}

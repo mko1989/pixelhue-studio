@@ -1,0 +1,9 @@
+{
+  "id": "LayerBorderTypeE-efe653f3",
+  "name": "LayerBorderTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 689,
+  "declaration": "enum LayerBorderTypeE {\n  /** 0：硬内边框； 1：硬外边框； 2：硬内外边框; 3：Soft软边框； 4：Halo边框 5：Halo-in边框； 6：Halo-out边框 */\n  hardIn,\n  hardOut,\n  hardInOut,\n  soft,\n  halo,\n  haloIn,\n  haloOut,\n}"
+}

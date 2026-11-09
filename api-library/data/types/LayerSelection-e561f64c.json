@@ -1,0 +1,8 @@
+{
+  "id": "LayerSelection-e561f64c",
+  "name": "LayerSelection",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Layer.ts",
+  "line": 6,
+  "declaration": "interface LayerSelection {\n\tlayerId: number\n\tselected: 0 | 1\n}"
+}

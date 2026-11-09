@@ -1,0 +1,16 @@
+{
+  "page": 135,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\n512: OSD layer.\n1024: Upstream key layer.\n2048: Downstream key\nlayer.\n4096: Transition key layer.\n8192: BKGD layer.\nWhere the layer belongs:\n1: Not belonging to PGM\nmock:\nor PVW.\nintege\n├─ sceneType Yes 2: Belonging to PGM. @integ\nr\ner\n4: Belonging to PVW.\n8: Belonging to both PGM\nand PVW.\nThe IDs for different types\nof the screens:\nmock:\n├─ intege attachScreenType=0, it\n@integ\nYes\nattachScreenId r indicates screenId.\ner\nattachScreenType=1, it\nindicates ledScreenId.\nScreen type:\nmock:\n├─ intege 0: Screen with video\n@integ\nYes\nattachScreenType r connector.\ner\n1: LED screen.\nThe screen GUID. In\n├─ screenGuid string No versions prior to the super\nscreen, this field is empty.\nLayer switch:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\nintege Layer selection:\n├─ selected Yes\nr 0: Not selected.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "512: OSD layer.\n1024: Upstream key layer.\n2048: Downstream key\nlayer.\n4096: Transition key layer.\n8192: BKGD layer.", ""],
+      ["├─ sceneType", "intege\nr", "Yes", "", "Where the layer belongs:\n1: Not belonging to PGM\nor PVW.\n2: Belonging to PGM.\n4: Belonging to PVW.\n8: Belonging to both PGM\nand PVW.", "mock:\n@integ\ner"],
+      ["├─\nattachScreenId", "intege\nr", "Yes", "", "The IDs for different types\nof the screens:\nattachScreenType=0, it\nindicates screenId.\nattachScreenType=1, it\nindicates ledScreenId.", "mock:\n@integ\ner"],
+      ["├─\nattachScreenType", "intege\nr", "Yes", "", "Screen type:\n0: Screen with video\nconnector.\n1: LED screen.", "mock:\n@integ\ner"],
+      ["├─ screenGuid", "string", "No", "", "The screen GUID. In\nversions prior to the super\nscreen, this field is empty.", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Layer switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ selected", "intege\nr", "Yes", "", "Layer selection:\n0: Not selected.", ""]
+    ]}
+  ]
+}

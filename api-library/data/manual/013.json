@@ -1,0 +1,19 @@
+{
+  "page": 13,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nversion\nMinimum\n├─\nstring Yes supported\nminMatchingVersion\nfrontend version\nMinimum\n├─\nstring No supported\nminProductVersion\nproduct version\nDevice status\nwhen AC back:\nnumb 1: Auto power on.\n├─ powerState Yes\ner 2: Remain off.\n3: Restore\nprevious status.\nRegion\ninformation,\n├─ area object Yes\ngeographic\nlocation\nintege\n├─ areaId Yes 0 Region ID mock: 1\nr\nmock:\n├─ areaName string Yes name1 Region name areaName\n1\n├─ mode object Yes Node mode\nNode working\nmode. Refer to\nintege\n├─ workMode Yes the working\nr\nmode\ndescription.\nMaster and slave\nintege\n├─ masterSlave Yes node:\nr\n0: Independent",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "version", ""],
+      ["├─\nminMatchingVersion", "string", "Yes", "", "Minimum\nsupported\nfrontend version", ""],
+      ["├─\nminProductVersion", "string", "No", "", "Minimum\nsupported\nproduct version", ""],
+      ["├─ powerState", "numb\ner", "Yes", "", "Device status\nwhen AC back:\n1: Auto power on.\n2: Remain off.\n3: Restore\nprevious status.", ""],
+      ["├─ area", "object", "Yes", "", "Region\ninformation,\ngeographic\nlocation", ""],
+      ["├─ areaId", "intege\nr", "Yes", "0", "Region ID", "mock: 1"],
+      ["├─ areaName", "string", "Yes", "name1", "Region name", "mock:\nareaName\n1"],
+      ["├─ mode", "object", "Yes", "", "Node mode", ""],
+      ["├─ workMode", "intege\nr", "Yes", "", "Node working\nmode. Refer to\nthe working\nmode\ndescription.", ""],
+      ["├─ masterSlave", "intege\nr", "Yes", "", "Master and slave\nnode:\n0: Independent", ""]
+    ]}
+  ]
+}

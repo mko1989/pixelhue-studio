@@ -1,0 +1,17 @@
+{
+  "page": 82,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nArea starting y-\ncoordinate (with\nthe top-left\nnumb\n├─ y Yes corner as the\ner\nreference point\nwithin the\nconnector)\nnumb\n├─ width Yes Area width\ner\nnumb\n├─ height Yes Area height\ner\nnumb\n├─ enable Yes Area switch\ner\nnumb\n├─ index Yes Area index\ner\nConnector\nfeathering\nItem type:\nobject information\n├─ feather Yes\nobject\n[] (must describe\nall four edges of\nthe connector)\nFeathering\nnumb enable:\n├─ enable Yes\ner 0: Disable.\n1: Enable.\nConnector\nfeathering type:\nnumb\n├─ type Yes 0: Top edge.\ner\n1: Bottom edge.\n2: Left edge.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ y", "numb\ner", "Yes", "", "Area starting y-\ncoordinate (with\nthe top-left\ncorner as the\nreference point\nwithin the\nconnector)", ""],
+      ["├─ width", "numb\ner", "Yes", "", "Area width", ""],
+      ["├─ height", "numb\ner", "Yes", "", "Area height", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Area switch", ""],
+      ["├─ index", "numb\ner", "Yes", "", "Area index", ""],
+      ["├─ feather", "object\n[]", "Yes", "", "Connector\nfeathering\ninformation\n(must describe\nall four edges of\nthe connector)", "Item type:\nobject"],
+      ["├─ enable", "numb\ner", "Yes", "", "Feathering\nenable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ type", "numb\ner", "Yes", "", "Connector\nfeathering type:\n0: Top edge.\n1: Bottom edge.\n2: Left edge.", ""]
+    ]}
+  ]
+}

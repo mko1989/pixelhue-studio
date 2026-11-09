@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICustomSubmitData-b6e4d54b",
+  "name": "ICustomSubmitData",
+  "availability": "referenced-only",
+  "references": [{"name":"ICustomSubmitData","source":"src/api/neutral-config/index.ts","line":32}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

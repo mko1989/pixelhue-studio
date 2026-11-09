@@ -1,0 +1,7 @@
+{
+  "id": "reference-upgradePlugInD-1024e694",
+  "name": "upgradePlugInD",
+  "availability": "referenced-only",
+  "references": [{"name":"upgradePlugInD","source":"src/api/plug-in/plugIn.ts","line":27},{"name":"upgradePlugInD","source":"src/api/plug-in/plugIn.ts","line":28}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

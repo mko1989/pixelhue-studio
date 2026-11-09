@@ -1,0 +1,7 @@
+{
+  "id": "reference-ChannelCreateT-d216c2e9",
+  "name": "ChannelCreateT",
+  "availability": "referenced-only",
+  "references": [{"name":"ChannelCreateT","source":"src/api/ipc/index.ts","line":90}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

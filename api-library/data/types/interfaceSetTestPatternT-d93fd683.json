@@ -1,0 +1,9 @@
+{
+  "id": "interfaceSetTestPatternT-d93fd683",
+  "name": "interfaceSetTestPatternT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 238,
+  "declaration": "interface interfaceSetTestPatternT {\n  interfaceId: number | string;\n  testPattern: object;\n}"
+}

@@ -1,0 +1,14 @@
+{
+  "page": 46,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nrepresents the resolution\nwidth of the current\nconnector, and\n“heightResolution”\nrepresents the resolution\nheight of the current\nconnector. “width”\nrepresents the actual\ncropped width, and “height”\nrepresents the actual\ncropped height. For\ncalculations involving\nwidth, height, and xy\ncoordinates, rounding is\nused.\nCrop enable:\nEnumerati\nnumb\n├─ enable Yes 0: Disable.\non: 0, 1\ner\n1: Enable.\nCropping width ratio.\n├─ numb widthRatio = round\nmock: 0.3\nYes\nwidthRatio er (width/widthResolution *\n100000).\nCropping height ratio.\n├─ numb heightRatio = round\nmock: 0.4\nYes\nheightRatio er (height/heightResolution *\n100000).\nCropping’s x position ratio.\nnumb xRatio = round\n├─ xRatio Yes mock: 0.2\ner (x/widthResolution *\n100000).",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "represents the resolution\nwidth of the current\nconnector, and\n“heightResolution”\nrepresents the resolution\nheight of the current\nconnector. “width”\nrepresents the actual\ncropped width, and “height”\nrepresents the actual\ncropped height. For\ncalculations involving\nwidth, height, and xy\ncoordinates, rounding is\nused.", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Crop enable:\n0: Disable.\n1: Enable.", "Enumerati\non: 0, 1"],
+      ["├─\nwidthRatio", "numb\ner", "Yes", "", "Cropping width ratio.\nwidthRatio = round\n(width/widthResolution *\n100000).", "mock: 0.3"],
+      ["├─\nheightRatio", "numb\ner", "Yes", "", "Cropping height ratio.\nheightRatio = round\n(height/heightResolution *\n100000).", "mock: 0.4"],
+      ["├─ xRatio", "numb\ner", "Yes", "", "Cropping’s x position ratio.\nxRatio = round\n(x/widthResolution *\n100000).", "mock: 0.2"]
+    ]}
+  ]
+}

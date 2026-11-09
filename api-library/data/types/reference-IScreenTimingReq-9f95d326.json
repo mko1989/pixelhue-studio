@@ -1,0 +1,7 @@
+{
+  "id": "reference-IScreenTimingReq-9f95d326",
+  "name": "IScreenTimingReq",
+  "availability": "referenced-only",
+  "references": [{"name":"IScreenTimingReq","source":"src/api/screen/screen.ts","line":458}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

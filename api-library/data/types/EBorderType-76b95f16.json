@@ -1,0 +1,9 @@
+{
+  "id": "EBorderType-76b95f16",
+  "name": "EBorderType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 625,
+  "declaration": "enum EBorderType {\n  /** 硬内边框 */\n  HARD_INNER = 0,\n  /** 硬外边框 */\n  HARD_OUT,\n  /** 硬内外边框 */\n  HARD_INNER_OUT,\n  /** Soft软边框 */\n  SOFT,\n  /** Halo边框 */\n  HALO,\n  /** Halo-in边框 */\n  HALO_IN,\n  /** Halo-out边框 */\n  HALO_OUT,\n}"
+}

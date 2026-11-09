@@ -1,0 +1,7 @@
+{
+  "id": "reference-HdcpT-06602d32",
+  "name": "HdcpT",
+  "availability": "referenced-only",
+  "references": [{"name":"HdcpT","source":"src/types/device/typing.ts","line":111}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

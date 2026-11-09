@@ -1,0 +1,9 @@
+{
+  "id": "LayerLockE-a7d8b7e3",
+  "name": "LayerLockE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 743,
+  "declaration": "enum LayerLockE {\n  isLock = 1,\n  unLock = 0,\n}"
+}

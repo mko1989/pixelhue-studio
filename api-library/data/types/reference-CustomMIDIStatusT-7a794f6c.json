@@ -1,0 +1,7 @@
+{
+  "id": "reference-CustomMIDIStatusT-7a794f6c",
+  "name": "CustomMIDIStatusT",
+  "availability": "referenced-only",
+  "references": [{"name":"CustomMIDIStatusT","source":"src/api/custom/index.ts","line":37},{"name":"CustomMIDIStatusT","source":"src/api/custom/index.ts","line":48},{"name":"CustomMIDIStatusT","source":"src/api/custom/index.ts","line":49}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

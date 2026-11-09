@@ -1,0 +1,7 @@
+{
+  "id": "reference-ExtralReqIpParamsT-d508a6ac",
+  "name": "ExtralReqIpParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"ExtralReqIpParamsT","source":"src/api/device/deviceList.ts","line":1048},{"name":"ExtralReqIpParamsT","source":"src/api/device/double-card-backup.ts","line":37},{"name":"ExtralReqIpParamsT","source":"src/api/screen/screen.ts","line":1746},{"name":"ExtralReqIpParamsT","source":"src/api/device/cabinet-pack.ts","line":44},{"name":"ExtralReqIpParamsT","source":"src/api/device/cabinet-pack.ts","line":76},{"name":"ExtralReqIpParamsT","source":"src/api/device/cabinet-pack.ts","line":203},{"name":"ExtralReqIpParamsT","source":"src/api/device/cabinet-pack.ts","line":284}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

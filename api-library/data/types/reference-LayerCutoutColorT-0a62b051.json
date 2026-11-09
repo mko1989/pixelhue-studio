@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerCutoutColorT-0a62b051",
+  "name": "LayerCutoutColorT",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerCutoutColorT","source":"src/api/layer/layer.ts","line":867},{"name":"LayerCutoutColorT","source":"src/api/layer/layer.ts","line":864},{"name":"LayerCutoutColorT","source":"src/api/layer/layer.ts","line":868}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

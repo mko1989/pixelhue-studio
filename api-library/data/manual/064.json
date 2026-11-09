@@ -1,0 +1,20 @@
+{
+  "page": 64,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nobjec\n├─ relation Yes\nt\nRelation type:\nnumb\n├─ type Yes 1: Follow.\ner\n2: Copy.\nRelation switch:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\n├─ numb\nYes Associated connector ID\ndestinationId er\nEnumeration of the\nproperties that need to be\nItem type:\nnumb\n├─ property Yes correlated between the\nnumber\ner []\ncurrent connectors. 1:\ntiming\n├─ No\nnumb Hot-plug detection, in\n├─ hpd Yes\ner milliseconds\nobjec\n├─ threeD Yes 3D information\nt\n├─ objec Actual 3D source\nYes\nactualSource t information\nVideo source format:\n0: None.\n├─ numb\nYes 1: Top-and-bottom.\nsourceFormat er\n2: Frame sequential.\n3: Side-by-side.\n├─ objec Preset 3D source\nYes\npresetSource t information",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ relation", "objec\nt", "Yes", "", "", ""],
+      ["├─ type", "numb\ner", "Yes", "", "Relation type:\n1: Follow.\n2: Copy.", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Relation switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─\ndestinationId", "numb\ner", "Yes", "", "Associated connector ID", ""],
+      ["├─ property", "numb\ner []", "Yes", "", "Enumeration of the\nproperties that need to be\ncorrelated between the\ncurrent connectors. 1:\ntiming", "Item type:\nnumber"],
+      ["├─", "", "No", "", "", ""],
+      ["├─ hpd", "numb\ner", "Yes", "", "Hot-plug detection, in\nmilliseconds", ""],
+      ["├─ threeD", "objec\nt", "Yes", "", "3D information", ""],
+      ["├─\nactualSource", "objec\nt", "Yes", "", "Actual 3D source\ninformation", ""],
+      ["├─\nsourceFormat", "numb\ner", "Yes", "", "Video source format:\n0: None.\n1: Top-and-bottom.\n2: Frame sequential.\n3: Side-by-side.", ""],
+      ["├─\npresetSource", "objec\nt", "Yes", "", "Preset 3D source\ninformation", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "PictureTypeE-8cce735a",
+  "name": "PictureTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 598,
+  "declaration": "enum PictureTypeE {\n  Picture = 1, // BKG\n  LogoPicture, // LOGO\n  osdPicture, // OSD\n}"
+}

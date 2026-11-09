@@ -1,0 +1,9 @@
+{
+  "id": "testPattern-f6b9c94e",
+  "name": "testPattern",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 362,
+  "declaration": "enum testPattern {}"
+}

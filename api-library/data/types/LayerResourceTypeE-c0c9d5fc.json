@@ -1,0 +1,9 @@
+{
+  "id": "LayerResourceTypeE-c0c9d5fc",
+  "name": "LayerResourceTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 669,
+  "declaration": "enum LayerResourceTypeE {\n  /** 无资源占用,未分配资源 */\n  null,\n  /** 需资源占用,已分配资源 */\n  haveResource,\n  /** 需资源占用,未分配资源 */\n  noResource,\n}"
+}

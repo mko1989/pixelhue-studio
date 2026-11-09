@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICreateConfigReq-51bf181c",
+  "name": "ICreateConfigReq",
+  "availability": "referenced-only",
+  "references": [{"name":"ICreateConfigReq","source":"src/api/custom/index.ts","line":220}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "DragStatus-11806764",
+  "name": "DragStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 413,
+  "declaration": "enum DragStatus {\n  isNotDrag,\n  isFirstDrag,\n  isContinueDrag,\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-interfaceLinkT-ffe5a29e",
+  "name": "interfaceLinkT",
+  "availability": "referenced-only",
+  "references": [{"name":"interfaceLinkT","source":"src/api/link/index.ts","line":124},{"name":"interfaceLinkT","source":"src/api/link/index.ts","line":129}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "CorrectionFlashModeE-3a111d04",
+  "name": "CorrectionFlashModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/correction/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 20,
+  "declaration": "enum CorrectionFlashModeE {\n  /****应用区flash ***/\n  ApplicationAreaFlash,\n  /****工厂区flash***/\n  FactoryAreaFlash,\n  /****灯板flash***/\n  LightBorderFlash,\n}"
+}

@@ -1,0 +1,19 @@
+{
+  "page": 99,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nconfigured\nconnector, a\nstep size of 1,\nand a default of\n32.\nnumb Grid width, unit:\n├─ gridLineWidth Yes\ner pixel\nnumb\n├─ speed Yes Speed\ner\nConnector HDR\n├─ hdr object Yes\nproperties\nSDR conversion\n├─ sdr object Yes\nsettings\nGamma value,\nnumb\n├─ gamma Yes range:\ner\n1.00~4.00\nHDR10\n├─ hdr10 object Yes conversion\nsettings\nPeak screen\nnumb\n├─ peakLuminance Yes brightness,\ner\nrange: 0~10000\nScreen’s\nnumb ambient\n├─ envLuminance Yes\ner brightness,\nrange: 0~10000\nSelect PQ curve:\nnumb\n├─ pqMode Yes 0: ST2084.\ner\n1: ST2086.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "configured\nconnector, a\nstep size of 1,\nand a default of\n32.", ""],
+      ["├─ gridLineWidth", "numb\ner", "Yes", "", "Grid width, unit:\npixel", ""],
+      ["├─ speed", "numb\ner", "Yes", "", "Speed", ""],
+      ["├─ hdr", "object", "Yes", "", "Connector HDR\nproperties", ""],
+      ["├─ sdr", "object", "Yes", "", "SDR conversion\nsettings", ""],
+      ["├─ gamma", "numb\ner", "Yes", "", "Gamma value,\nrange:\n1.00~4.00", ""],
+      ["├─ hdr10", "object", "Yes", "", "HDR10\nconversion\nsettings", ""],
+      ["├─ peakLuminance", "numb\ner", "Yes", "", "Peak screen\nbrightness,\nrange: 0~10000", ""],
+      ["├─ envLuminance", "numb\ner", "Yes", "", "Screen’s\nambient\nbrightness,\nrange: 0~10000", ""],
+      ["├─ pqMode", "numb\ner", "Yes", "", "Select PQ curve:\n0: ST2084.\n1: ST2086.", ""]
+    ]}
+  ]
+}

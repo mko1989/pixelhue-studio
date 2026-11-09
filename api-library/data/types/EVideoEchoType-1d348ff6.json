@@ -1,0 +1,9 @@
+{
+  "id": "EVideoEchoType-1d348ff6",
+  "name": "EVideoEchoType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 100,
+  "declaration": "enum EVideoEchoType {\n  /** 直推预监流 */\n  mvr,\n  /** 推输入源模板 */\n  template,\n}"
+}

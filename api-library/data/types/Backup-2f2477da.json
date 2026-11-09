@@ -1,0 +1,8 @@
+{
+  "id": "Backup-2f2477da",
+  "name": "Backup",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/SourceBackup.ts",
+  "line": 9,
+  "declaration": "interface Backup {\n\tbackupSourceId: number\n\tbackupSourceType: number\n\tid: number\n\tparentId: number\n\tprimaryFirst: number\n\tprimarySourceId: number\n\tprimarySourceType: number\n\tswitchMode: number\n\tusingSourceId: number\n\tusingSourceType: number\n}"
+}

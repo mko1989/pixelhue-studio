@@ -1,0 +1,7 @@
+{
+  "id": "reference-IOsActiveReq-82b5c476",
+  "name": "IOsActiveReq",
+  "availability": "referenced-only",
+  "references": [{"name":"IOsActiveReq","source":"src/api/console-production/index.ts","line":36}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ETbarTipType-679e5d4b",
+  "name": "ETbarTipType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 542,
+  "declaration": "enum ETbarTipType {\n  tbarChecking, // t-bar 校验中\n  abnormal, // t-bar校验结果异常\n}"
+}

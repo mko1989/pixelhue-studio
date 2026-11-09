@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/layers/create",
+  "group": "layers",
+  "summary": "response",
+  "tags": ["layers","create"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"layers/create","dynamic":false,"pathParameters":[],"source":"src/api/production/index.ts","line":100,"client":"API","symbol":"response","comment":"创建图层","parameters":["params: {\n  ip: string;\n  port: number;\n  token: string;\n  data: LayerBaseT;\n}"],"bodyExpression":"params.data","queryExpression":null,"headerExpression":"{\n      Authorization: params.token,\n    }","configExpression":"{\n    method: 'put',\n    url: `layers/create`,\n    data: params.data,\n    headers: {\n      Authorization: params.token,\n    },\n  }","context":"async (params: {\n  ip: string;\n  port: number;\n  token: string;\n  data: LayerBaseT;\n}): Promise<IResponseData<LayerT[]>> => {\n  const response = await API.request<IResponseData<LayerT[]>>({\n    method: 'put',","sourceMap":"main-Cpb41LiE.js.map"},{"method":"PUT","path":"layers/create","dynamic":false,"source":"src/api/layer/layer.ts","line":137,"client":"API","symbol":"response","comment":"","parameters":["data: LayerBaseT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ip: extraReqParams?.ip || '',\n      port: extraReqParams?.port || '',\n      Authorization: extraReqParams?.token || '',\n      protocol: extraReqParams?.protocol || '',\n    }","configExpression":"{\n    method: 'put',\n    url: 'layers/create',\n    data,\n    timeout: 80000,\n    headers: {\n      ip: extraReqParams?.ip || '',\n      port: extraReqParams?.port || '',\n      Authorization: extraReqParams?.token || '',\n      protocol: extraReqParams?.protocol || '',\n    },\n  }","context":"async (data: LayerBaseT): Promise<IResponseData<LayerT[]>> => {\n  const newData = { ...data };\n  const sn = newData.sn ?? '';\n  delete newData.sn;\n  const extraReqParams = getExtraReqParams(sn);\n  const response = await API.request<IResponseData<LayerT[]>>({\n    method: 'put',\n    url: 'layers/create',","sourceMap":"main-Cpb41LiE.js.map"},{"method":"PUT","path":"layers/create","dynamic":false,"source":"src/api/production/burn-in-test.ts","line":137,"client":"API","symbol":"response","comment":"创建图层","parameters":["param: TCreateLayerParams"],"bodyExpression":"param.data","queryExpression":null,"headerExpression":"{\n      Authorization: token,\n      ip: param.ip,\n      port: param.port,\n    }","configExpression":"{\n    method: 'put',\n    url: 'layers/create',\n    data: param.data,\n    headers: {\n      Authorization: token,\n      ip: param.ip,\n      port: param.port,\n    },\n  }","context":"async (\n  param: TCreateLayerParams,\n): Promise<IResponseData<LayerT[]>> => {\n  const token = getLocalTokenBySn(param.sn) ?? '';\n  const response = await API.request<IResponseData<LayerT[]>>({\n    method: 'put',\n    url: 'layers/create',\n    data: param.data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-layers-create",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

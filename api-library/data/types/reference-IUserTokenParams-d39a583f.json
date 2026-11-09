@@ -1,0 +1,7 @@
+{
+  "id": "reference-IUserTokenParams-d39a583f",
+  "name": "IUserTokenParams",
+  "availability": "referenced-only",
+  "references": [{"name":"IUserTokenParams","source":"src/api/user/user.ts","line":26},{"name":"IUserTokenParams","source":"src/api/user/user.ts","line":37}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

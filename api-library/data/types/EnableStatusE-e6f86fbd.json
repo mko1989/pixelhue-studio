@@ -1,0 +1,9 @@
+{
+  "id": "EnableStatusE-e6f86fbd",
+  "name": "EnableStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 236,
+  "declaration": "enum EnableStatusE {\n  disable = 0,\n  enable,\n}"
+}

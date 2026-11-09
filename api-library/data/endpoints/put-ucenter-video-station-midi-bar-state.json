@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/midi/bar-state",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","midi","bar-state"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/midi/bar-state","dynamic":false,"source":"src/api/custom/index.ts","line":121,"client":"API","symbol":"response","comment":"*\n * 是否需要下发tbar逻辑\n * @param isNotSend // 0：需要， 1：不需要\n * @returns","parameters":["data: {\n  isNotSend: number;\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/midi/bar-state',\n    data,\n  }","context":"async (data: {\n  isNotSend: number;\n}): Promise<IResponseData<NeedSendTbarT>> => {\n  const response = await API.request<IResponseData<NeedSendTbarT>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/midi/bar-state',\n    data,\n  });","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-midi-bar-state",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

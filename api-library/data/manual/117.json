@@ -1,0 +1,20 @@
+{
+  "page": 117,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\ner range: 100~400\nnumb Scale ratio\n├─ scale Yes\ner multiplier: 100\nColor\nnumb temperature\n├─ colorTemperature Yes\ner value of the\nscreen\n├─ syncLock object Yes\n├─ interfaceID string Yes\nSync type:\nintege 0: Follow input.\n├─ syncLockType Yes\nr 1: Genlock.\n2: Internal.\nnumb\n├─ frameRate Yes Frame rate\ner\nSync status:\nintege\n├─ syncLockStatus Yes 0: Unlocked.\nr\n1: Locked.\n├─ phaseOffset object Yes\nPhase offset\ntype:\n0: Off.\nintege\n├─ phaseOffsetType Yes 1: Angle.\nr\n2: Fraction.\n3: Absolute\nvalue.\nnumb Angle, range:\n├─ angle Yes\ner 0~342",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "er", "", "", "range: 100~400", ""],
+      ["├─ scale", "numb\ner", "Yes", "", "Scale ratio\nmultiplier: 100", ""],
+      ["├─ colorTemperature", "numb\ner", "Yes", "", "Color\ntemperature\nvalue of the\nscreen", ""],
+      ["├─ syncLock", "object", "Yes", "", "", ""],
+      ["├─ interfaceID", "string", "Yes", "", "", ""],
+      ["├─ syncLockType", "intege\nr", "Yes", "", "Sync type:\n0: Follow input.\n1: Genlock.\n2: Internal.", ""],
+      ["├─ frameRate", "numb\ner", "Yes", "", "Frame rate", ""],
+      ["├─ syncLockStatus", "intege\nr", "Yes", "", "Sync status:\n0: Unlocked.\n1: Locked.", ""],
+      ["├─ phaseOffset", "object", "Yes", "", "", ""],
+      ["├─ phaseOffsetType", "intege\nr", "Yes", "", "Phase offset\ntype:\n0: Off.\n1: Angle.\n2: Fraction.\n3: Absolute\nvalue.", ""],
+      ["├─ angle", "numb\ner", "Yes", "", "Angle, range:\n0~342", ""]
+    ]}
+  ]
+}

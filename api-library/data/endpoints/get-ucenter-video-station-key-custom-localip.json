@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/video-station/key/custom/localIP",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","key","custom","localIP"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/video-station/key/custom/localIP","dynamic":false,"source":"src/api/custom/index.ts","line":436,"client":"API","symbol":"response","comment":"*\n * 获取本机IP","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'GET',\n    url: 'ucenter/video-station/key/custom/localIP',\n  }","context":"async (): Promise<IResponseData<{ ips: string[] }>> => {\n  const response = await API.request<IResponseData<{ ips: string[] }>>({\n    method: 'GET',\n    url: 'ucenter/video-station/key/custom/localIP',\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-video-station-key-custom-localip",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

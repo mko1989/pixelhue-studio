@@ -1,0 +1,9 @@
+{
+  "id": "ColorRangeActualE-cb88773a",
+  "name": "ColorRangeActualE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 965,
+  "declaration": "enum ColorRangeActualE {\n  LIMITED = 0,\n  FULL,\n}"
+}

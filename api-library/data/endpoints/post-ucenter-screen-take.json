@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/take",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","take"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/screen/take","dynamic":false,"source":"src/api/screen/screen.ts","line":747,"client":"API","symbol":"response","comment":"0x02-UCenter-超级屏操作屏幕take","parameters":["data: TSuperScreenTakeData[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'POST',\n    timeout: 0, // 图层take 不加超时限制\n    url: 'ucenter/screen/take',\n    data,\n  }","context":"async (\n  data: TSuperScreenTakeData[],\n): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'POST',\n    timeout: 0, // 图层take 不加超时限制\n    url: 'ucenter/screen/take',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-take",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

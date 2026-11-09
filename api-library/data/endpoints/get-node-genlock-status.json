@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/node/genlock-status",
+  "group": "node",
+  "summary": "response",
+  "tags": ["node","genlock-status"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"/node/genlock-status","dynamic":false,"source":"src/api/device/deviceInfo.ts","line":326,"client":"API","symbol":"response","comment":"获取N/P/H系列设备genlock 配置状态","parameters":["nodeId: number","options?: ExtraReqParamsT"],"bodyExpression":null,"queryExpression":"{ nodeId }","headerExpression":"{\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    }","configExpression":"{\n    method: 'GET',\n    url: '/node/genlock-status',\n    params: { nodeId },\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    },\n  }","context":"async (\n  nodeId: number,\n  options?: ExtraReqParamsT,\n): Promise<IResponseData<{ genlockStatus: TGenlockStatus }>> => {\n  const response = await API.request<IResponseData<{ genlockStatus: TGenlockStatus }>>({\n    method: 'GET',\n    url: '/node/genlock-status',\n    params: { nodeId },","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-node-genlock-status",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

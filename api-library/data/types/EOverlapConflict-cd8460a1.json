@@ -1,0 +1,9 @@
+{
+  "id": "EOverlapConflict-cd8460a1",
+  "name": "EOverlapConflict",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 379,
+  "declaration": "enum EOverlapConflict {\n  lcd,\n}"
+}

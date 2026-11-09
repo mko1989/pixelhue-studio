@@ -1,0 +1,7 @@
+{
+  "id": "reference-IQueryResponse-9286a8f6",
+  "name": "IQueryResponse",
+  "availability": "referenced-only",
+  "references": [{"name":"IQueryResponse","source":"src/api/common/index.ts","line":40},{"name":"IQueryResponse","source":"src/api/picture/picture.ts","line":309}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

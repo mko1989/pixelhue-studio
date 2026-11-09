@@ -1,0 +1,9 @@
+{
+  "id": "interfaceGeneralT-f68b26d6",
+  "name": "interfaceGeneralT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 131,
+  "declaration": "interface interfaceGeneralT {\n  interfaceId?: number | string;\n  general: GeneralT;\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "PanelCommandOptionsE-baeb72a3",
+  "name": "PanelCommandOptionsE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 388,
+  "declaration": "enum PanelCommandOptionsE {\n  'createEmptyScreen' = 'createEmptyScreen',\n  'auxiliaryAssessScreen' = 'auxiliaryAssessScreen',\n  'failResetScreen' = 'failResetScreen',\n  'screenCropMosaic' = 'screenCropMosaic',\n}"
+}

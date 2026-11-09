@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/system/ctrl/interface-source",
+  "group": "system",
+  "summary": "response",
+  "tags": ["system","ctrl","interface-source"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"system/ctrl/interface-source","dynamic":false,"source":"src/api/production/index.ts","line":139,"client":"API","symbol":"response","comment":"设置接口源状态统计开关","parameters":["ip: string","port: number","sn: string","data"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      Authorization: token,\n      ip,\n      port,\n    }","configExpression":"{\n    method: 'put',\n    url: 'system/ctrl/interface-source',\n    headers: {\n      Authorization: token,\n      ip,\n      port,\n    },\n    data,\n  }","context":"async (\n  ip: string,\n  port: number,\n  sn: string,\n  data,\n): Promise<IResponseData<null>> => {\n  const token = getLocalTokenBySn(sn) ?? '';\n  const response = await API.request<IResponseData<null>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-system-ctrl-interface-source",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

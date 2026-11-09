@@ -1,0 +1,18 @@
+{
+  "page": 104,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n1: Enable.\nnumb\n├─ width Yes Edge width\ner\nnumb\n├─ height Yes Edge height\ner\n├─ threeD object Yes 3D\n3D switch\nintege enable:\n├─ threeDEnable Yes\nr 0: Disable.\n1: Enable.\nVideo source\nformat:\n0: None.\n1: Top-and-\nintege bottom.\n├─ sourceFormat Yes\nr 2: Frame\nsequential.\n3: Side-by-side.\n4: From input\n(default).\nintege Right eye\n├─ rightEyeOffset Yes\nr starting position\nEye priority:\nintege 1: Right eye.\n├─ eyePriority Yes\nr 2: Left eye\n(default).\nEnable third-\nintege\n├─ thirdEmitterEnable Yes party emitter:\nr\n1: Disable.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "1: Enable.", ""],
+      ["├─ width", "numb\ner", "Yes", "", "Edge width", ""],
+      ["├─ height", "numb\ner", "Yes", "", "Edge height", ""],
+      ["├─ threeD", "object", "Yes", "", "3D", ""],
+      ["├─ threeDEnable", "intege\nr", "Yes", "", "3D switch\nenable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ sourceFormat", "intege\nr", "Yes", "", "Video source\nformat:\n0: None.\n1: Top-and-\nbottom.\n2: Frame\nsequential.\n3: Side-by-side.\n4: From input\n(default).", ""],
+      ["├─ rightEyeOffset", "intege\nr", "Yes", "", "Right eye\nstarting position", ""],
+      ["├─ eyePriority", "intege\nr", "Yes", "", "Eye priority:\n1: Right eye.\n2: Left eye\n(default).", ""],
+      ["├─ thirdEmitterEnable", "intege\nr", "Yes", "", "Enable third-\nparty emitter:\n1: Disable.", ""]
+    ]}
+  ]
+}

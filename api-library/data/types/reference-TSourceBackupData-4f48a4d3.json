@@ -1,0 +1,7 @@
+{
+  "id": "reference-TSourceBackupData-4f48a4d3",
+  "name": "TSourceBackupData",
+  "availability": "referenced-only",
+  "references": [{"name":"TSourceBackupData","source":"src/api/device/deviceInfo.ts","line":558},{"name":"TSourceBackupData","source":"src/api/device/deviceInfo.ts","line":559}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

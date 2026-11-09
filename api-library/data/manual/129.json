@@ -1,0 +1,24 @@
+{
+  "page": 129,
+  "text": "Default\nName Type Required Remarks More\nValue\nprecedence.\n├─ ftb object Yes Screen FTB control\nFTB enable:\n0: Disable, and return to\n├─ enable number Yes\nnormal display.\n1: Enable.\nThe duration for the FTB\n├─ time number Yes\neffect\n Return Data\nDefault\nName Type Required Remarks More\nValue\ncode integer Yes Response code\nResponse\nmessage string Yes\nmessage\nItem type:\nobject\ndata Yes\nobject\n[]\n4.2.4 Cut\n Basic Information\nPath: /v1/screen/cut\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nAuthorization Yes token\nBody",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "precedence.", ""],
+      ["├─ ftb", "object", "Yes", "", "Screen FTB control", ""],
+      ["├─ enable", "number", "Yes", "", "FTB enable:\n0: Disable, and return to\nnormal display.\n1: Enable.", ""],
+      ["├─ time", "number", "Yes", "", "The duration for the FTB\neffect", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response\nmessage", ""],
+      ["data", "object\n[]", "Yes", "", "", "Item type:\nobject"]
+    ]},
+    {"contextBefore": "4.2.4 Cut\n Basic Information\nPath: /v1/screen/cut\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""],
+      ["Authorization", "", "Yes", "", "token"]
+    ]}
+  ]
+}

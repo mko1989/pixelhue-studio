@@ -1,0 +1,7 @@
+{
+  "id": "reference-IRespData-b6461c0d",
+  "name": "IRespData",
+  "availability": "referenced-only",
+  "references": [{"name":"IRespData","source":"src/api/keyboard/index.ts","line":14},{"name":"IRespData","source":"src/api/keyboard/index.ts","line":15},{"name":"IRespData","source":"src/api/keyboard/index.ts","line":28},{"name":"IRespData","source":"src/api/keyboard/index.ts","line":29},{"name":"IRespData","source":"src/api/keyboard/index.ts","line":43},{"name":"IRespData","source":"src/api/keyboard/index.ts","line":44}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

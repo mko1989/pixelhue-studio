@@ -1,0 +1,9 @@
+{
+  "id": "neutralParamsT-5b309647",
+  "name": "neutralParamsT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/api/neutral-config/index.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 8,
+  "declaration": "type neutralParamsT = {\n  ip: string;\n  port: number | string;\n  token: string;\n};"
+}

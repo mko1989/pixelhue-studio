@@ -1,0 +1,7 @@
+{
+  "id": "reference-GeneralT-45a5fe09",
+  "name": "GeneralT",
+  "availability": "referenced-only",
+  "references": [{"name":"GeneralT","source":"src/api/device/deviceInterface.ts","line":133},{"name":"GeneralT","source":"src/types/device/typing.ts","line":87}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

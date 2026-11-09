@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/ptz/signal-modify",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","ptz","signal-modify"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/ptz/signal-modify","dynamic":false,"source":"src/api/setting/setting.ts","line":365,"client":"API","symbol":"response","comment":"*\n * 编辑信号源\n *","parameters":["data: ISignalList"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/ptz/signal-modify',\n    data: data,\n  }","context":"async (data: ISignalList) => {\n  const response = await API.request<IResponseData<unknown>>({\n    method: 'PUT',\n    url: 'ucenter/ptz/signal-modify',\n    data: data,\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-ptz-signal-modify",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

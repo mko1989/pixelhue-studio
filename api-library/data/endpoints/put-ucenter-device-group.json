@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/device-group",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","device-group"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/device-group","dynamic":false,"source":"src/api/device/deviceList.ts","line":865,"client":"API","symbol":"response","comment":"编辑设备分组","parameters":["nodeId: number","checkType: number"],"bodyExpression":null,"queryExpression":"{ nodeId, checkType }","headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/device-group',\n    params: { nodeId, checkType },\n  }","context":"async (\n  nodeId: number,\n  checkType: number,\n): Promise<IResponseData<Icheckres>> => {\n  const response = await API.request<IResponseData<Icheckres>>({\n    method: 'PUT',\n    url: 'ucenter/device-group',\n    params: { nodeId, checkType },","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-device-group",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

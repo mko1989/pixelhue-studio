@@ -1,0 +1,9 @@
+{
+  "id": "LiveBkgTypeE-f12f1c41",
+  "name": "LiveBkgTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 830,
+  "declaration": "enum LiveBkgTypeE {\n  interface = 0,\n  screen = 1,\n}"
+}

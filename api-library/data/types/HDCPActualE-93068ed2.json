@@ -1,0 +1,9 @@
+{
+  "id": "HDCPActualE-93068ed2",
+  "name": "HDCPActualE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 925,
+  "declaration": "enum HDCPActualE {\n  close = 0, // 关闭\n  'HDCP1_4', // HDCP1.4\n  'HDCP1_3', // HDCP1.3\n  'HDCP2_2', // HDCP2.2\n  unknown, // 未识别\n  recognitionFailed = 255, // 识别失败\n}"
+}

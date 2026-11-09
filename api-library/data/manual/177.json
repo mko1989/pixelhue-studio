@@ -1,0 +1,13 @@
+{
+  "page": 177,
+  "text": "Default\nName Type Required Remarks More\nValue\nsource]\nConnector type\n(valid when the\nsource is from\nan input\nconnector):\n0: INVALID\n1: EXP\n2: Single Link\nDVI\n3: Dual Link DVI\n4: HDMI 1.3\n5: HDMI 1.4\n6: HDMI 2.0\n7: Single Link DP\n├─ connectorType integer Yes\n1.1\n8: DP 1.2\n9: 3G-SDI\n10: VGA\n11: CVBS\n12: YPbPr\n13: 12G-SDI\n14: 6G-SDI\n15: USB\n16: HDBaseT\n17: Dual Link DP\n1.1\n18: DVI_Fiber\n19: DVI 1.4\nThe source\n├─ sourceName string Yes\nname\n├─ Layer capacity\ninteger Yes\nconnectCapacityNum status:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "source]", ""],
+      ["├─ connectorType", "integer", "Yes", "", "Connector type\n(valid when the\nsource is from\nan input\nconnector):\n0: INVALID\n1: EXP\n2: Single Link\nDVI\n3: Dual Link DVI\n4: HDMI 1.3\n5: HDMI 1.4\n6: HDMI 2.0\n7: Single Link DP\n1.1\n8: DP 1.2\n9: 3G-SDI\n10: VGA\n11: CVBS\n12: YPbPr\n13: 12G-SDI\n14: 6G-SDI\n15: USB\n16: HDBaseT\n17: Dual Link DP\n1.1\n18: DVI_Fiber\n19: DVI 1.4", ""],
+      ["├─ sourceName", "string", "Yes", "", "The source\nname", ""],
+      ["├─\nconnectCapacityNum", "integer", "Yes", "", "Layer capacity\nstatus:", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/interface/reset/hdr",
+  "group": "interface",
+  "summary": "response",
+  "tags": ["interface","reset","hdr"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"interface/reset/hdr","dynamic":false,"source":"src/api/device/deviceInterface.ts","line":438,"client":"API","symbol":"response","comment":"重置接口HDR","parameters":["data: IResetHDRReqT[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      isLoading: true,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'interface/reset/hdr',\n    data,\n    timeout: 25000, // TODO: NP有关联接口，超时时间需要长一点\n    headers: {\n      isLoading: true,\n    },\n  }","context":"async (\n  data: IResetHDRReqT[],\n): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'PUT',\n    url: 'interface/reset/hdr',\n    data,\n    timeout: 25000, // TODO: NP有关联接口，超时时间需要长一点","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-interface-reset-hdr",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

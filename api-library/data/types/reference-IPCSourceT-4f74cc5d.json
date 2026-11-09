@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPCSourceT-4f74cc5d",
+  "name": "IPCSourceT",
+  "availability": "referenced-only",
+  "references": [{"name":"IPCSourceT","source":"src/api/ipc/index.ts","line":32}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

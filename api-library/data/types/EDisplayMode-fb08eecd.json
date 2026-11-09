@@ -1,0 +1,9 @@
+{
+  "id": "EDisplayMode-fb08eecd",
+  "name": "EDisplayMode",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 686,
+  "declaration": "enum EDisplayMode {\n  alwaysDisplay, // 一直显示\n  unDisplay, // 不显示\n  autoDisplay, // 自动显示\n}"
+}

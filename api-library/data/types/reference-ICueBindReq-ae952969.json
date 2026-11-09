@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICueBindReq-ae952969",
+  "name": "ICueBindReq",
+  "availability": "referenced-only",
+  "references": [{"name":"ICueBindReq","source":"src/api/media/index.ts","line":58},{"name":"ICueBindReq","source":"src/api/media/index.ts","line":58},{"name":"ICueBindReq","source":"src/api/media/index.ts","line":59},{"name":"ICueBindReq","source":"src/api/media/index.ts","line":71},{"name":"ICueBindReq","source":"src/api/media/index.ts","line":71},{"name":"ICueBindReq","source":"src/api/media/index.ts","line":72},{"name":"ICueBindReq","source":"src/api/media/index.ts","line":84},{"name":"ICueBindReq","source":"src/api/media/index.ts","line":85}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/correction/screen/coefficient",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","correction","screen","coefficient"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/correction/screen/coefficient","dynamic":false,"source":"src/api/correction/index.ts","line":95,"client":"API","symbol":"response","comment":"****设置校正系数操作***","parameters":["data: CabinetCorrectionCoefficientPropsI","time?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: 'ucenter/correction/screen/coefficient',\n    data,\n    timeout:time || 60000,\n  }","context":"async (\n  data: CabinetCorrectionCoefficientPropsI,\n  time?: number,\n): Promise<IResponseData<unknown>> => {\n  console.info('系数操作超时时间:',time)\n  const response = await API.request<IResponseData<unknown>>({\n    method: 'put',\n    url: 'ucenter/correction/screen/coefficient',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-correction-screen-coefficient",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

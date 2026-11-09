@@ -1,0 +1,9 @@
+{
+  "id": "SplicerDeviceAction-5ce23ed2",
+  "name": "SplicerDeviceAction",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 38,
+  "declaration": "enum SplicerDeviceAction {\n  userInfo = 'user-info', // 用户信息\n  clearUserInfo = 'clear-user-info', // session清除用户\n  updateLang = 'update-lang', // 切换语言\n  updateRoute = 'update-route', // 切换路由\n  checking = 'device-checking', // 设备自检\n  upgrade = 'device-upgrade', // 设备升级\n  tokenExpired = 'token-expired', // token过期\n  testPattern = 'test-pattern', // 测试画面\n  screenBrightness = 'screen-brightness', // 屏幕亮度\n  updateDepth = 'update-depth', // 位深\n  changeDeliveryMode = 'change-delivery-mode', // 交付模式\n}"
+}

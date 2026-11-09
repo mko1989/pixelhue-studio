@@ -1,0 +1,24 @@
+{
+  "page": 114,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nsupported.\n1: Supported.\nWhether gamut\nis supported:\nintege\n├─ isSupportGamut Yes 0: Not\nr\nsupported.\n1: Supported.\nCabinet\n├─ cabinetOverwriteInfo object Yes information\noverride\nintege 0: No.\n├─ overwrite Yes\nr 1: Yes\nintege\n├─ moduleRow Yes\nr\nintege\n├─ moduleCol Yes\nr\nMulti-mode\n├─ multiModeInfo object Yes\ninformation\nintege\n├─ currentModeId Yes\nr\n├─ currentCfgParam object Yes\n├─ manufactureName string Yes\n├─ cabinetName string Yes\n├─ cardModel string Yes\n├─ status string Yes\n├─ version string Yes\n├─ issue intege Yes",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "supported.\n1: Supported.", ""],
+      ["├─ isSupportGamut", "intege\nr", "Yes", "", "Whether gamut\nis supported:\n0: Not\nsupported.\n1: Supported.", ""],
+      ["├─ cabinetOverwriteInfo", "object", "Yes", "", "Cabinet\ninformation\noverride", ""],
+      ["├─ overwrite", "intege\nr", "Yes", "", "0: No.\n1: Yes", ""],
+      ["├─ moduleRow", "intege\nr", "Yes", "", "", ""],
+      ["├─ moduleCol", "intege\nr", "Yes", "", "", ""],
+      ["├─ multiModeInfo", "object", "Yes", "", "Multi-mode\ninformation", ""],
+      ["├─ currentModeId", "intege\nr", "Yes", "", "", ""],
+      ["├─ currentCfgParam", "object", "Yes", "", "", ""],
+      ["├─ manufactureName", "string", "Yes", "", "", ""],
+      ["├─ cabinetName", "string", "Yes", "", "", ""],
+      ["├─ cardModel", "string", "Yes", "", "", ""],
+      ["├─ status", "string", "Yes", "", "", ""],
+      ["├─ version", "string", "Yes", "", "", ""],
+      ["├─ issue", "intege", "Yes", "", "", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "resolutionStepE-98c46841",
+  "name": "resolutionStepE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 636,
+  "declaration": "enum resolutionStepE {\n  step = 4,\n}"
+}

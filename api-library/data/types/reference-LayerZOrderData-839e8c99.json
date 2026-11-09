@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerZOrderData-839e8c99",
+  "name": "LayerZOrderData",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerZOrderData","source":"src/api/layer/layer.ts","line":530},{"name":"LayerZOrderData","source":"src/api/layer/layer.ts","line":531}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

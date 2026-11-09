@@ -1,0 +1,4 @@
+{
+  "group": "keyboard",
+  "endpoints": [{"id":"post-keyboard-config","method":"POST","path":"/keyboard/config","group":"keyboard","summary":"response","tags":["keyboard"],"models":[],"symbols":["response"],"keywords":" data: KeyboardConfigT data","serverKind":"keyboard","manual":false,"file":"endpoints/post-keyboard-config.json"},{"id":"post-keyboard-position","method":"POST","path":"/keyboard/position","group":"keyboard","summary":"response","tags":["keyboard"],"models":[],"symbols":["response"],"keywords":" data: KeyboardPositionT data","serverKind":"keyboard","manual":false,"file":"endpoints/post-keyboard-position.json"},{"id":"post-keyboard-test-mode","method":"POST","path":"/keyboard/test-mode","group":"keyboard","summary":"response","tags":["keyboard"],"models":[],"symbols":["response"],"keywords":" data: KeyboardTestModeT data","serverKind":"keyboard","manual":false,"file":"endpoints/post-keyboard-test-mode.json"}]
+}

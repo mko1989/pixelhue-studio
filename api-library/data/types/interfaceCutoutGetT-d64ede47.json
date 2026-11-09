@@ -1,0 +1,9 @@
+{
+  "id": "interfaceCutoutGetT-d64ede47",
+  "name": "interfaceCutoutGetT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 149,
+  "declaration": "interface interfaceCutoutGetT {\n  interfaceId: number | string;\n  cursor: CursorT;\n  type: number;\n}"
+}

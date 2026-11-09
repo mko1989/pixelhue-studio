@@ -1,0 +1,8 @@
+{
+  "id": "LayerUMD-7960fb2f",
+  "name": "LayerUMD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Layer.ts",
+  "line": 46,
+  "declaration": "interface LayerUMD {\n\tarea: number\n\tenable: 0 | 1\n\tname: string\n\ttype: number\n}"
+}

@@ -1,0 +1,22 @@
+{
+  "page": 109,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nobject\n├─ point object Yes\nintege Input\n├─ input Yes\nr coordinates\nintege Output\n├─ output Yes\nr coordinates\nintege\n├─ type Yes\nr\nSelected\nintege\n├─ selectType Yes adjustment\nr\npoint\n├─ enable string Yes Curves enable\n├─ index string Yes Index\nColor\n├─ colorReplace object Yes\nReplacement\nColor\nReplacement\nnumb\n├─ colorReplaceEnable Yes Enable:\ner\n0: Disable.\n1: Enable.\nSkin Tone\nnumb Protect enable:\n├─ skinProtectEnable Yes\ner 0: Disable.\n1: Enable.\n├─ srcColor object Yes Original color\nintege\n├─ r Yes Red component\nr",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "", "object"],
+      ["├─ point", "object", "Yes", "", "", ""],
+      ["├─ input", "intege\nr", "Yes", "", "Input\ncoordinates", ""],
+      ["├─ output", "intege\nr", "Yes", "", "Output\ncoordinates", ""],
+      ["├─ type", "intege\nr", "Yes", "", "", ""],
+      ["├─ selectType", "intege\nr", "Yes", "", "Selected\nadjustment\npoint", ""],
+      ["├─ enable", "string", "Yes", "", "Curves enable", ""],
+      ["├─ index", "string", "Yes", "", "Index", ""],
+      ["├─ colorReplace", "object", "Yes", "", "Color\nReplacement", ""],
+      ["├─ colorReplaceEnable", "numb\ner", "Yes", "", "Color\nReplacement\nEnable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ skinProtectEnable", "numb\ner", "Yes", "", "Skin Tone\nProtect enable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ srcColor", "object", "Yes", "", "Original color", ""],
+      ["├─ r", "intege\nr", "Yes", "", "Red component", ""]
+    ]}
+  ]
+}

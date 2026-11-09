@@ -1,0 +1,7 @@
+{
+  "id": "reference-PlugInHeaderD-d3c1c16f",
+  "name": "PlugInHeaderD",
+  "availability": "referenced-only",
+  "references": [{"name":"PlugInHeaderD","source":"src/api/plug-in/plugIn.ts","line":66},{"name":"PlugInHeaderD","source":"src/api/plug-in/plugIn.ts","line":90},{"name":"PlugInHeaderD","source":"src/api/plug-in/plugIn.ts","line":128}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

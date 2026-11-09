@@ -1,0 +1,19 @@
+{
+  "page": 215,
+  "text": "Default\nName Type Required Remarks More\nValue\nplayStartTime\n├─ mixtureTime integer No Mix time\n├─\ninteger No Mix start time\nmixtureStartTime\nDSK switch:\n├─ matting integer No 1: Enable.\n0: Disable.\n├─ brightness integer No Clip\n├─ softness integer No Softness\n├─ source object No\n├─ general object No General information\nSource ID, which is\n├─ sourceId integer No unique for a specific\nsource type\nSource type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n├─ sourceType integer No 7: IPC type.\n8: Cropped source\ntype.\n10: IPC mosaic\nscreen.\n11: Internal source.\n12: Internal shape\nsource.\n13: USB drive source.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["playStartTime", "", "", "", "", ""],
+      ["├─ mixtureTime", "integer", "No", "", "Mix time", ""],
+      ["├─\nmixtureStartTime", "integer", "No", "", "Mix start time", ""],
+      ["├─ matting", "integer", "No", "", "DSK switch:\n1: Enable.\n0: Disable.", ""],
+      ["├─ brightness", "integer", "No", "", "Clip", ""],
+      ["├─ softness", "integer", "No", "", "Softness", ""],
+      ["├─ source", "object", "No", "", "", ""],
+      ["├─ general", "object", "No", "", "General information", ""],
+      ["├─ sourceId", "integer", "No", "", "Source ID, which is\nunique for a specific\nsource type", ""],
+      ["├─ sourceType", "integer", "No", "", "Source type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n10: IPC mosaic\nscreen.\n11: Internal source.\n12: Internal shape\nsource.\n13: USB drive source.", ""]
+    ]}
+  ]
+}

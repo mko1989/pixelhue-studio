@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/cabinet/thermaCal/mode",
+  "group": "ucenter",
+  "summary": "res",
+  "tags": ["ucenter","cabinet","thermaCal","mode"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/cabinet/thermaCal/mode","dynamic":false,"source":"src/api/screen/screen-adjust.ts","line":354,"client":"API","symbol":"res","comment":"热力补偿调节模式","parameters":["data: ThermalCompensationModeRequestT","seq?: number","guid?: string"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq || 0,\n      guid: guid || '',\n      ...getExtraReqIpParamsByGuid(guid || ''),\n    }","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/cabinet/thermaCal/mode',\n    data,\n    headers: {\n      seq: seq || 0,\n      guid: guid || '',\n      ...getExtraReqIpParamsByGuid(guid || ''),\n    },\n  }","context":"async (\n  data: ThermalCompensationModeRequestT,\n  seq?: number,\n  guid?: string,\n): Promise<IResponseData<string>> => {\n  const res = await API.request<IResponseData<string>>({\n    method: 'POST',\n    url: 'ucenter/cabinet/thermaCal/mode',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-cabinet-thermacal-mode",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "Preset-7bd521fc",
+  "name": "Preset",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Preset.ts",
+  "line": 8,
+  "declaration": "interface Preset {\n\tguid: string\n\tname: string\n\tcurrentRegion: number\n\tsourceRegion: number\n\tserial: number\n\tscreens: Screen[]\n}"
+}

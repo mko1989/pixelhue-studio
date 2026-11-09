@@ -1,0 +1,9 @@
+{
+  "id": "DeviceCategoryE-3e9c1c43",
+  "name": "DeviceCategoryE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 242,
+  "declaration": "enum DeviceCategoryE {\n  /** 控制独立主控 */\n  controlDev,\n  /** 控制视频模式 */\n  videoType,\n  /** 视频切换模式 */\n  videoSwitch,\n  /** 视频二合一 */\n  controlMerge,\n  /** 视频拼接器 */\n  videoSplicer,\n  /** 控制二合一 */\n  controlVideoMerge,\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "GenlockSouceIdE-30bc9378",
+  "name": "GenlockSouceIdE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 91,
+  "declaration": "enum GenlockSouceIdE {\n  /** sourceId 是 nodeId */\n  nodeId = 1,\n  /** sourceId 是 interfaceId */\n  interfaceId = 2,\n}"
+}

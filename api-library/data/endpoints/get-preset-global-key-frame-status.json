@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/preset/global/key-frame-status",
+  "group": "preset",
+  "summary": "response",
+  "tags": ["preset","global","key-frame-status"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"preset/global/key-frame-status","dynamic":false,"source":"src/api/preset/index.ts","line":247,"client":"API","symbol":"response","comment":"*\n * 获取场景keyFrame加载开关状态\n * @param params\n * @returns","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'preset/global/key-frame-status',\n  }","context":"async (): Promise<IResponseData<IKeyFrameStatus>> => {\n  const response = await API.request<IResponseData<IKeyFrameStatus>>({\n    method: 'get',\n    url: 'preset/global/key-frame-status',\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-preset-global-key-frame-status",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,31 @@
+{
+  "page": 195,
+  "text": "Path: /v1/preset\nMethod: GET\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nQuery\nName Required Example Remarks\nlimit No Number of items per page\npage No Query page number\ntype No Query the specified preset type\nBody\nName Type Required Default Value Remarks More\nscreenId integer Yes Screen ID\npresetId integer Yes presetId\n Return Data\nDefault\nName Type Required Remarks More\nValue\ncode integer Yes Response code\nmessage string Yes Response message\ndata object Yes\nItem\nobject\n├─ list Yes type:\n[]\nobject\n├─ guid string Yes Preset ID\n├─ serial integer Yes Preset ID\n├─ name string Yes Preset name",
+  "tables": [
+    {"contextBefore": "Path: /v1/preset\nMethod: GET\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Query", "rows": [
+      ["Name", "Required", "Example", "Remarks"],
+      ["limit", "No", "", "Number of items per page"],
+      ["page", "No", "", "Query page number"],
+      ["type", "No", "", "Query the specified preset type"]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["screenId", "integer", "Yes", "", "Screen ID", ""],
+      ["presetId", "integer", "Yes", "", "presetId", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response message", ""],
+      ["data", "object", "Yes", "", "", ""],
+      ["├─ list", "object\n[]", "Yes", "", "", "Item\ntype:\nobject"],
+      ["├─ guid", "string", "Yes", "", "Preset ID", ""],
+      ["├─ serial", "integer", "Yes", "", "Preset ID", ""],
+      ["├─ name", "string", "Yes", "", "Preset name", ""]
+    ]}
+  ]
+}

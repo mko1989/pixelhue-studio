@@ -1,0 +1,8 @@
+{
+  "id": "Response-e0e54a24",
+  "name": "Response",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Response.ts",
+  "line": 1,
+  "declaration": "interface Response<Data> {\n\tcode: number\n\tmessage: string\n\tdata: Data\n}"
+}

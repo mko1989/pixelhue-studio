@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/software-log/enable",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","software-log","enable"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"/ucenter/software-log/enable","dynamic":false,"source":"src/api/device/log-export.ts","line":107,"client":"API","symbol":"response","comment":"*\n * 设置开启/关闭U盘列表推送\n * @param data\n * @returns","parameters":["data: LogEnableI"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: '/ucenter/software-log/enable',\n    data,\n    timeout: 10000,\n  }","context":"async (data: LogEnableI): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'put',\n    url: '/ucenter/software-log/enable',\n    data,\n    timeout: 10000,\n  });\n  return response.data;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-software-log-enable",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "SetInterfaceMosicSourceParams-52f44129",
+  "name": "SetInterfaceMosicSourceParams",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/source/index.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 167,
+  "declaration": "interface SetInterfaceMosicSourceParams {\n  interfaceId: number;\n  sourceType: number;\n  sourceName: string;\n  templateInfo: MergedSourceTempInfoI;\n  subSourceList: {\n    id: number; // 组成拼接源的源ID:当SourceType为0时,传interfaceId,SourceType为1时,传channelID\n    rectanglePosition: number;\n    sourcePriority: number;\n    pos: RectI;\n    crop: RectI;\n  }[];\n}"
+}

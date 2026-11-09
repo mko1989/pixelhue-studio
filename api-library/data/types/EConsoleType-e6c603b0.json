@@ -1,0 +1,9 @@
+{
+  "id": "EConsoleType-e6c603b0",
+  "name": "EConsoleType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 2,
+  "declaration": "enum EConsoleType {\n  u5 = 'u5',\n  u5pro = 'u5pro',\n  c5 = 'c5',\n  c5pro = 'c5pro',\n  pc = 'pc',\n  web = 'web',\n}"
+}

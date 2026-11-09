@@ -1,0 +1,9 @@
+{
+  "id": "EPanelFnType-8ed2a0d5",
+  "name": "EPanelFnType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 467,
+  "declaration": "enum EPanelFnType {\n  /** 图层编辑模式 */\n  layer,\n  /** CUE编辑模式  */\n  cue,\n  /** 时码编辑模式  */\n  time,\n  /** 数字按键模式 */\n  number,\n}"
+}

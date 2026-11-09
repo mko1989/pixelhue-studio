@@ -1,0 +1,9 @@
+{
+  "id": "GetVPUBorrowRelationsResponseT-698a34be",
+  "name": "GetVPUBorrowRelationsResponseT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/vpu.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 47,
+  "declaration": "interface GetVPUBorrowRelationsResponseT {\n  /** 借调关系 */\n  relations: VPUBorrowRelationItemT[];\n}"
+}

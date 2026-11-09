@@ -1,0 +1,9 @@
+{
+  "id": "NETPORT_CARD_MODEL_ID-0d703fe9",
+  "name": "NETPORT_CARD_MODEL_ID",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 570,
+  "declaration": "enum NETPORT_CARD_MODEL_ID {\n  MX40_ROE = 41604,\n  V6_VX600Pro_VC6Pro = 15729030,\n  V8 = 15729031,\n  V10_VX1000Pro_VC10Pro = 15729032,\n  V12 = 15729033,\n  V16_VC16Pro = 15729038,\n  V24_VC24Pro = 15729035,\n  V32 = 15729036,\n  V40 = 15729039,\n  VX400Pro = 15729029,\n  K8 = 15729041,\n  K20_VX2000Pro_HC20Pro = 15729034,\n  K40 = 15729037,\n}"
+}

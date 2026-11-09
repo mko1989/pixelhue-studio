@@ -1,0 +1,13 @@
+{
+  "page": 19,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nthis device (For\nexample, an F-\nseries card is\ninserted into a D-\nseries device). 4:\nDifferent types of\ncards are\ninserted. For\nexample, an input\ncard is inserted\ninto an output\nslot. 5. The card\nis online, but its\nversion does not\nmatch the\ndevice's program\nversion.】\nWhether the card\nsupports\nnumb connector\n├─ rotate Yes\ner rotation:\n0: Not supported.\n1: Supported.\n├─ genlock object Yes\nGenlock type:\n0: Internal\nsync/Disabled.\n1: Sync with the\nnumb\n├─ type Yes Genlock source.\ner\n2: Sync with the\ninput source\nfrom the\nconnector.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "this device (For\nexample, an F-\nseries card is\ninserted into a D-\nseries device). 4:\nDifferent types of\ncards are\ninserted. For\nexample, an input\ncard is inserted\ninto an output\nslot. 5. The card\nis online, but its\nversion does not\nmatch the\ndevice's program\nversion.】", ""],
+      ["├─ rotate", "numb\ner", "Yes", "", "Whether the card\nsupports\nconnector\nrotation:\n0: Not supported.\n1: Supported.", ""],
+      ["├─ genlock", "object", "Yes", "", "", ""],
+      ["├─ type", "numb\ner", "Yes", "", "Genlock type:\n0: Internal\nsync/Disabled.\n1: Sync with the\nGenlock source.\n2: Sync with the\ninput source\nfrom the\nconnector.", ""]
+    ]}
+  ]
+}

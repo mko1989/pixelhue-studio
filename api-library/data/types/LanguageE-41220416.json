@@ -1,0 +1,9 @@
+{
+  "id": "LanguageE-41220416",
+  "name": "LanguageE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 13,
+  "declaration": "enum LanguageE {\n  us = 'us',\n  zh = 'zh',\n  /** 繁体 */\n  'zh-hant' = 'zh-hant',\n}"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "LayerBounds-c7f0c048",
+  "name": "LayerBounds",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Layer.ts",
+  "line": 31,
+  "declaration": "interface LayerBounds {\n\twidth: number\n\theight: number\n\tx: number\n\ty: number\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EDeviceInputEffectBtnKeys-a8f303c0",
+  "name": "EDeviceInputEffectBtnKeys",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 791,
+  "declaration": "enum EDeviceInputEffectBtnKeys {\n  blackLevel = 'blackLevel', // 设备 ---> 输入接口配置 ---> effect模块 ---> 黑电平\n  contrast = 'contrast', // 设备 ---> 输入接口配置 ---> effect模块 ---> 对比度\n  saturation = 'saturation', // 设备 ---> 输入接口配置 ---> effect模块 ---> 饱和度\n  hue = 'hue', // 设备 ---> 输入接口配置 ---> effect模块 ---> Hue 色调\n  brightness = 'brightness', // 设备 ---> 输入接口配置 ---> effect模块 ---> Brightness 亮度\n  redShadow = 'redShadow', // 设备 ---> 输入接口配置 ---> effect模块 ---> 红阴影\n  greenShadow = 'greenShadow', // 设备 ---> 输入接口配置 ---> effect模块 ---> 绿阴影\n  blueShadow = 'blueShadow', // 设备 ---> 输入接口配置 ---> effect模块 ---> 蓝阴影\n  redHighlight = 'redHighlight', // 设备 ---> 输入接口配置 ---> effect模块 ---> 红高光\n  greenHighlight = 'greenHighlight', // 设备 ---> 输入接口配置 ---> effect模块 ---> 绿高光\n  blueHighlight = 'blueHighlight', // 设备 ---> 输入接口配置 ---> effect模块 ---> 蓝高光\n  gamma = 'gamma', // 设备 ---> 输入接口配置 ---> effect模块 ---> Gamma\n}"
+}

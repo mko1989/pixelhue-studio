@@ -1,0 +1,7 @@
+{
+  "id": "reference-DeviceMappingT-d72f97c1",
+  "name": "DeviceMappingT",
+  "availability": "referenced-only",
+  "references": [{"name":"DeviceMappingT","source":"src/api/device/deviceList.ts","line":355},{"name":"DeviceMappingT","source":"src/api/device/deviceList.ts","line":356}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

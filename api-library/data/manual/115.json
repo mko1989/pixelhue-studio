@@ -1,0 +1,17 @@
+{
+  "page": 115,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nr\nItem type:\nobject\n├─ modeInfo Yes Mode list\nobject\n[]\nintege\n├─ modeId Yes Mode ID\nr\n├─ modeName string Yes Mode name\n├─ md5 string Yes\nEthernet port\n├─ netportBackup object Yes backup\ninformation\nEthernet port\nbackup type:\n0: Backup off.\nintege 1: Split backup.\n├─ backupType Yes\nr 2: Sequential\nbackup.\n3: Custom\nbackup.\nEthernet port\nbackup enable\ntype:\n0: All Ethernet\nports on.\nintege\n├─ enableType Yes 1: Primary\nr\nEthernet port\noff.\n2: Backup\nEthernet port\noff.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "r", "", "", "", ""],
+      ["├─ modeInfo", "object\n[]", "Yes", "", "Mode list", "Item type:\nobject"],
+      ["├─ modeId", "intege\nr", "Yes", "", "Mode ID", ""],
+      ["├─ modeName", "string", "Yes", "", "Mode name", ""],
+      ["├─ md5", "string", "Yes", "", "", ""],
+      ["├─ netportBackup", "object", "Yes", "", "Ethernet port\nbackup\ninformation", ""],
+      ["├─ backupType", "intege\nr", "Yes", "", "Ethernet port\nbackup type:\n0: Backup off.\n1: Split backup.\n2: Sequential\nbackup.\n3: Custom\nbackup.", ""],
+      ["├─ enableType", "intege\nr", "Yes", "", "Ethernet port\nbackup enable\ntype:\n0: All Ethernet\nports on.\n1: Primary\nEthernet port\noff.\n2: Backup\nEthernet port\noff.", ""]
+    ]}
+  ]
+}

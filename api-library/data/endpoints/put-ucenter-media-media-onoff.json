@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/media/media-onOff",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","media","media-onOff"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/media/media-onOff","dynamic":false,"source":"src/api/media/kvm-setting.ts","line":90,"client":"API","symbol":"response","comment":"*\n * kvm开关\n * @param data\n * @returns","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: 'ucenter/media/media-onOff',\n  }","context":"async (): Promise<IResponseData<IKvmPreset>> => {\n  const response = await API.request<IResponseData<IKvmPreset>>({\n    method: 'put',\n    url: 'ucenter/media/media-onOff',\n  });\n  return response.data;\n}","sourceMap":"index-CjV3BkZw.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-media-media-onoff",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

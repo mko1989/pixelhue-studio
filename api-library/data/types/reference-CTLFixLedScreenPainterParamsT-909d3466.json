@@ -1,0 +1,7 @@
+{
+  "id": "reference-CTLFixLedScreenPainterParamsT-909d3466",
+  "name": "CTLFixLedScreenPainterParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"CTLFixLedScreenPainterParamsT","source":"src/api/ctl-fix/index.ts","line":24},{"name":"CTLFixLedScreenPainterParamsT","source":"src/api/ctl-fix/index.ts","line":96}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

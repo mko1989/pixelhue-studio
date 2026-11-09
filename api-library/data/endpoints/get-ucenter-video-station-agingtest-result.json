@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/video-station/agingtest/result",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","agingtest","result"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/video-station/agingtest/result","dynamic":false,"source":"src/api/console-production/index.ts","line":109,"client":"API","symbol":"response","comment":"*\n * 控台生产老化工具测试操作通知\n * @returns","parameters":["params: IConsoleTestResultReq"],"bodyExpression":null,"queryExpression":"params","headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'ucenter/video-station/agingtest/result',\n    params,\n    timeout: consoleTimeout, // 通知超时时间为5s\n  }","context":"async (\n  params: IConsoleTestResultReq,\n): Promise<IResponseData<IConsoleTestResult>> => {\n  const response = await API.request<IResponseData<IConsoleTestResult>>({\n    method: 'get',\n    url: 'ucenter/video-station/agingtest/result',\n    params,\n    timeout: consoleTimeout, // 通知超时时间为5s","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-video-station-agingtest-result",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

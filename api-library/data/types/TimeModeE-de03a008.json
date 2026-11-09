@@ -1,0 +1,9 @@
+{
+  "id": "TimeModeE-de03a008",
+  "name": "TimeModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 815,
+  "declaration": "enum TimeModeE {\n  Close = 0, //关闭自动对时\n  NTP = 1, //NTP\n  GPS = 2, //GPS\n  LORA = 3, //LORA\n}"
+}

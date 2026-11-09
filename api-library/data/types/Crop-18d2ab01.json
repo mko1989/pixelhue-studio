@@ -1,0 +1,8 @@
+{
+  "id": "Crop-18d2ab01",
+  "name": "Crop",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/CropSource.ts",
+  "line": 23,
+  "declaration": "interface Crop {\n\txRatio: number\n\tyRatio: number\n\twidthRatio: number\n\theightRatio: number\n}"
+}

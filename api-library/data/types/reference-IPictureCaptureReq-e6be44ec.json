@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPictureCaptureReq-e6be44ec",
+  "name": "IPictureCaptureReq",
+  "availability": "referenced-only",
+  "references": [{"name":"IPictureCaptureReq","source":"src/api/picture/picture.ts","line":130}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

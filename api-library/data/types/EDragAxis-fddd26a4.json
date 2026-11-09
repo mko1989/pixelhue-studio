@@ -1,0 +1,9 @@
+{
+  "id": "EDragAxis-fddd26a4",
+  "name": "EDragAxis",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 481,
+  "declaration": "enum EDragAxis {\n  x = 'x',\n  y = 'y',\n  both = 'both',\n  none = 'none',\n}"
+}

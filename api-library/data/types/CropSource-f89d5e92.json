@@ -1,0 +1,8 @@
+{
+  "id": "CropSource-f89d5e92",
+  "name": "CropSource",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/CropSource.ts",
+  "line": 9,
+  "declaration": "interface CropSource {\n\tcropId: number\n\tcropIdObj: CropIdObj\n\tname: string\n\tcrop: Crop\n\tkeyPosition: number[]\n}"
+}

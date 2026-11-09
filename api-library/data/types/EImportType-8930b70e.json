@@ -1,0 +1,9 @@
+{
+  "id": "EImportType-8930b70e",
+  "name": "EImportType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 380,
+  "declaration": "enum EImportType {\n  config,\n  img,\n  wisdom,\n}"
+}

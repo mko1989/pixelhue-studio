@@ -1,0 +1,9 @@
+{
+  "id": "EInterfaceType-27d77873",
+  "name": "EInterfaceType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 345,
+  "declaration": "enum EInterfaceType {\n  interface = 'interface',\n  subcard = 'subcard',\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "LayerFlipTypeE-746491d0",
+  "name": "LayerFlipTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 679,
+  "declaration": "enum LayerFlipTypeE {\n  /** 0：正常； 1：水平翻转； 2：垂直翻转； 3：镜像翻转 */\n  normal,\n  horizontal,\n  vertical,\n  mirror,\n  mixed = -1, // ELayerFlipType & LayerFlipTypeE  两个类型不一致，新增的\n}"
+}

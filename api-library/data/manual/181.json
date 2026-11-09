@@ -1,0 +1,21 @@
+{
+  "page": 181,
+  "text": "Name Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nItem type:\nobject\nNo Layer data\nobject\n[]\n├─ The global layer ID, which is\ninteger Yes\nlayerId unique\nWhether the layer is\nselected:\n0: Not selected.\n1: Selected.\nNote: The \"selected\" status\nincludes two functions.\nIf the JSON issued by the\n├─ mock:\ninteger Yes software includes only one\n@integer\nselected\nselected layer, the selection\nbox will blink in the\nMultiviewer window.\nIf the JSON includes\nmultiple selected layers, the\nselection box will not blink\nin the Multiviewer window.\n Return Data\nDefault\nName Type Required Remarks More\nValue\nResponse code: Definition\ncan be found in NovaStar\ncode integer Yes\nUnified Platform Device Error\nCode Definition.\nmessage string Yes Response message",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "object\n[]", "No", "", "Layer data", "Item type:\nobject"],
+      ["├─\nlayerId", "integer", "Yes", "", "The global layer ID, which is\nunique", ""],
+      ["├─\nselected", "integer", "Yes", "", "Whether the layer is\nselected:\n0: Not selected.\n1: Selected.\nNote: The \"selected\" status\nincludes two functions.\nIf the JSON issued by the\nsoftware includes only one\nselected layer, the selection\nbox will blink in the\nMultiviewer window.\nIf the JSON includes\nmultiple selected layers, the\nselection box will not blink\nin the Multiviewer window.", "mock:\n@integer"]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code: Definition\ncan be found in NovaStar\nUnified Platform Device Error\nCode Definition.", ""],
+      ["message", "string", "Yes", "", "Response message", ""]
+    ]}
+  ]
+}

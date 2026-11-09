@@ -1,0 +1,22 @@
+{
+  "page": 157,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nwhen the source is a\nscreen and is the screen\nis FREEZE.\nUMD display content\n├─ name string Yes (setting operation, name\nnot relevant)\n├─ color object Yes UMD color information\n├─\nobject Yes Foreground color\nforegroundColor\nintege\n├─ R Yes Red component value\nr\nintege\n├─ G Yes Green component value\nr\nintege\n├─ B Yes Blue component value\nr\nOpacity percentage (0:\nintege\n├─ opacity Yes fully transparent; 100:\nr\nfully opaque)\n├─\nobject Yes Background color\nbackgroundColor\nintege\n├─ R Yes Red component value\nr\nintege\n├─ G Yes Green component value\nr\nintege\n├─ B Yes Blue component value\nr\nOpacity percentage (0:\nintege\n├─ opacity Yes fully transparent; 100:\nr\nfully opaque)",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "when the source is a\nscreen and is the screen\nis FREEZE.", ""],
+      ["├─ name", "string", "Yes", "", "UMD display content\n(setting operation, name\nnot relevant)", ""],
+      ["├─ color", "object", "Yes", "", "UMD color information", ""],
+      ["├─\nforegroundColor", "object", "Yes", "", "Foreground color", ""],
+      ["├─ R", "intege\nr", "Yes", "", "Red component value", ""],
+      ["├─ G", "intege\nr", "Yes", "", "Green component value", ""],
+      ["├─ B", "intege\nr", "Yes", "", "Blue component value", ""],
+      ["├─ opacity", "intege\nr", "Yes", "", "Opacity percentage (0:\nfully transparent; 100:\nfully opaque)", ""],
+      ["├─\nbackgroundColor", "object", "Yes", "", "Background color", ""],
+      ["├─ R", "intege\nr", "Yes", "", "Red component value", ""],
+      ["├─ G", "intege\nr", "Yes", "", "Green component value", ""],
+      ["├─ B", "intege\nr", "Yes", "", "Blue component value", ""],
+      ["├─ opacity", "intege\nr", "Yes", "", "Opacity percentage (0:\nfully transparent; 100:\nfully opaque)", ""]
+    ]}
+  ]
+}

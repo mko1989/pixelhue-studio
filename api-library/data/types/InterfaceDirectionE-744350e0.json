@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceDirectionE-744350e0",
+  "name": "InterfaceDirectionE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 761,
+  "declaration": "enum InterfaceDirectionE {\n  horizontal = 1, //水平\n  vertical, //垂直\n}"
+}

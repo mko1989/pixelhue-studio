@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerOpacityT-6b1eb3cf",
+  "name": "LayerOpacityT",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerOpacityT","source":"src/api/layer/layer.ts","line":264},{"name":"LayerOpacityT","source":"src/api/layer/layer.ts","line":732}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

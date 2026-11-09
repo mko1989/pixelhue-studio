@@ -1,0 +1,9 @@
+{
+  "id": "DeviceWorkModeE-3cf59eca",
+  "name": "DeviceWorkModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 818,
+  "declaration": "enum DeviceWorkModeE {\n  photoelectricConversion = 1, // 光电转换\n  controller = 2, // 控制器\n  switch = 4, // 切换器\n  controller2in1 = 10, // 二合一视频控制器\n  splicer = 8, // 拼接器\n  splicerAndCtrl = 6, // 二合一视频切换器\n  player = 16, // 播放器,\n  DecoderSeat = 32, // 解码器-坐席\n  ByPass = 64, // 二合一独立主控模式\n}"
+}

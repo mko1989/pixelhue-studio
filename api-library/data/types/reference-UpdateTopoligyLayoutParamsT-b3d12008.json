@@ -1,0 +1,7 @@
+{
+  "id": "reference-UpdateTopoligyLayoutParamsT-b3d12008",
+  "name": "UpdateTopoligyLayoutParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"UpdateTopoligyLayoutParamsT","source":"src/api/screen/controller.ts","line":389}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

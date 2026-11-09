@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/layers/curve",
+  "group": "layers",
+  "summary": "response",
+  "tags": ["layers","curve"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"layers/curve","dynamic":false,"source":"src/api/layer/layer.ts","line":998,"client":"API","symbol":"response","comment":"*\n *  cut&fill Cut图层曲线调节","parameters":["data: CutFillSetCurveT[]","seq?: number","extraReqParams?: ExtraReqT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq || 0,\n      ...extraReqParams,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'layers/curve',\n    data,\n    headers: {\n      seq: seq || 0,\n      ...extraReqParams,\n    },\n  }","context":"async (\n  data: CutFillSetCurveT[],\n  seq?: number,\n  extraReqParams?: ExtraReqT,\n): Promise<IResponseData<string[]>> => {\n  const response = await API.request<IResponseData<string[]>>({\n    method: 'PUT',\n    url: 'layers/curve',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-layers-curve",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

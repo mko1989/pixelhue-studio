@@ -1,0 +1,9 @@
+{
+  "id": "LayerAssessTypeE-56baf6c4",
+  "name": "LayerAssessTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 301,
+  "declaration": "enum LayerAssessTypeE {\n  layerCache = 1,\n  screenCache,\n  interfaceCache,\n  cropSourceCache,\n  picCache,\n  canvasCache,\n  vpuCache,\n}"
+}

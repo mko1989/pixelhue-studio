@@ -1,0 +1,7 @@
+{
+  "id": "reference-SwitchEffectParamsT-9dd92880",
+  "name": "SwitchEffectParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"SwitchEffectParamsT","source":"src/api/screen/screen.ts","line":831},{"name":"SwitchEffectParamsT","source":"src/api/production/burn-in-test.ts","line":156}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

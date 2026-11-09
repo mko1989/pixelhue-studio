@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/resource-layer",
+  "group": "ucenter",
+  "summary": "res",
+  "tags": ["ucenter","screen","resource-layer"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/screen/resource-layer","dynamic":false,"source":"src/api/screen/screen.ts","line":1493,"client":"API_U_CENTER","symbol":"res","comment":"* 0x2A-UCenter-获取屏幕资源占用情况","parameters":["data: any[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'POST',\n    url: 'ucenter/screen/resource-layer',\n    data,\n  }","context":"async (\n  data: any[],\n): Promise<IResponseData<{ list: PostUcenterScreenResourceLayerT[] }>> => {\n  const res = await API_U_CENTER.request<\n    IResponseData<{ list: PostUcenterScreenResourceLayerT[] }>\n  >({\n    method: 'POST',\n    url: 'ucenter/screen/resource-layer',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-resource-layer",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

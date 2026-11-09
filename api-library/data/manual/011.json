@@ -1,0 +1,11 @@
+{
+  "page": 11,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nuse.\n32: Loaded,\nrebooting the\nreceiving card.\n33: Loaded,\ndevice busy,\nsubstatus\nchecking needed.\n34: Loaded,\nswitching layer\nspecifications.\n35: Device in\nstandby mode.\n38: Loaded,\nsetting cabinet\nsize.\n39: Loaded,\nconfiguring\nconnector\nbusiness with\nlong time\nconsumption.\n40: Loaded,\nswitching loading\nmode.\n41: Loaded,\nverifying primary\nand backup links.\n42: Loaded, in\ndehumidification\nmode.\nDefinition of\nItem type:\nintege\n├─ subStatus Yes node substatus\ninteger\nr []\n(multiple",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "use.\n32: Loaded,\nrebooting the\nreceiving card.\n33: Loaded,\ndevice busy,\nsubstatus\nchecking needed.\n34: Loaded,\nswitching layer\nspecifications.\n35: Device in\nstandby mode.\n38: Loaded,\nsetting cabinet\nsize.\n39: Loaded,\nconfiguring\nconnector\nbusiness with\nlong time\nconsumption.\n40: Loaded,\nswitching loading\nmode.\n41: Loaded,\nverifying primary\nand backup links.\n42: Loaded, in\ndehumidification\nmode.", ""],
+      ["├─ subStatus", "intege\nr []", "Yes", "", "Definition of\nnode substatus\n(multiple", "Item type:\ninteger"]
+    ]}
+  ]
+}

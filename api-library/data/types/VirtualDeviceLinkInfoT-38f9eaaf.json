@@ -1,0 +1,9 @@
+{
+  "id": "VirtualDeviceLinkInfoT-38f9eaaf",
+  "name": "VirtualDeviceLinkInfoT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/types/device/link.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 54,
+  "declaration": "type VirtualDeviceLinkInfoT = {\n  /** 设备端口号 */\n  devices: {\n    ports: number[];\n  }[];\n};"
+}

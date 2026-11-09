@@ -1,0 +1,9 @@
+{
+  "id": "deviceTypeE-36a009b0",
+  "name": "deviceTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 109,
+  "declaration": "enum deviceTypeE {\n  N10 = 28942,\n  N20 = 28943,\n  Q8 = 29974,\n  D32 = 29975,\n  MX40Pro = 5141,\n  MX40ROE = 5144,\n  P20 = 28944,\n  P10 = 28945,\n  H9 = 15728932,\n  H9Pro = 15728931,\n  H5 = 29963,\n  H2 = 29965,\n  H15 = 29966,\n  H15Pro = 29968,\n  K8 = 25115,\n  K20 = 25116,\n  K40 = 25117,\n  V12 = 25122,\n  V8 = 25120,\n  V40 = 25126,\n  V32 = 25125,\n  V16 = 25123,\n  V6 = 25119,\n  V10 = 25121,\n  V24 = 25124,\n  VX400Pro = 25129,\n  VX600Pro = 25130,\n  VX1000Pro = 25131,\n  VX2000Pro = 25132,\n  HC20Pro = 25142,\n  VC6Pro = 25127,\n  VC10Pro = 25128,\n  VC16Pro = 25163,\n  VC24Pro = 25162,\n  H20 = 29982,\n  P80 = 30006,\n}"
+}

@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/system/mvr-window-enable",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","system","mvr-window-enable"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/system/mvr-window-enable","dynamic":false,"source":"src/api/console-production/index.ts","line":67,"client":"API","symbol":"response","comment":"*\n * 开窗\n * @returns","parameters":["data: SourceLayoutT"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: 'ucenter/video-station/system/mvr-window-enable',\n    data: data,\n    timeout: consoleTimeout, // 通知超时时间为5s\n  }","context":"async (\n  data: SourceLayoutT,\n): Promise<IResponseData<SourceSignalT>> => {\n  const response = await API.request<IResponseData<SourceSignalT>>({\n    method: 'put',\n    url: 'ucenter/video-station/system/mvr-window-enable',\n    data: data,\n    timeout: consoleTimeout, // 通知超时时间为5s","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-system-mvr-window-enable",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

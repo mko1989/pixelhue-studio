@@ -1,0 +1,9 @@
+{
+  "id": "ESelectStyle-7ec83ec6",
+  "name": "ESelectStyle",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 308,
+  "declaration": "enum ESelectStyle {\n  Default = 'background',\n  Border = 'border',\n}"
+}

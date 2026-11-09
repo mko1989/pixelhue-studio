@@ -1,0 +1,30 @@
+{
+  "page": 67,
+  "text": "Headers\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nName Type Required Default Value Remarks More\nnodeId number Yes Node ID\nOutput mapping switch:\nenable number Yes 0: Disable.\n1: Enable.\n Return Data\nName Type Required Default Value Remarks More\ncode number Yes\nmessage string Yes\ndata object Yes\n3.3 Set Image Quality\n Basic Information\nPath: /v1/interface/image-quality\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nAuthorization Yes token\nBody\nDefault\nName Type Required Remarks More\nValue\nobject No Item",
+  "tables": [
+    {"contextBefore": "Headers", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["nodeId", "number", "Yes", "", "Node ID", ""],
+      ["enable", "number", "Yes", "", "Output mapping switch:\n0: Disable.\n1: Enable.", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["code", "number", "Yes", "", "", ""],
+      ["message", "string", "Yes", "", "", ""],
+      ["data", "object", "Yes", "", "", ""]
+    ]},
+    {"contextBefore": "3.3 Set Image Quality\n Basic Information\nPath: /v1/interface/image-quality\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""],
+      ["Authorization", "", "Yes", "", "token"]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "object", "No", "", "", "Item"]
+    ]}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-setMultipleScreenMosaicT-9cc27c6d",
+  "name": "setMultipleScreenMosaicT",
+  "availability": "referenced-only",
+  "references": [{"name":"setMultipleScreenMosaicT","source":"src/api/screen/screen.ts","line":1614},{"name":"setMultipleScreenMosaicT","source":"src/api/screen/screen.ts","line":1629}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

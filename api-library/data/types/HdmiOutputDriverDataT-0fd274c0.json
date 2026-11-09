@@ -1,0 +1,9 @@
+{
+  "id": "HdmiOutputDriverDataT-0fd274c0",
+  "name": "HdmiOutputDriverDataT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 611,
+  "declaration": "interface HdmiOutputDriverDataT {\n  mode: number; // 驱动模式类型。0=默认模式, 1=增强模式, 2=高级模式\n  deEmphasisLevel: number; // 输出预加重\\去加重\\斜率调节。1~16（高级模式参数）\n  swingLevel: number; // 摆浮档位调节，1~16（高级模式参数）\n  resistanceLevel: number; // 终端匹配电阻，1~16（高级模式参数）\n}"
+}

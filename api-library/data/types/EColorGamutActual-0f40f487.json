@@ -1,0 +1,9 @@
+{
+  "id": "EColorGamutActual-0f40f487",
+  "name": "EColorGamutActual",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 161,
+  "declaration": "enum EColorGamutActual {\n  'Rec.601' = 0,\n  'Rec.709',\n  'DCI-P3',\n  'Rec.2020',\n  NTSC,\n  aRGB,\n}"
+}

@@ -1,0 +1,10 @@
+{
+  "page": 231,
+  "text": "Default\nName Type Required Remarks More\nValue\nthe center towards\nboth sides, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only\non the moving edge\n(vertical lines moving\noutward from the\ncenter).\n4. Horizontal\nrectangle: The width\nremains constant\nwhile the height\nincreases from top to\nbottom, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only\non the moving edge\n(middle horizontal\nline).\n5. Center rectangle.\n6. Top-left rectangle.\n7. Top-right rectangle.\n8. Bottom-right\nrectangle.\n9. Bottom-left\nrectangle.\n10. Top-center\nrectangle.\n11. Right-center\nrectangle.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "the center towards\nboth sides, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only\non the moving edge\n(vertical lines moving\noutward from the\ncenter).\n4. Horizontal\nrectangle: The width\nremains constant\nwhile the height\nincreases from top to\nbottom, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only\non the moving edge\n(middle horizontal\nline).\n5. Center rectangle.\n6. Top-left rectangle.\n7. Top-right rectangle.\n8. Bottom-right\nrectangle.\n9. Bottom-left\nrectangle.\n10. Top-center\nrectangle.\n11. Right-center\nrectangle.", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "DeviceLoadCapacityE-ed9fa54a",
+  "name": "DeviceLoadCapacityE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1171,
+  "declaration": "enum DeviceLoadCapacityE {\n  off = 0, // 默认带载\n  _220W = 2, // 220W扩容\n  _260W = 3, // 260W扩容\n}"
+}

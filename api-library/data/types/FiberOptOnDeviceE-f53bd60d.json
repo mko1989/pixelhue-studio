@@ -1,0 +1,9 @@
+{
+  "id": "FiberOptOnDeviceE-f53bd60d",
+  "name": "FiberOptOnDeviceE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1031,
+  "declaration": "enum FiberOptOnDeviceE {\n  'K8' = '2',\n  'K20' = '3/4',\n  'K40' = '5-8',\n}"
+}

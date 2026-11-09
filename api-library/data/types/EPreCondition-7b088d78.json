@@ -1,0 +1,9 @@
+{
+  "id": "EPreCondition-7b088d78",
+  "name": "EPreCondition",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 337,
+  "declaration": "enum EPreCondition {\n  device = 100, // 设备\n  deviceAttr = 110, // 设备属性\n  inputInterface = 120, // 输入接口\n  inputAttrBase = 121, // 输入属性 - 基本\n  inputAttrEDID = 122, // 输入属性 - EDID\n  inputAttrEffect = 123, // 输入属性 - 效果\n  inputAttrCutout = 124, // 输入属性 - cutout\n  inputAttrAdvanced = 125, // 输入属性 - 高级\n  outputInterface = 130, // 输出接口\n  outputAttrBase = 131, // 输出属性 - 基本\n  outputAttrEDID = 132, // 输出属性 - EDID\n  outputAttrEffect = 133, // 输出属性 - 效果\n  outputAttrCutout = 134, // 输出属性 - cutout\n  outputAttrAdvanced = 135, // 输出属性 - 高级\n  screen = 200, // 配屏\n  selectedScreen = 201, // 选中屏幕\n  screenAttrBase = 211, // 屏幕属性 - 基本\n  screenAttrEffect = 212, // 画质\n  screenAttrOutput = 213, // 屏幕属性 - 输出\n  screenAttrAdvanced = 214, // 屏幕属性 - 高级\n  edit = 300, // 编辑\n  layer = 310, // 图层\n  layerAttrBase = 311, // 图层属性 - 基本\n  layerAttrEffect = 312, // 图层属性 - 颜色\n  layerAttrAdvanced = 313, // 图层属性 - 高级\n  layerAttrCutout = 314, // 图层属性 - cutout\n  mvr = 400, // mvr\n  selectedWindow = 401,\n  ptz = 500,\n}"
+}

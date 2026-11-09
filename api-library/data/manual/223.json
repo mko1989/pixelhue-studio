@@ -1,0 +1,18 @@
+{
+  "page": 223,
+  "text": "Default\nName Type Required Remarks More\nValue\nImage: Based on the\n├─ image integer No UI, from left to right\nand top to bottom.\n├─ brightness integer No Clip\n├─ softness integer No Softness\nDve direction:\n0. Upper left\n1. Up\n2. Upper right\n├─ directionDev integer No 3. Right\n4. Lower right\n5. Down\n6. Lower left\n7. Left\nEffect direction:\n├─ 1. Forward.\nstring No\ndirectionEffect 2. Reverse.\n3. Switch.\n├─ keySource object No\n├─ general object No General information\nSource ID, which is\n├─ sourceId integer No unique for a specific\nsource type\nSource type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n├─ sourceType integer No\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["├─ image", "integer", "No", "", "Image: Based on the\nUI, from left to right\nand top to bottom.", ""],
+      ["├─ brightness", "integer", "No", "", "Clip", ""],
+      ["├─ softness", "integer", "No", "", "Softness", ""],
+      ["├─ directionDev", "integer", "No", "", "Dve direction:\n0. Upper left\n1. Up\n2. Upper right\n3. Right\n4. Lower right\n5. Down\n6. Lower left\n7. Left", ""],
+      ["├─\ndirectionEffect", "string", "No", "", "Effect direction:\n1. Forward.\n2. Reverse.\n3. Switch.", ""],
+      ["├─ keySource", "object", "No", "", "", ""],
+      ["├─ general", "object", "No", "", "General information", ""],
+      ["├─ sourceId", "integer", "No", "", "Source ID, which is\nunique for a specific\nsource type", ""],
+      ["├─ sourceType", "integer", "No", "", "Source type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-EStandardType-3c3e8967",
+  "name": "EStandardType",
+  "availability": "referenced-only",
+  "references": [{"name":"EStandardType","source":"src/api/device/deviceInterface.ts","line":309}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

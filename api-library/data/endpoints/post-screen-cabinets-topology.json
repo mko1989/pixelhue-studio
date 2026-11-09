@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/screen/cabinets/topology",
+  "group": "screen",
+  "summary": "res",
+  "tags": ["screen","cabinets","topology"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/screen/cabinets/topology","dynamic":false,"source":"src/api/screen/controller.ts","line":84,"client":"API","symbol":"res","comment":"*\n * @description 新增配屏拓扑\n * @param {Object} data 参数\n * @param {Object} data.ledScreenTopo led配屏拓扑信息\n * @param {Number} data.ledScreenTopo.ledScreenId 子屏ID\n * @param {Object} data.ledScreenTopo.cabinets[] 箱体id信息集合\n * @param {Number} data.ledScreenTopo.cabinets[].cabinetId 箱体ID\n * @param {Number} data.ledScreenTopo.cabinets[].index 网口下的箱体索引\n * @param {Object} data.ledScreenTopo.cabinets[].pos // 箱体坐标\n * @param {Number} data.ledScreenTopo.cabinets[].pos.x // 箱体坐标\n * @param {Number} data.ledScreenTopo.cabinets[].pos.y // 箱体坐标\n *","parameters":["data: ICreateCabinets[]","headers?: AxiosRequestHeaders"],"bodyExpression":"data","queryExpression":null,"headerExpression":"headers","configExpression":"{\n    method: 'POST',\n    url: '/screen/cabinets/topology',\n    data,\n    headers,\n  }","context":"async (\n  data: ICreateCabinets[],\n  headers?: AxiosRequestHeaders,\n): Promise<IResponseData<string>> => {\n  const res = await API.request<IResponseData<string>>({\n    method: 'POST',\n    url: '/screen/cabinets/topology',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-screen-cabinets-topology",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

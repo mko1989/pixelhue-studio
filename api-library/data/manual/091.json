@@ -1,0 +1,17 @@
+{
+  "page": 91,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nnumb Screen position\n├─ y Yes\ner y-coordinate\nThe actual size\n├─ physicalSize object Yes of the physical\nLED screen\nThe pixel pitch\nnumb\n├─ dotPitch Yes of the physical\ner\nLED screen\nThe unit of the\nphysical LED\nnumb\n├─ unit Yes screen size:\ner\n0: Pixel\n1: Meter\nThe width of the\nphysical LED\nnumb screen,\n├─ width Yes\ner measured\naccording to\n\"unit\"\nThe height of\nthe physical LED\nnumb screen,\n├─ height Yes\ner measured\naccording to\n\"unit\"\nEnable:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\nnumb The PGM edit\n├─ pgmEdit Yes\ner permission flag:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ y", "numb\ner", "Yes", "", "Screen position\ny-coordinate", ""],
+      ["├─ physicalSize", "object", "Yes", "", "The actual size\nof the physical\nLED screen", ""],
+      ["├─ dotPitch", "numb\ner", "Yes", "", "The pixel pitch\nof the physical\nLED screen", ""],
+      ["├─ unit", "numb\ner", "Yes", "", "The unit of the\nphysical LED\nscreen size:\n0: Pixel\n1: Meter", ""],
+      ["├─ width", "numb\ner", "Yes", "", "The width of the\nphysical LED\nscreen,\nmeasured\naccording to\n\"unit\"", ""],
+      ["├─ height", "numb\ner", "Yes", "", "The height of\nthe physical LED\nscreen,\nmeasured\naccording to\n\"unit\"", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Enable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ pgmEdit", "numb\ner", "Yes", "", "The PGM edit\npermission flag:", ""]
+    ]}
+  ]
+}

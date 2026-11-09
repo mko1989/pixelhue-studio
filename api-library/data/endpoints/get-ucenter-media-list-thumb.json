@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/media/list-thumb",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","media","list-thumb"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/media/list-thumb","dynamic":false,"source":"src/api/media/index.ts","line":18,"client":"API","symbol":"response","comment":"*\n * 获取媒体服务器缩略信息\n * @returns","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'ucenter/media/list-thumb',\n  }","context":"async (): Promise<IResponseData<PaginationT<IMediaDevice>>> => {\n  const response = await API.request<IResponseData<PaginationT<IMediaDevice>>>({\n    method: 'get',\n    url: 'ucenter/media/list-thumb',\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-media-list-thumb",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

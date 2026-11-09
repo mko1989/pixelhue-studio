@@ -1,0 +1,9 @@
+{
+  "id": "ETagType-5e85460f",
+  "name": "ETagType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 45,
+  "declaration": "enum ETagType {\n  fullDataTag = '1', // 全量数据\n  screenTag = '100', // 屏幕\n  deviceTag = '200', // 设备\n  inputTag = '300', // 输入源\n  layerTag = '400', // 图层\n  presetTag = '500', // 场景\n  customTag = '600',\n  createScreenTag = '700', // 新建屏幕\n  createPresetTag = '800', // 新建场景\n  engineCommonDataTag = '600', // 工程信息\n  bindingTag = 'bindingTag', // 绑定结果\n  pushProgressValueTag = 'pushProgressValueTag', // 软件进度值\n  inputSourceMapTag = 'inputSourceMapTag',\n}"
+}

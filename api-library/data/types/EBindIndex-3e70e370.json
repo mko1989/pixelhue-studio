@@ -1,0 +1,9 @@
+{
+  "id": "EBindIndex-3e70e370",
+  "name": "EBindIndex",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 91,
+  "declaration": "enum EBindIndex {\n  knok1 = 1,\n  knok2,\n  knok3,\n  knok4,\n  push1,\n  push2,\n  push3,\n  push4,\n  push5,\n  push6,\n  push7,\n  push8,\n}"
+}

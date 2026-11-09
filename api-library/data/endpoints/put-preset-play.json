@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/preset/play",
+  "group": "preset",
+  "summary": "Load Preset",
+  "tags": ["preset","play"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [{"method":"PUT","path":"/v1/preset/play","section":"6.1.3","title":"Load Preset","firstPage":192,"lastPage":194,"firmware":"<1.7.0","modelScope":["P10","P20","Q8","P80"],"source":"PixelFlow-OpenAPI Manual-V2.0.1-2.pdf"}],
+  "vendorEvidence": [{"method":"PUT","path":"preset/play","dynamic":false,"source":"src/api/preset/index.ts","line":143,"client":"API","symbol":"response","comment":"*\n * 场景加载\n * @param params\n * @returns","parameters":["data: ILoadPreset","header?: AxiosRequestConfig['headers']"],"bodyExpression":"data","queryExpression":null,"headerExpression":"header ?? {}","configExpression":"{\n    method: 'put',\n    url: 'preset/play',\n    data,\n    timeout: 80000,\n    headers: header ?? {},\n  }","context":"async (\n  data: ILoadPreset,\n  header?: AxiosRequestConfig['headers'],\n): Promise<IResponseData<ILoadPresetResp>> => {\n  const response = await API.request<IResponseData<ILoadPresetResp>>({\n    method: 'put',\n    url: 'preset/play',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":["P10","P20","P80","Q8"],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-preset-play",
+  "contractStatus": "manual tables and observed source contracts",
+  "pathParameters": []
+}

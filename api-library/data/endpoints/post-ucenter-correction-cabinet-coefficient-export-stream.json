@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/correction/cabinet/coefficient/export/stream",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","correction","cabinet","coefficient","export","stream"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/correction/cabinet/coefficient/export/stream","dynamic":false,"source":"src/api/correction/index.ts","line":78,"client":"API_U_CENTER","symbol":"response","comment":"****导出箱体校正系数*file**","parameters":["data: ExportCorrectionFilePropsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      'Content-Type': 'application/json',\n    }","configExpression":"{\n    method: 'post',\n    url: 'ucenter/correction/cabinet/coefficient/export/stream',\n    data,\n    timeout: 600000,\n    headers: {\n      'Content-Type': 'application/json',\n    },\n  }","context":"async (\n  data: ExportCorrectionFilePropsT,\n): Promise<ExportFileResponseT> => {\n  const response = await API_U_CENTER.request<ExportFileResponseT>({\n    method: 'post',\n    url: 'ucenter/correction/cabinet/coefficient/export/stream',\n    data,\n    timeout: 600000,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-correction-cabinet-coefficient-export-stream",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

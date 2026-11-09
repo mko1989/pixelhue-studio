@@ -1,0 +1,9 @@
+{
+  "id": "SourceListTypeE-260913ef",
+  "name": "SourceListTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 512,
+  "declaration": "enum SourceListTypeE {\n  input,\n  screen,\n}"
+}

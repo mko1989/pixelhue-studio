@@ -1,0 +1,9 @@
+{
+  "id": "EFlowNet-11985dee",
+  "name": "EFlowNet",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1007,
+  "declaration": "enum EFlowNet {\n  net1 = 0, // 网口1\n  net2 = 1, // 网口2\n}"
+}

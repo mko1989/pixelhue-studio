@@ -1,0 +1,9 @@
+{
+  "id": "EGenlockOut-0a71e873",
+  "name": "EGenlockOut",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/components/device-info/genlockSetting/common/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 3,
+  "declaration": "enum EGenlockOut {\n  genlockIn = 1, // genlock in\n  inputSource, // 输入源\n  internarlFrame, // 内部帧频\n  output, // 普通输出\n}"
+}

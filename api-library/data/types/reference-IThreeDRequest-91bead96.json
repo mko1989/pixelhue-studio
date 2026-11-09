@@ -1,0 +1,7 @@
+{
+  "id": "reference-IThreeDRequest-91bead96",
+  "name": "IThreeDRequest",
+  "availability": "referenced-only",
+  "references": [{"name":"IThreeDRequest","source":"src/api/screen/screen-adjust.ts","line":65}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

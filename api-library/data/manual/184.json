@@ -1,0 +1,25 @@
+{
+  "page": 184,
+  "text": "Default\nName Type Required Remarks More\nValue\npresetId or presetName; if\nboth are provided, presetId\ntakes precedence.\n Return Data\nDefault\nName Type Required Remarks More\nValue\ncode number No Response code\nmessage string No Response message\nItem\nobject\ntype:\ndata No\n[]\nobject\nThe IDs of the failed\n├─\nstring Yes presets during batch\npresetId\nmodification\n6.1.2 Save Preset\n Basic Information\nPath: /v1/preset/create-assign\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nnamePrefix string No The preset name prefix.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "presetId or presetName; if\nboth are provided, presetId\ntakes precedence.", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "number", "No", "", "Response code", ""],
+      ["message", "string", "No", "", "Response message", ""],
+      ["data", "object\n[]", "No", "", "", "Item\ntype:\nobject"],
+      ["├─\npresetId", "string", "Yes", "", "The IDs of the failed\npresets during batch\nmodification", ""]
+    ]},
+    {"contextBefore": "6.1.2 Save Preset\n Basic Information\nPath: /v1/preset/create-assign\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["namePrefix", "string", "No", "", "The preset name prefix.", ""]
+    ]}
+  ]
+}

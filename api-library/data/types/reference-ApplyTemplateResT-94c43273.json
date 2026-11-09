@@ -1,0 +1,7 @@
+{
+  "id": "reference-ApplyTemplateResT-94c43273",
+  "name": "ApplyTemplateResT",
+  "availability": "referenced-only",
+  "references": [{"name":"ApplyTemplateResT","source":"src/api/layer/layer.ts","line":1119},{"name":"ApplyTemplateResT","source":"src/api/layer/layer.ts","line":1120}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

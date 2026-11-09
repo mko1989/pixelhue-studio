@@ -1,0 +1,19 @@
+{
+  "page": 143,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\n255: Custom\nSource properties related\nID. Currently, this field is\nintege\n├─ relationId Yes only meaningful for IPC\nr\nsources, representing the\ndecodeId.\n├─\nobject Yes Transition follow\ntransitionFollow\nintege\n├─ enable Yes Transition follow switch\nr\nLayer layout information\n(the coordinate system is\n├─ window object Yes consistent with the\ncoordinate system of the\nconnector in the screen)\nmock:\nintege\n├─ width Yes Layer width @integ\nr\ner\nmock:\nintege\n├─ height Yes Layer height @integ\nr\ner\nmock:\nintege\n├─ x Yes H offset @integ\nr\ner\nmock:\nintege\n├─ y Yes V offset @integ\nr\ner\n├─ The virtual layer layout\nobject Yes\nvirtualWindow information (Send based",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "255: Custom", ""],
+      ["├─ relationId", "intege\nr", "Yes", "", "Source properties related\nID. Currently, this field is\nonly meaningful for IPC\nsources, representing the\ndecodeId.", ""],
+      ["├─\ntransitionFollow", "object", "Yes", "", "Transition follow", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "Transition follow switch", ""],
+      ["├─ window", "object", "Yes", "", "Layer layout information\n(the coordinate system is\nconsistent with the\ncoordinate system of the\nconnector in the screen)", ""],
+      ["├─ width", "intege\nr", "Yes", "", "Layer width", "mock:\n@integ\ner"],
+      ["├─ height", "intege\nr", "Yes", "", "Layer height", "mock:\n@integ\ner"],
+      ["├─ x", "intege\nr", "Yes", "", "H offset", "mock:\n@integ\ner"],
+      ["├─ y", "intege\nr", "Yes", "", "V offset", "mock:\n@integ\ner"],
+      ["├─\nvirtualWindow", "object", "Yes", "", "The virtual layer layout\ninformation (Send based", ""]
+    ]}
+  ]
+}

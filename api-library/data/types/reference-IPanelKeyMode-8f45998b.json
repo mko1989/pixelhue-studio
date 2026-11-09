@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPanelKeyMode-8f45998b",
+  "name": "IPanelKeyMode",
+  "availability": "referenced-only",
+  "references": [{"name":"IPanelKeyMode","source":"src/api/panel/panel.ts","line":27},{"name":"IPanelKeyMode","source":"src/api/panel/panel.ts","line":27},{"name":"IPanelKeyMode","source":"src/api/panel/panel.ts","line":28}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

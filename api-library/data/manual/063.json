@@ -1,0 +1,20 @@
+{
+  "page": 63,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nConnector channel type:\n1: RX\n2: TX\n├─ numb\nYes RX stands for input, and TX\nchannelType er\nstands for output, which are\napplicable for both ordinary\nand Dante ports.\n├─\nstring Yes The channel label\nchannelLabel\n├─ The label name of Dante\nstring Yes\nconnectLabel connected to peer\nnumb\n├─ isMute Yes Mute switch\ner\n├─\nnumb\ntestAudioEnabl Yes Test switch\ner\ne\n0: Offline.\nnumb\n├─ state Yes 1: Online.\ner\n2: Abnormal.\nnumb 0: Unavailable.\n├─ isValid Yes\ner 1: Available.\nobjec\n├─ display Yes Output content information\nt\n├─ numb\nYes Output source type\nsourceType er\n├─\nstring Yes Output source name\nsourceName\nnumb\n├─ sourceId Yes Output source ID\ner",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─\nchannelType", "numb\ner", "Yes", "", "Connector channel type:\n1: RX\n2: TX\nRX stands for input, and TX\nstands for output, which are\napplicable for both ordinary\nand Dante ports.", ""],
+      ["├─\nchannelLabel", "string", "Yes", "", "The channel label", ""],
+      ["├─\nconnectLabel", "string", "Yes", "", "The label name of Dante\nconnected to peer", ""],
+      ["├─ isMute", "numb\ner", "Yes", "", "Mute switch", ""],
+      ["├─\ntestAudioEnabl\ne", "numb\ner", "Yes", "", "Test switch", ""],
+      ["├─ state", "numb\ner", "Yes", "", "0: Offline.\n1: Online.\n2: Abnormal.", ""],
+      ["├─ isValid", "numb\ner", "Yes", "", "0: Unavailable.\n1: Available.", ""],
+      ["├─ display", "objec\nt", "Yes", "", "Output content information", ""],
+      ["├─\nsourceType", "numb\ner", "Yes", "", "Output source type", ""],
+      ["├─\nsourceName", "string", "Yes", "", "Output source name", ""],
+      ["├─ sourceId", "numb\ner", "Yes", "", "Output source ID", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/monitor/alarm-info",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","monitor","alarm-info"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/monitor/alarm-info","dynamic":false,"source":"src/api/monitor/monitor-log.ts","line":28,"client":"API","symbol":"response","comment":"获取告警记录","parameters":["data: GetAlarmInfoRequestT","headers: AxiosRequestHeaders = {}"],"bodyExpression":null,"queryExpression":"{ ...data }","headerExpression":"{\n      ...headers,\n    }","configExpression":"{\n    method: 'get',\n    url: 'ucenter/monitor/alarm-info',\n    params: { ...data },\n    timeout: 30000, // todo 暂时设置超时时间为30s\n    headers: {\n      ...headers,\n    },\n  }","context":"async (\n  data: GetAlarmInfoRequestT,\n  headers: AxiosRequestHeaders = {},\n): Promise<IResponseData<MonitorAlarmInfoT[]>> => {\n  const response = await API.request<IResponseData<MonitorAlarmInfoT[]>>({\n    method: 'get',\n    url: 'ucenter/monitor/alarm-info',\n    params: { ...data },","sourceMap":"index-Clg9CawM.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-monitor-alarm-info",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

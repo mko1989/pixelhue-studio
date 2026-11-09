@@ -1,0 +1,9 @@
+{
+  "id": "CompanionKeyModeStatusE-9783c3dd",
+  "name": "CompanionKeyModeStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 80,
+  "declaration": "enum CompanionKeyModeStatusE {\n  close = 0,\n  none = 649,\n  open = 650,\n}"
+}

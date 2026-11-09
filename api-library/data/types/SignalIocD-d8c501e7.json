@@ -1,0 +1,9 @@
+{
+  "id": "SignalIocD-d8c501e7",
+  "name": "SignalIocD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 255,
+  "declaration": "interface SignalIocD {\n  /**\n   * ip\n   */\n  ip: string;\n\n  /**\n   * 端口\n   */\n  port?: number;\n}"
+}

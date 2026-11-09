@@ -1,0 +1,9 @@
+{
+  "id": "EClickType-484b1b98",
+  "name": "EClickType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 531,
+  "declaration": "enum EClickType {\n  mouse = 'mouse', // 鼠标点击\n  touch = 'touch', // 触摸\n}"
+}

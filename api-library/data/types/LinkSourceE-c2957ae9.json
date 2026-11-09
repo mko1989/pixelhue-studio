@@ -1,0 +1,9 @@
+{
+  "id": "LinkSourceE-c2957ae9",
+  "name": "LinkSourceE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/types/device/typing.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 228,
+  "declaration": "enum LinkSourceE {\n  local,\n  link,\n}"
+}

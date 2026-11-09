@@ -1,0 +1,7 @@
+{
+  "id": "reference-TbarCalibration-cd614bd0",
+  "name": "TbarCalibration",
+  "availability": "referenced-only",
+  "references": [{"name":"TbarCalibration","source":"src/api/custom/index.ts","line":104},{"name":"TbarCalibration","source":"src/api/custom/index.ts","line":105}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

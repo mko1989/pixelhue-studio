@@ -1,0 +1,9 @@
+{
+  "id": "EGenlockStatus-0f222003",
+  "name": "EGenlockStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 419,
+  "declaration": "enum EGenlockStatus {\n  UNOPENED = 0, // 未开启\n  SYNCHRONIZING = 1, // 调节中\n  SUCCESS = 2, // 同步成功\n  FAIl = 3, // 同步失败\n}"
+}

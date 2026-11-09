@@ -1,0 +1,9 @@
+{
+  "id": "EPanelScreenActive-f85e86f9",
+  "name": "EPanelScreenActive",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 500,
+  "declaration": "enum EPanelScreenActive {\n  /** 未激活 */\n  INACTIVATED = 1,\n  /** 激活PVW */\n  PVW = 4,\n  /** 激活PGM */\n  PGM = 2,\n}"
+}

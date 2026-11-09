@@ -1,0 +1,15 @@
+{
+  "page": 234,
+  "text": "Default\nName Type Required Remarks More\nValue\nDve direction:\n0. Upper left\n1. Up\n2. Upper right\n├─ directionDev integer No 3. Right\n4. Lower right\n5. Down\n6. Lower left\n7. Left\nEffect direction:\n├─ 1. Forward.\nstring No\ndirectionEffect 2. Reverse.\n3. Switch.\n├─ keySource object No\n├─ general object No General information\nSource ID, which is\n├─ sourceId integer No unique for a specific\nsource type\nSource type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n├─ sourceType integer No\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n10: IPC mosaic\nscreen.\n11: Internal source.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["├─ directionDev", "integer", "No", "", "Dve direction:\n0. Upper left\n1. Up\n2. Upper right\n3. Right\n4. Lower right\n5. Down\n6. Lower left\n7. Left", ""],
+      ["├─\ndirectionEffect", "string", "No", "", "Effect direction:\n1. Forward.\n2. Reverse.\n3. Switch.", ""],
+      ["├─ keySource", "object", "No", "", "", ""],
+      ["├─ general", "object", "No", "", "General information", ""],
+      ["├─ sourceId", "integer", "No", "", "Source ID, which is\nunique for a specific\nsource type", ""],
+      ["├─ sourceType", "integer", "No", "", "Source type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n10: IPC mosaic\nscreen.\n11: Internal source.", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-ISystemPeeling-ee528bdc",
+  "name": "ISystemPeeling",
+  "availability": "referenced-only",
+  "references": [{"name":"ISystemPeeling","source":"src/api/setting/setting.ts","line":76},{"name":"ISystemPeeling","source":"src/api/setting/setting.ts","line":75},{"name":"ISystemPeeling","source":"src/api/setting/setting.ts","line":77}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-EFileType-c8714174",
+  "name": "EFileType",
+  "availability": "referenced-only",
+  "references": [{"name":"EFileType","source":"src/api/u-disk/index.ts","line":226}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

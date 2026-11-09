@@ -1,0 +1,9 @@
+{
+  "id": "EPanelTimeCodeCommand-06b874f0",
+  "name": "EPanelTimeCodeCommand",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 440,
+  "declaration": "enum EPanelTimeCodeCommand {\n  startTimeCode = 551, // 时间码 暂停 开始\n  resetTimeCode, // 重置时间码\n  timeCodePutSourec, // 时间码切源\n  timeCodePutFPS, // 时间码切FPS\n  // startAnewTimeCode,\n  // pauseTimeCode,\n  // inputChange,\n  // frameAdd,\n  // frameQuickAdd,\n  // frameMinus,\n  // frameQuickMinus,\n  // mtcLtcUsb,\n  // page,\n}"
+}

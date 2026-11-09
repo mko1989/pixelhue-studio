@@ -1,0 +1,15 @@
+{
+  "page": 179,
+  "text": "Default\nName Type Required Remarks More\nValue\nItem\nobject\ntype:\nNo Layer data\n[]\nobject\nThe global layer ID, which\n├─ layerId integer Yes\nis unique\n├─ source object Yes Layer source information\n├─\nobject Yes General information\ngeneral\nSource ID: The unique ID\nof the source under the\n├─ source type (if it's an mock:\ninteger Yes\n@integer\nsourceId internal shape source,\nthis field represents the\nshape enumeration value)\nSource type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n├─ 7: IPC type. mock:\ninteger Yes\n@integer\nsourceType 8: Cropped source type.\n9: Mosaic source.\n10: IPC mosaic screen.\n11: Internal source.\n12: Internal shape source.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit Meter.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "object\n[]", "No", "", "Layer data", "Item\ntype:\nobject"],
+      ["├─ layerId", "integer", "Yes", "", "The global layer ID, which\nis unique", ""],
+      ["├─ source", "object", "Yes", "", "Layer source information", ""],
+      ["├─\ngeneral", "object", "Yes", "", "General information", ""],
+      ["├─\nsourceId", "integer", "Yes", "", "Source ID: The unique ID\nof the source under the\nsource type (if it's an\ninternal shape source,\nthis field represents the\nshape enumeration value)", "mock:\n@integer"],
+      ["├─\nsourceType", "integer", "Yes", "", "Source type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source type.\n9: Mosaic source.\n10: IPC mosaic screen.\n11: Internal source.\n12: Internal shape source.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit Meter.", "mock:\n@integer"]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "SharedSourceInfoT-79a8bbed",
+  "name": "SharedSourceInfoT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 791,
+  "declaration": "type SharedSourceInfoT = {\n  /** 共享源唯一标识id */\n  identify: string;\n  /** 共享源的id */\n  sourceId: number;\n  /** 共享源类型 */\n  sourceType: InterfaceAndSlotLogicE;\n  /** 共享设备的sn */\n  sn?: string;\n};"
+}

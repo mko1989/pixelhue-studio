@@ -1,0 +1,7 @@
+{
+  "id": "reference-getParamsT-f6d1fb5c",
+  "name": "getParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"getParamsT","source":"src/api/preset/preset-loop.ts","line":16},{"name":"getParamsT","source":"src/api/preset/preset-loop.ts","line":86}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

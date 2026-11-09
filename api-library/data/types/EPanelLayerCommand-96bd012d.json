@@ -1,0 +1,9 @@
+{
+  "id": "EPanelLayerCommand-96bd012d",
+  "name": "EPanelLayerCommand",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 230,
+  "declaration": "enum EPanelLayerCommand {\n  /** 图层开关 */\n  layerEnable = 204,\n  /** 创建图层 */\n  layerCreate = 200,\n  /** 选中图层 */\n  layerSelect,\n  /** 删除单个图层 */\n  layerDelete,\n  /** 批量删除图层 */\n  layerDeleteMulti,\n  /** 屏幕全屏 */\n  layerFullscreen = 500,\n  /** 接口全屏 */\n  layerFullOutput,\n  /** 图层复制 */\n  layerCopy,\n  /** 图层镜像 */\n  layerMirror,\n  /** 图层置顶 */\n  layerTop,\n  /** 图层上移一层 */\n  layerUp,\n  /** 图层置底 */\n  layerBottom,\n  /** 图层下移一层 */\n  layerDown,\n  /** 图层抠图开关 */\n  layerCutout,\n  /** 图层切源 */\n  inputSwitch = 300,\n}"
+}

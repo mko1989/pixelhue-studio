@@ -1,0 +1,8 @@
+{
+  "id": "ScreenGeneral-294f23cb",
+  "name": "ScreenGeneral",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Screen.ts",
+  "line": 34,
+  "declaration": "interface ScreenGeneral {\n\tname: string\n}"
+}

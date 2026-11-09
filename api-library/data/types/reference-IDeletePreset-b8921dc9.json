@@ -1,0 +1,7 @@
+{
+  "id": "reference-IDeletePreset-b8921dc9",
+  "name": "IDeletePreset",
+  "availability": "referenced-only",
+  "references": [{"name":"IDeletePreset","source":"src/api/preset/index.ts","line":124},{"name":"IDeletePreset","source":"src/api/preset/index.ts","line":123},{"name":"IDeletePreset","source":"src/api/preset/index.ts","line":125},{"name":"IDeletePreset","source":"src/api/preset/index.ts","line":173},{"name":"IDeletePreset","source":"src/api/preset/index.ts","line":174}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

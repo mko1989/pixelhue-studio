@@ -1,0 +1,9 @@
+{
+  "id": "GenlockE-8ae0c4eb",
+  "name": "GenlockE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 77,
+  "declaration": "enum GenlockE {\n  /** 关闭, 内同步 */\n  off,\n  /** 同步genlock源  */\n  genlock,\n  /** 同步interface源 */\n  interface,\n  /** 内部帧频 */\n  internalFrame,\n  /** 内部同步 */\n  internalSync,\n}"
+}

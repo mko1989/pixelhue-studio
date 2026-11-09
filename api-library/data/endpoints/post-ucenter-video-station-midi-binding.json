@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/video-station/midi/binding",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","midi","binding"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/video-station/midi/binding","dynamic":false,"source":"src/api/controls/binding.ts","line":5,"client":"API","symbol":"response","comment":"","parameters":["data: IBindAttr[]"],"bodyExpression":"{\n      attributes: data,\n    }","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'post',\n    url: 'ucenter/video-station/midi/binding',\n    data: {\n      attributes: data,\n    },\n    timeout: 5000, // todo 设置超时时间为5s\n  }","context":"async (data: IBindAttr[]): Promise<IResponseData<IBinds>> => {\n  const response = await API.request<IResponseData<IBinds>>({\n    method: 'post',\n    url: 'ucenter/video-station/midi/binding',\n    data: {\n      attributes: data,\n    },\n    timeout: 5000, // todo 设置超时时间为5s","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-video-station-midi-binding",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EBlockState-9c33fc73",
+  "name": "EBlockState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 981,
+  "declaration": "enum EBlockState {\n  free,\n  busy,\n}"
+}

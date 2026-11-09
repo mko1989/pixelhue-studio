@@ -1,0 +1,9 @@
+{
+  "id": "EditorAttrE-bf91c1c2",
+  "name": "EditorAttrE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1273,
+  "declaration": "enum EditorAttrE {\n  LayerAttr = 1, // 图层属性\n  MergedSourceAttr, // 拼接源属性\n  InterfaceSourceAttr, // 源列表属性\n  UDiskAttr, // U 盘属性\n  LiveBKGAttr, // LiveBKG 坑位列表属性\n}"
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/node/selfcheck",
+  "group": "node",
+  "summary": "response",
+  "tags": ["node","selfcheck"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"node/selfcheck","dynamic":false,"source":"src/api/device/deviceList.ts","line":763,"client":"API","symbol":"response","comment":"*\n * 设备自检\n * @returns","parameters":["ip: string","port: number","sn: string","nodeId: number","protocol?: string"],"bodyExpression":"{ nodeId }","queryExpression":null,"headerExpression":"headers","configExpression":"{\n    method: 'POST',\n    url: 'node/selfcheck',\n    data: { nodeId },\n    headers,\n    timeout: t,\n  }","context":"async (\n  ip: string,\n  port: number,\n  sn: string,\n  nodeId: number,\n  protocol?: string,\n): Promise<IResponseData<NodeEthT>> => {\n  const t = 5 * 1000;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-node-selfcheck",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

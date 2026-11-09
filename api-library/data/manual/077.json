@@ -1,0 +1,17 @@
+{
+  "page": 77,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nScreen type:\n0: Empty screen.\n2: Common\nscreen.\nnumb\n├─ type Yes 4: AUX screen.\ner\n8: MVR screen.\n16: Input view\nscreen.\n32: LED screen.\nScreen general\n├─ general object Yes\nproperties\n├─ name string Yes Screen name\nRegion\ninformation,\n├─ area object Yes\ngeographic\nlocation\nintege\n├─ areaId Yes Region ID\nr\n├─ areaName string Yes Region name\nMosaic\n├─ mosaic object Yes\ninformation\nMosaic type:\n0: Standard\nrectangle\nmosaic.\nnumb\n├─ type Yes 1: Standard\ner\nirregular\nmosaic.\n2: Any irregular\nmosaic.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ type", "numb\ner", "Yes", "", "Screen type:\n0: Empty screen.\n2: Common\nscreen.\n4: AUX screen.\n8: MVR screen.\n16: Input view\nscreen.\n32: LED screen.", ""],
+      ["├─ general", "object", "Yes", "", "Screen general\nproperties", ""],
+      ["├─ name", "string", "Yes", "", "Screen name", ""],
+      ["├─ area", "object", "Yes", "", "Region\ninformation,\ngeographic\nlocation", ""],
+      ["├─ areaId", "intege\nr", "Yes", "", "Region ID", ""],
+      ["├─ areaName", "string", "Yes", "", "Region name", ""],
+      ["├─ mosaic", "object", "Yes", "", "Mosaic\ninformation", ""],
+      ["├─ type", "numb\ner", "Yes", "", "Mosaic type:\n0: Standard\nrectangle\nmosaic.\n1: Standard\nirregular\nmosaic.\n2: Any irregular\nmosaic.", ""]
+    ]}
+  ]
+}

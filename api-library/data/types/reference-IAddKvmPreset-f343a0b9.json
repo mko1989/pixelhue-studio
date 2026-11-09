@@ -1,0 +1,7 @@
+{
+  "id": "reference-IAddKvmPreset-f343a0b9",
+  "name": "IAddKvmPreset",
+  "availability": "referenced-only",
+  "references": [{"name":"IAddKvmPreset","source":"src/api/media/kvm-setting.ts","line":38}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/video-station/file/list",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","file","list"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"/ucenter/video-station/file/list","dynamic":false,"source":"src/api/device/log-export.ts","line":132,"client":"API","symbol":"response","comment":"*\n * 0x2D-控台文件列表\n * @param dirPath","parameters":["dirPath?: string"],"bodyExpression":null,"queryExpression":"{ dirPath: dirPath }","headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: '/ucenter/video-station/file/list',\n    params: { dirPath: dirPath },\n    timeout: 10000,\n  }","context":"async (dirPath?: string): Promise<IResponseData<FileListT[]>> => {\n  const response = await API.request<IResponseData<FileListT[]>>({\n    method: 'get',\n    url: '/ucenter/video-station/file/list',\n    params: { dirPath: dirPath },\n    timeout: 10000,\n  });\n  return response.data;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-video-station-file-list",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

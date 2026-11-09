@@ -1,0 +1,9 @@
+{
+  "id": "SignalD-aa7464f8",
+  "name": "SignalD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 140,
+  "declaration": "interface SignalD {\n  /**\n   * 信号源名称\n   */\n  name: string;\n  /**\n   * 信号源Id\n   */\n  sourceId: number;\n  /**\n   * 卡插槽Id\n   */\n  slotId: number;\n  /**\n   * 分辨率宽\n   */\n  width: number;\n  /**\n   * 分辨率高\n   */\n  height: number;\n  /**\n   * 刷新率\n   */\n  refreshRate: number;\n  /**\n   * 状态，1表示离线，2表示在线\n   */\n  status: number;\n  /**\n   * 信号源接口类型\n   */\n  interfaceType: number;\n  /**\n   * 拼接视频画面的大块索引\n   */\n  videoIndex?: number;\n  /**\n   * 信号源截取列表\n   */\n  crops?: CropsD[];\n  /**\n   * PIMP-大屏信号源列表-信号源ID\n   */\n  signalId?: number;\n  /**\n   * 自定义字段\n   */\n  groupId?: number;\n}"
+}

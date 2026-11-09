@@ -1,0 +1,15 @@
+{
+  "page": 78,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nThe mosaic\ninformation of\nthe screen\noutput\n├─ splice object Yes connectors. For\nan irregular\nmosaic type,\nuse the default\n(0,0).\nnumb\n├─ row Yes Mosaic rows\ner\nnumb\n├─ column Yes Mosaic columns\ner\nThe screen\nposition\ninformation\n├─ window object Yes\n(coordinate\nsystem relative\nto canvas)\nThe starting\nposition of the\nnumb screen\n├─ x Yes\ner (circumscribed\nrectangle) in X\ndirection\nThe starting\nposition of the\nnumb\n├─ y Yes screen\ner\n(circumscribed\nrectangle) in Y",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ splice", "object", "Yes", "", "The mosaic\ninformation of\nthe screen\noutput\nconnectors. For\nan irregular\nmosaic type,\nuse the default\n(0,0).", ""],
+      ["├─ row", "numb\ner", "Yes", "", "Mosaic rows", ""],
+      ["├─ column", "numb\ner", "Yes", "", "Mosaic columns", ""],
+      ["├─ window", "object", "Yes", "", "The screen\nposition\ninformation\n(coordinate\nsystem relative\nto canvas)", ""],
+      ["├─ x", "numb\ner", "Yes", "", "The starting\nposition of the\nscreen\n(circumscribed\nrectangle) in X\ndirection", ""],
+      ["├─ y", "numb\ner", "Yes", "", "The starting\nposition of the\nscreen\n(circumscribed\nrectangle) in Y", ""]
+    ]}
+  ]
+}

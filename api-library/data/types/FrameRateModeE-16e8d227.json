@@ -1,0 +1,9 @@
+{
+  "id": "FrameRateModeE-16e8d227",
+  "name": "FrameRateModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 408,
+  "declaration": "enum FrameRateModeE {\n  once,\n  twice,\n}"
+}

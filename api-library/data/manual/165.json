@@ -1,0 +1,16 @@
+{
+  "page": 165,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nTimezone identifier, range\nnumb 0~89. See node\n├─ timeZone Yes\ner configuration file\ndefinition.\nTime type:\nnumb\n├─ timeType Yes 0: Local time.\ner\n1: NTP time.\nnumb\n├─ timeOffset Yes Time offset\ner\nnumb Whether to display in\n├─ isMultiLine Yes\ner multiple lines\n├─ numb\nYes Widget spacing\ncomponentSpace er\nYear format:\nnumb\n├─ yearFormat Yes 0: Four-digit year (YYYY).\ner\n1: Two-digit year (YY).\nDate format:\n0: YYYY/MM/DD\n1: YYYY/M/D\n2: MM/DD/YYYY\n3: M/D/YYYY\n4: DD/MM/YYYY\n5: D/M/YYYY\nnumb\n├─ dateFormat Yes 6: YYYY-MM-DD\ner\n7: YYYY-M-D\n8: MM-DD-YYYY\n9: M-D-YYYY\n10: DD-MM-YYYY\n11: D-M-YYYY\n12:\nYYYY(year)MM(month)DD",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ timeZone", "numb\ner", "Yes", "", "Timezone identifier, range\n0~89. See node\nconfiguration file\ndefinition.", ""],
+      ["├─ timeType", "numb\ner", "Yes", "", "Time type:\n0: Local time.\n1: NTP time.", ""],
+      ["├─ timeOffset", "numb\ner", "Yes", "", "Time offset", ""],
+      ["├─ isMultiLine", "numb\ner", "Yes", "", "Whether to display in\nmultiple lines", ""],
+      ["├─\ncomponentSpace", "numb\ner", "Yes", "", "Widget spacing", ""],
+      ["├─ yearFormat", "numb\ner", "Yes", "", "Year format:\n0: Four-digit year (YYYY).\n1: Two-digit year (YY).", ""],
+      ["├─ dateFormat", "numb\ner", "Yes", "", "Date format:\n0: YYYY/MM/DD\n1: YYYY/M/D\n2: MM/DD/YYYY\n3: M/D/YYYY\n4: DD/MM/YYYY\n5: D/M/YYYY\n6: YYYY-MM-DD\n7: YYYY-M-D\n8: MM-DD-YYYY\n9: M-D-YYYY\n10: DD-MM-YYYY\n11: D-M-YYYY\n12:\nYYYY(year)MM(month)DD", ""]
+    ]}
+  ]
+}

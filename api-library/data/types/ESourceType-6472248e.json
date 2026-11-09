@@ -1,0 +1,9 @@
+{
+  "id": "ESourceType-6472248e",
+  "name": "ESourceType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/external-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 28,
+  "declaration": "enum ESourceType {\n  NOMVR = -1, // 无MVR\n  MVR1, // 0 - MVR1\n  MVR2, // 1 - MVR2\n  HIMIIN, // 2 - HIMI IN\n}"
+}

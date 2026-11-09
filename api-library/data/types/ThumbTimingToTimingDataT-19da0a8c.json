@@ -1,0 +1,9 @@
+{
+  "id": "ThumbTimingToTimingDataT-19da0a8c",
+  "name": "ThumbTimingToTimingDataT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInfo.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 80,
+  "declaration": "interface ThumbTimingToTimingDataT extends PresetThumbTimingT {\n  interfaceId: number;\n}"
+}

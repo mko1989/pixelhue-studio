@@ -1,0 +1,9 @@
+{
+  "id": "EKnokStepState-5a45944d",
+  "name": "EKnokStepState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 289,
+  "declaration": "enum EKnokStepState {\n  notStart, // 未开始\n  starting, // 进行中\n  complete, // 完成\n}"
+}

@@ -1,0 +1,20 @@
+{
+  "page": 4,
+  "text": "Instructions:\nProtocol communication format: http://ip:8088/unico/url\nIP: The IP address of the controlled device\nURL: The corresponding function path\n1. Authentication\n1.1 User Login\n Basic Information\nPath: /v1/system/auth/login\nMethod: POST\nDescription:\nUser login requires a user name and password.\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nUser name for\nmock: admin\nusername string Yes\nlogin\nmock:\nPassword for\npassword string Yes\nMTIzNDU2\nlogin\n Return Data\nName Type Required Default Value Remarks More\nmock: 0\ncode number Yes\nmessage string Yes",
+  "tables": [
+    {"contextBefore": "Instructions:\nProtocol communication format: http://ip:8088/unico/url\nIP: The IP address of the controlled device\nURL: The corresponding function path\n1. Authentication\n1.1 User Login\n Basic Information\nPath: /v1/system/auth/login\nMethod: POST\nDescription:\nUser login requires a user name and password.\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["username", "string", "Yes", "", "User name for\nlogin", "mock: admin"],
+      ["password", "string", "Yes", "", "Password for\nlogin", "mock:\nMTIzNDU2"]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["code", "number", "Yes", "", "", "mock: 0"],
+      ["message", "string", "Yes", "", "", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-ILedScreenTopologyParams-9d8d28a4",
+  "name": "ILedScreenTopologyParams",
+  "availability": "referenced-only",
+  "references": [{"name":"ILedScreenTopologyParams","source":"src/api/screen/controller.ts","line":138}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

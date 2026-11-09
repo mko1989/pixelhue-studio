@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/system/no-signal-background-color",
+  "group": "system",
+  "summary": "response",
+  "tags": ["system","no-signal-background-color"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"system/no-signal-background-color","dynamic":false,"source":"src/api/device/deviceInfo.ts","line":898,"client":"API","symbol":"response","comment":"设置设备图层无源时展示的背景颜色","parameters":["nodeId: number","color: DeviceNoSignalBackgroundColor"],"bodyExpression":"{\n      nodeId,\n      noSignalBackgroundColor: color,\n    }","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'system/no-signal-background-color',\n    data: {\n      nodeId,\n      noSignalBackgroundColor: color,\n    },\n  }","context":"async (\n  nodeId: number,\n  color: DeviceNoSignalBackgroundColor,\n) => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'PUT',\n    url: 'system/no-signal-background-color',\n    data: {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-system-no-signal-background-color",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

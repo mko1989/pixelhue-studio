@@ -1,0 +1,9 @@
+{
+  "id": "FileListT-6b190bb2",
+  "name": "FileListT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/log-export.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 116,
+  "declaration": "interface FileListT {\n  path: string;\n  filePath: string;\n  isDir: boolean;\n  type: string;\n  size?: number;\n  updateTime?: string;\n  isImage?: boolean;\n  imageBase64?: string;\n}"
+}

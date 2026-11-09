@@ -1,0 +1,9 @@
+{
+  "id": "DragBoxD-36179da2",
+  "name": "DragBoxD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 302,
+  "declaration": "interface DragBoxD {\n  /**\n   * 弹框的X轴定位位置\n   */\n  x: number;\n  /**\n   * 弹框y轴定位位置\n   */\n  y: number;\n  /**\n   * 弹框宽度\n   */\n  width?: number;\n  /**\n   * 弹框的高度\n   */\n  height?: number;\n  /**\n   * 弹框显示/隐藏\n   */\n  display: string;\n  /**\n   * 弹框的边框颜色\n   */\n  color?: string;\n}"
+}

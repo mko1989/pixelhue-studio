@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/screen/create",
+  "group": "screen",
+  "summary": "res",
+  "tags": ["screen","create"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"screen/create","dynamic":false,"source":"src/api/screen/screen.ts","line":1694,"client":"API","symbol":"res","comment":"*\n * 超级屏 - 软件临时空屏幕创建协议","parameters":["data: CreateEmptyScreenT","headers: AxiosRequestHeaders = {}","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ...headers,\n      seq: seq || 0,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'screen/create',\n    data,\n    headers: {\n      ...headers,\n      seq: seq || 0,\n    },\n    timeout: 10 * 1000,\n  }","context":"async (\n  data: CreateEmptyScreenT,\n  headers: AxiosRequestHeaders = {},\n  seq?: number,\n) => {\n  const res = await API.request<IResponseData<ScreenT>>({\n    method: 'PUT',\n    url: 'screen/create',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-screen-create",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

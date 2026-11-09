@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/system/auxiliary/assess/layers-window",
+  "group": "system",
+  "summary": "response",
+  "tags": ["system","auxiliary","assess","layers-window"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"system/auxiliary/assess/layers-window","dynamic":false,"source":"src/api/layer/layer.ts","line":649,"client":"API","symbol":"response","comment":"* 评估图层布局","parameters":["data: MoveScaleLayerReqT[]","seq?: number","extraReqParams?: ExtraReqParamsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq || 0,\n      ...extraReqParams,\n      Authorization: extraReqParams?.token || '',\n    }","configExpression":"{\n    method: 'put',\n    url: 'system/auxiliary/assess/layers-window',\n    data,\n    headers: {\n      seq: seq || 0,\n      ...extraReqParams,\n      Authorization: extraReqParams?.token || '',\n    },\n  }","context":"async (\n  data: MoveScaleLayerReqT[],\n  seq?: number,\n  extraReqParams?: ExtraReqParamsT,\n): Promise<IResponseData<LayerAssessT[]>> => {\n  const response = await API.request<IResponseData<LayerAssessT[]>>({\n    method: 'put',\n    url: 'system/auxiliary/assess/layers-window',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-system-auxiliary-assess-layers-window",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

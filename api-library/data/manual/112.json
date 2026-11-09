@@ -1,0 +1,20 @@
+{
+  "page": 112,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nBlue component\n├─ bScale string Yes\nscaling factor\nWhen\ncolorCorrectTyp\ne12 is 12-13, the\n├─ hsv object Yes\ncolors are valid\nfor RGB and\ninvalid for HSV.\nnumb\n├─ h Yes Hue\ner\nHue component\n├─ hScale string Yes\nscaling factor\nnumb\n├─ s Yes Saturation\ner\nSaturation\n├─ sScale string Yes component\nscaling factor\nnumb Value\n├─ v Yes\ner (brightness)\nValue\n├─ vScale string Yes component\nscaling factor\nDynamic\n├─ dynamicBooster object Yes\nBooster\nDynamic\nintege Booster enable:\n├─ enable Yes\nr 0: Disable.\n1: Enable.\n├─ level string Yes Dynamic",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ bScale", "string", "Yes", "", "Blue component\nscaling factor", ""],
+      ["├─ hsv", "object", "Yes", "", "When\ncolorCorrectTyp\ne12 is 12-13, the\ncolors are valid\nfor RGB and\ninvalid for HSV.", ""],
+      ["├─ h", "numb\ner", "Yes", "", "Hue", ""],
+      ["├─ hScale", "string", "Yes", "", "Hue component\nscaling factor", ""],
+      ["├─ s", "numb\ner", "Yes", "", "Saturation", ""],
+      ["├─ sScale", "string", "Yes", "", "Saturation\ncomponent\nscaling factor", ""],
+      ["├─ v", "numb\ner", "Yes", "", "Value\n(brightness)", ""],
+      ["├─ vScale", "string", "Yes", "", "Value\ncomponent\nscaling factor", ""],
+      ["├─ dynamicBooster", "object", "Yes", "", "Dynamic\nBooster", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "Dynamic\nBooster enable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ level", "string", "Yes", "", "Dynamic", ""]
+    ]}
+  ]
+}

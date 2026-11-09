@@ -1,0 +1,9 @@
+{
+  "id": "ScreenMatchTypeE-6be71182",
+  "name": "ScreenMatchTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 274,
+  "declaration": "enum ScreenMatchTypeE {\n  unico, // unico配屏\n  lct, // lct配屏\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "LinkSourceInfoT-b234ede3",
+  "name": "LinkSourceInfoT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/types/device/typing.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 233,
+  "declaration": "type LinkSourceInfoT = {\n  /** 共享源唯一标识id */\n  identify: string;\n  /** 共享源的id */\n  sourceId: number;\n  /** 共享源类型 */\n  sourceType: InterfaceAndSlotLogicE;\n  /** 共享设备的sn */\n  sn?: string;\n};"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-AbortController-6dee66e8",
+  "name": "AbortController",
+  "availability": "referenced-only",
+  "references": [{"name":"AbortController","source":"src/api/picture/picture.ts","line":49},{"name":"AbortController","source":"src/api/picture/picture.ts","line":95},{"name":"AbortController","source":"src/api/picture/picture.ts","line":150},{"name":"AbortController","source":"src/api/picture/picture.ts","line":249},{"name":"AbortController","source":"src/api/plug-in/plugIn.ts","line":26}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

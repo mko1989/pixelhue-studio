@@ -1,0 +1,7 @@
+{
+  "id": "reference-T-e632b709",
+  "name": "T",
+  "availability": "referenced-only",
+  "references": [{"name":"T","source":"src/api/device/deviceInterface.ts","line":367},{"name":"T","source":"src/api/device/deviceInterface.ts","line":384},{"name":"T","source":"src/api/device/deviceInterface.ts","line":392},{"name":"T","source":"src/api/device/deviceInterface.ts","line":412},{"name":"T","source":"src/api/font/index.ts","line":87},{"name":"T","source":"src/api/font/index.ts","line":111}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,23 @@
+{
+  "method": "DELETE",
+  "path": "/unico/v1/ucenter/ptz/signal-delete",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","ptz","signal-delete"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"DELETE","path":"ucenter/ptz/signal-delete","dynamic":false,"source":"src/api/setting/setting.ts","line":379,"client":"API","symbol":"response","comment":"*\n * 删除信号源\n *","parameters":["data: { signalId: number }[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'DELETE',\n    url: 'ucenter/ptz/signal-delete',\n    data,\n  }","context":"async (data: { signalId: number }[]) => {\n  const response = await API.request<IResponseData<unknown>>({\n    method: 'DELETE',\n    url: 'ucenter/ptz/signal-delete',\n    data,\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "delete-ucenter-ptz-signal-delete",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

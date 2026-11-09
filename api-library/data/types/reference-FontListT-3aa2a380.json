@@ -1,0 +1,7 @@
+{
+  "id": "reference-FontListT-3aa2a380",
+  "name": "FontListT",
+  "availability": "referenced-only",
+  "references": [{"name":"FontListT","source":"src/api/font/index.ts","line":15},{"name":"FontListT","source":"src/api/font/index.ts","line":16},{"name":"FontListT","source":"src/api/font/index.ts","line":35},{"name":"FontListT","source":"src/api/font/index.ts","line":38}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-ExportCorrectionFilePropsT-a6417918",
+  "name": "ExportCorrectionFilePropsT",
+  "availability": "referenced-only",
+  "references": [{"name":"ExportCorrectionFilePropsT","source":"src/api/correction/index.ts","line":60},{"name":"ExportCorrectionFilePropsT","source":"src/api/correction/index.ts","line":76}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "InterfaceGeneral-583ec87c",
+  "name": "InterfaceGeneral",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Interface.ts",
+  "line": 14,
+  "declaration": "interface InterfaceGeneral {\n\tname: string\n}"
+}

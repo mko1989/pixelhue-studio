@@ -1,0 +1,9 @@
+{
+  "id": "IThumbTimingCheckResponseData-8d303f6e",
+  "name": "IThumbTimingCheckResponseData",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 365,
+  "declaration": "type IThumbTimingCheckResponseData<T> = {\n  data: ThumbTimingDataT[];\n} & T;"
+}

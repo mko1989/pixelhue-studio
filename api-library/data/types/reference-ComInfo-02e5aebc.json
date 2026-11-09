@@ -1,0 +1,7 @@
+{
+  "id": "reference-ComInfo-02e5aebc",
+  "name": "ComInfo",
+  "availability": "referenced-only",
+  "references": [{"name":"ComInfo","source":"src/api/device/deviceInfo.ts","line":761}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

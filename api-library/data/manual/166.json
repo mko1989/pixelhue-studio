@@ -1,0 +1,19 @@
+{
+  "page": 166,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\n(day)\n13:\nYYYY(year)M(month)D(da\ny)\n├─ numb Whether to display the\nYes\nisDisplayWeek er day of the week\nHour system:\nnumb\n├─ hourly Yes 0: 12-hour.\ner\n1: 24-hour.\n0: HH:MM:SS (default)\n1: HH:MM\n2: H:M:S\nnumb 3: H:M\n├─ timeFormat Yes\ner 4:\nH(hour)M(minute)S(secon\nd)\n5: H(hour)M(minute)\nnumb Whether to display\n├─ isDisplayAm Yes\ner AM/PM\n├─ numb Whether to display the\nYes\nisDisplayDate er date\n├─ numb Whether to display the\nYes\nisDisplayTime er time\n├─ url string Yes NTP address\n├─ weather object Yes Weather\nLocation information, with\nlatitude and longitude\n├─ location string Yes separated by a comma, in\nthe format: longitude,\nlatitude",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "(day)\n13:\nYYYY(year)M(month)D(da\ny)", ""],
+      ["├─\nisDisplayWeek", "numb\ner", "Yes", "", "Whether to display the\nday of the week", ""],
+      ["├─ hourly", "numb\ner", "Yes", "", "Hour system:\n0: 12-hour.\n1: 24-hour.", ""],
+      ["├─ timeFormat", "numb\ner", "Yes", "", "0: HH:MM:SS (default)\n1: HH:MM\n2: H:M:S\n3: H:M\n4:\nH(hour)M(minute)S(secon\nd)\n5: H(hour)M(minute)", ""],
+      ["├─ isDisplayAm", "numb\ner", "Yes", "", "Whether to display\nAM/PM", ""],
+      ["├─\nisDisplayDate", "numb\ner", "Yes", "", "Whether to display the\ndate", ""],
+      ["├─\nisDisplayTime", "numb\ner", "Yes", "", "Whether to display the\ntime", ""],
+      ["├─ url", "string", "Yes", "", "NTP address", ""],
+      ["├─ weather", "object", "Yes", "", "Weather", ""],
+      ["├─ location", "string", "Yes", "", "Location information, with\nlatitude and longitude\nseparated by a comma, in\nthe format: longitude,\nlatitude", ""]
+    ]}
+  ]
+}

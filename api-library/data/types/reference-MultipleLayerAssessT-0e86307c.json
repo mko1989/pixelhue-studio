@@ -1,0 +1,7 @@
+{
+  "id": "reference-MultipleLayerAssessT-0e86307c",
+  "name": "MultipleLayerAssessT",
+  "availability": "referenced-only",
+  "references": [{"name":"MultipleLayerAssessT","source":"src/api/screen/screen.ts","line":669},{"name":"MultipleLayerAssessT","source":"src/api/screen/screen.ts","line":670},{"name":"MultipleLayerAssessT","source":"src/api/screen/screen.ts","line":1615},{"name":"MultipleLayerAssessT","source":"src/api/screen/screen.ts","line":1616}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

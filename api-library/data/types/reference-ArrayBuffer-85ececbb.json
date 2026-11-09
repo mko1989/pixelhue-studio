@@ -1,0 +1,7 @@
+{
+  "id": "reference-ArrayBuffer-85ececbb",
+  "name": "ArrayBuffer",
+  "availability": "referenced-only",
+  "references": [{"name":"ArrayBuffer","source":"src/api/device/deviceInterface.ts","line":501},{"name":"ArrayBuffer","source":"src/api/device/deviceInterface.ts","line":502},{"name":"ArrayBuffer","source":"src/api/device/deviceInterface.ts","line":515},{"name":"ArrayBuffer","source":"src/api/device/deviceInterface.ts","line":516},{"name":"ArrayBuffer","source":"src/api/device/deviceInterface.ts","line":714},{"name":"ArrayBuffer","source":"src/api/device/deviceInterface.ts","line":715},{"name":"ArrayBuffer","source":"src/api/picture/picture.ts","line":96},{"name":"ArrayBuffer","source":"src/api/picture/picture.ts","line":97},{"name":"ArrayBuffer","source":"src/api/picture/picture.ts","line":107},{"name":"ArrayBuffer","source":"src/api/device/cabinet-pack.ts","line":285},{"name":"ArrayBuffer","source":"src/api/device/cabinet-pack.ts","line":287},{"name":"ArrayBuffer","source":"src/api/ctl-fix/index.ts","line":255},{"name":"ArrayBuffer","source":"src/api/ctl-fix/index.ts","line":256}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

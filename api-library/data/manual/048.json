@@ -1,0 +1,18 @@
+{
+  "page": 48,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n2: YCbCr 4:4:4. 3, 255\n3: YCbCr 4:2:0.\n255: AUTO.\n├─ objec\nYes Bit depth\ncolorDepth t\nActual bit depth:\nEnumerati\n8: 8Bit.\nnumb\n├─ actual Yes 10: 10Bit. on: 8, 10,\ner\n12, 16\n12: 12Bit.\n16: 16Bit.\nPreset bit depth:\nEnumerati\n8: 8Bit.\non: 8, 10,\nnumb 10: 10Bit.\n├─ preset Yes\n12, 16,\ner 12: 12Bit.\n255\n16: 16Bit.\n255: AUTO.\n├─ objec\nYes Color range\ncolorRange t\nActual color range:\nEnumerati\nnumb\n├─ actual Yes 0: LIMIT.\non: 0, 1\ner\n1: FULL.\nPreset color range:\nEnumerati\nnumb 0: LIMIT.\n├─ preset Yes on: 0, 1,\ner 1: FULL.\n255\n255: AUTO.\n├─ objec\nYes Color gamut\ncolorGamut t\nnumb Actual color gamut: Enumerati\n├─ actual Yes\ner 0: Rec.601. on: 0, 1, 2,",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "2: YCbCr 4:4:4.\n3: YCbCr 4:2:0.\n255: AUTO.", "3, 255"],
+      ["├─\ncolorDepth", "objec\nt", "Yes", "", "Bit depth", ""],
+      ["├─ actual", "numb\ner", "Yes", "", "Actual bit depth:\n8: 8Bit.\n10: 10Bit.\n12: 12Bit.\n16: 16Bit.", "Enumerati\non: 8, 10,\n12, 16"],
+      ["├─ preset", "numb\ner", "Yes", "", "Preset bit depth:\n8: 8Bit.\n10: 10Bit.\n12: 12Bit.\n16: 16Bit.\n255: AUTO.", "Enumerati\non: 8, 10,\n12, 16,\n255"],
+      ["├─\ncolorRange", "objec\nt", "Yes", "", "Color range", ""],
+      ["├─ actual", "numb\ner", "Yes", "", "Actual color range:\n0: LIMIT.\n1: FULL.", "Enumerati\non: 0, 1"],
+      ["├─ preset", "numb\ner", "Yes", "", "Preset color range:\n0: LIMIT.\n1: FULL.\n255: AUTO.", "Enumerati\non: 0, 1,\n255"],
+      ["├─\ncolorGamut", "objec\nt", "Yes", "", "Color gamut", ""],
+      ["├─ actual", "numb\ner", "Yes", "", "Actual color gamut:\n0: Rec.601.", "Enumerati\non: 0, 1, 2,"]
+    ]}
+  ]
+}

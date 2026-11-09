@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/smartscreen/staticpicture/order",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","smartscreen","staticpicture","order"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/smartscreen/staticpicture/order","dynamic":false,"source":"src/api/setting/setting.ts","line":140,"client":"API","symbol":"response","comment":"* 设置智慧屏静态图片的轮播顺序","parameters":["data: IStaticImgInfo[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/smartscreen/staticpicture/order',\n    data: data,\n  }","context":"async (\n  data: IStaticImgInfo[],\n): Promise<IResponseData<IStaticImgInfo[]>> => {\n  const response = await API.request<IResponseData<IStaticImgInfo[]>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/smartscreen/staticpicture/order',\n    data: data,\n  });","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-smartscreen-staticpicture-order",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

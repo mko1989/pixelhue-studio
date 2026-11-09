@@ -1,0 +1,20 @@
+{
+  "page": 37,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n├─ name string Yes Group name\n├─\nnumb Physical connector group\nphysicalGroupI Yes\ner ID\nd\n├─ alias string Yes Connector alias\nobjec Connector’s general\n├─ general Yes\nt information\nmock:\n├─ name string Yes Connector name generalNa\nme1\n├─\nobjec\npresetThumbTi Yes Preset thumbnail timing\nt\nming\nInterlaced scanning: 0:\nnumb\n├─ interlaced Yes Interlaced.\ner\n1: Progressive.\nnumb Frame rate (floating-point\n├─ frame Yes mock: 1\ner format)\nmock:\nnumb\n├─ width Yes Width\n1920\ner\nnumb\n├─ height Yes Height mock: 960\ner\nResolution standard:\n0: No standard.\n├─ numb 1: DMT\nYes\nstandardType er 2: CVT\n3: CVT-RBV1\n4: CVT-RBV2",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ name", "string", "Yes", "", "Group name", ""],
+      ["├─\nphysicalGroupI\nd", "numb\ner", "Yes", "", "Physical connector group\nID", ""],
+      ["├─ alias", "string", "Yes", "", "Connector alias", ""],
+      ["├─ general", "objec\nt", "Yes", "", "Connector’s general\ninformation", ""],
+      ["├─ name", "string", "Yes", "", "Connector name", "mock:\ngeneralNa\nme1"],
+      ["├─\npresetThumbTi\nming", "objec\nt", "Yes", "", "Preset thumbnail timing", ""],
+      ["├─ interlaced", "numb\ner", "Yes", "", "Interlaced scanning: 0:\nInterlaced.\n1: Progressive.", ""],
+      ["├─ frame", "numb\ner", "Yes", "", "Frame rate (floating-point\nformat)", "mock: 1"],
+      ["├─ width", "numb\ner", "Yes", "", "Width", "mock:\n1920"],
+      ["├─ height", "numb\ner", "Yes", "", "Height", "mock: 960"],
+      ["├─\nstandardType", "numb\ner", "Yes", "", "Resolution standard:\n0: No standard.\n1: DMT\n2: CVT\n3: CVT-RBV1\n4: CVT-RBV2", ""]
+    ]}
+  ]
+}

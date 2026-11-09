@@ -1,0 +1,17 @@
+{
+  "page": 80,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nnormal. 2: The\ncard is online\nand the\nconnector\nconnection is\nabnormal. 】\n├─ name string Yes Connector name\nThe absolute\ncoordinates of\nthe connector\n├─ pos object Yes\n(coordinate\nsystem relative\nto canvas)\nThe connector\nnumb\n├─ x Yes position in X\ner\ndirection\nThe connector\nnumb\n├─ y Yes position in Y\ner\ndirection\nnumb The connector\n├─ width Yes\ner width\nnumb The connector\n├─ height Yes\ner height\nThe cropping\ninformation of\nthe connector\n├─ crop object Yes\ndisplay area\n(relative to the\nconnector)",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "normal. 2: The\ncard is online\nand the\nconnector\nconnection is\nabnormal. 】", ""],
+      ["├─ name", "string", "Yes", "", "Connector name", ""],
+      ["├─ pos", "object", "Yes", "", "The absolute\ncoordinates of\nthe connector\n(coordinate\nsystem relative\nto canvas)", ""],
+      ["├─ x", "numb\ner", "Yes", "", "The connector\nposition in X\ndirection", ""],
+      ["├─ y", "numb\ner", "Yes", "", "The connector\nposition in Y\ndirection", ""],
+      ["├─ width", "numb\ner", "Yes", "", "The connector\nwidth", ""],
+      ["├─ height", "numb\ner", "Yes", "", "The connector\nheight", ""],
+      ["├─ crop", "object", "Yes", "", "The cropping\ninformation of\nthe connector\ndisplay area\n(relative to the\nconnector)", ""]
+    ]}
+  ]
+}

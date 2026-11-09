@@ -1,0 +1,9 @@
+{
+  "id": "EMotherSubcard-d48e8095",
+  "name": "EMotherSubcard",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 278,
+  "declaration": "enum EMotherSubcard {\n  // 输入母卡\n  _30976 = 30976,\n  // 31040 输出母卡\n  _31040 = 31040,\n}"
+}

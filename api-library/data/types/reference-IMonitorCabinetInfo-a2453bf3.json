@@ -1,0 +1,7 @@
+{
+  "id": "reference-IMonitorCabinetInfo-a2453bf3",
+  "name": "IMonitorCabinetInfo",
+  "availability": "referenced-only",
+  "references": [{"name":"IMonitorCabinetInfo","source":"src/api/monitor/index.ts","line":112},{"name":"IMonitorCabinetInfo","source":"src/api/monitor/index.ts","line":113}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

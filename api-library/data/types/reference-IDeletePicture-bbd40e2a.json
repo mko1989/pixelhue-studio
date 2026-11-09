@@ -1,0 +1,7 @@
+{
+  "id": "reference-IDeletePicture-bbd40e2a",
+  "name": "IDeletePicture",
+  "availability": "referenced-only",
+  "references": [{"name":"IDeletePicture","source":"src/api/picture/picture.ts","line":118},{"name":"IDeletePicture","source":"src/api/picture/picture.ts","line":329}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

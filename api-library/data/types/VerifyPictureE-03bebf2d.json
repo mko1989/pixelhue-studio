@@ -1,0 +1,9 @@
+{
+  "id": "VerifyPictureE-03bebf2d",
+  "name": "VerifyPictureE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 120,
+  "declaration": "enum VerifyPictureE {\n  /** 否 */\n  filesize,\n  /** 是 */\n  pictureSize,\n}"
+}

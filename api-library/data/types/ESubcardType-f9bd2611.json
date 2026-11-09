@@ -1,0 +1,9 @@
+{
+  "id": "ESubcardType-f9bd2611",
+  "name": "ESubcardType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 688,
+  "declaration": "enum ESubcardType {\n  MotherCard, // 母卡\n  DaughterCard, // 子卡\n}"
+}

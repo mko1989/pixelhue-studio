@@ -1,0 +1,9 @@
+{
+  "id": "EPresetPlayType-e78ffaf6",
+  "name": "EPresetPlayType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/preset/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 2,
+  "declaration": "enum EPresetPlayType {\n  /** 0：固定间隔轮询 */\n  fixInterval,\n  /** 1：定时刻轮询 */\n  fixTime,\n}"
+}

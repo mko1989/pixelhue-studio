@@ -1,0 +1,9 @@
+{
+  "id": "resolutionMaxMInE-37b6cb41",
+  "name": "resolutionMaxMInE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 620,
+  "declaration": "enum resolutionMaxMInE {\n  maxW = 4096,\n  maxH = 4096,\n}"
+}

@@ -1,0 +1,18 @@
+{
+  "page": 173,
+  "text": "Default\nName Type Required Remarks More\nValue\nscreen.\n11: 11: Internal\nsource.\n12: Internal shape\nsource.\nMinimum\n├─ minX number Yes movement range\nvalue x\nMinimum\n├─ minY number Yes movement range\nvalue y\nMaximum\n├─ maxX number Yes movement range\nvalue x\nMaximum\n├─ maxY number Yes movement range\nvalue y\n5.3 Apply Layer Templates\n Basic Information\nPath: v1/layers/template/select\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "screen.\n11: 11: Internal\nsource.\n12: Internal shape\nsource.", ""],
+      ["├─ minX", "number", "Yes", "", "Minimum\nmovement range\nvalue x", ""],
+      ["├─ minY", "number", "Yes", "", "Minimum\nmovement range\nvalue y", ""],
+      ["├─ maxX", "number", "Yes", "", "Maximum\nmovement range\nvalue x", ""],
+      ["├─ maxY", "number", "Yes", "", "Maximum\nmovement range\nvalue y", ""]
+    ]},
+    {"contextBefore": "5.3 Apply Layer Templates\n Basic Information\nPath: v1/layers/template/select\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]}
+  ]
+}

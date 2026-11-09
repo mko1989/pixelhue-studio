@@ -1,0 +1,9 @@
+{
+  "id": "AuthFlagE-f2389819",
+  "name": "AuthFlagE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1069,
+  "declaration": "enum AuthFlagE {\n  permanent = 0, // 永久授权\n  temporary, // 短期授权\n  expired, // 授权到期\n}"
+}

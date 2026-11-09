@@ -1,0 +1,7 @@
+{
+  "id": "reference-ISystemPower-19a06776",
+  "name": "ISystemPower",
+  "availability": "referenced-only",
+  "references": [{"name":"ISystemPower","source":"src/api/setting/setting.ts","line":61},{"name":"ISystemPower","source":"src/api/setting/setting.ts","line":60},{"name":"ISystemPower","source":"src/api/setting/setting.ts","line":62}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

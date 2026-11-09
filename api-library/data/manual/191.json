@@ -1,0 +1,17 @@
+{
+  "page": 191,
+  "text": "Require Defaul\nName Type Remarks More\nd t Value\n├─ source object Yes The layer source\nThe general\n├─ general object Yes\nInformation\nmock:\nThe source ID, which\n├─ sourceId integer Yes is unique for a specific @intege\nr\nsource type\nSource type: [0: Empty\nlayer; 1: No-source\nlayer; 2: Input type; 3:\nPGM; 4: PVW; 5: BKG\nmock:\nimage 6: LOGO image;\n├─ sourceType integer Yes @intege\n7: IPC type; 8: Cropped\nr\nsource type; 9: Mosaic\nsource; 10: IPC\nmosaic screen; 11:\nInternal source]\nThe layer layout\ninformation (the top-\nleft corner of the\n├─ window object Yes screen's\ncircumscribed\nrectangle as the\ncoordinate origin).\nmock:\n├─ width integer Yes The layer width @intege\nr\nmock:\n├─ height integer Yes The layer height @intege\nr\nmock:\n├─ x integer Yes The H Offset\n@intege",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Require\nd", "Defaul\nt Value", "Remarks", "More"],
+      ["├─ source", "object", "Yes", "", "The layer source", ""],
+      ["├─ general", "object", "Yes", "", "The general\nInformation", ""],
+      ["├─ sourceId", "integer", "Yes", "", "The source ID, which\nis unique for a specific\nsource type", "mock:\n@intege\nr"],
+      ["├─ sourceType", "integer", "Yes", "", "Source type: [0: Empty\nlayer; 1: No-source\nlayer; 2: Input type; 3:\nPGM; 4: PVW; 5: BKG\nimage 6: LOGO image;\n7: IPC type; 8: Cropped\nsource type; 9: Mosaic\nsource; 10: IPC\nmosaic screen; 11:\nInternal source]", "mock:\n@intege\nr"],
+      ["├─ window", "object", "Yes", "", "The layer layout\ninformation (the top-\nleft corner of the\nscreen's\ncircumscribed\nrectangle as the\ncoordinate origin).", ""],
+      ["├─ width", "integer", "Yes", "", "The layer width", "mock:\n@intege\nr"],
+      ["├─ height", "integer", "Yes", "", "The layer height", "mock:\n@intege\nr"],
+      ["├─ x", "integer", "Yes", "", "The H Offset", "mock:\n@intege"]
+    ]}
+  ]
+}

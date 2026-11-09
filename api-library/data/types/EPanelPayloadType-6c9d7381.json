@@ -1,0 +1,9 @@
+{
+  "id": "EPanelPayloadType-6c9d7381",
+  "name": "EPanelPayloadType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 481,
+  "declaration": "enum EPanelPayloadType {\n  /** 新增 */\n  add = 1,\n  /** 更改 */\n  modify,\n  /** 删除 */\n  del,\n}"
+}

@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/interface/hdr",
+  "group": "interface",
+  "summary": "response",
+  "tags": ["interface","hdr"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"interface/hdr","dynamic":false,"source":"src/api/device/deviceInterface.ts","line":29,"client":"API","symbol":"response","comment":"设置接口hdr","parameters":["data: IHdrReqT[]","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq ?? 0,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'interface/hdr',\n    data,\n    headers: {\n      seq: seq ?? 0,\n    },\n    timeout: 8000,\n  }","context":"async (\n  data: IHdrReqT[],\n  seq?: number,\n): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'PUT',\n    url: 'interface/hdr',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-interface-hdr",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

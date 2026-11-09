@@ -1,0 +1,7 @@
+{
+  "id": "reference-IScreenTimingRsp-dd7ea6f6",
+  "name": "IScreenTimingRsp",
+  "availability": "referenced-only",
+  "references": [{"name":"IScreenTimingRsp","source":"src/api/screen/screen.ts","line":460},{"name":"IScreenTimingRsp","source":"src/api/screen/screen.ts","line":461},{"name":"IScreenTimingRsp","source":"src/api/screen/screen.ts","line":478},{"name":"IScreenTimingRsp","source":"src/api/screen/screen.ts","line":479},{"name":"IScreenTimingRsp","source":"src/api/screen/screen.ts","line":1731},{"name":"IScreenTimingRsp","source":"src/api/screen/screen.ts","line":1732}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

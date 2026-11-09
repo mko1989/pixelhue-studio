@@ -1,0 +1,22 @@
+{
+  "page": 70,
+  "text": "Default\nName Type Required Remarks More\nValue\nstep: 100, unit: K\n├─ Advanced parameter\nobject Yes\nadvanceAdjust adjustment\nR component: 0~255,\n├─ R number Yes default: 255, step: 1,\nunit: none\nG component:\n├─ G number Yes 0~255, default: 255,\nstep: 1, unit: none\nB component: 0~255,\n├─ B number Yes default: 255, step: 1,\nunit: none\nWhether to enable\n├─ Monochrome:\nnumber Yes\nisMonochrome 0: No.\n1: Yes.\nWhether to invert\ncolors:\n├─ isInverse number Yes\n0: No.\n1: Yes.\n Return Data\nDefault\nName Type Required Remarks More\nValue\ncode number Yes Response code\nResponse\nmessage string Yes\nmessage\nItem type:\nobject\ndata Yes\nobject\n[]",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "step: 100, unit: K", ""],
+      ["├─\nadvanceAdjust", "object", "Yes", "", "Advanced parameter\nadjustment", ""],
+      ["├─ R", "number", "Yes", "", "R component: 0~255,\ndefault: 255, step: 1,\nunit: none", ""],
+      ["├─ G", "number", "Yes", "", "G component:\n0~255, default: 255,\nstep: 1, unit: none", ""],
+      ["├─ B", "number", "Yes", "", "B component: 0~255,\ndefault: 255, step: 1,\nunit: none", ""],
+      ["├─\nisMonochrome", "number", "Yes", "", "Whether to enable\nMonochrome:\n0: No.\n1: Yes.", ""],
+      ["├─ isInverse", "number", "Yes", "", "Whether to invert\ncolors:\n0: No.\n1: Yes.", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "number", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response\nmessage", ""],
+      ["data", "object\n[]", "Yes", "", "", "Item type:\nobject"]
+    ]}
+  ]
+}

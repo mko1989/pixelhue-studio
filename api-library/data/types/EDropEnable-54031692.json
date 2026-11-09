@@ -1,0 +1,9 @@
+{
+  "id": "EDropEnable-54031692",
+  "name": "EDropEnable",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 136,
+  "declaration": "enum EDropEnable {\n  off = 1,\n  on = 2,\n}"
+}

@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/device-ips",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","device-ips"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"/ucenter/device-ips","dynamic":false,"source":"src/api/device/deviceList.ts","line":1086,"client":"API","symbol":"response","comment":"* 获取搜索的设备列表数据","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'GET',\n    url: '/ucenter/device-ips',\n  }","context":"async () => {\n  const response = await API.request<IResponseData<DeviceSearchListT>>({\n    method: 'GET',\n    url: '/ucenter/device-ips',\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-device-ips",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

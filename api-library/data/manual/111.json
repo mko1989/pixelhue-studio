@@ -1,0 +1,16 @@
+{
+  "page": 111,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n1: Orange.\n2: Yellow.\n3: Lime.\n4: Green.\n5: Turquoise.\n6: Cyan.\n7: Cobalt.\n8: Blue.\n9: Violet.\n10: Magenta.\n11: Crimson.\n12: White.\n13: Black.\nWhen\ncolorCorrectTyp\ne12 is 0-11, the\n├─ rgb object Yes\ncolors are valid\nfor HSV and\ninvalid for RGB.\nintege Red (red\n├─ r Yes\nr component)\nRed component\n├─ Scale string Yes\nscaling factor\nintege Green (green\n├─ g Yes\nr component)\nGreen\n├─ gScale string Yes component\nscaling factor\nintege Blue (blue\n├─ b Yes\nr component)",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "1: Orange.\n2: Yellow.\n3: Lime.\n4: Green.\n5: Turquoise.\n6: Cyan.\n7: Cobalt.\n8: Blue.\n9: Violet.\n10: Magenta.\n11: Crimson.\n12: White.\n13: Black.", ""],
+      ["├─ rgb", "object", "Yes", "", "When\ncolorCorrectTyp\ne12 is 0-11, the\ncolors are valid\nfor HSV and\ninvalid for RGB.", ""],
+      ["├─ r", "intege\nr", "Yes", "", "Red (red\ncomponent)", ""],
+      ["├─ Scale", "string", "Yes", "", "Red component\nscaling factor", ""],
+      ["├─ g", "intege\nr", "Yes", "", "Green (green\ncomponent)", ""],
+      ["├─ gScale", "string", "Yes", "", "Green\ncomponent\nscaling factor", ""],
+      ["├─ b", "intege\nr", "Yes", "", "Blue (blue\ncomponent)", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "page": 189,
+  "text": "Require Defaul\nName Type Remarks More\nd t Value\nsystem relative to\ncanvas)\nnumbe The connector\n├─ x Yes\nr position in X direction\nnumbe The connector\n├─ y Yes\nr position in Y direction\nnumbe\n├─ width Yes The connector width\nr\nnumbe\n├─ height Yes The connector height\nr\nThe cropping\ninformation of the\n├─ crop object Yes connector display\narea (relative to the\nconnector)\nThe position of the\nnumbe\n├─ x Yes cropping area in X\nr\ndirection\nThe position of the\nnumbe\n├─ y Yes cropping area in Y\nr\ndirection\nnumbe The width of the\n├─ width Yes\nr cropping area\nnumbe The height of the\n├─ height Yes\nr cropping area\nItem\nobject\n├─ layers Yes The layer list type:\n[]\nobject\nThe global layer ID,\n├─ layerId integer Yes\nwhich is unique",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Require\nd", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "system relative to\ncanvas)", ""],
+      ["├─ x", "numbe\nr", "Yes", "", "The connector\nposition in X direction", ""],
+      ["├─ y", "numbe\nr", "Yes", "", "The connector\nposition in Y direction", ""],
+      ["├─ width", "numbe\nr", "Yes", "", "The connector width", ""],
+      ["├─ height", "numbe\nr", "Yes", "", "The connector height", ""],
+      ["├─ crop", "object", "Yes", "", "The cropping\ninformation of the\nconnector display\narea (relative to the\nconnector)", ""],
+      ["├─ x", "numbe\nr", "Yes", "", "The position of the\ncropping area in X\ndirection", ""],
+      ["├─ y", "numbe\nr", "Yes", "", "The position of the\ncropping area in Y\ndirection", ""],
+      ["├─ width", "numbe\nr", "Yes", "", "The width of the\ncropping area", ""],
+      ["├─ height", "numbe\nr", "Yes", "", "The height of the\ncropping area", ""],
+      ["├─ layers", "object\n[]", "Yes", "", "The layer list", "Item\ntype:\nobject"],
+      ["├─ layerId", "integer", "Yes", "", "The global layer ID,\nwhich is unique", ""]
+    ]}
+  ]
+}

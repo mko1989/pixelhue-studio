@@ -1,0 +1,9 @@
+{
+  "id": "DeviceActionE-777b160f",
+  "name": "DeviceActionE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 70,
+  "declaration": "enum DeviceActionE {\n  clickInterface, // 点击 接口\n  clickSubcard, // 点击 子卡(卡槽)(逻辑子卡)\n  clickDevice, // 点击 设备\n  clickRefresh, // 刷新设备数据\n  clickEdit, // 编辑设备信息\n  clickSplitSignal, // 拼接源设置\n  clickInternalSignal, // 输入源拼接\n  clickMvrSetting, // 点击MVR功能\n  clickComSetting, // 点击COM\n  clickIPCSetting, // 点击IPC卡\n  clickFiberSetting, // 点击光口\n  clickMonitorSetting, // 二合一预监口\n  clickDanteSetting, // 点击Dante\n  clickAudioSetting, // 点击audio接口\n  clickNetPort, // 点击网口\n  /** 点击SDI矩阵 */\n  clickSDIMatrixSetting,\n}"
+}

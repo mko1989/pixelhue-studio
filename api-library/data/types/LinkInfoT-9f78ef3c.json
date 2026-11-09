@@ -1,0 +1,9 @@
+{
+  "id": "LinkInfoT-9f78ef3c",
+  "name": "LinkInfoT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/types/device/typing.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 219,
+  "declaration": "type LinkInfoT = {\n  /** 是否是否link源 */\n  isLink: LinkSourceE;\n  /** 本地源是否被共享  */\n  shared: EnableE; // 0 否，1是\n  /** 共享源源端信息，仅isLink为link源有效 */\n  sourceInfo: LinkSourceInfoT;\n};"
+}

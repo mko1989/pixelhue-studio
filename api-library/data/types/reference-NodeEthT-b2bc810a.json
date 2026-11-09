@@ -1,0 +1,7 @@
+{
+  "id": "reference-NodeEthT-b2bc810a",
+  "name": "NodeEthT",
+  "availability": "referenced-only",
+  "references": [{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":219},{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":220},{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":489},{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":491},{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":507},{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":508},{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":529},{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":530},{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":542},{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":543},{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":754},{"name":"NodeEthT","source":"src/api/device/deviceList.ts","line":763}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

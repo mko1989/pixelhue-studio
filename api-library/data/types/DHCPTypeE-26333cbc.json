@@ -1,0 +1,9 @@
+{
+  "id": "DHCPTypeE-26333cbc",
+  "name": "DHCPTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 774,
+  "declaration": "enum DHCPTypeE {\n  static, //静态\n  dynamic, //动态\n}"
+}

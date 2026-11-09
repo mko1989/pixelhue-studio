@@ -1,0 +1,9 @@
+{
+  "id": "SignalChannelD-df320c62",
+  "name": "SignalChannelD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 192,
+  "declaration": "interface SignalChannelD {\n  id: number;\n  name?: string;\n  mainStreamId: number;\n  subStreamId: number;\n}"
+}

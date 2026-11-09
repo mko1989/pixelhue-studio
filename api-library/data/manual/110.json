@@ -1,0 +1,22 @@
+{
+  "page": 110,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nintege Green\n├─ g Yes\nr component\nintege\n├─ b Yes Blue component\nr\n├─ dstColor object Yes Target color\nintege\n├─ r Yes Red component\nr\nintege Green\n├─ g Yes\nr component\nintege\n├─ b Yes Blue component\nr\nnumb\n├─ tolerance Yes Tolerance\ner\nnumb\n├─ softness Yes Softness\ner\nnumb Shadow\n├─ shadow Yes\ner strength\n14Ch Color\n├─ colorCorrect object Yes\nCorrection\n14Ch Color\nCorrection\nintege\n├─ enable Yes enable:\nr\n0: Disable.\n1: Enable.\nItem type:\nobject\n├─ colorCorrectParams Yes\nobject\n[]\nintege 14 colors:\n├─ colorCorrectType Yes\nr 0: Red.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ g", "intege\nr", "Yes", "", "Green\ncomponent", ""],
+      ["├─ b", "intege\nr", "Yes", "", "Blue component", ""],
+      ["├─ dstColor", "object", "Yes", "", "Target color", ""],
+      ["├─ r", "intege\nr", "Yes", "", "Red component", ""],
+      ["├─ g", "intege\nr", "Yes", "", "Green\ncomponent", ""],
+      ["├─ b", "intege\nr", "Yes", "", "Blue component", ""],
+      ["├─ tolerance", "numb\ner", "Yes", "", "Tolerance", ""],
+      ["├─ softness", "numb\ner", "Yes", "", "Softness", ""],
+      ["├─ shadow", "numb\ner", "Yes", "", "Shadow\nstrength", ""],
+      ["├─ colorCorrect", "object", "Yes", "", "14Ch Color\nCorrection", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "14Ch Color\nCorrection\nenable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ colorCorrectParams", "object\n[]", "Yes", "", "", "Item type:\nobject"],
+      ["├─ colorCorrectType", "intege\nr", "Yes", "", "14 colors:\n0: Red.", ""]
+    ]}
+  ]
+}

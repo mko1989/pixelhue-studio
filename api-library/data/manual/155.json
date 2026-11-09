@@ -1,0 +1,19 @@
+{
+  "page": 155,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nr 0: Disable. @integ\n1: Enable. er\nBorder type:\n0: Hard-in border.\n1: Hard-out border.\nmock:\nintege 2: Hard-in-and-out border.\n├─ type Yes @integ\nr 3: Soft border.\ner\n4: Halo border.\n5: Halo-in border.\n6: Halo-out border.\n├─ size object Yes Border width\nmock:\nintege\n├─ hWidth Yes Horizontal width @integ\nr\ner\nmock:\nintege\n├─ vWidth Yes Vertical width @integ\nr\ner\n├─ color object Yes Border color\nmock:\nintege Component value\n├─ R Yes @integ\nr Red component value\ner\nmock:\nintege Component value\n├─ G Yes @integ\nr Green component value\ner\nmock:\nintege Component value\n├─ B Yes @integ\nr Blue component value\ner\n├─ opacity intege Yes Opacity mock:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "r", "", "", "0: Disable.\n1: Enable.", "@integ\ner"],
+      ["├─ type", "intege\nr", "Yes", "", "Border type:\n0: Hard-in border.\n1: Hard-out border.\n2: Hard-in-and-out border.\n3: Soft border.\n4: Halo border.\n5: Halo-in border.\n6: Halo-out border.", "mock:\n@integ\ner"],
+      ["├─ size", "object", "Yes", "", "Border width", ""],
+      ["├─ hWidth", "intege\nr", "Yes", "", "Horizontal width", "mock:\n@integ\ner"],
+      ["├─ vWidth", "intege\nr", "Yes", "", "Vertical width", "mock:\n@integ\ner"],
+      ["├─ color", "object", "Yes", "", "Border color", ""],
+      ["├─ R", "intege\nr", "Yes", "", "Component value\nRed component value", "mock:\n@integ\ner"],
+      ["├─ G", "intege\nr", "Yes", "", "Component value\nGreen component value", "mock:\n@integ\ner"],
+      ["├─ B", "intege\nr", "Yes", "", "Component value\nBlue component value", "mock:\n@integ\ner"],
+      ["├─ opacity", "intege", "Yes", "", "Opacity", "mock:"]
+    ]}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-GetInterfaceOutputDisplayDisplayInfosD-258bfe8b",
+  "name": "GetInterfaceOutputDisplayDisplayInfosD",
+  "availability": "referenced-only",
+  "references": [{"name":"GetInterfaceOutputDisplayDisplayInfosD","source":"src/api/device/deviceList.ts","line":134},{"name":"GetInterfaceOutputDisplayDisplayInfosD","source":"src/api/device/deviceList.ts","line":157}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

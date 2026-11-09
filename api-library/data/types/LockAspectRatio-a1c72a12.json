@@ -1,0 +1,9 @@
+{
+  "id": "LockAspectRatio-a1c72a12",
+  "name": "LockAspectRatio",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 75,
+  "declaration": "enum LockAspectRatio {\n  unlock,\n  lock,\n}"
+}

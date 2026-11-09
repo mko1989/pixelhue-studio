@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/smartscreen/timecode/memory",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","smartscreen","timecode","memory"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/smartscreen/timecode/memory","dynamic":false,"source":"src/api/setting/setting.ts","line":276,"client":"API","symbol":"response","comment":"* 设置时间码控制属性","parameters":["data: IMemoryTime"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/smartscreen/timecode/memory',\n    data: data,\n  }","context":"async (data: IMemoryTime): Promise<IResponseData<null>> => {\n  const response = await API.request<IResponseData<null>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/smartscreen/timecode/memory',\n    data: data,\n  });\n\n  return response.data;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-smartscreen-timecode-memory",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

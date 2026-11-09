@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/preset/apply",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","preset","apply"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/preset/apply","dynamic":false,"source":"src/api/preset/index.ts","line":386,"client":"API_U_CENTER","symbol":"response","comment":"*\n * 场景加载","parameters":["data: PostUcenterPresetApplyD[]","header?: AxiosRequestConfig['headers']"],"bodyExpression":"data","queryExpression":null,"headerExpression":"header ?? {}","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/preset/apply',\n    data,\n    headers: header ?? {},\n    timeout: 28000, // take特效时间最大10秒，加上http传输和回包时间会大于10秒。这里将超时时间改为14秒：（特效时间10秒+项目统一超时时间4秒）\n  }","context":"async (\n  data: PostUcenterPresetApplyD[],\n  header?: AxiosRequestConfig['headers'],\n): Promise<IResponseData<PostUcenterPresetApplyResponseData>> => {\n  console.info('场景上报测试————协议下发:', Date.now());\n  const response = await API_U_CENTER.request<IResponseData<PostUcenterPresetApplyResponseData>>({\n    method: 'POST',\n    url: 'ucenter/preset/apply',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-preset-apply",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-SwitchEffectDataT-b2177a63",
+  "name": "SwitchEffectDataT",
+  "availability": "referenced-only",
+  "references": [{"name":"SwitchEffectDataT","source":"src/api/screen/screen.ts","line":819},{"name":"SwitchEffectDataT","source":"src/api/screen/screen.ts","line":820}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

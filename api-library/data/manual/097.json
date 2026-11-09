@@ -1,0 +1,10 @@
+{
+  "page": 97,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n0x0102:\nHorizontal blue\ngradient.\n0x0103:\nHorizontal white\ngradient.\n0x0104: Vertical\nred gradient.\n0x0105: Vertical\ngreen gradient.\n0x0106: Vertical\nblue gradient.\n0x0107: Vertical\nwhite gradient.\n0x0200:\nHorizontal white\nlines.\n0x0201: Vertical\nwhite lines.\n0x0202: White\ndiagonal left.\n0x0203: White\ndiagonal right.\n0x0204:\nCrossed lines.\n0x0205:\nCrossed\ndiagonals.\n0x0300: Locate.\n0xFFFE: Custom\ntest pattern.\n0xFFFF: Off.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "0x0102:\nHorizontal blue\ngradient.\n0x0103:\nHorizontal white\ngradient.\n0x0104: Vertical\nred gradient.\n0x0105: Vertical\ngreen gradient.\n0x0106: Vertical\nblue gradient.\n0x0107: Vertical\nwhite gradient.\n0x0200:\nHorizontal white\nlines.\n0x0201: Vertical\nwhite lines.\n0x0202: White\ndiagonal left.\n0x0203: White\ndiagonal right.\n0x0204:\nCrossed lines.\n0x0205:\nCrossed\ndiagonals.\n0x0300: Locate.\n0xFFFE: Custom\ntest pattern.\n0xFFFF: Off.", ""]
+    ]}
+  ]
+}

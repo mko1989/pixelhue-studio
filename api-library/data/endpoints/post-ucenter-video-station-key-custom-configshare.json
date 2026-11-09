@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/video-station/key/custom/configShare",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","key","custom","configShare"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/video-station/key/custom/configShare","dynamic":false,"source":"src/api/custom/index.ts","line":309,"client":"API","symbol":"response","comment":"*\n * 分享配置","parameters":["data: {\n  shareTarget: {\n    uploadURL: string;\n    deviceMode?: number;\n    targetIP: string;\n  }[];\n  configIDs: number[];\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'POST',\n    url: 'ucenter/video-station/key/custom/configShare',\n    data,\n    timeout: 0,\n  }","context":"async (data: {\n  shareTarget: {\n    uploadURL: string;\n    deviceMode?: number;\n    targetIP: string;\n  }[];\n  configIDs: number[];\n}): Promise<IResponseData<IConfigShareResult[]>> => {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-video-station-key-custom-configshare",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

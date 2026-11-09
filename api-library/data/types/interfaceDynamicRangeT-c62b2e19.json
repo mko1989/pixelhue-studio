@@ -1,0 +1,9 @@
+{
+  "id": "interfaceDynamicRangeT-c62b2e19",
+  "name": "interfaceDynamicRangeT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 43,
+  "declaration": "interface interfaceDynamicRangeT {\n  interfaceId: number | string;\n  colorDynamicRange: object;\n}"
+}

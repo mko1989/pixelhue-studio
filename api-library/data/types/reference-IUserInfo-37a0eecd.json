@@ -1,0 +1,7 @@
+{
+  "id": "reference-IUserInfo-37a0eecd",
+  "name": "IUserInfo",
+  "availability": "referenced-only",
+  "references": [{"name":"IUserInfo","source":"src/api/user/user.ts","line":16}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

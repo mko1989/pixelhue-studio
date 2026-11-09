@@ -1,0 +1,9 @@
+{
+  "id": "CutoutTypeE-3d8ce2d5",
+  "name": "CutoutTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 518,
+  "declaration": "enum CutoutTypeE {\n  interface, // 接口\n  layer, // 图层\n}"
+}

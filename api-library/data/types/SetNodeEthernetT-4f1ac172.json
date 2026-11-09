@@ -1,0 +1,9 @@
+{
+  "id": "SetNodeEthernetT-4f1ac172",
+  "name": "SetNodeEthernetT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceList.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 458,
+  "declaration": "interface SetNodeEthernetT {\n  nodeId: number;\n  ethernet: EthernetParamsT;\n}"
+}

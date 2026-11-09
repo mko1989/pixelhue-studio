@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/cabinet/correction/avgcoefficient",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","cabinet","correction","avgcoefficient"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/cabinet/correction/avgcoefficient","dynamic":false,"source":"src/api/ctl-fix/index.ts","line":240,"client":"API","symbol":"response","comment":"****多批次系数导入***\nconsole.log('file---->', file);","parameters":["data: AvgCoefficientImportParamsT[]","webFile: any"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{\r\n      'Content-Type': 'application/octet-stream',\r\n    }","configExpression":"{\r\n    method: 'POST',\r\n    url: 'ucenter/cabinet/correction/avgcoefficient',\r\n    data: formData,\r\n    timeout: 60000,\r\n    headers: {\r\n      'Content-Type': 'application/octet-stream',\r\n    },\r\n  }","context":"async (\r\n  data: AvgCoefficientImportParamsT[],\r\n  webFile: any,\r\n): Promise<IResponseData<unknown>> => {\r\n  const formData = new FormData();\r\n  // 创建一个新的 Blob 对象并传入文件流作为参数\r\n  const blob = new Blob([webFile], { type: 'test.mbc' });\r\n  // 创建一个新的 File 对象并指定名称、类型等属性\r","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-cabinet-correction-avgcoefficient",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/ptz/control",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","ptz","control"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/ptz/control","dynamic":false,"source":"src/api/setting/setting.ts","line":425,"client":"API","symbol":"response","comment":"*\n * 云台控制\n *","parameters":["data: IControlPTZ"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/ptz/control',\n    data: data,\n    timeout: TIMING_TIMEOUT,\n  }","context":"async (data: IControlPTZ) => {\n  const response = await API.request<IResponseData<unknown>>({\n    method: 'PUT',\n    url: 'ucenter/ptz/control',\n    data: data,\n    timeout: TIMING_TIMEOUT,\n  });\n  return response.data;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-ptz-control",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

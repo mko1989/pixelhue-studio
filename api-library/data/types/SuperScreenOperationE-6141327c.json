@@ -1,0 +1,9 @@
+{
+  "id": "SuperScreenOperationE-6141327c",
+  "name": "SuperScreenOperationE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 701,
+  "declaration": "enum SuperScreenOperationE {\n  remove = 1,\n  add,\n}"
+}

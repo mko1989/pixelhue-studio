@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerBorder-ef41ab30",
+  "name": "LayerBorder",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerBorder","source":"src/api/layer/layer.ts","line":315}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

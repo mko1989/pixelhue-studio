@@ -1,0 +1,21 @@
+{
+  "page": 39,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nnumb Frame rate (floating-point\n├─ refresh Yes\ner format)\nobjec\n├─ horizontal Yes Horizontal timing\nt\nVisible width (H active,\nmock:\nnumb\n├─ addTime Yes namely the commonly\n1920\ner\nreferred resolution width)\n├─ numb\nmock: 1\nYes Front porch\nfrontPorch er\nnumb\n├─ sync Yes Sync value mock: 1\ner\nSync polarity:\n├─ numb Enumerati\nYes 0: Negative.\non: 0, 1\nsyncPolarity er\n1: Positive.\nmock:\nnumb\n├─ totalTime Yes Total width (H total)\n1920\ner\nobjec\n├─ vertical Yes Vertical timing\nt\nVisible height (V active,\nnumb\n├─ addTime Yes namely the commonly mock: 960\ner\nreferred resolution height)\n├─ numb\nmock: 1\nYes Front porch\nfrontPorch er\nnumb\n├─ sync Yes Sync value mock: 2\ner\nSync polarity:\n├─ numb Enumerati\nYes 0: Negative.\non: 0, 1\nsyncPolarity er\n1: Positive.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ refresh", "numb\ner", "Yes", "", "Frame rate (floating-point\nformat)", ""],
+      ["├─ horizontal", "objec\nt", "Yes", "", "Horizontal timing", ""],
+      ["├─ addTime", "numb\ner", "Yes", "", "Visible width (H active,\nnamely the commonly\nreferred resolution width)", "mock:\n1920"],
+      ["├─\nfrontPorch", "numb\ner", "Yes", "", "Front porch", "mock: 1"],
+      ["├─ sync", "numb\ner", "Yes", "", "Sync value", "mock: 1"],
+      ["├─\nsyncPolarity", "numb\ner", "Yes", "", "Sync polarity:\n0: Negative.\n1: Positive.", "Enumerati\non: 0, 1"],
+      ["├─ totalTime", "numb\ner", "Yes", "", "Total width (H total)", "mock:\n1920"],
+      ["├─ vertical", "objec\nt", "Yes", "", "Vertical timing", ""],
+      ["├─ addTime", "numb\ner", "Yes", "", "Visible height (V active,\nnamely the commonly\nreferred resolution height)", "mock: 960"],
+      ["├─\nfrontPorch", "numb\ner", "Yes", "", "Front porch", "mock: 1"],
+      ["├─ sync", "numb\ner", "Yes", "", "Sync value", "mock: 2"],
+      ["├─\nsyncPolarity", "numb\ner", "Yes", "", "Sync polarity:\n0: Negative.\n1: Positive.", "Enumerati\non: 0, 1"]
+    ]}
+  ]
+}

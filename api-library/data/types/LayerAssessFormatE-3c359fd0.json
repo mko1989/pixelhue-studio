@@ -1,0 +1,9 @@
+{
+  "id": "LayerAssessFormatE-3c359fd0",
+  "name": "LayerAssessFormatE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 312,
+  "declaration": "enum LayerAssessFormatE {\n  create,\n  source,\n  copy,\n  window,\n  cutfill,\n  border,\n  shadow,\n  opacity,\n  cutout,\n  crop,\n  flip,\n}"
+}

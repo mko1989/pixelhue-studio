@@ -1,0 +1,9 @@
+{
+  "id": "Interface3DFormatE-17c8ac4a",
+  "name": "Interface3DFormatE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 696,
+  "declaration": "enum Interface3DFormatE {\n  none, //无\n  upAndDown, //上下\n  forntAndBack, //前后\n  leftAndRight, //左右\n  FromInput, //跟随输入源\n}"
+}

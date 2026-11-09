@@ -1,0 +1,9 @@
+{
+  "id": "ResponseT-8ccfd80c",
+  "name": "ResponseT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/project/project.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 6,
+  "declaration": "interface ResponseT {\n  code: number;\n  message: string;\n}"
+}

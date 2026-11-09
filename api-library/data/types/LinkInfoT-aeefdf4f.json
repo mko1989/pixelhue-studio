@@ -1,0 +1,9 @@
+{
+  "id": "LinkInfoT-aeefdf4f",
+  "name": "LinkInfoT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 803,
+  "declaration": "type LinkInfoT = {\n  /** 是否是否link源 */\n  isLink: LinkSourceE;\n  /** 本地源是否被共享  */\n  shared: EnableE; // 0 否，1是\n  /** 共享源源端信息，仅isLink为link源有效 */\n  sourceInfo: SharedSourceInfoT;\n};"
+}

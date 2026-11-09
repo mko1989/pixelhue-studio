@@ -1,0 +1,7 @@
+{
+  "id": "reference-IUpdateLedChildScreen-7a59f4d3",
+  "name": "IUpdateLedChildScreen",
+  "availability": "referenced-only",
+  "references": [{"name":"IUpdateLedChildScreen","source":"src/api/screen/controller.ts","line":41}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ELayerBorder-5c98e014",
+  "name": "ELayerBorder",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1126,
+  "declaration": "enum ELayerBorder {\n  borerWidth = 'hWidth', // 宽度\n  borerHeight = 'vWidth', // 高度\n}"
+}

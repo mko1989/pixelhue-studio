@@ -1,0 +1,9 @@
+{
+  "id": "AreaType-17069988",
+  "name": "AreaType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 35,
+  "declaration": "enum AreaType {\n  printing, // 丝印\n  screen = 1, // 1：屏幕区域\n  device, // 2：设备区域\n  input, // 3：输入区域\n  layer, // 4：图层区域\n  preset, // 5：场景区域\n  custom, // 6：自定义区域\n}"
+}

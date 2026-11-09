@@ -1,0 +1,7 @@
+{
+  "id": "reference-SetSuperScreenTimingReqT-534768e6",
+  "name": "SetSuperScreenTimingReqT",
+  "availability": "referenced-only",
+  "references": [{"name":"SetSuperScreenTimingReqT","source":"src/api/screen/screen.ts","line":506}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

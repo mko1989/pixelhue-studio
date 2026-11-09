@@ -1,0 +1,7 @@
+{
+  "id": "reference-DeleteLayoutTemplateT-6bdf6c43",
+  "name": "DeleteLayoutTemplateT",
+  "availability": "referenced-only",
+  "references": [{"name":"DeleteLayoutTemplateT","source":"src/api/layer/layer.ts","line":1076},{"name":"DeleteLayoutTemplateT","source":"src/api/layer/layer.ts","line":1079}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

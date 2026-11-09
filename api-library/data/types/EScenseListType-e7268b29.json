@@ -1,0 +1,9 @@
+{
+  "id": "EScenseListType-e7268b29",
+  "name": "EScenseListType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/preset/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 8,
+  "declaration": "enum EScenseListType {\n  /** 0:列表 */\n  list,\n  /** 1:卡片 */\n  card,\n}"
+}

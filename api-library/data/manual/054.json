@@ -1,0 +1,22 @@
+{
+  "page": 54,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nbrightness t\nMax: 100\ninteg Clip (brightness threshold),\n├─ threshold Yes\ner range: 0~100 Min: 0\nMax: 100\ninteg Brightness gain, range:\n├─ gain Yes\ner 0~100 Min: 0\n├─\nobjec Foreground color\nforegroundCol Yes\nt configuration\nor\nForeground color enable:\nEnumerati\ninteg\n├─ enable Yes 0: Disable.\non: 0, 1\ner\n1: Enable.\ninteg\n├─ R Yes Red component mock: 255\ner\ninteg\n├─ G Yes Green component mock: 0\ner\ninteg\n├─ B Yes Blue component mock: 0\ner\nobjec\n├─ hue Yes Chroma key\nt\nobjec\n├─ color Yes Key color\nt\ninteg\n├─ R Yes Red component mock: 255\ner\ninteg\n├─ G Yes Green component mock: 0\ner\ninteg\n├─ B Yes Blue component mock: 0\ner",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["brightness", "t", "", "", "", ""],
+      ["├─ threshold", "integ\ner", "Yes", "", "Clip (brightness threshold),\nrange: 0~100", "Max: 100\nMin: 0"],
+      ["├─ gain", "integ\ner", "Yes", "", "Brightness gain, range:\n0~100", "Max: 100\nMin: 0"],
+      ["├─\nforegroundCol\nor", "objec\nt", "Yes", "", "Foreground color\nconfiguration", ""],
+      ["├─ enable", "integ\ner", "Yes", "", "Foreground color enable:\n0: Disable.\n1: Enable.", "Enumerati\non: 0, 1"],
+      ["├─ R", "integ\ner", "Yes", "", "Red component", "mock: 255"],
+      ["├─ G", "integ\ner", "Yes", "", "Green component", "mock: 0"],
+      ["├─ B", "integ\ner", "Yes", "", "Blue component", "mock: 0"],
+      ["├─ hue", "objec\nt", "Yes", "", "Chroma key", ""],
+      ["├─ color", "objec\nt", "Yes", "", "Key color", ""],
+      ["├─ R", "integ\ner", "Yes", "", "Red component", "mock: 255"],
+      ["├─ G", "integ\ner", "Yes", "", "Green component", "mock: 0"],
+      ["├─ B", "integ\ner", "Yes", "", "Blue component", "mock: 0"]
+    ]}
+  ]
+}

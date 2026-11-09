@@ -1,0 +1,9 @@
+{
+  "id": "SaveEnableE-1296d4ed",
+  "name": "SaveEnableE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 332,
+  "declaration": "enum SaveEnableE {\n  off = 612,\n  on = 613,\n}"
+}

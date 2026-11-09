@@ -1,0 +1,9 @@
+{
+  "id": "getInterfaceMosaicSourceParams-dafd6874",
+  "name": "getInterfaceMosaicSourceParams",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/source/index.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 134,
+  "declaration": "interface getInterfaceMosaicSourceParams {\n  limit?: number;\n  page?: number;\n  sourceType?: InterfaceE;\n  interfaceId?: number;\n}"
+}

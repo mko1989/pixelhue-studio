@@ -1,0 +1,18 @@
+{
+  "page": 88,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nnumb Total width (H\n├─ totalTime Yes\ner total)\n├─ vertical object Yes Vertical timing\nVisible height (V\nactive, namely\nnumb the commonly\n├─ addTime Yes\ner referred\nresolution\nheight)\nnumb\n├─ frontPorch Yes Front porch\ner\nnumb\n├─ sync Yes Sync value\ner\nSync polarity:\nnumb\n├─ syncPolarity Yes 0: Positive.\ner\n1: Negative.\nnumb Total width (H\n├─ totalTime Yes\ner total)\nResolution\nstandard:\n0: No standard.\n1: DMT\n2: CVT\n├─ standardType string Yes\n3: CVT-RBV1\n4: CVT-RBV2\n5: CVT-RBV3\n6: CEA\n7: SAMPTE\n├─ thumbTiming object Yes Preset",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ totalTime", "numb\ner", "Yes", "", "Total width (H\ntotal)", ""],
+      ["├─ vertical", "object", "Yes", "", "Vertical timing", ""],
+      ["├─ addTime", "numb\ner", "Yes", "", "Visible height (V\nactive, namely\nthe commonly\nreferred\nresolution\nheight)", ""],
+      ["├─ frontPorch", "numb\ner", "Yes", "", "Front porch", ""],
+      ["├─ sync", "numb\ner", "Yes", "", "Sync value", ""],
+      ["├─ syncPolarity", "numb\ner", "Yes", "", "Sync polarity:\n0: Positive.\n1: Negative.", ""],
+      ["├─ totalTime", "numb\ner", "Yes", "", "Total width (H\ntotal)", ""],
+      ["├─ standardType", "string", "Yes", "", "Resolution\nstandard:\n0: No standard.\n1: DMT\n2: CVT\n3: CVT-RBV1\n4: CVT-RBV2\n5: CVT-RBV3\n6: CEA\n7: SAMPTE", ""],
+      ["├─ thumbTiming", "object", "Yes", "", "Preset", ""]
+    ]}
+  ]
+}

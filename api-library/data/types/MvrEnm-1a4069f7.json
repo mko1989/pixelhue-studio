@@ -1,0 +1,9 @@
+{
+  "id": "MvrEnm-1a4069f7",
+  "name": "MvrEnm",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 65,
+  "declaration": "enum MvrEnm {\n  mvrClose = 0, // MVR模式关闭\n  mvrOpen = 1, // MVR模式开启\n}"
+}

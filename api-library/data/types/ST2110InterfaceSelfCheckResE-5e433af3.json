@@ -1,0 +1,9 @@
+{
+  "id": "ST2110InterfaceSelfCheckResE-5e433af3",
+  "name": "ST2110InterfaceSelfCheckResE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 308,
+  "declaration": "enum ST2110InterfaceSelfCheckResE {\n  selfCheckNormal,\n  selfCheckAbnormal,\n}"
+}

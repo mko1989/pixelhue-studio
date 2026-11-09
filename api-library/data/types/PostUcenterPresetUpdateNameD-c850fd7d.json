@@ -1,0 +1,9 @@
+{
+  "id": "PostUcenterPresetUpdateNameD-c850fd7d",
+  "name": "PostUcenterPresetUpdateNameD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/preset/index.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 294,
+  "declaration": "interface PostUcenterPresetUpdateNameD {\n  sn: string;\n  data: { guid: string; name: string }[];\n}"
+}

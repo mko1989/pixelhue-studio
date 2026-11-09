@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ledscreen/display-mode",
+  "group": "ledscreen",
+  "summary": "response",
+  "tags": ["ledscreen","display-mode"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ledscreen/display-mode","dynamic":false,"source":"src/api/screen/screen.ts","line":1065,"client":"API","symbol":"response","comment":"0x07-设置LED屏幕黑屏、冻结","parameters":["data: TLEDScreenDisplayMode[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ledscreen/display-mode',\n    data,\n  }","context":"async (\n  data: TLEDScreenDisplayMode[],\n): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'PUT',\n    url: 'ledscreen/display-mode',\n    data,\n  });","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ledscreen-display-mode",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

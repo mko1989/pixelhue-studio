@@ -1,0 +1,7 @@
+{
+  "id": "reference-VirtualBoxDataT-51302515",
+  "name": "VirtualBoxDataT",
+  "availability": "referenced-only",
+  "references": [{"name":"VirtualBoxDataT","source":"src/api/device/cabinet-pack.ts","line":131},{"name":"VirtualBoxDataT","source":"src/api/device/cabinet-pack.ts","line":158},{"name":"VirtualBoxDataT","source":"src/api/device/cabinet-pack.ts","line":188}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

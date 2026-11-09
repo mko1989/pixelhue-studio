@@ -1,0 +1,7 @@
+{
+  "id": "reference-INeutralConfigResponse-dfc99cb1",
+  "name": "INeutralConfigResponse",
+  "availability": "referenced-only",
+  "references": [{"name":"INeutralConfigResponse","source":"src/api/neutral-config/index.ts","line":17},{"name":"INeutralConfigResponse","source":"src/api/neutral-config/index.ts","line":18}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

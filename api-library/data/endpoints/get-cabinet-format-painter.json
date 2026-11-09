@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/cabinet/format-painter",
+  "group": "cabinet",
+  "summary": "res",
+  "tags": ["cabinet","format-painter"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"cabinet/format-painter","dynamic":false,"source":"src/api/setting/setting.ts","line":533,"client":"API","symbol":"res","comment":"*\n * 获取接收卡格式刷文件","parameters":["cabinetId: string","token: string","protocol: string","ip: string","port: number"],"bodyExpression":null,"queryExpression":"{ cabinetId }","headerExpression":"{\n      Authorization: token,\n      ip,\n      port,\n      protocol,\n      timeout: 300 * 1000,\n    }","configExpression":"{\n    method: 'GET',\n    url: 'cabinet/format-painter',\n    params: { cabinetId },\n    responseType: 'blob',\n    headers: {\n      Authorization: token,\n      ip,\n      port,\n      protocol,\n      timeout: 300 * 1000,\n    },\n    timeout: 300 * 1000,\n  }","context":"async (\n  cabinetId: string,\n  token: string,\n  protocol: string,\n  ip: string,\n  port: number,\n): Promise<Blob> => {\n  const res = await API.request<Blob>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-cabinet-format-painter",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

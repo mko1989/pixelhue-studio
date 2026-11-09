@@ -1,0 +1,10 @@
+{
+  "basePath": "/unico/v1",
+  "deviceProtocol": "http",
+  "defaultDevicePort": 8088,
+  "flow": ["Discover the advertised HTTP port or provide apiPort explicitly.","GET node/open-detail returns sn and startTime.","Sign HS256 JWT payload {SN: sn}, secret String(startTime), without iat/exp.","Send the raw JWT in Authorization, without a Bearer prefix."],
+  "alternative": "POST system/auth/login is documented by the manual; it is a separate username/password flow.",
+  "response": {"successCodes":[0,200],"envelope":["code","message","data"],"textException":"node/config-file returns XML"},
+  "modelIds": {"P10":28945,"P20":28944,"Q8":29974,"P80":30006},
+  "source": ["Companion src/services/ApiClient.ts","Companion src/utils/utils.ts","Studio lib/pixelhue.js","Manual pages 4–5"]
+}

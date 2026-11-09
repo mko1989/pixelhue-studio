@@ -1,0 +1,7 @@
+{
+  "id": "reference-OSDTemplateDeleteParamsT-63277a88",
+  "name": "OSDTemplateDeleteParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"OSDTemplateDeleteParamsT","source":"src/api/osd/template/index.ts","line":49}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

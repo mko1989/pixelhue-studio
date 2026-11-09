@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/3dlut/upload",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","3dlut","upload"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/ucenter/screen/3dlut/upload","dynamic":false,"source":"src/api/screen/screen.ts","line":1406,"client":"API","symbol":"response","comment":"处理 - 适配超级屏 - 0x09-导入3DLut文件","parameters":["data: { screenIDs: [{ screenGuid: string }] }","threeDLUTFileData: File"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{ contentType: 'multipart/form-data' }","configExpression":"{\n    method: 'POST',\n    headers: { contentType: 'multipart/form-data' },\n    url: '/ucenter/screen/3dlut/upload',\n    data: formData,\n    timeout: 1000 * 60, // 超时设置60秒，不用公共的两秒\n  }","context":"async (\n  data: { screenIDs: [{ screenGuid: string }] },\n  threeDLUTFileData: File,\n): Promise<IResponseData<ResponseT>> => {\n  const formData = new FormData();\n  formData.append('screenIDs', JSON.stringify(data));\n  formData.append('threeDLUTFileData', threeDLUTFileData);\n  const response = await API.request<IResponseData<ResponseT>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-3dlut-upload",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

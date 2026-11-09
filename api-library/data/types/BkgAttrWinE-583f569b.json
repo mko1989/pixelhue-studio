@@ -1,0 +1,9 @@
+{
+  "id": "BkgAttrWinE-583f569b",
+  "name": "BkgAttrWinE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 146,
+  "declaration": "enum BkgAttrWinE {\n  win = 'win',\n}"
+}

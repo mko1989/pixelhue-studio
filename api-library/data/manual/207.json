@@ -1,0 +1,24 @@
+{
+  "page": 207,
+  "text": "Default\nName Type Required Remarks More\nValue\nthe current page\n├─ page integer Yes Current page number\n├─ totalCount integer Yes Total number of items\n├─ totalPage integer Yes Total pages\n6.2.2 Create Preset\n Basic Information\nPath: /v1/preset/create\nMethod: POST\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nserial integer Yes Preset ID number\nScene name:\nWithin 64 bytes (each\nname string Yes\nChinese character\noccupies 2 bytes)\nPreset loading\nmethod:\nloadType integer Yes\n1: Complete.\n2: Relative.\nPreset type:\ntype integer Yes\n1. Global preset.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "the current page", ""],
+      ["├─ page", "integer", "Yes", "", "Current page number", ""],
+      ["├─ totalCount", "integer", "Yes", "", "Total number of items", ""],
+      ["├─ totalPage", "integer", "Yes", "", "Total pages", ""]
+    ]},
+    {"contextBefore": "6.2.2 Create Preset\n Basic Information\nPath: /v1/preset/create\nMethod: POST\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["serial", "integer", "Yes", "", "Preset ID number", ""],
+      ["name", "string", "Yes", "", "Scene name:\nWithin 64 bytes (each\nChinese character\noccupies 2 bytes)", ""],
+      ["loadType", "integer", "Yes", "", "Preset loading\nmethod:\n1: Complete.\n2: Relative.", ""],
+      ["type", "integer", "Yes", "", "Preset type:\n1. Global preset.", ""]
+    ]}
+  ]
+}

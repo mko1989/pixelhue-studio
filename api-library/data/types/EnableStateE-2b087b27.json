@@ -1,0 +1,9 @@
+{
+  "id": "EnableStateE-2b087b27",
+  "name": "EnableStateE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 338,
+  "declaration": "enum EnableStateE {\n  off, //关闭状态\n  on, // 开启状态\n  mixed, // Mixed状态\n}"
+}

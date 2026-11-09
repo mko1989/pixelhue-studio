@@ -1,0 +1,9 @@
+{
+  "id": "MutualTypeE-ec85dcc9",
+  "name": "MutualTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 358,
+  "declaration": "enum MutualTypeE {\n  mutual = 0, // 互斥错误\n  topoY = 1, // topo y坐标不对\n  other = 2, // 其他错误\n}"
+}

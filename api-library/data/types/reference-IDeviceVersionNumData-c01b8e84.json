@@ -1,0 +1,7 @@
+{
+  "id": "reference-IDeviceVersionNumData-c01b8e84",
+  "name": "IDeviceVersionNumData",
+  "availability": "referenced-only",
+  "references": [{"name":"IDeviceVersionNumData","source":"src/api/device/deviceInfo.ts","line":647}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,18 @@
+{
+  "page": 36,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nMain mode, disable mode.\nOutput card connectors:\nMain mode, copy mode,\ndisable mode.\nWhen workMode is not in\ncopy mode, the copyInfo\nfield is completely invalid.\nobjec\n├─ copyInfo Yes When workMode is in copy\nt\nmode, copyInfo indicates\nwhich connector is being\ncopied.\nEnumerati\ninteg Target type:\n├─ type Yes\non: 0\ner 0: Input or output connector\nTarget ID:\ninteg\n├─ id Yes When type=0, it indicates mock: id1\ner\ninterfaceId.\nConnector capacity:\nEnumerati\n0: SL.\nnumb\n├─ capacity Yes 1: DL. on: 0, 1, 2,\ner\n255\n2: 4K.\n255: Invalid value.\nInformation about the\n├─ objec\nYes screen loaded by the\nscreenInfo t\nconnector\n├─ name string Yes Screen name\nobjec Connector grouping\n├─ group Yes\nt information\ninteg\n├─ id Yes Group ID\ner",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "Main mode, disable mode.\nOutput card connectors:\nMain mode, copy mode,\ndisable mode.", ""],
+      ["├─ copyInfo", "objec\nt", "Yes", "", "When workMode is not in\ncopy mode, the copyInfo\nfield is completely invalid.\nWhen workMode is in copy\nmode, copyInfo indicates\nwhich connector is being\ncopied.", ""],
+      ["├─ type", "integ\ner", "Yes", "", "Target type:\n0: Input or output connector", "Enumerati\non: 0"],
+      ["├─ id", "integ\ner", "Yes", "", "Target ID:\nWhen type=0, it indicates\ninterfaceId.", "mock: id1"],
+      ["├─ capacity", "numb\ner", "Yes", "", "Connector capacity:\n0: SL.\n1: DL.\n2: 4K.\n255: Invalid value.", "Enumerati\non: 0, 1, 2,\n255"],
+      ["├─\nscreenInfo", "objec\nt", "Yes", "", "Information about the\nscreen loaded by the\nconnector", ""],
+      ["├─ name", "string", "Yes", "", "Screen name", ""],
+      ["├─ group", "objec\nt", "Yes", "", "Connector grouping\ninformation", ""],
+      ["├─ id", "integ\ner", "Yes", "", "Group ID", ""]
+    ]}
+  ]
+}

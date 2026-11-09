@@ -1,0 +1,18 @@
+{
+  "page": 38,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n5: CVT-RBV3\n6: CEA\n7: SAMPTE\n├─\nobjec\nactualThumbTi Yes Actual thumbnail timing\nt\nming\nInterlaced scanning: 0:\nnumb\n├─ interlaced Yes Interlaced.\ner\n1: Progressive.\nnumb Frame rate (floating-point\n├─ frame Yes mock: 2\ner format)\nmock:\nnumb\n├─ width Yes Width\n1920\ner\nnumb\n├─ height Yes Height mock: 960\ner\nResolution standard:\n0: No standard.\n1: DMT\n2: CVT\n├─ numb\nYes 3: CVT-RBV1\nstandardType er\n4: CVT-RBV2\n5: CVT-RBV3\n6: CEA\n7: SAMPTE\n├─ objec Connector preset timing\nYes\npresetTiming t details\nInterlaced scanning: 0:\nEnumerati\nnumb\n├─ interlaced Yes Interlaced.\non: 0, 1\ner\n1: Progressive.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "5: CVT-RBV3\n6: CEA\n7: SAMPTE", ""],
+      ["├─\nactualThumbTi\nming", "objec\nt", "Yes", "", "Actual thumbnail timing", ""],
+      ["├─ interlaced", "numb\ner", "Yes", "", "Interlaced scanning: 0:\nInterlaced.\n1: Progressive.", ""],
+      ["├─ frame", "numb\ner", "Yes", "", "Frame rate (floating-point\nformat)", "mock: 2"],
+      ["├─ width", "numb\ner", "Yes", "", "Width", "mock:\n1920"],
+      ["├─ height", "numb\ner", "Yes", "", "Height", "mock: 960"],
+      ["├─\nstandardType", "numb\ner", "Yes", "", "Resolution standard:\n0: No standard.\n1: DMT\n2: CVT\n3: CVT-RBV1\n4: CVT-RBV2\n5: CVT-RBV3\n6: CEA\n7: SAMPTE", ""],
+      ["├─\npresetTiming", "objec\nt", "Yes", "", "Connector preset timing\ndetails", ""],
+      ["├─ interlaced", "numb\ner", "Yes", "", "Interlaced scanning: 0:\nInterlaced.\n1: Progressive.", "Enumerati\non: 0, 1"]
+    ]}
+  ]
+}

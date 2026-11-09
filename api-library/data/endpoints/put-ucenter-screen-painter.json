@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/screen/painter",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","painter"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/screen/painter","dynamic":false,"source":"src/api/ctl-fix/index.ts","line":120,"client":"API","symbol":"response","comment":"* 绘图","parameters":["data: LedDevicesScreenPainterParamsT[]","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\r\n      seq: seq || 0,\r\n    }","configExpression":"{\r\n    method: 'put',\r\n    url: 'ucenter/screen/painter',\r\n    data,\r\n    headers: {\r\n      seq: seq || 0,\r\n    },\r\n  }","context":"async (\r\n  data: LedDevicesScreenPainterParamsT[],\r\n  seq?: number,\r\n): Promise<IResponseData<unknown>> => {\r\n  const response = await API.request<IResponseData<unknown>>({\r\n    method: 'put',\r\n    url: 'ucenter/screen/painter',\r\n    data,\r","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-screen-painter",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

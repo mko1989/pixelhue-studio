@@ -1,0 +1,9 @@
+{
+  "id": "layoutT-ab1dcd6e",
+  "name": "layoutT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/screen/screen.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 525,
+  "declaration": "interface layoutT {\n  x: number;\n  y: number;\n}"
+}

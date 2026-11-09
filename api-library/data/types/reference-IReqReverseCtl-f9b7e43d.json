@@ -1,0 +1,7 @@
+{
+  "id": "reference-IReqReverseCtl-f9b7e43d",
+  "name": "IReqReverseCtl",
+  "availability": "referenced-only",
+  "references": [{"name":"IReqReverseCtl","source":"src/api/device/device-source.ts","line":230}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

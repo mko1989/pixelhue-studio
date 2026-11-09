@@ -1,0 +1,9 @@
+{
+  "id": "MergedSourceStyleE-6fcc24fc",
+  "name": "MergedSourceStyleE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1246,
+  "declaration": "enum MergedSourceStyleE {\n  TwoInOne = 1, // 二合一\n  Merged = 2, // 拼接器\n  live = 3, // 直播\n}"
+}

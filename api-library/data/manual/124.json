@@ -1,0 +1,21 @@
+{
+  "page": 124,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n├─ selectGamut object Yes\nintege\n├─ presetGamut Yes\nr\nintege\n├─ actualGamut Yes\nr\nintege\n├─ colorTemperature Yes\nr\n├─ eotf object Yes\n├─ intege\nYes\nshadowCompensation r\n├─\nintege\nshadowCompensationCo Yes\nr\nefficient\n├─\nintege\nambientLightCompensati Yes\nr\non\nintege\n├─ clipLevel Yes\nr\nintege Peak screen\n├─ peakLuminance Yes\nr brightness\nOverride screen\npeak brightness\n├─ intege\nYes switch:\npeakLumOverrideEnable r\n0: Disable.\n1: Enable.\nThe screen\nintege\n├─ groupOrder Yes order within the\nr\ngroup",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ selectGamut", "object", "Yes", "", "", ""],
+      ["├─ presetGamut", "intege\nr", "Yes", "", "", ""],
+      ["├─ actualGamut", "intege\nr", "Yes", "", "", ""],
+      ["├─ colorTemperature", "intege\nr", "Yes", "", "", ""],
+      ["├─ eotf", "object", "Yes", "", "", ""],
+      ["├─\nshadowCompensation", "intege\nr", "Yes", "", "", ""],
+      ["├─\nshadowCompensationCo\nefficient", "intege\nr", "Yes", "", "", ""],
+      ["├─\nambientLightCompensati\non", "intege\nr", "Yes", "", "", ""],
+      ["├─ clipLevel", "intege\nr", "Yes", "", "", ""],
+      ["├─ peakLuminance", "intege\nr", "Yes", "", "Peak screen\nbrightness", ""],
+      ["├─\npeakLumOverrideEnable", "intege\nr", "Yes", "", "Override screen\npeak brightness\nswitch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ groupOrder", "intege\nr", "Yes", "", "The screen\norder within the\ngroup", ""]
+    ]}
+  ]
+}

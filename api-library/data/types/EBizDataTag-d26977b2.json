@@ -1,0 +1,9 @@
+{
+  "id": "EBizDataTag-d26977b2",
+  "name": "EBizDataTag",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 438,
+  "declaration": "enum EBizDataTag {\n  deviceTag = 'biz-device-tag', // 屏幕\n  screenTag = 'biz-screen-tag', // 设备 - 废弃不用\n  layerTag = 'biz-layer-tag', // 图层\n  inputTag = 'biz-input-tag', // 输入源\n  presetTag = 'biz-preset-tag', // 场景\n  localeTag = 'biz-locale-tag', // 语言\n  engineData = 'biz-engine-tag', // 工程信息\n  editorModel = 'biz-editor-model-tag', // 编辑model\n  screenModel = 'biz-screen-model-tag', // 屏幕model\n  sourcesModel = 'biz-sources-model-tag', // 源列表model\n  deviceManager = 'biz-device-manager-tag', // 设备model\n}"
+}

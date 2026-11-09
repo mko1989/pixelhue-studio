@@ -1,0 +1,20 @@
+{
+  "page": 72,
+  "text": "4.1.2 Freeze\n Basic Information\nPath: /v1/screen/selected/freeze\nMethod: PUT\nDescription:\nGlobal screen freeze\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nScreen freeze switch: [0:\nfreeze number Yes\nUnfreeze; 1: Freeze]\n Return Data\nDefault\nName Type Required Remarks More\nValue\ncode integer Yes Response code\nResponse\nmessage string Yes\nmessage\nItem type:\nobject\ndata Yes\nobject\n[]\n4.1.3 Take\n Basic Information\nPath: /v1/screen/take\nMethod: PUT\nDescription:",
+  "tables": [
+    {"contextBefore": "4.1.2 Freeze\n Basic Information\nPath: /v1/screen/selected/freeze\nMethod: PUT\nDescription:\nGlobal screen freeze\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["freeze", "number", "Yes", "", "Screen freeze switch: [0:\nUnfreeze; 1: Freeze]", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response\nmessage", ""],
+      ["data", "object\n[]", "Yes", "", "", "Item type:\nobject"]
+    ]}
+  ]
+}

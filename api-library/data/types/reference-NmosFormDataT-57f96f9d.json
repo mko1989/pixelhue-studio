@@ -1,0 +1,7 @@
+{
+  "id": "reference-NmosFormDataT-57f96f9d",
+  "name": "NmosFormDataT",
+  "availability": "referenced-only",
+  "references": [{"name":"NmosFormDataT","source":"src/api/device/device-subcard.ts","line":67}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

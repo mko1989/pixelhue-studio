@@ -1,0 +1,8 @@
+{
+  "id": "CropSourcesListDetailData-970a965f",
+  "name": "CropSourcesListDetailData",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/CropSource.ts",
+  "line": 1,
+  "declaration": "interface CropSourcesListDetailData {\n\tlist: CropSource[]\n\tcount: number\n\tpage: number\n\ttotalCount: number\n\ttotalPage: number\n}"
+}

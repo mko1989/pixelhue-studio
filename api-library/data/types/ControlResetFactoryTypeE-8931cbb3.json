@@ -1,0 +1,9 @@
+{
+  "id": "ControlResetFactoryTypeE-8931cbb3",
+  "name": "ControlResetFactoryTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/device-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 148,
+  "declaration": "enum ControlResetFactoryTypeE {\n  ip = 'keep_ip', //保留IP\n  all = 'full_reset', //全部重置\n}"
+}

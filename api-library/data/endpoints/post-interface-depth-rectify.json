@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/interface/depth-rectify",
+  "group": "interface",
+  "summary": "response",
+  "tags": ["interface","depth-rectify"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"interface/depth-rectify","dynamic":false,"source":"src/api/device/deviceInterface.ts","line":423,"client":"API","symbol":"response","comment":"位深矫正","parameters":["data: interfaceDepthRectifyT[]","params?: {\n    ip?: string;\n    port?: number;\n    protocol?: string;\n  }"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ...params,\n    }","configExpression":"{\n    method: 'POST',\n    url: 'interface/depth-rectify',\n    headers: {\n      ...params,\n    },\n    data,\n  }","context":"async (\n  data: interfaceDepthRectifyT[],\n  params?: {\n    ip?: string;\n    port?: number;\n    protocol?: string;\n  },\n): Promise<IDepthRectifyResponseData<ResponseT>> => {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-interface-depth-rectify",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

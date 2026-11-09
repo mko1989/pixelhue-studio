@@ -1,0 +1,7 @@
+{
+  "id": "reference-LedHdrReqT-075ce0d5",
+  "name": "LedHdrReqT",
+  "availability": "referenced-only",
+  "references": [{"name":"LedHdrReqT","source":"src/api/device/deviceInterface.ts","line":453}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

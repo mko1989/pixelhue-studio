@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPollingSetting-3fb80840",
+  "name": "IPollingSetting",
+  "availability": "referenced-only",
+  "references": [{"name":"IPollingSetting","source":"src/api/setting/setting.ts","line":153},{"name":"IPollingSetting","source":"src/api/setting/setting.ts","line":151},{"name":"IPollingSetting","source":"src/api/setting/setting.ts","line":154}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

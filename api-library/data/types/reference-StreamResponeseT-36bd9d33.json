@@ -1,0 +1,7 @@
+{
+  "id": "reference-StreamResponeseT-36bd9d33",
+  "name": "StreamResponeseT",
+  "availability": "referenced-only",
+  "references": [{"name":"StreamResponeseT","source":"src/api/device/device-video-flow.ts","line":20},{"name":"StreamResponeseT","source":"src/api/device/device-video-flow.ts","line":21},{"name":"StreamResponeseT","source":"src/api/device/device-video-flow.ts","line":41},{"name":"StreamResponeseT","source":"src/api/device/device-video-flow.ts","line":42}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

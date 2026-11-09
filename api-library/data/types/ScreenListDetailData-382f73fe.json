@@ -1,0 +1,8 @@
+{
+  "id": "ScreenListDetailData-382f73fe",
+  "name": "ScreenListDetailData",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Screen.ts",
+  "line": 4,
+  "declaration": "interface ScreenListDetailData {\n\ttotalCount: number\n\tlist: Screen[]\n}"
+}

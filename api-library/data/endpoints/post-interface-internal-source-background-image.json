@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/interface/internal-source/background-image",
+  "group": "interface",
+  "summary": "response",
+  "tags": ["interface","internal-source","background-image"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"interface/internal-source/background-image","dynamic":false,"source":"src/api/device/device-source.ts","line":113,"client":"API","symbol":"response","comment":"*\n * 上传内置源图片\n * @returns","parameters":["file: Blob","baseProperties: IUploadData","cb: (total: any, loaded: any) => void"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{\n      'Content-Type': 'multipart/form-data',\n    }","configExpression":"{\n    method: 'POST',\n    url: 'interface/internal-source/background-image',\n    headers: {\n      'Content-Type': 'multipart/form-data',\n    },\n    timeout: 1000 * 300, // 超时设置300秒，不用公共的两秒\n    data: formData,\n    onUploadProgress: ({ total, loaded }) => {\n      cb(total, loaded);\n    },\n  }","context":"async (\n  file: Blob,\n  baseProperties: IUploadData,\n  cb: (total: any, loaded: any) => void,\n) => {\n  const { width, height } = baseProperties;\n  const formData = new FormData();\n  formData.append('width', width.toString());","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-interface-internal-source-background-image",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

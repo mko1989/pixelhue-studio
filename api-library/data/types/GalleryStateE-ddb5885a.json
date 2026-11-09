@@ -1,0 +1,9 @@
+{
+  "id": "GalleryStateE-ddb5885a",
+  "name": "GalleryStateE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1281,
+  "declaration": "enum GalleryStateE {\n  loading = 0, // 图库初始化，加载图片中\n  ready = 1, // 图库初始化完成\n}"
+}

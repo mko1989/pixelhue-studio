@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICustomConfigDetail-e6e1ae5d",
+  "name": "ICustomConfigDetail",
+  "availability": "referenced-only",
+  "references": [{"name":"ICustomConfigDetail","source":"src/api/custom/index.ts","line":163},{"name":"ICustomConfigDetail","source":"src/api/custom/index.ts","line":164},{"name":"ICustomConfigDetail","source":"src/api/custom/index.ts","line":245},{"name":"ICustomConfigDetail","source":"src/api/custom/index.ts","line":322},{"name":"ICustomConfigDetail","source":"src/api/custom/index.ts","line":323}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

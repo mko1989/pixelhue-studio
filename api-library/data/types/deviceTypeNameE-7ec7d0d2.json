@@ -1,0 +1,9 @@
+{
+  "id": "deviceTypeNameE-7ec7d0d2",
+  "name": "deviceTypeNameE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 183,
+  "declaration": "enum deviceTypeNameE {\n  MX40Pro = 'MX40 Pro',\n  MX40ROE = 'MX40 ROE',\n  VX400Pro = 'VX400 Pro',\n  VX600Pro = 'VX600 Pro',\n  VX1000Pro = 'VX1000 Pro',\n  VX2000Pro = 'VX2000 Pro',\n  HC20Pro = 'HC20 Pro',\n  N10 = 'N10',\n  N20 = 'N20',\n  Q8 = 'Q8',\n  D32 = 'D32',\n  P20 = 'P20',\n  P10 = 'P10',\n  H9 = 'H9',\n  H9Pro = 'H9 Pro',\n  H5 = 'H5',\n  H2 = 'H2',\n  H15 = 'H15',\n  H15Pro = 'H15 Pro',\n  K8 = 'K8',\n  K20 = 'K20',\n  K40 = 'K40',\n  V12 = 'V12',\n  V8 = 'V8',\n  V40 = 'V40',\n  V32 = 'V32',\n  V16 = 'V16',\n  V6 = 'V6',\n  V10 = 'V10',\n  V24 = 'V24',\n  VC6Pro = 'VC6 Pro',\n  VC10Pro = 'VC10 Pro',\n  VC16Pro = 'VC16 Pro',\n  VC24Pro = 'VC24 Pro',\n  H20 = 'H20',\n  P80 = 'P80',\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "rightPanelTypeE-a661fe6b",
+  "name": "rightPanelTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 309,
+  "declaration": "enum rightPanelTypeE {\n  /*\n   * 设备信息\n   */\n  deviceInfo = 'deviceInfo',\n  /*\n   * 输入板卡属性\n   */\n  inputSubcardAttribute = 'InputSubcardAttribute',\n  /**\n   * @description 资源卡属性\n   * */\n  resourceAttribute = 'ResourceAttribute',\n  /*\n   * 输出板卡属性\n   */\n  outputSubcardAttribute = 'OutputSubcardAttribute',\n  /*\n   * 输入属性\n   */\n  inputAttribute = 'InputAttribute',\n  /*\n   * 输出属性\n   */\n  outputAttribute = 'OutputAttribute',\n  /*\n   * IPC属性\n   */\n  IPCAttr = 'IPCAttr',\n  MVRSetting = 'MVRSetting',\n  /**\n   * 内置源\n   */\n  isSourceIn = 'DeviceSource',\n  // COM属性\n  comAttribute = 'ComAttribute',\n  // 光口属性\n  fiberAttribute = 'fiberAttribute',\n  // 网口卡属性(包含16网口卡、20网口卡、4光纤卡)\n  netPortAttribute = 'netPortAttribute',\n  // Monitor设置面板\n  MonitorSetting = 'MonitorSetting',\n  // 音频属性展示面板\n  AudioInfo = 'AudioInfo',\n  // dante属性展示面板\n  DanteInfo = 'DanteInfo',\n  /** SDI矩阵设置 */\n  SDIMatrixSetting = 'SDIMatrixSetting',\n}"
+}

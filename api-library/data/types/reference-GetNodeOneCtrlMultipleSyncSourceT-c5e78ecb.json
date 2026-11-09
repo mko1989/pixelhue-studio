@@ -1,0 +1,7 @@
+{
+  "id": "reference-GetNodeOneCtrlMultipleSyncSourceT-c5e78ecb",
+  "name": "GetNodeOneCtrlMultipleSyncSourceT",
+  "availability": "referenced-only",
+  "references": [{"name":"GetNodeOneCtrlMultipleSyncSourceT","source":"src/api/common/index.ts","line":99},{"name":"GetNodeOneCtrlMultipleSyncSourceT","source":"src/api/common/index.ts","line":100},{"name":"GetNodeOneCtrlMultipleSyncSourceT","source":"src/api/common/index.ts","line":129}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPCManageListQueryT-47f985b9",
+  "name": "IPCManageListQueryT",
+  "availability": "referenced-only",
+  "references": [{"name":"IPCManageListQueryT","source":"src/api/ipc/index.ts","line":42}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

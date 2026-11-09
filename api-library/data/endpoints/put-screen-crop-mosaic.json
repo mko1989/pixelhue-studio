@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/screen/crop-mosaic",
+  "group": "screen",
+  "summary": "response",
+  "tags": ["screen","crop-mosaic"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"screen/crop-mosaic","dynamic":false,"source":"src/api/production/index.ts","line":80,"client":"API","symbol":"response","comment":"*\n *\n * @param data 设置屏幕拼接\n * @returns","parameters":["params: {\n  ip: string;\n  port: number;\n  token: string;\n  data: setScreenMosaicT[];\n}"],"bodyExpression":"params.data","queryExpression":null,"headerExpression":"{\n      Authorization: params.token,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'screen/crop-mosaic',\n    data: params.data,\n    headers: {\n      Authorization: params.token,\n    },\n    timeout: 5000,\n  }","context":"async (params: {\n  ip: string;\n  port: number;\n  token: string;\n  data: setScreenMosaicT[];\n}): Promise<IResponseData<ScreenT[]>> => {\n  const response = await API.request<IResponseData<ScreenT[]>>({\n    method: 'PUT',","sourceMap":"main-Cpb41LiE.js.map"},{"method":"PUT","path":"screen/crop-mosaic","dynamic":false,"source":"src/api/screen/screen.ts","line":653,"client":"API","symbol":"response","comment":"设置屏幕拼接","parameters":["data: setScreenMosaicT[]","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq || 0,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'screen/crop-mosaic',\n    headers: {\n      seq: seq || 0,\n    },\n    data,\n    timeout: 16000,\n  }","context":"async (\n  data: setScreenMosaicT[],\n  seq?: number,\n): Promise<IResponseData<ScreenT[]>> => {\n  const response = await API.request<IResponseData<ScreenT[]>>({\n    method: 'PUT',\n    url: 'screen/crop-mosaic',\n    headers: {","sourceMap":"main-Cpb41LiE.js.map"},{"method":"PUT","path":"screen/crop-mosaic","dynamic":false,"source":"src/api/production/burn-in-test.ts","line":110,"client":"API","symbol":"response","comment":"设置屏幕拼接","parameters":["ip: string","port: number","nodeId: number","sn: string","data: setScreenMosaicT[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      Authorization: token,\n      ip,\n      port,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'screen/crop-mosaic',\n    data,\n    headers: {\n      Authorization: token,\n      ip,\n      port,\n    },\n    timeout: 10000,\n  }","context":"async (\n  ip: string,\n  port: number,\n  nodeId: number,\n  sn: string,\n  data: setScreenMosaicT[],\n): Promise<IResponseData<ScreenT[]>> => {\n  const token = getLocalTokenBySn(sn) ?? '';","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-screen-crop-mosaic",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

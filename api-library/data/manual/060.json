@@ -1,0 +1,20 @@
+{
+  "page": 60,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nt\nDynamic range:\n0: SDR.\n├─ numb\nYes 1: HDR.\ndynamicRange er\n2: HLG.\n255: From input.\nPQ mode:\nnumb 0: ST2084 (PQ).\n├─ pqMode Yes\ner 1: ST2086 (Linear\nmapping).\n├─ MaxCLL override switch:\nnumb\nmaxcllOverWrit Yes 0: Disable.\ner\ne 1: Enable.\nMax content light level\nnumb\n├─ maxCll Yes (MaxCLL),\ner\nrange:100~10000\n├─ objec Optical port’s stream\nYes\nstreamInfo t pulling information\n├─ destIp string Yes Destination IP\nnumb\n├─ port Yes Port\ner\n├─ srcIp string Yes Source IP\nColor space in the optical\n├─ numb\nYes port’s stream pulling\ncolorSpace er\ninformation\nBit depth in the optical\n├─ numb\nYes port’s stream pulling\ncolorDepth er\ninformation",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "t", "", "", "", ""],
+      ["├─\ndynamicRange", "numb\ner", "Yes", "", "Dynamic range:\n0: SDR.\n1: HDR.\n2: HLG.\n255: From input.", ""],
+      ["├─ pqMode", "numb\ner", "Yes", "", "PQ mode:\n0: ST2084 (PQ).\n1: ST2086 (Linear\nmapping).", ""],
+      ["├─\nmaxcllOverWrit\ne", "numb\ner", "Yes", "", "MaxCLL override switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ maxCll", "numb\ner", "Yes", "", "Max content light level\n(MaxCLL),\nrange:100~10000", ""],
+      ["├─\nstreamInfo", "objec\nt", "Yes", "", "Optical port’s stream\npulling information", ""],
+      ["├─ destIp", "string", "Yes", "", "Destination IP", ""],
+      ["├─ port", "numb\ner", "Yes", "", "Port", ""],
+      ["├─ srcIp", "string", "Yes", "", "Source IP", ""],
+      ["├─\ncolorSpace", "numb\ner", "Yes", "", "Color space in the optical\nport’s stream pulling\ninformation", ""],
+      ["├─\ncolorDepth", "numb\ner", "Yes", "", "Bit depth in the optical\nport’s stream pulling\ninformation", ""]
+    ]}
+  ]
+}

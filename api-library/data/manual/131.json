@@ -1,0 +1,20 @@
+{
+  "page": 131,
+  "text": "Method: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nAuthorization Yes token\nBody\nDefault\nName Type Required Remarks More\nValue\nItem\nobject\ntype:\nNo\n[]\nobject\nThe screen ID. Provide at\nleast one of screenId or\n├─\nnumber No screenName; if both are\nscreenId\nprovided, screenId takes\nprecedence.\n├─\nstring No The screen guid\nscreenGuid\nSelect the transition\neffect for the Take action:\n├─ 0: Use system default\nnumber Yes\neffectSelect effect.\n1: Use protocol-specified\neffect.\nSet the Take direction:\n├─\nnumber Yes 0: PVW to PGM.\ndirection\n1: PGM to PVW.\n├─ The transition effect used\nobject Yes\nswitchEffect by all screens",
+  "tables": [
+    {"contextBefore": "Method: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""],
+      ["Authorization", "", "Yes", "", "token"]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "object\n[]", "No", "", "", "Item\ntype:\nobject"],
+      ["├─\nscreenId", "number", "No", "", "The screen ID. Provide at\nleast one of screenId or\nscreenName; if both are\nprovided, screenId takes\nprecedence.", ""],
+      ["├─\nscreenGuid", "string", "No", "", "The screen guid", ""],
+      ["├─\neffectSelect", "number", "Yes", "", "Select the transition\neffect for the Take action:\n0: Use system default\neffect.\n1: Use protocol-specified\neffect.", ""],
+      ["├─\ndirection", "number", "Yes", "", "Set the Take direction:\n0: PVW to PGM.\n1: PGM to PVW.", ""],
+      ["├─\nswitchEffect", "object", "Yes", "", "The transition effect used\nby all screens", ""]
+    ]}
+  ]
+}

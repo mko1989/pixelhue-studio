@@ -1,0 +1,7 @@
+{
+  "id": "reference-IWisdomImgSetting-b4f9f158",
+  "name": "IWisdomImgSetting",
+  "availability": "referenced-only",
+  "references": [{"name":"IWisdomImgSetting","source":"src/api/setting/setting.ts","line":98},{"name":"IWisdomImgSetting","source":"src/api/setting/setting.ts","line":99}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

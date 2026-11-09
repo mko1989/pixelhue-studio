@@ -1,0 +1,7 @@
+{
+  "id": "reference-ScreenFusionT-b51c6a8c",
+  "name": "ScreenFusionT",
+  "availability": "referenced-only",
+  "references": [{"name":"ScreenFusionT","source":"src/api/screen/screen.ts","line":1313}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

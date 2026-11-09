@@ -1,0 +1,9 @@
+{
+  "id": "ToolbarEditType-7712dbd4",
+  "name": "ToolbarEditType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 90,
+  "declaration": "enum ToolbarEditType {\n  editLayerZOrder = 'editLayerZOrder', // 对应的按钮在 TOOLBAR_LAYER_ORDER\n  editLayerRedo = 'editLayerRedo', // 对应的按钮在 TOOLBAR_LAYER_REDO\n  editLayerAlign = 'editLayerAlign', // 对应的按钮在 TOOLBAR_LAYER_ALIGN_COPY\n  editLayerZoomClear = 'editLayerZoomClear', // 对应的按钮在 TOOLBAR_LAYER_ZOOM_CLEAR\n  editLayerFreeze = 'editLayerFreeze', // 对应的按钮在TOOLBAR_LAYER_ALIGN_FREEZE\n  all = 'all',\n  editScreen = 'editScreen', // 对应的按钮在TOOLBAR_EDIT_SCREEN\n}"
+}

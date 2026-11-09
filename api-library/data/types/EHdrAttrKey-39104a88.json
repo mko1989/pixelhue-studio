@@ -1,0 +1,9 @@
+{
+  "id": "EHdrAttrKey-39104a88",
+  "name": "EHdrAttrKey",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 116,
+  "declaration": "enum EHdrAttrKey {\n  colorSpace = 'colorSpace', // 色彩空间/采样\n  colorDepth = 'colorDepth', // 位深\n  colorRange = 'colorRange', // 量化范围\n  dynamicRange = 'colorDynamicRange', // 动态范围\n  colorGamut = 'colorGamut', // 色域\n  toneMapping = 'toneMapping',\n  peakLuminance = 'peakLuminance', // 峰值亮度\n  envLuminance = 'envLuminance', // 环境光亮度\n  gamma = 'gamma', // 屏幕gamma\n  HDRAll = 'HDRAll', // 重置HDR全量参数到默认\n  maxcll = 'maxCll', // 源峰值亮度\n}"
+}

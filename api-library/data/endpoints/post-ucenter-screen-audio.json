@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/audio",
+  "group": "ucenter",
+  "summary": "res",
+  "tags": ["ucenter","screen","audio"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/screen/audio","dynamic":false,"source":"src/api/screen/screen.ts","line":1513,"client":"API","symbol":"res","comment":"0x1D-设置屏幕音频","parameters":["data: SetScreenAudioSettingReq[]","seq?: number","options?: ExtraReqParamsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n      seq: seq || 0,\n    }","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/screen/audio',\n    data,\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n      seq: seq || 0,\n    },\n  }","context":"async (\n  data: SetScreenAudioSettingReq[],\n  seq?: number,\n  options?: ExtraReqParamsT,\n): Promise<IResponseData<unknown>> => {\n  const res = await API.request<IResponseData<{ screenGuid: number; audio: ScreenAudioI }[]>>({\n    method: 'POST',\n    url: 'ucenter/screen/audio',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-audio",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

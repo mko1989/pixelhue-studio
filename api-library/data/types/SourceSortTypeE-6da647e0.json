@@ -1,0 +1,9 @@
+{
+  "id": "SourceSortTypeE-6da647e0",
+  "name": "SourceSortTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 113,
+  "declaration": "enum SourceSortTypeE {\n  SLOT = 1, // 槽位号排序\n  SIGNAL = 2, // 优先有信号\n  ONLYSIGNAL = 3, // 只看有信号\n}"
+}

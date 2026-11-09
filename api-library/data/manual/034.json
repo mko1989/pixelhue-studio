@@ -1,0 +1,17 @@
+{
+  "page": 34,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nItem type:\nobject\nMax: 111\n├─ numb\nYes Connector ID\ninterfaceId er Min: 1\n0: Not connected.\n1: Connected, normal.\n2: Connected, overloaded.\n3: Connected, connector\nnumb unstable.\n├─ state Yes\ner 4: Connected, not standard.\n5: Not connected, not\nstandard.\n6: Not connected,\noverloaded.\nPresentation of the\n├─ objec\nYes connector ID in a split\ninterfaceIdObj t\nformat\nnumb\n├─ nodeId Yes Node ID mock: 0\ner\nnumb\n├─ slotId Yes Slot No. mock: 0\ner\n├─ numb Connector number of the\nmock: 1\nYes\nconnectorId er connector\n0 indicates the main\nsource, while other\nnumb\n├─ splitId Yes numbers represent the sub- mock: 1\ner\nsource No. of the\nconnector.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "", "Item type:\nobject"],
+      ["├─\ninterfaceId", "numb\ner", "Yes", "", "Connector ID", "Max: 111\nMin: 1"],
+      ["├─ state", "numb\ner", "Yes", "", "0: Not connected.\n1: Connected, normal.\n2: Connected, overloaded.\n3: Connected, connector\nunstable.\n4: Connected, not standard.\n5: Not connected, not\nstandard.\n6: Not connected,\noverloaded.", ""],
+      ["├─\ninterfaceIdObj", "objec\nt", "Yes", "", "Presentation of the\nconnector ID in a split\nformat", ""],
+      ["├─ nodeId", "numb\ner", "Yes", "", "Node ID", "mock: 0"],
+      ["├─ slotId", "numb\ner", "Yes", "", "Slot No.", "mock: 0"],
+      ["├─\nconnectorId", "numb\ner", "Yes", "", "Connector number of the\nconnector", "mock: 1"],
+      ["├─ splitId", "numb\ner", "Yes", "", "0 indicates the main\nsource, while other\nnumbers represent the sub-\nsource No. of the\nconnector.", "mock: 1"]
+    ]}
+  ]
+}

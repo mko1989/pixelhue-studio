@@ -1,0 +1,7 @@
+{
+  "id": "reference-IConnectorCopy-b217bad2",
+  "name": "IConnectorCopy",
+  "availability": "referenced-only",
+  "references": [{"name":"IConnectorCopy","source":"src/api/device/deviceInfo.ts","line":391},{"name":"IConnectorCopy","source":"src/api/device/deviceInfo.ts","line":392},{"name":"IConnectorCopy","source":"src/api/device/deviceInfo.ts","line":406}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

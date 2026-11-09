@@ -1,0 +1,9 @@
+{
+  "id": "IResetTimeResponse-f2bf1797",
+  "name": "IResetTimeResponse",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/setting/setting.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 220,
+  "declaration": "interface IResetTimeResponse {\n  time: string;\n  sourceStatus: number;\n}"
+}

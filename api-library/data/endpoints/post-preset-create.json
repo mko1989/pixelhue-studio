@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/preset/create",
+  "group": "preset",
+  "summary": "Create Preset",
+  "tags": ["preset","create"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [{"method":"POST","path":"/v1/preset/create","section":"6.2.2","title":"Create Preset","firstPage":207,"lastPage":228,"firmware":">=1.7.0","modelScope":["P10","P20","Q8","P80"],"source":"PixelFlow-OpenAPI Manual-V2.0.1-2.pdf"}],
+  "vendorEvidence": [{"method":"POST","path":"preset/create","dynamic":false,"source":"src/api/production/burn-in-test.ts","line":266,"client":"API","symbol":"response","comment":"带坑位场景保存","parameters":["ip: string","port: number","nodeId: number","sn: string","data: PresetCreateDataT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      Authorization: token,\n      ip,\n      port,\n    }","configExpression":"{\n    method: 'post',\n    url: 'preset/create',\n    data,\n    headers: {\n      Authorization: token,\n      ip,\n      port,\n    },\n  }","context":"async (\n  ip: string,\n  port: number,\n  nodeId: number,\n  sn: string,\n  data: PresetCreateDataT,\n): Promise<IResponseData<IPreset[]>> => {\n  const token = getLocalTokenBySn(sn) ?? '';","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":["P10","P20","P80","Q8"],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-preset-create",
+  "contractStatus": "manual tables and observed source contracts",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EPlayState-c10bd354",
+  "name": "EPlayState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/preset/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 26,
+  "declaration": "enum EPlayState {\n  default, // 0：场景未加载\n  playPGM, // 1：场景已加载至PGM\n  playPVW, // 2：场景已加载到PVW\n}"
+}

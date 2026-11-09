@@ -1,0 +1,7 @@
+{
+  "id": "reference-Location-15b61974",
+  "name": "Location",
+  "availability": "referenced-only",
+  "references": [{"name":"Location","source":"src/api/device/deviceInfo.ts","line":705},{"name":"Location","source":"src/api/device/deviceInfo.ts","line":718}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

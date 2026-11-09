@@ -1,0 +1,9 @@
+{
+  "id": "LayerAreaE-5f8551f1",
+  "name": "LayerAreaE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 701,
+  "declaration": "enum LayerAreaE {\n  /** 0:左上 1：左中 2：左下 3：中上 4：中中 5：中下 6：右上 7：右中 8：右下 */\n  lt,\n  lc,\n  lb,\n  ct,\n  cc,\n  cb,\n  rt,\n  rc,\n  rb,\n}"
+}

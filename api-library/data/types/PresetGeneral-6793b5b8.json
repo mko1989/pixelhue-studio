@@ -1,0 +1,8 @@
+{
+  "id": "PresetGeneral-6793b5b8",
+  "name": "PresetGeneral",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Preset.ts",
+  "line": 17,
+  "declaration": "interface PresetGeneral {\n\tname: string\n}"
+}

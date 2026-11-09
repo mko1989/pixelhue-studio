@@ -1,0 +1,7 @@
+{
+  "id": "reference-IMediaCue-3b7b5401",
+  "name": "IMediaCue",
+  "availability": "referenced-only",
+  "references": [{"name":"IMediaCue","source":"src/api/media/index.ts","line":45},{"name":"IMediaCue","source":"src/api/media/index.ts","line":46}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

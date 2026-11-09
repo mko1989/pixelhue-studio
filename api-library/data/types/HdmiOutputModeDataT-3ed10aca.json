@@ -1,0 +1,9 @@
+{
+  "id": "HdmiOutputModeDataT-3ed10aca",
+  "name": "HdmiOutputModeDataT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 625,
+  "declaration": "interface HdmiOutputModeDataT {\n  mode: number; // HDMI输出模式 0=Auto, 1=DVI_MODE, 2=HDMI_MODE, 3=FORCE_DVI_MODE, 4=FORCE_HDMI_MODE\n}"
+}

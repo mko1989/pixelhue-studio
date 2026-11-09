@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceInputGainT-0dca5acd",
+  "name": "InterfaceInputGainT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 590,
+  "declaration": "interface InterfaceInputGainT {\n  interfaceId: number | string;\n  driverMode: number;\n  swingLevel: number;\n  CDRLevel: number;\n  EQLevel: number;\n}"
+}

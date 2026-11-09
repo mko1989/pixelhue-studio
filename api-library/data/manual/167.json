@@ -1,0 +1,27 @@
+{
+  "page": 167,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nnumb Refresh interval, in\n├─ refreshTime Yes\ner seconds\nnumb Whether to display in\n├─ isMultiLine Yes\ner multiple lines\n├─ numb\nYes Widget spacing\ncomponentSpace er\nTemperature unit:\n├─ numb\nYes 0: Celsius (C).\ntemperatureUnit er\n1: Fahrenheit (F).\n├─ weather object Yes Weather\nnumb\n├─ enable Yes Whether to display\ner\n├─ label string Yes Weather label\n├─ value string Yes Weather information\n├─ temp object Yes Temperature\nnumb\n├─ enable Yes Whether to display\ner\n├─ label string Yes Temperature label\n├─ value string Yes Temperature information\n├─ tempNow object Yes Current temperature\nnumb\n├─ enable Yes Whether to display\ner\n├─ label string Yes Current temperature label\nCurrent temperature\n├─ value string Yes\ninformation\n├─ wind object Yes Wind\n├─ enable numb Yes Whether to display",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ refreshTime", "numb\ner", "Yes", "", "Refresh interval, in\nseconds", ""],
+      ["├─ isMultiLine", "numb\ner", "Yes", "", "Whether to display in\nmultiple lines", ""],
+      ["├─\ncomponentSpace", "numb\ner", "Yes", "", "Widget spacing", ""],
+      ["├─\ntemperatureUnit", "numb\ner", "Yes", "", "Temperature unit:\n0: Celsius (C).\n1: Fahrenheit (F).", ""],
+      ["├─ weather", "object", "Yes", "", "Weather", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Whether to display", ""],
+      ["├─ label", "string", "Yes", "", "Weather label", ""],
+      ["├─ value", "string", "Yes", "", "Weather information", ""],
+      ["├─ temp", "object", "Yes", "", "Temperature", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Whether to display", ""],
+      ["├─ label", "string", "Yes", "", "Temperature label", ""],
+      ["├─ value", "string", "Yes", "", "Temperature information", ""],
+      ["├─ tempNow", "object", "Yes", "", "Current temperature", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Whether to display", ""],
+      ["├─ label", "string", "Yes", "", "Current temperature label", ""],
+      ["├─ value", "string", "Yes", "", "Current temperature\ninformation", ""],
+      ["├─ wind", "object", "Yes", "", "Wind", ""],
+      ["├─ enable", "numb", "Yes", "", "Whether to display", ""]
+    ]}
+  ]
+}

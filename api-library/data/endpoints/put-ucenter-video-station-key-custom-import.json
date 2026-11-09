@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/key/custom/import",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","key","custom","import"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/key/custom/import","dynamic":false,"source":"src/api/custom/index.ts","line":276,"client":"API","symbol":"response","comment":"*\n *自定义按键配置导入","parameters":["data: {\n  paths: string[];\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/key/custom/import',\n    data,\n    timeout: 0,\n  }","context":"async (data: {\n  paths: string[];\n}): Promise<IResponseData<null>> => {\n  const response = await API.request<IResponseData<null>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/key/custom/import',\n    data,\n    timeout: 0,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-key-custom-import",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

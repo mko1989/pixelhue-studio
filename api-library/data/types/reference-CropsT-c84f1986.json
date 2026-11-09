@@ -1,0 +1,7 @@
+{
+  "id": "reference-CropsT-c84f1986",
+  "name": "CropsT",
+  "availability": "referenced-only",
+  "references": [{"name":"CropsT","source":"src/api/device/device-source.ts","line":160},{"name":"CropsT","source":"src/api/device/device-source.ts","line":177},{"name":"CropsT","source":"src/api/device/device-source.ts","line":195},{"name":"CropsT","source":"src/types/device/typing.ts","line":159},{"name":"CropsT","source":"src/types/device/typing.ts","line":162}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

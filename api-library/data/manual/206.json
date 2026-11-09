@@ -1,0 +1,27 @@
+{
+  "page": 206,
+  "text": "Default\nName Type Required Remarks More\nValue\nScreen window\n├─ window object Yes\ninformation\n├─ x integer Yes H offset\n├─ y integer Yes V offset\n├─ width integer Yes Width\n├─ height integer Yes Height\nItem\nobject\n├─ layers Yes Layer information type:\n[]\nobject\n├─ serial number Yes Layer number\n├─ type number Yes Layer type\nLayer position\n├─ window object Yes\ninformation\n├─ x integer Yes H offset\n├─ y integer Yes V offset\n├─ width integer Yes Layer width\n├─ height integer Yes Layer height\n├─ enable integer Yes Layer switch\n├─ osd object Yes OSD information\nOSD type: 1: Text.\n├─ type number Yes\n2: Image.\nUnique OSD\nidentification\nPreset ID (The type is\n├─ id number Yes\n1.)\nImage ID (The type is\n2.)\n├─ count integer Yes Number of items on",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["├─ window", "object", "Yes", "", "Screen window\ninformation", ""],
+      ["├─ x", "integer", "Yes", "", "H offset", ""],
+      ["├─ y", "integer", "Yes", "", "V offset", ""],
+      ["├─ width", "integer", "Yes", "", "Width", ""],
+      ["├─ height", "integer", "Yes", "", "Height", ""],
+      ["├─ layers", "object\n[]", "Yes", "", "Layer information", "Item\ntype:\nobject"],
+      ["├─ serial", "number", "Yes", "", "Layer number", ""],
+      ["├─ type", "number", "Yes", "", "Layer type", ""],
+      ["├─ window", "object", "Yes", "", "Layer position\ninformation", ""],
+      ["├─ x", "integer", "Yes", "", "H offset", ""],
+      ["├─ y", "integer", "Yes", "", "V offset", ""],
+      ["├─ width", "integer", "Yes", "", "Layer width", ""],
+      ["├─ height", "integer", "Yes", "", "Layer height", ""],
+      ["├─ enable", "integer", "Yes", "", "Layer switch", ""],
+      ["├─ osd", "object", "Yes", "", "OSD information", ""],
+      ["├─ type", "number", "Yes", "", "OSD type: 1: Text.\n2: Image.", ""],
+      ["├─ id", "number", "Yes", "", "Unique OSD\nidentification\nPreset ID (The type is\n1.)\nImage ID (The type is\n2.)", ""],
+      ["├─ count", "integer", "Yes", "", "Number of items on", ""]
+    ]}
+  ]
+}

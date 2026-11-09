@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/layers/scale-mode",
+  "group": "layers",
+  "summary": "response",
+  "tags": ["layers","scale-mode"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"layers/scale-mode","dynamic":false,"source":"src/api/layer/layer.ts","line":420,"client":"API","symbol":"response","comment":"设置图层跟随幕布","parameters":["data: LayerFollowT[]","extraReqParams?: ExtraReqParamsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ip: extraReqParams?.ip || '',\n      port: extraReqParams?.port || '',\n      Authorization: extraReqParams?.token || '',\n      protocol: extraReqParams?.protocol || '',\n    }","configExpression":"{\n    method: 'put',\n    url: 'layers/scale-mode',\n    data,\n    headers: {\n      ip: extraReqParams?.ip || '',\n      port: extraReqParams?.port || '',\n      Authorization: extraReqParams?.token || '',\n      protocol: extraReqParams?.protocol || '',\n    },\n  }","context":"async (\n  data: LayerFollowT[],\n  extraReqParams?: ExtraReqParamsT,\n): Promise<IResponseData<string>> => {\n  const response = await API.request<IResponseData<string>>({\n    method: 'put',\n    url: 'layers/scale-mode',\n    data,","sourceMap":"main-Cpb41LiE.js.map"},{"method":"PUT","path":"layers/scale-mode","dynamic":false,"source":"src/api/layer/layer.ts","line":1242,"client":"API","symbol":"res","comment":"图层缩放模式","parameters":["data: {\n    layerId: number;\n    mode: LayerScaleModeE;\n  }[]","seq?: number","extraReqParams?: ExtraReqParamsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq ?? 0,\n      ip: extraReqParams?.ip || '',\n      port: extraReqParams?.port || '',\n      Authorization: extraReqParams?.token || '',\n      protocol: extraReqParams?.protocol || '',\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'layers/scale-mode',\n    data,\n    headers: {\n      seq: seq ?? 0,\n      ip: extraReqParams?.ip || '',\n      port: extraReqParams?.port || '',\n      Authorization: extraReqParams?.token || '',\n      protocol: extraReqParams?.protocol || '',\n    },\n  }","context":"async (\n  data: {\n    layerId: number;\n    mode: LayerScaleModeE;\n  }[],\n  seq?: number,\n  extraReqParams?: ExtraReqParamsT,\n): Promise<IResponseData<null>> => {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-layers-scale-mode",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

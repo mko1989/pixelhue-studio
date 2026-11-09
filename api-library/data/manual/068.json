@@ -1,0 +1,22 @@
+{
+  "page": 68,
+  "text": "Default\nName Type Required Remarks More\nValue\n[] type:\nobject\n├─ interfaceId number Yes Connector ID\n├─ imageQuality object Yes\nImage quality mode\n(image quality\npreset):\n├─\nnumber Yes 0: Standard mode.\nimageQualityMode\n1: Document mode.\n2: Conference mode.\n3: Video mode.\nEye comfort mode\nswitch:\n├─ eyeCare number Yes\n0: Disable.\n1: Enable.\n├─ hue number Yes Hue\n├─ saturation number Yes Saturation\nGamma value in\nimage quality.\n├─ gamma number Yes Gamma value\n[1.00~4.00]*100, to\ntwo decimal places.\nScale ratio multiplier:\n1: No scaling.\n├─ gammaScale number Yes\n100: Scaling down by\na factor of 100.\n├─ contrast object Yes Contrast\n├─ R number Yes Red component\n├─ G number Yes Green component\n├─ B number Yes Blue component",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "[]", "", "", "", "type:\nobject"],
+      ["├─ interfaceId", "number", "Yes", "", "Connector ID", ""],
+      ["├─ imageQuality", "object", "Yes", "", "", ""],
+      ["├─\nimageQualityMode", "number", "Yes", "", "Image quality mode\n(image quality\npreset):\n0: Standard mode.\n1: Document mode.\n2: Conference mode.\n3: Video mode.", ""],
+      ["├─ eyeCare", "number", "Yes", "", "Eye comfort mode\nswitch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ hue", "number", "Yes", "", "Hue", ""],
+      ["├─ saturation", "number", "Yes", "", "Saturation", ""],
+      ["├─ gamma", "number", "Yes", "", "Gamma value in\nimage quality.\nGamma value\n[1.00~4.00]*100, to\ntwo decimal places.", ""],
+      ["├─ gammaScale", "number", "Yes", "", "Scale ratio multiplier:\n1: No scaling.\n100: Scaling down by\na factor of 100.", ""],
+      ["├─ contrast", "object", "Yes", "", "Contrast", ""],
+      ["├─ R", "number", "Yes", "", "Red component", ""],
+      ["├─ G", "number", "Yes", "", "Green component", ""],
+      ["├─ B", "number", "Yes", "", "Blue component", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/interface/link-share",
+  "group": "interface",
+  "summary": "response",
+  "tags": ["interface","link-share"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"interface/link-share","dynamic":false,"source":"src/api/link/index.ts","line":92,"client":"API","symbol":"response","comment":"*\n * 添加共享源（设置接口Link）","parameters":["data: AddShareSourceT","extraReqParams: ExtraReqT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{ ...extraReqParams }","configExpression":"{\n    method: 'put',\n    url: 'interface/link-share',\n    data,\n    headers: { ...extraReqParams },\n  }","context":"async (\n  data: AddShareSourceT,\n  extraReqParams: ExtraReqT,\n): Promise<IResponseData<void>> => {\n  const response = await API.request<IResponseData<void>>({\n    method: 'put',\n    url: 'interface/link-share',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-interface-link-share",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

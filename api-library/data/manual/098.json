@@ -1,0 +1,12 @@
+{
+  "page": 98,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nnumb\n├─ bright Yes Brightness\ner\nIts meaning is\ndetermined by\nthe field\nnumb \"gridType\". If the\n├─ grid Yes\ner \"gridType\" field\nis absent, it\nindicates the\ngrid density.\nDescription of\ngrid unit:\n0: \"grid\"\nindicates grid\ndensity,\nadjustable in 8\nlevels ranging\nfrom 1 to 8, with\na default of level\n5.\nnumb\n├─ gridType Yes 1: \"grid\"\ner\nindicates grid\nspacing in\npixels, with a\nminimum of 1\npixel, a\nmaximum equal\nto 1/4 of the\nhorizontal\nmaximum pixel\ncount for the",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ bright", "numb\ner", "Yes", "", "Brightness", ""],
+      ["├─ grid", "numb\ner", "Yes", "", "Its meaning is\ndetermined by\nthe field\n\"gridType\". If the\n\"gridType\" field\nis absent, it\nindicates the\ngrid density.", ""],
+      ["├─ gridType", "numb\ner", "Yes", "", "Description of\ngrid unit:\n0: \"grid\"\nindicates grid\ndensity,\nadjustable in 8\nlevels ranging\nfrom 1 to 8, with\na default of level\n5.\n1: \"grid\"\nindicates grid\nspacing in\npixels, with a\nminimum of 1\npixel, a\nmaximum equal\nto 1/4 of the\nhorizontal\nmaximum pixel\ncount for the", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "RelatedFuncsNameMapping-da4bc6ad",
+  "name": "RelatedFuncsNameMapping",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 665,
+  "declaration": "enum RelatedFuncsNameMapping {\n  getLayerPositionX = 'getLayerPositionX',\n  getLayerPositionY = 'getLayerPositionY',\n  getLayerPositionWidth = 'getLayerPositionWidth',\n  getLayerPositionHeight = 'getLayerPositionHeight',\n  getHueClip = 'getHueClip',\n  getMaskTop = 'getMaskTop',\n  getMaskBottom = 'getMaskBottom',\n  getMaskLeft = 'getMaskLeft',\n  getMaskRight = 'getMaskRight',\n  getLayerCropX = 'getLayerCropX',\n  getLayerCropY = 'getLayerCropY',\n  getLayerCropWidth = 'getLayerCropWidth',\n  getLayerCropHeight = 'getLayerCropHeight',\n}"
+}

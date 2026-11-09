@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/software-log",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","software-log"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"/ucenter/software-log","dynamic":false,"source":"src/api/device/log-export.ts","line":66,"client":"API","symbol":"response","comment":"*\n * 软件日志导出\n * @param exportPath","parameters":["exportPath: string","productName: string"],"bodyExpression":"{\n      exportPath: exportPath,\n      productName,\n    }","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: '/ucenter/software-log',\n    data: {\n      exportPath: exportPath,\n      productName,\n    },\n  }","context":"async (\n  exportPath: string,\n  productName: string,\n): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'put',\n    url: '/ucenter/software-log',\n    data: {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-software-log",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

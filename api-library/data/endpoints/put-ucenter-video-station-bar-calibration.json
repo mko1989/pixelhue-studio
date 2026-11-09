@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/bar-calibration",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","bar-calibration"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/bar-calibration","dynamic":false,"source":"src/api/custom/index.ts","line":105,"client":"API","symbol":"response","comment":"*\n *\n * @param id // 0 表示Tbar  s\n * @param signal // 0 表示tbar推到顶 1 表示tbar推到底\n * @param tolerance // 表示容差值\n * @returns","parameters":["data: {\n  id: number;\n  signal: number;\n  tolerance: number;\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/bar-calibration',\n    data,\n  }","context":"async (data: {\n  id: number;\n  signal: number;\n  tolerance: number;\n}): Promise<IResponseData<TbarCalibration>> => {\n  const response = await API.request<IResponseData<TbarCalibration>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/bar-calibration',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-bar-calibration",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

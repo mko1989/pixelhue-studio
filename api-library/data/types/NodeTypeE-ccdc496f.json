@@ -1,0 +1,9 @@
+{
+  "id": "NodeTypeE-ccdc496f",
+  "name": "NodeTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 767,
+  "declaration": "enum NodeTypeE {\n  Slave, //从节点\n  Master, //主节点\n  BackupMaster, //备份主节点\n}"
+}

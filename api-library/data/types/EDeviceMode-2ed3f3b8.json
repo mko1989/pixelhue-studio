@@ -1,0 +1,9 @@
+{
+  "id": "EDeviceMode-2ed3f3b8",
+  "name": "EDeviceMode",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 11,
+  "declaration": "enum EDeviceMode {\n  u5 = 29701,\n  u5pro = 29703,\n  c5 = 29700,\n  c5pro = 29702,\n  pc = 99999,\n}"
+}

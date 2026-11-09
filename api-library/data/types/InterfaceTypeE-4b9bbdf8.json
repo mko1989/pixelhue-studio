@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceTypeE-4b9bbdf8",
+  "name": "InterfaceTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/api/device/deviceList.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 118,
+  "declaration": "enum InterfaceTypeE {\n  /** 输出接口 */\n  Out = 4,\n  /** 主输出接口 */\n  MainOut = 64,\n  /** AUX输出接口 */\n  Aux = 8,\n}"
+}

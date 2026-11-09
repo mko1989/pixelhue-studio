@@ -1,0 +1,12 @@
+{
+  "page": 59,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n(maximumContentLightLev\nel).\nWhen type==6, para\nmeaning: MaxFLL\n(maximumFrameAverageLi\nghtLevel).\nThe meaning of para values\nfor different type values:\nWhen type=0, para value: 0:\nSDR. 1: HDR. 2: SMPTE\n2084. 3: HLG. When\ntype==1, para value: White\npoint x-coordinate\n(whitePointX). When\ntype==2, para value: White\npoint y-coordinate\n(whitePointY). When\nnumb type==3, para value:\n├─ para Yes\ner MaxDML\n(maxDisplayMasteringLumi\nnance). When type==4,\npara value: MinDML\n(minDisplayMasteringLumi\nnance). When type==5,\npara value: MaxCLL\n(maximumContentLightLev\nel). When type==6, para\nvalue: MaxFLL\n(maximumFrameAverageLi\nghtLevel).\n├─ ledHdr objec Yes",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "(maximumContentLightLev\nel).\nWhen type==6, para\nmeaning: MaxFLL\n(maximumFrameAverageLi\nghtLevel).", ""],
+      ["├─ para", "numb\ner", "Yes", "", "The meaning of para values\nfor different type values:\nWhen type=0, para value: 0:\nSDR. 1: HDR. 2: SMPTE\n2084. 3: HLG. When\ntype==1, para value: White\npoint x-coordinate\n(whitePointX). When\ntype==2, para value: White\npoint y-coordinate\n(whitePointY). When\ntype==3, para value:\nMaxDML\n(maxDisplayMasteringLumi\nnance). When type==4,\npara value: MinDML\n(minDisplayMasteringLumi\nnance). When type==5,\npara value: MaxCLL\n(maximumContentLightLev\nel). When type==6, para\nvalue: MaxFLL\n(maximumFrameAverageLi\nghtLevel).", ""],
+      ["├─ ledHdr", "objec", "Yes", "", "", ""]
+    ]}
+  ]
+}

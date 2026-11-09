@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICabinetStatus-826bfd51",
+  "name": "ICabinetStatus",
+  "availability": "referenced-only",
+  "references": [{"name":"ICabinetStatus","source":"src/api/setting/setting.ts","line":601},{"name":"ICabinetStatus","source":"src/api/setting/setting.ts","line":602}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/screen/view/create",
+  "group": "screen",
+  "summary": "res",
+  "tags": ["screen","view","create"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"screen/view/create","dynamic":false,"source":"src/api/screen/screen.ts","line":1778,"client":"API","symbol":"res","comment":"*\n * 创建子屏","parameters":["data: SubScreenCreateT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ...getExtraReqIpParamsByGuid(data.screenGuid),\n    }","configExpression":"{\n    method: 'POST',\n    url: 'screen/view/create',\n    data,\n    headers: {\n      ...getExtraReqIpParamsByGuid(data.screenGuid),\n    },\n  }","context":"async (data: SubScreenCreateT) => {\n  const res = await API.request<IResponseData<SubScreenT>>({\n    method: 'POST',\n    url: 'screen/view/create',\n    data,\n    headers: {\n      ...getExtraReqIpParamsByGuid(data.screenGuid),\n    },","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-screen-view-create",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

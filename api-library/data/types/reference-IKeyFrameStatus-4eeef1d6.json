@@ -1,0 +1,7 @@
+{
+  "id": "reference-IKeyFrameStatus-4eeef1d6",
+  "name": "IKeyFrameStatus",
+  "availability": "referenced-only",
+  "references": [{"name":"IKeyFrameStatus","source":"src/api/preset/index.ts","line":246},{"name":"IKeyFrameStatus","source":"src/api/preset/index.ts","line":247},{"name":"IKeyFrameStatus","source":"src/api/preset/index.ts","line":261},{"name":"IKeyFrameStatus","source":"src/api/preset/index.ts","line":260},{"name":"IKeyFrameStatus","source":"src/api/preset/index.ts","line":262}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

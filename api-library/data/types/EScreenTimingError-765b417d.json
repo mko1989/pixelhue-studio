@@ -1,0 +1,9 @@
+{
+  "id": "EScreenTimingError-765b417d",
+  "name": "EScreenTimingError",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 340,
+  "declaration": "enum EScreenTimingError {\n  screenFreeze = 1,\n}"
+}

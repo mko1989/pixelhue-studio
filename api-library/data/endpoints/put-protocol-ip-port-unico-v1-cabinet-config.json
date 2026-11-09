@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/{protocol}://{ip}:{port}/unico/v1/cabinet/config",
+  "group": "{protocol}:",
+  "summary": "response",
+  "tags": ["{protocol}:","","{ip}:{port}","unico","v1","cabinet","config"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"{protocol}://{ip}:{port}/unico/v1/cabinet/config","dynamic":true,"pathParameters":[{"name":"protocol","expression":"protocol"},{"name":"ip","expression":"ip"},{"name":"port","expression":"port"}],"source":"src/api/setting/setting.ts","line":679,"client":"API","symbol":"response","comment":"*\n * 箱体配置文件上传","parameters":["file: Blob","cabinetIds: string","ipUrl: IIpUrl","token: string"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{\n      'Content-Type': 'multipart/form-data',\n      Authorization: token,\n      ip,\n      port,\n    }","configExpression":"{\n    method: 'PUT',\n    url: `${protocol}://${ip}:${port}/unico/v1/cabinet/config`,\n    data: formData,\n    headers: {\n      'Content-Type': 'multipart/form-data',\n      Authorization: token,\n      ip,\n      port,\n    },\n  }","context":"async (\n  file: Blob,\n  cabinetIds: string,\n  ipUrl: IIpUrl,\n  token: string,\n): Promise<IResponseData<string>> => {\n  const { protocol, ip, port } = ipUrl;\n  const formData = new FormData();","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-protocol-ip-port-unico-v1-cabinet-config",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": ["protocol","ip","port"]
+}

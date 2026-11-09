@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPreset-3bf0f6cc",
+  "name": "IPreset",
+  "availability": "referenced-only",
+  "references": [{"name":"IPreset","source":"src/api/preset/index.ts","line":51},{"name":"IPreset","source":"src/api/preset/index.ts","line":52},{"name":"IPreset","source":"src/api/preset/index.ts","line":67},{"name":"IPreset","source":"src/api/preset/index.ts","line":68},{"name":"IPreset","source":"src/api/preset/index.ts","line":81},{"name":"IPreset","source":"src/api/preset/index.ts","line":82},{"name":"IPreset","source":"src/api/production/burn-in-test.ts","line":264},{"name":"IPreset","source":"src/api/production/burn-in-test.ts","line":266}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

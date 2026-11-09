@@ -1,0 +1,9 @@
+{
+  "id": "EKnokDirection-81d8c88f",
+  "name": "EKnokDirection",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 283,
+  "declaration": "enum EKnokDirection {\n  direction_default, // 默认\n  direction_left, // 默认\n  direction_right, // 默认\n}"
+}

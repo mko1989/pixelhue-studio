@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICabinetInfoGroup-76de4b09",
+  "name": "ICabinetInfoGroup",
+  "availability": "referenced-only",
+  "references": [{"name":"ICabinetInfoGroup","source":"src/api/device/deviceList.ts","line":300},{"name":"ICabinetInfoGroup","source":"src/api/device/deviceList.ts","line":301}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

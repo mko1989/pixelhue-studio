@@ -1,0 +1,14 @@
+{
+  "page": 16,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nWhen Type=4,\nindex indicates\npower number.\nStatus:\nnumb\n├─ state Yes 0: Abnormal.\ner\n1: Normal.\nWhen type=0,\nvalue indicates\noutput power\nvoltage.\nWhen type=1,\nvalue indicates\ncard\ntemperature.\nWhen type=2,\nvalue indicates\nnumb fan speed.\n├─ value Yes\ner When type=3,\nvalue indicates\nfan duty cycle.\nWhen type=4,\nvalue indicates\npower signal\nstatus.\n[0: Power not\nconnected; 1:\nPower\nconnected]\nTime\n├─ syncTime object Yes\nsynchronization\nTime grant Max: 3\nintege\n├─ timeMode Yes 2 mode:\nr Min: 0\n0: Disable",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "When Type=4,\nindex indicates\npower number.", ""],
+      ["├─ state", "numb\ner", "Yes", "", "Status:\n0: Abnormal.\n1: Normal.", ""],
+      ["├─ value", "numb\ner", "Yes", "", "When type=0,\nvalue indicates\noutput power\nvoltage.\nWhen type=1,\nvalue indicates\ncard\ntemperature.\nWhen type=2,\nvalue indicates\nfan speed.\nWhen type=3,\nvalue indicates\nfan duty cycle.\nWhen type=4,\nvalue indicates\npower signal\nstatus.\n[0: Power not\nconnected; 1:\nPower\nconnected]", ""],
+      ["├─ syncTime", "object", "Yes", "", "Time\nsynchronization", ""],
+      ["├─ timeMode", "intege\nr", "Yes", "2", "Time grant\nmode:\n0: Disable", "Max: 3\nMin: 0"]
+    ]}
+  ]
+}

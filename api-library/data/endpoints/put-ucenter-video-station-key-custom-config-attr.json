@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/key/custom-config-attr",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","key","custom-config-attr"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/key/custom-config-attr","dynamic":false,"source":"src/api/custom/index.ts","line":179,"client":"API","symbol":"response","comment":"*\n * 更改自定义配置名字","parameters":["data: {\n  configID: number;\n  configName: string;\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/key/custom-config-attr',\n    data,\n  }","context":"async (data: {\n  configID: number;\n  configName: string;\n}): Promise<IResponseData<ICustomConfigList>> => {\n  const response = await API.request<IResponseData<ICustomConfigList>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/key/custom-config-attr',\n    data,","sourceMap":"main-Cpb41LiE.js.map"},{"method":"PUT","path":"ucenter/video-station/key/custom-config-attr","dynamic":false,"source":"src/api/custom/index.ts","line":193,"client":"API","symbol":"response","comment":"*\n * 更改使用习惯名字","parameters":["data: {\n  id: number;\n  name: string;\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/key/custom-config-attr',\n    data,\n  }","context":"async (data: {\n  id: number;\n  name: string;\n}): Promise<IResponseData<IHabitConfig>> => {\n  const response = await API.request<IResponseData<IHabitConfig>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/key/custom-config-attr',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-key-custom-config-attr",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

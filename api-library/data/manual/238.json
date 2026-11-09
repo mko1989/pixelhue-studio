@@ -1,0 +1,18 @@
+{
+  "page": 238,
+  "text": "Default\nName Type Required Remarks More\nValue\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n10: IPC mosaic\nscreen.\n11: Internal source.\n12: Internal shape\nsource.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.\nSwap switch:\n├─ swapEnable number Yes 0: Disable.\n1: Enable.\nItem\nobject List of target screens\n├─ screens No type:\n[] for preset loading.\nobject\n├─ guid string No Screen ID\n Return Data\nName Type Required Default Value Remarks More\ncode number Yes Response code\nmessage string Yes Response message",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n10: IPC mosaic\nscreen.\n11: Internal source.\n12: Internal shape\nsource.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.", ""],
+      ["├─ swapEnable", "number", "Yes", "", "Swap switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ screens", "object\n[]", "No", "", "List of target screens\nfor preset loading.", "Item\ntype:\nobject"],
+      ["├─ guid", "string", "No", "", "Screen ID", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["code", "number", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response message", ""]
+    ]}
+  ]
+}

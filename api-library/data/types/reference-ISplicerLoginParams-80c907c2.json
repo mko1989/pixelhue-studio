@@ -1,0 +1,7 @@
+{
+  "id": "reference-ISplicerLoginParams-80c907c2",
+  "name": "ISplicerLoginParams",
+  "availability": "referenced-only",
+  "references": [{"name":"ISplicerLoginParams","source":"src/api/user/user.ts","line":61}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

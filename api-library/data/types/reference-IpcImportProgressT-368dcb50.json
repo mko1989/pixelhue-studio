@@ -1,0 +1,7 @@
+{
+  "id": "reference-IpcImportProgressT-368dcb50",
+  "name": "IpcImportProgressT",
+  "availability": "referenced-only",
+  "references": [{"name":"IpcImportProgressT","source":"src/api/ipc/index.ts","line":243}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

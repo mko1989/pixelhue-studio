@@ -1,0 +1,7 @@
+{
+  "id": "reference-IpcExportTypeT-4778d60c",
+  "name": "IpcExportTypeT",
+  "availability": "referenced-only",
+  "references": [{"name":"IpcExportTypeT","source":"src/api/ipc/index.ts","line":149}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

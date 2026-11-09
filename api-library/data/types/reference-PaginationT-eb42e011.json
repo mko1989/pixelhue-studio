@@ -1,0 +1,7 @@
+{
+  "id": "reference-PaginationT-eb42e011",
+  "name": "PaginationT",
+  "availability": "referenced-only",
+  "references": [{"name":"PaginationT","source":"src/api/device/device-source.ts","line":160},{"name":"PaginationT","source":"src/api/preset/index.ts","line":191},{"name":"PaginationT","source":"src/api/preset/index.ts","line":192},{"name":"PaginationT","source":"src/api/media/index.ts","line":17},{"name":"PaginationT","source":"src/api/media/index.ts","line":18},{"name":"PaginationT","source":"src/api/media/index.ts","line":30},{"name":"PaginationT","source":"src/api/media/index.ts","line":31},{"name":"PaginationT","source":"src/api/media/index.ts","line":45},{"name":"PaginationT","source":"src/api/media/index.ts","line":46}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

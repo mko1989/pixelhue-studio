@@ -1,0 +1,9 @@
+{
+  "id": "InputGainDataT-0a0c97e8",
+  "name": "InputGainDataT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 582,
+  "declaration": "interface InputGainDataT {\n  driverMode: number; // 摆幅/预加重模式: 0-自适应, 1-驱动增强\n  swingLevel: number; // 摆幅档位: 1-16, 默认1档\n  CDRLevel: number; // CDR增强档位: 1-16, 默认1档\n  EQLevel: number; // EQ补偿调节档位: 1-16, 默认1档\n}"
+}

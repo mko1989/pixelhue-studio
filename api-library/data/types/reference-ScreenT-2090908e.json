@@ -1,0 +1,7 @@
+{
+  "id": "reference-ScreenT-2090908e",
+  "name": "ScreenT",
+  "availability": "referenced-only",
+  "references": [{"name":"ScreenT","source":"src/api/production/index.ts","line":79},{"name":"ScreenT","source":"src/api/production/index.ts","line":80},{"name":"ScreenT","source":"src/api/screen/screen.ts","line":114},{"name":"ScreenT","source":"src/api/screen/screen.ts","line":115},{"name":"ScreenT","source":"src/api/screen/screen.ts","line":446},{"name":"ScreenT","source":"src/api/screen/screen.ts","line":447},{"name":"ScreenT","source":"src/api/screen/screen.ts","line":652},{"name":"ScreenT","source":"src/api/screen/screen.ts","line":653},{"name":"ScreenT","source":"src/api/screen/screen.ts","line":683},{"name":"ScreenT","source":"src/api/screen/screen.ts","line":684},{"name":"ScreenT","source":"src/api/screen/screen.ts","line":1694},{"name":"ScreenT","source":"src/api/production/burn-in-test.ts","line":108},{"name":"ScreenT","source":"src/api/production/burn-in-test.ts","line":110},{"name":"ScreenT","source":"src/api/production/burn-in-test.ts","line":197},{"name":"ScreenT","source":"src/api/production/burn-in-test.ts","line":199}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

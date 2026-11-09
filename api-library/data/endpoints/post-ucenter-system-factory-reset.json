@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/system/factory-reset",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","system","factory-reset"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/system/factory-reset","dynamic":false,"source":"src/api/setting/setting.ts","line":928,"client":"API","symbol":"response","comment":"【控台】恢复出厂","parameters":["data: { mode: ControlResetFactoryTypeE }"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ip: '127.0.0.1',\n    }","configExpression":"{\n    method: 'post',\n    url: 'ucenter/system/factory-reset',\n    data,\n    timeout: 120000, // todo 设置超时时间为2min\n    headers: {\n      ip: '127.0.0.1',\n    },\n  }","context":"async (data: { mode: ControlResetFactoryTypeE }) => {\n  const response = await API.request<\n    IResponseData<{\n      status: ConsoleResetFactoryStatusE.failed | ConsoleResetFactoryStatusE.completed;\n    }>\n  >({\n    method: 'post',\n    url: 'ucenter/system/factory-reset',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-system-factory-reset",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

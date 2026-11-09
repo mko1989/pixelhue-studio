@@ -1,0 +1,9 @@
+{
+  "id": "ReqMosaicT-ae7ff6f9",
+  "name": "ReqMosaicT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/screen/screen.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 622,
+  "declaration": "interface ReqMosaicT {\n  interfaceId: number;\n  /** 拼接类型 */\n  type?: ScreenMosaicE;\n  /** 屏幕的输出接口的拼接行列信息 */\n  splice: {\n    row: number;\n    column: number;\n  };\n  /** 屏幕位置尺寸信息 */\n  window: {\n    x: number;\n    y: number;\n    width: number;\n    height: number;\n  };\n  /** 输出接口列表 */\n  outputs: ReqScreenOutputT[];\n  sourceType?: ScreenMatchTypeE;\n}"
+}

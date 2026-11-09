@@ -1,0 +1,7 @@
+{
+  "id": "reference-IExchangeLedCabinetParams-5dff0f9b",
+  "name": "IExchangeLedCabinetParams",
+  "availability": "referenced-only",
+  "references": [{"name":"IExchangeLedCabinetParams","source":"src/api/screen/controller.ts","line":280}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

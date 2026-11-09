@@ -1,0 +1,20 @@
+{
+  "page": 158,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\n├─ audio object Yes Layer audio\nEnable:\nintege\n├─ enable Yes 0: Disable.\nr\n1: Enable.\nintege\n├─ volume Yes Volume\nr\nMute status:\nintege\n├─ isMute Yes 0: Not muted.\nr\n1: Muted.\n├─ Layer image quality\nobject Yes\nqualityEnhance enhancement\nLayer image quality\nintege enhancement switch:\n├─ enable Yes\nr 0: Disable.\n1: Enable.\nImage quality\nnumb enhancement mode:\n├─ mode Yes\ner 0: Rich color.\n1: High contrast.\nImage quality\nenhancement level:\nnumb\n├─ level Yes 0: Low.\ner\n1: Medium.\n2: High.\n├─ cutFill object Yes Cut & Fill properties\nThe switch:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\n├─ curve object Yes Curves",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ audio", "object", "Yes", "", "Layer audio", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "Enable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ volume", "intege\nr", "Yes", "", "Volume", ""],
+      ["├─ isMute", "intege\nr", "Yes", "", "Mute status:\n0: Not muted.\n1: Muted.", ""],
+      ["├─\nqualityEnhance", "object", "Yes", "", "Layer image quality\nenhancement", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "Layer image quality\nenhancement switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ mode", "numb\ner", "Yes", "", "Image quality\nenhancement mode:\n0: Rich color.\n1: High contrast.", ""],
+      ["├─ level", "numb\ner", "Yes", "", "Image quality\nenhancement level:\n0: Low.\n1: Medium.\n2: High.", ""],
+      ["├─ cutFill", "object", "Yes", "", "Cut & Fill properties", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "The switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ curve", "object", "Yes", "", "Curves", ""]
+    ]}
+  ]
+}

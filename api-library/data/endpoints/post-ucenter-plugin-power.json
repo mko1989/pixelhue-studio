@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/plugin/power",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","plugin","power"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/ucenter/plugin/power","dynamic":false,"source":"src/api/plug-in/plugIn.ts","line":92,"client":"API","symbol":"response","comment":"*\n * 单个插件启动或停止\n * @param data\n * @returns","parameters":["data: StartOrExitSubmitD","header: PlugInHeaderD"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      Authorization: header?.token,\n      ip: header.ip,\n      port: header.port,\n    }","configExpression":"{\n    method: 'post',\n    url: '/ucenter/plugin/power',\n    data,\n    headers: {\n      Authorization: header?.token,\n      ip: header.ip,\n      port: header.port,\n    },\n  }","context":"async (\n  data: StartOrExitSubmitD,\n  header: PlugInHeaderD,\n): Promise<StartOrExitT> => {\n  const response = await API.request<StartOrExitT>({\n    method: 'post',\n    url: '/ucenter/plugin/power',\n    data,","sourceMap":"main-Cpb41LiE.js.map"},{"method":"POST","path":"/ucenter/plugin/power","dynamic":false,"source":"src/api/plug-in/plugIn.ts","line":113,"client":"API","symbol":"response","comment":"*\n * 批量插件启动或停止\n * @param data\n * @returns","parameters":["data: StartOrExitSubmitD"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'post',\n    url: '/ucenter/plugin/power',\n    data,\n  }","context":"async (\n  data: StartOrExitSubmitD,\n): Promise<StartOrExitT> => {\n  const response = await API.request<StartOrExitT>({\n    method: 'post',\n    url: '/ucenter/plugin/power',\n    data,\n  });","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-plugin-power",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

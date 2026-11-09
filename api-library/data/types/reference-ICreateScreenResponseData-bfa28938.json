@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICreateScreenResponseData-bfa28938",
+  "name": "ICreateScreenResponseData",
+  "availability": "referenced-only",
+  "references": [{"name":"ICreateScreenResponseData","source":"src/api/production/index.ts","line":56},{"name":"ICreateScreenResponseData","source":"src/api/production/index.ts","line":57},{"name":"ICreateScreenResponseData","source":"src/api/screen/screen.ts","line":539},{"name":"ICreateScreenResponseData","source":"src/api/screen/screen.ts","line":540},{"name":"ICreateScreenResponseData","source":"src/api/production/burn-in-test.ts","line":86},{"name":"ICreateScreenResponseData","source":"src/api/production/burn-in-test.ts","line":88}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

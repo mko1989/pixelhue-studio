@@ -1,0 +1,20 @@
+{
+  "page": 33,
+  "text": "Name Required Example Remarks\nMosaic source type. 0: common input. Ignored if\nmosicType No\nthis parameter is absent.\nPreset type. Without this parameter, connector\nsceneType No\ninformation within the preset will not be queried.\nConnector type, ignored if this parameter is\ninterfaceType No\nabsent\n0: The card is offline, meaning the card is\nremoved. 1: The card is online (It is the normal\nstatus and default value. Only cards in this status\ncan be updated). 2: The card is inserted, but its\nlink with the control card is abnormal. 3: The card\nonline No\ntype is not supported by this device (For example,\nan F-series card is inserted into a D-series\ndevice). 4: Different types of cards are inserted.\nFor example, an input card is inserted into an\noutput slot. Ignored if this parameter is absent.\n Return Data\nDefa\nRequir ult\nName Type Remarks More\ned Valu\ne\ninteg\nmock: 0\ncode Yes Response code\ner\nmock: ok\nmessage string Yes Response message\nobjec\ndata Yes\nt\nMin: 2\nElements\nobjec\n├─ list Yes all unique:\nt []\ntrue\nMax: 2",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Required", "Example", "Remarks"],
+      ["mosicType", "No", "", "Mosaic source type. 0: common input. Ignored if\nthis parameter is absent."],
+      ["sceneType", "No", "", "Preset type. Without this parameter, connector\ninformation within the preset will not be queried."],
+      ["interfaceType", "No", "", "Connector type, ignored if this parameter is\nabsent"],
+      ["online", "No", "", "0: The card is offline, meaning the card is\nremoved. 1: The card is online (It is the normal\nstatus and default value. Only cards in this status\ncan be updated). 2: The card is inserted, but its\nlink with the control card is abnormal. 3: The card\ntype is not supported by this device (For example,\nan F-series card is inserted into a D-series\ndevice). 4: Different types of cards are inserted.\nFor example, an input card is inserted into an\noutput slot. Ignored if this parameter is absent."]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["code", "integ\ner", "Yes", "", "Response code", "mock: 0"],
+      ["message", "string", "Yes", "", "Response message", "mock: ok"],
+      ["data", "objec\nt", "Yes", "", "", ""],
+      ["├─ list", "objec\nt []", "Yes", "", "", "Min: 2\nElements\nall unique:\ntrue\nMax: 2"]
+    ]}
+  ]
+}

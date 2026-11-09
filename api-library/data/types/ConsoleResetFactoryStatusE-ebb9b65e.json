@@ -1,0 +1,9 @@
+{
+  "id": "ConsoleResetFactoryStatusE-ebb9b65e",
+  "name": "ConsoleResetFactoryStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/device-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 153,
+  "declaration": "enum ConsoleResetFactoryStatusE {\n  idle = 0, // 正常状态（初始状态，未开始恢复）\n  processing = 1, // 进行中（正在恢复中）\n  completed = 2, // 已完成（恢复完成）\n  failed = 3, // 失败（恢复失败）\n}"
+}

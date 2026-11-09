@@ -1,0 +1,9 @@
+{
+  "id": "EFNParams-05071aa1",
+  "name": "EFNParams",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 246,
+  "declaration": "enum EFNParams {\n  MAIN = 1,\n  ECT = 5,\n  UPGRADE = 6,\n  FACTORY = 7,\n  EXPLORER = 10,\n}"
+}

@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/monitor/abnormal-count",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","monitor","abnormal-count"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/monitor/abnormal-count","dynamic":false,"source":"src/api/monitor/index.ts","line":23,"client":"API","symbol":"response","comment":"*\n * 获取当前设备异常数量总和\n * @returns","parameters":["snList: string[]","headers: AxiosRequestHeaders = {}"],"bodyExpression":null,"queryExpression":"{\n      snList,\n    }","headerExpression":"{\n      ...headers,\n    }","configExpression":"{\n    method: 'get',\n    url: 'ucenter/monitor/abnormal-count',\n    params: {\n      snList,\n    },\n    headers: {\n      ...headers,\n    },\n  }","context":"async (\n  snList: string[],\n  headers: AxiosRequestHeaders = {},\n): Promise<IResponseData<IPageData<IMonitorDeviceAmount[]>>> => {\n  const response = await API.request<IResponseData<IPageData<IMonitorDeviceAmount[]>>>({\n    method: 'get',\n    url: 'ucenter/monitor/abnormal-count',\n    params: {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-monitor-abnormal-count",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

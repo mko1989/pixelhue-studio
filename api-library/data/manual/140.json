@@ -1,0 +1,16 @@
+{
+  "page": 140,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\n19. Cleanfeed.\nConnector type (valid\nwhen the source is from\nan input connector): 0:\nINVALID 1: EXP 2: Single\nLink DVI 3: Dual Link\nDVI 4: HDMI 1.3 5: HDMI\n├─ intege 1.4 6: HDMI 2.0 7: Single\nYes\nconnectorType r Link DP 1.1 8: DP 1.2 9:\n3G-SDI 10: VGA 11:\nCVBS 12: YPbPr 13: 12G-\nSDI 14: 6G-SDI 15:\nUSB 16: HDBaseT 17:\nDual Link DP 1.1 18:\nDVI_Fiber 19: DVI 1.4\n├─ sourceName string Yes Source name\nSource capacity: [0: SL\n├─\nintege 1: DL\nconnectCapacity Yes\nr 2: 4K\nNum\n255: Custom\nSource properties related\nmock:\nID. Currently, this field is\nintege\n├─ relationId Yes only meaningful for IPC @integ\nr\ner\nsources, representing the\ndecodeId.\nTh saved primary source\ninformation after the\n├─ primary object Yes primary source is\nswitched to the backup\none\n├─ sourceId intege Yes Source ID, which is unique",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "19. Cleanfeed.", ""],
+      ["├─\nconnectorType", "intege\nr", "Yes", "", "Connector type (valid\nwhen the source is from\nan input connector): 0:\nINVALID 1: EXP 2: Single\nLink DVI 3: Dual Link\nDVI 4: HDMI 1.3 5: HDMI\n1.4 6: HDMI 2.0 7: Single\nLink DP 1.1 8: DP 1.2 9:\n3G-SDI 10: VGA 11:\nCVBS 12: YPbPr 13: 12G-\nSDI 14: 6G-SDI 15:\nUSB 16: HDBaseT 17:\nDual Link DP 1.1 18:\nDVI_Fiber 19: DVI 1.4", ""],
+      ["├─ sourceName", "string", "Yes", "", "Source name", ""],
+      ["├─\nconnectCapacity\nNum", "intege\nr", "Yes", "", "Source capacity: [0: SL\n1: DL\n2: 4K\n255: Custom", ""],
+      ["├─ relationId", "intege\nr", "Yes", "", "Source properties related\nID. Currently, this field is\nonly meaningful for IPC\nsources, representing the\ndecodeId.", "mock:\n@integ\ner"],
+      ["├─ primary", "object", "Yes", "", "Th saved primary source\ninformation after the\nprimary source is\nswitched to the backup\none", ""],
+      ["├─ sourceId", "intege", "Yes", "", "Source ID, which is unique", ""]
+    ]}
+  ]
+}

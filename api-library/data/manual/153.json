@@ -1,0 +1,24 @@
+{
+  "page": 153,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nsource\nintege\n├─ sourceId Yes Source ID\nr\n├─ hue object Yes Chroma key\n├─ color object Yes Key color\nintege\n├─ R Yes Red component\nr\nintege\n├─ G Yes Green component\nr\nintege\n├─ B Yes Blue component\nr\nCursor coordinates (using\n├─ pos object Yes the top-left corner of the\nvisible area as the origin)\nnumb\n├─ x Yes Pick point x-coordinate\ner\nnumb\n├─ y Yes Pick point y-coordinate\ner\nintege Hue clip, range:\n├─ hueClip Yes\nr 5~hueRamp\nintege\n├─ hueRamp Yes Hue Ramp, range: 5~180\nr\n├─ intege Saturation clip, range:\nYes\nsaturationClip r 5~100\n├─ intege Gain (softness threshold),\nYes\nsaturationGain r range: 5~100\nintege\n├─ spill Yes Spill, range: 5~100\nr",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "source", ""],
+      ["├─ sourceId", "intege\nr", "Yes", "", "Source ID", ""],
+      ["├─ hue", "object", "Yes", "", "Chroma key", ""],
+      ["├─ color", "object", "Yes", "", "Key color", ""],
+      ["├─ R", "intege\nr", "Yes", "", "Red component", ""],
+      ["├─ G", "intege\nr", "Yes", "", "Green component", ""],
+      ["├─ B", "intege\nr", "Yes", "", "Blue component", ""],
+      ["├─ pos", "object", "Yes", "", "Cursor coordinates (using\nthe top-left corner of the\nvisible area as the origin)", ""],
+      ["├─ x", "numb\ner", "Yes", "", "Pick point x-coordinate", ""],
+      ["├─ y", "numb\ner", "Yes", "", "Pick point y-coordinate", ""],
+      ["├─ hueClip", "intege\nr", "Yes", "", "Hue clip, range:\n5~hueRamp", ""],
+      ["├─ hueRamp", "intege\nr", "Yes", "", "Hue Ramp, range: 5~180", ""],
+      ["├─\nsaturationClip", "intege\nr", "Yes", "", "Saturation clip, range:\n5~100", ""],
+      ["├─\nsaturationGain", "intege\nr", "Yes", "", "Gain (softness threshold),\nrange: 5~100", ""],
+      ["├─ spill", "intege\nr", "Yes", "", "Spill, range: 5~100", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "page": 105,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n2: Enable.\nintege\n├─ emitterDelay Yes Emitter delay\nr\n├─ audio object Yes PGM audio\nnumb 0: Normal.\n├─ isMute Yes\ner 1: Mute.\nnumb Volume range:\n├─ volume Yes\ner 0~100, unit: %\nItem type:\nobject Input audio\n├─ source Yes\nobject\n[] source list\nAudio type:\n-1: No audio.\n0: Embedded\nnumb\n├─ type Yes audio.\ner\n1: Analog audio.\n2: Dante audio.\n3: Layer.\nConnector ID\nnumb\n├─ id Yes (The layer sends\ner\nthe layer ID.)\nItem type:\nnumb Dante channel\n├─ danteChannelIndex Yes\nnumber\ner [] array\n├─ No\nItem type:\nobject Output\n├─ output Yes\nobject\n[] connector list\n├─ numb Whether to\nYes\naccompanyAudioEnable er enable the",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "2: Enable.", ""],
+      ["├─ emitterDelay", "intege\nr", "Yes", "", "Emitter delay", ""],
+      ["├─ audio", "object", "Yes", "", "PGM audio", ""],
+      ["├─ isMute", "numb\ner", "Yes", "", "0: Normal.\n1: Mute.", ""],
+      ["├─ volume", "numb\ner", "Yes", "", "Volume range:\n0~100, unit: %", ""],
+      ["├─ source", "object\n[]", "Yes", "", "Input audio\nsource list", "Item type:\nobject"],
+      ["├─ type", "numb\ner", "Yes", "", "Audio type:\n-1: No audio.\n0: Embedded\naudio.\n1: Analog audio.\n2: Dante audio.\n3: Layer.", ""],
+      ["├─ id", "numb\ner", "Yes", "", "Connector ID\n(The layer sends\nthe layer ID.)", ""],
+      ["├─ danteChannelIndex", "numb\ner []", "Yes", "", "Dante channel\narray", "Item type:\nnumber"],
+      ["├─", "", "No", "", "", ""],
+      ["├─ output", "object\n[]", "Yes", "", "Output\nconnector list", "Item type:\nobject"],
+      ["├─\naccompanyAudioEnable", "numb\ner", "Yes", "", "Whether to\nenable the", ""]
+    ]}
+  ]
+}

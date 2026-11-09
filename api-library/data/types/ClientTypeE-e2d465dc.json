@@ -1,0 +1,9 @@
+{
+  "id": "ClientTypeE-e2d465dc",
+  "name": "ClientTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 3,
+  "declaration": "enum ClientTypeE {\n  PCUnico = 0,\n  PCPixelFlow = 8,\n  UnicoEC = 2,\n  PixelFlowEC = 9,\n  /** Companion插件用13 */\n  Companion = 13,\n}"
+}

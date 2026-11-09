@@ -1,0 +1,7 @@
+{
+  "id": "reference-ITimingCheckRes-4051e768",
+  "name": "ITimingCheckRes",
+  "availability": "referenced-only",
+  "references": [{"name":"ITimingCheckRes","source":"src/api/device/deviceInfo.ts","line":99},{"name":"ITimingCheckRes","source":"src/api/device/deviceInfo.ts","line":100}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

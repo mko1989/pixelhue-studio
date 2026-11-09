@@ -1,0 +1,21 @@
+{
+  "page": 53,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nDSK enable:\nEnumerati\ninteg\n├─ enable Yes 0: Disable.\non: 0, 1\ner\n1: Enable.\nobjec\n├─ cursor Yes Cursor position\nt\nShow cursor:\nEnumerati\nnumb\n├─ enable Yes 0: Disable.\non: 0, 1\ner\n1: Enable.\nCursor coordinates (using\nobjec\n├─ pos Yes the top-left corner of the\nt\nvisible area as the origin)\ninteg\n├─ x Yes Pick point x-coordinate mock: 122\ner\ninteg\n├─ y Yes Pick point y-coordinate mock: 0\ner\nobjec\n├─ color Yes Picked color\nt\nnumb\n├─ R Yes Red component mock: 255\ner\nnumb\n├─ G Yes Green component mock: 255\ner\nnumb\n├─ B Yes Blue component mock: 0\ner\nDSK type:\nEnumerati\ninteg 0: Luma key.\n├─ type Yes\non: 0, 1\ner 1: Chroma key.\n2: Smart key.\n├─ objec Yes Luma key",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ enable", "integ\ner", "Yes", "", "DSK enable:\n0: Disable.\n1: Enable.", "Enumerati\non: 0, 1"],
+      ["├─ cursor", "objec\nt", "Yes", "", "Cursor position", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Show cursor:\n0: Disable.\n1: Enable.", "Enumerati\non: 0, 1"],
+      ["├─ pos", "objec\nt", "Yes", "", "Cursor coordinates (using\nthe top-left corner of the\nvisible area as the origin)", ""],
+      ["├─ x", "integ\ner", "Yes", "", "Pick point x-coordinate", "mock: 122"],
+      ["├─ y", "integ\ner", "Yes", "", "Pick point y-coordinate", "mock: 0"],
+      ["├─ color", "objec\nt", "Yes", "", "Picked color", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Red component", "mock: 255"],
+      ["├─ G", "numb\ner", "Yes", "", "Green component", "mock: 255"],
+      ["├─ B", "numb\ner", "Yes", "", "Blue component", "mock: 0"],
+      ["├─ type", "integ\ner", "Yes", "", "DSK type:\n0: Luma key.\n1: Chroma key.\n2: Smart key.", "Enumerati\non: 0, 1"],
+      ["├─", "objec", "Yes", "", "Luma key", ""]
+    ]}
+  ]
+}

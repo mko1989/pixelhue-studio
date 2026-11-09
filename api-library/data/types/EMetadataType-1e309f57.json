@@ -1,0 +1,9 @@
+{
+  "id": "EMetadataType-1e309f57",
+  "name": "EMetadataType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 957,
+  "declaration": "enum EMetadataType {\n  electroOpticalTransferFunction, // 光电转换\n  whitePointX, // 白点坐标X\n  whitePointY, // 白点坐标Y\n  maxDisplayMasteringLuminance, // 显示器最大亮度\n  minDisplayMasteringLuminance, // 显示器最小亮度\n  maximumContentLightLevel, // 内容最大亮度\n  maximumFrameAverageLightLevel, // 内容最大帧平均亮度\n  whitePoint, // 白点坐标\n}"
+}

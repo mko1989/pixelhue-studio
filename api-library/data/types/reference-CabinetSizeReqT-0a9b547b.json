@@ -1,0 +1,7 @@
+{
+  "id": "reference-CabinetSizeReqT-0a9b547b",
+  "name": "CabinetSizeReqT",
+  "availability": "referenced-only",
+  "references": [{"name":"CabinetSizeReqT","source":"src/api/device/cabinet-pack.ts","line":343}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

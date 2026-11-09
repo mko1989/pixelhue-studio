@@ -1,0 +1,7 @@
+{
+  "id": "reference-DeviceSearchListT-ac52219c",
+  "name": "DeviceSearchListT",
+  "availability": "referenced-only",
+  "references": [{"name":"DeviceSearchListT","source":"src/api/device/deviceList.ts","line":1086},{"name":"DeviceSearchListT","source":"src/api/device/deviceList.ts","line":1094},{"name":"DeviceSearchListT","source":"src/api/device/deviceList.ts","line":1095}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

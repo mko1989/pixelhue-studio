@@ -1,0 +1,9 @@
+{
+  "id": "EProjectState-7672bec8",
+  "name": "EProjectState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 853,
+  "declaration": "enum EProjectState {\n  noStart = 0,\n  inProgress = 1,\n  complete = 2,\n  noSpace = 3,\n  abnormal = 4,\n}"
+}

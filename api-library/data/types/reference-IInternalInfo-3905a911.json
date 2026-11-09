@@ -1,0 +1,7 @@
+{
+  "id": "reference-IInternalInfo-3905a911",
+  "name": "IInternalInfo",
+  "availability": "referenced-only",
+  "references": [{"name":"IInternalInfo","source":"src/api/device/device-source.ts","line":45},{"name":"IInternalInfo","source":"src/api/device/device-source.ts","line":46}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

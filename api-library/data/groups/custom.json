@@ -1,0 +1,4 @@
+{
+  "group": "custom",
+  "endpoints": [{"id":"get-custom","method":"GET","path":"/unico/v1/custom","group":"custom","summary":"response","tags":["custom"],"models":[],"symbols":["response"],"keywords":" params: neutralParamsT","serverKind":"device","manual":false,"file":"endpoints/get-custom.json"},{"id":"post-custom-info","method":"POST","path":"/unico/v1/custom/info","group":"custom","summary":"response","tags":["custom","info"],"models":[],"symbols":["response"],"keywords":" config: {\n  data: ICustomSubmitData;\n  params: neutralParamsT;\n} config.data","serverKind":"device","manual":false,"file":"endpoints/post-custom-info.json"}]
+}

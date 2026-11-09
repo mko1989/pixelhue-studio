@@ -1,0 +1,9 @@
+{
+  "id": "EPanelSourceCommand-0975a565",
+  "name": "EPanelSourceCommand",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 264,
+  "declaration": "enum EPanelSourceCommand {\n  /** 输入源主备源切换 */\n  backupSwitch = 301,\n}"
+}

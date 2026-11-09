@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceStatusE-10c80ea8",
+  "name": "InterfaceStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 707,
+  "declaration": "enum InterfaceStatusE {\n  noSignal, //无信号\n  haveSignal, //  有信号\n  haveSignalCopy, //有信号 - 复制\n  noSignalCopy, //无信号 - 复制\n  disabled, //不可用\n  superLoad, //超带载\n  superLoadCopy, // 超带宽 -备份\n  haveSignalBackup, //有信号 - 备份\n  noSignalBackup, //无信号 - 备份\n  astableSignal, // 源不稳定\n  astableSignalCopy, // 源不稳定 - 复制\n  astableSignalBackup, // 源不稳定 - 备份\n}"
+}

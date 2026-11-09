@@ -1,0 +1,9 @@
+{
+  "id": "PavingE-1078a582",
+  "name": "PavingE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 3,
+  "declaration": "enum PavingE {\n  horizontal,\n  vertical,\n  fullscreen,\n}"
+}

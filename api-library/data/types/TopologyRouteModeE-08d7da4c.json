@@ -1,0 +1,9 @@
+{
+  "id": "TopologyRouteModeE-08d7da4c",
+  "name": "TopologyRouteModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1177,
+  "declaration": "enum TopologyRouteModeE {\n  free = 1, // 自由走线\n  nonFree = 2, // 非自由走线\n}"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "PresetListDetailData-e80b7463",
+  "name": "PresetListDetailData",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Preset.ts",
+  "line": 3,
+  "declaration": "interface PresetListDetailData {\n\ttotalCount: number\n\tlist: Preset[]\n}"
+}

@@ -1,0 +1,20 @@
+{
+  "page": 62,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\node 1: Mac compatibility mode.\nobjec\n├─ audio Yes Audio\nt\nCapability to serve as an\n├─ numb audio source:\nYes\nisAudioSource er 0: Not supported.\n1: Supported.\nAudio type:\n-1: No audio.\n├─ numb\nYes 0: Embedded audio.\naudioType er\n1: Analog audio.\n2: Dante audio.\nnumb\n├─ sampling Yes Sampling Rate\ner\n├─\nnumb The number of preset\npresetChannel Yes\ner channels set by users\nNum\n├─ The actual number of\nnumb\nactualChannel Yes channels reported at the\ner\nNum base level\nnumb The interface ID of actual\n├─ sourceId Yes\ner audio source\n├─ objec Item type:\nYes\nobject\nchannelInfo t []\nnumb\n├─ channelId Yes\ner\n├─ numb The channel index, starting\nYes\nchannelIndex er from 0",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["ode", "", "", "", "1: Mac compatibility mode.", ""],
+      ["├─ audio", "objec\nt", "Yes", "", "Audio", ""],
+      ["├─\nisAudioSource", "numb\ner", "Yes", "", "Capability to serve as an\naudio source:\n0: Not supported.\n1: Supported.", ""],
+      ["├─\naudioType", "numb\ner", "Yes", "", "Audio type:\n-1: No audio.\n0: Embedded audio.\n1: Analog audio.\n2: Dante audio.", ""],
+      ["├─ sampling", "numb\ner", "Yes", "", "Sampling Rate", ""],
+      ["├─\npresetChannel\nNum", "numb\ner", "Yes", "", "The number of preset\nchannels set by users", ""],
+      ["├─\nactualChannel\nNum", "numb\ner", "Yes", "", "The actual number of\nchannels reported at the\nbase level", ""],
+      ["├─ sourceId", "numb\ner", "Yes", "", "The interface ID of actual\naudio source", ""],
+      ["├─\nchannelInfo", "objec\nt []", "Yes", "", "", "Item type:\nobject"],
+      ["├─ channelId", "numb\ner", "Yes", "", "", ""],
+      ["├─\nchannelIndex", "numb\ner", "Yes", "", "The channel index, starting\nfrom 0", ""]
+    ]}
+  ]
+}

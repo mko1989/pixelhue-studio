@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerLayoutT-e7611444",
+  "name": "LayerLayoutT",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerLayoutT","source":"src/api/layer/layer.ts","line":1132},{"name":"LayerLayoutT","source":"src/api/layer/layer.ts","line":1135}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

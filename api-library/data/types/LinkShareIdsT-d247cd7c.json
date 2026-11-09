@@ -1,0 +1,9 @@
+{
+  "id": "LinkShareIdsT-d247cd7c",
+  "name": "LinkShareIdsT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/types/device/link.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 28,
+  "declaration": "type LinkShareIdsT = {\n  /** 共享源的id */\n  shareId: number;\n  /** 共享源的类型 */\n  shareType: SourceTypeE;\n};"
+}

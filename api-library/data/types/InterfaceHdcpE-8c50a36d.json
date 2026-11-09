@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceHdcpE-8c50a36d",
+  "name": "InterfaceHdcpE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1031,
+  "declaration": "enum InterfaceHdcpE {\n  OFF = 0,\n  ON,\n}"
+}

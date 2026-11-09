@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/screen/canvas/mapping",
+  "group": "ucenter",
+  "summary": "res",
+  "tags": ["ucenter","screen","canvas","mapping"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"/ucenter/screen/canvas/mapping","dynamic":false,"source":"src/api/screen/controller.ts","line":480,"client":"API","symbol":"res","comment":"* @description 开启多幕布定位功能","parameters":["data: { sn: string; data: MappingColor[] }[]","headers?: AxiosRequestHeaders"],"bodyExpression":"data","queryExpression":null,"headerExpression":"headers","configExpression":"{\n    method: 'PUT',\n    url: '/ucenter/screen/canvas/mapping',\n    data,\n    headers,\n  }","context":"async (\n  data: { sn: string; data: MappingColor[] }[],\n  headers?: AxiosRequestHeaders,\n): Promise<IResponseData<string>> => {\n  const res = await API.request({\n    method: 'PUT',\n    url: '/ucenter/screen/canvas/mapping',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-screen-canvas-mapping",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

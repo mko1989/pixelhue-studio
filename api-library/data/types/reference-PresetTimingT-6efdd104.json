@@ -1,0 +1,7 @@
+{
+  "id": "reference-PresetTimingT-6efdd104",
+  "name": "PresetTimingT",
+  "availability": "referenced-only",
+  "references": [{"name":"PresetTimingT","source":"src/api/device/deviceInfo.ts","line":86},{"name":"PresetTimingT","source":"src/api/device/deviceInfo.ts","line":87},{"name":"PresetTimingT","source":"src/types/device/typing.ts","line":96}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

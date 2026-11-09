@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/virtual-cabinet",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","virtual-cabinet"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/ucenter/virtual-cabinet","dynamic":false,"source":"src/api/device/cabinet-pack.ts","line":159,"client":"API","symbol":"response","comment":"*\n * 本地库新增虚拟箱体数据\n * @returns","parameters":["data: { list: VirtualBoxDataT[] }"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'POST',\n    url: '/ucenter/virtual-cabinet',\n    data,\n  }","context":"async (data: { list: VirtualBoxDataT[] }) => {\n  const response = await API.request<IResponseData<INcpData[]>>({\n    method: 'POST',\n    url: '/ucenter/virtual-cabinet',\n    data,\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-virtual-cabinet",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

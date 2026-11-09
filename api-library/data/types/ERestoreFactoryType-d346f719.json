@@ -1,0 +1,9 @@
+{
+  "id": "ERestoreFactoryType-d346f719",
+  "name": "ERestoreFactoryType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 497,
+  "declaration": "enum ERestoreFactoryType {\n  reboot, // 重启条件配置\n  ipExclude, // Ip设置配置\n  edidExclude, // edid设置\n  picExclude, // 图库数据\n  languageExclude, // 语言设置\n}"
+}

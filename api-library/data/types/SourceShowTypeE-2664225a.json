@@ -1,0 +1,9 @@
+{
+  "id": "SourceShowTypeE-2664225a",
+  "name": "SourceShowTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 134,
+  "declaration": "enum SourceShowTypeE {\n  list = 1, // 列表展示  按照xml的值配置\n  preview, // 预览展示\n}"
+}

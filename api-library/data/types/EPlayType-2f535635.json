@@ -1,0 +1,9 @@
+{
+  "id": "EPlayType-2f535635",
+  "name": "EPlayType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/preset/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 33,
+  "declaration": "enum EPlayType {\n  default = 1,\n  PGM = 2,\n  PVW = 4,\n  PVWAndPGM = 6,\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-IDeviceLogExport-a9a2366b",
+  "name": "IDeviceLogExport",
+  "availability": "referenced-only",
+  "references": [{"name":"IDeviceLogExport","source":"src/api/device/log-export.ts","line":16},{"name":"IDeviceLogExport","source":"src/api/device/log-export.ts","line":30}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

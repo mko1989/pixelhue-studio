@@ -1,0 +1,16 @@
+{
+  "page": 90,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n1: presetTiming.\nScreen\n├─ backgroundColor object Yes background\ncolor\nRed component\nnumb of screen\n├─ R Yes\ner background\ncolor\nGreen\ncomponent of\nnumb\n├─ G Yes screen\ner\nbackground\ncolor\nBlue component\nnumb of screen\n├─ B Yes\ner background\ncolor\nThe coordinate\nwhen multiple\nscreens are\ndisplayed\nsimultaneously\n├─ layout object Yes on the same\ncanvas (the\ncoordinate is\nconsistently\nreferenced from\nthe canvas)\nnumb Screen position\n├─ x Yes\ner x-coordinate",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "1: presetTiming.", ""],
+      ["├─ backgroundColor", "object", "Yes", "", "Screen\nbackground\ncolor", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Red component\nof screen\nbackground\ncolor", ""],
+      ["├─ G", "numb\ner", "Yes", "", "Green\ncomponent of\nscreen\nbackground\ncolor", ""],
+      ["├─ B", "numb\ner", "Yes", "", "Blue component\nof screen\nbackground\ncolor", ""],
+      ["├─ layout", "object", "Yes", "", "The coordinate\nwhen multiple\nscreens are\ndisplayed\nsimultaneously\non the same\ncanvas (the\ncoordinate is\nconsistently\nreferenced from\nthe canvas)", ""],
+      ["├─ x", "numb\ner", "Yes", "", "Screen position\nx-coordinate", ""]
+    ]}
+  ]
+}

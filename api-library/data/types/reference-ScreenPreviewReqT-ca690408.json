@@ -1,0 +1,7 @@
+{
+  "id": "reference-ScreenPreviewReqT-ca690408",
+  "name": "ScreenPreviewReqT",
+  "availability": "referenced-only",
+  "references": [{"name":"ScreenPreviewReqT","source":"src/api/screen/screen.ts","line":1364}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

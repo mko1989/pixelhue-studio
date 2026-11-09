@@ -1,0 +1,11 @@
+{
+  "page": 31,
+  "text": "Default\nName Type Required Remarks More\nValue\nactual output voltage by 10\nto avoid decimals.\nWhen type=1, value indicates\ncard temperature.\nWhen type=2, value indicates\nfan speed.\nWhen type=3, value indicates\nfan duty cycle.\nWhen type=4, value indicates\npower signal status. [0:\nPower not connected; 1:\nPower connected]\nThe card status: 0: The card\nis offline, meaning the card\nis removed. 1: The card is\nonline (It is the normal\nstatus and default value.\nOnly cards in this status can\nbe updated). 2: The card is\ninserted, but its link with the\ncontrol card is abnormal. 3:\n├─ The card type is not\nnumber Yes\nonline supported by this device (For\nexample, an F-series card is\ninserted into a D-series\ndevice). 4: Different types of\ncards are inserted. For\nexample, an input card is\ninserted into an output slot.\n5. The card is online, but its\nversion does not match the\ndevice's program version.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "actual output voltage by 10\nto avoid decimals.\nWhen type=1, value indicates\ncard temperature.\nWhen type=2, value indicates\nfan speed.\nWhen type=3, value indicates\nfan duty cycle.\nWhen type=4, value indicates\npower signal status. [0:\nPower not connected; 1:\nPower connected]", ""],
+      ["├─\nonline", "number", "Yes", "", "The card status: 0: The card\nis offline, meaning the card\nis removed. 1: The card is\nonline (It is the normal\nstatus and default value.\nOnly cards in this status can\nbe updated). 2: The card is\ninserted, but its link with the\ncontrol card is abnormal. 3:\nThe card type is not\nsupported by this device (For\nexample, an F-series card is\ninserted into a D-series\ndevice). 4: Different types of\ncards are inserted. For\nexample, an input card is\ninserted into an output slot.\n5. The card is online, but its\nversion does not match the\ndevice's program version.", ""]
+    ]}
+  ]
+}

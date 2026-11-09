@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/cabinet/correction/coefficient",
+  "group": "cabinet",
+  "summary": "response",
+  "tags": ["cabinet","correction","coefficient"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"cabinet/correction/coefficient","dynamic":false,"source":"src/api/ctl-fix/index.ts","line":180,"client":"API","symbol":"response","comment":"****系数操作-适配跨设备屏后，改协议暂时不使用，改用校正的系数操作接口***","parameters":["data: CabinetCorrectionCoefficientPropsI"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\r\n    method: 'put',\r\n    url: 'cabinet/correction/coefficient',\r\n    data,\r\n    timeout: 60000,\r\n  }","context":"async (\r\n  data: CabinetCorrectionCoefficientPropsI,\r\n): Promise<IResponseData<unknown>> => {\r\n  const response = await API.request<IResponseData<unknown>>({\r\n    method: 'put',\r\n    url: 'cabinet/correction/coefficient',\r\n    data,\r\n    timeout: 60000,\r","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-cabinet-correction-coefficient",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

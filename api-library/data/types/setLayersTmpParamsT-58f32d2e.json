@@ -1,0 +1,9 @@
+{
+  "id": "setLayersTmpParamsT-58f32d2e",
+  "name": "setLayersTmpParamsT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/production/burn-in-test.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 372,
+  "declaration": "interface setLayersTmpParamsT {\n  templateId: number; // 使用的模板唯一ID\n  screenId: number; // 模板应用的屏幕唯一ID\n  sceneType: number; // 模板应用屏幕的sceneType,同于图层中sceneType字段定义\n  templateType: number; // 模板类型 1:内置模板 2:自定义模板 3:老化模板(从v1.4版本开始使用,旧版本不传递,不影响功能)\n}"
+}

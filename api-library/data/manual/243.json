@@ -1,0 +1,16 @@
+{
+  "page": 243,
+  "text": "Default\nName Type Required Remarks More\nValue\nGallery module\n├─ stateInfo object Yes\nstatus\n0: Idle.\n├─ import number Yes\n1: Importing.\nFloat type, total\n├─\nnumber Yes capacity of the\ntotalCapacity\ngallery (MB)\nNumber of items on\n├─ count number Yes\nthis page\n├─ page number Yes Current page number\n├─ Total number of\nnumber Yes\ntotalCount items\n├─ totalPage number Yes Total pages",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["├─ stateInfo", "object", "Yes", "", "Gallery module\nstatus", ""],
+      ["├─ import", "number", "Yes", "", "0: Idle.\n1: Importing.", ""],
+      ["├─\ntotalCapacity", "number", "Yes", "", "Float type, total\ncapacity of the\ngallery (MB)", ""],
+      ["├─ count", "number", "Yes", "", "Number of items on\nthis page", ""],
+      ["├─ page", "number", "Yes", "", "Current page number", ""],
+      ["├─\ntotalCount", "number", "Yes", "", "Total number of\nitems", ""],
+      ["├─ totalPage", "number", "Yes", "", "Total pages", ""]
+    ]}
+  ]
+}

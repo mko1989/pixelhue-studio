@@ -1,0 +1,7 @@
+{
+  "id": "reference-FortyPortModeE-fdb5e6eb",
+  "name": "FortyPortModeE",
+  "availability": "referenced-only",
+  "references": [{"name":"FortyPortModeE","source":"src/api/device/deviceList.ts","line":1027},{"name":"FortyPortModeE","source":"src/api/device/deviceList.ts","line":1046}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

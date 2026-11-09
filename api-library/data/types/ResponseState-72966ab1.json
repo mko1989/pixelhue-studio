@@ -1,0 +1,9 @@
+{
+  "id": "ResponseState-72966ab1",
+  "name": "ResponseState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 26,
+  "declaration": "enum ResponseState {\n  down = 0,\n}"
+}

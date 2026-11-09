@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerBaseT-d3d67b0d",
+  "name": "LayerBaseT",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerBaseT","source":"src/api/production/index.ts","line":98},{"name":"LayerBaseT","source":"src/api/layer/layer.ts","line":132},{"name":"LayerBaseT","source":"src/api/layer/layer.ts","line":605},{"name":"LayerBaseT","source":"src/api/production/burn-in-test.ts","line":129}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

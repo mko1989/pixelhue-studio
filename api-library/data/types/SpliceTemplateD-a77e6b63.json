@@ -1,0 +1,9 @@
+{
+  "id": "SpliceTemplateD-a77e6b63",
+  "name": "SpliceTemplateD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 200,
+  "declaration": "interface SpliceTemplateD {\n  /**\n   * 模板Id\n   */\n  templateId?: number;\n  /**\n   * 卡的插槽编号\n   */\n  slotId: number;\n  /**\n   * 资源id\n   */\n  montageId?: number;\n  /**\n   * 资源id\n   */\n  sourceId?: number;\n  /**\n   * 模板是否在使用 0未使用，1使用\n   */\n  isUsed: EnableStatusE;\n  /**\n   * 模板名称\n   */\n  name: string;\n  /**\n   * 模板的列数\n   */\n  column: number;\n  /**\n   * 模板的行数\n   */\n  row: number;\n}"
+}

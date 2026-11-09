@@ -1,0 +1,9 @@
+{
+  "id": "EKeyBoardAction-31a41fcf",
+  "name": "EKeyBoardAction",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 208,
+  "declaration": "enum EKeyBoardAction {\n  default = 0, // 0：未按下\n  click, // 1：单击\n  doubleClick, // 2：双击\n}"
+}

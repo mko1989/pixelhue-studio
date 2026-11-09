@@ -1,0 +1,7 @@
+{
+  "id": "reference-INodeStatus-dcc28254",
+  "name": "INodeStatus",
+  "availability": "referenced-only",
+  "references": [{"name":"INodeStatus","source":"src/api/device/deviceInfo.ts","line":277}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

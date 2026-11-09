@@ -1,0 +1,9 @@
+{
+  "id": "EKnokUnique-e7234288",
+  "name": "EKnokUnique",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 265,
+  "declaration": "enum EKnokUnique {\n  knok1 = 'knok1', // 旋钮1\n  knok2 = 'knok2', // 旋钮2\n  knok3 = 'knok3', // 旋钮3\n  knok4 = 'knok4', // 旋钮4\n}"
+}

@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/correction/screen/coefficient-format/stream",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","correction","screen","coefficient-format","stream"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/correction/screen/coefficient-format/stream","dynamic":false,"source":"src/api/correction/index.ts","line":263,"client":"API_U_CENTER","symbol":"response","comment":"上传校正系数文件解析","parameters":["file: File"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{\n      contentType: 'multipart/form-data',\n    }","configExpression":"{\n    method: 'put',\n    url: 'ucenter/correction/screen/coefficient-format/stream',\n    data: formData,\n    headers: {\n      contentType: 'multipart/form-data',\n    },\n    timeout: 600000,\n  }","context":"async (\n  file: File,\n): Promise<IResponseData<UploadResponseT>> => {\n  const formData = new FormData();\n  formData.append('file', file);\n  const response = await API_U_CENTER.request<IResponseData<UploadResponseT>>({\n    method: 'put',\n    url: 'ucenter/correction/screen/coefficient-format/stream',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-correction-screen-coefficient-format-stream",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

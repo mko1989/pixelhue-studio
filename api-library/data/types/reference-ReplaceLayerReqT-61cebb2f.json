@@ -1,0 +1,7 @@
+{
+  "id": "reference-ReplaceLayerReqT-61cebb2f",
+  "name": "ReplaceLayerReqT",
+  "availability": "referenced-only",
+  "references": [{"name":"ReplaceLayerReqT","source":"src/api/production/index.ts","line":117},{"name":"ReplaceLayerReqT","source":"src/api/layer/layer.ts","line":212},{"name":"ReplaceLayerReqT","source":"src/api/layer/layer.ts","line":631},{"name":"ReplaceLayerReqT","source":"src/api/production/burn-in-test.ts","line":285}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

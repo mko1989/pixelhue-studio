@@ -1,0 +1,7 @@
+{
+  "id": "reference-PresetCreateParamsT-f9df020f",
+  "name": "PresetCreateParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"PresetCreateParamsT","source":"src/api/preset/index.ts","line":276}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

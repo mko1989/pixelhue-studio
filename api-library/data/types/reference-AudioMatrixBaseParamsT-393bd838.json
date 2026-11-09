@@ -1,0 +1,7 @@
+{
+  "id": "reference-AudioMatrixBaseParamsT-393bd838",
+  "name": "AudioMatrixBaseParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"AudioMatrixBaseParamsT","source":"src/api/audio-matrix/index.ts","line":44}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

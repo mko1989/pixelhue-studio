@@ -1,0 +1,9 @@
+{
+  "id": "isMainE-2ddab72e",
+  "name": "isMainE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1144,
+  "declaration": "enum isMainE {\n  isMain = '1',\n  notMain = '0',\n}"
+}

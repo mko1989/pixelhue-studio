@@ -1,0 +1,4 @@
+{
+  "group": "unico",
+  "endpoints": [{"id":"get-unico-ec-xxx","method":"GET","path":"/unico/ec/xxx","group":"unico","summary":"response","tags":["unico","xxx"],"models":[],"symbols":["response"],"keywords":" ","serverKind":"device","manual":false,"file":"endpoints/get-unico-ec-xxx.json"}]
+}

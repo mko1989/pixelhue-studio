@@ -1,0 +1,9 @@
+{
+  "id": "VPUConfigValidE-fea61c88",
+  "name": "VPUConfigValidE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/api/device/vpu.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 23,
+  "declaration": "enum VPUConfigValidE {\n  /** 无效 */\n  invalid = 0,\n  /** 有效 */\n  valid = 1,\n}"
+}

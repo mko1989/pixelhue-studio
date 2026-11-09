@@ -1,0 +1,7 @@
+{
+  "id": "reference-ScreenPgmEditT-ba3a417b",
+  "name": "ScreenPgmEditT",
+  "availability": "referenced-only",
+  "references": [{"name":"ScreenPgmEditT","source":"src/api/screen/screen.ts","line":398},{"name":"ScreenPgmEditT","source":"src/api/screen/screen.ts","line":399}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

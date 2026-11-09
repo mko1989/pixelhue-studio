@@ -1,0 +1,9 @@
+{
+  "id": "SignalTypeCodeE-d06b9c38",
+  "name": "SignalTypeCodeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1309,
+  "declaration": "enum SignalTypeCodeE {\n  Input = 2,\n  Screen = 3,\n  Gallery = 5,\n  Logo = 6,\n}"
+}

@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/smartscreen/timecode/source",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","smartscreen","timecode","source"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/smartscreen/timecode/source","dynamic":false,"source":"src/api/setting/setting.ts","line":207,"client":"API","symbol":"response","comment":"","parameters":["data: IToggleStatus"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/smartscreen/timecode/source',\n    data: data,\n  }","context":"async (\n  data: IToggleStatus,\n): Promise<IResponseData<null>> => {\n  const response = await API.request<IResponseData<null>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/smartscreen/timecode/source',\n    data: data,\n  });","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-smartscreen-timecode-source",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

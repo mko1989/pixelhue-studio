@@ -1,0 +1,20 @@
+{
+  "page": 119,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nintege\n├─ G Yes\nr\nintege\n├─ B Yes\nr\nAdditional\n├─ Frame Latency:\nintege\nadditionalFrameLatencyV Yes 0: Off.\nr\nalue 1: One frame.\n2: Two frames.\nintege\n├─ layerLayout Yes Layer layout\nr\nintege Screen working\n├─ screenWorkMode Yes\nr mode\nintege Low Latency\n├─ lowDelayEnable Yes\nr switch\nScreen lock\nintege status:\n├─ lockState Yes\nr 0: Unlocked.\n1: Locked.\nOutput mapping:\nnumb\n├─ interfaceLocation Yes 0: Disable.\ner\n1: Enable.\nScreen switch:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\nThe key position\nItem type:\nintege\n├─ keyPosition Yes index, starting\ninteger\nr []\nfrom 0\n├─ No The position",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ G", "intege\nr", "Yes", "", "", ""],
+      ["├─ B", "intege\nr", "Yes", "", "", ""],
+      ["├─\nadditionalFrameLatencyV\nalue", "intege\nr", "Yes", "", "Additional\nFrame Latency:\n0: Off.\n1: One frame.\n2: Two frames.", ""],
+      ["├─ layerLayout", "intege\nr", "Yes", "", "Layer layout", ""],
+      ["├─ screenWorkMode", "intege\nr", "Yes", "", "Screen working\nmode", ""],
+      ["├─ lowDelayEnable", "intege\nr", "Yes", "", "Low Latency\nswitch", ""],
+      ["├─ lockState", "intege\nr", "Yes", "", "Screen lock\nstatus:\n0: Unlocked.\n1: Locked.", ""],
+      ["├─ interfaceLocation", "numb\ner", "Yes", "", "Output mapping:\n0: Disable.\n1: Enable.", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Screen switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ keyPosition", "intege\nr []", "Yes", "", "The key position\nindex, starting\nfrom 0", "Item type:\ninteger"],
+      ["├─", "", "No", "", "The position", ""]
+    ]}
+  ]
+}

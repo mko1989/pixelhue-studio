@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/video-station/key/custom/export",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","key","custom","export"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/video-station/key/custom/export","dynamic":false,"source":"src/api/custom/index.ts","line":262,"client":"API","symbol":"response","comment":"*\n *自定义按键配置导出","parameters":["data: {\n  configIDs: number[];\n  path: string;\n  deviceMode;\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'POST',\n    url: 'ucenter/video-station/key/custom/export',\n    data,\n    timeout: 0,\n  }","context":"async (data: {\n  configIDs: number[];\n  path: string;\n  deviceMode;\n}): Promise<IResponseData<null>> => {\n  const response = await API.request<IResponseData<null>>({\n    method: 'POST',\n    url: 'ucenter/video-station/key/custom/export',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-video-station-key-custom-export",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

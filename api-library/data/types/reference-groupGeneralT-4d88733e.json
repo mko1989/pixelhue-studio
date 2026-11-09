@@ -1,0 +1,7 @@
+{
+  "id": "reference-groupGeneralT-4d88733e",
+  "name": "groupGeneralT",
+  "availability": "referenced-only",
+  "references": [{"name":"groupGeneralT","source":"src/api/source/index.ts","line":111}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

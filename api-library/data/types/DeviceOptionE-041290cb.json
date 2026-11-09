@@ -1,0 +1,9 @@
+{
+  "id": "DeviceOptionE-041290cb",
+  "name": "DeviceOptionE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 940,
+  "declaration": "enum DeviceOptionE {\n  restart = 0,\n  hardShutdown,\n  softShutdown,\n  start,\n}"
+}

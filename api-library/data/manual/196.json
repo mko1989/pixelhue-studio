@@ -1,0 +1,17 @@
+{
+  "page": 196,
+  "text": "Default\nName Type Required Remarks More\nValue\nPreset type:\n1: Global.\n2: Single screen.\n├─ type integer Yes\n3: Multi-screen.\n4: Screen preset\n(screen template).\nPreset loading\nmethod:\n├─ loadType integer Yes\n1: Complete.\n2: Relative.\nPreset saved from:\n├─ sourceRegion integer Yes 2: PWG.\n4: PVW.\nThe global transition\n├─ switchEffect object Yes\neffect\nThe transition\n├─ time number Yes\nduration (unit: ms)\nTransition effects:\n0: Cut.\n1: Fade.\n├─ type number Yes 2. Dip.\n3. Wipe.\n4. Stinger.\n5. DVE.\n├─ wipe object No Wipe\nPattern settings:\n1. Vertical rectangle:\nThe height remains\n├─ image integer No constant while the\nwidth increases from\nleft to right, and\ndecreases in the",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["├─ type", "integer", "Yes", "", "Preset type:\n1: Global.\n2: Single screen.\n3: Multi-screen.\n4: Screen preset\n(screen template).", ""],
+      ["├─ loadType", "integer", "Yes", "", "Preset loading\nmethod:\n1: Complete.\n2: Relative.", ""],
+      ["├─ sourceRegion", "integer", "Yes", "", "Preset saved from:\n2: PWG.\n4: PVW.", ""],
+      ["├─ switchEffect", "object", "Yes", "", "The global transition\neffect", ""],
+      ["├─ time", "number", "Yes", "", "The transition\nduration (unit: ms)", ""],
+      ["├─ type", "number", "Yes", "", "Transition effects:\n0: Cut.\n1: Fade.\n2. Dip.\n3. Wipe.\n4. Stinger.\n5. DVE.", ""],
+      ["├─ wipe", "object", "No", "", "Wipe", ""],
+      ["├─ image", "integer", "No", "", "Pattern settings:\n1. Vertical rectangle:\nThe height remains\nconstant while the\nwidth increases from\nleft to right, and\ndecreases in the", ""]
+    ]}
+  ]
+}

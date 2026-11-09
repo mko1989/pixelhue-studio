@@ -1,0 +1,9 @@
+{
+  "id": "EColorSpaceActual1-434ec2ab",
+  "name": "EColorSpaceActual1",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 205,
+  "declaration": "enum EColorSpaceActual1 {\n  RGB_4_4_4,\n  YCbCr_4_2_2,\n  YCbCr_4_4_4,\n  YCbCr_4_2_0,\n}"
+}

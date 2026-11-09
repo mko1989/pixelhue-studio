@@ -1,0 +1,7 @@
+{
+  "id": "reference-IControlPTZ-9f104333",
+  "name": "IControlPTZ",
+  "availability": "referenced-only",
+  "references": [{"name":"IControlPTZ","source":"src/api/setting/setting.ts","line":424},{"name":"IControlPTZ","source":"src/api/setting/setting.ts","line":439},{"name":"IControlPTZ","source":"src/api/setting/setting.ts","line":453},{"name":"IControlPTZ","source":"src/api/setting/setting.ts","line":467}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

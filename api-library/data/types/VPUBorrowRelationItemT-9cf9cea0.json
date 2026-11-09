@@ -1,0 +1,9 @@
+{
+  "id": "VPUBorrowRelationItemT-9cf9cea0",
+  "name": "VPUBorrowRelationItemT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/vpu.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 33,
+  "declaration": "interface VPUBorrowRelationItemT {\n  /** 槽位号 */\n  slotId: number;\n  /** 模式 */\n  mode: VPUBorrowModeE;\n  /** 关联槽位号，当mode=1，表示借出的槽位号，当mode=2，表示借入的槽位号 */\n  relatedSlotId: number;\n  /** 当前配置是否有效（仅GET返回） */\n  valid?: VPUConfigValidE;\n}"
+}

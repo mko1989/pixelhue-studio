@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/system/auth/login",
+  "group": "system",
+  "summary": "User Login",
+  "tags": ["system","auth","login"],
+  "authentication": "none",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [{"method":"POST","path":"/v1/system/auth/login","section":"1.1","title":"User Login","firstPage":4,"lastPage":5,"firmware":"not specified per operation","modelScope":["P10","P20","Q8","P80"],"source":"PixelFlow-OpenAPI Manual-V2.0.1-2.pdf"}],
+  "vendorEvidence": [{"method":"POST","path":"system/auth/login","dynamic":false,"source":"src/api/user/user.ts","line":27,"client":"API","symbol":"userLogin","comment":"*\n * @description 用户登录，获取token","parameters":["data: IUserTokenParams","ip: string","port: number","protocol: string"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"'system/auth/login'","context":"function userLogin(data: IUserTokenParams, ip: string, port: number, protocol: string) {\n  return API.post<IUserToken>('system/auth/login', data, {\n    headers: {\n      ip,\n      port,\n      protocol,\n    },\n  });","sourceMap":"main-Cpb41LiE.js.map"},{"method":"POST","path":"system/auth/login","dynamic":false,"source":"src/api/user/user.ts","line":43,"client":"API","symbol":"response","comment":"","parameters":["data: IUserTokenParams","url: string","ip: string","port: number","protocol: string"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ip,\n      port,\n      // isLoading: true,\n      protocol,\n    }","configExpression":"{\n    method: 'post',\n    url: 'system/auth/login',\n    data,\n    // timeout: 500, // 超过0.5秒登录还失败，就取消了\n    headers: {\n      ip,\n      port,\n      // isLoading: true,\n      protocol,\n    },\n  }","context":"async (\n  data: IUserTokenParams,\n  url: string,\n  ip: string,\n  port: number,\n  protocol: string,\n) => {\n  const response = await API.request<IResponseData<{ token: string }>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":["P10","P20","P80","Q8"],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-system-auth-login",
+  "contractStatus": "manual tables and observed source contracts",
+  "pathParameters": []
+}

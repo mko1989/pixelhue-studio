@@ -1,0 +1,9 @@
+{
+  "id": "ToolbarE-ddbc8be4",
+  "name": "ToolbarE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 30,
+  "declaration": "enum ToolbarE {\n  cancel = 'cancel', // 撤销\n  redo = 'redo', // 重做\n  shrink = 'shrink', // 缩小\n  enlarge = 'enlarge', // 放大\n  oneToOne = 'one-one', // 1:1\n  fitSelect = 'fit-select', // 缩放至选中\n  fitScreen = 'fit-screen', // 自适应布局\n  alignLeft = 'align-left', // 居左\n  alignRight = 'align-right', // 居右\n  alignTop = 'align-top', // 居上\n  alignBottom = 'align-bottom', // 居下\n  alignHorCenter = 'align-hor-center', // 水平居中\n  alignVerticalCenter = 'align-vertical-center', // 垂直居中\n  alignCenter = 'align-center', // 水平垂直都居中\n  mirror = 'mirror', // 镜像\n  delete = 'delete', // 删除\n  clear = 'clear', // 清除\n  freeze = 'freeze', // 冻结\n  lock = 'lock', // 锁定\n  unlocked = 'unlocked', // 未锁定\n  copy = 'copy', // 复制\n  screenAlignLeft = 'screen-align-left', // 左对齐\n  screenAlignRight = 'screen-align-right', // 右对齐\n  screenAlignTop = 'screen-align-top', // 上对齐\n  screenAlignBottom = 'screen-align-bottom', // 下对齐\n  screenArrangementLeft = 'screen-arrangement-left', // 居左排布\n  screenArrangementTop = 'screen-arrangement-top', // 居顶排布\n  horPaving = 'hor-paving', // 水平铺满\n  verticalPaving = 'vertical-paving', // 垂直铺满\n  fullScreen = 'full-screen', // 全屏铺满\n  forward = 'forward', // zIndex 上移一层\n  backward = 'backward', // 下移一层\n  top = 'top', // 置顶\n  bottom = 'bottom', // 置底\n  grid = 'grid', // 网格\n  gridColor = 'grid-color', // 网格颜色\n  gridSpaceX = 'grid-space-x', // 网格间距\n  gridSpaceY = 'grid-space-y', // 网格间距\n  gridAdsorption = 'grid-adsorption', // 网格吸附\n  createCabinet = 'create-cabinet', // 创建箱体\n  disconnectLink = 'disconnectLink', // 断开链接\n  boxLibrary = 'boxLibrary', // 箱体库\n}"
+}

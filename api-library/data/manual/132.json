@@ -1,0 +1,19 @@
+{
+  "page": 132,
+  "text": "Default\nName Type Required Remarks More\nValue\nThe transition duration\n├─ time number Yes\n(unit: ms)\nTransition method:\n├─ type number Yes 0: CUT.\n1: FADE.\nSwap switch:\n├─\nnumber Yes 0: Disable.\nswapEnable\n1: Enable.\nThe screen name. Provide\nat least one of screenId or\n├─\nstring No screenName; if both are\nscreenName\nprovided, screenId takes\nprecedence.\n Return Data\nName Type Required Default Value Remarks More\ncode integer Yes Response code\nmessage string Yes Response message\ndata object Yes",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["├─ time", "number", "Yes", "", "The transition duration\n(unit: ms)", ""],
+      ["├─ type", "number", "Yes", "", "Transition method:\n0: CUT.\n1: FADE.", ""],
+      ["├─\nswapEnable", "number", "Yes", "", "Swap switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─\nscreenName", "string", "No", "", "The screen name. Provide\nat least one of screenId or\nscreenName; if both are\nprovided, screenId takes\nprecedence.", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response message", ""],
+      ["data", "object", "Yes", "", "", ""]
+    ]}
+  ]
+}

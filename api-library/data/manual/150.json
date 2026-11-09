@@ -1,0 +1,20 @@
+{
+  "page": 150,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nr 0: Disable. @integ\n1: Enable. er\nmock:\nwidthRatio = round (Crop\nintege\n├─ widthRatio Yes width/Horizontal @integ\nr\ner\nresolution * 100,000)\nmock:\nheightRatio = round (Crop\nintege\n├─ heightRatio Yes height/Vertical resolution @integ\nr\ner\n* 100,000)\nmock:\nxRatio = round (x-direction\nintege\n├─ xRatio Yes offset/Horizontal @integ\nr\ner\nresolution * 100,000)\nmock:\nyRatio = round (y-direction\nintege\n├─ yRatio Yes offset/Vertical resolution @integ\nr\ner\n* 100,000)\n├─ cutout object Yes Layer DSK\nDSK enable:\nintege\n├─ enable Yes 0: Disable.\nr\n1: Enable.\n├─ cursor object Yes Cursor position\nShow cursor:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\nCursor coordinates (using\n├─ pos object Yes the top-left corner of the\nvisible area as the origin)\nmock:\nintege\n├─ x Yes Pick point x-coordinate @integ\nr\ner",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "r", "", "", "0: Disable.\n1: Enable.", "@integ\ner"],
+      ["├─ widthRatio", "intege\nr", "Yes", "", "widthRatio = round (Crop\nwidth/Horizontal\nresolution * 100,000)", "mock:\n@integ\ner"],
+      ["├─ heightRatio", "intege\nr", "Yes", "", "heightRatio = round (Crop\nheight/Vertical resolution\n* 100,000)", "mock:\n@integ\ner"],
+      ["├─ xRatio", "intege\nr", "Yes", "", "xRatio = round (x-direction\noffset/Horizontal\nresolution * 100,000)", "mock:\n@integ\ner"],
+      ["├─ yRatio", "intege\nr", "Yes", "", "yRatio = round (y-direction\noffset/Vertical resolution\n* 100,000)", "mock:\n@integ\ner"],
+      ["├─ cutout", "object", "Yes", "", "Layer DSK", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "DSK enable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ cursor", "object", "Yes", "", "Cursor position", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Show cursor:\n0: Disable.\n1: Enable.", ""],
+      ["├─ pos", "object", "Yes", "", "Cursor coordinates (using\nthe top-left corner of the\nvisible area as the origin)", ""],
+      ["├─ x", "intege\nr", "Yes", "", "Pick point x-coordinate", "mock:\n@integ\ner"]
+    ]}
+  ]
+}

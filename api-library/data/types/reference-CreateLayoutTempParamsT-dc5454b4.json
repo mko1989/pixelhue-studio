@@ -1,0 +1,7 @@
+{
+  "id": "reference-CreateLayoutTempParamsT-dc5454b4",
+  "name": "CreateLayoutTempParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"CreateLayoutTempParamsT","source":"src/api/layer/layer.ts","line":1036},{"name":"CreateLayoutTempParamsT","source":"src/api/layer/layer.ts","line":1039}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

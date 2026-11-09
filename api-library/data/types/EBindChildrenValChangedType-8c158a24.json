@@ -1,0 +1,9 @@
+{
+  "id": "EBindChildrenValChangedType-8c158a24",
+  "name": "EBindChildrenValChangedType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 565,
+  "declaration": "enum EBindChildrenValChangedType {\n  normal, // 常规\n  relative, // 子业务基于父业务变化的相对值进行修改\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "LinSourceT-5d2a5ea1",
+  "name": "LinSourceT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/types/device/link.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 12,
+  "declaration": "type LinSourceT = {\n  /** 唯一标识 */\n  linkId: string;\n  /** 模式 */\n  mode: LinkModeE;\n};"
+}

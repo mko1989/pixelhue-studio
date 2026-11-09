@@ -1,0 +1,9 @@
+{
+  "id": "ColorRangePresetE-e2e7981c",
+  "name": "ColorRangePresetE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 971,
+  "declaration": "enum ColorRangePresetE {\n  LIMITED = 0,\n  FULL = 1,\n  AUTO = 255,\n}"
+}

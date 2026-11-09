@@ -1,0 +1,17 @@
+{
+  "page": 89,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nthumbnail\ntiming\nInterlaced\nnumb scanning:\n├─ interlaced Yes\ner 0: Interlaced.\n1: Progressive.\nFrame rate\nnumb\n├─ frame Yes (floating-point mock: 1\ner\nformat)\nmock:\nnumb\n├─ width Yes Width\n1920\ner\nmock:\nnumb\n├─ height Yes Height\n960\ner\nResolution\nstandard:\n0: No standard.\n1: DMT\n2: CVT\n├─ standardType string Yes\n3: CVT-RBV1\n4: CVT-RBV2\n5: CVT-RBV3\n6: CEA\n7: SAMPTE\nConnector's\n├─ timingSelect object Yes\ntiming type\nTiming type:\nEnumerat\nnumb 0:\n├─ select Yes\nion: 0, 1, 2\ner presetThumbTi\nming.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "thumbnail\ntiming", ""],
+      ["├─ interlaced", "numb\ner", "Yes", "", "Interlaced\nscanning:\n0: Interlaced.\n1: Progressive.", ""],
+      ["├─ frame", "numb\ner", "Yes", "", "Frame rate\n(floating-point\nformat)", "mock: 1"],
+      ["├─ width", "numb\ner", "Yes", "", "Width", "mock:\n1920"],
+      ["├─ height", "numb\ner", "Yes", "", "Height", "mock:\n960"],
+      ["├─ standardType", "string", "Yes", "", "Resolution\nstandard:\n0: No standard.\n1: DMT\n2: CVT\n3: CVT-RBV1\n4: CVT-RBV2\n5: CVT-RBV3\n6: CEA\n7: SAMPTE", ""],
+      ["├─ timingSelect", "object", "Yes", "", "Connector's\ntiming type", ""],
+      ["├─ select", "numb\ner", "Yes", "", "Timing type:\n0:\npresetThumbTi\nming.", "Enumerat\nion: 0, 1, 2"]
+    ]}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "page": 217,
+  "text": "Default\nName Type Required Remarks More\nValue\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.\nCreate default preset\ndata (for central\ncontrol device and\ncreateDefault integer No\nLCD use):\n0: No.\n1: Yes.\nItem\nPreset parameter\ntype:\nparams string [] Yes\nfunction enumeration\nstring\nFor enumeration\ndetails, see the\n├─ No\npreset configuration\nfile.\nItem\nobject Screen data in the\ntype:\nscreens Yes\n[] preset\nobject\n├─ guid string Yes Screen ID\nItem\nobject Layer parameters in\n├─ layers Yes type:\n[] the preset\nobject\n├─ serial integer Yes Layer No. (required)\n├─ type integer Yes Layer type (required)\nItem\ninteger\ntype:\ninterfaces No Connector ID\n[]\ninteger",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.", ""],
+      ["createDefault", "integer", "No", "", "Create default preset\ndata (for central\ncontrol device and\nLCD use):\n0: No.\n1: Yes.", ""],
+      ["params", "string []", "Yes", "", "Preset parameter\nfunction enumeration", "Item\ntype:\nstring"],
+      ["├─", "", "No", "", "For enumeration\ndetails, see the\npreset configuration\nfile.", ""],
+      ["screens", "object\n[]", "Yes", "", "Screen data in the\npreset", "Item\ntype:\nobject"],
+      ["├─ guid", "string", "Yes", "", "Screen ID", ""],
+      ["├─ layers", "object\n[]", "Yes", "", "Layer parameters in\nthe preset", "Item\ntype:\nobject"],
+      ["├─ serial", "integer", "Yes", "", "Layer No. (required)", ""],
+      ["├─ type", "integer", "Yes", "", "Layer type (required)", ""],
+      ["interfaces", "integer\n[]", "No", "", "Connector ID", "Item\ntype:\ninteger"]
+    ]}
+  ]
+}

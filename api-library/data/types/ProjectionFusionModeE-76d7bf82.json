@@ -1,0 +1,9 @@
+{
+  "id": "ProjectionFusionModeE-76d7bf82",
+  "name": "ProjectionFusionModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 402,
+  "declaration": "enum ProjectionFusionModeE {\n  basic,\n  advanced,\n}"
+}

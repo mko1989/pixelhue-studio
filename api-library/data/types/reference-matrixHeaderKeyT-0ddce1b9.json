@@ -1,0 +1,7 @@
+{
+  "id": "reference-matrixHeaderKeyT-0ddce1b9",
+  "name": "matrixHeaderKeyT",
+  "availability": "referenced-only",
+  "references": [{"name":"matrixHeaderKeyT","source":"src/api/audio-matrix/index.ts","line":55},{"name":"matrixHeaderKeyT","source":"src/api/audio-matrix/index.ts","line":69},{"name":"matrixHeaderKeyT","source":"src/api/audio-matrix/index.ts","line":70}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

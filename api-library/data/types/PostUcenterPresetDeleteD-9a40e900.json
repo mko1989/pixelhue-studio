@@ -1,0 +1,9 @@
+{
+  "id": "PostUcenterPresetDeleteD-9a40e900",
+  "name": "PostUcenterPresetDeleteD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/preset/index.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 316,
+  "declaration": "interface PostUcenterPresetDeleteD {\n  sn: string;\n  /** 场景ID列表 */\n  data: string[];\n}"
+}

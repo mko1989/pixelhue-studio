@@ -1,0 +1,9 @@
+{
+  "id": "ELogModalType-63f4d8c1",
+  "name": "ELogModalType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 61,
+  "declaration": "enum ELogModalType {\n  // 设备自检\n  self = 1,\n  // 整机测试\n  machineTest = 2,\n  // 老化测试\n  agingTest = 3,\n  // 裸板测试\n  bardBoardTest = 4,\n  // 维修测试\n  serviceTest = 5,\n}"
+}

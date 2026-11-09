@@ -1,0 +1,7 @@
+{
+  "id": "reference-CreateScreenCanvasReqT-326e6b95",
+  "name": "CreateScreenCanvasReqT",
+  "availability": "referenced-only",
+  "references": [{"name":"CreateScreenCanvasReqT","source":"src/api/screen/screen.ts","line":1542}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

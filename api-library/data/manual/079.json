@@ -1,0 +1,15 @@
+{
+  "page": 79,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\ndirection\nThe screen\nwidth\n(circumscribed\nnumb\n├─ width Yes rectangle of the\ner\neffective output\nrange on the\nscreen)\nThe screen\nheight\n(circumscribed\nnumb\n├─ height Yes rectangle of the\ner\neffective output\nrange on the\nscreen)\nItem type:\nobject\n├─ outputs Yes\nobject\n[]\nnumb\n├─ interfaceId Yes Connector ID\ner\nStatus of the\ncard where the\nconnector is\nlocated: 0: The\ncard is offline,\nnumb\n├─ interfaceOnline Yes meaning the\ner\ncard is removed.\n1: The card is\nonline and the\nconnector\nconnection is",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "direction", ""],
+      ["├─ width", "numb\ner", "Yes", "", "The screen\nwidth\n(circumscribed\nrectangle of the\neffective output\nrange on the\nscreen)", ""],
+      ["├─ height", "numb\ner", "Yes", "", "The screen\nheight\n(circumscribed\nrectangle of the\neffective output\nrange on the\nscreen)", ""],
+      ["├─ outputs", "object\n[]", "Yes", "", "", "Item type:\nobject"],
+      ["├─ interfaceId", "numb\ner", "Yes", "", "Connector ID", ""],
+      ["├─ interfaceOnline", "numb\ner", "Yes", "", "Status of the\ncard where the\nconnector is\nlocated: 0: The\ncard is offline,\nmeaning the\ncard is removed.\n1: The card is\nonline and the\nconnector\nconnection is", ""]
+    ]}
+  ]
+}

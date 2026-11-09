@@ -1,0 +1,9 @@
+{
+  "id": "ToolbarServerE-808be002",
+  "name": "ToolbarServerE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 75,
+  "declaration": "enum ToolbarServerE {\n  screenAlignLeft = 0, // 左对齐\n  screenAlignRight = 1, // 右对齐\n  screenAlignTop = 2, // 上对齐\n  screenAlignBottom = 3, // 下对齐\n  screenArrangementLeft = 4, // 居左排布\n  screenArrangementTop = 5, // 居顶排布\n}"
+}

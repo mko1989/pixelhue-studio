@@ -1,0 +1,9 @@
+{
+  "id": "EExpandAction-fead65be",
+  "name": "EExpandAction",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 243,
+  "declaration": "enum EExpandAction {\n  wisdomStart, // 1 - 物理按键屏幕测试-智慧屏开始测试\n  wisdomEnd, // 2 - 物理按键屏幕测试-智慧屏结束测试\n}"
+}

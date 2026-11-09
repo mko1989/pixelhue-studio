@@ -1,0 +1,7 @@
+{
+  "id": "reference-GetScreenDepthResponseDetail-88169e3f",
+  "name": "GetScreenDepthResponseDetail",
+  "availability": "referenced-only",
+  "references": [{"name":"GetScreenDepthResponseDetail","source":"src/api/screen/screen-adjust.ts","line":159},{"name":"GetScreenDepthResponseDetail","source":"src/api/screen/screen-adjust.ts","line":160}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-LEDScreenBaseDetailsT-5b76de69",
+  "name": "LEDScreenBaseDetailsT",
+  "availability": "referenced-only",
+  "references": [{"name":"LEDScreenBaseDetailsT","source":"src/api/screen/screen.ts","line":1247},{"name":"LEDScreenBaseDetailsT","source":"src/api/screen/screen.ts","line":1248}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

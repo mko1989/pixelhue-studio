@@ -1,0 +1,7 @@
+{
+  "id": "reference-CropT-50971125",
+  "name": "CropT",
+  "availability": "referenced-only",
+  "references": [{"name":"CropT","source":"src/types/device/typing.ts","line":108}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

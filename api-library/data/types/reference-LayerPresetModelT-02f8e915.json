@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerPresetModelT-02f8e915",
+  "name": "LayerPresetModelT",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerPresetModelT","source":"src/api/layer-preset/index.ts","line":31},{"name":"LayerPresetModelT","source":"src/api/layer-preset/index.ts","line":32},{"name":"LayerPresetModelT","source":"src/api/layer-preset/index.ts","line":45},{"name":"LayerPresetModelT","source":"src/api/layer-preset/index.ts","line":43},{"name":"LayerPresetModelT","source":"src/api/layer-preset/index.ts","line":46},{"name":"LayerPresetModelT","source":"src/api/layer-preset/index.ts","line":73},{"name":"LayerPresetModelT","source":"src/api/layer-preset/index.ts","line":89},{"name":"LayerPresetModelT","source":"src/api/layer-preset/index.ts","line":105}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,23 @@
+{
+  "page": 118,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nnumb Fraction, range:\n├─ percentage Yes\ner 0~95\nintege\n├─ lineCount Yes\nr\nintege\n├─ pixel Yes\nr\n├─ frameMultiplication object Yes\n├─\nintege\nframeMultiplicationEnabl Yes\nr\ne\n├─\nintege\nframeMultiplicationQuanti Yes\nr\nty\nItem type:\nobject\n├─ outputFrames Yes\nobject\n[]\nintege\n├─ frameIndex Yes\nr\nintege\n├─ frameType Yes\nr\n├─ offset object Yes\nintege\n├─ x Yes\nr\nintege\n├─ y Yes\nr\n├─ color object Yes\nintege\n├─ R Yes\nr",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ percentage", "numb\ner", "Yes", "", "Fraction, range:\n0~95", ""],
+      ["├─ lineCount", "intege\nr", "Yes", "", "", ""],
+      ["├─ pixel", "intege\nr", "Yes", "", "", ""],
+      ["├─ frameMultiplication", "object", "Yes", "", "", ""],
+      ["├─\nframeMultiplicationEnabl\ne", "intege\nr", "Yes", "", "", ""],
+      ["├─\nframeMultiplicationQuanti\nty", "intege\nr", "Yes", "", "", ""],
+      ["├─ outputFrames", "object\n[]", "Yes", "", "", "Item type:\nobject"],
+      ["├─ frameIndex", "intege\nr", "Yes", "", "", ""],
+      ["├─ frameType", "intege\nr", "Yes", "", "", ""],
+      ["├─ offset", "object", "Yes", "", "", ""],
+      ["├─ x", "intege\nr", "Yes", "", "", ""],
+      ["├─ y", "intege\nr", "Yes", "", "", ""],
+      ["├─ color", "object", "Yes", "", "", ""],
+      ["├─ R", "intege\nr", "Yes", "", "", ""]
+    ]}
+  ]
+}

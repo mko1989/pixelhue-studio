@@ -1,0 +1,7 @@
+{
+  "id": "reference-FactoryLinkUSBResponseT-3c3e3b23",
+  "name": "FactoryLinkUSBResponseT",
+  "availability": "referenced-only",
+  "references": [{"name":"FactoryLinkUSBResponseT","source":"src/api/production/index.ts","line":207},{"name":"FactoryLinkUSBResponseT","source":"src/api/production/index.ts","line":208}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

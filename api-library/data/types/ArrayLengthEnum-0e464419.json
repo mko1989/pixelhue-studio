@@ -1,0 +1,9 @@
+{
+  "id": "ArrayLengthEnum-0e464419",
+  "name": "ArrayLengthEnum",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 236,
+  "declaration": "enum ArrayLengthEnum {\n  length0,\n  length1,\n}"
+}

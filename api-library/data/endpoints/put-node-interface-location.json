@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/node/interface-location",
+  "group": "node",
+  "summary": "Set Output Mapping",
+  "tags": ["node","interface-location"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [{"method":"PUT","path":"/v1/node/interface-location","section":"3.2","title":"Set Output Mapping","firstPage":66,"lastPage":67,"firmware":"not specified per operation","modelScope":["P10","P20","Q8","P80"],"source":"PixelFlow-OpenAPI Manual-V2.0.1-2.pdf"}],
+  "vendorEvidence": [{"method":"PUT","path":"node/interface-location","dynamic":false,"source":"src/api/device/deviceInfo.ts","line":469,"client":"API","symbol":"response","comment":"* 0x13设置输出定位","parameters":["data: INodeOutputLocation"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'node/interface-location',\n    data,\n  }","context":"async (\n  data: INodeOutputLocation,\n): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'PUT',\n    url: 'node/interface-location',\n    data,\n  });","sourceMap":"main-Cpb41LiE.js.map"},{"method":"PUT","path":"node/interface-location","dynamic":false,"source":"src/api/device/deviceInfo.ts","line":515,"client":"API","symbol":"response","comment":"* 0x13 指定设备IP设置输出定位","parameters":["data: INodeOutputLocation","protocol: string","ip: string","port: number","sn: string"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      protocol,\n      ip,\n      port,\n      Authorization: token,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'node/interface-location',\n    data,\n    headers: {\n      protocol,\n      ip,\n      port,\n      Authorization: token,\n    },\n  }","context":"async (\n  data: INodeOutputLocation,\n  protocol: string,\n  ip: string,\n  port: number,\n  sn: string,\n): Promise<IResponseData<ResponseT>> => {\n  const token = getLocalTokenBySn(sn) ?? '';","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":["P10","P20","P80","Q8"],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-node-interface-location",
+  "contractStatus": "manual tables and observed source contracts",
+  "pathParameters": []
+}

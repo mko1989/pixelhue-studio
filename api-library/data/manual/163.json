@@ -1,0 +1,22 @@
+{
+  "page": 163,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\ner 0: Disable.\n1: Enable.\nnumb 0: Simplified Chinese.\n├─ language Yes\ner 1: English.\n├─\nstring Yes Widget ID\ncomponentId\nWidget type:\n0: Static text.\n├─ numb\nYes 1: Dynamic text.\ncomponentType er\n3: Time.\n4: Weather.\n├─ fontId string Yes Font ID\nnumb\n├─ fontSize Yes Font size\ner\nnumb\n├─ wordSpace Yes Spacing\ner\nnumb\n├─ lineSpace Yes Line spacing\ner\nnumb\n├─ italic Yes Italic switch\ner\nnumb\n├─ bold Yes Bold switch\ner\nnumb\n├─ underline Yes Underline switch\ner\nHorizontal alignment:\n├─ numb 0: Align left.\nYes\nhorizontalAlign er 1: Center.\n2: Align right.\n├─ verticalAlign numb Yes Vertical alignment:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "er", "", "", "0: Disable.\n1: Enable.", ""],
+      ["├─ language", "numb\ner", "Yes", "", "0: Simplified Chinese.\n1: English.", ""],
+      ["├─\ncomponentId", "string", "Yes", "", "Widget ID", ""],
+      ["├─\ncomponentType", "numb\ner", "Yes", "", "Widget type:\n0: Static text.\n1: Dynamic text.\n3: Time.\n4: Weather.", ""],
+      ["├─ fontId", "string", "Yes", "", "Font ID", ""],
+      ["├─ fontSize", "numb\ner", "Yes", "", "Font size", ""],
+      ["├─ wordSpace", "numb\ner", "Yes", "", "Spacing", ""],
+      ["├─ lineSpace", "numb\ner", "Yes", "", "Line spacing", ""],
+      ["├─ italic", "numb\ner", "Yes", "", "Italic switch", ""],
+      ["├─ bold", "numb\ner", "Yes", "", "Bold switch", ""],
+      ["├─ underline", "numb\ner", "Yes", "", "Underline switch", ""],
+      ["├─\nhorizontalAlign", "numb\ner", "Yes", "", "Horizontal alignment:\n0: Align left.\n1: Center.\n2: Align right.", ""],
+      ["├─ verticalAlign", "numb", "Yes", "", "Vertical alignment:", ""]
+    ]}
+  ]
+}

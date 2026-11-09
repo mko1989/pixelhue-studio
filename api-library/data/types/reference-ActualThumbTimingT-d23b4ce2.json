@@ -1,0 +1,7 @@
+{
+  "id": "reference-ActualThumbTimingT-d23b4ce2",
+  "name": "ActualThumbTimingT",
+  "availability": "referenced-only",
+  "references": [{"name":"ActualThumbTimingT","source":"src/types/device/typing.ts","line":93}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

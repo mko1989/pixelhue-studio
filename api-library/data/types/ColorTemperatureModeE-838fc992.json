@@ -1,0 +1,9 @@
+{
+  "id": "ColorTemperatureModeE-838fc992",
+  "name": "ColorTemperatureModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 382,
+  "declaration": "enum ColorTemperatureModeE {\n  QUICK_ADJUST,\n  ADVANCE_ADJUST,\n}"
+}

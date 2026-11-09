@@ -1,0 +1,7 @@
+{
+  "id": "reference-IUploadPictureRes-33091cb3",
+  "name": "IUploadPictureRes",
+  "availability": "referenced-only",
+  "references": [{"name":"IUploadPictureRes","source":"src/api/picture/picture.ts","line":51},{"name":"IUploadPictureRes","source":"src/api/picture/picture.ts","line":55},{"name":"IUploadPictureRes","source":"src/api/picture/picture.ts","line":251},{"name":"IUploadPictureRes","source":"src/api/picture/picture.ts","line":256}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

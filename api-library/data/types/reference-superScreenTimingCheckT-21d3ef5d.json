@@ -1,0 +1,7 @@
+{
+  "id": "reference-superScreenTimingCheckT-21d3ef5d",
+  "name": "superScreenTimingCheckT",
+  "availability": "referenced-only",
+  "references": [{"name":"superScreenTimingCheckT","source":"src/api/device/deviceInfo.ts","line":113}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

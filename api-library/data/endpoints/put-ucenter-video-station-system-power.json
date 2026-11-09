@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/system/power",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","system","power"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/system/power","dynamic":false,"source":"src/api/setting/setting.ts","line":62,"client":"API","symbol":"response","comment":"*\n * 设备关机、重启\n * @returns void","parameters":["data: ISystemPower"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/system/power',\n    data,\n  }","context":"async (\n  data: ISystemPower,\n): Promise<IResponseData<ISystemPower>> => {\n  const response = await API.request<IResponseData<ISystemPower>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/system/power',\n    data,\n  });","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-system-power",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

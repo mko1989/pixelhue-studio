@@ -1,0 +1,8 @@
+{
+  "id": "LayerGeneral-6daa96b3",
+  "name": "LayerGeneral",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Layer.ts",
+  "line": 27,
+  "declaration": "interface LayerGeneral {\n\tname: string\n}"
+}

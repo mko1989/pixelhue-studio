@@ -1,0 +1,9 @@
+{
+  "id": "EPanelBtnState-c6bc29c8",
+  "name": "EPanelBtnState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 150,
+  "declaration": "enum EPanelBtnState {\n  /** 默认 */\n  default,\n  /** 激活 */\n  active,\n  /** 提示 */\n  closed,\n}"
+}

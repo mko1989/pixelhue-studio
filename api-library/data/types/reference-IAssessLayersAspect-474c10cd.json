@@ -1,0 +1,7 @@
+{
+  "id": "reference-IAssessLayersAspect-474c10cd",
+  "name": "IAssessLayersAspect",
+  "availability": "referenced-only",
+  "references": [{"name":"IAssessLayersAspect","source":"src/api/layer/layer.ts","line":797}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "depthE-06af5e0b",
+  "name": "depthE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 649,
+  "declaration": "enum depthE {\n  _8 = 8,\n  _10 = 10,\n  _12 = 12,\n}"
+}

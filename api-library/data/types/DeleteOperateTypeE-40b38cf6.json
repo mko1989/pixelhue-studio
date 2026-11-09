@@ -1,0 +1,9 @@
+{
+  "id": "DeleteOperateTypeE-40b38cf6",
+  "name": "DeleteOperateTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 727,
+  "declaration": "enum DeleteOperateTypeE {\n  DeleteNormalScreen = 2,\n  RemoveDeviceFromNormalScreen = 3,\n}"
+}

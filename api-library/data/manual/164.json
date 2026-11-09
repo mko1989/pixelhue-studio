@@ -1,0 +1,23 @@
+{
+  "page": 164,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\ner 0: Align top.\n1: Center.\n2: Align bottom.\nWidget position\n├─ position object Yes\ninformation\nnumb\n├─ x Yes Position: x-coordinate\ner\nnumb\n├─ y Yes Position: y-coordinate\ner\nnumb\n├─ width Yes Position: width\ner\nnumb\n├─ height Yes Position: height\ner\n├─ staticText object Yes Static text\nText direction:\nnumb\n├─ direction Yes 0: Left to right.\ner\n2: Top to bottom.\nText content. Use “\\n” to\n├─ word string Yes\nseparate multiple lines.\n├─ dynamicText object Yes Dynamic text\nText direction:\nnumb\n├─ direction Yes 0: Left to right.\ner\n1: Right to left.\nnumb\n├─ speed Yes Speed\ner\nText content. Use “\\n” to\n├─ word string Yes\nseparate multiple lines.\n├─ date object Yes Date",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "er", "", "", "0: Align top.\n1: Center.\n2: Align bottom.", ""],
+      ["├─ position", "object", "Yes", "", "Widget position\ninformation", ""],
+      ["├─ x", "numb\ner", "Yes", "", "Position: x-coordinate", ""],
+      ["├─ y", "numb\ner", "Yes", "", "Position: y-coordinate", ""],
+      ["├─ width", "numb\ner", "Yes", "", "Position: width", ""],
+      ["├─ height", "numb\ner", "Yes", "", "Position: height", ""],
+      ["├─ staticText", "object", "Yes", "", "Static text", ""],
+      ["├─ direction", "numb\ner", "Yes", "", "Text direction:\n0: Left to right.\n2: Top to bottom.", ""],
+      ["├─ word", "string", "Yes", "", "Text content. Use “\\n” to\nseparate multiple lines.", ""],
+      ["├─ dynamicText", "object", "Yes", "", "Dynamic text", ""],
+      ["├─ direction", "numb\ner", "Yes", "", "Text direction:\n0: Left to right.\n1: Right to left.", ""],
+      ["├─ speed", "numb\ner", "Yes", "", "Speed", ""],
+      ["├─ word", "string", "Yes", "", "Text content. Use “\\n” to\nseparate multiple lines.", ""],
+      ["├─ date", "object", "Yes", "", "Date", ""]
+    ]}
+  ]
+}

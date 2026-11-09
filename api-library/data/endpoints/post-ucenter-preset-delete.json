@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/preset/delete",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","preset","delete"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/preset/delete","dynamic":false,"source":"src/api/preset/index.ts","line":327,"client":"API_U_CENTER","symbol":"response","comment":"*\n * 场景删除_UCetner","parameters":["data: PostUcenterPresetDeleteD[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{}","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/preset/delete',\n    data,\n    headers: {},\n  }","context":"async (\n  data: PostUcenterPresetDeleteD[],\n): Promise<IResponseData<unknown>> => {\n  const response = await API_U_CENTER.request<IResponseData<unknown>>({\n    method: 'POST',\n    url: 'ucenter/preset/delete',\n    data,\n    headers: {},","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-preset-delete",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "CoefficientColorTypeE-b66eb3f5",
+  "name": "CoefficientColorTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/correction/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 29,
+  "declaration": "enum CoefficientColorTypeE {\n  RR,\n  RG,\n  RB,\n  GR,\n  GG,\n  GB,\n  BR,\n  BG,\n  BB,\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EColorDynamicRangeActual-10cf128e",
+  "name": "EColorDynamicRangeActual",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 182,
+  "declaration": "enum EColorDynamicRangeActual {\n  SDR = 0,\n  HDR10,\n  HLG,\n}"
+}

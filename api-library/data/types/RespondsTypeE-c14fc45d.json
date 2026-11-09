@@ -1,0 +1,9 @@
+{
+  "id": "RespondsTypeE-c14fc45d",
+  "name": "RespondsTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 803,
+  "declaration": "enum RespondsTypeE {\n  EDIDFile, //0:edid文件\n  EDIDUrl, // 1:edid的url\n  EDIDPath, // 2 edid在设备的路径\n}"
+}

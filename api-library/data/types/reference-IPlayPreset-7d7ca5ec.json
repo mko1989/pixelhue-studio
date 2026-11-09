@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPlayPreset-7d7ca5ec",
+  "name": "IPlayPreset",
+  "availability": "referenced-only",
+  "references": [{"name":"IPlayPreset","source":"src/api/preset/index.ts","line":158},{"name":"IPlayPreset","source":"src/api/preset/index.ts","line":159}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

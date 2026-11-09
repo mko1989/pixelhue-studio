@@ -1,0 +1,7 @@
+{
+  "id": "reference-IpcDecodeInfoT-c54fb893",
+  "name": "IpcDecodeInfoT",
+  "availability": "referenced-only",
+  "references": [{"name":"IpcDecodeInfoT","source":"src/api/ipc/index.ts","line":213}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

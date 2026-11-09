@@ -1,0 +1,9 @@
+{
+  "id": "EthInterfaceE-7c79a575",
+  "name": "EthInterfaceE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 780,
+  "declaration": "enum EthInterfaceE {\n  ETH = 25, // 电口\n  _10G_Fiber = 33, // 光口\n}"
+}

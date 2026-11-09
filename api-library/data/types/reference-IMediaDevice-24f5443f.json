@@ -1,0 +1,7 @@
+{
+  "id": "reference-IMediaDevice-24f5443f",
+  "name": "IMediaDevice",
+  "availability": "referenced-only",
+  "references": [{"name":"IMediaDevice","source":"src/api/media/index.ts","line":17},{"name":"IMediaDevice","source":"src/api/media/index.ts","line":18},{"name":"IMediaDevice","source":"src/api/media/index.ts","line":30},{"name":"IMediaDevice","source":"src/api/media/index.ts","line":31}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

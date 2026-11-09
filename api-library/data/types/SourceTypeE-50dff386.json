@@ -1,0 +1,9 @@
+{
+  "id": "SourceTypeE-50dff386",
+  "name": "SourceTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 542,
+  "declaration": "enum SourceTypeE {\n  /** 空图层 */\n  empty,\n  /** 无源 */\n  noSource,\n  /** 输入类型； */\n  input,\n  /** PGM； */\n  PGM,\n  /** PVW；  */\n  PVW,\n  /** BKG图片 */\n  BKG,\n  /** LOGO图片  */\n  Logo,\n  /** IPC类型*/\n  IPC,\n  /** 截取源类型 */\n  crop,\n  /**    拼接源 */\n  splice,\n  /** ipc拼接屏*/\n  IPCSplice,\n  /**内置源 */\n  internal,\n  /**  12: 内置图形源 */\n  internalPic,\n  // U盘源\n  UDisk,\n  /** 图片OSD */\n  pictureOSD = 14,\n  /** 文字OSD */\n  textOSD,\n  /** LiveBKG */\n  liveBKG = 20,\n  /** BKG页签下的图片  软件临时定义的源类型  用于区分BKG页签下的图片和BKG源类型 在自定义按键业务绑定时使用 */\n  bkgPicture = 999,\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "WorkModes-6c0509de",
+  "name": "WorkModes",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 26,
+  "declaration": "enum WorkModes {\n  controller = 2, // 控制器\n  switcher = 4, // 切换器\n  splicer = 8, // 拼接器\n}"
+}

@@ -1,0 +1,11 @@
+{
+  "page": 198,
+  "text": "Default\nName Type Required Remarks More\nValue\nremains constant\nwhile the height\nincreases from top to\nbottom, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only\non the moving edge\n(middle horizontal\nline).\n5. Center rectangle.\n6. Top-left rectangle.\n7. Top-right rectangle.\n8. Bottom-right\nrectangle.\n9. Bottom-left\nrectangle.\n10. Top-center\nrectangle.\n11. Right-center\nrectangle.\n12. Bottom-center\nrectangle.\n13. Left-center\nrectangle.\n14. Cross shape.\n15. Center diamond.\n16. Center ellipse.\n17. Top-left triangle.\n18. Top-right triangle.\nSymmetry, ranging\n├─ symmetry integer No from 0% to 100%, with\na coefficient of 100",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "remains constant\nwhile the height\nincreases from top to\nbottom, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only\non the moving edge\n(middle horizontal\nline).\n5. Center rectangle.\n6. Top-left rectangle.\n7. Top-right rectangle.\n8. Bottom-right\nrectangle.\n9. Bottom-left\nrectangle.\n10. Top-center\nrectangle.\n11. Right-center\nrectangle.\n12. Bottom-center\nrectangle.\n13. Left-center\nrectangle.\n14. Cross shape.\n15. Center diamond.\n16. Center ellipse.\n17. Top-left triangle.\n18. Top-right triangle.", ""],
+      ["├─ symmetry", "integer", "No", "", "Symmetry, ranging\nfrom 0% to 100%, with\na coefficient of 100", ""]
+    ]}
+  ]
+}

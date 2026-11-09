@@ -1,0 +1,7 @@
+{
+  "id": "reference-INetworkportLink-31a312dd",
+  "name": "INetworkportLink",
+  "availability": "referenced-only",
+  "references": [{"name":"INetworkportLink","source":"src/api/device/deviceList.ts","line":683},{"name":"INetworkportLink","source":"src/api/device/deviceList.ts","line":684}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

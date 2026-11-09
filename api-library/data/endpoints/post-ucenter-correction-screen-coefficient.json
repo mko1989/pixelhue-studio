@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/correction/screen/coefficient",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","correction","screen","coefficient"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/correction/screen/coefficient","dynamic":false,"source":"src/api/correction/index.ts","line":31,"client":"API","symbol":"response","comment":"****上传屏幕校正系数***\nconsole.log('file---->', file);","parameters":["data: {\n  params: CorrectionCoefficientParamT;\n  file: any;\n}"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{\n      'Content-Type': 'application/octet-stream',\n    }","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/correction/screen/coefficient',\n    data: formData,\n    timeout: 600000,\n    headers: {\n      'Content-Type': 'application/octet-stream',\n    },\n  }","context":"async (data: {\n  params: CorrectionCoefficientParamT;\n  file: any;\n}): Promise<IResponseData<unknown>> => {\n  const formData = new FormData();\n  // 创建一个新的 Blob 对象并传入文件流作为参数\n  const blob = new Blob([data.file], { type: 'test.mbc' });\n  // 创建一个新的 File 对象并指定名称、类型等属性","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-correction-screen-coefficient",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

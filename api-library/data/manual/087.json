@@ -1,0 +1,18 @@
+{
+  "page": 87,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nsettings; other\nconnectors\ndefault to\nunused.\nScreen\n├─ timing object Yes connector\nreference timing\nInterlaced\nnumb scanning:\n├─ interlaced Yes\ner 0: Interlaced.\n1: Progressive.\nFrame rate\nnumb\n├─ refresh Yes (floating-point\ner\nformat)\nHorizontal\n├─ horizontal object Yes\ntiming\nVisible width (H\nactive, namely\nnumb the commonly\n├─ addTime Yes\ner referred\nresolution\nwidth)\nnumb\n├─ frontPorch Yes Front porch\ner\nnumb\n├─ sync Yes Sync value\ner\nSync polarity:\nnumb\n├─ syncPolarity Yes 0: Positive.\ner\n1: Negative.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "settings; other\nconnectors\ndefault to\nunused.", ""],
+      ["├─ timing", "object", "Yes", "", "Screen\nconnector\nreference timing", ""],
+      ["├─ interlaced", "numb\ner", "Yes", "", "Interlaced\nscanning:\n0: Interlaced.\n1: Progressive.", ""],
+      ["├─ refresh", "numb\ner", "Yes", "", "Frame rate\n(floating-point\nformat)", ""],
+      ["├─ horizontal", "object", "Yes", "", "Horizontal\ntiming", ""],
+      ["├─ addTime", "numb\ner", "Yes", "", "Visible width (H\nactive, namely\nthe commonly\nreferred\nresolution\nwidth)", ""],
+      ["├─ frontPorch", "numb\ner", "Yes", "", "Front porch", ""],
+      ["├─ sync", "numb\ner", "Yes", "", "Sync value", ""],
+      ["├─ syncPolarity", "numb\ner", "Yes", "", "Sync polarity:\n0: Positive.\n1: Negative.", ""]
+    ]}
+  ]
+}

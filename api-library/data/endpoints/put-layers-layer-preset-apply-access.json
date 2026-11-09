@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/layers/layer-preset/apply-access",
+  "group": "layers",
+  "summary": "response",
+  "tags": ["layers","layer-preset","apply-access"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"layers/layer-preset/apply-access","dynamic":false,"source":"src/api/layer-preset/index.ts","line":109,"client":"API","symbol":"response","comment":"图层预设应用评估","parameters":["data: {\n    layerIds: { layerId: number }[];\n    layerPreset: LayerPresetModelT;\n  }[]","extraReqParams?: ExtraReqT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{ ...extraReqParams }","configExpression":"{\n    method: 'put',\n    url: 'layers/layer-preset/apply-access',\n    data,\n    headers: { ...extraReqParams },\n  }","context":"async (\n  data: {\n    layerIds: { layerId: number }[];\n    layerPreset: LayerPresetModelT;\n  }[],\n  extraReqParams?: ExtraReqT,\n): Promise<IResponseData<LayerPresetAssessRepT>> => {\n  const response = await API.request<IResponseData<LayerPresetAssessRepT>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-layers-layer-preset-apply-access",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

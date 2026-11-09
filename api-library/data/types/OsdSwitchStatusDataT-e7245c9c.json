@@ -1,0 +1,9 @@
+{
+  "id": "OsdSwitchStatusDataT-e7245c9c",
+  "name": "OsdSwitchStatusDataT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/osd/osdOnScreen/index.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 7,
+  "declaration": "interface OsdSwitchStatusDataT {\n  status: OSDSwitchStatusOnScreenE;\n  opacity: number;\n  enable: number;\n  window: {\n    x: number;\n    y: number;\n    width: number;\n    height: number;\n  };\n}"
+}

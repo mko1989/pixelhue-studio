@@ -1,0 +1,9 @@
+{
+  "id": "ErrorMsg-55318d22",
+  "name": "ErrorMsg",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1103,
+  "declaration": "enum ErrorMsg {\n  layerTypeError = 1,\n  layerCreateError = 2,\n  noLayerError = 3,\n  overResourceError = 4,\n  overNumberError = 5,\n}"
+}

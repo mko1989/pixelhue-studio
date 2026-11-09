@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/system/factory-reset/status",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","system","factory-reset","status"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/system/factory-reset/status","dynamic":false,"source":"src/api/setting/setting.ts","line":948,"client":"API","symbol":"response","comment":"【控台】恢复出厂状态获取\n状态：idle（空闲）、processing（进行中）、completed（已完成）、failed（失败）","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":"{\n      ip: '127.0.0.1',\n    }","configExpression":"{\n    method: 'get',\n    url: 'ucenter/system/factory-reset/status',\n    timeout: 5000,\n    headers: {\n      ip: '127.0.0.1',\n    },\n  }","context":"async () => {\n  const response = await API.request<IResponseData<{ status: ConsoleResetFactoryStatusE }>>({\n    method: 'get',\n    url: 'ucenter/system/factory-reset/status',\n    timeout: 5000,\n    headers: {\n      ip: '127.0.0.1',\n    },","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-system-factory-reset-status",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

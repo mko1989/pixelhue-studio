@@ -1,0 +1,12 @@
+{
+  "page": 8,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\ndevice capability\nconfiguration file\nThe node’s\nmodeId, namely\nmock:\nintege\n├─ modeId Yes the modeId of\n29974\nr\nthe control card\non the node\nNode operating\nstatus:\n-1: Device illegal.\n0: Loading.\n1: Loaded,\nsystem idle.\n2: Loaded,\nupdating.\n3: Loaded,\ncreating project\nMax: 2\nfile.\n4: Loaded, Min: 0\nintege applying project\n├─ status Yes 1 Enumerati\nr file.\non: 0, 1, 2\n5: Loaded,\nswitching device mock: 1\nmode.\n6: Loaded, in\nfactory reset.\n7: Loaded, saving\nimage.\n8: Loaded,\ncompressing\nlogs.\n9: Loaded,\nsynchronizing",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "device capability\nconfiguration file", ""],
+      ["├─ modeId", "intege\nr", "Yes", "", "The node’s\nmodeId, namely\nthe modeId of\nthe control card\non the node", "mock:\n29974"],
+      ["├─ status", "intege\nr", "Yes", "1", "Node operating\nstatus:\n-1: Device illegal.\n0: Loading.\n1: Loaded,\nsystem idle.\n2: Loaded,\nupdating.\n3: Loaded,\ncreating project\nfile.\n4: Loaded,\napplying project\nfile.\n5: Loaded,\nswitching device\nmode.\n6: Loaded, in\nfactory reset.\n7: Loaded, saving\nimage.\n8: Loaded,\ncompressing\nlogs.\n9: Loaded,\nsynchronizing", "Max: 2\nMin: 0\nEnumerati\non: 0, 1, 2\nmock: 1"]
+    ]}
+  ]
+}

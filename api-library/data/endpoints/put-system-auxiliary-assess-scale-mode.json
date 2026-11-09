@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/system/auxiliary/assess/scale-mode",
+  "group": "system",
+  "summary": "res",
+  "tags": ["system","auxiliary","assess","scale-mode"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"system/auxiliary/assess/scale-mode","dynamic":false,"source":"src/api/layer/layer.ts","line":1219,"client":"API","symbol":"res","comment":"评估图层缩放模式","parameters":["data: {\n    layerId: number;\n    mode: LayerScaleModeE;\n  }[]","extraReqParams?: ExtraReqParamsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ip: extraReqParams?.ip || '',\n      port: extraReqParams?.port || '',\n      Authorization: extraReqParams?.token || '',\n      protocol: extraReqParams?.protocol || '',\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'system/auxiliary/assess/scale-mode',\n    data,\n    headers: {\n      ip: extraReqParams?.ip || '',\n      port: extraReqParams?.port || '',\n      Authorization: extraReqParams?.token || '',\n      protocol: extraReqParams?.protocol || '',\n    },\n  }","context":"async (\n  data: {\n    layerId: number;\n    mode: LayerScaleModeE;\n  }[],\n  extraReqParams?: ExtraReqParamsT,\n): Promise<IResponseData<LayerAssessT[]>> => {\n  const res = await API.request<IResponseData<LayerAssessT[]>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-system-auxiliary-assess-scale-mode",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "GenlockTypeE-066de8a0",
+  "name": "GenlockTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 694,
+  "declaration": "enum GenlockTypeE {\n  system = 2, // 整机genlock\n  screen = 4, // 屏幕genlock\n  systemAndScreen = 8, // 整机genlock+屏幕genlock\n}"
+}

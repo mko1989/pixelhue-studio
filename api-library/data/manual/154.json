@@ -1,0 +1,24 @@
+{
+  "page": 154,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nintege\n├─ shadow Yes Shadow, range: 5~100\nr\nintege\n├─ highLigh Yes Highlight, range: 5~100\nr\nEdge smooth:\nintege\n├─ edgeSmooth Yes 0: Disable.\nr\n1: Enable.\n├─ intelligence object Yes Smart key\n├─ color object Yes Smart key color\nintege\n├─ R Yes Red component\nr\nintege\n├─ G Yes Green component\nr\nintege\n├─ B Yes Blue component\nr\nCursor coordinates (using\n├─ pos object Yes the top-left corner of the\nvisible area as the origin)\nintege\n├─ x Yes Pick point x-coordinate\nr\nintege\n├─ y Yes Pick point y-coordinate\nr\n├─ intege\nYes Keying strength\nmattingStrength r\nintege\n├─ gainAdjust Yes Gain adjustment\nr\n├─ border object Yes Layer border information\n├─ enable intege Yes Border enable: mock:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ shadow", "intege\nr", "Yes", "", "Shadow, range: 5~100", ""],
+      ["├─ highLigh", "intege\nr", "Yes", "", "Highlight, range: 5~100", ""],
+      ["├─ edgeSmooth", "intege\nr", "Yes", "", "Edge smooth:\n0: Disable.\n1: Enable.", ""],
+      ["├─ intelligence", "object", "Yes", "", "Smart key", ""],
+      ["├─ color", "object", "Yes", "", "Smart key color", ""],
+      ["├─ R", "intege\nr", "Yes", "", "Red component", ""],
+      ["├─ G", "intege\nr", "Yes", "", "Green component", ""],
+      ["├─ B", "intege\nr", "Yes", "", "Blue component", ""],
+      ["├─ pos", "object", "Yes", "", "Cursor coordinates (using\nthe top-left corner of the\nvisible area as the origin)", ""],
+      ["├─ x", "intege\nr", "Yes", "", "Pick point x-coordinate", ""],
+      ["├─ y", "intege\nr", "Yes", "", "Pick point y-coordinate", ""],
+      ["├─\nmattingStrength", "intege\nr", "Yes", "", "Keying strength", ""],
+      ["├─ gainAdjust", "intege\nr", "Yes", "", "Gain adjustment", ""],
+      ["├─ border", "object", "Yes", "", "Layer border information", ""],
+      ["├─ enable", "intege", "Yes", "", "Border enable:", "mock:"]
+    ]}
+  ]
+}

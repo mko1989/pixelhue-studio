@@ -1,0 +1,9 @@
+{
+  "id": "ELayerKeyFrameStatus-8b053b96",
+  "name": "ELayerKeyFrameStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 571,
+  "declaration": "enum ELayerKeyFrameStatus {\n  Start = 0, // 0：keyFrame 开始\n  End = 1, // 1：keyFrame 结束\n}"
+}

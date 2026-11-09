@@ -1,0 +1,7 @@
+{
+  "id": "reference-IScreenOrder-d8757b23",
+  "name": "IScreenOrder",
+  "availability": "referenced-only",
+  "references": [{"name":"IScreenOrder","source":"src/api/screen/screen.ts","line":1601}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

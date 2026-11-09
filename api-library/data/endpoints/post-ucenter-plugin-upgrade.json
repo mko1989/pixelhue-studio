@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/plugin/upgrade",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","plugin","upgrade"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/ucenter/plugin/upgrade","dynamic":false,"source":"src/api/plug-in/plugIn.ts","line":28,"client":"API","symbol":"response","comment":"*\n * 插件升级\n * @param data\n * @returns","parameters":["data: FormData","controller: AbortController"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      'Content-Type': 'multipart/form-data',\n      PluginType: 1,\n    }","configExpression":"{\n    method: 'post',\n    url: '/ucenter/plugin/upgrade',\n    data,\n    signal: controller.signal,\n    headers: {\n      'Content-Type': 'multipart/form-data',\n      PluginType: 1,\n    },\n    timeout: 300000, // 设置超时\n  }","context":"async (\n  data: FormData,\n  controller: AbortController,\n): Promise<upgradePlugInD> => {\n  const response = await API.request<upgradePlugInD>({\n    method: 'post',\n    url: '/ucenter/plugin/upgrade',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-plugin-upgrade",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

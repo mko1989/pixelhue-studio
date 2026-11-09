@@ -1,0 +1,9 @@
+{
+  "id": "DanteStatusE-aa8112f6",
+  "name": "DanteStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1119,
+  "declaration": "enum DanteStatusE {\n  normal = 0, //正常\n  capabilityErr = 1, //容量异常\n  userPartitionErr = 2, //用户分区异常\n  storeErr = 4, //存储异常\n}"
+}

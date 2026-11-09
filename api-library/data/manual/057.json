@@ -1,0 +1,19 @@
+{
+  "page": 57,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nMax:\n├─\nnumb Peak screen brightness, 10000\npeakLuminanc Yes\ner range: 0~10000\ne Min: 0\nMax:\n├─ numb Screen’s ambient 10000\nYes\nenvLuminance er brightness, range: 0~10000\nMin: 0\nSelect PQ curve:\nEnumerati\nnumb\n├─ pqMode Yes 0: ST2084.\non: 0, 1\ner\n1: ST2086.\nCurve adjustment switch:\n├─ numb Enumerati\nYes 0: Disable.\non: 0, 1\ntoneMapping er\n1: Enable.\nobjec\n├─ maxcll Yes Peak source brightness\nt\nCustom MaxCLL enable:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\nMax:\n├─ numb Custom peak source 10000\nYes\npresetMaxcll er brightness, range: 0~10000\nMin: 0\nobjec\n├─ hlg Yes HLG conversion settings\nt\n├─ Enumerati\nnumb Peak brightness, range:\non: 1, 2, 3,\npeakLuminanc Yes\ner 100~10000\n4, 5, 6, 7\ne\n├─ numb\nMax: 100\nYes Ambient brightness\nenvLuminance er",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─\npeakLuminanc\ne", "numb\ner", "Yes", "", "Peak screen brightness,\nrange: 0~10000", "Max:\n10000\nMin: 0"],
+      ["├─\nenvLuminance", "numb\ner", "Yes", "", "Screen’s ambient\nbrightness, range: 0~10000", "Max:\n10000\nMin: 0"],
+      ["├─ pqMode", "numb\ner", "Yes", "", "Select PQ curve:\n0: ST2084.\n1: ST2086.", "Enumerati\non: 0, 1"],
+      ["├─\ntoneMapping", "numb\ner", "Yes", "", "Curve adjustment switch:\n0: Disable.\n1: Enable.", "Enumerati\non: 0, 1"],
+      ["├─ maxcll", "objec\nt", "Yes", "", "Peak source brightness", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Custom MaxCLL enable:\n0: Disable.\n1: Enable.", ""],
+      ["├─\npresetMaxcll", "numb\ner", "Yes", "", "Custom peak source\nbrightness, range: 0~10000", "Max:\n10000\nMin: 0"],
+      ["├─ hlg", "objec\nt", "Yes", "", "HLG conversion settings", ""],
+      ["├─\npeakLuminanc\ne", "numb\ner", "Yes", "", "Peak brightness, range:\n100~10000", "Enumerati\non: 1, 2, 3,\n4, 5, 6, 7"],
+      ["├─\nenvLuminance", "numb\ner", "Yes", "", "Ambient brightness", "Max: 100"]
+    ]}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "page": 216,
+  "text": "Default\nName Type Required Remarks More\nValue\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.\n├─ dip object No Dip\n├─ source object No\n├─ general object No General information\nSource ID, which is\n├─ sourceId integer No unique for a specific\nsource type\nSource type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n├─ sourceType integer No 8: Cropped source\ntype.\n10: IPC mosaic\nscreen.\n11: Internal source.\n12: Internal shape\nsource.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.", ""],
+      ["├─ dip", "object", "No", "", "Dip", ""],
+      ["├─ source", "object", "No", "", "", ""],
+      ["├─ general", "object", "No", "", "General information", ""],
+      ["├─ sourceId", "integer", "No", "", "Source ID, which is\nunique for a specific\nsource type", ""],
+      ["├─ sourceType", "integer", "No", "", "Source type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n10: IPC mosaic\nscreen.\n11: Internal source.\n12: Internal shape\nsource.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.", ""]
+    ]}
+  ]
+}

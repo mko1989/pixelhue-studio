@@ -1,0 +1,9 @@
+{
+  "id": "ETestModule-b7084786",
+  "name": "ETestModule",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 145,
+  "declaration": "enum ETestModule {\n  consoleBareMetal = 'console-bare-metal', // 裸板测试\n  consoleMachine = 'console-complete-machine', // 整机测试\n  consoleAging = 'console-aging', // 老化测试\n  consoleMaintenance = 'console-maintenance', // 维修测试\n}"
+}

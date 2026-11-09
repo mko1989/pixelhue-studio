@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceHdmiOutputDriverT-c665983b",
+  "name": "InterfaceHdmiOutputDriverT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 630,
+  "declaration": "interface InterfaceHdmiOutputDriverT {\n  interfaceId: number | string;\n  mode: number;\n  deEmphasisLevel: number;\n  swingLevel: number;\n  resistanceLevel: number;\n}"
+}

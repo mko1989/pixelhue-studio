@@ -1,0 +1,9 @@
+{
+  "id": "EExportPictureType-ac1176f8",
+  "name": "EExportPictureType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 220,
+  "declaration": "enum EExportPictureType {\n  // 0：缩略 1：原图\n  Thumbnails, // 缩略图\n  Origin, // 原图bmp\n}"
+}

@@ -1,0 +1,22 @@
+{
+  "page": 192,
+  "text": "Require Defaul\nName Type Remarks More\nd t Value\nr\nmock:\n├─ y integer Yes The V Offset @intege\nr\nnumbe Layer switch: [1:\n├─ enable Yes\nr Enable; 0: Disable]\nItem\ninteger The key position\n├─ keyPosition Yes type:\n[] index, starting from 0\ninteger\nThe position sequence\n├─ No\nvalue\n6.1.3 Load Preset\n Basic Information\nPath: /v1/preset/play\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nThe preset ID. At least one of\npresetId, id, or presetName\npresetId integer No\nshould be provided. The priority\norder when all are present is",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Require\nd", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "", "r"],
+      ["├─ y", "integer", "Yes", "", "The V Offset", "mock:\n@intege\nr"],
+      ["├─ enable", "numbe\nr", "Yes", "", "Layer switch: [1:\nEnable; 0: Disable]", ""],
+      ["├─ keyPosition", "integer\n[]", "Yes", "", "The key position\nindex, starting from 0", "Item\ntype:\ninteger"],
+      ["├─", "", "No", "", "The position sequence\nvalue", ""]
+    ]},
+    {"contextBefore": "6.1.3 Load Preset\n Basic Information\nPath: /v1/preset/play\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["presetId", "integer", "No", "", "The preset ID. At least one of\npresetId, id, or presetName\nshould be provided. The priority\norder when all are present is", ""]
+    ]}
+  ]
+}

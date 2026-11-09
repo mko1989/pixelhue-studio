@@ -1,0 +1,17 @@
+{
+  "page": 188,
+  "text": "Require Defaul\nName Type Remarks More\nd t Value\ninformation\n(coordinate system\nrelative to canvas)\nThe starting position\nof the screen\nnumbe\n├─ x Yes (circumscribed\nr\nrectangle) in X\ndirection\nThe starting position\nof the screen\nnumbe\n├─ y Yes (circumscribed\nr\nrectangle) in Y\ndirection\nThe screen width\n(circumscribed\nnumbe\n├─ width Yes rectangle of the\nr\neffective output range\non the screen)\nThe screen height\n(circumscribed\nnumbe\n├─ height Yes rectangle of the\nr\neffective output range\non the screen)\nItem\nobject\n├─ outputs Yes type:\n[]\nobject\nnumbe\n├─ interfaceId Yes The connector ID\nr\nThe absolute\n├─ pos object Yes coordinates of the\nconnector (coordinate",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Require\nd", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "information\n(coordinate system\nrelative to canvas)", ""],
+      ["├─ x", "numbe\nr", "Yes", "", "The starting position\nof the screen\n(circumscribed\nrectangle) in X\ndirection", ""],
+      ["├─ y", "numbe\nr", "Yes", "", "The starting position\nof the screen\n(circumscribed\nrectangle) in Y\ndirection", ""],
+      ["├─ width", "numbe\nr", "Yes", "", "The screen width\n(circumscribed\nrectangle of the\neffective output range\non the screen)", ""],
+      ["├─ height", "numbe\nr", "Yes", "", "The screen height\n(circumscribed\nrectangle of the\neffective output range\non the screen)", ""],
+      ["├─ outputs", "object\n[]", "Yes", "", "", "Item\ntype:\nobject"],
+      ["├─ interfaceId", "numbe\nr", "Yes", "", "The connector ID", ""],
+      ["├─ pos", "object", "Yes", "", "The absolute\ncoordinates of the\nconnector (coordinate", ""]
+    ]}
+  ]
+}

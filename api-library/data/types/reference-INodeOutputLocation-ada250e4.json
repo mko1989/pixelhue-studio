@@ -1,0 +1,7 @@
+{
+  "id": "reference-INodeOutputLocation-ada250e4",
+  "name": "INodeOutputLocation",
+  "availability": "referenced-only",
+  "references": [{"name":"INodeOutputLocation","source":"src/api/device/deviceInfo.ts","line":429},{"name":"INodeOutputLocation","source":"src/api/device/deviceInfo.ts","line":430},{"name":"INodeOutputLocation","source":"src/api/device/deviceInfo.ts","line":453},{"name":"INodeOutputLocation","source":"src/api/device/deviceInfo.ts","line":454},{"name":"INodeOutputLocation","source":"src/api/device/deviceInfo.ts","line":467},{"name":"INodeOutputLocation","source":"src/api/device/deviceInfo.ts","line":508}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

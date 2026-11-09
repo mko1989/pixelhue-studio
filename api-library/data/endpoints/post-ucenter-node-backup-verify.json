@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/node/backup/verify",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","node","backup","verify"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/node/backup/verify","dynamic":false,"source":"src/api/device-backup/index.ts","line":37,"client":"API","symbol":"response","comment":"","parameters":["data: {\n  snList: string[];\n  netPortEnable: { guid: string; enableType: number };\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      'Content-Type': 'application/json',\n    }","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/node/backup/verify',\n    data,\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    timeout: 60 * 60 * 1000,\n  }","context":"async (data: {\n  snList: string[];\n  netPortEnable: { guid: string; enableType: number };\n}) => {\n  const response = await API.request<IResponseData<{ failList: string[] }>>({\n    method: 'POST',\n    url: 'ucenter/node/backup/verify',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-node-backup-verify",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

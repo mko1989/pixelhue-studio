@@ -1,0 +1,9 @@
+{
+  "id": "EyePriorityE-b1dbfbfd",
+  "name": "EyePriorityE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 133,
+  "declaration": "enum EyePriorityE {\n  /** 右眼 */\n  R = 1,\n  /** 左眼 */\n  L,\n}"
+}

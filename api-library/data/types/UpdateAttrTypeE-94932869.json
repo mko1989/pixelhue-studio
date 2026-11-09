@@ -1,0 +1,9 @@
+{
+  "id": "UpdateAttrTypeE-94932869",
+  "name": "UpdateAttrTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 772,
+  "declaration": "enum UpdateAttrTypeE {\n  preset = 'preset', // 只更新preset\n  actual = 'actual', // 只更新actual\n  all = 'all',\n  audioSource = 'audioSource',\n  audioChannel = 'audioChannel',\n}"
+}

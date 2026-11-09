@@ -1,0 +1,9 @@
+{
+  "id": "EContetType-4ce0da10",
+  "name": "EContetType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/preset/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 21,
+  "declaration": "enum EContetType {\n  videoType, // 视频设备\n  controlType, // 控制设备\n}"
+}

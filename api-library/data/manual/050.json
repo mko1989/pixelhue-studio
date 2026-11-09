@@ -1,0 +1,11 @@
+{
+  "page": 50,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n1: Enable.\nTest pattern type:\n0x0000: Black.\n0x0001: Red.\n0x0002: Green.\n0x0003: Blue.\n0x0004: White.\n0x0005: Vertical stripes.\n0x0006: Horizontal stripes.\n0x0007: Checkerboard.\n0x0100: Horizontal red\ngradient.\n0x0101: Horizontal green\ngradient.\n0x0102: Horizontal blue\ngradient.\nnumb\n├─ type Yes 0x0103: Horizontal white\ner\ngradient.\n0x0104: Vertical red\ngradient.\n0x0105: Vertical green\ngradient.\n0x0106: Vertical blue\ngradient.\n0x0107: Vertical white\ngradient.\n0x0200: Horizontal white\nlines.\n0x0201: Vertical white lines.\n0x0202: White diagonal left.\n0x0203: White diagonal\nright.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "1: Enable.", ""],
+      ["├─ type", "numb\ner", "Yes", "", "Test pattern type:\n0x0000: Black.\n0x0001: Red.\n0x0002: Green.\n0x0003: Blue.\n0x0004: White.\n0x0005: Vertical stripes.\n0x0006: Horizontal stripes.\n0x0007: Checkerboard.\n0x0100: Horizontal red\ngradient.\n0x0101: Horizontal green\ngradient.\n0x0102: Horizontal blue\ngradient.\n0x0103: Horizontal white\ngradient.\n0x0104: Vertical red\ngradient.\n0x0105: Vertical green\ngradient.\n0x0106: Vertical blue\ngradient.\n0x0107: Vertical white\ngradient.\n0x0200: Horizontal white\nlines.\n0x0201: Vertical white lines.\n0x0202: White diagonal left.\n0x0203: White diagonal\nright.", ""]
+    ]}
+  ]
+}

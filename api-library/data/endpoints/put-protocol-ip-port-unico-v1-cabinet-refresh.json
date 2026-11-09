@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/{protocol}://{ip}:{port}/unico/v1/cabinet/refresh",
+  "group": "{protocol}:",
+  "summary": "response",
+  "tags": ["{protocol}:","","{ip}:{port}","unico","v1","cabinet","refresh"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"{protocol}://{ip}:{port}/unico/v1/cabinet/refresh","dynamic":true,"pathParameters":[{"name":"protocol","expression":"protocol"},{"name":"ip","expression":"ip"},{"name":"port","expression":"port"}],"source":"src/api/setting/setting.ts","line":627,"client":"API","symbol":"response","comment":"*\n * 箱体刷新","parameters":["data: { slotIds: number[] }","protocol: string","ip: string","port: number","token: string"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      Authorization: token,\n      ip,\n      port,\n      seq: 1,\n    }","configExpression":"{\n    method: 'PUT',\n    url: `${protocol}://${ip}:${port}/unico/v1/cabinet/refresh`,\n    data: data,\n    headers: {\n      Authorization: token,\n      ip,\n      port,\n      seq: 1,\n    },\n    timeout: 30 * 1000,\n  }","context":"async (\n  data: { slotIds: number[] },\n  protocol: string,\n  ip: string,\n  port: number,\n  token: string,\n): Promise<IResponseData<string>> => {\n  const response = await API.request<IResponseData<string>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-protocol-ip-port-unico-v1-cabinet-refresh",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": ["protocol","ip","port"]
+}

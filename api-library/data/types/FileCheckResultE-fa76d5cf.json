@@ -1,0 +1,9 @@
+{
+  "id": "FileCheckResultE-fa76d5cf",
+  "name": "FileCheckResultE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/correction/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 78,
+  "declaration": "enum FileCheckResultE {\n  /****通过***/\n  Success,\n  /****不通过-分辨率不匹配***/\n  FailedResolution,\n  /****不通过-箱体有旋转***/\n  FailedRotate,\n  /****不通过-箱体有重叠***/\n  FailedOverlap,\n  /****不通过-箱体有间隔***/\n  FailedSpaced,\n}"
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/project/import/stream",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","project","import","stream"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/project/import/stream","dynamic":false,"source":"src/api/project/project.ts","line":72,"client":"API_U_CENTER","symbol":"response","comment":"上传工程文件","parameters":["data: {\n  params: IProjectImport;\n  file: File;\n}"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{\n      isLoading: true,\n      contentType: 'multipart/form-data',\n    }","configExpression":"{\n    method: 'post',\n    url: 'ucenter/project/import/stream',\n    data: formData,\n    headers: {\n      isLoading: true,\n      contentType: 'multipart/form-data',\n    },\n    timeout: 6000000,\n  }","context":"async (data: {\n  params: IProjectImport;\n  file: File;\n}): Promise<IResponseData<unknown>> => {\n  const formData = new FormData();\n  formData.append('importParams', JSON.stringify(data.params));\n  formData.append('file', data.file ?? '');\n  const response = await API_U_CENTER.request<IResponseData<unknown>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-project-import-stream",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

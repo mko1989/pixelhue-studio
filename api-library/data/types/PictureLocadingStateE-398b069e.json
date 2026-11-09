@@ -1,0 +1,9 @@
+{
+  "id": "PictureLocadingStateE-398b069e",
+  "name": "PictureLocadingStateE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 273,
+  "declaration": "enum PictureLocadingStateE {\n  unStart = 0,\n  finish = 1,\n  failed = -1,\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICustomConfigList-9a6a6376",
+  "name": "ICustomConfigList",
+  "availability": "referenced-only",
+  "references": [{"name":"ICustomConfigList","source":"src/api/custom/index.ts","line":178},{"name":"ICustomConfigList","source":"src/api/custom/index.ts","line":179}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

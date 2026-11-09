@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerCopyBaseT-14bb84c6",
+  "name": "LayerCopyBaseT",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerCopyBaseT","source":"src/api/layer/layer.ts","line":774},{"name":"LayerCopyBaseT","source":"src/api/layer/layer.ts","line":811}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ECutoutType-c390bc27",
+  "name": "ECutoutType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 524,
+  "declaration": "enum ECutoutType {\n  brightness, // 亮度抠图\n  color, // 色度\n  intelligent,\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ECaptureType-b5e2a713",
+  "name": "ECaptureType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1183,
+  "declaration": "enum ECaptureType {\n  pgm, // pgm 抓图\n  inputSrc, // 输入源抓图,\n  crop, // 截取源抓图\n  mosaic, // 拼接源抓图\n}"
+}

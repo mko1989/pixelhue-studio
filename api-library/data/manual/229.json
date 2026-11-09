@@ -1,0 +1,19 @@
+{
+  "page": 229,
+  "text": "Default\nName Type Required Remarks More\nValue\nserial integer No Preset ID\nArea to apply:\n2: PGM.\n4: PVW;\ntargetRegion integer Yes 0: Auto (PVW for\nswitchers, PGM for\ncontrollers and\nsplicers).\nauxiliary object Yes Auxiliary information\nKeyFrame information\n├─ keyFrame object Yes included when\nloading the preset\nExecute KeyFrame\nwhen loading the\n├─ enable number Yes preset:\n0: Yes.\n1: No.\nPreset playback\n├─ effect object Yes\neffect switch\nExecute effects when\nloading the preset:\n├─ enable number Yes\n0: Yes.\n1: No.\nThe global transition\n├─ switchEffect object Yes\neffect\nThe transition\n├─ time number Yes\nduration (unit: ms)\nTransition effects:\n0: Cut.\n├─ type number Yes\n1: Fade.\n2. Dip.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["serial", "integer", "No", "", "Preset ID", ""],
+      ["targetRegion", "integer", "Yes", "", "Area to apply:\n2: PGM.\n4: PVW;\n0: Auto (PVW for\nswitchers, PGM for\ncontrollers and\nsplicers).", ""],
+      ["auxiliary", "object", "Yes", "", "Auxiliary information", ""],
+      ["├─ keyFrame", "object", "Yes", "", "KeyFrame information\nincluded when\nloading the preset", ""],
+      ["├─ enable", "number", "Yes", "", "Execute KeyFrame\nwhen loading the\npreset:\n0: Yes.\n1: No.", ""],
+      ["├─ effect", "object", "Yes", "", "Preset playback\neffect switch", ""],
+      ["├─ enable", "number", "Yes", "", "Execute effects when\nloading the preset:\n0: Yes.\n1: No.", ""],
+      ["├─ switchEffect", "object", "Yes", "", "The global transition\neffect", ""],
+      ["├─ time", "number", "Yes", "", "The transition\nduration (unit: ms)", ""],
+      ["├─ type", "number", "Yes", "", "Transition effects:\n0: Cut.\n1: Fade.\n2. Dip.", ""]
+    ]}
+  ]
+}

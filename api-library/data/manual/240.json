@@ -1,0 +1,21 @@
+{
+  "page": 240,
+  "text": "6.2.5 Delete Preset\n Basic Information\nPath: /v1/preset/delete\nMethod: POST\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nName Type Required Default Value Remarks More\nItem type: string\nstring [] No\n├─ No Preset GUID list\n Return Data\nName Type Required Default Value Remarks More\ncode integer Yes Response code\nmessage string Yes Response message\ndata object Yes",
+  "tables": [
+    {"contextBefore": "6.2.5 Delete Preset\n Basic Information\nPath: /v1/preset/delete\nMethod: POST\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["", "string []", "No", "", "", "Item type: string"],
+      ["├─", "", "No", "", "Preset GUID list", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response message", ""],
+      ["data", "object", "Yes", "", "", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "TemplateModuleTypeE-745ae1ed",
+  "name": "TemplateModuleTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 92,
+  "declaration": "enum TemplateModuleTypeE {\n  MVR,\n  LAYER,\n}"
+}

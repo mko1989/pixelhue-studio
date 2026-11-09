@@ -1,0 +1,9 @@
+{
+  "id": "canvasStatusE-e9bbd3b4",
+  "name": "canvasStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 327,
+  "declaration": "enum canvasStatusE {\n  usedCabinetRectStateNormal = 0, // 已配箱体分辨率正常\n  usedCabinetRectStateOver, // 已配箱体分辨率超带载\n}"
+}

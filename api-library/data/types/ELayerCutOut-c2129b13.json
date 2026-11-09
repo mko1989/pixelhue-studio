@@ -1,0 +1,9 @@
+{
+  "id": "ELayerCutOut-c2129b13",
+  "name": "ELayerCutOut",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1138,
+  "declaration": "enum ELayerCutOut {\n  threshold = 'threshold', // 亮度阈值\n  gain = 'gain', // 柔和度\n}"
+}

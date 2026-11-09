@@ -1,0 +1,9 @@
+{
+  "id": "EPreset-53d506c7",
+  "name": "EPreset",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/preset/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 40,
+  "declaration": "enum EPreset {\n  layerPreset = 'layer-preset-name-prefix',\n  screenPreset = 'screen-preset-tab',\n}"
+}

@@ -1,0 +1,4 @@
+{
+  "group": "project-file",
+  "endpoints": [{"id":"get-project-file","method":"GET","path":"/unico/v1/project-file","group":"project-file","summary":"response","tags":["project-file"],"models":[],"symbols":["response"],"keywords":" ip: string port: number nodeId: string | number sn: string protocol?: string { nodeId }","serverKind":"device","manual":false,"file":"endpoints/get-project-file.json"}]
+}

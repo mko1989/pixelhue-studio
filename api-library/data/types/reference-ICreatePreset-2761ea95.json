@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICreatePreset-2761ea95",
+  "name": "ICreatePreset",
+  "availability": "referenced-only",
+  "references": [{"name":"ICreatePreset","source":"src/api/preset/index.ts","line":81}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

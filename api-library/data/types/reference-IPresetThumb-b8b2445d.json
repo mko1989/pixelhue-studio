@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPresetThumb-b8b2445d",
+  "name": "IPresetThumb",
+  "availability": "referenced-only",
+  "references": [{"name":"IPresetThumb","source":"src/api/preset/index.ts","line":191},{"name":"IPresetThumb","source":"src/api/preset/index.ts","line":192}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "UploadCoefficientStatusE-bf73e9ff",
+  "name": "UploadCoefficientStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/correction/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 91,
+  "declaration": "enum UploadCoefficientStatusE {\n  /****空闲***/\n  businessFree,\n  /****上传中***/\n  Uploading,\n  /****上传成功***/\n  Success,\n  /****上传失败***/\n  Failed,\n}"
+}

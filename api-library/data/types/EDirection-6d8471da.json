@@ -1,0 +1,9 @@
+{
+  "id": "EDirection-6d8471da",
+  "name": "EDirection",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/external-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 56,
+  "declaration": "enum EDirection {\n  DEFAULT,\n  next,\n  previous,\n  up,\n  down,\n}"
+}

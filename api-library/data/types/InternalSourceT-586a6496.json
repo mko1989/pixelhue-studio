@@ -1,0 +1,9 @@
+{
+  "id": "InternalSourceT-586a6496",
+  "name": "InternalSourceT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 247,
+  "declaration": "interface InternalSourceT {\n  isInternal?: boolean;\n  internalInfo?: InternalInfoT;\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-CmdInfosResponse-94ba47a7",
+  "name": "CmdInfosResponse",
+  "availability": "referenced-only",
+  "references": [{"name":"CmdInfosResponse","source":"src/api/device/deviceInfo.ts","line":828}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

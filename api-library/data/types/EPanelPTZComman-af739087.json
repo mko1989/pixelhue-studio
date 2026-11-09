@@ -1,0 +1,9 @@
+{
+  "id": "EPanelPTZComman-af739087",
+  "name": "EPanelPTZComman",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 399,
+  "declaration": "enum EPanelPTZComman {\n  // up\n  ptzUp = 555,\n  // down\n  ptzDown = 556,\n  // Left\n  ptzLeft = 557,\n  // right\n  ptzRight = 558,\n  // ptzPreset1 预置位1\n  ptzPreset1 = 559,\n  // ptzPresetApply1\n  ptzPresetApply1 = 560,\n  // ptzPreset2  预置位2\n  ptzPreset2 = 561,\n  // ptzPresetApply2\n  ptzPresetApply2 = 562,\n  // 保存预设位\n  savePresetPositon = 563,\n  // ptzPreset3 预置位3\n  ptzPreset3 = 564,\n  // ptzPresetApply3\n  ptzPresetApply3 = 565,\n  // ptzPreset4  预置位4\n  ptzPreset4 = 566,\n  // ptzPresetApply2\n  ptzPresetApply4 = 567,\n  // stop\n  ptzStop = 585,\n}"
+}

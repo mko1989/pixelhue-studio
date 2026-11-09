@@ -1,0 +1,9 @@
+{
+  "id": "ECutOutIntelligence-9d225317",
+  "name": "ECutOutIntelligence",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1154,
+  "declaration": "enum ECutOutIntelligence {\n  mattingStrength = 'mattingStrength', // 抠图强度\n  gainAdjust = 'gainAdjust', // 增益调节\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-StartOrExitSubmitD-ffb89b1a",
+  "name": "StartOrExitSubmitD",
+  "availability": "referenced-only",
+  "references": [{"name":"StartOrExitSubmitD","source":"src/api/plug-in/plugIn.ts","line":89},{"name":"StartOrExitSubmitD","source":"src/api/plug-in/plugIn.ts","line":111}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

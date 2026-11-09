@@ -1,0 +1,9 @@
+{
+  "id": "EBindingWay-a3ba5378",
+  "name": "EBindingWay",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 547,
+  "declaration": "enum EBindingWay {\n  selfBinding = 1, // 自定义绑定\n  keyBinding, // 按键绑定\n}"
+}

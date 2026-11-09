@@ -1,0 +1,4 @@
+{
+  "group": "monitor",
+  "endpoints": [{"id":"get-monitor-error-bit","method":"GET","path":"/unico/v1/monitor/error-bit","group":"monitor","summary":"response","tags":["monitor","error-bit"],"models":[],"symbols":["response"],"keywords":" data: GetMonitorErrorBitRequestT seq?: number deviceConf?: { ip: string; port: string | number } { ...data }","serverKind":"device","manual":false,"file":"endpoints/get-monitor-error-bit.json"}]
+}

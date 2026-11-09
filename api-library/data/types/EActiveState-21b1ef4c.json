@@ -1,0 +1,9 @@
+{
+  "id": "EActiveState-21b1ef4c",
+  "name": "EActiveState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/external-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 66,
+  "declaration": "enum EActiveState {\n  TRUE = 1, // 1 - true\n  FALSE = 2, // 2 - false\n}"
+}

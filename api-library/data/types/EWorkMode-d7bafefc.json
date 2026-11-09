@@ -1,0 +1,9 @@
+{
+  "id": "EWorkMode-d7bafefc",
+  "name": "EWorkMode",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 262,
+  "declaration": "enum EWorkMode {\n  general = 1,\n  multiple = 2,\n}"
+}

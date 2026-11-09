@@ -1,0 +1,25 @@
+{
+  "page": 76,
+  "text": "Name Required Example Remarks\nlimit No Number of items per page\npage No Query page number\nScreen ID. The absence of this parameter indicates\nscreenId No\nit is not considered.\nPreset ID, used together with sceneType. Without\nthis parameter, no query is performed. With this\npresetId No\nparameter, the screen data for the specified preset\nis queried.\nPreset type. Without this parameter, screen\npresetType No\ninformation within the preset will not be queried.\nScreen type. The absence of this parameter\nscreenType No\nindicates it is not considered.\n Return Data\nDefa\nRequir ult\nName Type Remarks More\ned Valu\ne\nintege\ncode Yes Response code\nr\nResponse\nmessage string Yes\nmessage\ndata object Yes\nItem type:\nobject\n├─ list Yes\nobject\n[]\nnumb Screen ID, which\n├─ screenId Yes\ner is unique\nThe obj form of\n├─ screenIdObj object Yes\nthe screen ID\nnumb\n├─ id Yes ID\ner",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Required", "Example", "Remarks"],
+      ["limit", "No", "", "Number of items per page"],
+      ["page", "No", "", "Query page number"],
+      ["screenId", "No", "", "Screen ID. The absence of this parameter indicates\nit is not considered."],
+      ["presetId", "No", "", "Preset ID, used together with sceneType. Without\nthis parameter, no query is performed. With this\nparameter, the screen data for the specified preset\nis queried."],
+      ["presetType", "No", "", "Preset type. Without this parameter, screen\ninformation within the preset will not be queried."],
+      ["screenType", "No", "", "Screen type. The absence of this parameter\nindicates it is not considered."]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["code", "intege\nr", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response\nmessage", ""],
+      ["data", "object", "Yes", "", "", ""],
+      ["├─ list", "object\n[]", "Yes", "", "", "Item type:\nobject"],
+      ["├─ screenId", "numb\ner", "Yes", "", "Screen ID, which\nis unique", ""],
+      ["├─ screenIdObj", "object", "Yes", "", "The obj form of\nthe screen ID", ""],
+      ["├─ id", "numb\ner", "Yes", "", "ID", ""]
+    ]}
+  ]
+}

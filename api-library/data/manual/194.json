@@ -1,0 +1,14 @@
+{
+  "page": 194,
+  "text": "Default\nName Type Required Remarks More\nValue\n├─ id number Yes ID\nScreen\ntype: [2:\nCommon\nscreen; 4:\nAUX\n├─ type number Yes\nscreen; 8:\nMVR\nscreen; 16:\nInput view\nscreen]\nItem\n├─ object\ntype:\nYes\nscreenObjResourceNotEnough []\nobject\n├─ id number Yes ID\nScreen\ntype: [2:\nCommon\nscreen; 4:\nAUX\n├─ type number Yes\nscreen; 8:\nMVR\nscreen; 16:\nInput view\nscreen]\n6.2 v2\n6.2.1 Retrieve Preset Details\n Basic Information",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["├─ id", "number", "Yes", "", "ID", ""],
+      ["├─ type", "number", "Yes", "", "Screen\ntype: [2:\nCommon\nscreen; 4:\nAUX\nscreen; 8:\nMVR\nscreen; 16:\nInput view\nscreen]", ""],
+      ["├─\nscreenObjResourceNotEnough", "object\n[]", "Yes", "", "", "Item\ntype:\nobject"],
+      ["├─ id", "number", "Yes", "", "ID", ""],
+      ["├─ type", "number", "Yes", "", "Screen\ntype: [2:\nCommon\nscreen; 4:\nAUX\nscreen; 8:\nMVR\nscreen; 16:\nInput view\nscreen]", ""]
+    ]}
+  ]
+}

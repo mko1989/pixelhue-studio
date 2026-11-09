@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ipc/input/list",
+  "group": "ipc",
+  "summary": "response",
+  "tags": ["ipc","input","list"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ipc/input/list","dynamic":false,"source":"src/api/source/index.ts","line":36,"client":"API","symbol":"response","comment":"* 获取IPC源列表\n *\n * @param limit 每页数据条数\n * @param page 页码\n * @param sourceName 信号源名称\n * @returns","parameters":["params: IpcListParamsT"],"bodyExpression":null,"queryExpression":"params","headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'ipc/input/list',\n    params,\n  }","context":"async (params: IpcListParamsT) => {\n  const response = await API.request<IResponseData<IpcListResponseT>>({\n    method: 'get',\n    url: 'ipc/input/list',\n    params,\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"},{"method":"GET","path":"ipc/input/list","dynamic":false,"source":"src/api/ipc/index.ts","line":32,"client":"API","symbol":"response","comment":"0x00-ipc输入源列表","parameters":["params: IPCSourceListQueryT"],"bodyExpression":null,"queryExpression":"params","headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'ipc/input/list',\n    params,\n  }","context":"async (params: IPCSourceListQueryT) => {\n  const response = await API.request<IResponseData<IPCSourceT>>({\n    method: 'get',\n    url: 'ipc/input/list',\n    params,\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ipc-input-list",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ThumbTimingT-7e49aeba",
+  "name": "ThumbTimingT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 304,
+  "declaration": "type ThumbTimingT = {\n  interlaced: number;\n  frame: number;\n  width: number;\n  height: number;\n  standardType: EStandardType; // 分辨率标准类型\n  hBlank?: number;\n  timingSelect?: ETimingSelect;\n};"
+}

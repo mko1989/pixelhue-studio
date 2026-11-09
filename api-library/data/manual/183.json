@@ -1,0 +1,18 @@
+{
+  "page": 183,
+  "text": "6. Preset\n6.1 v1\n6.1.1 Edit Preset\n Basic Information\nPath: /v1/preset/general\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nItem\nobject\ntype:\nNo\n[]\nobject\nThe preset ID. Provide at\nleast one of presetId or\n├─\ninteger No presetName; if both are\npresetId\nprovided, presetId takes\nprecedence.\n├─ general object Yes General information\n├─ name string Yes Preset name\n├─ The original preset name.\nstring No\npresetName Provide at least one of",
+  "tables": [
+    {"contextBefore": "6. Preset\n6.1 v1\n6.1.1 Edit Preset\n Basic Information\nPath: /v1/preset/general\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "object\n[]", "No", "", "", "Item\ntype:\nobject"],
+      ["├─\npresetId", "integer", "No", "", "The preset ID. Provide at\nleast one of presetId or\npresetName; if both are\nprovided, presetId takes\nprecedence.", ""],
+      ["├─ general", "object", "Yes", "", "General information", ""],
+      ["├─ name", "string", "Yes", "", "Preset name", ""],
+      ["├─\npresetName", "string", "No", "", "The original preset name.\nProvide at least one of", ""]
+    ]}
+  ]
+}

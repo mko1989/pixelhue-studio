@@ -1,0 +1,7 @@
+{
+  "id": "reference-IpcSyncT-eaae9313",
+  "name": "IpcSyncT",
+  "availability": "referenced-only",
+  "references": [{"name":"IpcSyncT","source":"src/api/ipc/index.ts","line":180}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

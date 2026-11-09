@@ -1,0 +1,7 @@
+{
+  "id": "reference-ColorGamutT-66e93fb5",
+  "name": "ColorGamutT",
+  "availability": "referenced-only",
+  "references": [{"name":"ColorGamutT","source":"src/types/device/typing.ts","line":132}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

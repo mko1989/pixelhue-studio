@@ -1,0 +1,8 @@
+{
+  "id": "UpdateLayoutData-62c85b34",
+  "name": "UpdateLayoutData",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Screen.ts",
+  "line": 9,
+  "declaration": "interface UpdateLayoutData {\n\tselectScreens: Screen[]\n\tdeleteLayers: Layer[]\n\tcreateLayers: Layer[]\n}"
+}

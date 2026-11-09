@@ -1,0 +1,9 @@
+{
+  "id": "ScreenTypeE-37444949",
+  "name": "ScreenTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 2,
+  "declaration": "enum ScreenTypeE {\n  // 空屏幕\n  null = 0,\n  normal = 2,\n  AUX = 4,\n  MVR = 8,\n  reflect = 16,\n  LED = 32,\n  superScreen = 33,\n}"
+}

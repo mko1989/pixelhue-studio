@@ -1,0 +1,9 @@
+{
+  "id": "ECutOutColor-7b2cc60d",
+  "name": "ECutOutColor",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1143,
+  "declaration": "enum ECutOutColor {\n  hueRamp = 'hueRamp', // 色调阀值\n  hueClip = 'hueClip', // 色调容差\n  saturationClip = 'saturationClip', // 饱和度阈值\n  saturationGain = 'saturationGain', // 柔和度\n  spill = 'spill', // 溢出抑制\n  shadow = 'shadow', // 阴影抑制\n  highLigh = 'highLigh', // 高光抑制\n}"
+}

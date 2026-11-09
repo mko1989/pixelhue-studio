@@ -1,0 +1,9 @@
+{
+  "id": "ModuleE-84f00c2e",
+  "name": "ModuleE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 175,
+  "declaration": "enum ModuleE {\n  /** 配屏 */\n  screen,\n  /** 编辑 */\n  edit,\n  /** MVR */\n  MVR,\n  /* 屏幕调节 */\n  adjust,\n}"
+}

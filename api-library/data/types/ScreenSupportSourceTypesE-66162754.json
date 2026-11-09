@@ -1,0 +1,9 @@
+{
+  "id": "ScreenSupportSourceTypesE-66162754",
+  "name": "ScreenSupportSourceTypesE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 426,
+  "declaration": "enum ScreenSupportSourceTypesE {\n  normalPGM = 1, // 普通屏幕PGM\n  normalPVW = 2, // 普通屏幕PVW\n  auxPGM = 3, // auxPGM\n  auxPVW = 4, // auxPVW\n}"
+}

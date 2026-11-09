@@ -1,0 +1,27 @@
+{
+  "page": 239,
+  "text": "Name Type Required Default Value Remarks More\ndata object Yes\n6.2.4 Rename Preset\n Basic Information\nPath: /v1/preset/update-name\nMethod: POST\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nItem type:\nobject\nNo\nobject\n[]\n├─ guid string Yes Preset ID\n├─ Old preset\nstring No\noldName name\nNew preset\n├─ name string Yes\nname\n Return Data\nName Type Required Default Value Remarks More\ncode number No Response code\nmessage string No Response message\ndata object No",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["data", "object", "Yes", "", "", ""]
+    ]},
+    {"contextBefore": "6.2.4 Rename Preset\n Basic Information\nPath: /v1/preset/update-name\nMethod: POST\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "object\n[]", "No", "", "", "Item type:\nobject"],
+      ["├─ guid", "string", "Yes", "", "Preset ID", ""],
+      ["├─\noldName", "string", "No", "", "Old preset\nname", ""],
+      ["├─ name", "string", "Yes", "", "New preset\nname", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["code", "number", "No", "", "Response code", ""],
+      ["message", "string", "No", "", "Response message", ""],
+      ["data", "object", "No", "", "", ""]
+    ]}
+  ]
+}

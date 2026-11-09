@@ -1,0 +1,9 @@
+{
+  "id": "EMidiIndex-084263db",
+  "name": "EMidiIndex",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 386,
+  "declaration": "enum EMidiIndex {\n  /** 旋钮索引 */\n  knob1 = 0,\n  knob2,\n  knob3,\n  knob4,\n  /** 推杆索引 */\n  pushRod1,\n  pushRod2,\n  pushRod3,\n  pushRod4,\n  pushRod5,\n  pushRod6,\n  pushRod7,\n  pushRod8,\n}"
+}

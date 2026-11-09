@@ -1,0 +1,7 @@
+{
+  "id": "reference-ScreenColorSpaceData-2cb3355a",
+  "name": "ScreenColorSpaceData",
+  "availability": "referenced-only",
+  "references": [{"name":"ScreenColorSpaceData","source":"src/api/screen/screen.ts","line":1143}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

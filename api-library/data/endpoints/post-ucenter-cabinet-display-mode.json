@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/cabinet/display-mode",
+  "group": "ucenter",
+  "summary": "res",
+  "tags": ["ucenter","cabinet","display-mode"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/ucenter/cabinet/display-mode","dynamic":false,"source":"src/api/screen/controller.ts","line":103,"client":"API","symbol":"res","comment":"*\n * @description 设置箱体显示模式 Ucenter\n * @param {Object} data 参数\n * @param {Array} data.cabinetIds 操作的箱体ID集合\n * @param {Number} data.mode 显示模式（【0：正常 1：黑屏 2：冻结】）\n *","parameters":["data: ICabinetDisplayModeUc","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq || 0,\n    }","configExpression":"{\n    method: 'POST',\n    url: '/ucenter/cabinet/display-mode',\n    data,\n    headers: {\n      seq: seq || 0,\n    },\n  }","context":"async (\n  data: ICabinetDisplayModeUc,\n  seq?: number,\n): Promise<IResponseData<string>> => {\n  const res = await API.request<IResponseData<string>>({\n    method: 'POST',\n    url: '/ucenter/cabinet/display-mode',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-cabinet-display-mode",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

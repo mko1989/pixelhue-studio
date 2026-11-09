@@ -1,0 +1,8 @@
+{
+  "id": "TestPatternPayload-fcb9af4f",
+  "name": "TestPatternPayload",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/TestPattern.ts",
+  "line": 55,
+  "declaration": "interface TestPatternPayload {\n\tenable: 0 | 1\n\ttype: TestPatternValue\n\tbright: number\n\tgrid: number\n\tgridType: TestPatternGridType\n\tgridLineWidth: number\n\tspeed: number\n\tverticalSpace: number\n\tverticalGrid: number\n\thorizontalSpace: number\n\tscreenBorder: number\n\tinterfaceBorder: number\n\tposition: number\n}"
+}

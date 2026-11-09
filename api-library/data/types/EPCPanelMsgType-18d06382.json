@@ -1,0 +1,9 @@
+{
+  "id": "EPCPanelMsgType-18d06382",
+  "name": "EPCPanelMsgType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 4,
+  "declaration": "enum EPCPanelMsgType {\n  /** 整机测试 */\n  doctor = 'production/doctor',\n  /** 老化测试 */\n  aging = 'production/aging',\n  /** 裸板测试 */\n  consoleBareMetal = 'production/bare-metal',\n  /** 整机测试 */\n  consoleMachine = 'production/complete-machine',\n  /** 老化测试 */\n  consoleAging = 'production/console-aging',\n  /** 维修测试 */\n  consoleMaintenance = 'production/maintenance',\n}"
+}

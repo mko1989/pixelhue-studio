@@ -1,0 +1,7 @@
+{
+  "id": "reference-IProjectExport-23ce28e3",
+  "name": "IProjectExport",
+  "availability": "referenced-only",
+  "references": [{"name":"IProjectExport","source":"src/api/project/project.ts","line":15},{"name":"IProjectExport","source":"src/api/project/project.ts","line":50}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,15 @@
+{
+  "page": 52,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n├─ objec smpteMapping settings of\nYes\nsmpteMapping t 3G-SDI connector\nSMPTE 425M Mapping:\n0: Invalid.\n1: Level A.\n2: Level B.\nEnumerati\nnumb\n├─ actual Yes Currently, only SDI\non: 0, 1, 2\ner\nconnectors support Level\nA/Level B settings; other\nconnectors default to\nunused.\nSMPTE 425M Mapping:\n0: Unused.\n1: Level A.\n2: Level B.\nEnumerati\ninteg\n├─ preset Yes Currently, only SDI\non: 0, 1, 2\ner\nconnectors support Level\nA/Level B settings; other\nconnectors default to\nunused.\n├─\nobjec Connector automatic\nremoveInterlac Yes\nt deinterlacing\ne\nEnumerati\nEnable status: on: 0, 1\ninteg\n├─ enable Yes 0: Disable.\ner mock:\n1: Enable.\n@integer\nobjec\n├─ cutout Yes Connector DSK\nt",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─\nsmpteMapping", "objec\nt", "Yes", "", "smpteMapping settings of\n3G-SDI connector", ""],
+      ["├─ actual", "numb\ner", "Yes", "", "SMPTE 425M Mapping:\n0: Invalid.\n1: Level A.\n2: Level B.\nCurrently, only SDI\nconnectors support Level\nA/Level B settings; other\nconnectors default to\nunused.", "Enumerati\non: 0, 1, 2"],
+      ["├─ preset", "integ\ner", "Yes", "", "SMPTE 425M Mapping:\n0: Unused.\n1: Level A.\n2: Level B.\nCurrently, only SDI\nconnectors support Level\nA/Level B settings; other\nconnectors default to\nunused.", "Enumerati\non: 0, 1, 2"],
+      ["├─\nremoveInterlac\ne", "objec\nt", "Yes", "", "Connector automatic\ndeinterlacing", ""],
+      ["├─ enable", "integ\ner", "Yes", "", "Enable status:\n0: Disable.\n1: Enable.", "Enumerati\non: 0, 1\nmock:\n@integer"],
+      ["├─ cutout", "objec\nt", "Yes", "", "Connector DSK", ""]
+    ]}
+  ]
+}

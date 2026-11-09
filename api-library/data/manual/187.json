@@ -1,0 +1,21 @@
+{
+  "page": 187,
+  "text": "Require Defaul\nName Type Remarks More\nd t Value\nis unique\nThe obj form of the\n├─ screenIdObj object Yes\nscreen ID\nnumbe\n├─ id Yes ID\nr\nScreen type: [2:\nCommon screen; 4:\nnumbe\n├─ type Yes AUX screen; 8: MVR\nr\nscreen; 16: Input view\nscreen]\n├─ general object Yes\n├─ name string Yes The screen name\nThe mosaic\n├─ mosaic object Yes\ninformation\nMosaic type: [0:\nStandard rectangle\nnumbe\n├─ type Yes mosaic; 1: Standard\nr\nirregular mosaic; 2:\nAny irregular mosaic]\nThe mosaic\ninformation of the\nscreen output\n├─ splice object Yes\nconnectors. For an\nirregular mosaic type,\nuse the default (0,0).\nnumbe\n├─ row Yes The mosaic rows\nr\nnumbe\n├─ column Yes The mosaic columns\nr\n├─ window object Yes The screen position",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Require\nd", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "is unique", ""],
+      ["├─ screenIdObj", "object", "Yes", "", "The obj form of the\nscreen ID", ""],
+      ["├─ id", "numbe\nr", "Yes", "", "ID", ""],
+      ["├─ type", "numbe\nr", "Yes", "", "Screen type: [2:\nCommon screen; 4:\nAUX screen; 8: MVR\nscreen; 16: Input view\nscreen]", ""],
+      ["├─ general", "object", "Yes", "", "", ""],
+      ["├─ name", "string", "Yes", "", "The screen name", ""],
+      ["├─ mosaic", "object", "Yes", "", "The mosaic\ninformation", ""],
+      ["├─ type", "numbe\nr", "Yes", "", "Mosaic type: [0:\nStandard rectangle\nmosaic; 1: Standard\nirregular mosaic; 2:\nAny irregular mosaic]", ""],
+      ["├─ splice", "object", "Yes", "", "The mosaic\ninformation of the\nscreen output\nconnectors. For an\nirregular mosaic type,\nuse the default (0,0).", ""],
+      ["├─ row", "numbe\nr", "Yes", "", "The mosaic rows", ""],
+      ["├─ column", "numbe\nr", "Yes", "", "The mosaic columns", ""],
+      ["├─ window", "object", "Yes", "", "The screen position", ""]
+    ]}
+  ]
+}

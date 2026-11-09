@@ -1,0 +1,7 @@
+{
+  "id": "reference-AxiosResponse-61abc0e6",
+  "name": "AxiosResponse",
+  "availability": "referenced-only",
+  "references": [{"name":"AxiosResponse","source":"src/api/device/deviceList.ts","line":627},{"name":"AxiosResponse","source":"src/api/index.ts","line":192},{"name":"AxiosResponse","source":"src/api/index.ts","line":369},{"name":"AxiosResponse","source":"src/api/screen/screen.ts","line":958},{"name":"AxiosResponse","source":"src/api/picture/picture.ts","line":96},{"name":"AxiosResponse","source":"src/api/device/cabinet-pack.ts","line":285}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

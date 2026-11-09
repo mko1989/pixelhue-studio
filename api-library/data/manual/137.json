@@ -1,0 +1,18 @@
+{
+  "page": 137,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nproperties\nLayer aspect ratio:\n0: 1:1\n1: 4:3\n2: 3:2\nnumb 3: 16:9\n├─ aspectRatio Yes\ner 4: 16:10\n5: Custom\n6: Obsolete\n7: 5:4\n8: Source ratio\nLock status:\nnumb\n├─ locked Yes 0: Unlocked.\ner\n1: Locked.\n├─ scale object Yes The scaling information\nScaling mode:\n0: Custom.\nintege\n├─ mode Yes 1: Pixel-to-pixel.\nr\n2: Fullscreen.\n3: Follow canvas.\n├─ general object Yes Layer basic Information\nmock:\n├─ name string Yes Layer name @strin\ng\nWhether it is a screen\nmock:\n├─ intege background:\n@integ\nYes\nisBackground r 0: No.\ner\n1: Yes.\nintege Whether the layer is mock:\n├─ isFreeze Yes\nr frozen: @integ",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "properties", ""],
+      ["├─ aspectRatio", "numb\ner", "Yes", "", "Layer aspect ratio:\n0: 1:1\n1: 4:3\n2: 3:2\n3: 16:9\n4: 16:10\n5: Custom\n6: Obsolete\n7: 5:4\n8: Source ratio", ""],
+      ["├─ locked", "numb\ner", "Yes", "", "Lock status:\n0: Unlocked.\n1: Locked.", ""],
+      ["├─ scale", "object", "Yes", "", "The scaling information", ""],
+      ["├─ mode", "intege\nr", "Yes", "", "Scaling mode:\n0: Custom.\n1: Pixel-to-pixel.\n2: Fullscreen.\n3: Follow canvas.", ""],
+      ["├─ general", "object", "Yes", "", "Layer basic Information", ""],
+      ["├─ name", "string", "Yes", "", "Layer name", "mock:\n@strin\ng"],
+      ["├─\nisBackground", "intege\nr", "Yes", "", "Whether it is a screen\nbackground:\n0: No.\n1: Yes.", "mock:\n@integ\ner"],
+      ["├─ isFreeze", "intege\nr", "Yes", "", "Whether the layer is\nfrozen:", "mock:\n@integ"]
+    ]}
+  ]
+}

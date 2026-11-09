@@ -1,0 +1,21 @@
+{
+  "page": 130,
+  "text": "Default\nName Type Required Remarks More\nValue\nItem\nobject\ntype:\nNo\n[]\nobject\nThe screen ID. Provide at\nleast one of screenId or\n├─\nnumber No screenName; if both are\nscreenId\nprovided, screenId takes\nprecedence.\n├─\nstring No The screen guid\nscreenGuid\nSet the cut direction:\n├─\nnumber Yes 0: PVW to PGM.\ndirection\n1: PGM to PVW.\nThe screen name. Provide\nat least one of screenId or\n├─\nstring No screenName; if both are\nscreenName\nprovided, screenId takes\nprecedence.\nSwap switch:\n├─\nnumber Yes 0: Disable.\nswapEnable\n1: Enable.\n Return Data\nName Type Required Default Value Remarks More\ncode integer Yes Response code\nmessage string Yes Response message\ndata object Yes\n4.2.4 Take\n Basic Information\nPath: /v1/screen/take",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "object\n[]", "No", "", "", "Item\ntype:\nobject"],
+      ["├─\nscreenId", "number", "No", "", "The screen ID. Provide at\nleast one of screenId or\nscreenName; if both are\nprovided, screenId takes\nprecedence.", ""],
+      ["├─\nscreenGuid", "string", "No", "", "The screen guid", ""],
+      ["├─\ndirection", "number", "Yes", "", "Set the cut direction:\n0: PVW to PGM.\n1: PGM to PVW.", ""],
+      ["├─\nscreenName", "string", "No", "", "The screen name. Provide\nat least one of screenId or\nscreenName; if both are\nprovided, screenId takes\nprecedence.", ""],
+      ["├─\nswapEnable", "number", "Yes", "", "Swap switch:\n0: Disable.\n1: Enable.", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response message", ""],
+      ["data", "object", "Yes", "", "", ""]
+    ]}
+  ]
+}

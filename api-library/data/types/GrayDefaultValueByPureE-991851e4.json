@@ -1,0 +1,9 @@
+{
+  "id": "GrayDefaultValueByPureE-991851e4",
+  "name": "GrayDefaultValueByPureE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 715,
+  "declaration": "enum GrayDefaultValueByPureE {\n  _50 = 50,\n}"
+}

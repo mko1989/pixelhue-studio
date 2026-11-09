@@ -1,0 +1,24 @@
+{
+  "page": 29,
+  "text": "2.5 Read Node Monitoring Status\n Basic Information\nPath: /v1/node/state-info\nMethod: GET\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nAuthorization Yes token\nQuery\nName Required Example Remarks\nnodeId Yes Node ID\n Return Data\nDefault\nName Type Required Remarks More\nValue\nmock:\ncode integer Yes Error code\n@integer\nmock:\nmessage string Yes Error description\n@string\ndata object Yes Business data\n├─\ninteger Yes Node ID\nnodeId\n├─\nobject Yes Monitoring status\nstateInfo\nItem\nobject\n├─ slot Yes type:\n[]\nobject\n├─ number Yes Slot No.",
+  "tables": [
+    {"contextBefore": "2.5 Read Node Monitoring Status\n Basic Information\nPath: /v1/node/state-info\nMethod: GET\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Authorization", "", "Yes", "", "token"]
+    ]},
+    {"contextBefore": "Query", "rows": [
+      ["Name", "Required", "Example", "Remarks"],
+      ["nodeId", "Yes", "", "Node ID"]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Error code", "mock:\n@integer"],
+      ["message", "string", "Yes", "", "Error description", "mock:\n@string"],
+      ["data", "object", "Yes", "", "Business data", ""],
+      ["├─\nnodeId", "integer", "Yes", "", "Node ID", ""],
+      ["├─\nstateInfo", "object", "Yes", "", "Monitoring status", ""],
+      ["├─ slot", "object\n[]", "Yes", "", "", "Item\ntype:\nobject"],
+      ["├─", "number", "Yes", "", "Slot No.", ""]
+    ]}
+  ]
+}

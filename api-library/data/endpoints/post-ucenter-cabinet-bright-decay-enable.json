@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/cabinet/bright-decay-enable",
+  "group": "ucenter",
+  "summary": "res",
+  "tags": ["ucenter","cabinet","bright-decay-enable"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/ucenter/cabinet/bright-decay-enable","dynamic":false,"source":"src/api/screen/controller.ts","line":199,"client":"API","symbol":"res","comment":"*\n * @description 设置箱体亮度缓起 Ucenter\n * @param {Array} data 参数\n *","parameters":["data: ICabinetLightStateUcParams","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq || 0,\n    }","configExpression":"{\n    method: 'POST',\n    url: '/ucenter/cabinet/bright-decay-enable',\n    data,\n    headers: {\n      seq: seq || 0,\n    },\n  }","context":"async (\n  data: ICabinetLightStateUcParams,\n  seq?: number,\n): Promise<IResponseData<string>> => {\n  const res = await API.request<IResponseData<string>>({\n    method: 'POST',\n    url: '/ucenter/cabinet/bright-decay-enable',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-cabinet-bright-decay-enable",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

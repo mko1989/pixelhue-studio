@@ -1,0 +1,20 @@
+{
+  "page": 180,
+  "text": "Default\nName Type Required Remarks More\nValue\n17: Streaming.\n18: Recording.\n19. Cleanfeed.\nSource properties related\nID. Currently, this field is\n├─ mock:\ninteger Yes only meaningful for IPC\n@integer\nrelationId\nsources, representing the\ndecodeId.\n Return Data\nDefault\nName Type Required Remarks More\nValue\nResponse code: Definition\ncan be found in NovaStar\ncode integer Yes\nUnified Platform Device Error\nCode Definition.\nmessage string Yes Response message\nItem\nobject\ntype:\ndata Yes\n[]\nobject\n5.5 Select Layer\n Basic Information\nPath: /v1/layers/select\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "17: Streaming.\n18: Recording.\n19. Cleanfeed.", ""],
+      ["├─\nrelationId", "integer", "Yes", "", "Source properties related\nID. Currently, this field is\nonly meaningful for IPC\nsources, representing the\ndecodeId.", "mock:\n@integer"]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code: Definition\ncan be found in NovaStar\nUnified Platform Device Error\nCode Definition.", ""],
+      ["message", "string", "Yes", "", "Response message", ""],
+      ["data", "object\n[]", "Yes", "", "", "Item\ntype:\nobject"]
+    ]},
+    {"contextBefore": "5.5 Select Layer\n Basic Information\nPath: /v1/layers/select\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"]
+    ]}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/correction/screen/coefficient/stream",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","correction","screen","coefficient","stream"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/correction/screen/coefficient/stream","dynamic":false,"source":"src/api/correction/index.ts","line":197,"client":"API_U_CENTER","symbol":"response","comment":"上传屏幕校正系数 文件流","parameters":["data: UploadCoefficientPathPropsT"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{\n      contentType: 'multipart/form-data',\n    }","configExpression":"{\n    method: 'post',\n    url: 'ucenter/correction/screen/coefficient/stream',\n    data: formData,\n    headers: {\n      contentType: 'multipart/form-data',\n    },\n    timeout: 600000,\n  }","context":"async (\n  data: UploadCoefficientPathPropsT,\n): Promise<IResponseData<unknown>> => {\n  const formData = new FormData();\n  formData.append(\n    'param',\n    JSON.stringify({\n      objIdList: data.objIdList,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-correction-screen-coefficient-stream",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

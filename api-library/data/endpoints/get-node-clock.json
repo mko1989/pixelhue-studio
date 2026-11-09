@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/node/clock",
+  "group": "node",
+  "summary": "response",
+  "tags": ["node","clock"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"node/clock","dynamic":false,"source":"src/api/device/deviceInfo.ts","line":479,"client":"API","symbol":"response","comment":"*设备时间获取","parameters":["nodeId: number","options?: ExtraReqParamsT"],"bodyExpression":null,"queryExpression":"{ nodeId }","headerExpression":"{\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    }","configExpression":"{\n    method: 'GET',\n    url: 'node/clock',\n    params: { nodeId },\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    },\n  }","context":"async (nodeId: number, options?: ExtraReqParamsT) => {\n  const response = await API.request<IResponseData<ITimeInfo>>({\n    method: 'GET',\n    url: 'node/clock',\n    params: { nodeId },\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-node-clock",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ENetworkSetting-6af4c4b7",
+  "name": "ENetworkSetting",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 878,
+  "declaration": "enum ENetworkSetting {\n  ip = 'ip',\n  mask = 'mask',\n  gateway = 'gateway',\n  apply = 'apply',\n  reset = 'reset',\n}"
+}

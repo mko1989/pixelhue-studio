@@ -1,0 +1,9 @@
+{
+  "id": "ThumbTimingSuperScreenDataT-5a5609ba",
+  "name": "ThumbTimingSuperScreenDataT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 349,
+  "declaration": "type ThumbTimingSuperScreenDataT = {\n  currentBandwidth: number; // 欲设置时序的带宽\n  interfaceId: number;\n  sn?: string;\n  maxBandwidth: number; // 接口最大支持带宽\n  tagName: number; // thumbTiming中变化字段\n  tagValueMax: number; // 变化字段可调最大值\n  tagValueMin: number; // 变化字段可调最小值\n  frame: {\n    scale: number;\n    value: number[];\n    max: number;\n  };\n};"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "LayerZOrderPara-fe2b69a3",
+  "name": "LayerZOrderPara",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 482,
+  "declaration": "enum LayerZOrderPara {\n  Forward = 1,\n  Backward = 2,\n  Top = 3,\n  Bottom = 4,\n}"
+}

@@ -1,0 +1,19 @@
+{
+  "page": 20,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nReference source\nID:\nWhen type=1,\nnumb\n├─ sourceId Yes sourceId=nodeId.\ner\nWhen type=2,\nsourceId=interfa\nceId.\n├─ phase object Yes Phase offset\nSync phase\nadjustment\nintege\n├─ enable Yes enable:\nr\n0: Disable/off.\n1: Enable/on.\nSync shift\nintege setting. Unit: clk.\n├─ offset Yes\nr Range: -\n40000~+40000.\nInternal frame\n├─ internalFrame object No\nrate\nnumb\n├─ framerate No Frame rate\ner\n├─ output object No Genlock out\nOutput sync type:\nnumb 1: Genlock in\n├─ type Yes\ner 3: Internal frame\nrate\nCurrent Genlock\n├─ genlockStatus object Yes\nstatus\nCurrent Genlock\nnumb\n├─ type Yes status: 0: Not\ner\nenabled. 1:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["├─ sourceId", "numb\ner", "Yes", "", "Reference source\nID:\nWhen type=1,\nsourceId=nodeId.\nWhen type=2,\nsourceId=interfa\nceId.", ""],
+      ["├─ phase", "object", "Yes", "", "Phase offset", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "Sync phase\nadjustment\nenable:\n0: Disable/off.\n1: Enable/on.", ""],
+      ["├─ offset", "intege\nr", "Yes", "", "Sync shift\nsetting. Unit: clk.\nRange: -\n40000~+40000.", ""],
+      ["├─ internalFrame", "object", "No", "", "Internal frame\nrate", ""],
+      ["├─ framerate", "numb\ner", "No", "", "Frame rate", ""],
+      ["├─ output", "object", "No", "", "Genlock out", ""],
+      ["├─ type", "numb\ner", "Yes", "", "Output sync type:\n1: Genlock in\n3: Internal frame\nrate", ""],
+      ["├─ genlockStatus", "object", "Yes", "", "Current Genlock\nstatus", ""],
+      ["├─ type", "numb\ner", "Yes", "", "Current Genlock\nstatus: 0: Not\nenabled. 1:", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/system/auxiliary/assess/screen-crop-mosaic",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","system","auxiliary","assess","screen-crop-mosaic"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/ucenter/system/auxiliary/assess/screen-crop-mosaic","dynamic":false,"source":"src/api/screen/screen.ts","line":1616,"client":"API","symbol":"response","comment":"* 超级屏 - 屏幕评估协议 *","parameters":["data: setMultipleScreenMosaicT[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'post',\n    url: '/ucenter/system/auxiliary/assess/screen-crop-mosaic',\n    data,\n    timeout: 10000,\n  }","context":"async (\n  data: setMultipleScreenMosaicT[],\n): Promise<IResponseData<MultipleLayerAssessT[]>> => {\n  const response = await API.request<IResponseData<MultipleLayerAssessT[]>>({\n    method: 'post',\n    url: '/ucenter/system/auxiliary/assess/screen-crop-mosaic',\n    data,\n    timeout: 10000,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-system-auxiliary-assess-screen-crop-mosaic",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

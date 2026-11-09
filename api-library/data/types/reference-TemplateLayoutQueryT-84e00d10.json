@@ -1,0 +1,7 @@
+{
+  "id": "reference-TemplateLayoutQueryT-84e00d10",
+  "name": "TemplateLayoutQueryT",
+  "availability": "referenced-only",
+  "references": [{"name":"TemplateLayoutQueryT","source":"src/api/layer/layer.ts","line":1099},{"name":"TemplateLayoutQueryT","source":"src/api/layer/layer.ts","line":1100}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

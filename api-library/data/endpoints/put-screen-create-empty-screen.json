@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/screen/create-empty-screen",
+  "group": "screen",
+  "summary": "response",
+  "tags": ["screen","create-empty-screen"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"screen/create-empty-screen","dynamic":false,"pathParameters":[],"source":"src/api/production/index.ts","line":57,"client":"API","symbol":"response","comment":"*\n * 创建空屏幕\n * @returns","parameters":["params: {\n  ip: string;\n  port: number;\n  token: string;\n  data: createEmptyScreenT;\n}"],"bodyExpression":"params.data","queryExpression":null,"headerExpression":"{\n      Authorization: params.token,\n    }","configExpression":"{\n    method: 'PUT',\n    url: `screen/create-empty-screen`,\n    data: params.data,\n    headers: {\n      Authorization: params.token,\n    },\n  }","context":"async (params: {\n  ip: string;\n  port: number;\n  token: string;\n  data: createEmptyScreenT;\n}): Promise<ICreateScreenResponseData> => {\n  const response = await API.request<ICreateScreenResponseData>({\n    method: 'PUT',","sourceMap":"main-Cpb41LiE.js.map"},{"method":"PUT","path":"screen/create-empty-screen","dynamic":false,"source":"src/api/screen/screen.ts","line":540,"client":"API","symbol":"response","comment":"","parameters":["data: createEmptyScreenT"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'screen/create-empty-screen',\n    data,\n  }","context":"async (\n  data: createEmptyScreenT,\n): Promise<ICreateScreenResponseData> => {\n  const response = await API.request<ICreateScreenResponseData>({\n    method: 'PUT',\n    url: 'screen/create-empty-screen',\n    data,\n  });","sourceMap":"main-Cpb41LiE.js.map"},{"method":"PUT","path":"screen/create-empty-screen","dynamic":false,"source":"src/api/production/burn-in-test.ts","line":88,"client":"API","symbol":"response","comment":"创建空屏幕","parameters":["ip: string","port: number","nodeId: number","sn: string","data: createEmptyScreenT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      Authorization: token,\n      ip,\n      port,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'screen/create-empty-screen',\n    data,\n    headers: {\n      Authorization: token,\n      ip,\n      port,\n    },\n  }","context":"async (\n  ip: string,\n  port: number,\n  nodeId: number,\n  sn: string,\n  data: createEmptyScreenT,\n): Promise<ICreateScreenResponseData> => {\n  const token = getLocalTokenBySn(sn) ?? '';","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-screen-create-empty-screen",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

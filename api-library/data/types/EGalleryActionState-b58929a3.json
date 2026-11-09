@@ -1,0 +1,9 @@
+{
+  "id": "EGalleryActionState-b58929a3",
+  "name": "EGalleryActionState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 57,
+  "declaration": "enum EGalleryActionState {\n  Importing = 'picture-importing', // \"导入中\"\n  ImportInterrupt = 'picture-import-interrupt', // \"导入中断\"\n  ImportSuccess = 'picture-import-success', // \"导入成功\"\n  ImportCancel = 'picture-import-cancel', // \"取消导入\"\n  ImportFail = 'import-fail', // \"导入失败\"\n  Exporting = 'picture-exporting', // \"导出中\"\n  ExportSuccess = 'picture-export-success', // \"导出成功\"\n  ExportCancel = 'picture-export-cancel', // \"取消导出\"\n  SavePicture = 'capture-picture-saving', // \"抓拍保存中\"\n  SaveSuccess = 'capture-save-success', // \"保存成功\"\n}"
+}

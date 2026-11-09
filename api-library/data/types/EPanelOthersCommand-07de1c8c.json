@@ -1,0 +1,9 @@
+{
+  "id": "EPanelOthersCommand-07de1c8c",
+  "name": "EPanelOthersCommand",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 457,
+  "declaration": "enum EPanelOthersCommand {\n  SilkScreen1 = 6300,\n  SilkScreen2,\n  SilkScreen3,\n  SilkScreen4,\n}"
+}

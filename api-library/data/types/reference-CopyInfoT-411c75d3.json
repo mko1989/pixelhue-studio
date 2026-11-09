@@ -1,0 +1,7 @@
+{
+  "id": "reference-CopyInfoT-411c75d3",
+  "name": "CopyInfoT",
+  "availability": "referenced-only",
+  "references": [{"name":"CopyInfoT","source":"src/types/device/typing.ts","line":83}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

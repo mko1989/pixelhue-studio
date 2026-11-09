@@ -1,0 +1,9 @@
+{
+  "id": "SceneDisplayTypeE-0423c7d6",
+  "name": "SceneDisplayTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/preset/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 46,
+  "declaration": "enum SceneDisplayTypeE {\n  /** 1 切换器 */\n  switch = 1,\n  /** 2 拼接器多屏幕场景 */\n  splicerMultiScreen = 2,\n  /** 2 拼接器单场景 */\n  splicerSingleScreen = 6,\n  /** 3 控制器 */\n  control = 3,\n  /** 4 二合一 */\n  controlMerge = 4,\n  /** 5 直播 */\n  live = 5,\n}"
+}

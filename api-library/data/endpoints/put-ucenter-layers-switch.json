@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/layers/switch",
+  "group": "ucenter",
+  "summary": "res",
+  "tags": ["ucenter","layers","switch"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"/ucenter/layers/switch","dynamic":false,"source":"src/api/layer/layer.ts","line":1199,"client":"API_U_CENTER","symbol":"res","comment":"设置图层开关","parameters":["data: {\n    layerId: number;\n    enable: number;\n    sn: string;\n  }[]","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq || 0,\n    }","configExpression":"{\n    method: 'PUT',\n    // url: 'layers/switch',\n    url: '/ucenter/layers/switch',\n    data,\n    headers: {\n      seq: seq || 0,\n    },\n  }","context":"async (\n  data: {\n    layerId: number;\n    enable: number;\n    sn: string;\n  }[],\n  seq?: number,\n  // extraReqParams?: ExtraReqParamsT,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-layers-switch",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

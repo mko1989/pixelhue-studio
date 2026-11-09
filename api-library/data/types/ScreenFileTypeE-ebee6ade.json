@@ -1,0 +1,9 @@
+{
+  "id": "ScreenFileTypeE-ebee6ade",
+  "name": "ScreenFileTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 812,
+  "declaration": "enum ScreenFileTypeE {\n  uscr = '0',\n  scr = '1',\n}"
+}

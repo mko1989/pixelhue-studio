@@ -1,0 +1,9 @@
+{
+  "id": "CabinetPackUpgradeTypeE-e32f5f77",
+  "name": "CabinetPackUpgradeTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 577,
+  "declaration": "enum CabinetPackUpgradeTypeE {\n  NCP,\n  Rcfgx,\n}"
+}

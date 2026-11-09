@@ -1,0 +1,9 @@
+{
+  "id": "NcpFileSourceE-cc9b053d",
+  "name": "NcpFileSourceE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/ncpLibrary/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 13,
+  "declaration": "enum NcpFileSourceE {\n  local,\n  device,\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "LayerAttrTabE-b3921e2e",
+  "name": "LayerAttrTabE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 534,
+  "declaration": "enum LayerAttrTabE {\n  base = 'tab-attribute-base', // 基本\n  color = 'tab-attribute-effect', // 效果\n  advanced = 'tab-attribute-advanced', // 高级\n  cutout = 'tab-attribute-cutout', // 抠图\n}"
+}

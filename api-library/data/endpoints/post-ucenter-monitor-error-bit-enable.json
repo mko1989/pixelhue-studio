@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/monitor/error-bit-enable",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","monitor","error-bit-enable"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/monitor/error-bit-enable","dynamic":false,"source":"src/api/monitor/index.ts","line":83,"client":"API","symbol":"response","comment":"*\n * 设置接收卡误码开关","parameters":["enable: EnableE","snList: string[]"],"bodyExpression":"{ enable, snList }","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'post',\n    url: 'ucenter/monitor/error-bit-enable',\n    data: { enable, snList },\n  }","context":"async (\n  enable: EnableE,\n  snList: string[],\n): Promise<IResponseData<IPageData<LayerT>>> => {\n  const response = await API.request<IResponseData<IPageData<LayerT>>>({\n    method: 'post',\n    url: 'ucenter/monitor/error-bit-enable',\n    data: { enable, snList },","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-monitor-error-bit-enable",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

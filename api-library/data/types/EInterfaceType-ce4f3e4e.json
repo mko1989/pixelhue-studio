@@ -1,0 +1,9 @@
+{
+  "id": "EInterfaceType-ce4f3e4e",
+  "name": "EInterfaceType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 831,
+  "declaration": "enum EInterfaceType {\n  input = 2, // 输入接口配置\n  output = 60, // 输出接口配置\n}"
+}

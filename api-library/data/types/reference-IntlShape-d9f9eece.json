@@ -1,0 +1,7 @@
+{
+  "id": "reference-IntlShape-d9f9eece",
+  "name": "IntlShape",
+  "availability": "referenced-only",
+  "references": [{"name":"IntlShape","source":"src/api/device/deviceList.ts","line":65},{"name":"IntlShape","source":"src/api/device/deviceList.ts","line":186},{"name":"IntlShape","source":"src/api/screen/screen.ts","line":305},{"name":"IntlShape","source":"src/api/screen/screen.ts","line":374}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

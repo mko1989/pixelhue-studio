@@ -1,0 +1,15 @@
+{
+  "page": 51,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n0x0204: Crossed lines.\n0x0205: Crossed diagonals.\n0x0300: Locate.\n0xFFFE: Custom test\npattern.\n0xFFFF: Off.\nnumb\n├─ bright Yes Brightness\ner\nIts meaning is determined\nnumb by the field \"gridType\". If\n├─ grid Yes\ner this field is absent, it\nindicates the grid density.\nDescription of grid unit:\n0: \"grid\" indicates grid\ndensity, adjustable in 8\nlevels ranging from 1 to 8,\nwith a default of level 5.\n1: \"grid\" indicates grid\nnumb spacing in pixels, with a\n├─ gridType Yes\ner minimum of 1 pixel, a\nmaximum equal to 1/4 of\nthe horizontal maximum\npixel count for the\nconfigured connector, a\nstep size of 1, and a default\nof 32.\n├─ numb\nYes Grid width, unit: pixel\ngridLineWidth er\nnumb\n├─ speed Yes Speed\ner",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "0x0204: Crossed lines.\n0x0205: Crossed diagonals.\n0x0300: Locate.\n0xFFFE: Custom test\npattern.\n0xFFFF: Off.", ""],
+      ["├─ bright", "numb\ner", "Yes", "", "Brightness", ""],
+      ["├─ grid", "numb\ner", "Yes", "", "Its meaning is determined\nby the field \"gridType\". If\nthis field is absent, it\nindicates the grid density.", ""],
+      ["├─ gridType", "numb\ner", "Yes", "", "Description of grid unit:\n0: \"grid\" indicates grid\ndensity, adjustable in 8\nlevels ranging from 1 to 8,\nwith a default of level 5.\n1: \"grid\" indicates grid\nspacing in pixels, with a\nminimum of 1 pixel, a\nmaximum equal to 1/4 of\nthe horizontal maximum\npixel count for the\nconfigured connector, a\nstep size of 1, and a default\nof 32.", ""],
+      ["├─\ngridLineWidth", "numb\ner", "Yes", "", "Grid width, unit: pixel", ""],
+      ["├─ speed", "numb\ner", "Yes", "", "Speed", ""]
+    ]}
+  ]
+}

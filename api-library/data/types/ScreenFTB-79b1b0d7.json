@@ -1,0 +1,8 @@
+{
+  "id": "ScreenFTB-79b1b0d7",
+  "name": "ScreenFTB",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Screen.ts",
+  "line": 38,
+  "declaration": "interface ScreenFTB {\n\tenable: 0 | 1\n\ttime: number\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ETouchTestResult-7c8a4c21",
+  "name": "ETouchTestResult",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 248,
+  "declaration": "enum ETouchTestResult {\n  failed = '0', // 不通过\n  success = '1', // 通过\n}"
+}

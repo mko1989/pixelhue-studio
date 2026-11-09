@@ -1,0 +1,9 @@
+{
+  "id": "ScreenSortWayE-9fe41a5e",
+  "name": "ScreenSortWayE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 439,
+  "declaration": "enum ScreenSortWayE {\n  default, // 默认排序，按照类型排序，类型相同按照创建时间排序，类型不同按照类型排序\n  createTime, // 创建时间排序\n}"
+}

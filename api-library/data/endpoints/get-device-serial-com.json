@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/device/serial-com",
+  "group": "device",
+  "summary": "response",
+  "tags": ["device","serial-com"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"device/serial-com","dynamic":false,"source":"src/api/device/deviceInfo.ts","line":775,"client":"API","symbol":"response","comment":"*\n * 0x02-读取串口配置\n * @returns","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'GET',\n    url: 'device/serial-com',\n  }","context":"async () => {\n  const response = await API.request<IResponseData<ComInfosResponse>>({\n    method: 'GET',\n    url: 'device/serial-com',\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-device-serial-com",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

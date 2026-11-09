@@ -1,0 +1,9 @@
+{
+  "id": "LinkStateE-dc9134bd",
+  "name": "LinkStateE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 748,
+  "declaration": "enum LinkStateE {\n  noLink, // 未连接\n  normalLink, // 已连接 正常\n  superLoadLink, //已连接 超带载\n  astableSignal, // 源不稳定\n  nonstandardLink, //非标连接\n  nonstandardNoLink, //非标未连接\n  superLoadNoLink, // 未连接 超带宽\n  haveSignalBackup, // 有信号备份\n  noSignalBackup, // 无信号备份\n}"
+}

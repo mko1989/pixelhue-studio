@@ -1,0 +1,18 @@
+{
+  "page": 205,
+  "text": "Default\nName Type Required Remarks More\nValue\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.\nCurrent on-screen\narea:\n├─ 0: Not displayed\ninteger Yes\ncurrentRegion 2: PWG.\n4: PVW.\n6: PGM & PVW.\nItem\nobject\n├─ screens Yes Screen information type:\n[]\nobject\n├─ guid string Yes Screen GUID\nThe obj form of the\n├─ screenIdObj object Yes\nscreen ID\n├─ id number Yes Screen ID\nScreen type:\n0: Empty screen.\n2: Common screen.\n├─ type number Yes 4: AUX screen.\n8: MVR screen.\n16: Input view screen.\n32: LED screen.\n├─ name string Yes Screen name\nScreen presence:\n├─ exist integer Yes 0: Not present.\n1: Present.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.", ""],
+      ["├─\ncurrentRegion", "integer", "Yes", "", "Current on-screen\narea:\n0: Not displayed\n2: PWG.\n4: PVW.\n6: PGM & PVW.", ""],
+      ["├─ screens", "object\n[]", "Yes", "", "Screen information", "Item\ntype:\nobject"],
+      ["├─ guid", "string", "Yes", "", "Screen GUID", ""],
+      ["├─ screenIdObj", "object", "Yes", "", "The obj form of the\nscreen ID", ""],
+      ["├─ id", "number", "Yes", "", "Screen ID", ""],
+      ["├─ type", "number", "Yes", "", "Screen type:\n0: Empty screen.\n2: Common screen.\n4: AUX screen.\n8: MVR screen.\n16: Input view screen.\n32: LED screen.", ""],
+      ["├─ name", "string", "Yes", "", "Screen name", ""],
+      ["├─ exist", "integer", "Yes", "", "Screen presence:\n0: Not present.\n1: Present.", ""]
+    ]}
+  ]
+}

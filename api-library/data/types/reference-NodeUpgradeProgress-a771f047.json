@@ -1,0 +1,7 @@
+{
+  "id": "reference-NodeUpgradeProgress-a771f047",
+  "name": "NodeUpgradeProgress",
+  "availability": "referenced-only",
+  "references": [{"name":"NodeUpgradeProgress","source":"src/api/device/device-upgrade.ts","line":22},{"name":"NodeUpgradeProgress","source":"src/api/device/device-upgrade.ts","line":30}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

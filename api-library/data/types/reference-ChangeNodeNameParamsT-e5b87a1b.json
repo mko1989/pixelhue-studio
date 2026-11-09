@@ -1,0 +1,7 @@
+{
+  "id": "reference-ChangeNodeNameParamsT-e5b87a1b",
+  "name": "ChangeNodeNameParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"ChangeNodeNameParamsT","source":"src/api/device/deviceInfo.ts","line":534},{"name":"ChangeNodeNameParamsT","source":"src/api/device/deviceList.ts","line":506}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ScreenIdObj-63fcb63d",
+  "name": "ScreenIdObj",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Screen.ts",
+  "line": 43,
+  "declaration": "interface ScreenIdObj {\n\tid: number\n\ttype: number\n}"
+}

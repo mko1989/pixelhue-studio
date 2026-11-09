@@ -1,0 +1,9 @@
+{
+  "id": "ETestResultState-5508ee0f",
+  "name": "ETestResultState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 202,
+  "declaration": "enum ETestResultState {\n  inprogress = 1, // 1：进行中\n  ok, // 2：通过\n  notOK, // 3：不通过\n}"
+}

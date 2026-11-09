@@ -1,0 +1,9 @@
+{
+  "id": "RouterPath-15de01b1",
+  "name": "RouterPath",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 588,
+  "declaration": "enum RouterPath {\n  empty = '',\n  /** 工程 */\n  engineering = '/engineering',\n  /** 设备 */\n  device = '/device',\n  /** 编辑 */\n  editor = '/edit',\n  /** 箱体库 */\n  ncp = '/ncp',\n  /** 配屏 */\n  screen = '/screen',\n  /** 预监 */\n  mvr = '/mvr',\n  /** 屏幕调节 */\n  adjust = '/adjust',\n  /** 维护界面 */\n  deviceUpgrade = '/device-upgrade',\n  /** 设备设置 */\n  deviceSetting = '/device-setting',\n  /** 外设管理 */\n  externalSetting = '/external-setting',\n  /** 虚拟控台 */\n  virtualConsole = '/virtual-console',\n  /** 修正 */\n  fix = '/fix',\n  /** 监控 */\n  monitor = '/monitor',\n  /** 插件 */\n  companionManage = '/companion-manage',\n  handle = '/handle',\n  /** 屏幕处理 */\n  processing = '/processing',\n  /** 音频矩阵 */\n  audioMatrix = '/audio-matrix',\n  /** 备份页面 */\n  backup = '/backup',\n  /** 预设 */\n  presets = '/presets',\n  linkSource = '/link-source',\n  userManual = '/user-manual',\n  /** 用户模式 */\n  userMode = '/user-mode',\n  /** 用户模式控制 */\n  screenControl = '/screen-control',\n}"
+}

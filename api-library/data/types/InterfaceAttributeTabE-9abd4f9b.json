@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceAttributeTabE-9abd4f9b",
+  "name": "InterfaceAttributeTabE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 367,
+  "declaration": "enum InterfaceAttributeTabE {\n  base = 'device-attribute-base', // 基本属性\n  EDID = 'EDID', // EDID属性\n  sequential = 'device-attribute-edid', // 时序属性\n  effect = 'device-attribute-effect', // 效果属性\n  cutout = 'device-attribute-cutout', // 抠图属性\n  advanced = 'device-attribute-advanced', // 高级属性\n  output = 'device-attribute-output', // 输出属性\n  video = 'device-attribute-video', // 视频流\n  fiber = 'device-attribute-fiber', // 光口属性\n  RX = 'dante-rx', //RX端属性\n  TX = 'dante-tx', //TX端属性\n}"
+}

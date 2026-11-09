@@ -1,0 +1,9 @@
+{
+  "id": "PostUcenterPresetApplyD-b845110b",
+  "name": "PostUcenterPresetApplyD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/preset/index.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 339,
+  "declaration": "interface PostUcenterPresetApplyD {\n  sn: string;\n  data: {\n    presetId: string;\n    serial: number;\n    /** 2: PGM, 4: PVW, 0:Auto(切换器为 PVW，拼接器、控制器为 PGM) */\n    targetRegion: number;\n    /** 辅助信息 */\n    auxiliary: {\n      /** 加载场景时候携带的kf信息 */\n      keyFrame: {\n        /** 加载场景时是否执行关键帧：0，执行，1，不执行 */\n        enable: 0 | 1;\n      };\n      /** 场景指定加载的目标屏幕列表 */\n      screens?: { guid: string }[];\n      /** 加载场景take特效 */\n      switchEffect?: {\n        type: number;\n        time: number;\n      };\n      swapEnable?: number; // 0: swap未启用，1: swap启用\n      effect?: {\n        enable: 0 | 1; // 0: 执行特效，1: 不执行特效\n      };\n    };\n  };\n}"
+}

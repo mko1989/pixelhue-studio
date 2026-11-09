@@ -1,0 +1,9 @@
+{
+  "id": "EPanelScreenCommand-8d15ca60",
+  "name": "EPanelScreenCommand",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 212,
+  "declaration": "enum EPanelScreenCommand {\n  /** 创建屏幕 */\n  screenCreate = 100,\n  /** 选中屏幕 */\n  screenSelect,\n  /** 激活屏幕 */\n  screenActive,\n  /** 取消选中屏幕 */\n  screenUnselect,\n  /** 删除单个屏幕 */\n  screenDelete,\n  /** 批量删除屏幕 */\n  screenDeleteMuti,\n  /** 以下都是 上位机自定义指令枚举删除空屏幕，彪哥加的用来处理空屏幕的删除动作 */\n  screenDeleteEmpty = 999,\n}"
+}

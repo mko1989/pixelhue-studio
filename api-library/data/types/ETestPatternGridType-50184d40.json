@@ -1,0 +1,9 @@
+{
+  "id": "ETestPatternGridType-50184d40",
+  "name": "ETestPatternGridType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1064,
+  "declaration": "enum ETestPatternGridType {\n  gridGear = 0, // 0：grid表示网格密集程度\n  gridPx = 1, // 1：grid表示水平间距，单位为像素\n}"
+}

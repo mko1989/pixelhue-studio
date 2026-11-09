@@ -1,0 +1,9 @@
+{
+  "id": "EDeviceSelfCheckStatus-a7524816",
+  "name": "EDeviceSelfCheckStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 29,
+  "declaration": "enum EDeviceSelfCheckStatus {\n  initial,\n  checking,\n  failed,\n  success,\n  error,\n}"
+}

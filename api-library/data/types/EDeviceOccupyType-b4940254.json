@@ -1,0 +1,9 @@
+{
+  "id": "EDeviceOccupyType-b4940254",
+  "name": "EDeviceOccupyType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1089,
+  "declaration": "enum EDeviceOccupyType {\n  unlock,\n  lock = 2,\n}"
+}

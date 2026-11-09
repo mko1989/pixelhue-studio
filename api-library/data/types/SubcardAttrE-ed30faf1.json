@@ -1,0 +1,9 @@
+{
+  "id": "SubcardAttrE-ed30faf1",
+  "name": "SubcardAttrE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 941,
+  "declaration": "enum SubcardAttrE {\n  noSetting = 'noSetting',\n  capacitySetting = 'capacitySetting',\n  interfaceSetting = 'interfaceSetting',\n}"
+}

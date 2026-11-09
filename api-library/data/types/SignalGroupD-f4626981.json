@@ -1,0 +1,9 @@
+{
+  "id": "SignalGroupD-f4626981",
+  "name": "SignalGroupD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 350,
+  "declaration": "interface SignalGroupD {\n  /**\n   * 信号源分组\n   */\n  groupName: string;\n  /**\n   * 信号源分组id\n   */\n  groupId: number;\n  expand?: boolean;\n  /**\n   * 信号源列表\n   */\n  list: InterfaceT[];\n}"
+}

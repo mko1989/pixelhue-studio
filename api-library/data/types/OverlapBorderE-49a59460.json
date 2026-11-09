@@ -1,0 +1,9 @@
+{
+  "id": "OverlapBorderE-49a59460",
+  "name": "OverlapBorderE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 647,
+  "declaration": "enum OverlapBorderE {\n  top,\n  bottom,\n  left,\n  right,\n}"
+}

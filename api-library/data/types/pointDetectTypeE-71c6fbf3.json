@@ -1,0 +1,9 @@
+{
+  "id": "pointDetectTypeE-71c6fbf3",
+  "name": "pointDetectTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 953,
+  "declaration": "enum pointDetectTypeE {\n  notAllow = 0, // 不支持\n}"
+}

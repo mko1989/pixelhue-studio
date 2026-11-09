@@ -1,0 +1,7 @@
+{
+  "id": "reference-IInternalList-37a65dee",
+  "name": "IInternalList",
+  "availability": "referenced-only",
+  "references": [{"name":"IInternalList","source":"src/api/device/device-source.ts","line":23},{"name":"IInternalList","source":"src/api/device/device-source.ts","line":24}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

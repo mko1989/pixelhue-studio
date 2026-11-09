@@ -1,0 +1,21 @@
+{
+  "page": 236,
+  "text": "Default\nName Type Required Remarks More\nValue\nscreen.\n11: Internal source.\n12: Internal shape\nsource.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.\n├─ stinger object No stinger\n├─\ninteger No Playback start time\nplayStartTime\n├─ mixtureTime integer No Mix time\n├─\ninteger No Mix start time\nmixtureStartTime\nDSK switch:\n├─ matting integer No 1: Enable.\n0: Disable.\n├─ brightness integer No Clip\n├─ softness integer No Softness\n├─ source object No\n├─ general object No General information\nSource ID, which is\n├─ sourceId integer No unique for a specific\nsource type\nSource type:\n├─ sourceType integer No\n0: Empty layer.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "screen.\n11: Internal source.\n12: Internal shape\nsource.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.", ""],
+      ["├─ stinger", "object", "No", "", "stinger", ""],
+      ["├─\nplayStartTime", "integer", "No", "", "Playback start time", ""],
+      ["├─ mixtureTime", "integer", "No", "", "Mix time", ""],
+      ["├─\nmixtureStartTime", "integer", "No", "", "Mix start time", ""],
+      ["├─ matting", "integer", "No", "", "DSK switch:\n1: Enable.\n0: Disable.", ""],
+      ["├─ brightness", "integer", "No", "", "Clip", ""],
+      ["├─ softness", "integer", "No", "", "Softness", ""],
+      ["├─ source", "object", "No", "", "", ""],
+      ["├─ general", "object", "No", "", "General information", ""],
+      ["├─ sourceId", "integer", "No", "", "Source ID, which is\nunique for a specific\nsource type", ""],
+      ["├─ sourceType", "integer", "No", "", "Source type:\n0: Empty layer.", ""]
+    ]}
+  ]
+}

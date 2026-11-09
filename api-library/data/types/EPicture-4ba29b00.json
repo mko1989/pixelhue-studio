@@ -1,0 +1,9 @@
+{
+  "id": "EPicture-4ba29b00",
+  "name": "EPicture",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 210,
+  "declaration": "enum EPicture {\n  TemporaryType = 0, // 临时类型\n  BKG = 1,\n  LOGO = 2,\n  OSD = 3,\n  Clock = 4, // 时钟\n  BuiltInSource = 5, // 内置源\n  LiveBKG = 6, // LiveBKG\n}"
+}

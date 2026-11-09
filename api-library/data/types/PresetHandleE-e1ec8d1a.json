@@ -1,0 +1,9 @@
+{
+  "id": "PresetHandleE-e1ec8d1a",
+  "name": "PresetHandleE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/device-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 104,
+  "declaration": "enum PresetHandleE {\n  stop = 0, // 暂停\n  up = 1, //上\n  right, //右\n  down, //下\n  left, //左\n  zoomIn, //放⼤焦距\n  zoomOut, // 缩⼩焦距\n  zoomInAperture, // 放⼤光圈\n  zoomOutApertrue, // 缩⼩光圈\n  longShot, //远镜头\n  closeShot, // 近镜头\n  leftUp, // 左上\n  leftDown, // 左下\n  rightUp, // 右上\n  rightDown, // 右下\n}"
+}

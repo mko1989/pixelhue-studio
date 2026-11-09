@@ -1,0 +1,9 @@
+{
+  "id": "EPCPanelFooterLeftType-ea4d2c1c",
+  "name": "EPCPanelFooterLeftType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 22,
+  "declaration": "enum EPCPanelFooterLeftType {\n  /** 设备日志 */\n  log,\n  /** 掉源统计 */\n  count,\n}"
+}

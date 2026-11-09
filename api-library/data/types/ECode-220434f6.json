@@ -1,0 +1,9 @@
+{
+  "id": "ECode-220434f6",
+  "name": "ECode",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 583,
+  "declaration": "enum ECode {\n  SUCCESS = 0,\n  NAME_REPEAT = 8311,\n}"
+}

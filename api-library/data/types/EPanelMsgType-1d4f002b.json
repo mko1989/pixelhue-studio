@@ -1,0 +1,9 @@
+{
+  "id": "EPanelMsgType-1d4f002b",
+  "name": "EPanelMsgType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 175,
+  "declaration": "enum EPanelMsgType {\n  /** 屏幕 */\n  screen = 1,\n  /** 图层 */\n  layer,\n  /** 输入 */\n  inputs,\n  /** 场景 */\n  preset,\n  /** 媒体按键 */\n  media,\n  /** cues */\n  cues,\n  /** 功能键 */\n  fn,\n  // 设备模块\n  device,\n  // 截取源\n  crop,\n  // 拼接源\n  splice,\n}"
+}

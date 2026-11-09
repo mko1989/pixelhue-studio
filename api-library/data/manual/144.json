@@ -1,0 +1,20 @@
+{
+  "page": 144,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\non the calculation ratio of\nvirtual pixels, unrelated to\nthe device.)\nintege\n├─ width No Layer width\nr\nintege\n├─ height No Layer height\nr\nintege\n├─ x No Horizontal offset\nr\nintege\n├─ y No Vertical offset\nr\n├─ mask object Yes Layer mask information\nmock:\nWhether to enable mask:\nintege\n├─ enable Yes 0: Disable. @integ\nr\ner\n1: Enable.\nmock:\nintege\n├─ left Yes Left mask width, in pixels @integ\nr\ner\nLeft mask ratio:\nintege leftRatio = round (left\n├─ leftRatio Yes\nr mask width/layer width *\n100,000)\nmock:\nintege Right mask width, in\n├─ right Yes @integ\nr pixels\ner\nRight mask ratio:\nintege rightRatio = round (right\n├─ rightRatio Yes\nr mask width/layer width *\n100,000)",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "on the calculation ratio of\nvirtual pixels, unrelated to\nthe device.)", ""],
+      ["├─ width", "intege\nr", "No", "", "Layer width", ""],
+      ["├─ height", "intege\nr", "No", "", "Layer height", ""],
+      ["├─ x", "intege\nr", "No", "", "Horizontal offset", ""],
+      ["├─ y", "intege\nr", "No", "", "Vertical offset", ""],
+      ["├─ mask", "object", "Yes", "", "Layer mask information", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "Whether to enable mask:\n0: Disable.\n1: Enable.", "mock:\n@integ\ner"],
+      ["├─ left", "intege\nr", "Yes", "", "Left mask width, in pixels", "mock:\n@integ\ner"],
+      ["├─ leftRatio", "intege\nr", "Yes", "", "Left mask ratio:\nleftRatio = round (left\nmask width/layer width *\n100,000)", ""],
+      ["├─ right", "intege\nr", "Yes", "", "Right mask width, in\npixels", "mock:\n@integ\ner"],
+      ["├─ rightRatio", "intege\nr", "Yes", "", "Right mask ratio:\nrightRatio = round (right\nmask width/layer width *\n100,000)", ""]
+    ]}
+  ]
+}

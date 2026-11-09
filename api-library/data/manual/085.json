@@ -1,0 +1,18 @@
+{
+  "page": 85,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n12: 12Bit.\n16: 16Bit.\n├─ colorSpace object Yes Color Space\nPreset color\nspace:\n0: RGB 4:4:4.\nnumb\n├─ preset Yes 1: YCbCr 4:2:2.\ner\n2: YCbCr 4:4:4.\n3: YCbCr 4:2:0.\n255: AUTO.\n├─ colorRange object Yes Color range\nPreset color\nrange:\nnumb\n├─ preset Yes 0: LIMIT.\ner\n1: FULL.\n255: AUTO.\n├─ colorGamut object Yes Color gamut\nPreset color\ngamut:\n0: Rec.601.\n1: Rec.709.\nnumb\n├─ preset Yes 2: DCI-P3.\ner\n3: Rec.2020.\n4: NTSC.\n5: aRGB.\n255: AUTO.\n├─ dynamicRange object Yes Dynamic range\nnumb Preset dynamic\n├─ preset Yes\ner range:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "12: 12Bit.\n16: 16Bit.", ""],
+      ["├─ colorSpace", "object", "Yes", "", "Color Space", ""],
+      ["├─ preset", "numb\ner", "Yes", "", "Preset color\nspace:\n0: RGB 4:4:4.\n1: YCbCr 4:2:2.\n2: YCbCr 4:4:4.\n3: YCbCr 4:2:0.\n255: AUTO.", ""],
+      ["├─ colorRange", "object", "Yes", "", "Color range", ""],
+      ["├─ preset", "numb\ner", "Yes", "", "Preset color\nrange:\n0: LIMIT.\n1: FULL.\n255: AUTO.", ""],
+      ["├─ colorGamut", "object", "Yes", "", "Color gamut", ""],
+      ["├─ preset", "numb\ner", "Yes", "", "Preset color\ngamut:\n0: Rec.601.\n1: Rec.709.\n2: DCI-P3.\n3: Rec.2020.\n4: NTSC.\n5: aRGB.\n255: AUTO.", ""],
+      ["├─ dynamicRange", "object", "Yes", "", "Dynamic range", ""],
+      ["├─ preset", "numb\ner", "Yes", "", "Preset dynamic\nrange:", ""]
+    ]}
+  ]
+}

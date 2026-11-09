@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/media/kvm-preset-active",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","media","kvm-preset-active"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/media/kvm-preset-active","dynamic":false,"source":"src/api/media/kvm-setting.ts","line":65,"client":"API","symbol":"response","comment":"*\n * 激活KVM预设信息\n * @param data\n * @returns","parameters":["data: IPresetActiveReq"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: 'ucenter/media/kvm-preset-active',\n    data,\n  }","context":"async (data: IPresetActiveReq): Promise<IResponseData<IKvmPreset>> => {\n  const response = await API.request<IResponseData<IKvmPreset>>({\n    method: 'put',\n    url: 'ucenter/media/kvm-preset-active',\n    data,\n  });\n  return response.data;\n}","sourceMap":"index-CjV3BkZw.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-media-kvm-preset-active",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

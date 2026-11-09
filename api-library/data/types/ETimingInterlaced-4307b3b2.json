@@ -1,0 +1,9 @@
+{
+  "id": "ETimingInterlaced-4307b3b2",
+  "name": "ETimingInterlaced",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1037,
+  "declaration": "enum ETimingInterlaced {\n  Interlaced = 1, //隔行扫描\n  LineByLine = 0, // 逐行扫描\n}"
+}

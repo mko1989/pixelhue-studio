@@ -1,0 +1,7 @@
+{
+  "id": "reference-PostUcenterScreenResourceLayerT-1e6b5135",
+  "name": "PostUcenterScreenResourceLayerT",
+  "availability": "referenced-only",
+  "references": [{"name":"PostUcenterScreenResourceLayerT","source":"src/api/screen/screen.ts","line":1492},{"name":"PostUcenterScreenResourceLayerT","source":"src/api/screen/screen.ts","line":1494}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

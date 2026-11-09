@@ -1,0 +1,7 @@
+{
+  "id": "reference-WorkModeT-1c3bc485",
+  "name": "WorkModeT",
+  "availability": "referenced-only",
+  "references": [{"name":"WorkModeT","source":"src/api/common/index.ts","line":60},{"name":"WorkModeT","source":"src/api/common/index.ts","line":67},{"name":"WorkModeT","source":"src/api/common/index.ts","line":68}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

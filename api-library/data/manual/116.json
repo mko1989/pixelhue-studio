@@ -1,0 +1,22 @@
+{
+  "page": 116,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n3: All Ethernet\nports off.\nItem type:\nobject Ethernet Port\n├─ netportIds Yes\nobject\n[] backup list\nintege Primary Ethernet\n├─ masterNetportId Yes\nr port\nintege Backup Ethernet\n├─ backupNetportId Yes\nr port\nThe screen’s\n├─ screenBoundRect object Yes circumscribed\nrectangle\nnumb\n├─ width Yes Screen width\ner\nnumb\n├─ height Yes Screen height\ner\nAdjustment\n├─ adjustment object Yes\nfunction\n├─ brightness object Yes Brightness\nintege Brightness\n├─ ratio Yes\nr range: 0~10000\nScale ratio\nmultiplier:\nintege 1: No scaling.\n├─ ratioScale Yes\nr 10000: Scaling\ndown by a factor\nof 10000.\n├─ gamma object Yes\n├─ value numb Yes Gamma value",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "3: All Ethernet\nports off.", ""],
+      ["├─ netportIds", "object\n[]", "Yes", "", "Ethernet Port\nbackup list", "Item type:\nobject"],
+      ["├─ masterNetportId", "intege\nr", "Yes", "", "Primary Ethernet\nport", ""],
+      ["├─ backupNetportId", "intege\nr", "Yes", "", "Backup Ethernet\nport", ""],
+      ["├─ screenBoundRect", "object", "Yes", "", "The screen’s\ncircumscribed\nrectangle", ""],
+      ["├─ width", "numb\ner", "Yes", "", "Screen width", ""],
+      ["├─ height", "numb\ner", "Yes", "", "Screen height", ""],
+      ["├─ adjustment", "object", "Yes", "", "Adjustment\nfunction", ""],
+      ["├─ brightness", "object", "Yes", "", "Brightness", ""],
+      ["├─ ratio", "intege\nr", "Yes", "", "Brightness\nrange: 0~10000", ""],
+      ["├─ ratioScale", "intege\nr", "Yes", "", "Scale ratio\nmultiplier:\n1: No scaling.\n10000: Scaling\ndown by a factor\nof 10000.", ""],
+      ["├─ gamma", "object", "Yes", "", "", ""],
+      ["├─ value", "numb", "Yes", "", "Gamma value", ""]
+    ]}
+  ]
+}

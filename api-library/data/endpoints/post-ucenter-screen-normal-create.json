@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/normal-create",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","normal-create"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/ucenter/screen/normal-create","dynamic":false,"source":"src/api/screen/screen.ts","line":187,"client":"API","symbol":"response","comment":"*\n * 新建跨设备屏幕\n * @param params\n * @returns","parameters":["params: TCreateNormalScreen","seq?: number"],"bodyExpression":"params","queryExpression":null,"headerExpression":"{\n      seq: seq || 0,\n    }","configExpression":"{\n    method: 'POST',\n    url: '/ucenter/screen/normal-create',\n    data: params,\n    headers: {\n      seq: seq || 0,\n    },\n  }","context":"async (\n  params: TCreateNormalScreen,\n  seq?: number,\n): Promise<IResponseData<string>> => {\n  const response = await API.request<IResponseData<string>>({\n    method: 'POST',\n    url: '/ucenter/screen/normal-create',\n    data: params,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-normal-create",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

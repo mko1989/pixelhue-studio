@@ -1,0 +1,9 @@
+{
+  "id": "LinkModeE-517c0a09",
+  "name": "LinkModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/types/device/link.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 3,
+  "declaration": "enum LinkModeE {\n  /** 非Link模式 */\n  nonLink = 0,\n  /** 双机模式 */\n  dualMode = 1,\n  /** 多机模式 */\n  multiMode = 2,\n}"
+}

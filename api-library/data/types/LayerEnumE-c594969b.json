@@ -1,0 +1,9 @@
+{
+  "id": "LayerEnumE-c594969b",
+  "name": "LayerEnumE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1091,
+  "declaration": "enum LayerEnumE {\n  pgm1 = 'pgm1',\n  pgm2 = 'pgm2',\n  pvw1 = 'pvw1',\n  pvw2 = 'pvw2',\n  pgm3 = 'pgm3',\n  pgm4 = 'pgm4',\n  pvw3 = 'pvw3',\n  pvw4 = 'pvw4',\n}"
+}

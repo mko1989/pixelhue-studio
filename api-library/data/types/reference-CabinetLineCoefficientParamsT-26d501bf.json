@@ -1,0 +1,7 @@
+{
+  "id": "reference-CabinetLineCoefficientParamsT-26d501bf",
+  "name": "CabinetLineCoefficientParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"CabinetLineCoefficientParamsT","source":"src/api/ctl-fix/index.ts","line":166}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPictureProgress-08aac9a4",
+  "name": "IPictureProgress",
+  "availability": "referenced-only",
+  "references": [{"name":"IPictureProgress","source":"src/api/picture/picture.ts","line":68},{"name":"IPictureProgress","source":"src/api/picture/picture.ts","line":69},{"name":"IPictureProgress","source":"src/api/picture/picture.ts","line":79},{"name":"IPictureProgress","source":"src/api/picture/picture.ts","line":80},{"name":"IPictureProgress","source":"src/api/picture/picture.ts","line":284},{"name":"IPictureProgress","source":"src/api/picture/picture.ts","line":286}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EPictureProgressStatus-a70f0ebb",
+  "name": "EPictureProgressStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 232,
+  "declaration": "enum EPictureProgressStatus {\n  free, // 空闲\n  ongoing, // 进行中\n  complete, // 完成\n  failure = 255, // 失败\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EPanelPresetCommand-16fec23b",
+  "name": "EPanelPresetCommand",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 270,
+  "declaration": "enum EPanelPresetCommand {\n  /** 保存场景 */\n  savePreset = 400,\n  /** 切换场景 */\n  playPreset,\n  /** 批量删除场景 */\n  deleteAllPreset,\n  /** 删除场景 */\n  deletePreset,\n}"
+}

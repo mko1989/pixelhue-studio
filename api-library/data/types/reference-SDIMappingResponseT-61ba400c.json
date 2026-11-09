@@ -1,0 +1,7 @@
+{
+  "id": "reference-SDIMappingResponseT-61ba400c",
+  "name": "SDIMappingResponseT",
+  "availability": "referenced-only",
+  "references": [{"name":"SDIMappingResponseT","source":"src/api/production/index.ts","line":253},{"name":"SDIMappingResponseT","source":"src/api/production/index.ts","line":254}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

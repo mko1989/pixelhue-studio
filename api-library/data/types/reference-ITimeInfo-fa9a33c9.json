@@ -1,0 +1,7 @@
+{
+  "id": "reference-ITimeInfo-fa9a33c9",
+  "name": "ITimeInfo",
+  "availability": "referenced-only",
+  "references": [{"name":"ITimeInfo","source":"src/api/device/deviceInfo.ts","line":417},{"name":"ITimeInfo","source":"src/api/device/deviceInfo.ts","line":479}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "DeviceWorkModeE-6f6fe5e7",
+  "name": "DeviceWorkModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 759,
+  "declaration": "enum DeviceWorkModeE {\n  photoelectricConversion = 1, // 光电转换\n  controller = 2, // 控制器\n  switch = 4, // 切换器\n  controller2in1 = 10, // 二合一视频控制器\n  splicer = 8, // 拼接器\n  splicerAndCtrl = 6, // 二合一视频切换器\n  player = 16, // 播放器,\n  DecoderSeat = 32, // 解码器-坐席\n  ByPass = 64, // 二合一独立主控模式\n}"
+}

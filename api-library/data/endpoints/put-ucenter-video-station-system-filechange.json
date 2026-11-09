@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/system/fileChange",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","system","fileChange"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"/ucenter/video-station/system/fileChange","dynamic":false,"source":"src/api/device/log-export.ts","line":149,"client":"API","symbol":"response","comment":"*\n * 监测系统JSON文件变化\n * @param dirPath","parameters":["data: {\n  fileName: string;\n  isPc: number;\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: '/ucenter/video-station/system/fileChange',\n    data: data,\n  }","context":"async (data: {\n  fileName: string;\n  isPc: number;\n}): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'put',\n    url: '/ucenter/video-station/system/fileChange',\n    data: data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-system-filechange",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

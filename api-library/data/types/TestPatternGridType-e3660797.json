@@ -1,0 +1,8 @@
+{
+  "id": "TestPatternGridType-e3660797",
+  "name": "TestPatternGridType",
+  "kind": "TSEnumDeclaration",
+  "source": "Companion/src/interfaces/TestPattern.ts",
+  "line": 50,
+  "declaration": "enum TestPatternGridType {\n\tDensity = 0,\n\tSpacing = 1,\n}"
+}

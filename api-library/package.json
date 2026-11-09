@@ -1,0 +1,17 @@
+{
+  "name": "@mko1989/pixelhue-api-catalog",
+  "version": "0.1.0",
+  "description": "Source-indexed Pixelhue API contracts and search helpers for Node.js and AI agents",
+  "type": "module",
+  "main": "index.cjs",
+  "exports": {
+    ".": { "import": "./index.js", "require": "./index.cjs" },
+    "./catalog.json": "./data/catalog.json",
+    "./data/*": "./data/*"
+  },
+  "bin": { "pixelhue-api": "cli.cjs" },
+  "files": ["data", "index.cjs", "index.js", "request.cjs", "cli.cjs", "README.md", "AGENTS.md"],
+  "engines": { "node": ">=22" },
+  "scripts": { "test": "node --test test/*.test.cjs", "build": "node scripts/build.mjs" },
+  "devDependencies": { "@babel/parser": "8.1.0" }
+}

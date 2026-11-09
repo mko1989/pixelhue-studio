@@ -1,0 +1,15 @@
+{
+  "page": 35,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n├─ objec\nYes Auxiliary information\nauxiliaryInfo t\nStatus of the card where\nthe connector is located: 0:\nThe card is offline, meaning\nthe card is removed. 1: The\nEnumerati\nnumb\n├─ online Yes card is online and the\non: 0, 1\ner\nconnector connection is\nnormal. 2: The card is\nonline and the connector\nconnection is abnormal.\n├─ objec Connector property\nYes\nconnectorInfo t information\nConnector type:\n2: Input connector.\nEnumerati\n4: Output connector.\n├─ numb\non: 0, 1, 2,\nYes 8: AUX connector.\ninterfaceType er\n3\n16: MVR connector.\n32: Input view connector.\n64: Main output connector.\ninteg Connector type\n├─ type Yes\ner enumeration\nWorking mode:\n0: Main mode.\n1: Copy mode.\nEnumerati\n├─ numb 2: Disable mode.\non: 0, 1, 2,\nYes\nworkMode er Distinction in usage\n3\nbetween input connectors\nand output connectors:\nInput card connectors:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─\nauxiliaryInfo", "objec\nt", "Yes", "", "Auxiliary information", ""],
+      ["├─ online", "numb\ner", "Yes", "", "Status of the card where\nthe connector is located: 0:\nThe card is offline, meaning\nthe card is removed. 1: The\ncard is online and the\nconnector connection is\nnormal. 2: The card is\nonline and the connector\nconnection is abnormal.", "Enumerati\non: 0, 1"],
+      ["├─\nconnectorInfo", "objec\nt", "Yes", "", "Connector property\ninformation", ""],
+      ["├─\ninterfaceType", "numb\ner", "Yes", "", "Connector type:\n2: Input connector.\n4: Output connector.\n8: AUX connector.\n16: MVR connector.\n32: Input view connector.\n64: Main output connector.", "Enumerati\non: 0, 1, 2,\n3"],
+      ["├─ type", "integ\ner", "Yes", "", "Connector type\nenumeration", ""],
+      ["├─\nworkMode", "numb\ner", "Yes", "", "Working mode:\n0: Main mode.\n1: Copy mode.\n2: Disable mode.\nDistinction in usage\nbetween input connectors\nand output connectors:\nInput card connectors:", "Enumerati\non: 0, 1, 2,\n3"]
+    ]}
+  ]
+}

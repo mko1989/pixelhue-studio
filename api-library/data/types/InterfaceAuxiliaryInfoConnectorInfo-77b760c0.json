@@ -1,0 +1,8 @@
+{
+  "id": "InterfaceAuxiliaryInfoConnectorInfo-77b760c0",
+  "name": "InterfaceAuxiliaryInfoConnectorInfo",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Interface.ts",
+  "line": 22,
+  "declaration": "interface InterfaceAuxiliaryInfoConnectorInfo {\n\tinterfaceType: number\n\ttype: number\n\tworkMode: number\n}"
+}

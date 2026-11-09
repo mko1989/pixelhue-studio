@@ -1,0 +1,16 @@
+{
+  "page": 32,
+  "text": "3. Connector\n3.1 Read Connector Details\n Basic Information\nPath: /v1/interface/list-detail\nMethod: GET\nDescription:\n1. When splitId != 0, this interfaceId signifies the unique ID of the split source of the main\nsource.\n2. Optional parameters for the query: if no parameters are provided, all data is returned. If\nmultiple parameters are provided, they must satisfy an & condition.\n Request Parameters\nQuery\nName Required Example Remarks\nItems per page, ignored if this parameter is\nlimit No\nabsent\nQuery page number. Ignored if this parameter is\npage No\nabsent.\nConnector ID (main source and sub-source),\ninterfaceId No unique across all interfaceType, ignored if this\nparameter is absent\nMosaic source ID, ignored if this parameter is\nmosicId No\nabsent\ngroupId No Group ID, ignored if this parameter is absent\nPreset ID, used together with sceneType. Without\nthis parameter, no query is performed. With this\npresetId No\nparameter, the connector data for the specified\npreset is queried.\ngroupType No Group type, ignored if this parameter is absent.",
+  "tables": [
+    {"contextBefore": "3. Connector\n3.1 Read Connector Details\n Basic Information\nPath: /v1/interface/list-detail\nMethod: GET\nDescription:\n1. When splitId != 0, this interfaceId signifies the unique ID of the split source of the main\nsource.\n2. Optional parameters for the query: if no parameters are provided, all data is returned. If\nmultiple parameters are provided, they must satisfy an & condition.\n Request Parameters\nQuery", "rows": [
+      ["Name", "Required", "Example", "Remarks"],
+      ["limit", "No", "", "Items per page, ignored if this parameter is\nabsent"],
+      ["page", "No", "", "Query page number. Ignored if this parameter is\nabsent."],
+      ["interfaceId", "No", "", "Connector ID (main source and sub-source),\nunique across all interfaceType, ignored if this\nparameter is absent"],
+      ["mosicId", "No", "", "Mosaic source ID, ignored if this parameter is\nabsent"],
+      ["groupId", "No", "", "Group ID, ignored if this parameter is absent"],
+      ["presetId", "No", "", "Preset ID, used together with sceneType. Without\nthis parameter, no query is performed. With this\nparameter, the connector data for the specified\npreset is queried."],
+      ["groupType", "No", "", "Group type, ignored if this parameter is absent."]
+    ]}
+  ]
+}

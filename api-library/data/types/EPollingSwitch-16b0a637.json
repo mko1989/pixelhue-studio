@@ -1,0 +1,9 @@
+{
+  "id": "EPollingSwitch-16b0a637",
+  "name": "EPollingSwitch",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/device-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 79,
+  "declaration": "enum EPollingSwitch {\n  OFF,\n  ON,\n}"
+}

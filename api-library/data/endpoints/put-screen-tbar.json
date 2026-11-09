@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/screen/tbar",
+  "group": "screen",
+  "summary": "response",
+  "tags": ["screen","tbar"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"screen/tbar","dynamic":false,"source":"src/api/screen/screen.ts","line":945,"client":"API","symbol":"response","comment":"0x02-设置tbar","parameters":["data: TScreenBarData[]","seq: number","performanceTime: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      performanceTime: performanceTime,\n      seq: seq,\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'screen/tbar',\n    headers: {\n      performanceTime: performanceTime,\n      seq: seq,\n    },\n    data,\n  }","context":"async (\n  data: TScreenBarData[],\n  seq: number,\n  performanceTime: number,\n): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'PUT',\n    url: 'screen/tbar',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-screen-tbar",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

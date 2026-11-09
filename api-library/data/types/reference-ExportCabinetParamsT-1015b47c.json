@@ -1,0 +1,7 @@
+{
+  "id": "reference-ExportCabinetParamsT-1015b47c",
+  "name": "ExportCabinetParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"ExportCabinetParamsT","source":"src/api/device/cabinet-pack.ts","line":282}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

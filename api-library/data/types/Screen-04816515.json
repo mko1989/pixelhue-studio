@@ -1,0 +1,8 @@
+{
+  "id": "Screen-04816515",
+  "name": "Screen",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Screen.ts",
+  "line": 22,
+  "declaration": "interface Screen {\n\tscreenId: number\n\tscreenIdObj: ScreenIdObj\n\tgeneral: ScreenGeneral\n\tselect: 0 | 1\n\tfreeze: 0 | 1\n\tenable: 0 | 1\n\tguid: string\n\tftb: ScreenFTB\n\ttestPattern?: TestPatternPayload\n}"
+}

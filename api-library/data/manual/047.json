@@ -1,0 +1,17 @@
+{
+  "page": 47,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nCropping's y position ratio.\nnumb yRatio = round\n├─ yRatio Yes mock: 0.3\ner (y/heightResolution *\n100000).\nobjec\n├─ hdcp Yes HDCP settings\nt\nEnable status:\nEnumerati\nnumb\n├─ enable Yes 0: Disable.\non: 0, 1\ner\n1: Enable.\nPreset type:\nEnumerati\n0: Off.\nnumb\n├─ preset Yes 1: HDCP 1.4. on: 0, 1, 2,\ner\n3\n2: HDCP 1.3.\n3: HDCP 2.2.\nActual type:\n0: Off.\nnumb 1: HDCP 1.4.\n├─ actual Yes\ner 2: HDCP 1.3.\n3: HDCP 2.2.\n4: HDCP not recognized.\n├─ objec\nYes Color space\ncolorSpace t\nActual color space:\nEnumerati\n0: RGB 4:4:4.\nnumb\n├─ actual Yes 1: YCbCr 4:2:2. on: 0, 1, 2,\ner\n3\n2: YCbCr 4:4:4.\n3: YCbCr 4:2:0.\nPreset color space:\nnumb Enumerati\n├─ preset Yes 0: RGB 4:4:4.\ner on: 0, 1, 2,\n1: YCbCr 4:2:2.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ yRatio", "numb\ner", "Yes", "", "Cropping's y position ratio.\nyRatio = round\n(y/heightResolution *\n100000).", "mock: 0.3"],
+      ["├─ hdcp", "objec\nt", "Yes", "", "HDCP settings", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Enable status:\n0: Disable.\n1: Enable.", "Enumerati\non: 0, 1"],
+      ["├─ preset", "numb\ner", "Yes", "", "Preset type:\n0: Off.\n1: HDCP 1.4.\n2: HDCP 1.3.\n3: HDCP 2.2.", "Enumerati\non: 0, 1, 2,\n3"],
+      ["├─ actual", "numb\ner", "Yes", "", "Actual type:\n0: Off.\n1: HDCP 1.4.\n2: HDCP 1.3.\n3: HDCP 2.2.\n4: HDCP not recognized.", ""],
+      ["├─\ncolorSpace", "objec\nt", "Yes", "", "Color space", ""],
+      ["├─ actual", "numb\ner", "Yes", "", "Actual color space:\n0: RGB 4:4:4.\n1: YCbCr 4:2:2.\n2: YCbCr 4:4:4.\n3: YCbCr 4:2:0.", "Enumerati\non: 0, 1, 2,\n3"],
+      ["├─ preset", "numb\ner", "Yes", "", "Preset color space:\n0: RGB 4:4:4.\n1: YCbCr 4:2:2.", "Enumerati\non: 0, 1, 2,"]
+    ]}
+  ]
+}

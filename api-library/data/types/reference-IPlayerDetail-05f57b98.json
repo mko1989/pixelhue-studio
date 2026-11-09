@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPlayerDetail-05f57b98",
+  "name": "IPlayerDetail",
+  "availability": "referenced-only",
+  "references": [{"name":"IPlayerDetail","source":"src/api/u-disk/index.ts","line":17},{"name":"IPlayerDetail","source":"src/api/u-disk/index.ts","line":18}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

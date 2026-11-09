@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/super-create",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","super-create"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/ucenter/screen/super-create","dynamic":false,"source":"src/api/screen/screen.ts","line":166,"client":"API","symbol":"response","comment":"*\n * 新建超级屏幕\n * @param params\n * @returns","parameters":["params: {\n    name: string;\n    guidList: string[];\n    keyBinding?: KeyBindingReqT;\n  }","seq?: number"],"bodyExpression":"params","queryExpression":null,"headerExpression":"{\n      seq: seq || 0,\n    }","configExpression":"{\n    method: 'POST',\n    url: '/ucenter/screen/super-create',\n    data: params,\n    headers: {\n      seq: seq || 0,\n    },\n  }","context":"async (\n  params: {\n    name: string;\n    guidList: string[];\n    keyBinding?: KeyBindingReqT;\n  },\n  seq?: number,\n): Promise<IResponseData<string>> => {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-super-create",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

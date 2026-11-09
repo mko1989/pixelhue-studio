@@ -1,0 +1,7 @@
+{
+  "id": "reference-OSDComponentCreateParamT-ce31d0db",
+  "name": "OSDComponentCreateParamT",
+  "availability": "referenced-only",
+  "references": [{"name":"OSDComponentCreateParamT","source":"src/api/osd/component/index.ts","line":24}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

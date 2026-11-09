@@ -1,0 +1,7 @@
+{
+  "id": "reference-PresetT-5cfbc127",
+  "name": "PresetT",
+  "availability": "referenced-only",
+  "references": [{"name":"PresetT","source":"src/api/preset/index.ts","line":32},{"name":"PresetT","source":"src/api/preset/index.ts","line":33}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

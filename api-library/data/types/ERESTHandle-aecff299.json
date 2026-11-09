@@ -1,0 +1,9 @@
+{
+  "id": "ERESTHandle-aecff299",
+  "name": "ERESTHandle",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 467,
+  "declaration": "enum ERESTHandle {\n  PUT = 'PUT',\n  'POST' = 'POST',\n  'GET' = 'GET',\n  'DELETE' = 'DELETE',\n}"
+}

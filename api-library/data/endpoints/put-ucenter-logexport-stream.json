@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/logexport/stream",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","logexport","stream"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"/ucenter/logexport/stream","dynamic":false,"source":"src/api/device/log-export.ts","line":32,"client":"API","symbol":"response","comment":"*\n * 设备日志导出-fiel\n * @param data","parameters":["data?: IDeviceLogExport"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      'Content-Type': 'application/json',\n    }","configExpression":"{\n    method: 'put',\n    url: '/ucenter/logexport/stream',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    timeout: 6000000,\n    data: data,\n  }","context":"async (\n  data?: IDeviceLogExport,\n): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'put',\n    url: '/ucenter/logexport/stream',\n    headers: {\n      'Content-Type': 'application/json',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-logexport-stream",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

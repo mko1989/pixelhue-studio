@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/node/fan/mode",
+  "group": "node",
+  "summary": "response",
+  "tags": ["node","fan","mode"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"node/fan/mode","dynamic":false,"source":"src/api/device/deviceInfo.ts","line":1038,"client":"API","symbol":"response","comment":"*\n * 0x26获取风扇模式","parameters":["data: {\n    nodeId: number;\n    /** 0-未知 1-标准模式 2-高性能模式 */\n    mode: 0 | 1 | 2;\n  }","headers?: AxiosRequestHeaders"],"bodyExpression":"data","queryExpression":null,"headerExpression":"headers","configExpression":"{\n    method: 'POST',\n    url: 'node/fan/mode',\n    data,\n    headers,\n  }","context":"async (\n  data: {\n    nodeId: number;\n    /** 0-未知 1-标准模式 2-高性能模式 */\n    mode: 0 | 1 | 2;\n  },\n  headers?: AxiosRequestHeaders,\n) => {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-node-fan-mode",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

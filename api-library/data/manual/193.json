@@ -1,0 +1,20 @@
+{
+  "page": 193,
+  "text": "Default\nName Type Required Remarks More\nValue\npresetId, id, presetName.\nWhere the preset will be played:\n2: PGM; 4: PVW; 0: Auto (PVW\nsceneType integer Yes\nfor switchers, splicers, PGM for\ncontrollers)\nThe preset number ID. Default\nvalue: -1, normally starts from 0,\nusing the specified preset slot\nID when creating the preset. At\nid integer No least one of presetId, id, or\npresetName should be\nprovided. The priority order\nwhen all are present is presetId,\nid, presetName.\nThe preset name. At least one\nof presetId, id, or presetName\npresetName string No should be provided. The priority\norder when all are present is\npresetId, id, presetName.\n Return Data\nDefault\nName Type Required Remarks More\nValue\nResponse\ncode number Yes\ncode\nResponse\nmessage string Yes\nmessage\ndata object Yes\nItem\nobject\n├─ screenObjFailed Yes type:\n[]\nobject",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "presetId, id, presetName.", ""],
+      ["sceneType", "integer", "Yes", "", "Where the preset will be played:\n2: PGM; 4: PVW; 0: Auto (PVW\nfor switchers, splicers, PGM for\ncontrollers)", ""],
+      ["id", "integer", "No", "", "The preset number ID. Default\nvalue: -1, normally starts from 0,\nusing the specified preset slot\nID when creating the preset. At\nleast one of presetId, id, or\npresetName should be\nprovided. The priority order\nwhen all are present is presetId,\nid, presetName.", ""],
+      ["presetName", "string", "No", "", "The preset name. At least one\nof presetId, id, or presetName\nshould be provided. The priority\norder when all are present is\npresetId, id, presetName.", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "number", "Yes", "", "Response\ncode", ""],
+      ["message", "string", "Yes", "", "Response\nmessage", ""],
+      ["data", "object", "Yes", "", "", ""],
+      ["├─ screenObjFailed", "object\n[]", "Yes", "", "", "Item\ntype:\nobject"]
+    ]}
+  ]
+}

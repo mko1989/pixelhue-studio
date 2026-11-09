@@ -1,0 +1,9 @@
+{
+  "id": "EFilter-e48f1074",
+  "name": "EFilter",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 681,
+  "declaration": "enum EFilter {\n  default, // 0 默认处理\n  ignore, // 1 忽略\n}"
+}

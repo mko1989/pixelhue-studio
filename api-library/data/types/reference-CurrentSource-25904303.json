@@ -1,0 +1,7 @@
+{
+  "id": "reference-CurrentSource-25904303",
+  "name": "CurrentSource",
+  "availability": "referenced-only",
+  "references": [{"name":"CurrentSource","source":"src/api/device/deviceList.ts","line":240}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

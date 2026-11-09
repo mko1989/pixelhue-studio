@@ -1,0 +1,7 @@
+{
+  "id": "reference-Blob-24bafb0b",
+  "name": "Blob",
+  "availability": "referenced-only",
+  "references": [{"name":"Blob","source":"src/api/setting/setting.ts","line":532},{"name":"Blob","source":"src/api/setting/setting.ts","line":533},{"name":"Blob","source":"src/api/setting/setting.ts","line":555},{"name":"Blob","source":"src/api/setting/setting.ts","line":561},{"name":"Blob","source":"src/api/setting/setting.ts","line":670},{"name":"Blob","source":"src/api/setting/setting.ts","line":698},{"name":"Blob","source":"src/api/setting/setting.ts","line":732},{"name":"Blob","source":"src/api/setting/setting.ts","line":764},{"name":"Blob","source":"src/api/device/device-source.ts","line":104},{"name":"Blob","source":"src/api/screen/screen.ts","line":958},{"name":"Blob","source":"src/api/screen/screen.ts","line":959},{"name":"Blob","source":"src/api/screen/screen.ts","line":987},{"name":"Blob","source":"src/api/panel/panel.ts","line":9},{"name":"Blob","source":"src/api/panel/panel.ts","line":10},{"name":"Blob","source":"src/api/ipc/index.ts","line":132},{"name":"Blob","source":"src/api/device/cabinet-pack.ts","line":21},{"name":"Blob","source":"src/api/device/cabinet-pack.ts","line":261}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EUploadState-6683a302",
+  "name": "EUploadState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 48,
+  "declaration": "enum EUploadState {\n  default, // 默认没有上传\n  start, // 开始上传\n  inprogress, // 上传中\n  cancel, // 取消上传\n  failed, // 上传失败\n  completed, // 上传完成\n}"
+}

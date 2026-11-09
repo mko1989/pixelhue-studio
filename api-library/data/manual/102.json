@@ -1,0 +1,18 @@
+{
+  "page": 102,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nintege\n├─ frameRateScale Yes Frame rate ratio\nr\nFrame rate\nmode:\nintege\n├─ frameRateMode Yes 0: x1 mode\nr\n(default).\n1: x2 mode.\n├─ phase object Yes Phase offset\nSync phase\nadjustment\nnumb\n├─ enable Yes enable:\ner\n0: Disable/off.\n1: Enable/on.\nSync shift\nnumb setting. Unit: clk.\n├─ offset Yes\ner Range: -\n40000~+40000.\nPhase offset\ntype:\n0: Off.\nintege\n├─ phaseOffsetType Yes 1: Angle.\nr\n2: Fraction.\n3: Absolute\nvalue.\nintege\n├─ angle Yes Angle\nr\nintege\n├─ angleScale Yes Ratio of angle\nr\n├─ percentage intege Yes Fraction",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ frameRateScale", "intege\nr", "Yes", "", "Frame rate ratio", ""],
+      ["├─ frameRateMode", "intege\nr", "Yes", "", "Frame rate\nmode:\n0: x1 mode\n(default).\n1: x2 mode.", ""],
+      ["├─ phase", "object", "Yes", "", "Phase offset", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Sync phase\nadjustment\nenable:\n0: Disable/off.\n1: Enable/on.", ""],
+      ["├─ offset", "numb\ner", "Yes", "", "Sync shift\nsetting. Unit: clk.\nRange: -\n40000~+40000.", ""],
+      ["├─ phaseOffsetType", "intege\nr", "Yes", "", "Phase offset\ntype:\n0: Off.\n1: Angle.\n2: Fraction.\n3: Absolute\nvalue.", ""],
+      ["├─ angle", "intege\nr", "Yes", "", "Angle", ""],
+      ["├─ angleScale", "intege\nr", "Yes", "", "Ratio of angle", ""],
+      ["├─ percentage", "intege", "Yes", "", "Fraction", ""]
+    ]}
+  ]
+}

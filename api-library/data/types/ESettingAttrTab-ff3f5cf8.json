@@ -1,0 +1,9 @@
+{
+  "id": "ESettingAttrTab-ff3f5cf8",
+  "name": "ESettingAttrTab",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/device-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 3,
+  "declaration": "enum ESettingAttrTab {\n  ptz = '云台控制',\n  wisdom = '智慧屏配置',\n  light = '灯光设置',\n  peeling = '换肤',\n  other = '其他',\n  panel = '控台设置',\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-EPlayMode-c8cd6b3a",
+  "name": "EPlayMode",
+  "availability": "referenced-only",
+  "references": [{"name":"EPlayMode","source":"src/api/u-disk/index.ts","line":133}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

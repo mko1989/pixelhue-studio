@@ -1,0 +1,24 @@
+{
+  "page": 121,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n├─ rLxy object Yes\nintege\n├─ gamutType Yes\nr\nintege\n├─ lum Yes\nr\nintege\n├─ x Yes\nr\nintege\n├─ y Yes\nr\n├─ gLxy object Yes\nintege\n├─ gamutType Yes\nr\nintege\n├─ lum Yes\nr\nintege\n├─ x Yes\nr\nintege\n├─ y Yes\nr\n├─ bLxy object Yes\nintege\n├─ gamutType Yes\nr\nintege\n├─ lum Yes\nr\nintege\n├─ x Yes\nr\nintege\n├─ y Yes\nr",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ rLxy", "object", "Yes", "", "", ""],
+      ["├─ gamutType", "intege\nr", "Yes", "", "", ""],
+      ["├─ lum", "intege\nr", "Yes", "", "", ""],
+      ["├─ x", "intege\nr", "Yes", "", "", ""],
+      ["├─ y", "intege\nr", "Yes", "", "", ""],
+      ["├─ gLxy", "object", "Yes", "", "", ""],
+      ["├─ gamutType", "intege\nr", "Yes", "", "", ""],
+      ["├─ lum", "intege\nr", "Yes", "", "", ""],
+      ["├─ x", "intege\nr", "Yes", "", "", ""],
+      ["├─ y", "intege\nr", "Yes", "", "", ""],
+      ["├─ bLxy", "object", "Yes", "", "", ""],
+      ["├─ gamutType", "intege\nr", "Yes", "", "", ""],
+      ["├─ lum", "intege\nr", "Yes", "", "", ""],
+      ["├─ x", "intege\nr", "Yes", "", "", ""],
+      ["├─ y", "intege\nr", "Yes", "", "", ""]
+    ]}
+  ]
+}

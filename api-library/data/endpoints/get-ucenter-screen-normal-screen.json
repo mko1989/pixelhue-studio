@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/screen/normal-screen",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","normal-screen"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"/ucenter/screen/normal-screen","dynamic":false,"source":"src/api/screen/screen.ts","line":307,"client":"API","symbol":"response","comment":"*\n * 获取跨设备屏幕列表\n * @param params\n * @returns","parameters":["params: {\n    projectId: string;\n    page?: number;\n    limit?: number;\n  }","intl: IntlShape"],"bodyExpression":null,"queryExpression":"params","headerExpression":null,"configExpression":"{\n    method: 'GET',\n    url: '/ucenter/screen/normal-screen',\n    params,\n  }","context":"async (\n  params: {\n    projectId: string;\n    page?: number;\n    limit?: number;\n  },\n  intl: IntlShape,\n): Promise<IResponseData<IPageData<NormalScreenT>>> => {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-screen-normal-screen",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

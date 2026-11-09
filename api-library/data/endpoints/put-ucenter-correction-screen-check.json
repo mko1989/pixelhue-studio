@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/correction/screen/check",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","correction","screen","check"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/correction/screen/check","dynamic":false,"source":"src/api/correction/index.ts","line":163,"client":"API_U_CENTER","symbol":"response","comment":"上传系数文件校验","parameters":["screenId: string","objType: CorrectionObjectE"],"bodyExpression":null,"queryExpression":"{ screenId, objType }","headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: 'ucenter/correction/screen/check',\n    params: { screenId, objType },\n    timeout: 600000,\n  }","context":"async (\n  screenId: string, // 暂时先传sn\n  objType: CorrectionObjectE,\n): Promise<IResponseData<CorrectionUploadCheckResultT>> => {\n  const response = await API_U_CENTER.request<IResponseData<CorrectionUploadCheckResultT>>({\n    method: 'put',\n    url: 'ucenter/correction/screen/check',\n    params: { screenId, objType },","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-correction-screen-check",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

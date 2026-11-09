@@ -1,0 +1,9 @@
+{
+  "id": "interfaceThumbTimingCheckParamsT-1766d532",
+  "name": "interfaceThumbTimingCheckParamsT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 324,
+  "declaration": "interface interfaceThumbTimingCheckParamsT {\n  tagName: number;\n  thumbTiming: ThumbTimingT;\n  colorSpace: number;\n  colorDepth: number;\n  sn?: string; // 超级屏新增\n}"
+}

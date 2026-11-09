@@ -1,0 +1,18 @@
+{
+  "page": 66,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n0.\nShared source information,\n├─ objec\nYes valid only when isLink is a\nsourceInfo t\nlink source.\nThe unique identification of\n├─ identify string Yes\na shared device\nnumb The unique identification of\n├─ sourceId Yes\ner a shared source\nShared source type: 0:\n├─ numb Common source.\nYes\nsourceType er 1: Mosaic source.\n2: PGM source.\ninteg Number of items on the\n├─ count Yes mock: 2\ner current page\ninteg\n├─ page Yes Current page number mock: 1\ner\n├─ integ\nmock: 2\nYes Total number of items\ntotalCount er\ninteg\n├─ totalPage Yes Total number of pages mock: 1\ner\n3.2 Set Output Mapping\n Basic Information\nPath: /v1/node/interface-location\nMethod: PUT\nDescription:\n Request Parameters",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "0.", ""],
+      ["├─\nsourceInfo", "objec\nt", "Yes", "", "Shared source information,\nvalid only when isLink is a\nlink source.", ""],
+      ["├─ identify", "string", "Yes", "", "The unique identification of\na shared device", ""],
+      ["├─ sourceId", "numb\ner", "Yes", "", "The unique identification of\na shared source", ""],
+      ["├─\nsourceType", "numb\ner", "Yes", "", "Shared source type: 0:\nCommon source.\n1: Mosaic source.\n2: PGM source.", ""],
+      ["├─ count", "integ\ner", "Yes", "", "Number of items on the\ncurrent page", "mock: 2"],
+      ["├─ page", "integ\ner", "Yes", "", "Current page number", "mock: 1"],
+      ["├─\ntotalCount", "integ\ner", "Yes", "", "Total number of items", "mock: 2"],
+      ["├─ totalPage", "integ\ner", "Yes", "", "Total number of pages", "mock: 1"]
+    ]}
+  ]
+}

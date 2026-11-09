@@ -1,0 +1,9 @@
+{
+  "id": "SMTPEMappingE-526c68b9",
+  "name": "SMTPEMappingE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 53,
+  "declaration": "enum SMTPEMappingE {\n  /** 未使用 */\n  unuse,\n  /** LEVEL A */\n  level_A,\n  /** LEVEL B */\n  level_B,\n}"
+}

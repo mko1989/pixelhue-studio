@@ -1,0 +1,7 @@
+{
+  "id": "reference-PresetItemT-747abb35",
+  "name": "PresetItemT",
+  "availability": "referenced-only",
+  "references": [{"name":"PresetItemT","source":"src/api/device/deviceInfo.ts","line":138},{"name":"PresetItemT","source":"src/api/production/burn-in-test.ts","line":59}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

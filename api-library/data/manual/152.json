@@ -1,0 +1,15 @@
+{
+  "page": 152,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nr\nintege\n├─ G Yes Green component\nr\nintege\n├─ B Yes Blue component\nr\nThe Key source\n├─ keySource object Yes\ninformation\nWhether to follow input:\nintege\n├─ followInput Yes 0: Do not follow.\nr\n1: Follow.\nSource type:\nSourceTypeNone = 0 //\nEmpty layer\nSourceTypeColor = 1 //\nNo source\nSourceTypeInput = 2\nSourceTypePGM = 3\nSourceTypePVW = 4\nSourceTypeBKG = 5\nSourceTypeLOGO = 6\nintege\n├─ sourceType Yes SourceTypeIPC = 7\nr\nSourceTypeCrop = 8 //\nCropped source\nSourceTypeSplit = 9 //\nMosaic source\nSourceTypeIPCSplit = 10\n// IPC mosaic\nSourceTypeInternal = 11\n// Internal source\nSourceTypeInternalGraph\n= 12 // Internal shape",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "r", "", "", "", ""],
+      ["├─ G", "intege\nr", "Yes", "", "Green component", ""],
+      ["├─ B", "intege\nr", "Yes", "", "Blue component", ""],
+      ["├─ keySource", "object", "Yes", "", "The Key source\ninformation", ""],
+      ["├─ followInput", "intege\nr", "Yes", "", "Whether to follow input:\n0: Do not follow.\n1: Follow.", ""],
+      ["├─ sourceType", "intege\nr", "Yes", "", "Source type:\nSourceTypeNone = 0 //\nEmpty layer\nSourceTypeColor = 1 //\nNo source\nSourceTypeInput = 2\nSourceTypePGM = 3\nSourceTypePVW = 4\nSourceTypeBKG = 5\nSourceTypeLOGO = 6\nSourceTypeIPC = 7\nSourceTypeCrop = 8 //\nCropped source\nSourceTypeSplit = 9 //\nMosaic source\nSourceTypeIPCSplit = 10\n// IPC mosaic\nSourceTypeInternal = 11\n// Internal source\nSourceTypeInternalGraph\n= 12 // Internal shape", ""]
+    ]}
+  ]
+}

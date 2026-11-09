@@ -1,0 +1,7 @@
+{
+  "id": "reference-RemoveInterlaceT-02dbe4df",
+  "name": "RemoveInterlaceT",
+  "availability": "referenced-only",
+  "references": [{"name":"RemoveInterlaceT","source":"src/types/device/typing.ts","line":144}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

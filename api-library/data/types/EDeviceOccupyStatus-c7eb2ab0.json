@@ -1,0 +1,9 @@
+{
+  "id": "EDeviceOccupyStatus-c7eb2ab0",
+  "name": "EDeviceOccupyStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1101,
+  "declaration": "enum EDeviceOccupyStatus {\n  Free,\n  XServer,\n  Userver,\n}"
+}

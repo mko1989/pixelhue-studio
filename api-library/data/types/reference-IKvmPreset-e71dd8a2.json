@@ -1,0 +1,7 @@
+{
+  "id": "reference-IKvmPreset-e71dd8a2",
+  "name": "IKvmPreset",
+  "availability": "referenced-only",
+  "references": [{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":14},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":15},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":25},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":26},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":38},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":39},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":51},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":51},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":52},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":64},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":65},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":89},{"name":"IKvmPreset","source":"src/api/media/kvm-setting.ts","line":90}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

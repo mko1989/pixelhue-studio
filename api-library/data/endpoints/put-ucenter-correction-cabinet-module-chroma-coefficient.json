@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/correction/cabinet/module/chroma-coefficient",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","correction","cabinet","module","chroma-coefficient"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/correction/cabinet/module/chroma-coefficient","dynamic":false,"source":"src/api/correction/index.ts","line":132,"client":"API","symbol":"response","comment":"****设置灯点系数***","parameters":["data: ChromaCoefficientI"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: 'ucenter/correction/cabinet/module/chroma-coefficient',\n    data,\n    timeout: 60000,\n  }","context":"async (\n  data: ChromaCoefficientI,\n): Promise<IResponseData<unknown>> => {\n  const response = await API.request<IResponseData<unknown>>({\n    method: 'put',\n    url: 'ucenter/correction/cabinet/module/chroma-coefficient',\n    data,\n    timeout: 60000,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-correction-cabinet-module-chroma-coefficient",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

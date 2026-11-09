@@ -1,0 +1,9 @@
+{
+  "id": "LayerWindowRoamE-8e960f29",
+  "name": "LayerWindowRoamE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1291,
+  "declaration": "enum LayerWindowRoamE {\n  roam = 0, // 漫游\n  noRoam = 1, // 不漫游\n}"
+}

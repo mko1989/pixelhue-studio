@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICreateIPCSourceRequest-58aace16",
+  "name": "ICreateIPCSourceRequest",
+  "availability": "referenced-only",
+  "references": [{"name":"ICreateIPCSourceRequest","source":"src/api/ipc/index.ts","line":55},{"name":"ICreateIPCSourceRequest","source":"src/api/ipc/index.ts","line":179}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

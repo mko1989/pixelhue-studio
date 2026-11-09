@@ -1,5 +1,7 @@
 # Pixelhue Studio
 
+For integrations and AI-assisted development, see the [searchable Node.js API catalog](api-library/README.md): JSON endpoint contracts, manual tables, source references, type lookup and an offline CLI.
+
 A small local Node.js app for configuring Pixelhue inputs in bulk and arranging P20/Q8 multiviewer windows. Portable distributions include Node.js. Running from source requires Node.js 22 or newer, with no npm dependencies or UI build step.
 
 ```sh

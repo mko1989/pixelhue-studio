@@ -1,0 +1,9 @@
+{
+  "id": "EScenseType-e16c6978",
+  "name": "EScenseType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/preset/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 15,
+  "declaration": "enum EScenseType {\n  /** 2-PGM */\n  PGM = 2,\n  /** 4-PVW*/\n  PVW = 4,\n}"
+}

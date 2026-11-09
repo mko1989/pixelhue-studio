@@ -1,0 +1,9 @@
+{
+  "id": "OverlapModalTitleE-924c5a40",
+  "name": "OverlapModalTitleE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 382,
+  "declaration": "enum OverlapModalTitleE {\n  moveTips = 'overlap-move-skip',\n  irregularTips = 'overlap-skip-advanced',\n  modeChangeTips = 'overlap-reset-gamma-params',\n}"
+}

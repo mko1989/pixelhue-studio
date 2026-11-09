@@ -1,0 +1,9 @@
+{
+  "id": "EPanelFnCommand-f36ce97e",
+  "name": "EPanelFnCommand",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 282,
+  "declaration": "enum EPanelFnCommand {\n  /** 选中图层特效时间增加 */\n  layerEffectTimeAdd = 509,\n  /** 选中图层特效时间快速增加 */\n  layerEffectTimeQuickAddStart,\n  LayerEffectTimeQuickAddEnd,\n  /** 选中图层特效时间减少 */\n  layerEffectTimeMinus,\n  /** 选中图层特效时间快速减少 */\n  layerEffectTimeQuickMinusStart,\n  layerEffectTimeQuickMinusEnd,\n  /** 选中图层特效切换 */\n  layerEffectSwitch,\n  /** 选中图层特效反向切换 */\n  layerEffectSwitchReverse,\n  /** 选中屏幕冻结 */\n  screenFreeze,\n  /** 选中屏幕黑屏 */\n  screenFTB,\n  /** Ctrl */\n  ctrl,\n  /** 进入场景SAVE状态 */ // Save\n  presetSave = 520,\n  /** 进入DEL状态 */\n  switchDel,\n  /** 进入批量DEL状态 */\n  switchMutiDel,\n  /** lockPanel */\n  lockPanel,\n  /** unlockPanel */\n  unlockPanel,\n  /** 锁定Tbar */\n  TbarLock,\n  /** media */\n  media,\n  /** MVR */\n  mvr,\n  /** power off */\n  powerOff,\n  /** matchPGM */\n  matchPGM,\n  /** PGM编辑区解锁/锁定 */\n  PGMEdit,\n  /** Take */\n  take,\n  /** Cut */\n  cut,\n  /** swap开关 */\n  swap,\n  /*加载下一个场景* */\n  loadNextPreset = 574,\n  showStaticImage,\n  showDeviceMonitoring,\n  showVideo,\n  showTimeCode,\n  switchNext,\n  amplifierImage,\n  reduceImage,\n  /** 主屏显示 */\n  mainScreen,\n  /** 切换设备 */\n  deviceSwitch = 586,\n  /** 切换源类型 */\n  inputTypeSwitch = 587,\n  /** 源备份 */\n  sourceBackupSwitch = 588,\n  /**companion插件打开 */\n  companionSwitchOn = 590,\n  /**companion插件关闭 */\n  companionSwitchOff = 591,\n}"
+}

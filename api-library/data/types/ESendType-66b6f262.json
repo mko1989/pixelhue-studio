@@ -1,0 +1,9 @@
+{
+  "id": "ESendType-66b6f262",
+  "name": "ESendType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 32,
+  "declaration": "enum ESendType {\n  twoInOne = 0,\n  pureTransmission = 1,\n}"
+}

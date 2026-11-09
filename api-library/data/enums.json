@@ -1,0 +1,10 @@
+{
+  "sourceType": {"0":"Empty","1":"No source","2":"Input","3":"PGM screen","4":"PVW screen","5":"BKG image","6":"LOGO image","7":"IPC","8":"Cropped source","9":"Mosaic source","10":"IPC mosaic screen","11":"Internal source","12":"Internal shape","13":"USB drive","14":"Image OSD","15":"Text OSD","16":"Volume unit meter"},
+  "aspectRatio": {"5":"Custom","8":"Original"},
+  "capacity": {"0":"SL","1":"DL","2":"4K","65535":"Auto (manual context)"},
+  "layerType": {"2":"Normal","4":"AUX","8":"MVR","16":"BKG","32":"LOGO"},
+  "sceneType": {"1":"Neither PGM nor PVW","2":"PGM","4":"PVW"},
+  "timingStandard": {"0":"Custom","1":"DMT","2":"CVT","3":"CVT-RB v1","4":"CVT-RB v2","5":"CVT-RB v3","6":"CEA","7":"SMPTE"},
+  "connectorType": {"2":"DVI SL","3":"DVI DL","4":"HDMI 1.3","5":"HDMI 1.4","6":"HDMI 2.0","7":"DP 1.1 SL","8":"DP 1.2","9":"3G-SDI","13":"12G-SDI","14":"6G-SDI","17":"DP 1.1 DL","34":"HDMI 2.1","35":"DP 1.4"},
+  "provenance": "Manual field tables, vendor source enums and Studio model/connector mappings. Enum values are context-specific."
+}

@@ -1,0 +1,14 @@
+{
+  "page": 101,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n2: HDCP 1.3.\n3: HDCP 2.2.\nActual type:\n0: None.\nnumb\n├─ actualType Yes 1: HDCP 1.4.\ner\n2: HDCP 1.3.\n3: HDCP 2.2.\nGenlock\n├─ genlock object Yes\nconfiguration\nGenlock type: 0:\nInternal\nsync/Disabled.\n1: Sync with the\nGenlock source.\nnumb\n├─ type Yes 2: Sync with the\ner\ninput source\nfrom the\nconnector.\n3: Internal frame\nrate\nSync frame rate:\nCan be\noverridden when\nsyncLockType is\nintege set to internal.\n├─ frameRate Yes\nr For other\nsyncLock types,\nthis value does\nnot need to be\nprovided.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "2: HDCP 1.3.\n3: HDCP 2.2.", ""],
+      ["├─ actualType", "numb\ner", "Yes", "", "Actual type:\n0: None.\n1: HDCP 1.4.\n2: HDCP 1.3.\n3: HDCP 2.2.", ""],
+      ["├─ genlock", "object", "Yes", "", "Genlock\nconfiguration", ""],
+      ["├─ type", "numb\ner", "Yes", "", "Genlock type: 0:\nInternal\nsync/Disabled.\n1: Sync with the\nGenlock source.\n2: Sync with the\ninput source\nfrom the\nconnector.\n3: Internal frame\nrate", ""],
+      ["├─ frameRate", "intege\nr", "Yes", "", "Sync frame rate:\nCan be\noverridden when\nsyncLockType is\nset to internal.\nFor other\nsyncLock types,\nthis value does\nnot need to be\nprovided.", ""]
+    ]}
+  ]
+}

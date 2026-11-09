@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/system/auxiliary/query/resource-name",
+  "group": "system",
+  "summary": "response",
+  "tags": ["system","auxiliary","query","resource-name"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"system/auxiliary/query/resource-name","dynamic":false,"source":"src/api/common/index.ts","line":25,"client":"API","symbol":"response","comment":"*\n * @description 查询名称是否被占用\n * @param { Object } params  // type  查询资源类型[1:截取源2:拼接源3:分组源4:内置源5:图片6:屏幕7:图层8:场景9:场景分组]    name 查询资源名称\n * @returns {useList: [{type: number, id: number, name: string}]}\nTodo: 与下位机沟通11.25日才能进行联调","parameters":["data: IQueryUseNameResource[]","options?: ExtraReqParamsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    }","configExpression":"{\n    method: 'put',\n    url: 'system/auxiliary/query/resource-name',\n    data,\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    },\n  }","context":"async (data: IQueryUseNameResource[], options?: ExtraReqParamsT) => {\n  const response = await API.request<IResponseData<IUseName[]>>({\n    method: 'put',\n    url: 'system/auxiliary/query/resource-name',\n    data,\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-system-auxiliary-query-resource-name",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

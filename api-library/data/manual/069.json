@@ -1,0 +1,29 @@
+{
+  "page": 69,
+  "text": "Default\nName Type Required Remarks More\nValue\n├─ coefficient number Yes Coefficients\n├─ brightness object Yes Brightness\n├─ R number Yes Red component\n├─ G number Yes Green component\n├─ B number Yes Blue component\n├─ coefficient number Yes Coefficients\n├─ shadow object Yes Shadow\n├─ R number Yes Red component\n├─ G number Yes Green component\n├─ B number Yes Blue component\nBlack level\n├─ W number Yes\ncomponent\n├─ highLight object Yes Highlight\n├─ R number Yes Red component\n├─ G number Yes Green component\n├─ B number Yes Blue component\nWhite level\n├─ W number Yes\ncomponent\n├─\nobject Yes Color temperature\ncolorTemperature\nAdjustment mode:\n├─ mode number Yes 0: Quick mode.\n1: Advanced mode.\nQuick parameter\n├─ quickAdjust object Yes\nadjustment\nColor temperature\n├─ value number Yes range: 1700~15000,\ndefault value: 6500,",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["├─ coefficient", "number", "Yes", "", "Coefficients", ""],
+      ["├─ brightness", "object", "Yes", "", "Brightness", ""],
+      ["├─ R", "number", "Yes", "", "Red component", ""],
+      ["├─ G", "number", "Yes", "", "Green component", ""],
+      ["├─ B", "number", "Yes", "", "Blue component", ""],
+      ["├─ coefficient", "number", "Yes", "", "Coefficients", ""],
+      ["├─ shadow", "object", "Yes", "", "Shadow", ""],
+      ["├─ R", "number", "Yes", "", "Red component", ""],
+      ["├─ G", "number", "Yes", "", "Green component", ""],
+      ["├─ B", "number", "Yes", "", "Blue component", ""],
+      ["├─ W", "number", "Yes", "", "Black level\ncomponent", ""],
+      ["├─ highLight", "object", "Yes", "", "Highlight", ""],
+      ["├─ R", "number", "Yes", "", "Red component", ""],
+      ["├─ G", "number", "Yes", "", "Green component", ""],
+      ["├─ B", "number", "Yes", "", "Blue component", ""],
+      ["├─ W", "number", "Yes", "", "White level\ncomponent", ""],
+      ["├─\ncolorTemperature", "object", "Yes", "", "Color temperature", ""],
+      ["├─ mode", "number", "Yes", "", "Adjustment mode:\n0: Quick mode.\n1: Advanced mode.", ""],
+      ["├─ quickAdjust", "object", "Yes", "", "Quick parameter\nadjustment", ""],
+      ["├─ value", "number", "Yes", "", "Color temperature\nrange: 1700~15000,\ndefault value: 6500,", ""]
+    ]}
+  ]
+}

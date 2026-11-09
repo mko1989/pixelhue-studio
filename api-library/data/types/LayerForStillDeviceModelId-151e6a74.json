@@ -1,0 +1,9 @@
+{
+  "id": "LayerForStillDeviceModelId-151e6a74",
+  "name": "LayerForStillDeviceModelId",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1301,
+  "declaration": "enum LayerForStillDeviceModelId {\n  Q8 = 29974,\n  D32 = 29975,\n  P80 = 30006,\n}"
+}

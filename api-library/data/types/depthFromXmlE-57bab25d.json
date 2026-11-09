@@ -1,0 +1,9 @@
+{
+  "id": "depthFromXmlE-57bab25d",
+  "name": "depthFromXmlE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 656,
+  "declaration": "enum depthFromXmlE {\n  _8 = 0,\n  _10 = 1,\n  _12 = 2,\n}"
+}

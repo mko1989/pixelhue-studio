@@ -1,0 +1,7 @@
+{
+  "id": "reference-mvrTemplateI-a8f46fe6",
+  "name": "mvrTemplateI",
+  "availability": "referenced-only",
+  "references": [{"name":"mvrTemplateI","source":"src/api/screen/screen.ts","line":585},{"name":"mvrTemplateI","source":"src/api/screen/screen.ts","line":586},{"name":"mvrTemplateI","source":"src/api/screen/screen.ts","line":608},{"name":"mvrTemplateI","source":"src/api/screen/screen.ts","line":609}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

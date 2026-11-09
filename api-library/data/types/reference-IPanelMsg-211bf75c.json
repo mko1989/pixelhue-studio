@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPanelMsg-211bf75c",
+  "name": "IPanelMsg",
+  "availability": "referenced-only",
+  "references": [{"name":"IPanelMsg","source":"src/api/panel/panel.ts","line":18}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

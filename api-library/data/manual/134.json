@@ -1,0 +1,21 @@
+{
+  "page": 134,
+  "text": "Name Type Required Default Value Remarks More\nformat: binary\nstring No\n Return Data\nDefau\nRequir\nName Type lt Remarks More\ned\nValue\nmock:\nintege\n@integ\ncode Yes Status code\nr\ner\nmock:\n@strin\nmessage string Yes Result information\ng\ndata object Yes Layer data\nItem\nobject\n├─ list Yes type:\n[]\nobject\nintege The global layer ID, which\n├─ layerId Yes\nr is unique\n├─ layerIdObj object Yes The layer identifier\nmock:\nintege\n├─ id Yes The layer ID @integ\nr\ner\nLayer types:\n2: Common layer.\n4: AUX layer.\nmock:\n8: MVR layer.\nintege\n├─ type Yes 16: BKG layer. @integ\nr\ner\n32: Logo layer.\n64: Input view layer.\n128: Cut layer.\n256: Fill layer.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["", "string", "No", "", "", "format: binary"]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["code", "intege\nr", "Yes", "", "Status code", "mock:\n@integ\ner"],
+      ["message", "string", "Yes", "", "Result information", "mock:\n@strin\ng"],
+      ["data", "object", "Yes", "", "Layer data", ""],
+      ["├─ list", "object\n[]", "Yes", "", "", "Item\ntype:\nobject"],
+      ["├─ layerId", "intege\nr", "Yes", "", "The global layer ID, which\nis unique", ""],
+      ["├─ layerIdObj", "object", "Yes", "", "The layer identifier", ""],
+      ["├─ id", "intege\nr", "Yes", "", "The layer ID", "mock:\n@integ\ner"],
+      ["├─ type", "intege\nr", "Yes", "", "Layer types:\n2: Common layer.\n4: AUX layer.\n8: MVR layer.\n16: BKG layer.\n32: Logo layer.\n64: Input view layer.\n128: Cut layer.\n256: Fill layer.", "mock:\n@integ\ner"]
+    ]}
+  ]
+}

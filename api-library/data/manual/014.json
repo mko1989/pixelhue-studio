@@ -1,0 +1,17 @@
+{
+  "page": 14,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nnode.\n1: Master node.\n2: Slave node.\n├─ location object Yes Node location\nSwitch:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\n├─ time object Yes Grant time\nTimestamp (the\ntotal number of\nseconds from\nintege\n├─ timestamp Yes January 1, 1970\nr\n(00:00:00 GMT)\nto the current\ntime)\nTimezone\nidentifier, range\nintege 0~89. See the\n├─ timezone Yes\nr node\nconfiguration file\ndefinition.\nMonitoring\n├─ stateInfo object Yes\nstatus\nMin: 3\nElements\nall unique:\nobject true\n├─ slot Yes\n[]\nMax: 3\nItem type:\nobject",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "node.\n1: Master node.\n2: Slave node.", ""],
+      ["├─ location", "object", "Yes", "", "Node location", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ time", "object", "Yes", "", "Grant time", ""],
+      ["├─ timestamp", "intege\nr", "Yes", "", "Timestamp (the\ntotal number of\nseconds from\nJanuary 1, 1970\n(00:00:00 GMT)\nto the current\ntime)", ""],
+      ["├─ timezone", "intege\nr", "Yes", "", "Timezone\nidentifier, range\n0~89. See the\nnode\nconfiguration file\ndefinition.", ""],
+      ["├─ stateInfo", "object", "Yes", "", "Monitoring\nstatus", ""],
+      ["├─ slot", "object\n[]", "Yes", "", "", "Min: 3\nElements\nall unique:\ntrue\nMax: 3\nItem type:\nobject"]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ELayerFlipType-5800da72",
+  "name": "ELayerFlipType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1160,
+  "declaration": "enum ELayerFlipType {\n  flipNormal = 0, // 无\n  flipHor = 1, // 水平翻转\n  flipVer = 2, // 垂直翻转\n  flipHorVer = 3, // 水平和垂直翻转\n}"
+}

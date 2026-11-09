@@ -1,0 +1,7 @@
+{
+  "id": "reference-UploadCabinetCoefficientPropsT-2c10f8fc",
+  "name": "UploadCabinetCoefficientPropsT",
+  "availability": "referenced-only",
+  "references": [{"name":"UploadCabinetCoefficientPropsT","source":"src/api/correction/index.ts","line":210},{"name":"UploadCabinetCoefficientPropsT","source":"src/api/correction/index.ts","line":222}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

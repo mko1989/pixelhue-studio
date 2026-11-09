@@ -1,0 +1,17 @@
+{
+  "page": 175,
+  "text": "Default\nName Type Required Remarks More\nValue\nResponse\nmessage string Yes\nmessage\nItem\nobject\ntype:\ndata Yes Layer data\n[]\nobject\nUsed template\n├─ templateId number Yes\nunique ID\nUnique ID of the\nscreen where\n├─ screenId string Yes\nthe template is\napplied\nscenetype of the\nscreen where\nthe template is\n├─ sceneType string Yes applied, same as\nthe sceneType\nfield definition in\nthe layer\nItem\nobject\n├─ position Yes type:\n[]\nobject\nLayer layout\ninformation (the\ntop-left corner of\nthe screen's\n├─ window object Yes\ncircumscribed\nrectangle as the\ncoordinate\norigin).\nmock:\nThe layer width\n├─ width integer Yes\n@integer\nThe layer width",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["message", "string", "Yes", "", "Response\nmessage", ""],
+      ["data", "object\n[]", "Yes", "", "Layer data", "Item\ntype:\nobject"],
+      ["├─ templateId", "number", "Yes", "", "Used template\nunique ID", ""],
+      ["├─ screenId", "string", "Yes", "", "Unique ID of the\nscreen where\nthe template is\napplied", ""],
+      ["├─ sceneType", "string", "Yes", "", "scenetype of the\nscreen where\nthe template is\napplied, same as\nthe sceneType\nfield definition in\nthe layer", ""],
+      ["├─ position", "object\n[]", "Yes", "", "", "Item\ntype:\nobject"],
+      ["├─ window", "object", "Yes", "", "Layer layout\ninformation (the\ntop-left corner of\nthe screen's\ncircumscribed\nrectangle as the\ncoordinate\norigin).", ""],
+      ["├─ width", "integer", "Yes", "", "The layer width\nThe layer width", "mock:\n@integer"]
+    ]}
+  ]
+}

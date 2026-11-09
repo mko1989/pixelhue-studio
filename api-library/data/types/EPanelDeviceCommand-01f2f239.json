@@ -1,0 +1,9 @@
+{
+  "id": "EPanelDeviceCommand-01f2f239",
+  "name": "EPanelDeviceCommand",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 204,
+  "declaration": "enum EPanelDeviceCommand {\n  /** 选中设备 */\n  deviceSelect = 0,\n  /** 没有选中设备 */\n  deviceUnselect,\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EDecodeCapacity-cc3633ca",
+  "name": "EDecodeCapacity",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 255,
+  "declaration": "enum EDecodeCapacity {\n  _200W = 1,\n  _400W,\n  _800W,\n  _1200W,\n}"
+}

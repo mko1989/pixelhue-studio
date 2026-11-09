@@ -1,0 +1,9 @@
+{
+  "id": "EButtonType-402f1ee0",
+  "name": "EButtonType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 80,
+  "declaration": "enum EButtonType {\n  button, // 0：屏幕区域\n  dropDown, // 1：下来选择框\n  label, // 2：label标签\n}"
+}

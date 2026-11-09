@@ -1,0 +1,19 @@
+{
+  "page": 40,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nnumb\n├─ totalTime Yes Total height (V total) mock: 960\ner\nResolution standard:\n0: No standard.\n1: DMT\n2: CVT\n├─ numb\nYes 3: CVT-RBV1\nstandardType er\n4: CVT-RBV2\n5: CVT-RBV3\n6: CEA\n7: SAMPTE\n├─ objec Connector actual timing\nYes\nactualTiming t details\nInterlaced scanning: 0:\nEnumerati\nnumb\n├─ interlaced Yes Interlaced.\non: 0, 1\ner\n1: Progressive.\nnumb Frame rate (floating-point\n├─ refresh Yes mock: 60\ner format)\nobjec\n├─ horizontal Yes Horizontal timing\nt\nVisible width (H active,\nmock:\nnumb\n├─ addTime Yes namely the commonly\n1960\ner\nreferred resolution width)\n├─ numb\nmock: 1\nYes Front porch\nfrontPorch er\nnumb\n├─ sync Yes Sync value mock: 1\ner\n├─ numb Sync polarity: Enumerati\nYes\non: 0, 1\nsyncPolarity er 0: Negative.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ totalTime", "numb\ner", "Yes", "", "Total height (V total)", "mock: 960"],
+      ["├─\nstandardType", "numb\ner", "Yes", "", "Resolution standard:\n0: No standard.\n1: DMT\n2: CVT\n3: CVT-RBV1\n4: CVT-RBV2\n5: CVT-RBV3\n6: CEA\n7: SAMPTE", ""],
+      ["├─\nactualTiming", "objec\nt", "Yes", "", "Connector actual timing\ndetails", ""],
+      ["├─ interlaced", "numb\ner", "Yes", "", "Interlaced scanning: 0:\nInterlaced.\n1: Progressive.", "Enumerati\non: 0, 1"],
+      ["├─ refresh", "numb\ner", "Yes", "", "Frame rate (floating-point\nformat)", "mock: 60"],
+      ["├─ horizontal", "objec\nt", "Yes", "", "Horizontal timing", ""],
+      ["├─ addTime", "numb\ner", "Yes", "", "Visible width (H active,\nnamely the commonly\nreferred resolution width)", "mock:\n1960"],
+      ["├─\nfrontPorch", "numb\ner", "Yes", "", "Front porch", "mock: 1"],
+      ["├─ sync", "numb\ner", "Yes", "", "Sync value", "mock: 1"],
+      ["├─\nsyncPolarity", "numb\ner", "Yes", "", "Sync polarity:\n0: Negative.", "Enumerati\non: 0, 1"]
+    ]}
+  ]
+}

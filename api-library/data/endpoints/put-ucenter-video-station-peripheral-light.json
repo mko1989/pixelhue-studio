@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/peripheral/light",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","peripheral","light"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/peripheral/light","dynamic":false,"source":"src/api/setting/setting.ts","line":45,"client":"API","symbol":"response","comment":"","parameters":["lightData: ILightStatus[]"],"bodyExpression":"lightData","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/peripheral/light',\n    data: lightData,\n    timeout: 5000, // 通知超时时间为5s\n  }","context":"async (\n  lightData: ILightStatus[],\n): Promise<IResponseData<ILightStatus[]>> => {\n  const response = await API.request<IResponseData<ILightStatus[]>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/peripheral/light',\n    data: lightData,\n    timeout: 5000, // 通知超时时间为5s","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-peripheral-light",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceE-daa80c7f",
+  "name": "InterfaceE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 847,
+  "declaration": "enum InterfaceE {\n  // 0~41 是 后端提供的 类型\n  INVALID = 0,\n  EXP,\n  DVI_SL,\n  DVI_DL,\n  HDMI_1_3,\n  HDMI_1_4,\n  HDMI_2_0,\n  DP_1_1_SL,\n  DP_1_2,\n  SDI_3G,\n  VGA,\n  CVBS,\n  YpbPr,\n  SDI_12G,\n  SDI_6G,\n  USB,\n  HDBaseT,\n  DP_1_1_DL,\n  OPT, // 这个 后端叫 DVI_Fiber\n  DVI_1_4,\n  DVI_1_4_DL,\n  HDMI_1_4_DL,\n  DVI_AUX_1_3, // dvi 1.3\n  HDMI_AUX_1_3, // dvi 1.4\n  Fiber_40G,\n  ETH,\n  USB3 = 26,\n  USB2,\n\n  AUX_CTL = 30,\n  Eth_1G, //1G 图像输出网口\n  Eth_5G, //5G 图像输出网口\n  Fiber_10G,\n  InterSource, //内置源\n  HDMI_2_1,\n  DP_1_4,\n  SDPIF_OUT,\n  RS232,\n  RS485,\n  console, //,\n  DMX,\n\n  // 这 以后  都是假的 ,后台没有提供\n  power,\n  web,\n  fastEthernet,\n  fan,\n  audio,\n  Fiber_25G = 51,\n  audio_in = 52,\n  audio_out = 53,\n  USB4 = 54,\n  MosaicSource = 55, // 拼接源 connectorType\n  Fiber_100G = 65,\n  TYPE_C = 56, // TYPE-c\n  OPT_Fiber = 1001,\n  LINK = 63, // link接口类型\n  PORT = 1002,\n}"
+}

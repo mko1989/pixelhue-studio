@@ -1,0 +1,9 @@
+{
+  "id": "EAspectValue-d1f67a27",
+  "name": "EAspectValue",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 349,
+  "declaration": "enum EAspectValue {\n  /**\n   * 1：1\n   */\n  OneToOne = 0,\n  /**\n   * 4：3\n   */\n  FourToThree = 1,\n  /**\n   * 3：2\n   */\n  ThreeToTwo = 2,\n  /**\n   * 16：9\n   */\n  SixteenToNine = 3,\n  /**\n   * 16：10\n   */\n  SixteenToTen = 4,\n  /**\n   * 自定义比例\n   */\n  Custom = 5,\n  /**\n   * 源比例\n   */\n  OriginalRatio = 8,\n  /**\n   * 5:4\n   */\n  FiveToFour = 7,\n}"
+}

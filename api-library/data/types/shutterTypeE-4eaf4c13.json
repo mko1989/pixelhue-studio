@@ -1,0 +1,9 @@
+{
+  "id": "shutterTypeE-4eaf4c13",
+  "name": "shutterTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 947,
+  "declaration": "enum shutterTypeE {\n  off = 0, // 关闭\n  angle, // 角度\n  speed, // 速度\n}"
+}

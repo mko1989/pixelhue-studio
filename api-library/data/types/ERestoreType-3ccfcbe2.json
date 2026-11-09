@@ -1,0 +1,9 @@
+{
+  "id": "ERestoreType-3ccfcbe2",
+  "name": "ERestoreType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 458,
+  "declaration": "enum ERestoreType {\n  SAVE_DATA = 1, // 保留用户数据\n  SAVE_IP = 2, // 保留IP\n  CLEAR_ALL = 0, // 清除所有\n}"
+}

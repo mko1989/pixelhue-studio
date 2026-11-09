@@ -1,0 +1,7 @@
+{
+  "id": "reference-IPicture-495c42f3",
+  "name": "IPicture",
+  "availability": "referenced-only",
+  "references": [{"name":"IPicture","source":"src/api/picture/picture.ts","line":23},{"name":"IPicture","source":"src/api/picture/picture.ts","line":24},{"name":"IPicture","source":"src/api/picture/picture.ts","line":132},{"name":"IPicture","source":"src/api/picture/picture.ts","line":133},{"name":"IPicture","source":"src/api/picture/picture.ts","line":152},{"name":"IPicture","source":"src/api/picture/picture.ts","line":153},{"name":"IPicture","source":"src/api/picture/picture.ts","line":181},{"name":"IPicture","source":"src/api/picture/picture.ts","line":183}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

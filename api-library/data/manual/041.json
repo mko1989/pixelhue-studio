@@ -1,0 +1,19 @@
+{
+  "page": 41,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n1: Positive.\nmock:\nnumb\n├─ totalTime Yes Total width (H total)\n1960\ner\nobjec\n├─ vertical Yes Vertical timing\nt\nVisible height (V active,\nnumb\n├─ addTime Yes namely the commonly mock: 960\ner\nreferred resolution height)\n├─ numb\nYes Front porch\nfrontPorch er\nnumb\n├─ sync Yes Sync value\ner\nSync polarity:\n├─ numb Enumerati\nYes 0: Negative.\non: 0, 1\nsyncPolarity er\n1: Positive.\nnumb\n├─ totalTime Yes Total height (V total) mock: 960\ner\nResolution standard:\n0: No standard.\n1: DMT\n2: CVT\n├─\nstring Yes 3: CVT-RBV1\nstandardType\n4: CVT-RBV2\n5: CVT-RBV3\n6: CEA\n7: SAMPTE\n├─ objec\nYes Connector's timing type\ntimingSelect t",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "1: Positive.", ""],
+      ["├─ totalTime", "numb\ner", "Yes", "", "Total width (H total)", "mock:\n1960"],
+      ["├─ vertical", "objec\nt", "Yes", "", "Vertical timing", ""],
+      ["├─ addTime", "numb\ner", "Yes", "", "Visible height (V active,\nnamely the commonly\nreferred resolution height)", "mock: 960"],
+      ["├─\nfrontPorch", "numb\ner", "Yes", "", "Front porch", ""],
+      ["├─ sync", "numb\ner", "Yes", "", "Sync value", ""],
+      ["├─\nsyncPolarity", "numb\ner", "Yes", "", "Sync polarity:\n0: Negative.\n1: Positive.", "Enumerati\non: 0, 1"],
+      ["├─ totalTime", "numb\ner", "Yes", "", "Total height (V total)", "mock: 960"],
+      ["├─\nstandardType", "string", "Yes", "", "Resolution standard:\n0: No standard.\n1: DMT\n2: CVT\n3: CVT-RBV1\n4: CVT-RBV2\n5: CVT-RBV3\n6: CEA\n7: SAMPTE", ""],
+      ["├─\ntimingSelect", "objec\nt", "Yes", "", "Connector's timing type", ""]
+    ]}
+  ]
+}

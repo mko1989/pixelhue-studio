@@ -1,0 +1,19 @@
+{
+  "page": 174,
+  "text": "Default\nName Type Required Remarks More\nValue\ntemplateId number Yes Used template unique ID\nUnique ID of the screen\nscreenId number Yes\nwhere the template is applied\nscenetype of the screen\nwhere the template is\nsceneType number Yes applied, same as the\nsceneType field definition in\nthe layer\nAssociated module:\n0: Multiviewer.\n1: Layer.\nmoduleType number No (Used from version 1.4\nonwards. Not provided in\nolder versions; does not\naffect functionality.)\nTemplate type:\n1: Built-in template.\n2: Custom template.\n3: Aging test template.\ntemplateType number No\n(Used from version 1.4\nonwards. Not provided in\nolder versions; does not\naffect functionality.)\nLayer aspect ratio lock\nstatus:\nlocked number Yes\n0: Unlocked.\n1: Locked.\n Return Data\nDefault\nName Type Required Remarks More\nValue\ncode integer Yes Response code",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["templateId", "number", "Yes", "", "Used template unique ID", ""],
+      ["screenId", "number", "Yes", "", "Unique ID of the screen\nwhere the template is applied", ""],
+      ["sceneType", "number", "Yes", "", "scenetype of the screen\nwhere the template is\napplied, same as the\nsceneType field definition in\nthe layer", ""],
+      ["moduleType", "number", "No", "", "Associated module:\n0: Multiviewer.\n1: Layer.\n(Used from version 1.4\nonwards. Not provided in\nolder versions; does not\naffect functionality.)", ""],
+      ["templateType", "number", "No", "", "Template type:\n1: Built-in template.\n2: Custom template.\n3: Aging test template.\n(Used from version 1.4\nonwards. Not provided in\nolder versions; does not\naffect functionality.)", ""],
+      ["locked", "number", "Yes", "", "Layer aspect ratio lock\nstatus:\n0: Unlocked.\n1: Locked.", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""]
+    ]}
+  ]
+}

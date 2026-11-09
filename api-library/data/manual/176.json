@@ -1,0 +1,16 @@
+{
+  "page": 176,
+  "text": "Default\nName Type Required Remarks More\nValue\nmock:\nThe layer height\n├─ height integer Yes\n@integer\nThe layer height\nmock:\n├─ x integer Yes H offset H offset\n@integer\nmock:\n├─ y integer Yes V offset V offset\n@integer\nLayer source\n├─ source object Yes\ninformation\nGeneral\n├─ general object Yes\ninformation\nSource ID, which\nmock:\nis unique for a\n├─ sourceId integer Yes\n@integer\nspecific source\ntype\nSource type:\n0: Empty layer.\n1: No-source\nlayer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\nmock:\n├─ sourceType integer Yes 6: LOGO image.\n@integer\n7: IPC type.\n8: Cropped\nsource type.\n9: Mosaic\nsource.\n10: IPC mosaic\nscreen.\n11: Internal",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["├─ height", "integer", "Yes", "", "The layer height\nThe layer height", "mock:\n@integer"],
+      ["├─ x", "integer", "Yes", "", "H offset H offset", "mock:\n@integer"],
+      ["├─ y", "integer", "Yes", "", "V offset V offset", "mock:\n@integer"],
+      ["├─ source", "object", "Yes", "", "Layer source\ninformation", ""],
+      ["├─ general", "object", "Yes", "", "General\ninformation", ""],
+      ["├─ sourceId", "integer", "Yes", "", "Source ID, which\nis unique for a\nspecific source\ntype", "mock:\n@integer"],
+      ["├─ sourceType", "integer", "Yes", "", "Source type:\n0: Empty layer.\n1: No-source\nlayer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped\nsource type.\n9: Mosaic\nsource.\n10: IPC mosaic\nscreen.\n11: Internal", "mock:\n@integer"]
+    ]}
+  ]
+}

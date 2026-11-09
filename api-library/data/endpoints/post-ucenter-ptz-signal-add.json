@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/ptz/signal-add",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","ptz","signal-add"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/ptz/signal-add","dynamic":false,"source":"src/api/setting/setting.ts","line":350,"client":"API","symbol":"response","comment":"","parameters":["data: ISignal"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'POST',\n    url: 'ucenter/ptz/signal-add',\n    data: data,\n    timeout: TIMING_TIMEOUT,\n  }","context":"async (data: ISignal) => {\n  const response = await API.request<IResponseData<ISignalList>>({\n    method: 'POST',\n    url: 'ucenter/ptz/signal-add',\n    data: data,\n    timeout: TIMING_TIMEOUT,\n  });\n  return response.data;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-ptz-signal-add",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

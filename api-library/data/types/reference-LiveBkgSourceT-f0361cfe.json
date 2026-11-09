@@ -1,0 +1,7 @@
+{
+  "id": "reference-LiveBkgSourceT-f0361cfe",
+  "name": "LiveBkgSourceT",
+  "availability": "referenced-only",
+  "references": [{"name":"LiveBkgSourceT","source":"src/api/source/index.ts","line":226},{"name":"LiveBkgSourceT","source":"src/api/source/index.ts","line":243},{"name":"LiveBkgSourceT","source":"src/api/source/index.ts","line":246},{"name":"LiveBkgSourceT","source":"src/api/source/index.ts","line":261},{"name":"LiveBkgSourceT","source":"src/api/source/index.ts","line":262}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

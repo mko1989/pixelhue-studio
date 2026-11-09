@@ -1,0 +1,9 @@
+{
+  "id": "LinkState-cafa0794",
+  "name": "LinkState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 23,
+  "declaration": "enum LinkState {\n  nolink = 0,\n  link = 1,\n}"
+}

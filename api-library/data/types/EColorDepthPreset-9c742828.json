@@ -1,0 +1,9 @@
+{
+  "id": "EColorDepthPreset-9c742828",
+  "name": "EColorDepthPreset",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 139,
+  "declaration": "enum EColorDepthPreset {\n  '8bit' = 8,\n  '10bit' = 10,\n  '12bit' = 12,\n  '16bit' = 16,\n  AUTO = 255,\n}"
+}

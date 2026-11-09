@@ -1,0 +1,9 @@
+{
+  "id": "SubcardOnlineE-cd45e0bb",
+  "name": "SubcardOnlineE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 13,
+  "declaration": "enum SubcardOnlineE {\n  pullOut, //子卡不在线，即子卡被拔掉\n  online, //子卡在线（正常状态，默认值，升级时只能升级当前状态的子卡）\n  warning, //子卡插上了，但是与主控链接异常\n  notSupported, //本设备不支持的子卡类型（如D系列设备插上了F系列的卡）\n  wrong, //不同类型的子卡混插，如输入卡插在了输出槽位）\n  versionMismatch, //子卡在线单子卡版本和设备程序版本不匹配\n  abnormal = 6,\n}"
+}

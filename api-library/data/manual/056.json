@@ -1,0 +1,23 @@
+{
+  "page": 56,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n├─ objec\nYes Smart key\nintelligence t\nobjec\n├─ color Yes Picked color\nt\n├─ R string Yes Red component\n├─ G string Yes Green component\n├─ B string Yes Blue component\nCursor coordinates (using\nobjec\n├─ pos Yes the top-left corner of the\nt\nvisible area as the origin)\ninteg\n├─ x Yes Pick point x-coordinate\ner\ninteg\n├─ y Yes Pick point y-coordinate\ner\n├─\ninteg\nmattingStrengt Yes Keying strength\ner\nh\n├─ integ\nYes Gain adjustment\ngainAdjust er\nobjec\n├─ hdr Yes Connector HDR properties\nt\nobjec\n├─ sdr Yes SDR conversion settings\nt\nMax: 4\nnumb Gamma value, range:\n├─ gamma Yes\ner 1.00~4.00 Min: 1\nobjec\n├─ hdr10 Yes HDR10 conversion settings\nt",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─\nintelligence", "objec\nt", "Yes", "", "Smart key", ""],
+      ["├─ color", "objec\nt", "Yes", "", "Picked color", ""],
+      ["├─ R", "string", "Yes", "", "Red component", ""],
+      ["├─ G", "string", "Yes", "", "Green component", ""],
+      ["├─ B", "string", "Yes", "", "Blue component", ""],
+      ["├─ pos", "objec\nt", "Yes", "", "Cursor coordinates (using\nthe top-left corner of the\nvisible area as the origin)", ""],
+      ["├─ x", "integ\ner", "Yes", "", "Pick point x-coordinate", ""],
+      ["├─ y", "integ\ner", "Yes", "", "Pick point y-coordinate", ""],
+      ["├─\nmattingStrengt\nh", "integ\ner", "Yes", "", "Keying strength", ""],
+      ["├─\ngainAdjust", "integ\ner", "Yes", "", "Gain adjustment", ""],
+      ["├─ hdr", "objec\nt", "Yes", "", "Connector HDR properties", ""],
+      ["├─ sdr", "objec\nt", "Yes", "", "SDR conversion settings", ""],
+      ["├─ gamma", "numb\ner", "Yes", "", "Gamma value, range:\n1.00~4.00", "Max: 4\nMin: 1"],
+      ["├─ hdr10", "objec\nt", "Yes", "", "HDR10 conversion settings", ""]
+    ]}
+  ]
+}

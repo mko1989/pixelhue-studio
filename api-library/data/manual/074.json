@@ -1,0 +1,26 @@
+{
+  "page": 74,
+  "text": "Default\nName Type Required Remarks More\nValue\nCUT, 1: FADE]\nThe screen name. Provide\nat least one of screenId or\n├─\nstring No screenName; if both are\nscreenName\nprovided, screenId takes\nprecedence.\n Return Data\nName Type Required Default Value Remarks More\ncode integer Yes Response code\nmessage string Yes Response message\ndata object Yes\n4.1.4 Cut\n Basic Information\nPath: /v1/screen/cut\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nAuthorization Yes token\nBody\nDefault\nName Type Required Remarks More\nValue\nItem\nobject\ntype:\nNo\n[]\nobject",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "CUT, 1: FADE]", ""],
+      ["├─\nscreenName", "string", "No", "", "The screen name. Provide\nat least one of screenId or\nscreenName; if both are\nprovided, screenId takes\nprecedence.", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response message", ""],
+      ["data", "object", "Yes", "", "", ""]
+    ]},
+    {"contextBefore": "4.1.4 Cut\n Basic Information\nPath: /v1/screen/cut\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""],
+      ["Authorization", "", "Yes", "", "token"]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "object\n[]", "No", "", "", "Item\ntype:\nobject"]
+    ]}
+  ]
+}

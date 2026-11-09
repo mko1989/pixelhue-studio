@@ -1,0 +1,9 @@
+{
+  "id": "CropsD-5db9118f",
+  "name": "CropsD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 268,
+  "declaration": "interface CropsD extends Partial<SignalD> {\n  /**\n   * 信号源Id\n   */\n  sourceId: number;\n  /**\n   * 截取子信号源id\n   */\n  cropId: number;\n  /**\n   * 截取子信号源名称\n   */\n  name: string;\n  /**\n   * 截取子信号源宽\n   */\n  width: number;\n  /**\n   *截取子信号源高\n   */\n  height: number;\n  /**\n   * 截取子信号源x\n   */\n  x: number;\n  /**\n   * 截取子信号源y\n   */\n  y: number;\n}"
+}

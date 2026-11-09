@@ -1,0 +1,9 @@
+{
+  "id": "EWidowPosition-c09205e0",
+  "name": "EWidowPosition",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 259,
+  "declaration": "enum EWidowPosition {\n  x = 'x', // x\n  y = 'y', // y\n  width = 'width', // 宽度\n  height = 'height', // 高度\n}"
+}

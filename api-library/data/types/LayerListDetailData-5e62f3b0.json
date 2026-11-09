@@ -1,0 +1,8 @@
+{
+  "id": "LayerListDetailData-5e62f3b0",
+  "name": "LayerListDetailData",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Layer.ts",
+  "line": 1,
+  "declaration": "interface LayerListDetailData {\n\ttotalCount: number\n\tlist: Layer[]\n}"
+}

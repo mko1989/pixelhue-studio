@@ -1,0 +1,26 @@
+{
+  "page": 170,
+  "text": "Default\nName Type Required Remarks More\nValue\nobject\nItem\nobject Template layout\n├─ layout Yes type:\n[] information\nobject\n├─ row integer Yes\n├─ column integer Yes\nLayout type:\n1: All.\n├─ type integer Yes\n2: Output.\n3: Input.\n0: Show.\n├─ isHide integer Yes\n1: Hide.\n├─ margin object Yes Border information\n├─ top integer Yes Outer border - top\nOuter border -\n├─ bottom string Yes\nbottom\n├─ left string Yes Outer border - left\n├─ right string Yes Outer border - right\nItem\nobject\n├─ cells Yes Grid information type:\n[]\nobject\n├─ row number Yes Grid row - position\nGrid column -\n├─ column number Yes\nposition\n├─ rowSpan number Yes Grid row width\n├─ columnSpan number Yes Grid column width\nSource type:\n├─ sourceType number Yes\n0: Empty layer.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "", "object"],
+      ["├─ layout", "object\n[]", "Yes", "", "Template layout\ninformation", "Item\ntype:\nobject"],
+      ["├─ row", "integer", "Yes", "", "", ""],
+      ["├─ column", "integer", "Yes", "", "", ""],
+      ["├─ type", "integer", "Yes", "", "Layout type:\n1: All.\n2: Output.\n3: Input.", ""],
+      ["├─ isHide", "integer", "Yes", "", "0: Show.\n1: Hide.", ""],
+      ["├─ margin", "object", "Yes", "", "Border information", ""],
+      ["├─ top", "integer", "Yes", "", "Outer border - top", ""],
+      ["├─ bottom", "string", "Yes", "", "Outer border -\nbottom", ""],
+      ["├─ left", "string", "Yes", "", "Outer border - left", ""],
+      ["├─ right", "string", "Yes", "", "Outer border - right", ""],
+      ["├─ cells", "object\n[]", "Yes", "", "Grid information", "Item\ntype:\nobject"],
+      ["├─ row", "number", "Yes", "", "Grid row - position", ""],
+      ["├─ column", "number", "Yes", "", "Grid column -\nposition", ""],
+      ["├─ rowSpan", "number", "Yes", "", "Grid row width", ""],
+      ["├─ columnSpan", "number", "Yes", "", "Grid column width", ""],
+      ["├─ sourceType", "number", "Yes", "", "Source type:\n0: Empty layer.", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "page": 241,
+  "text": "7. Gallery\n7.1 Retrieve Image Details\n Basic Information\nPath: /v1/picture/list\nMethod: GET\nDescription:\n Request Parameters\nQuery\nName Required Example Remarks\nlimit No Items per page, ignored if this parameter is absent.\npage No Query page number, ignored if this parameter is absent.\nImage type: defined in the same way as the type\ntype No\ndefinition in pictureObj\n Return Data\nDefault\nName Type Required Remarks More\nValue\ncode number Yes Response code\nmessage string Yes Response message\ndata object Yes\nItem\nobject\n├─ list Yes type:\n[]\nobject\n├─ pictureId number Yes Image file ID\nImage usage status:\n├─ isUsed number Yes 1: In use.\n2: Not in use.\n├─ object Yes",
+  "tables": [
+    {"contextBefore": "7. Gallery\n7.1 Retrieve Image Details\n Basic Information\nPath: /v1/picture/list\nMethod: GET\nDescription:\n Request Parameters\nQuery", "rows": [
+      ["Name", "Required", "Example", "Remarks"],
+      ["limit", "No", "", "Items per page, ignored if this parameter is absent."],
+      ["page", "No", "", "Query page number, ignored if this parameter is absent."],
+      ["type", "No", "", "Image type: defined in the same way as the type\ndefinition in pictureObj"]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "number", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response message", ""],
+      ["data", "object", "Yes", "", "", ""],
+      ["├─ list", "object\n[]", "Yes", "", "", "Item\ntype:\nobject"],
+      ["├─ pictureId", "number", "Yes", "", "Image file ID", ""],
+      ["├─ isUsed", "number", "Yes", "", "Image usage status:\n1: In use.\n2: Not in use.", ""],
+      ["├─", "object", "Yes", "", "", ""]
+    ]}
+  ]
+}

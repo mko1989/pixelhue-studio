@@ -1,0 +1,24 @@
+{
+  "page": 228,
+  "text": "Default\nName Type Required Remarks More\nValue\nItem\nobject Screen data in the\n├─ screens Yes type:\n[] preset\nobject\n├─ guid string Yes Screen ID\nItem\nobject Layer parameters in\n├─ layers Yes type:\n[] the preset\nobject\n├─ serial integer Yes Layer No. (required)\n├─ type integer Yes Layer type (required)\nItem\ninteger\n├─ interfaces No Connector ID type:\n[]\ninteger\n├─ No\n6.2.3 Load Preset\n Basic Information\nPath: /v1/preset/apply\nMethod: POST\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\npresetId string No Preset GUID",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["├─ screens", "object\n[]", "Yes", "", "Screen data in the\npreset", "Item\ntype:\nobject"],
+      ["├─ guid", "string", "Yes", "", "Screen ID", ""],
+      ["├─ layers", "object\n[]", "Yes", "", "Layer parameters in\nthe preset", "Item\ntype:\nobject"],
+      ["├─ serial", "integer", "Yes", "", "Layer No. (required)", ""],
+      ["├─ type", "integer", "Yes", "", "Layer type (required)", ""],
+      ["├─ interfaces", "integer\n[]", "No", "", "Connector ID", "Item\ntype:\ninteger"],
+      ["├─", "", "No", "", "", ""]
+    ]},
+    {"contextBefore": "6.2.3 Load Preset\n Basic Information\nPath: /v1/preset/apply\nMethod: POST\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["presetId", "string", "No", "", "Preset GUID", ""]
+    ]}
+  ]
+}

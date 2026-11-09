@@ -1,0 +1,9 @@
+{
+  "id": "ItestMode-7fc20d0e",
+  "name": "ItestMode",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 531,
+  "declaration": "enum ItestMode {\n  /** 纯色 */\n  PureColor = 0,\n  /** 水平线向下移动 */\n  HorLineDown = 1,\n  /** 垂直线向右移动  */\n  VerLineRight = 2,\n  /** 45°线右斜移动  */\n  RightObliqueLine = 3,\n  /** 45°线左斜移动 */\n  LeftObliqueLine = 4,\n  /** 网格向右下移动 */\n  GridRight = 5,\n  /** 45°网格向右下移动 */\n  ObliqueGridRight = 6,\n  /** 黑白方块 */\n  BlackWhiteSquare = 7,\n  /** 水平红色渐变 */\n  HorRedGradient = 8,\n  /** 水平绿色渐变 */\n  HorGreenGradient = 9,\n  /** 水平蓝色渐变 */\n  HorBlueGradient = 10,\n  /** 水平白色渐变 */\n  HorWhiteGradient = 11,\n  /** 垂直红色渐变 */\n  VerRedGradient = 12,\n  /** 垂直绿色渐变 */\n  VerGreenGradient = 13,\n  /** 垂直蓝色渐变   */\n  VerBlueGradient = 14,\n  /** 垂直白色渐变 */\n  VerWhiteGradient = 15,\n  /** 黑白闪 */\n  BlackWhiteTwinkle = 16,\n}"
+}

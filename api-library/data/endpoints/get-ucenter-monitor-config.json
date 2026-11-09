@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/monitor/config",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","monitor","config"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/monitor/config","dynamic":false,"source":"src/api/monitor/index.ts","line":63,"client":"API","symbol":"response","comment":"*\n * 获取发送卡风扇及误码状态","parameters":["snList: string[]","headers: AxiosRequestHeaders = {}"],"bodyExpression":null,"queryExpression":"{\n      snList,\n    }","headerExpression":"{\n      ...headers,\n    }","configExpression":"{\n    method: 'get',\n    url: 'ucenter/monitor/config',\n    params: {\n      snList,\n    },\n    headers: {\n      ...headers,\n    },\n  }","context":"async (\n  snList: string[],\n  headers: AxiosRequestHeaders = {},\n): Promise<IResponseData<IPageData<IMonitorDeviceConfig>>> => {\n  const response = await API.request<IResponseData<IPageData<IMonitorDeviceConfig>>>({\n    method: 'get',\n    url: 'ucenter/monitor/config',\n    params: {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-monitor-config",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-IConsoleTestResult-cbe3c8c1",
+  "name": "IConsoleTestResult",
+  "availability": "referenced-only",
+  "references": [{"name":"IConsoleTestResult","source":"src/api/console-production/index.ts","line":93},{"name":"IConsoleTestResult","source":"src/api/console-production/index.ts","line":94},{"name":"IConsoleTestResult","source":"src/api/console-production/index.ts","line":108},{"name":"IConsoleTestResult","source":"src/api/console-production/index.ts","line":109}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

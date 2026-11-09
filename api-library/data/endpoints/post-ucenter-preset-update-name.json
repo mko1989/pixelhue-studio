@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/preset/update-name",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","preset","update-name"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/preset/update-name","dynamic":false,"source":"src/api/preset/index.ts","line":304,"client":"API_U_CENTER","symbol":"response","comment":"*\n * 场景重命名","parameters":["data: PostUcenterPresetUpdateNameD[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{}","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/preset/update-name',\n    data,\n    headers: {},\n  }","context":"async (\n  data: PostUcenterPresetUpdateNameD[],\n): Promise<IResponseData<unknown>> => {\n  const response = await API_U_CENTER.request<IResponseData<unknown>>({\n    method: 'POST',\n    url: 'ucenter/preset/update-name',\n    data,\n    headers: {},","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-preset-update-name",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

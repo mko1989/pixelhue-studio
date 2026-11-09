@@ -1,0 +1,9 @@
+{
+  "id": "EPanelKeyModeType-4f0898c8",
+  "name": "EPanelKeyModeType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 490,
+  "declaration": "enum EPanelKeyModeType {\n  restoreLastMode = 0, // 恢复上一次功能模式\n  editMode = 1, // 图层编辑模式\n  cueEditMode = 2, // CUE编辑模式\n  timeCodeEditMode = 3, // 时码编辑模式\n  numberKeyMode = 4, // 数字按键\n}"
+}

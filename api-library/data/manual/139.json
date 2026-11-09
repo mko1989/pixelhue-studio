@@ -1,0 +1,15 @@
+{
+  "page": 139,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nThe list of connectors\nItem\nobject exceeding resource limits.\n├─ interfaces Yes type:\n[] Valid when the resource\nobject\nutilization status is 2.\nintege\n├─ interfaceId Yes Connector ID\nr\n├─ source object Yes Layer source\n├─ general object Yes General information\nmock:\nintege Source ID, which is unique\n├─ sourceId Yes @integ\nr for a specific source type\ner\nSource type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\nmock:\nintege 8: Cropped source type.\n├─ sourceType Yes @integ\nr 9: Mosaic source.\ner\n10: IPC mosaic screen.\n11: Internal source.\n12: Internal shape source.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit Meter.\n17: Streaming.\n18: Recording.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ interfaces", "object\n[]", "Yes", "", "The list of connectors\nexceeding resource limits.\nValid when the resource\nutilization status is 2.", "Item\ntype:\nobject"],
+      ["├─ interfaceId", "intege\nr", "Yes", "", "Connector ID", ""],
+      ["├─ source", "object", "Yes", "", "Layer source", ""],
+      ["├─ general", "object", "Yes", "", "General information", ""],
+      ["├─ sourceId", "intege\nr", "Yes", "", "Source ID, which is unique\nfor a specific source type", "mock:\n@integ\ner"],
+      ["├─ sourceType", "intege\nr", "Yes", "", "Source type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source type.\n9: Mosaic source.\n10: IPC mosaic screen.\n11: Internal source.\n12: Internal shape source.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit Meter.\n17: Streaming.\n18: Recording.", "mock:\n@integ\ner"]
+    ]}
+  ]
+}

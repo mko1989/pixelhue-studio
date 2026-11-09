@@ -1,0 +1,17 @@
+{
+  "page": 12,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nstatuses may\nexist\nsimultaneously):\n1: Executing one-\ncontrol-multiple\nby device.\n2: Executing\nKeyFrame on\npreset.\n3: Previewing\nKeyFrame\nexecution.\n4: Executing\nvideo link test.\n5: Executing front\npanel button test.\n6: Executing\ndevice diagnosis.\n├─ No Substatus\nmock:\nSerial number\n├─ sn string Yes ewrqwerq\n(SN)\nwe\nmock:\n├─ version string Yes v12.1 Version number\nv1.0.0\nGeneral\n├─ general object Yes\ninformation\nmock:\nsyste\n├─ name string Yes Node name\nsystem1\nm1\nVersion matching\n├─ versionMatching object Yes\ninformation\n├─ serverVersion string Yes userver program",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "statuses may\nexist\nsimultaneously):\n1: Executing one-\ncontrol-multiple\nby device.\n2: Executing\nKeyFrame on\npreset.\n3: Previewing\nKeyFrame\nexecution.\n4: Executing\nvideo link test.\n5: Executing front\npanel button test.\n6: Executing\ndevice diagnosis.", ""],
+      ["├─", "", "No", "", "Substatus", ""],
+      ["├─ sn", "string", "Yes", "", "Serial number\n(SN)", "mock:\newrqwerq\nwe"],
+      ["├─ version", "string", "Yes", "v12.1", "Version number", "mock:\nv1.0.0"],
+      ["├─ general", "object", "Yes", "", "General\ninformation", ""],
+      ["├─ name", "string", "Yes", "syste\nm1", "Node name", "mock:\nsystem1"],
+      ["├─ versionMatching", "object", "Yes", "", "Version matching\ninformation", ""],
+      ["├─ serverVersion", "string", "Yes", "", "userver program", ""]
+    ]}
+  ]
+}

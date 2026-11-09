@@ -1,0 +1,7 @@
+{
+  "id": "reference-ThreeDimensionalScreenT-88f9595b",
+  "name": "ThreeDimensionalScreenT",
+  "availability": "referenced-only",
+  "references": [{"name":"ThreeDimensionalScreenT","source":"src/api/three-dimensional/threeDimensional.ts","line":32}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

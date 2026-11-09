@@ -1,0 +1,17 @@
+{
+  "page": 95,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nrange:\n1700~15000,\ndefault value:\n6500, step: 100,\nunit: K\nAdvanced\n├─ advanceAdjust object Yes parameter\nadjustment\nR component:\nnumb 0~255, default:\n├─ R Yes\ner 255, step: 1,\nunit: none\nG component:\nnumb 0~255, default:\n├─ G Yes\ner 255, step: 1,\nunit: none\nB component:\nnumb 0~255, default:\n├─ B Yes\ner 255, step: 1,\nunit: none\nScreen freeze\nnumb switch:\n├─ freeze Yes\ner 0: Unfreeze.\n1: Freeze.\nScreen FTB\n├─ ftb object Yes\ncontrol\nFTB enable:\nnumb 0: Disable, and\n├─ enable Yes\ner return to normal\ndisplay.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "range:\n1700~15000,\ndefault value:\n6500, step: 100,\nunit: K", ""],
+      ["├─ advanceAdjust", "object", "Yes", "", "Advanced\nparameter\nadjustment", ""],
+      ["├─ R", "numb\ner", "Yes", "", "R component:\n0~255, default:\n255, step: 1,\nunit: none", ""],
+      ["├─ G", "numb\ner", "Yes", "", "G component:\n0~255, default:\n255, step: 1,\nunit: none", ""],
+      ["├─ B", "numb\ner", "Yes", "", "B component:\n0~255, default:\n255, step: 1,\nunit: none", ""],
+      ["├─ freeze", "numb\ner", "Yes", "", "Screen freeze\nswitch:\n0: Unfreeze.\n1: Freeze.", ""],
+      ["├─ ftb", "object", "Yes", "", "Screen FTB\ncontrol", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "FTB enable:\n0: Disable, and\nreturn to normal\ndisplay.", ""]
+    ]}
+  ]
+}

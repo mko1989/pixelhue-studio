@@ -1,0 +1,18 @@
+{
+  "page": 65,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nVideo source format:\n0: None.\n├─ integ 1: Top-and-bottom.\nYes\nsourceFormat er 2: Frame sequential.\n3: Side-by-side.\n4: From input (default).\nEye priority:\n├─ integ\nYes 1: Right eye.\neyePriority er\n2: Left eye (default).\n3D switch enable:\n├─ integ\nYes 0: Disable.\nthreeDEnable er\n1: Enable.\n├─ integ\nYes Right eye starting position\nrightEyeOffset er\n├─ Enable third-party emitter:\ninteg\nthirdEmitterEn Yes 1: Disable.\ner\nable 2: Enable.\n├─\nstring Yes Emitter delay\nemitterDelay\nobjec\n├─ linkInfo Yes Link information\nt\nLink source or not:\nnumb\n├─ isLink Yes 0: Local source.\ner\n1: Link source.\nWhether the local source is\nshared:\nnumb\n├─ shared Yes 0: Not shared.\ner\n1: Shared.\nInvalid when isLink value is",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─\nsourceFormat", "integ\ner", "Yes", "", "Video source format:\n0: None.\n1: Top-and-bottom.\n2: Frame sequential.\n3: Side-by-side.\n4: From input (default).", ""],
+      ["├─\neyePriority", "integ\ner", "Yes", "", "Eye priority:\n1: Right eye.\n2: Left eye (default).", ""],
+      ["├─\nthreeDEnable", "integ\ner", "Yes", "", "3D switch enable:\n0: Disable.\n1: Enable.", ""],
+      ["├─\nrightEyeOffset", "integ\ner", "Yes", "", "Right eye starting position", ""],
+      ["├─\nthirdEmitterEn\nable", "integ\ner", "Yes", "", "Enable third-party emitter:\n1: Disable.\n2: Enable.", ""],
+      ["├─\nemitterDelay", "string", "Yes", "", "Emitter delay", ""],
+      ["├─ linkInfo", "objec\nt", "Yes", "", "Link information", ""],
+      ["├─ isLink", "numb\ner", "Yes", "", "Link source or not:\n0: Local source.\n1: Link source.", ""],
+      ["├─ shared", "numb\ner", "Yes", "", "Whether the local source is\nshared:\n0: Not shared.\n1: Shared.\nInvalid when isLink value is", ""]
+    ]}
+  ]
+}

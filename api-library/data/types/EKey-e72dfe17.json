@@ -1,0 +1,9 @@
+{
+  "id": "EKey-e72dfe17",
+  "name": "EKey",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 409,
+  "declaration": "enum EKey {\n  keyCode = 'keyCode', // 按键的物理键值\n  keyIndex = 'number', // 该按键在区域内的序号\n  keyMode = 'keyMode', // 按键的模式（类型）\n  pageIndex = 'pageIndex', //该按键所处的页码\n  keyStyles = 'keyStyles', // 按键样式，json字符串\n  isMulKey = 'isMulKey', // 是否多项操作按键：0否，1是\n  funcId = 'funcId', //自定义功能id\n  open = 'open', // 功能是否开启\n}"
+}

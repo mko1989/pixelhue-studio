@@ -1,0 +1,9 @@
+{
+  "id": "EConnState-a010161b",
+  "name": "EConnState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 166,
+  "declaration": "enum EConnState {\n  notConnected, // 0：未链接\n  connected, // 1：链接\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "EIpcDecodeType-a0fc66a5",
+  "name": "EIpcDecodeType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1023,
+  "declaration": "enum EIpcDecodeType {\n  _16x200w = 1, // 16路200W\n  _8x400w,\n  _4x800w,\n  _2x1200w,\n  mosaic,\n}"
+}

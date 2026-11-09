@@ -1,0 +1,9 @@
+{
+  "id": "NodePreferenceE-1bf96e24",
+  "name": "NodePreferenceE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1227,
+  "declaration": "enum NodePreferenceE {\n  effects = 1, //画面效果跟随 包含画质变化、黑屏、冻结、测试画面、投影融合\n}"
+}

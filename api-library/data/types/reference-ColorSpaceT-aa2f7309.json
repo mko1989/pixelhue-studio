@@ -1,0 +1,7 @@
+{
+  "id": "reference-ColorSpaceT-aa2f7309",
+  "name": "ColorSpaceT",
+  "availability": "referenced-only",
+  "references": [{"name":"ColorSpaceT","source":"src/types/device/typing.ts","line":123}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

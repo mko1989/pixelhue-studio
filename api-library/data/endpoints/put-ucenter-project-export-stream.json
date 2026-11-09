@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/project/export/stream",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","project","export","stream"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/project/export/stream","dynamic":false,"source":"src/api/project/project.ts","line":52,"client":"API_U_CENTER","symbol":"response","comment":"****导出工程文件**","parameters":["data: IProjectExport"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      isLoading: false,\n    }","configExpression":"{\n    method: 'put',\n    url: 'ucenter/project/export/stream',\n    data,\n    // responseType: 'arraybuffer',\n    timeout: 6000000,\n    headers: {\n      isLoading: false,\n    },\n  }","context":"async (\n  data: IProjectExport,\n): Promise<IResponseData<ResponseT>> => {\n  const response = await API_U_CENTER.request<IResponseData<ResponseT>>({\n    method: 'put',\n    url: 'ucenter/project/export/stream',\n    data,\n    // responseType: 'arraybuffer',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-project-export-stream",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

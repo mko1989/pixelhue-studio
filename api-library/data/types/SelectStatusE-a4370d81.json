@@ -1,0 +1,9 @@
+{
+  "id": "SelectStatusE-a4370d81",
+  "name": "SelectStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 490,
+  "declaration": "enum SelectStatusE {\n  /** 未选中 */\n  unselected,\n  /** 选中 */\n  selected,\n}"
+}

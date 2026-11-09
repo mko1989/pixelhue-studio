@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/screen/global/switch-effect",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","global","switch-effect"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/screen/global/switch-effect","dynamic":false,"source":"src/api/screen/screen.ts","line":427,"client":"API_U_CENTER","symbol":"response","comment":"*\n * 获取切换特效\n * @param projectId 工程id","parameters":["params: {\n  projectId: string;\n}"],"bodyExpression":null,"queryExpression":"params","headerExpression":"{\n      'Content-Type': 'application/json',\n    }","configExpression":"{\n    method: 'GET',\n    url: 'ucenter/screen/global/switch-effect',\n    params,\n    headers: {\n      'Content-Type': 'application/json',\n    },\n  }","context":"async (params: {\n  projectId: string;\n}): Promise<IResponseData<SwitchEffectInfo>> => {\n  const response = await API_U_CENTER.request<IResponseData<SwitchEffectInfo>>({\n    method: 'GET',\n    url: 'ucenter/screen/global/switch-effect',\n    params,\n    headers: {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-screen-global-switch-effect",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

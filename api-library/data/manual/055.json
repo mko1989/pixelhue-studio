@@ -1,0 +1,20 @@
+{
+  "page": 55,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nCursor coordinates (using\nobjec\n├─ pos Yes the top-left corner of the\nt\nvisible area as the origin)\nnumb\n├─ x Yes Pick point x-coordinate\ner\nnumb\n├─ y Yes Pick point y-coordinate\ner\nMax: 6\ninteg Hue clip, range:\n├─ hueClip Yes\ner 5~hueRamp Min: 5\nMax: 180\ninteg\n├─ hueRamp Yes Hue Ramp, range: 5~180\ner Min: 5\nMax: 100\n├─ integ Saturation clip, range:\nYes\nsaturationClip er 5~100 Min: 5\nMax: 100\n├─ integ Gain (softness threshold),\nYes\nsaturationGain er range: 5~100 Min: 5\nMax: 100\ninteg\n├─ spill Yes Spill, range: 5~100\ner Min: 5\nMax: 100\ninteg\n├─ shadow Yes Shadow, range: 5~100\ner Min: 5\nMax: 100\ninteg\n├─ highLigh Yes Highlight, range: 5~100\ner Min: 5\nEdge smooth:\n├─ integ Enumerati\nYes 0: Disable.\non: 0, 1\nedgeSmooth er\n1: Enable.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ pos", "objec\nt", "Yes", "", "Cursor coordinates (using\nthe top-left corner of the\nvisible area as the origin)", ""],
+      ["├─ x", "numb\ner", "Yes", "", "Pick point x-coordinate", ""],
+      ["├─ y", "numb\ner", "Yes", "", "Pick point y-coordinate", ""],
+      ["├─ hueClip", "integ\ner", "Yes", "", "Hue clip, range:\n5~hueRamp", "Max: 6\nMin: 5"],
+      ["├─ hueRamp", "integ\ner", "Yes", "", "Hue Ramp, range: 5~180", "Max: 180\nMin: 5"],
+      ["├─\nsaturationClip", "integ\ner", "Yes", "", "Saturation clip, range:\n5~100", "Max: 100\nMin: 5"],
+      ["├─\nsaturationGain", "integ\ner", "Yes", "", "Gain (softness threshold),\nrange: 5~100", "Max: 100\nMin: 5"],
+      ["├─ spill", "integ\ner", "Yes", "", "Spill, range: 5~100", "Max: 100\nMin: 5"],
+      ["├─ shadow", "integ\ner", "Yes", "", "Shadow, range: 5~100", "Max: 100\nMin: 5"],
+      ["├─ highLigh", "integ\ner", "Yes", "", "Highlight, range: 5~100", "Max: 100\nMin: 5"],
+      ["├─\nedgeSmooth", "integ\ner", "Yes", "", "Edge smooth:\n0: Disable.\n1: Enable.", "Enumerati\non: 0, 1"]
+    ]}
+  ]
+}

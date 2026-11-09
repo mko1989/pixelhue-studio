@@ -1,0 +1,9 @@
+{
+  "id": "LayerMuteE-ce499220",
+  "name": "LayerMuteE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 735,
+  "declaration": "enum LayerMuteE {\n  /** 未静音 */\n  off,\n  /** 静音 */\n  on,\n}"
+}

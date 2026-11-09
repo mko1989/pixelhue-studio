@@ -1,0 +1,22 @@
+{
+  "page": 73,
+  "text": " Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nAuthorization Yes token\nBody\nDefault\nName Type Required Remarks More\nValue\nItem\nobject\ntype:\nNo\n[]\nobject\nThe screen ID. Provide at\nleast one of screenId or\n├─\nnumber No screenName; if both are\nscreenId\nprovided, screenId takes\nprecedence.\n├─\nstring No The screen guid\nscreenGuid\nSelect the transition\neffect for the take action.\n├─\nnumber Yes [0: Use system default\neffectSelect\neffect, 1: Use protocol-\nspecified effect]\nSet the take direction: [0:\n├─\nnumber Yes PVW to PGM, 1: PGM to\ndirection\nPVW]\n├─ The transition effect used\nobject Yes\nswitchEffect by all screens\nThe transition duration\n├─ time number Yes\n(unit: ms)\n├─ type number Yes The transition method: [0:",
+  "tables": [
+    {"contextBefore": " Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""],
+      ["Authorization", "", "Yes", "", "token"]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "object\n[]", "No", "", "", "Item\ntype:\nobject"],
+      ["├─\nscreenId", "number", "No", "", "The screen ID. Provide at\nleast one of screenId or\nscreenName; if both are\nprovided, screenId takes\nprecedence.", ""],
+      ["├─\nscreenGuid", "string", "No", "", "The screen guid", ""],
+      ["├─\neffectSelect", "number", "Yes", "", "Select the transition\neffect for the take action.\n[0: Use system default\neffect, 1: Use protocol-\nspecified effect]", ""],
+      ["├─\ndirection", "number", "Yes", "", "Set the take direction: [0:\nPVW to PGM, 1: PGM to\nPVW]", ""],
+      ["├─\nswitchEffect", "object", "Yes", "", "The transition effect used\nby all screens", ""],
+      ["├─ time", "number", "Yes", "", "The transition duration\n(unit: ms)", ""],
+      ["├─ type", "number", "Yes", "", "The transition method: [0:", ""]
+    ]}
+  ]
+}

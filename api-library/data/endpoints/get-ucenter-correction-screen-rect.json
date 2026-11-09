@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/correction/screen/rect",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","correction","screen","rect"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/correction/screen/rect","dynamic":false,"source":"src/api/correction/index.ts","line":304,"client":"API_U_CENTER","symbol":"response","comment":"获取外接矩形","parameters":["screenId: string"],"bodyExpression":null,"queryExpression":"{ screenId }","headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'ucenter/correction/screen/rect',\n    params: { screenId },\n    timeout: 600000,\n  }","context":"async (\n  screenId: string,\n): Promise<IResponseData<RectProps>> => {\n  const response = await API_U_CENTER.request<IResponseData<RectProps>>({\n    method: 'get',\n    url: 'ucenter/correction/screen/rect',\n    params: { screenId },\n    timeout: 600000,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-correction-screen-rect",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

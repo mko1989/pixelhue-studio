@@ -1,0 +1,9 @@
+{
+  "id": "LayerSourceTabE-afd00c4e",
+  "name": "LayerSourceTabE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 582,
+  "declaration": "enum LayerSourceTabE {\n  Input = 'layer-source-tab-input',\n  Screen = 'layer-source-tab-screen',\n  VideoSource = 'layer-source-tab-video-source',\n  InternetSource = 'layer-source-tab-internet-source',\n  Gallery = 'layer-source-tab-gallery',\n  InputSource = 'editor-source-tab-input', // 输入源\n  Picture = 'layer-source-tab-picture', // 图库-图片列表\n  LogoPicture = 'layer-source-tab-logo-picture', // 图库-LOGO列表\n  OSDPicture = 'layer-source-tab-osd-picture', // 图库-OSD列表\n  TextOSD = 'layer-source-tab-text-osd', // 文字OSD\n  Bkg = 'layer-source-tab-text-bkg', // BKG\n  LiveBKG = 'layer-source-tab-live-bkg', // LiveBKG\n}"
+}

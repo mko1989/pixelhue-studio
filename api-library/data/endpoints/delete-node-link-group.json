@@ -1,0 +1,23 @@
+{
+  "method": "DELETE",
+  "path": "/unico/v1/node/link/group",
+  "group": "node",
+  "summary": "response",
+  "tags": ["node","link","group"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"DELETE","path":"node/link/group","dynamic":false,"source":"src/api/link/index.ts","line":71,"client":"API","symbol":"response","comment":"*\n * 从指定Link组中移除设备","parameters":["linkId: string","options?: ExtraReqParamsT"],"bodyExpression":"{ linkId }","queryExpression":null,"headerExpression":"{\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    }","configExpression":"{\n    method: 'delete',\n    url: 'node/link/group',\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    },\n    data: { linkId },\n  }","context":"async (\n  linkId: string,\n  options?: ExtraReqParamsT,\n): Promise<IResponseData<void>> => {\n  const response = await API.request<IResponseData<void>>({\n    method: 'delete',\n    url: 'node/link/group',\n    headers: {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "delete-node-link-group",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

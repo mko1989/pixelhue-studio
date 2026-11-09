@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICueReq-fa9b4a90",
+  "name": "ICueReq",
+  "availability": "referenced-only",
+  "references": [{"name":"ICueReq","source":"src/api/media/index.ts","line":44}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

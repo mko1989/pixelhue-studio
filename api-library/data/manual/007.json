@@ -1,0 +1,28 @@
+{
+  "page": 7,
+  "text": "Device\nDescript\n7 6 5 4 3 2 1 0 Examp\nion\nle\nAll-in- K/V/V\n√ √ √ √\nOne C/VX\nDistribut\ned\n√ encoder\nand\ndecoder\n Request Parameters\nHeaders\nName Value Required Example Remarks\nAuthorization Yes token\nQuery\nName Required Example Remarks\nnodeId Yes Node ID\n Return Data\nRequir Defaul\nName Type Remarks More\ned t Value\nintege\nmock: 200\ncode Yes 200 Error code\nr\nok\nmock: ok\nmessage string Yes\nError description\ndata object Yes Business data\nintege\n├─ nodeId Yes Node ID mock: 0\nr\nDevice capability\n├─ configInfo object Yes configuration file\ninformation\n├─ md5 string Yes md5 value of the",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["7", "6", "5", "4", "3", "2", "1", "0", "Descript\nion", "Device\nExamp\nle"],
+      ["", "√", "", "", "", "√", "√", "√", "All-in-\nOne", "K/V/V\nC/VX"],
+      ["", "", "√", "", "", "", "", "", "Distribut\ned\nencoder\nand\ndecoder", ""]
+    ]},
+    {"contextBefore": " Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Authorization", "", "Yes", "", "token"]
+    ]},
+    {"contextBefore": "Query", "rows": [
+      ["Name", "Required", "Example", "Remarks"],
+      ["nodeId", "Yes", "", "Node ID"]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["code", "intege\nr", "Yes", "200", "Error code", "mock: 200"],
+      ["message", "string", "Yes", "", "ok\nError description", "mock: ok"],
+      ["data", "object", "Yes", "", "Business data", ""],
+      ["├─ nodeId", "intege\nr", "Yes", "", "Node ID", "mock: 0"],
+      ["├─ configInfo", "object", "Yes", "", "Device capability\nconfiguration file\ninformation", ""],
+      ["├─ md5", "string", "Yes", "", "md5 value of the", ""]
+    ]}
+  ]
+}

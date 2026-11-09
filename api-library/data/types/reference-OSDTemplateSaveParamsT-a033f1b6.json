@@ -1,0 +1,7 @@
+{
+  "id": "reference-OSDTemplateSaveParamsT-a033f1b6",
+  "name": "OSDTemplateSaveParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"OSDTemplateSaveParamsT","source":"src/api/osd/template/index.ts","line":27}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/super-update",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","super-update"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/ucenter/screen/super-update","dynamic":false,"source":"src/api/screen/screen.ts","line":285,"client":"API","symbol":"response","comment":"*\n * 修改超级屏幕 屏幕信息\n * @param params\n * @returns","parameters":["params: {\n  guid: string;\n  list: {\n    operationType: number;\n    normalScreenGuidList: string[];\n  }[];\n}"],"bodyExpression":"params","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'POST',\n    url: '/ucenter/screen/super-update',\n    data: params,\n  }","context":"async (params: {\n  guid: string;\n  list: {\n    operationType: number;\n    normalScreenGuidList: string[];\n  }[];\n}): Promise<IResponseData<string>> => {\n  const response = await API.request<IResponseData<string>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-super-update",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "SDI_LOOP_CARD_MODEL_ID-74553464",
+  "name": "SDI_LOOP_CARD_MODEL_ID",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 602,
+  "declaration": "enum SDI_LOOP_CARD_MODEL_ID {\n  V = 15729026, // SDI-LOOP卡 V6、V8、V10、V12、V16、V24、V32、V40、VX400Pro、VX600Pro、VX1000Pro、VC6Pro、VC10Pro、VC16Pro、VC24Pro\n  VX2000Pro_HC20Pro = 15729040, // SDI-LOOP卡 VX2000Pro、HC20Pro\n  K = 15729024, // 3G-SDI输入无LOOP K系列\n}"
+}

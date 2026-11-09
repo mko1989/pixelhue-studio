@@ -1,0 +1,9 @@
+{
+  "id": "EColorSpacePreset-b0116630",
+  "name": "EColorSpacePreset",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 222,
+  "declaration": "enum EColorSpacePreset {\n  RGB_4_4_4,\n  YCbCr_4_2_2,\n  YCbCr_4_4_4,\n  YCbCr_4_2_0,\n  AUTO = 255,\n}"
+}

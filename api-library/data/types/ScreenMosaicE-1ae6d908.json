@@ -1,0 +1,9 @@
+{
+  "id": "ScreenMosaicE-1ae6d908",
+  "name": "ScreenMosaicE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 44,
+  "declaration": "enum ScreenMosaicE {\n  /** 标准矩形 */\n  regular = 2,\n  /** 标准异性 */\n  irregular = 4,\n  /** 任意异性 */\n  arbitrary = 8,\n}"
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/freeze",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","freeze"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/screen/freeze","dynamic":false,"source":"src/api/screen/screen.ts","line":1052,"client":"API_U_CENTER","symbol":"response","comment":"*\n *  0x06-设置选中屏幕冻结 - 系统全局屏幕冻结","parameters":["data: TFreezeData"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'POST',\n    url: 'ucenter/screen/freeze',\n    data,\n    timeout: 15000,\n  }","context":"async (data: TFreezeData): Promise<IResponseData<ResponseT>> => {\n  const response = await API_U_CENTER.request<IResponseData<ResponseT>>({\n    method: 'POST',\n    url: 'ucenter/screen/freeze',\n    data,\n    timeout: 15000,\n  });\n  return response.data;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-freeze",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

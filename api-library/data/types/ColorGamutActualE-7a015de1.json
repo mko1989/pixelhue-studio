@@ -1,0 +1,9 @@
+{
+  "id": "ColorGamutActualE-7a015de1",
+  "name": "ColorGamutActualE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 978,
+  "declaration": "enum ColorGamutActualE {\n  'Rec.601' = 0,\n  'Rec.709',\n  'DCI-P3',\n  'Rec.2020',\n  NTSC,\n  aRGB,\n}"
+}

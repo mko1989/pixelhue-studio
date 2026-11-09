@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/monitor/cabinet-runtime-info",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","monitor","cabinet-runtime-info"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/monitor/cabinet-runtime-info","dynamic":false,"source":"src/api/monitor/index.ts","line":113,"client":"API","symbol":"response","comment":"*\n * 当前屏幕下所有箱体的异常信息\n * TODO 箱体压缩逻辑","parameters":["data: {\n  screenGuids: string[];\n}"],"bodyExpression":null,"queryExpression":"{\n      screenGuids: data.screenGuids,\n    }","headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'ucenter/monitor/cabinet-runtime-info',\n    params: {\n      screenGuids: data.screenGuids,\n    },\n  }","context":"async (data: {\n  screenGuids: string[];\n}): Promise<IResponseData<IMonitorCabinetInfo[]>> => {\n  const response = await API.request<IResponseData<IMonitorCabinetInfo[]>>({\n    method: 'get',\n    url: 'ucenter/monitor/cabinet-runtime-info',\n    params: {\n      screenGuids: data.screenGuids,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-monitor-cabinet-runtime-info",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

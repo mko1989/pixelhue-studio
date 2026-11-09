@@ -1,0 +1,7 @@
+{
+  "id": "reference-ILayersTmpInfo-f2a83f72",
+  "name": "ILayersTmpInfo",
+  "availability": "referenced-only",
+  "references": [{"name":"ILayersTmpInfo","source":"src/api/production/burn-in-test.ts","line":354},{"name":"ILayersTmpInfo","source":"src/api/production/burn-in-test.ts","line":356}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

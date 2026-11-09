@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/interface/mosaic-source",
+  "group": "interface",
+  "summary": "response",
+  "tags": ["interface","mosaic-source"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"/interface/mosaic-source","dynamic":false,"source":"src/api/source/index.ts","line":152,"client":"API","symbol":"response","comment":"","parameters":["options?: ExtraReqParamsT","params?: getInterfaceMosaicSourceParams"],"bodyExpression":null,"queryExpression":"params","headerExpression":"{\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    }","configExpression":"{\n    method: 'get',\n    url: '/interface/mosaic-source',\n    params,\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    },\n  }","context":"async (\n  options?: ExtraReqParamsT,\n  params?: getInterfaceMosaicSourceParams,\n) => {\n  const response = await API.request<IResponseData<getInterfaceMosaicSourceRes>>({\n    method: 'get',\n    url: '/interface/mosaic-source',\n    params,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-interface-mosaic-source",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

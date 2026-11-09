@@ -1,0 +1,14 @@
+{
+  "page": 96,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n1: Enable.\nFTB hold time:\n0: Infinite.\nnumb Other: Hold time\n├─ time Yes\ner (unit: 0.1s. Hold\ntime = actual\nvalue * 10).\n├─ testPattern object Yes Test pattern\nEnable:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\nTest pattern\ntype:\n0x0000: Black.\n0x0001: Red.\n0x0002: Green.\n0x0003: Blue.\n0x0004: White.\n0x0005: Vertical\nstripes.\nnumb 0x0006:\n├─ type Yes\ner Horizontal\nstripes.\n0x0007:\nCheckerboard.\n0x0100:\nHorizontal red\ngradient.\n0x0101:\nHorizontal green\ngradient.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "1: Enable.", ""],
+      ["├─ time", "numb\ner", "Yes", "", "FTB hold time:\n0: Infinite.\nOther: Hold time\n(unit: 0.1s. Hold\ntime = actual\nvalue * 10).", ""],
+      ["├─ testPattern", "object", "Yes", "", "Test pattern", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Enable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ type", "numb\ner", "Yes", "", "Test pattern\ntype:\n0x0000: Black.\n0x0001: Red.\n0x0002: Green.\n0x0003: Blue.\n0x0004: White.\n0x0005: Vertical\nstripes.\n0x0006:\nHorizontal\nstripes.\n0x0007:\nCheckerboard.\n0x0100:\nHorizontal red\ngradient.\n0x0101:\nHorizontal green\ngradient.", ""]
+    ]}
+  ]
+}

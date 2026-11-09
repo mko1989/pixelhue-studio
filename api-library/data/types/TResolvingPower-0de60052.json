@@ -1,0 +1,9 @@
+{
+  "id": "TResolvingPower-0de60052",
+  "name": "TResolvingPower",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 663,
+  "declaration": "type TResolvingPower = {\n  min: 0;\n  max: 0;\n  value: 0;\n  step: 1;\n};"
+}

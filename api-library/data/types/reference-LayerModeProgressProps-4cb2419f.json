@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerModeProgressProps-4cb2419f",
+  "name": "LayerModeProgressProps",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerModeProgressProps","source":"src/api/device/deviceList.ts","line":974}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

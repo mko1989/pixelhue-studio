@@ -1,0 +1,9 @@
+{
+  "id": "customResolutionE-bbcace5c",
+  "name": "customResolutionE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 333,
+  "declaration": "enum customResolutionE {\n  /** 否 */\n  no,\n  /** 是 */\n  yes,\n}"
+}

@@ -1,0 +1,14 @@
+{
+  "page": 18,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nMin: 1\nElements\nall unique:\nList of cards on\nobject true\n├─ subcards Yes the node (all card\n[]\nslots) Max: 1\nItem type:\nobject\nnumb The card’s slot\n├─ slotId Yes 1 mock: 1\ner No.\nmock:\nnumb The card's\n├─ modeId Yes 1\n30977\ner modeId\nnumb The card’s\n├─ boardId Yes 1 mock: 1\ner hardware version\nThe card status:\n0: The card is\noffline, meaning\nthe card is\nremoved. 1: The\ncard is online (It\nMax: 1\nis the normal\nstatus and Min: 0\nnumb default value.\n├─ online Yes 1 Enumerati\ner Only cards in this\non: 1\nstatus can be\nupdated). 2: The mock: 1\ncard is inserted,\nbut its link with\nthe control card\nis abnormal. 3:\nThe card type is\nnot supported by",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["├─ subcards", "object\n[]", "Yes", "", "List of cards on\nthe node (all card\nslots)", "Min: 1\nElements\nall unique:\ntrue\nMax: 1\nItem type:\nobject"],
+      ["├─ slotId", "numb\ner", "Yes", "1", "The card’s slot\nNo.", "mock: 1"],
+      ["├─ modeId", "numb\ner", "Yes", "1", "The card's\nmodeId", "mock:\n30977"],
+      ["├─ boardId", "numb\ner", "Yes", "1", "The card’s\nhardware version", "mock: 1"],
+      ["├─ online", "numb\ner", "Yes", "1", "The card status:\n0: The card is\noffline, meaning\nthe card is\nremoved. 1: The\ncard is online (It\nis the normal\nstatus and\ndefault value.\nOnly cards in this\nstatus can be\nupdated). 2: The\ncard is inserted,\nbut its link with\nthe control card\nis abnormal. 3:\nThe card type is\nnot supported by", "Max: 1\nMin: 0\nEnumerati\non: 1\nmock: 1"]
+    ]}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-ISourceBackup-e5692543",
+  "name": "ISourceBackup",
+  "availability": "referenced-only",
+  "references": [{"name":"ISourceBackup","source":"src/api/device/deviceInfo.ts","line":572}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

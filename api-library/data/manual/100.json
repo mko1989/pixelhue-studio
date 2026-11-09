@@ -1,0 +1,19 @@
+{
+  "page": 100,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nCurve\nadjustment\nnumb\n├─ toneMapping Yes switch:\ner\n0: Disable.\n1: Enable.\nPeak source\n├─ maxcll object Yes\nbrightness\nCustomization\nboole enable:\n├─ enable Yes\nan 0: Disable.\n1: Enable.\nCustom peak\nnumb source\n├─ presetMaxcll Yes\ner brightness,\nrange: 0~10000\nHLG conversion\n├─ hlg object Yes\nsettings\nPeak brightness,\nnumb\n├─ peakLuminance Yes range:\ner\n100~10000\nnumb Ambient\n├─ envLuminance Yes\ner brightness\n├─ hdcp object Yes HDCP settings\nEnable status:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\nPreset type:\nnumb\n├─ presetType Yes 0: Off.\ner\n1: HDCP 1.4.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ toneMapping", "numb\ner", "Yes", "", "Curve\nadjustment\nswitch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ maxcll", "object", "Yes", "", "Peak source\nbrightness", ""],
+      ["├─ enable", "boole\nan", "Yes", "", "Customization\nenable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ presetMaxcll", "numb\ner", "Yes", "", "Custom peak\nsource\nbrightness,\nrange: 0~10000", ""],
+      ["├─ hlg", "object", "Yes", "", "HLG conversion\nsettings", ""],
+      ["├─ peakLuminance", "numb\ner", "Yes", "", "Peak brightness,\nrange:\n100~10000", ""],
+      ["├─ envLuminance", "numb\ner", "Yes", "", "Ambient\nbrightness", ""],
+      ["├─ hdcp", "object", "Yes", "", "HDCP settings", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Enable status:\n0: Disable.\n1: Enable.", ""],
+      ["├─ presetType", "numb\ner", "Yes", "", "Preset type:\n0: Off.\n1: HDCP 1.4.", ""]
+    ]}
+  ]
+}

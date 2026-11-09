@@ -1,0 +1,24 @@
+{
+  "page": 242,
+  "text": "Default\nName Type Required Remarks More\nValue\npictureObj\nSequence number\n├─ id number Yes\nunder this type\n├─ order number Yes Order under this type\n// 0: Temporary type.\n1: BKG.\n2: LOGO.\n├─ type number Yes\n3: OSD.\n4: Clock.\n5: Internal source.\n├─ general object Yes\n├─ name string Yes File name\n├─ width number Yes Image width\n├─ height number Yes Image height\n├─ size number Yes Image size, unit: KB\nItem\nobject\n├─ path Yes type:\n[]\nobject\n0: Thumbnail.\n├─ type number Yes 1: Original image\n(bmp).\nURL path of the\n├─ url string Yes\nimage\n├─ Relative path of the\nstring Yes\nrelativePath image (used by LCD)\n├─ position number Yes BKG saved position\nFloat type, capacity\n├─\nnumber Yes used by the gallery\nusedCapacity\n(MB)",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["pictureObj", "", "", "", "", ""],
+      ["├─ id", "number", "Yes", "", "Sequence number\nunder this type", ""],
+      ["├─ order", "number", "Yes", "", "Order under this type", ""],
+      ["├─ type", "number", "Yes", "", "// 0: Temporary type.\n1: BKG.\n2: LOGO.\n3: OSD.\n4: Clock.\n5: Internal source.", ""],
+      ["├─ general", "object", "Yes", "", "", ""],
+      ["├─ name", "string", "Yes", "", "File name", ""],
+      ["├─ width", "number", "Yes", "", "Image width", ""],
+      ["├─ height", "number", "Yes", "", "Image height", ""],
+      ["├─ size", "number", "Yes", "", "Image size, unit: KB", ""],
+      ["├─ path", "object\n[]", "Yes", "", "", "Item\ntype:\nobject"],
+      ["├─ type", "number", "Yes", "", "0: Thumbnail.\n1: Original image\n(bmp).", ""],
+      ["├─ url", "string", "Yes", "", "URL path of the\nimage", ""],
+      ["├─\nrelativePath", "string", "Yes", "", "Relative path of the\nimage (used by LCD)", ""],
+      ["├─ position", "number", "Yes", "", "BKG saved position", ""],
+      ["├─\nusedCapacity", "number", "Yes", "", "Float type, capacity\nused by the gallery\n(MB)", ""]
+    ]}
+  ]
+}

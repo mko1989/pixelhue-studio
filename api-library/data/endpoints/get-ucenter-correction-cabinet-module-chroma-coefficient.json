@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/correction/cabinet/module/chroma-coefficient",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","correction","cabinet","module","chroma-coefficient"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/correction/cabinet/module/chroma-coefficient","dynamic":false,"source":"src/api/correction/index.ts","line":107,"client":"API","symbol":"response","comment":"****获取灯点系数数据***","parameters":["moduleId: string"],"bodyExpression":null,"queryExpression":"{ moduleId }","headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'ucenter/correction/cabinet/module/chroma-coefficient',\n    params: { moduleId },\n    timeout: 60000,\n  }","context":"async (\n  moduleId: string,\n): Promise<IResponseData<ChromaCoefficientI>> => {\n  const response = await API.request<IResponseData<ChromaCoefficientI>>({\n    method: 'get',\n    url: 'ucenter/correction/cabinet/module/chroma-coefficient',\n    params: { moduleId },\n    timeout: 60000,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-correction-cabinet-module-chroma-coefficient",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

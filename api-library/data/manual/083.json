@@ -1,0 +1,16 @@
+{
+  "page": 83,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n3: Right edge.\nConnector\nfeathering\ngamma value,\nwith gamma\nnumb multiplied by\n├─ gamma Yes\ner 100. For\nexample, a\ngamma of 2.2 is\nrepresented as\n220.\nnumb Connector\n├─ width Yes\ner feathering width\nIndex of the\nnumb\n├─ areaIndex Yes area it belongs\ner\nto\nConnector\nItem type:\nobject\n├─ area Yes feathering area\nobject\n[]\ninformation\nArea starting x-\ncoordinate (with\nthe top-left\nnumb\n├─ x Yes corner as the\ner\nreference point\nwithin the\nconnector)\nArea starting y-\nnumb coordinate (with\n├─ y Yes\ner the top-left\ncorner as the",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "3: Right edge.", ""],
+      ["├─ gamma", "numb\ner", "Yes", "", "Connector\nfeathering\ngamma value,\nwith gamma\nmultiplied by\n100. For\nexample, a\ngamma of 2.2 is\nrepresented as\n220.", ""],
+      ["├─ width", "numb\ner", "Yes", "", "Connector\nfeathering width", ""],
+      ["├─ areaIndex", "numb\ner", "Yes", "", "Index of the\narea it belongs\nto", ""],
+      ["├─ area", "object\n[]", "Yes", "", "Connector\nfeathering area\ninformation", "Item type:\nobject"],
+      ["├─ x", "numb\ner", "Yes", "", "Area starting x-\ncoordinate (with\nthe top-left\ncorner as the\nreference point\nwithin the\nconnector)", ""],
+      ["├─ y", "numb\ner", "Yes", "", "Area starting y-\ncoordinate (with\nthe top-left\ncorner as the", ""]
+    ]}
+  ]
+}

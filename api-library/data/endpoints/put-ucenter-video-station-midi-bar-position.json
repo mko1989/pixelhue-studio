@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/midi/bar-position",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","midi","bar-position"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/midi/bar-position","dynamic":false,"source":"src/api/controls/binding.ts","line":22,"client":"API","symbol":"response","comment":"*\n * 把软件滑杆的值，实时推送给ucenter\n * @param data\n * @returns","parameters":["data: IBindValue[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: 'ucenter/video-station/midi/bar-position',\n    data,\n    timeout: 5000, // todo 设置超时时间为5s\n  }","context":"async (data: IBindValue[]): Promise<IResponseData<IBindValue>> => {\n  const response = await API.request<IResponseData<IBindValue>>({\n    method: 'put',\n    url: 'ucenter/video-station/midi/bar-position',\n    data,\n    timeout: 5000, // todo 设置超时时间为5s\n  });\n","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-midi-bar-position",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

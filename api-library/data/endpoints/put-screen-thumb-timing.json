@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/screen/thumb-timing",
+  "group": "screen",
+  "summary": "response",
+  "tags": ["screen","thumb-timing"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"screen/thumb-timing","dynamic":false,"source":"src/api/screen/screen.ts","line":479,"client":"API","symbol":"response","comment":"0X0C-设置屏幕参考timing（缩略）","parameters":["data: SetScreenTimingReqT[]","guid: string"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      Guid: guid,\n      ...getExtraReqIpParamsByGuid(guid),\n    }","configExpression":"{\n    method: 'put',\n    url: 'screen/thumb-timing',\n    data,\n    timeout: SCREEN_TIMING_TIMEOUT,\n    headers: {\n      Guid: guid,\n      ...getExtraReqIpParamsByGuid(guid),\n    },\n  }","context":"async (\n  data: SetScreenTimingReqT[],\n  guid: string,\n): Promise<IResponseData<IScreenTimingRsp[]>> => {\n  const response = await API.request<IResponseData<IScreenTimingRsp[]>>({\n    method: 'put',\n    url: 'screen/thumb-timing',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-screen-thumb-timing",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

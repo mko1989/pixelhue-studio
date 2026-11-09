@@ -1,0 +1,7 @@
+{
+  "id": "reference-IQueryObject-ae74d636",
+  "name": "IQueryObject",
+  "availability": "referenced-only",
+  "references": [{"name":"IQueryObject","source":"src/api/common/index.ts","line":39},{"name":"IQueryObject","source":"src/api/screen/screen.ts","line":132},{"name":"IQueryObject","source":"src/api/picture/picture.ts","line":306}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

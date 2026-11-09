@@ -1,0 +1,7 @@
+{
+  "id": "reference-DeviceVersionT-a9522672",
+  "name": "DeviceVersionT",
+  "availability": "referenced-only",
+  "references": [{"name":"DeviceVersionT","source":"src/api/device/deviceList.ts","line":603},{"name":"DeviceVersionT","source":"src/api/device/deviceList.ts","line":604}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

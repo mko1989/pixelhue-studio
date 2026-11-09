@@ -1,0 +1,7 @@
+{
+  "id": "reference-IBindAttr-a7d7013c",
+  "name": "IBindAttr",
+  "availability": "referenced-only",
+  "references": [{"name":"IBindAttr","source":"src/api/controls/binding.ts","line":4}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

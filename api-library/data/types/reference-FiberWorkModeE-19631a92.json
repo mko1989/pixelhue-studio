@@ -1,0 +1,7 @@
+{
+  "id": "reference-FiberWorkModeE-19631a92",
+  "name": "FiberWorkModeE",
+  "availability": "referenced-only",
+  "references": [{"name":"FiberWorkModeE","source":"src/api/device/deviceInfo.ts","line":864}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

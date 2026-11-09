@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/project/export",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","project","export"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"/ucenter/project/export","dynamic":false,"source":"src/api/project/project.ts","line":16,"client":"API","symbol":"response","comment":"*\n * 工程导出\n * @param data","parameters":["data?: IProjectExport"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: '/ucenter/project/export',\n    data: data,\n    timeout: 600000,\n  }","context":"async (data?: IProjectExport): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'put',\n    url: '/ucenter/project/export',\n    data: data,\n    timeout: 600000,\n  });\n  return response.data;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-project-export",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

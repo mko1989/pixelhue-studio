@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/screen/hdr",
+  "group": "screen",
+  "summary": "res",
+  "tags": ["screen","hdr"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"screen/hdr","dynamic":false,"source":"src/api/screen/screen.ts","line":1278,"client":"API","symbol":"res","comment":"设置屏幕hdr","parameters":["data: IScreenHDR[]","guid: string","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq ?? 0,\n      guid,\n      ...getExtraReqIpParamsByGuid(guid),\n    }","configExpression":"{\n    method: 'PUT',\n    url: 'screen/hdr',\n    data,\n    headers: {\n      seq: seq ?? 0,\n      guid,\n      ...getExtraReqIpParamsByGuid(guid),\n    },\n    timeout: 8000,\n  }","context":"async (\n  data: IScreenHDR[],\n  guid: string,\n  seq?: number,\n): Promise<IResponseData<string>> => {\n  const res = await API.request<IResponseData<string>>({\n    method: 'PUT',\n    url: 'screen/hdr',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-screen-hdr",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "NetworkTypeE-aa6a8e8a",
+  "name": "NetworkTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 822,
+  "declaration": "enum NetworkTypeE {\n  noInternet = 0, //没有网络\n  network = 1, //有线网络\n  wifi = 2, //wifi\n  _2G = 3, //2G\n  _3G = 4, //3G\n  _4G = 5, //4G\n}"
+}

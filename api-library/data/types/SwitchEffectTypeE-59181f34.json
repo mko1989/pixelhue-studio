@@ -1,0 +1,9 @@
+{
+  "id": "SwitchEffectTypeE-59181f34",
+  "name": "SwitchEffectTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 199,
+  "declaration": "enum SwitchEffectTypeE {\n  CUT,\n  FADE,\n}"
+}

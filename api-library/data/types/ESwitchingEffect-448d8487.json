@@ -1,0 +1,9 @@
+{
+  "id": "ESwitchingEffect-448d8487",
+  "name": "ESwitchingEffect",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/device-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 85,
+  "declaration": "enum ESwitchingEffect {\n  /** 直切 */\n  CUT,\n  /** 淡入淡出 */\n  FADE,\n  /** 左移退出进入 */\n  RIGHT,\n}"
+}

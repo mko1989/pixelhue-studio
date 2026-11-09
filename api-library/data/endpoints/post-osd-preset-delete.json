@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/osd/preset/delete",
+  "group": "osd",
+  "summary": "response",
+  "tags": ["osd","preset","delete"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"osd/preset/delete","dynamic":false,"source":"src/api/osd/template/index.ts","line":51,"client":"API","symbol":"response","comment":"*\n *\n * @description\n * OSD预设模板 namespace\n*\n   * delete OSD template","parameters":["data: OSDTemplateDeleteParamsT[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n      method: 'POST',\n      url: 'osd/preset/delete',\n      data,\n    }","context":"async (\n    data: OSDTemplateDeleteParamsT[],\n  ): Promise<IResponseData<null>> => {\n    const response = await API.request<IResponseData<null>>({\n      method: 'POST',\n      url: 'osd/preset/delete',\n      data,\n    });","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-osd-preset-delete",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

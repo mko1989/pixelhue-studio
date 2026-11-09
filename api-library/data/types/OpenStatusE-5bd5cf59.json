@@ -1,0 +1,9 @@
+{
+  "id": "OpenStatusE-5bd5cf59",
+  "name": "OpenStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/device-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 142,
+  "declaration": "enum OpenStatusE {\n  open = 1,\n  close = 0,\n}"
+}

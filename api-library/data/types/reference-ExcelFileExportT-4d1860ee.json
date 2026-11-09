@@ -1,0 +1,7 @@
+{
+  "id": "reference-ExcelFileExportT-4d1860ee",
+  "name": "ExcelFileExportT",
+  "availability": "referenced-only",
+  "references": [{"name":"ExcelFileExportT","source":"src/api/ipc/index.ts","line":231}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

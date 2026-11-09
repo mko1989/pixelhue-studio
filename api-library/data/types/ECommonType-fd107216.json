@@ -1,0 +1,9 @@
+{
+  "id": "ECommonType-fd107216",
+  "name": "ECommonType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 439,
+  "declaration": "enum ECommonType {\n  INIT = 'init',\n  BIZ_DATA_MSG = 'biz-data-msg',\n  HttpLogger = 'http-logger',\n  AppLogger = 'app-loogger',\n}"
+}

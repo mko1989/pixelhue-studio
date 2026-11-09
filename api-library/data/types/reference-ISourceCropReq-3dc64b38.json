@@ -1,0 +1,7 @@
+{
+  "id": "reference-ISourceCropReq-3dc64b38",
+  "name": "ISourceCropReq",
+  "availability": "referenced-only",
+  "references": [{"name":"ISourceCropReq","source":"src/api/device/device-source.ts","line":176},{"name":"ISourceCropReq","source":"src/api/device/device-source.ts","line":194}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

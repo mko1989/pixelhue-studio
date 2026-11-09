@@ -1,0 +1,7 @@
+{
+  "id": "reference-IKeyReq-46c0a6f2",
+  "name": "IKeyReq",
+  "availability": "referenced-only",
+  "references": [{"name":"IKeyReq","source":"src/api/media/index.ts","line":97}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

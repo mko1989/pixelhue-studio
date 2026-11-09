@@ -1,0 +1,9 @@
+{
+  "id": "EOperationApp-e55b35d0",
+  "name": "EOperationApp",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 58,
+  "declaration": "enum EOperationApp {\n  MAX = 'max',\n  MIN = 'min',\n  CLOSE = 'close',\n}"
+}

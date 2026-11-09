@@ -1,0 +1,9 @@
+{
+  "id": "EUsbId-636bfc13",
+  "name": "EUsbId",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 224,
+  "declaration": "enum EUsbId {\n  usb_1 = 1, // 1：USB 1\n  usb_2, // 2：USB 2\n  usb_3, // 3：USB 3\n  usb_4, // 4：USB 4\n  usb_5, // 5：USB 5\n  usb_6, // 6：USB 6\n  usb_7, // 7：方口USB 1\n  usb_8, // 8：方口USB 2\n}"
+}

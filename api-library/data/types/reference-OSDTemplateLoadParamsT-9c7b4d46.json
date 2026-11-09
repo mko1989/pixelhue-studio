@@ -1,0 +1,7 @@
+{
+  "id": "reference-OSDTemplateLoadParamsT-9c7b4d46",
+  "name": "OSDTemplateLoadParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"OSDTemplateLoadParamsT","source":"src/api/osd/template/index.ts","line":86}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

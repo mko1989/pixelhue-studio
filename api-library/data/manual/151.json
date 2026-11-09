@@ -1,0 +1,22 @@
+{
+  "page": 151,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nmock:\nintege\n├─ y Yes Pick point y-coordinate @integ\nr\ner\n├─ color object Yes Picked color\nnumb\n├─ R Yes Red component\ner\nnumb\n├─ G Yes Green component\ner\nnumb\n├─ B Yes Blue component\ner\nDSK type:\nintege 0: Luma key.\n├─ type Yes\nr 1: Chroma key.\n2: Smart key.\n├─ brightness object Yes Luma key\nintege Clip (brightness\n├─ threshold Yes\nr threshold), range: 0~100\nintege Brightness gain, range:\n├─ gain Yes\nr 0~100\nWhether to enable invert\nintege colors for the key source:\n├─ keyInverse Yes\nr 0: Disable.\n1: Enable.\n├─ Foreground color\nobject Yes\nforegroundColor configuration\nForeground color enable:\nintege\n├─ enable Yes 0: Disable.\nr\n1: Enable.\n├─ R intege Yes Red component",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ y", "intege\nr", "Yes", "", "Pick point y-coordinate", "mock:\n@integ\ner"],
+      ["├─ color", "object", "Yes", "", "Picked color", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Red component", ""],
+      ["├─ G", "numb\ner", "Yes", "", "Green component", ""],
+      ["├─ B", "numb\ner", "Yes", "", "Blue component", ""],
+      ["├─ type", "intege\nr", "Yes", "", "DSK type:\n0: Luma key.\n1: Chroma key.\n2: Smart key.", ""],
+      ["├─ brightness", "object", "Yes", "", "Luma key", ""],
+      ["├─ threshold", "intege\nr", "Yes", "", "Clip (brightness\nthreshold), range: 0~100", ""],
+      ["├─ gain", "intege\nr", "Yes", "", "Brightness gain, range:\n0~100", ""],
+      ["├─ keyInverse", "intege\nr", "Yes", "", "Whether to enable invert\ncolors for the key source:\n0: Disable.\n1: Enable.", ""],
+      ["├─\nforegroundColor", "object", "Yes", "", "Foreground color\nconfiguration", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "Foreground color enable:\n0: Disable.\n1: Enable.", ""],
+      ["├─ R", "intege", "Yes", "", "Red component", ""]
+    ]}
+  ]
+}

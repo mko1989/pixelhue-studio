@@ -1,0 +1,9 @@
+{
+  "id": "ELayerMaskAttr-897017cd",
+  "name": "ELayerMaskAttr",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1191,
+  "declaration": "enum ELayerMaskAttr {\n  maskTop = 'top', // top\n  maskBottom = 'buttom', // bottom\n  maskLeft = 'left', // left\n  maskRight = 'right', // right\n  maskEnable = 'enable', // enable\n}"
+}

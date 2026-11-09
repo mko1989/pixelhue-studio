@@ -1,0 +1,9 @@
+{
+  "id": "ELayerBorderAttr-e108297a",
+  "name": "ELayerBorderAttr",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1199,
+  "declaration": "enum ELayerBorderAttr {\n  hWidth = 'hWidth', // hWidth\n  vWidth = 'vWidth', // vWidth\n}"
+}

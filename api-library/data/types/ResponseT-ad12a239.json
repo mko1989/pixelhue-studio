@@ -1,0 +1,9 @@
+{
+  "id": "ResponseT-ad12a239",
+  "name": "ResponseT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 19,
+  "declaration": "type ResponseT = {\n  code: number;\n  message: string;\n};"
+}

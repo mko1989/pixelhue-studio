@@ -1,0 +1,7 @@
+{
+  "id": "reference-SuperCutBodyT-f0efeedd",
+  "name": "SuperCutBodyT",
+  "availability": "referenced-only",
+  "references": [{"name":"SuperCutBodyT","source":"src/api/screen/screen.ts","line":790}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

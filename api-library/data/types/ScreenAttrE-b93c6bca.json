@@ -1,0 +1,9 @@
+{
+  "id": "ScreenAttrE-b93c6bca",
+  "name": "ScreenAttrE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 364,
+  "declaration": "enum ScreenAttrE {\n  topology = 'attribute-topology', // 拓扑\n  advancedSplicing = 'attribute-advanced-splicing', // 高级拼接\n}"
+}

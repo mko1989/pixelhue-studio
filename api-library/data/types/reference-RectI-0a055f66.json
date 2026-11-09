@@ -1,0 +1,7 @@
+{
+  "id": "reference-RectI-0a055f66",
+  "name": "RectI",
+  "availability": "referenced-only",
+  "references": [{"name":"RectI","source":"src/api/device/deviceInfo.ts","line":1089},{"name":"RectI","source":"src/api/source/index.ts","line":176},{"name":"RectI","source":"src/api/source/index.ts","line":177}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

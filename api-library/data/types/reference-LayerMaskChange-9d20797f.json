@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerMaskChange-9d20797f",
+  "name": "LayerMaskChange",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerMaskChange","source":"src/api/layer/layer.ts","line":569}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

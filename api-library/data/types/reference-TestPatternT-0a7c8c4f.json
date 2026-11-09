@@ -1,0 +1,7 @@
+{
+  "id": "reference-TestPatternT-0a7c8c4f",
+  "name": "TestPatternT",
+  "availability": "referenced-only",
+  "references": [{"name":"TestPatternT","source":"src/types/device/typing.ts","line":138}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

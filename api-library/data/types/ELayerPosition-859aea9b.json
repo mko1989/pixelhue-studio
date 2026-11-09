@@ -1,0 +1,9 @@
+{
+  "id": "ELayerPosition-859aea9b",
+  "name": "ELayerPosition",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1119,
+  "declaration": "enum ELayerPosition {\n  positionX = 'xRatio', // x\n  positionY = 'yRatio', // y\n  positionWidth = 'widthRatio', // 宽度\n  positionHeight = 'heightRatio', // 高度\n}"
+}

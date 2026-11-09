@@ -1,0 +1,9 @@
+{
+  "id": "DragBoxStyleD-3d752281",
+  "name": "DragBoxStyleD",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 331,
+  "declaration": "interface DragBoxStyleD {\n  /**\n   * 弹框宽度\n   */\n  width?: number;\n  /**\n   * 弹框的高度\n   */\n  height?: number;\n  /** 拖拽框边框border样式 */\n  borderStyle?: string;\n  /** 拖拽框背景样式 */\n  backgroundStyle?: string;\n  /** 鼠标样式 */\n  cursor?: string;\n}"
+}

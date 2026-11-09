@@ -1,0 +1,9 @@
+{
+  "id": "MonitorModeE-777acba1",
+  "name": "MonitorModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1084,
+  "declaration": "enum MonitorModeE {\n  fullScreen, // 全屏\n  proportion, // 保持比例\n}"
+}

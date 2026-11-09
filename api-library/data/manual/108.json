@@ -1,0 +1,20 @@
+{
+  "page": 108,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\ninformation\nintege\n├─ percent Yes T-Bar progress\nr\nScreen novs\n├─ novs object Yes\ninformation\nScreen novs\nnumb switch:\n├─ enable Yes\ner 0: Disable.\n1: Enable.\nScreen novs\nstatus:\n0: novs inactive\n(Output\nnumb\n├─ status Yes displayed\ner\nnormally).\n1: novs active\n(Output\nblackout).\n3D LUT\n├─ threeDLut object Yes\ninformation\n3D LUT file\n├─ fileName string Yes\nname\n├─ fileTitle string Yes 3D LUT file title\nintege\n├─ enable Yes 3D LUT enable\nr\nintege\n├─ intensity Yes 3D LUT strength\nr\nobject\n├─ curves Yes Item type:\n[]",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "information", ""],
+      ["├─ percent", "intege\nr", "Yes", "", "T-Bar progress", ""],
+      ["├─ novs", "object", "Yes", "", "Screen novs\ninformation", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Screen novs\nswitch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ status", "numb\ner", "Yes", "", "Screen novs\nstatus:\n0: novs inactive\n(Output\ndisplayed\nnormally).\n1: novs active\n(Output\nblackout).", ""],
+      ["├─ threeDLut", "object", "Yes", "", "3D LUT\ninformation", ""],
+      ["├─ fileName", "string", "Yes", "", "3D LUT file\nname", ""],
+      ["├─ fileTitle", "string", "Yes", "", "3D LUT file title", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "3D LUT enable", ""],
+      ["├─ intensity", "intege\nr", "Yes", "", "3D LUT strength", ""],
+      ["├─ curves", "object\n[]", "Yes", "", "", "Item type:"]
+    ]}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ELampType-24e5a978",
+  "name": "ELampType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 253,
+  "declaration": "enum ELampType {\n  light, // 0 - 亮度测试\n  color, // 1 - RGBW测试\n}"
+}

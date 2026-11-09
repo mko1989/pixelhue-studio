@@ -1,0 +1,8 @@
+{
+  "id": "LayerPresetListDetailData-8161d338",
+  "name": "LayerPresetListDetailData",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/LayerPreset.ts",
+  "line": 1,
+  "declaration": "interface LayerPresetListDetailData {\n\ttotalCount: number\n\tlist: LayerPreset[]\n}"
+}

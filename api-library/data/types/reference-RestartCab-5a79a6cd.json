@@ -1,0 +1,7 @@
+{
+  "id": "reference-RestartCab-5a79a6cd",
+  "name": "RestartCab",
+  "availability": "referenced-only",
+  "references": [{"name":"RestartCab","source":"src/api/setting/setting.ts","line":582}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

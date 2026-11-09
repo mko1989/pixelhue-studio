@@ -1,0 +1,9 @@
+{
+  "id": "EVirtualConsoleTagType-eda99f44",
+  "name": "EVirtualConsoleTagType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 61,
+  "declaration": "enum EVirtualConsoleTagType {\n  virtualConsoleReady = '0', // 虚拟控台启动成功\n  virtualConsoleClose = '1', // 虚拟控台关闭\n  consoleType = '2', // 控台类型\n  pcUnicoReload = '3', // Pc虚拟控台重新加载\n  closePcVirtualWinow = '4', // 非切换器通知虚拟控台关闭窗口\n  resetKeysStateTag = 'resetKeysStateTag', // 虚拟控台清空按键业务状态\n  changeLangTag = 'changeLangTag', // unico切换语言\n  changeDeviceTag = 'changeDeviceTag', // 虚拟控台-切换设备\n  changeSourceTypeTag = 'changeSourceTypeTag', // 虚拟控台-切换源类型\n  changeBatchBindDeviceTag = 'changeBatchBindDeviceTag', // 切换批量绑定的设备\n}"
+}

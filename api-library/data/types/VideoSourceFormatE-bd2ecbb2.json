@@ -1,0 +1,9 @@
+{
+  "id": "VideoSourceFormatE-bd2ecbb2",
+  "name": "VideoSourceFormatE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 125,
+  "declaration": "enum VideoSourceFormatE {\n  /** 左右 */\n  LR,\n  /** 上下 */\n  TB,\n}"
+}

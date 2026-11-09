@@ -1,0 +1,9 @@
+{
+  "id": "InputBitDepthE-d9f77dfb",
+  "name": "InputBitDepthE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 286,
+  "declaration": "enum InputBitDepthE {\n  '_8bit' = 8,\n  '_10bit' = 10,\n  '_12bit' = 12,\n  AUTO = 255,\n}"
+}

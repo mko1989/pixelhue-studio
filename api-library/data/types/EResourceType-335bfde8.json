@@ -1,0 +1,9 @@
+{
+  "id": "EResourceType-335bfde8",
+  "name": "EResourceType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 537,
+  "declaration": "enum EResourceType {\n  inputOutputInterface, // 输入输出接口\n  crop, // 截取源\n  splice, // 拼接源\n  group, // 分组源\n  internalSource, // 内置源\n  picture, // 图片\n  screen, // 屏幕\n  layer, // 图层\n  scene, // 场景\n  sceneGroup, // 场景分组\n}"
+}

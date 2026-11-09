@@ -1,0 +1,9 @@
+{
+  "id": "PublishStateE-a0069f35",
+  "name": "PublishStateE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/ncpLibrary/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1,
+  "declaration": "enum PublishStateE {\n  Incomplete, // 未完成\n  PendingRelease, // 待发布\n  Released, // 已发布\n  Testing, // 测试版本\n  Release, // 正式发布\n  NovaRelease, // Nva正式发布\n}"
+}

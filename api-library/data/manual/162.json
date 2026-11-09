@@ -1,0 +1,25 @@
+{
+  "page": 162,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nnumb\n├─ G Yes Color component - G\ner\nnumb\n├─ B Yes Color component - B\ner\nBackground switch:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\n├─ font object Yes Text properties\n├─ color object Yes Text color\nnumb\n├─ Alpha Yes Transparency\ner\nnumb\n├─ R Yes Color component - R\ner\nnumb\n├─ G Yes Color component - G\ner\nnumb\n├─ B Yes Color component - B\ner\n├─ stroke object No Stroke\n├─ color object Yes Stroke color\nnumb\n├─ Alpha Yes Transparency\ner\nnumb\n├─ R Yes Color component - R\ner\nnumb\n├─ G Yes Color component - G\ner\nnumb\n├─ B Yes Color component - B\ner\n├─ enable numb Yes Background switch:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ G", "numb\ner", "Yes", "", "Color component - G", ""],
+      ["├─ B", "numb\ner", "Yes", "", "Color component - B", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Background switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ font", "object", "Yes", "", "Text properties", ""],
+      ["├─ color", "object", "Yes", "", "Text color", ""],
+      ["├─ Alpha", "numb\ner", "Yes", "", "Transparency", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Color component - R", ""],
+      ["├─ G", "numb\ner", "Yes", "", "Color component - G", ""],
+      ["├─ B", "numb\ner", "Yes", "", "Color component - B", ""],
+      ["├─ stroke", "object", "No", "", "Stroke", ""],
+      ["├─ color", "object", "Yes", "", "Stroke color", ""],
+      ["├─ Alpha", "numb\ner", "Yes", "", "Transparency", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Color component - R", ""],
+      ["├─ G", "numb\ner", "Yes", "", "Color component - G", ""],
+      ["├─ B", "numb\ner", "Yes", "", "Color component - B", ""],
+      ["├─ enable", "numb", "Yes", "", "Background switch:", ""]
+    ]}
+  ]
+}

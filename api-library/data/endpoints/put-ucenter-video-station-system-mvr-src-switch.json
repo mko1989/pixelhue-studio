@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/system/mvr-src-switch",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","system","mvr-src-switch"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/system/mvr-src-switch","dynamic":false,"source":"src/api/console-production/index.ts","line":79,"client":"API","symbol":"response","comment":"源切换","parameters":["data: {\n  direction: number;\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/system/mvr-src-switch',\n    data,\n    timeout: consoleTimeout, // 通知超时时间为5s\n  }","context":"async (data: {\n  direction: number;\n}): Promise<IResponseData<ISwithSourceResp>> => {\n  const response = await API.request<IResponseData<ISwithSourceResp>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/system/mvr-src-switch',\n    data,\n    timeout: consoleTimeout, // 通知超时时间为5s","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-system-mvr-src-switch",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

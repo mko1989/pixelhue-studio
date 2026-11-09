@@ -1,0 +1,4 @@
+{
+  "group": "curtain",
+  "endpoints": [{"id":"put-curtain-size","method":"PUT","path":"/unico/v1/curtain/size","group":"curtain","summary":"response","tags":["curtain","size"],"models":[],"symbols":["response"],"keywords":" data: CurtainSize data","serverKind":"device","manual":false,"file":"endpoints/put-curtain-size.json"}]
+}

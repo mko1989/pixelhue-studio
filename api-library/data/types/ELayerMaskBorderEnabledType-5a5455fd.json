@@ -1,0 +1,9 @@
+{
+  "id": "ELayerMaskBorderEnabledType-5a5455fd",
+  "name": "ELayerMaskBorderEnabledType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 653,
+  "declaration": "enum ELayerMaskBorderEnabledType {\n  /** 关闭 */\n  disable = 0,\n  /** 打开 */\n  enable = 1,\n}"
+}

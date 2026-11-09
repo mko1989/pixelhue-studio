@@ -1,0 +1,21 @@
+{
+  "page": 107,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nItem type:\nnumb Dante channel\n├─ danteChannelIndex Yes\nnumber\ner [] array\n├─ No\nItem type:\nobject Output\n├─ outlet Yes\nobject\n[] connector list\nWhether to\nenable the\n├─ numb embedded\nYes\naccompanyAudioEnable er audio:\n0: Disable.\n1: Enable.\nItem type:\nintege\n├─ analogVideo Yes Analog audio\ninteger\nr []\nAnalog audio\n├─ No\nconnectors\nItem type:\nintege Dante channel\n├─ danteChannelIndex Yes\ninteger\nr [] array\n├─ No\nPreset playlist\n├─ presetPoll object Yes\nplayback control\nnumb Preset playlist\n├─ enable Yes\ner playback enable\nControl preset\nnumb playlist playback\n├─ presetGroupId Yes\ner by preset group\nID\n├─ tbar object Yes T-Bar",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ danteChannelIndex", "numb\ner []", "Yes", "", "Dante channel\narray", "Item type:\nnumber"],
+      ["├─", "", "No", "", "", ""],
+      ["├─ outlet", "object\n[]", "Yes", "", "Output\nconnector list", "Item type:\nobject"],
+      ["├─\naccompanyAudioEnable", "numb\ner", "Yes", "", "Whether to\nenable the\nembedded\naudio:\n0: Disable.\n1: Enable.", ""],
+      ["├─ analogVideo", "intege\nr []", "Yes", "", "Analog audio", "Item type:\ninteger"],
+      ["├─", "", "No", "", "Analog audio\nconnectors", ""],
+      ["├─ danteChannelIndex", "intege\nr []", "Yes", "", "Dante channel\narray", "Item type:\ninteger"],
+      ["├─", "", "No", "", "", ""],
+      ["├─ presetPoll", "object", "Yes", "", "Preset playlist\nplayback control", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Preset playlist\nplayback enable", ""],
+      ["├─ presetGroupId", "numb\ner", "Yes", "", "Control preset\nplaylist playback\nby preset group\nID", ""],
+      ["├─ tbar", "object", "Yes", "", "T-Bar", ""]
+    ]}
+  ]
+}

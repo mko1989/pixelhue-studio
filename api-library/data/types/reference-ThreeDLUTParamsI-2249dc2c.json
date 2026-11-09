@@ -1,0 +1,7 @@
+{
+  "id": "reference-ThreeDLUTParamsI-2249dc2c",
+  "name": "ThreeDLUTParamsI",
+  "availability": "referenced-only",
+  "references": [{"name":"ThreeDLUTParamsI","source":"src/api/screen/screen.ts","line":1431}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

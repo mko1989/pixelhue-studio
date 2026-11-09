@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/correction/screen/coefficient-format",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","correction","screen","coefficient-format"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/correction/screen/coefficient-format","dynamic":false,"source":"src/api/correction/index.ts","line":249,"client":"API_U_CENTER","symbol":"response","comment":"上传校正系数文件解析","parameters":["data: {\n  path: string;\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: 'ucenter/correction/screen/coefficient-format',\n    data,\n    timeout: 600000,\n  }","context":"async (data: {\n  path: string;\n}): Promise<IResponseData<UploadResponseT>> => {\n  const response = await API_U_CENTER.request<IResponseData<UploadResponseT>>({\n    method: 'put',\n    url: 'ucenter/correction/screen/coefficient-format',\n    data,\n    timeout: 600000,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-correction-screen-coefficient-format",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

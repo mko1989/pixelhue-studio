@@ -1,0 +1,7 @@
+{
+  "id": "reference-ScreenOutputAdvancedParamsT-5243d75f",
+  "name": "ScreenOutputAdvancedParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"ScreenOutputAdvancedParamsT","source":"src/api/screen/screen.ts","line":1730}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

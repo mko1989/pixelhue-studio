@@ -1,0 +1,7 @@
+{
+  "id": "reference-DevicesLayerListT-ddf45853",
+  "name": "DevicesLayerListT",
+  "availability": "referenced-only",
+  "references": [{"name":"DevicesLayerListT","source":"src/api/layer/layer.ts","line":103},{"name":"DevicesLayerListT","source":"src/api/layer/layer.ts","line":104}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

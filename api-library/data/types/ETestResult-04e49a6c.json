@@ -1,0 +1,9 @@
+{
+  "id": "ETestResult-04e49a6c",
+  "name": "ETestResult",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 151,
+  "declaration": "enum ETestResult {\n  no, // 不通过\n  yes, // 通过\n}"
+}

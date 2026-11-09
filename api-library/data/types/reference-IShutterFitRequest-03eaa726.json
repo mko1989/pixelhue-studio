@@ -1,0 +1,7 @@
+{
+  "id": "reference-IShutterFitRequest-03eaa726",
+  "name": "IShutterFitRequest",
+  "availability": "referenced-only",
+  "references": [{"name":"IShutterFitRequest","source":"src/api/screen/screen-adjust.ts","line":331}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

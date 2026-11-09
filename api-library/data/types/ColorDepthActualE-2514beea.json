@@ -1,0 +1,9 @@
+{
+  "id": "ColorDepthActualE-2514beea",
+  "name": "ColorDepthActualE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 948,
+  "declaration": "enum ColorDepthActualE {\n  '8bit' = 8,\n  '10bit' = 10,\n  '12bit' = 12,\n  '16bit' = 16,\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "VPUBorrowModeE-86079432",
+  "name": "VPUBorrowModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/api/device/vpu.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 11,
+  "declaration": "enum VPUBorrowModeE {\n  /** 默认 */\n  default = 0,\n  /** 借入 */\n  borrowIn = 1,\n  /** 借出 */\n  borrowOut = 2,\n}"
+}

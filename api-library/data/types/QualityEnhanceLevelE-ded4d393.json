@@ -1,0 +1,9 @@
+{
+  "id": "QualityEnhanceLevelE-ded4d393",
+  "name": "QualityEnhanceLevelE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 122,
+  "declaration": "enum QualityEnhanceLevelE {\n  /**\n   * 0：低\n   * 1：中\n   * 2：高\n   */\n  low,\n  middle,\n  high,\n}"
+}

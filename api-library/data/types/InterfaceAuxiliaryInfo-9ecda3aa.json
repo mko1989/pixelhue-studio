@@ -1,0 +1,8 @@
+{
+  "id": "InterfaceAuxiliaryInfo-9ecda3aa",
+  "name": "InterfaceAuxiliaryInfo",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Interface.ts",
+  "line": 18,
+  "declaration": "interface InterfaceAuxiliaryInfo {\n\tconnectorInfo: InterfaceAuxiliaryInfoConnectorInfo\n}"
+}

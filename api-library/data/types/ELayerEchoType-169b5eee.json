@@ -1,0 +1,9 @@
+{
+  "id": "ELayerEchoType-169b5eee",
+  "name": "ELayerEchoType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1172,
+  "declaration": "enum ELayerEchoType {\n  RTSP = 0, // 0 - RTSP\n  MJPEG = 1, // 1 - MJPEG\n}"
+}

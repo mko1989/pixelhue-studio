@@ -1,0 +1,7 @@
+{
+  "id": "reference-ISourceCropDelReq-f012fdb9",
+  "name": "ISourceCropDelReq",
+  "availability": "referenced-only",
+  "references": [{"name":"ISourceCropDelReq","source":"src/api/device/device-source.ts","line":212}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

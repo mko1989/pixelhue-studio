@@ -1,0 +1,18 @@
+{
+  "page": 145,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nmock:\nintege\n├─ top Yes Top mask width, in pixels @integ\nr\ner\nTop mask ratio:\nintege topRatio = round (top\n├─ topRatio Yes\nr mask width/layer height *\n100,000)\nmock:\nintege Bottom mask width, in\n├─ buttom Yes @integ\nr pixels\ner\nBottom mask ratio:\nintege buttomRatio = round\n├─ buttomRatio Yes\nr (bottom mask width/layer\nheight * 100,000)\nThe test color information\n├─ testColor object Yes\nfor the layer\nWhether to enable the\nmock:\nintege layer test pattern:\n├─ enable Yes @integ\nr 0: Disable.\ner\n1: Enable.\nmock:\nThe color component\nintege\n├─ R Yes value of the layer test @integ\nr\ner\npattern\nmock:\nThe color component\nintege\n├─ G Yes value of the layer test @integ\nr\ner\npattern\nmock:\nThe color component\nintege\n├─ B Yes value of the layer test @integ\nr\ner\npattern",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ top", "intege\nr", "Yes", "", "Top mask width, in pixels", "mock:\n@integ\ner"],
+      ["├─ topRatio", "intege\nr", "Yes", "", "Top mask ratio:\ntopRatio = round (top\nmask width/layer height *\n100,000)", ""],
+      ["├─ buttom", "intege\nr", "Yes", "", "Bottom mask width, in\npixels", "mock:\n@integ\ner"],
+      ["├─ buttomRatio", "intege\nr", "Yes", "", "Bottom mask ratio:\nbuttomRatio = round\n(bottom mask width/layer\nheight * 100,000)", ""],
+      ["├─ testColor", "object", "Yes", "", "The test color information\nfor the layer", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "Whether to enable the\nlayer test pattern:\n0: Disable.\n1: Enable.", "mock:\n@integ\ner"],
+      ["├─ R", "intege\nr", "Yes", "", "The color component\nvalue of the layer test\npattern", "mock:\n@integ\ner"],
+      ["├─ G", "intege\nr", "Yes", "", "The color component\nvalue of the layer test\npattern", "mock:\n@integ\ner"],
+      ["├─ B", "intege\nr", "Yes", "", "The color component\nvalue of the layer test\npattern", "mock:\n@integ\ner"]
+    ]}
+  ]
+}

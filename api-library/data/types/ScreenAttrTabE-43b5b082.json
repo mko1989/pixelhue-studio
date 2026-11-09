@@ -1,0 +1,9 @@
+{
+  "id": "ScreenAttrTabE-43b5b082",
+  "name": "ScreenAttrTabE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 204,
+  "declaration": "enum ScreenAttrTabE {\n  base = 'tab-attribute-base', // 基本\n  color = 'tab-attribute-effect', // 画质\n  output = 'tab-attribute-output', // 输出\n  advanced = 'tab-attribute-advanced', // 高级\n}"
+}

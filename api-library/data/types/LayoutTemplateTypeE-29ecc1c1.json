@@ -1,0 +1,9 @@
+{
+  "id": "LayoutTemplateTypeE-29ecc1c1",
+  "name": "LayoutTemplateTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 100,
+  "declaration": "enum LayoutTemplateTypeE {\n  DEFAULT = 1,\n  CUSTOMER,\n  TEST,\n}"
+}

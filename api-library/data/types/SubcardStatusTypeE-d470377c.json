@@ -1,0 +1,9 @@
+{
+  "id": "SubcardStatusTypeE-d470377c",
+  "name": "SubcardStatusTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1200,
+  "declaration": "enum SubcardStatusTypeE {\n  noms = 1,\n  ip = 2,\n}"
+}

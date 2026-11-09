@@ -1,0 +1,9 @@
+{
+  "id": "resolutionDefault-698d5ade",
+  "name": "resolutionDefault",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 643,
+  "declaration": "enum resolutionDefault {\n  w = 3840,\n  h = 2160,\n}"
+}

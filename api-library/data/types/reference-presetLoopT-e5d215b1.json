@@ -1,0 +1,7 @@
+{
+  "id": "reference-presetLoopT-e5d215b1",
+  "name": "presetLoopT",
+  "availability": "referenced-only",
+  "references": [{"name":"presetLoopT","source":"src/api/preset/preset-loop.ts","line":17},{"name":"presetLoopT","source":"src/api/preset/preset-loop.ts","line":31},{"name":"presetLoopT","source":"src/api/preset/preset-loop.ts","line":44},{"name":"presetLoopT","source":"src/api/preset/preset-loop.ts","line":45}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

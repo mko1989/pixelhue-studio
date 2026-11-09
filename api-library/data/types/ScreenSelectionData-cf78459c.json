@@ -1,0 +1,8 @@
+{
+  "id": "ScreenSelectionData-cf78459c",
+  "name": "ScreenSelectionData",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "Companion/src/interfaces/Screen.ts",
+  "line": 15,
+  "declaration": "type ScreenSelectionData = ScreenSelection[]"
+}

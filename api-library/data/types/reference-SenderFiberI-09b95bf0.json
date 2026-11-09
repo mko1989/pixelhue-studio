@@ -1,0 +1,7 @@
+{
+  "id": "reference-SenderFiberI-09b95bf0",
+  "name": "SenderFiberI",
+  "availability": "referenced-only",
+  "references": [{"name":"SenderFiberI","source":"src/api/device/deviceInfo.ts","line":744}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

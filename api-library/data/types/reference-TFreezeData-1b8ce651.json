@@ -1,0 +1,7 @@
+{
+  "id": "reference-TFreezeData-1b8ce651",
+  "name": "TFreezeData",
+  "availability": "referenced-only",
+  "references": [{"name":"TFreezeData","source":"src/api/screen/screen.ts","line":1051}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

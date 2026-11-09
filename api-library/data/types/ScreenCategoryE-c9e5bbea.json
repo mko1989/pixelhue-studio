@@ -1,0 +1,9 @@
+{
+  "id": "ScreenCategoryE-c9e5bbea",
+  "name": "ScreenCategoryE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 38,
+  "declaration": "enum ScreenCategoryE {\n  LCD,\n  LED,\n}"
+}

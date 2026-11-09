@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/key-mode",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","key-mode"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/key-mode","dynamic":false,"source":"src/api/panel/panel.ts","line":28,"client":"API","symbol":"response","comment":"","parameters":["data: IPanelKeyMode"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'put',\n    url: 'ucenter/video-station/key-mode',\n    data,\n  }","context":"async (data: IPanelKeyMode): Promise<IResponseData<IPanelKeyMode>> => {\n  const response = await API.request<IResponseData<IPanelKeyMode>>({\n    method: 'put',\n    url: 'ucenter/video-station/key-mode',\n    data,\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-key-mode",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

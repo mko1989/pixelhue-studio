@@ -1,0 +1,9 @@
+{
+  "id": "ENodeSubStatus-49174f9c",
+  "name": "ENodeSubStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 427,
+  "declaration": "enum ENodeSubStatus {\n  isMultipleControl = 1, // 设备一控多\n  isSceneKeyFraming = 2, // 场景keyFrame执行中\n  isPreviewKeyFraming = 3, // 预览keyFrame执行中\n}"
+}

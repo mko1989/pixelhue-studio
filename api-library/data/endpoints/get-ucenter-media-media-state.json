@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/media/media-state",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","media","media-state"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/media/media-state","dynamic":false,"source":"src/api/media/kvm-setting.ts","line":78,"client":"API","symbol":"response","comment":"*\n * 获取media按键状态\n * @param data\n * @returns","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'ucenter/media/media-state',\n  }","context":"async (): Promise<IResponseData<IKVMState>> => {\n  const response = await API.request<IResponseData<IKVMState>>({\n    method: 'get',\n    url: 'ucenter/media/media-state',\n  });\n  return response.data;\n}","sourceMap":"index-CjV3BkZw.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-media-media-state",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

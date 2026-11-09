@@ -1,0 +1,9 @@
+{
+  "id": "AudioSourceTypeE-5c39e596",
+  "name": "AudioSourceTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 149,
+  "declaration": "enum AudioSourceTypeE {\n  /** 无音频模式 */\n  none = -1,\n  /** 伴随 */\n  follow = 0,\n  /** 模拟音频 */\n  audioIn = 1,\n  /** Dante音频 */\n  dante = 2,\n  /** 图层音频 */\n  layer = 3,\n}"
+}

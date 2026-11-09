@@ -1,0 +1,17 @@
+{
+  "page": 22,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\n├─ name string Yes Device name\nintege\n├─ modeId Yes Node modeId\nr\nDevice locate:\nintege\n├─ deviceBeacon Yes 0: Disable.\nr\n1: Enable.\nDevice type:\n0: Invalid\nparameter.\nintege\n├─ deviceType Yes 1: Single-card\nr\ndevice.\n2: Card-based\ndevice.\nPreset transition\nintege effect:\n├─ presetPlayEffect Yes\nr 0: CUT.\n1: FADE.\nThe device’s\nintege virtual ID, namely\n├─ virtualId Yes\nr the device ID in a\ncascade\nLayer\nspecifications\nmode:\nnumb 0: Default mode.\n├─ layerMode Yes\ner (Switcher: 0:\n2*MAIN+10*PIP;\n1:\n4*MAIN+4*PIP.)\nAuthorization-\n├─ authorInfo object Yes related\ninformation",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["├─ name", "string", "Yes", "", "Device name", ""],
+      ["├─ modeId", "intege\nr", "Yes", "", "Node modeId", ""],
+      ["├─ deviceBeacon", "intege\nr", "Yes", "", "Device locate:\n0: Disable.\n1: Enable.", ""],
+      ["├─ deviceType", "intege\nr", "Yes", "", "Device type:\n0: Invalid\nparameter.\n1: Single-card\ndevice.\n2: Card-based\ndevice.", ""],
+      ["├─ presetPlayEffect", "intege\nr", "Yes", "", "Preset transition\neffect:\n0: CUT.\n1: FADE.", ""],
+      ["├─ virtualId", "intege\nr", "Yes", "", "The device’s\nvirtual ID, namely\nthe device ID in a\ncascade", ""],
+      ["├─ layerMode", "numb\ner", "Yes", "", "Layer\nspecifications\nmode:\n0: Default mode.\n(Switcher: 0:\n2*MAIN+10*PIP;\n1:\n4*MAIN+4*PIP.)", ""],
+      ["├─ authorInfo", "object", "Yes", "", "Authorization-\nrelated\ninformation", ""]
+    ]}
+  ]
+}

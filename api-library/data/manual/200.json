@@ -1,0 +1,17 @@
+{
+  "page": 200,
+  "text": "Default\nName Type Required Remarks More\nValue\n12: Internal shape\nsource.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.\n├─ dve object No dve\nType: Type:\n1. Push.\n├─ type integer No\n2. Squeeze.\n3. Material effect.\nImage: Based on the\n├─ image integer No UI, from left to right\nand top to bottom.\n├─ brightness integer No Clip\n├─ softness integer No Softness\nDve direction:\n0. Upper left\n1. Up\n2. Upper right\n├─ directionDev integer No 3. Right\n4. Lower right\n5. Down\n6. Lower left\n7. Left\nEffect direction:\n├─\nstring No 1. Forward.\ndirectionEffect\n2. Reverse.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "12: Internal shape\nsource.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit\nMeter.\n17: Streaming.\n18: Recording.\n19. Cleanfeed.", ""],
+      ["├─ dve", "object", "No", "", "dve", ""],
+      ["├─ type", "integer", "No", "", "Type: Type:\n1. Push.\n2. Squeeze.\n3. Material effect.", ""],
+      ["├─ image", "integer", "No", "", "Image: Based on the\nUI, from left to right\nand top to bottom.", ""],
+      ["├─ brightness", "integer", "No", "", "Clip", ""],
+      ["├─ softness", "integer", "No", "", "Softness", ""],
+      ["├─ directionDev", "integer", "No", "", "Dve direction:\n0. Upper left\n1. Up\n2. Upper right\n3. Right\n4. Lower right\n5. Down\n6. Lower left\n7. Left", ""],
+      ["├─\ndirectionEffect", "string", "No", "", "Effect direction:\n1. Forward.\n2. Reverse.", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/node/subcard/version-match",
+  "group": "node",
+  "summary": "response",
+  "tags": ["node","subcard","version-match"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"node/subcard/version-match","dynamic":false,"source":"src/api/production/index.ts","line":284,"client":"API","symbol":"response","comment":"*\n * 检查子卡版本是否匹配\n * @param params\n * @returns","parameters":["{\n  slotId,\n}"],"bodyExpression":null,"queryExpression":"{ slotId }","headerExpression":null,"configExpression":"{\n    method: 'GET',\n    url: 'node/subcard/version-match',\n    params: { slotId },\n  }","context":"async ({\n  slotId,\n}): Promise<IResponseData<SubcardVersionMatchResponseT>> => {\n  const response = await API.request<IResponseData<SubcardVersionMatchResponseT>>({\n    method: 'GET',\n    url: 'node/subcard/version-match',\n    params: { slotId },\n  });","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-node-subcard-version-match",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/video-station/smartscreen/staticpicture",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","smartscreen","staticpicture"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/video-station/smartscreen/staticpicture","dynamic":false,"source":"src/api/setting/setting.ts","line":115,"client":"API","symbol":"response","comment":"* 上传智慧屏静态图片","parameters":["pictureFiles: RcFile[]"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{ contentType: 'multipart/form-data' }","configExpression":"{\n    method: 'POST',\n    headers: { contentType: 'multipart/form-data' },\n    url: 'ucenter/video-station/smartscreen/staticpicture',\n    data: formData,\n  }","context":"async (\n  pictureFiles: RcFile[],\n): Promise<IResponseData<IStaticImgInfo[]>> => {\n  const formData = new FormData();\n  pictureFiles.forEach((item) => {\n    formData.append('file', item);\n  });\n  const response = await API.request<IResponseData<IStaticImgInfo[]>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-video-station-smartscreen-staticpicture",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "MVRInterfaceWorkModeE-3b0b28e9",
+  "name": "MVRInterfaceWorkModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 932,
+  "declaration": "enum MVRInterfaceWorkModeE {\n  /** 独立模式 */\n  single,\n  /** 复制模式 */\n  copy,\n}"
+}

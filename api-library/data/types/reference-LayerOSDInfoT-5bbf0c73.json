@@ -1,0 +1,7 @@
+{
+  "id": "reference-LayerOSDInfoT-5bbf0c73",
+  "name": "LayerOSDInfoT",
+  "availability": "referenced-only",
+  "references": [{"name":"LayerOSDInfoT","source":"src/api/osd/component/index.ts","line":50},{"name":"LayerOSDInfoT","source":"src/api/osd/component/index.ts","line":54}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

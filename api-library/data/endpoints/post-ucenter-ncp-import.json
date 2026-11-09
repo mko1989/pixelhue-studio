@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/ncp/import",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","ncp","import"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"/ucenter/ncp/import","dynamic":false,"pathParameters":[],"source":"src/api/device/cabinet-pack.ts","line":268,"client":"API","symbol":"response","comment":"*\n * 上传本地库NCP\n * @returns","parameters":["files: Blob[]","headers: AxiosRequestHeaders = {}"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{\n      'Content-Type': 'multipart/form-data',\n      ...headers,\n    }","configExpression":"{\n    method: 'POST',\n    url: `/ucenter/ncp/import`,\n    headers: {\n      'Content-Type': 'multipart/form-data',\n      ...headers,\n    },\n    timeout: 1000 * 300, // 超时设置300秒，不用公共的两秒\n    data: formData,\n  }","context":"async (\n  files: Blob[],\n  headers: AxiosRequestHeaders = {},\n) => {\n  const formData = new FormData();\n  files.forEach((item) => {\n    formData.append('files', item);\n  });","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-ncp-import",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

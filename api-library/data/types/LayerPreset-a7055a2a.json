@@ -1,0 +1,8 @@
+{
+  "id": "LayerPreset-a7055a2a",
+  "name": "LayerPreset",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/LayerPreset.ts",
+  "line": 6,
+  "declaration": "interface LayerPreset {\n\tlayerPresetId: number\n\tgeneral: LayerPresetGeneral\n}"
+}

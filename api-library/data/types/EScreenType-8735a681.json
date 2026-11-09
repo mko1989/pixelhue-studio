@@ -1,0 +1,9 @@
+{
+  "id": "EScreenType-8735a681",
+  "name": "EScreenType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 19,
+  "declaration": "enum EScreenType {\n  screen1 = 1, // 屏1\n  screen2 = 2, // 屏2\n  screen3 = 3, // 屏3\n  screen4 = 4, // 屏4\n  screen5 = 5, // 屏5\n  screen6 = 6, // 屏6\n  screen7 = 7, // 屏7\n  screen8 = 8, // 屏8\n  screen9 = 9, // 屏9\n  screen10 = 10, // 屏10\n  screen11 = 11, // 屏11\n  screen12 = 12, // 屏12\n  screen13 = 13, // 屏13\n}"
+}

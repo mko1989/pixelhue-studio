@@ -1,0 +1,7 @@
+{
+  "id": "reference-OSDTemplateInfoUpdateDataT-691ff974",
+  "name": "OSDTemplateInfoUpdateDataT",
+  "availability": "referenced-only",
+  "references": [{"name":"OSDTemplateInfoUpdateDataT","source":"src/api/osd/template/index.ts","line":105}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

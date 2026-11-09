@@ -1,0 +1,9 @@
+{
+  "id": "NameUseTypesE-31cf3c87",
+  "name": "NameUseTypesE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 54,
+  "declaration": "enum NameUseTypesE {\n  inputOutputInterface, // 输入输出接口\n  cropSource, // 截取源\n  joinSource, // 拼接源\n  groupSource, // 分组源\n  inlaySource, // 内置源\n  imageType, // 图片\n  screenType, // 屏幕\n  layerType, // 图层\n  sceneType, // 场景\n  sceneGroup, // 场景分组\n  inputInterface, // 输入接口\n  outputInterface, // 输出接口\n}"
+}

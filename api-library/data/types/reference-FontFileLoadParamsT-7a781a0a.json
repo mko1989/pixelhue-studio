@@ -1,0 +1,7 @@
+{
+  "id": "reference-FontFileLoadParamsT-7a781a0a",
+  "name": "FontFileLoadParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"FontFileLoadParamsT","source":"src/api/font/index.ts","line":85}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

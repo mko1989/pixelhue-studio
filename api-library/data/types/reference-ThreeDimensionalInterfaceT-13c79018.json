@@ -1,0 +1,7 @@
+{
+  "id": "reference-ThreeDimensionalInterfaceT-13c79018",
+  "name": "ThreeDimensionalInterfaceT",
+  "availability": "referenced-only",
+  "references": [{"name":"ThreeDimensionalInterfaceT","source":"src/api/three-dimensional/threeDimensional.ts","line":15}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

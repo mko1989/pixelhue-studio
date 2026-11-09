@@ -1,0 +1,9 @@
+{
+  "id": "devicePowerParamsType-83517709",
+  "name": "devicePowerParamsType",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInfo.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 227,
+  "declaration": "interface devicePowerParamsType {\n  nodeId: number;\n  option: number;\n}"
+}

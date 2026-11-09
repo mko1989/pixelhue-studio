@@ -1,0 +1,7 @@
+{
+  "id": "reference-TLEDScreenDisplayMode-6713c0d2",
+  "name": "TLEDScreenDisplayMode",
+  "availability": "referenced-only",
+  "references": [{"name":"TLEDScreenDisplayMode","source":"src/api/screen/screen.ts","line":1063}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

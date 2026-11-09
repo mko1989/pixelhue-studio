@@ -1,0 +1,9 @@
+{
+  "id": "SilderStepE-6cc8e2c8",
+  "name": "SilderStepE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 225,
+  "declaration": "enum SilderStepE {\n  high = 0, // 高\n  higher = 100, // 较高\n  midding = 200, // 中\n  lower = 300, // 较低\n  low = 400, // 低\n  min = 0, // 最小灵敏度\n  max = 400, // 最大灵敏度\n  setp = 100, // 步进数值\n}"
+}

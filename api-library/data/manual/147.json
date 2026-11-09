@@ -1,0 +1,24 @@
+{
+  "page": 147,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nnumb\n├─ G Yes Green component\ner\nnumb\n├─ B Yes Blue component\ner\nnumb\n├─ coefficient Yes Coefficients\ner\n├─ shadow object Yes Shadow\nnumb\n├─ R Yes Red component\ner\nnumb\n├─ G Yes Green component\ner\nnumb\n├─ B Yes Blue component\ner\nnumb\n├─ W Yes Black level component\ner\n├─ highLight object Yes Highlight\nnumb\n├─ R Yes Red component\ner\nnumb\n├─ G Yes Green component\ner\nnumb\n├─ B Yes Blue component\ner\nnumb\n├─ W Yes White level component\ner\n├─\nobject Yes Color temperature\ncolorTemperature\nnumb Adjustment mode:\n├─ mode Yes\ner 0: Quick mode.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ G", "numb\ner", "Yes", "", "Green component", ""],
+      ["├─ B", "numb\ner", "Yes", "", "Blue component", ""],
+      ["├─ coefficient", "numb\ner", "Yes", "", "Coefficients", ""],
+      ["├─ shadow", "object", "Yes", "", "Shadow", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Red component", ""],
+      ["├─ G", "numb\ner", "Yes", "", "Green component", ""],
+      ["├─ B", "numb\ner", "Yes", "", "Blue component", ""],
+      ["├─ W", "numb\ner", "Yes", "", "Black level component", ""],
+      ["├─ highLight", "object", "Yes", "", "Highlight", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Red component", ""],
+      ["├─ G", "numb\ner", "Yes", "", "Green component", ""],
+      ["├─ B", "numb\ner", "Yes", "", "Blue component", ""],
+      ["├─ W", "numb\ner", "Yes", "", "White level component", ""],
+      ["├─\ncolorTemperature", "object", "Yes", "", "Color temperature", ""],
+      ["├─ mode", "numb\ner", "Yes", "", "Adjustment mode:\n0: Quick mode.", ""]
+    ]}
+  ]
+}

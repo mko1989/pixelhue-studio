@@ -1,0 +1,9 @@
+{
+  "id": "ESystemPowerType-56efacb6",
+  "name": "ESystemPowerType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/device-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 59,
+  "declaration": "enum ESystemPowerType {\n  /** 系统重启 */\n  restart,\n  /** 系统硬关机 */\n  hardShowdown,\n  /** 系统软关机 */\n  softShowdown,\n  /** 系统开机 */\n  startUp,\n}"
+}

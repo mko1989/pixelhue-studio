@@ -1,0 +1,22 @@
+{
+  "page": 93,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n[1.00~4.00]*100\n, to two decimal\nplaces.\nScale ratio\nmultiplier:\nnumb 1: No scaling.\n├─ gammaScale Yes\ner 100: Scaling\ndown by a factor\nof 100.\n├─ contrast object Yes Contrast\nnumb\n├─ R Yes Red component\ner\nnumb Green\n├─ G Yes\ner component\nnumb\n├─ B Yes Blue component\ner\nnumb\n├─ coefficient Yes Coefficients\ner\n├─ brightness object Yes Brightness\nnumb\n├─ R Yes Red component\ner\nnumb Green\n├─ G Yes\ner component\nnumb\n├─ B Yes Blue component\ner\nnumb\n├─ coefficient Yes Coefficients\ner\n├─ shadow object Yes Shadow",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "[1.00~4.00]*100\n, to two decimal\nplaces.", ""],
+      ["├─ gammaScale", "numb\ner", "Yes", "", "Scale ratio\nmultiplier:\n1: No scaling.\n100: Scaling\ndown by a factor\nof 100.", ""],
+      ["├─ contrast", "object", "Yes", "", "Contrast", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Red component", ""],
+      ["├─ G", "numb\ner", "Yes", "", "Green\ncomponent", ""],
+      ["├─ B", "numb\ner", "Yes", "", "Blue component", ""],
+      ["├─ coefficient", "numb\ner", "Yes", "", "Coefficients", ""],
+      ["├─ brightness", "object", "Yes", "", "Brightness", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Red component", ""],
+      ["├─ G", "numb\ner", "Yes", "", "Green\ncomponent", ""],
+      ["├─ B", "numb\ner", "Yes", "", "Blue component", ""],
+      ["├─ coefficient", "numb\ner", "Yes", "", "Coefficients", ""],
+      ["├─ shadow", "object", "Yes", "", "Shadow", ""]
+    ]}
+  ]
+}

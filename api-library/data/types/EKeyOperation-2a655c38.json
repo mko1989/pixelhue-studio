@@ -1,0 +1,9 @@
+{
+  "id": "EKeyOperation-2a655c38",
+  "name": "EKeyOperation",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 322,
+  "declaration": "enum EKeyOperation {\n  singleClick = 1, // 单击\n  shortPress = 2, // 短按\n  longPress = 3, // 长按\n  doubleClick = 4, // 双击\n}"
+}

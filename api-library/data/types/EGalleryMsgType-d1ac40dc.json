@@ -1,0 +1,9 @@
+{
+  "id": "EGalleryMsgType-d1ac40dc",
+  "name": "EGalleryMsgType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 9,
+  "declaration": "enum EGalleryMsgType {\n  /**文件格式错误 */\n  typeError,\n  /**部分文件格式错误 */\n  typeErrors,\n  /**文件超出最大尺寸 */\n  overSize,\n  /**部分文件超出最大尺寸 */\n  overSizes,\n  /**文件小于最小尺寸 */\n  lessSize,\n  /**部分文件小于最小尺寸 */\n  lessSizes,\n  /**文件名称为空 */\n  nameEmpty,\n  /**部分文件名称为空 */\n  namesEmpty,\n  /**判断图片尺寸加载失败 */\n  damagedError,\n  /**判断部分图片尺寸加载失败 */\n  damagedErrors,\n  /**图片宽高大于512 */\n  moreThen512Error,\n  /**图片宽高小于128，需求去掉LOGO上传最小限制，之前是128 */\n  lessThen128Error,\n  /**图库容量不足 */\n  capacityNotEnough,\n  /**图片最大支持{number}张，资源不足，无法导入 */\n  maxNumberError,\n  /** 单个乘积超出限制 */\n  overProductSize,\n  /** 批量乘积超出限制 */\n  overProductSizes,\n  /** 单个图片文件过大 */\n  overFileSize,\n  /** 部分图片文件过大 */\n  overFileSizes,\n}"
+}

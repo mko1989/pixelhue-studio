@@ -1,0 +1,7 @@
+{
+  "id": "reference-ILightStatus-a0f5ed9f",
+  "name": "ILightStatus",
+  "availability": "referenced-only",
+  "references": [{"name":"ILightStatus","source":"src/api/setting/setting.ts","line":33},{"name":"ILightStatus","source":"src/api/setting/setting.ts","line":34},{"name":"ILightStatus","source":"src/api/setting/setting.ts","line":44},{"name":"ILightStatus","source":"src/api/setting/setting.ts","line":43},{"name":"ILightStatus","source":"src/api/setting/setting.ts","line":45}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

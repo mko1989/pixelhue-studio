@@ -1,0 +1,24 @@
+{
+  "page": 186,
+  "text": "Default\nName Type Required Remarks More\nValue\nThe preset name. Provide\nmock:\nat least one of name or\nPreset\nname string No namePrefix; if both are\nname\nprovided, name takes\nprecedence.\n Return Data\nRequire Defaul\nName Type Remarks More\nd t Value\nnumbe\ncode No Response code\nr\nmessage string No Response message\nItem\nobject\ntype:\ndata Yes\n[]\nobject\n├─ presetId integer Yes The preset ID\nThe preset ID\n├─ presetIdObj object Yes\ninformation\n├─ id integer Yes The preset number ID\nThe preset is from\n├─ sceneType string Yes PVW or PGM (0: PGM;\n1: PVW)\nGeneral information\n├─ general object Yes (for possible future\nexpansion)\n├─ name string Yes Preset name\nItem\nobject The screen\n├─ screens Yes type:\n[] information\nobject\n├─ screenId integer Yes The screen ID, which",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["name", "string", "No", "", "The preset name. Provide\nat least one of name or\nnamePrefix; if both are\nprovided, name takes\nprecedence.", "mock:\nPreset\nname"]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Require\nd", "Defaul\nt Value", "Remarks", "More"],
+      ["code", "numbe\nr", "No", "", "Response code", ""],
+      ["message", "string", "No", "", "Response message", ""],
+      ["data", "object\n[]", "Yes", "", "", "Item\ntype:\nobject"],
+      ["├─ presetId", "integer", "Yes", "", "The preset ID", ""],
+      ["├─ presetIdObj", "object", "Yes", "", "The preset ID\ninformation", ""],
+      ["├─ id", "integer", "Yes", "", "The preset number ID", ""],
+      ["├─ sceneType", "string", "Yes", "", "The preset is from\nPVW or PGM (0: PGM;\n1: PVW)", ""],
+      ["├─ general", "object", "Yes", "", "General information\n(for possible future\nexpansion)", ""],
+      ["├─ name", "string", "Yes", "", "Preset name", ""],
+      ["├─ screens", "object\n[]", "Yes", "", "The screen\ninformation", "Item\ntype:\nobject"],
+      ["├─ screenId", "integer", "Yes", "", "The screen ID, which", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/monitor/cabinet/error-bit/delete",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","monitor","cabinet","error-bit","delete"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/monitor/cabinet/error-bit/delete","dynamic":false,"source":"src/api/monitor/index.ts","line":138,"client":"API","symbol":"response","comment":"*\n * 清空误码\n * TODO 箱体压缩逻辑","parameters":["data: {\n  screenGuids?: string[];\n  list: {\n    screenIds?: number[];\n    slotIds?: number[];\n    canvasIds?: number[];\n    netPortIds?: number[];\n    cabinetIds?: string[];\n    sn?: string;\n  }[];\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'post',\n    url: 'ucenter/monitor/cabinet/error-bit/delete',\n    data,\n  }","context":"async (data: {\n  screenGuids?: string[];\n  list: {\n    screenIds?: number[];\n    slotIds?: number[];\n    canvasIds?: number[];\n    netPortIds?: number[];\n    cabinetIds?: string[];","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-monitor-cabinet-error-bit-delete",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

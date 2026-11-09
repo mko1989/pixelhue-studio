@@ -1,0 +1,7 @@
+{
+  "id": "reference-CutFillSwitchParamsT-aeaa468e",
+  "name": "CutFillSwitchParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"CutFillSwitchParamsT","source":"src/api/layer/layer.ts","line":939}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

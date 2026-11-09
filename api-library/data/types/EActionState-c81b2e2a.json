@@ -1,0 +1,9 @@
+{
+  "id": "EActionState-c81b2e2a",
+  "name": "EActionState",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/production/public/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 219,
+  "declaration": "enum EActionState {\n  start = 1, // 1：开始\n  end, // 2：结束\n}"
+}

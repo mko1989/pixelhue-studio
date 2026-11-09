@@ -1,0 +1,18 @@
+{
+  "page": 84,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nreference point\nwithin the\nconnector)\nnumb\n├─ width Yes Area width\ner\nnumb\n├─ height Yes Area height\ner\nnumb\n├─ enable Yes Area switch\ner\nnumb\n├─ index Yes Area index\ner\nWhether to\nshow the\ncircumscribed\nintege rectangle:\n├─ isShowRect Yes\nr 0: Do not show\nthe rectangle.\n1: Show the\nrectangle.\n├─ colorDepth object Yes Bit depth\nPreset bit depth:\n8: 8Bit.\nnumb 10: 10Bit.\n├─ preset Yes\ner 12: 12Bit.\n16: 16Bit.\n255: AUTO.\nActual bit depth:\nnumb\n├─ actual Yes 8: 8Bit.\ner\n10: 10Bit.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "reference point\nwithin the\nconnector)", ""],
+      ["├─ width", "numb\ner", "Yes", "", "Area width", ""],
+      ["├─ height", "numb\ner", "Yes", "", "Area height", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Area switch", ""],
+      ["├─ index", "numb\ner", "Yes", "", "Area index", ""],
+      ["├─ isShowRect", "intege\nr", "Yes", "", "Whether to\nshow the\ncircumscribed\nrectangle:\n0: Do not show\nthe rectangle.\n1: Show the\nrectangle.", ""],
+      ["├─ colorDepth", "object", "Yes", "", "Bit depth", ""],
+      ["├─ preset", "numb\ner", "Yes", "", "Preset bit depth:\n8: 8Bit.\n10: 10Bit.\n12: 12Bit.\n16: 16Bit.\n255: AUTO.", ""],
+      ["├─ actual", "numb\ner", "Yes", "", "Actual bit depth:\n8: 8Bit.\n10: 10Bit.", ""]
+    ]}
+  ]
+}

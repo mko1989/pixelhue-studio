@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/interface/stream-list",
+  "group": "interface",
+  "summary": "response",
+  "tags": ["interface","stream-list"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"/interface/stream-list","dynamic":false,"source":"src/api/device/device-video-flow.ts","line":21,"client":"API","symbol":"response","comment":"*\n * 获取接口拉流状态\n * @returns","parameters":["options?: ExtraReqParamsT"],"bodyExpression":null,"queryExpression":null,"headerExpression":"{\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    }","configExpression":"{\n    method: 'GET',\n    url: '/interface/stream-list',\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    },\n  }","context":"async (\n  options?: ExtraReqParamsT,\n): Promise<IResponseData<StreamResponeseT[]>> => {\n  const response = await API.request<IResponseData<StreamResponeseT[]>>({\n    method: 'GET',\n    url: '/interface/stream-list',\n    headers: {\n      ip: options?.ip || '',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-interface-stream-list",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

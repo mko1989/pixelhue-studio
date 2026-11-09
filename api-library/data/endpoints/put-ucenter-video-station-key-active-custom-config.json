@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/key/active-custom-config",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","key","active-custom-config"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/key/active-custom-config","dynamic":false,"source":"src/api/custom/index.ts","line":208,"client":"API","symbol":"response","comment":"*\n * 设置激活的自定义配置","parameters":["data: {\n  configID: number;\n  deviceModel: EDeviceMode;\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/key/active-custom-config',\n    data,\n  }","context":"async (data: {\n  configID: number;\n  deviceModel: EDeviceMode;\n}): Promise<IResponseData<null>> => {\n  const response = await API.request<IResponseData<null>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/key/active-custom-config',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-key-active-custom-config",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

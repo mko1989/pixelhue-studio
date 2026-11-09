@@ -1,0 +1,9 @@
+{
+  "id": "EConfigType-616f13c9",
+  "name": "EConfigType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 420,
+  "declaration": "enum EConfigType {\n  defalut, // 默认\n  useConfig, // 使用模式配置\n  customConfig, // 配置模式配置\n}"
+}

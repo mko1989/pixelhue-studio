@@ -1,0 +1,4 @@
+{
+  "group": "interace",
+  "endpoints": [{"id":"put-interace-mvr-aspect-ratio-lock","method":"PUT","path":"/unico/v1/interace/mvr/aspect-ratio-lock","group":"interace","summary":"res","tags":["interace","mvr","aspect-ratio-lock"],"models":[],"symbols":["res"],"keywords":" data: EnableE data","serverKind":"device","manual":false,"file":"endpoints/put-interace-mvr-aspect-ratio-lock.json"}]
+}

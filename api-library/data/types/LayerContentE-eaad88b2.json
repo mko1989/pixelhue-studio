@@ -1,0 +1,9 @@
+{
+  "id": "LayerContentE-eaad88b2",
+  "name": "LayerContentE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 715,
+  "declaration": "enum LayerContentE {\n  /**\n   bit 0  ：源名称\n   bit 1  ：源类型\n   bit 2  : 源分辨率\n   bit 3  ：源在AUX屏幕中使用时,显示AUX标识\n   bit 4  ：源为屏幕时,该屏幕被FTB,则显示FTB\n   bit 5  ：源为屏幕时,该屏幕被FREEZE,则显示FREEZE\n   */\n  name,\n  type,\n  resolution,\n  aux,\n  ftb,\n  freeze,\n  resolutionAndftb = 6,\n  auxAndFtbAndFreeze = 56,\n}"
+}

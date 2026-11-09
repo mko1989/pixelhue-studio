@@ -1,0 +1,7 @@
+{
+  "id": "reference-ILoadPreset-183a416f",
+  "name": "ILoadPreset",
+  "availability": "referenced-only",
+  "references": [{"name":"ILoadPreset","source":"src/api/preset/index.ts","line":140}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

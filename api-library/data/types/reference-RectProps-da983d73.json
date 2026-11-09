@@ -1,0 +1,7 @@
+{
+  "id": "reference-RectProps-da983d73",
+  "name": "RectProps",
+  "availability": "referenced-only",
+  "references": [{"name":"RectProps","source":"src/api/screen/screen.ts","line":845},{"name":"RectProps","source":"src/api/correction/index.ts","line":303},{"name":"RectProps","source":"src/api/correction/index.ts","line":304},{"name":"RectProps","source":"src/types/device/typing.ts","line":164}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

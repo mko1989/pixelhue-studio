@@ -1,0 +1,4 @@
+{
+  "group": "font",
+  "endpoints": [{"id":"post-font-delete","method":"POST","path":"/unico/v1/font/delete","group":"font","summary":"response","tags":["font","delete"],"models":[],"symbols":["response"],"keywords":" data: FontDeleteParamsT[] options?: ExtraReqParamsT data","serverKind":"device","manual":false,"file":"endpoints/post-font-delete.json"},{"id":"get-font-list","method":"GET","path":"/unico/v1/font/list","group":"font","summary":"response","tags":["font","list"],"models":[],"symbols":["response"],"keywords":" options?: ExtraReqParamsT","serverKind":"device","manual":false,"file":"endpoints/get-font-list.json"},{"id":"post-font-upload","method":"POST","path":"/unico/v1/font/upload","group":"font","summary":"response","tags":["font","upload"],"models":[],"symbols":["response"],"keywords":" file options?: ExtraReqParamsT formData","serverKind":"device","manual":false,"file":"endpoints/post-font-upload.json"}]
+}

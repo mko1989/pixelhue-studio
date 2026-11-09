@@ -1,0 +1,9 @@
+{
+  "id": "InputBackupSourceType-80a52d3a",
+  "name": "InputBackupSourceType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1106,
+  "declaration": "enum InputBackupSourceType {\n  MAIN,\n  BACKUP,\n}"
+}

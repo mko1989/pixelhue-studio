@@ -1,0 +1,9 @@
+{
+  "id": "ETurnPageType-6c2adf8d",
+  "name": "ETurnPageType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 1086,
+  "declaration": "enum ETurnPageType {\n  left, // 左翻页\n  right, // 右翻页\n}"
+}

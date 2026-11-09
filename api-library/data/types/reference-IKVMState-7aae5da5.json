@@ -1,0 +1,7 @@
+{
+  "id": "reference-IKVMState-7aae5da5",
+  "name": "IKVMState",
+  "availability": "referenced-only",
+  "references": [{"name":"IKVMState","source":"src/api/media/kvm-setting.ts","line":77},{"name":"IKVMState","source":"src/api/media/kvm-setting.ts","line":78}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

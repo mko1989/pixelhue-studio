@@ -1,0 +1,7 @@
+{
+  "id": "reference-DeviceDiscoverT-f806a70c",
+  "name": "DeviceDiscoverT",
+  "availability": "referenced-only",
+  "references": [{"name":"DeviceDiscoverT","source":"src/api/device/deviceList.ts","line":65},{"name":"DeviceDiscoverT","source":"src/api/device/deviceList.ts","line":66}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

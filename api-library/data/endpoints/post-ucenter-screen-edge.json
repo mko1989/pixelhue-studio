@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/edge",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","edge"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/screen/edge","dynamic":false,"source":"src/api/screen/screen.ts","line":684,"client":"API","symbol":"response","comment":"设置LCD边缘补偿","parameters":["data: ScreenEdgeCheckOverParamsT","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq || 0,\n    }","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/screen/edge',\n    headers: {\n      seq: seq || 0,\n    },\n    data,\n    timeout: 5000,\n  }","context":"async (\n  data: ScreenEdgeCheckOverParamsT,\n  seq?: number,\n): Promise<IResponseData<ScreenT[]>> => {\n  const response = await API.request<IResponseData<ScreenT[]>>({\n    method: 'POST',\n    url: 'ucenter/screen/edge',\n    headers: {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-edge",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

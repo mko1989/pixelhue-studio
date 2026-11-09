@@ -1,0 +1,9 @@
+{
+  "id": "interfaceHdcpT-be6bfa83",
+  "name": "interfaceHdcpT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 198,
+  "declaration": "interface interfaceHdcpT {\n  interfaceId: number | string;\n  hdcp: object;\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-deviceCapacityModeType-52c430ff",
+  "name": "deviceCapacityModeType",
+  "availability": "referenced-only",
+  "references": [{"name":"deviceCapacityModeType","source":"src/api/device/deviceList.ts","line":1062}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

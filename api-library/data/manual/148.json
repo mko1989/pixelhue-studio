@@ -1,0 +1,21 @@
+{
+  "page": 148,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\n1: Advanced mode.\nQuick parameter\n├─ quickAdjust object Yes\nadjustment\nColor temperature range:\nnumb 1700~15000, default\n├─ value Yes\ner value: 6500, step: 100,\nunit: K\n├─ Advanced parameter\nobject Yes\nadvanceAdjust adjustment\nR component: 0~255,\nnumb\n├─ R Yes default: 255, step: 1, unit:\ner\nnone\nG component: 0~255,\nnumb\n├─ G Yes default: 255, step: 1, unit:\ner\nnone\nB component: 0~255,\nnumb\n├─ B Yes default: 255, step: 1, unit:\ner\nnone\n├─ shadow object Yes Layer shadow information\n├─ general object Yes General information\nWhether to enable\nmock:\nintege shadow:\n├─ enable Yes @integ\nr 0: Disable.\ner\n1: Enable.\nmock:\nintege\n├─ feather Yes Feathering @integ\nr\ner\nShadow window\n├─ window object Yes\ninformation",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "1: Advanced mode.", ""],
+      ["├─ quickAdjust", "object", "Yes", "", "Quick parameter\nadjustment", ""],
+      ["├─ value", "numb\ner", "Yes", "", "Color temperature range:\n1700~15000, default\nvalue: 6500, step: 100,\nunit: K", ""],
+      ["├─\nadvanceAdjust", "object", "Yes", "", "Advanced parameter\nadjustment", ""],
+      ["├─ R", "numb\ner", "Yes", "", "R component: 0~255,\ndefault: 255, step: 1, unit:\nnone", ""],
+      ["├─ G", "numb\ner", "Yes", "", "G component: 0~255,\ndefault: 255, step: 1, unit:\nnone", ""],
+      ["├─ B", "numb\ner", "Yes", "", "B component: 0~255,\ndefault: 255, step: 1, unit:\nnone", ""],
+      ["├─ shadow", "object", "Yes", "", "Layer shadow information", ""],
+      ["├─ general", "object", "Yes", "", "General information", ""],
+      ["├─ enable", "intege\nr", "Yes", "", "Whether to enable\nshadow:\n0: Disable.\n1: Enable.", "mock:\n@integ\ner"],
+      ["├─ feather", "intege\nr", "Yes", "", "Feathering", "mock:\n@integ\ner"],
+      ["├─ window", "object", "Yes", "", "Shadow window\ninformation", ""]
+    ]}
+  ]
+}

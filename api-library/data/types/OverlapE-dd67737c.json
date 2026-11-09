@@ -1,0 +1,9 @@
+{
+  "id": "OverlapE-dd67737c",
+  "name": "OverlapE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 636,
+  "declaration": "enum OverlapE {\n  outside = 'outside',\n  cross = 'cross',\n  top = 'top',\n  horizontal = 'horizontal',\n  bottom = 'bottom',\n  left = 'left',\n  vertical = 'vertical',\n  right = 'right',\n}"
+}

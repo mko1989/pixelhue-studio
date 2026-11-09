@@ -1,0 +1,7 @@
+{
+  "id": "reference-IDropSwitchStatus-8fbbd82b",
+  "name": "IDropSwitchStatus",
+  "availability": "referenced-only",
+  "references": [{"name":"IDropSwitchStatus","source":"src/api/production/index.ts","line":165},{"name":"IDropSwitchStatus","source":"src/api/production/index.ts","line":166}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

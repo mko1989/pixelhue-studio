@@ -1,0 +1,9 @@
+{
+  "id": "ConfigT-4858fc61",
+  "name": "ConfigT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 366,
+  "declaration": "interface ConfigT {\n  /**\n   * 输出接口/信号源列表显示 槽位号-接口号\n   */\n  outputInfo?: string;\n  /**\n   * 信号源是否显示音源设置\n   */\n  isShowAudioSetting?: boolean;\n  /**\n   * 台标设置\n   */\n  tvSignSetting?: false | { text?: boolean; image?: boolean };\n  /**\n   * 视频流回显方式 canvas | flv\n   */\n  videoCompType?: 'canvas' | 'flv';\n  /**\n   * 是否隐藏屏幕亮度\n   */\n  isHideBrightness?: boolean;\n  /**\n   * OSD设置\n   */\n  osdSetting?: false | { text?: boolean; image?: boolean };\n  /**\n   * 文字OSD大小\n   */\n  osdTextSize?: {\n    min_x?: number;\n    min_y?: number;\n    max_x?: number;\n    max_y?: number;\n    min_w?: number;\n    min_h?: number;\n    max_w?: number;\n    max_h?: number;\n  };\n  /**\n   * 是否隐藏BKG设置\n   */\n  isHideBkg?: boolean;\n  /**\n   * 自定义图层布局最大个数\n   */\n  maxLayerLayoutNum?: number;\n  /**\n   * 是否显示音量调节\n   */\n  isShowAudioControl?: boolean;\n  /**\n   * 是否隐藏预编模式\n   */\n  isHidePreviewMode?: boolean;\n  /**\n   * 是否显示图层音频\n   */\n  isShowLayerAudio?: boolean;\n  /**\n   * 是否隐藏图层冻结\n   */\n  isHideLayerFreeze?: boolean;\n  /**\n   * 编辑区域内最大回显路数\n   */\n  maxVideoNum?: number;\n  /**\n   * flv流畅性(flv播放丢帧)\n   */\n  isFlvFluency?: boolean;\n  /**\n   * 画布大小\n   */\n  canvasSize?: {\n    w: number;\n    h: number;\n  };\n}"
+}

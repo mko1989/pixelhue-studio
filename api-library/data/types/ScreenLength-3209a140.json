@@ -1,0 +1,9 @@
+{
+  "id": "ScreenLength-3209a140",
+  "name": "ScreenLength",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 28,
+  "declaration": "enum ScreenLength {\n  long = 1,\n}"
+}

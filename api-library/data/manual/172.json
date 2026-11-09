@@ -1,0 +1,18 @@
+{
+  "page": 172,
+  "text": "Default\nName Type Required Remarks More\nValue\ntemplate.\n3: Aging test\ntemplate.\nAssociated\nmodule:\n├─ moduleType number Yes\n0: Multiviewer.\n1: Layer.\nItem\nTable combination,\n├─ object\ntype:\nYes used for layer\ncombinationData []\nobject\nlayout\n├─ row integer Yes Grid row - position\nGrid column -\n├─ column integer Yes\nposition\n├─ rowSpan integer Yes Grid row width\n├─ columnSpan integer Yes Grid column width\nItem\nobject Layer movement\n├─ radius Yes type:\n[] range\nobject\nSource type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n├─ sourceType number Yes 5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n9: Mosaic source.\n10: IPC mosaic",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "template.\n3: Aging test\ntemplate.", ""],
+      ["├─ moduleType", "number", "Yes", "", "Associated\nmodule:\n0: Multiviewer.\n1: Layer.", ""],
+      ["├─\ncombinationData", "object\n[]", "Yes", "", "Table combination,\nused for layer\nlayout", "Item\ntype:\nobject"],
+      ["├─ row", "integer", "Yes", "", "Grid row - position", ""],
+      ["├─ column", "integer", "Yes", "", "Grid column -\nposition", ""],
+      ["├─ rowSpan", "integer", "Yes", "", "Grid row width", ""],
+      ["├─ columnSpan", "integer", "Yes", "", "Grid column width", ""],
+      ["├─ radius", "object\n[]", "Yes", "", "Layer movement\nrange", "Item\ntype:\nobject"],
+      ["├─ sourceType", "number", "Yes", "", "Source type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n9: Mosaic source.\n10: IPC mosaic", ""]
+    ]}
+  ]
+}

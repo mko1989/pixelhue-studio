@@ -1,0 +1,24 @@
+{
+  "page": 218,
+  "text": "Default\nName Type Required Remarks More\nValue\n├─ No\n Return Data\nDefault\nName Type Required Remarks More\nValue\ncode number No Response code\nmessage string No Response message\ndata object No\n├─ guid string Yes Preset ID\n├─ serial integer Yes Preset ID number\nScene name:\nWithin 64 bytes (each\n├─ name string Yes\nChinese character\noccupies 2 bytes)\nPreset loading\nmethod:\n├─ loadType integer Yes\n1: Complete.\n2: Relative.\nPreset type:\n1. Global preset.\n2. Single-screen\n├─ type integer Yes\npreset.\n3. Multi-screen\npreset.\nPreset saved from\nPVW or PGM\n├─ sourceRegion integer Yes\n2: PGM.\n4: PVW.\nThe global transition\n├─ switchEffect object Yes\neffect\n├─ time number Yes The transition",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["├─", "", "No", "", "", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "number", "No", "", "Response code", ""],
+      ["message", "string", "No", "", "Response message", ""],
+      ["data", "object", "No", "", "", ""],
+      ["├─ guid", "string", "Yes", "", "Preset ID", ""],
+      ["├─ serial", "integer", "Yes", "", "Preset ID number", ""],
+      ["├─ name", "string", "Yes", "", "Scene name:\nWithin 64 bytes (each\nChinese character\noccupies 2 bytes)", ""],
+      ["├─ loadType", "integer", "Yes", "", "Preset loading\nmethod:\n1: Complete.\n2: Relative.", ""],
+      ["├─ type", "integer", "Yes", "", "Preset type:\n1. Global preset.\n2. Single-screen\npreset.\n3. Multi-screen\npreset.", ""],
+      ["├─ sourceRegion", "integer", "Yes", "", "Preset saved from\nPVW or PGM\n2: PGM.\n4: PVW.", ""],
+      ["├─ switchEffect", "object", "Yes", "", "The global transition\neffect", ""],
+      ["├─ time", "number", "Yes", "", "The transition", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/layers/clear",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","layers","clear"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/layers/clear","dynamic":false,"source":"src/api/layer/layer.ts","line":176,"client":"API","symbol":"response","comment":"清除所有图层 -- 新协议","parameters":["data: {\n    sceneType: number;\n    screenGuid: string;\n  }","options?: ExtraReqParamsT"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      ...options,\n    }","configExpression":"{\n    method: 'post',\n    url: 'ucenter/layers/clear',\n    data,\n    headers: {\n      ...options,\n    },\n  }","context":"async (\n  data: {\n    sceneType: number;\n    screenGuid: string;\n  },\n  options?: ExtraReqParamsT,\n): Promise<IResponseData<string>> => {\n  const response = await API.request<IResponseData<string>>({","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-layers-clear",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

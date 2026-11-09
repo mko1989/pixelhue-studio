@@ -1,0 +1,7 @@
+{
+  "id": "reference-TbarPositionI-e10a5c03",
+  "name": "TbarPositionI",
+  "availability": "referenced-only",
+  "references": [{"name":"TbarPositionI","source":"src/api/custom/index.ts","line":60},{"name":"TbarPositionI","source":"src/api/custom/index.ts","line":61}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

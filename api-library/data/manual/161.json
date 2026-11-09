@@ -1,0 +1,23 @@
+{
+  "page": 161,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nSafe area aspect ratio\nenumeration:\nnumb\n├─ aspectRatio Yes 1. 16:9.\ner\n2. 4:3.\n3. 9:16.\nnumb\n├─ id Yes Safe area ID\ner\n├─ osd object Yes\nOSD type:\nnumb\n├─ osdType Yes 1: Text.\ner\n2: Image.\n├─ preset object Yes Preset information\nnumb\n├─ isUsed Yes Whether to enable preset\ner\nnumb The used preset ID,\n├─ id Yes\ner effective when isUsed=1\n├─ osdInfo object Yes OSD layer information\nRequired when\n├─ text object Yes\nosdType=1\nItem\nobject\n├─ components Yes Widget list type:\n[]\nobject\n├─ background object Yes Background properties\n├─ color object Yes Background color\nnumb\n├─ Alpha Yes Transparency\ner\nnumb\n├─ R Yes Color component - R\ner",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["├─ aspectRatio", "numb\ner", "Yes", "", "Safe area aspect ratio\nenumeration:\n1. 16:9.\n2. 4:3.\n3. 9:16.", ""],
+      ["├─ id", "numb\ner", "Yes", "", "Safe area ID", ""],
+      ["├─ osd", "object", "Yes", "", "", ""],
+      ["├─ osdType", "numb\ner", "Yes", "", "OSD type:\n1: Text.\n2: Image.", ""],
+      ["├─ preset", "object", "Yes", "", "Preset information", ""],
+      ["├─ isUsed", "numb\ner", "Yes", "", "Whether to enable preset", ""],
+      ["├─ id", "numb\ner", "Yes", "", "The used preset ID,\neffective when isUsed=1", ""],
+      ["├─ osdInfo", "object", "Yes", "", "OSD layer information", ""],
+      ["├─ text", "object", "Yes", "", "Required when\nosdType=1", ""],
+      ["├─ components", "object\n[]", "Yes", "", "Widget list", "Item\ntype:\nobject"],
+      ["├─ background", "object", "Yes", "", "Background properties", ""],
+      ["├─ color", "object", "Yes", "", "Background color", ""],
+      ["├─ Alpha", "numb\ner", "Yes", "", "Transparency", ""],
+      ["├─ R", "numb\ner", "Yes", "", "Color component - R", ""]
+    ]}
+  ]
+}

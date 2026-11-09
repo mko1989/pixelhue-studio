@@ -1,0 +1,8 @@
+{
+  "id": "TestPatternValue-43897a9d",
+  "name": "TestPatternValue",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "Companion/src/interfaces/TestPattern.ts",
+  "line": 46,
+  "declaration": "type TestPatternValue =\n\t| (typeof TEST_PATTERN_TYPE_CHOICES)[number]['value']\n\t| (typeof SCREEN_TEST_PATTERN_TYPE_CHOICES)[number]['value']"
+}

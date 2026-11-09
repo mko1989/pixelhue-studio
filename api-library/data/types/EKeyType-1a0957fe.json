@@ -1,0 +1,9 @@
+{
+  "id": "EKeyType-1a0957fe",
+  "name": "EKeyType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/external-setting/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 11,
+  "declaration": "enum EKeyType {\n  preset = 'preset', // 场景\n  presetBar = 'preset-bar', // 1 - 音频服务器\n  arrowUp = 'arrow-up', // 上一页\n  arrowDown = 'arrow-down', // 上一页\n}"
+}

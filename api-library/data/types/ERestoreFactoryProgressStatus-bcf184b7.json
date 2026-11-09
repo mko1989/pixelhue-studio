@@ -1,0 +1,9 @@
+{
+  "id": "ERestoreFactoryProgressStatus-bcf184b7",
+  "name": "ERestoreFactoryProgressStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 766,
+  "declaration": "enum ERestoreFactoryProgressStatus {\n  wait, // 恢复出厂设置未开始\n  executing, // 恢复出厂设置执行中\n  success, // 恢复出厂设置成功\n  fail, // 恢复出厂设置异常结束\n}"
+}

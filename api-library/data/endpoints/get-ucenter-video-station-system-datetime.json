@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/video-station/system/datetime",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","system","datetime"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/video-station/system/datetime","dynamic":false,"source":"src/api/setting/setting.ts","line":287,"client":"API","symbol":"response","comment":"*获取控台当前时间","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'GET',\n    url: 'ucenter/video-station/system/datetime',\n  }","context":"async (): Promise<IResponseData<IPanelTimeInfo>> => {\n  const response = await API.request<IResponseData<IPanelTimeInfo>>({\n    method: 'GET',\n    url: 'ucenter/video-station/system/datetime',\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-video-station-system-datetime",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

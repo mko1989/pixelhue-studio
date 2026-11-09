@@ -1,0 +1,18 @@
+{
+  "page": 126,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nnumb\n├─ B Yes B\ner\n├─ guid string Yes\nCombination\ntype:\n0: Default\nintege\n├─ combinationType Yes screen.\nr\n1: Cross-device\nscreen.\n2: Super screen.\n├─ superScreenGUID string Yes\nnumb The screen\n├─ createTime Yes\ner creation time\nNumber of\nintege\n├─ count Yes items on the\nr\ncurrent page\nintege Current page\n├─ page Yes\nr number\nintege Total number of\n├─ totalCount Yes\nr items\nintege\n├─ totalPage Yes Total pages\nr\n4.2.2 Freeze\n Basic Information\nPath: /v1/screen/freeze\nMethod: PUT\nDescription:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["├─ B", "numb\ner", "Yes", "", "B", ""],
+      ["├─ guid", "string", "Yes", "", "", ""],
+      ["├─ combinationType", "intege\nr", "Yes", "", "Combination\ntype:\n0: Default\nscreen.\n1: Cross-device\nscreen.\n2: Super screen.", ""],
+      ["├─ superScreenGUID", "string", "Yes", "", "", ""],
+      ["├─ createTime", "numb\ner", "Yes", "", "The screen\ncreation time", ""],
+      ["├─ count", "intege\nr", "Yes", "", "Number of\nitems on the\ncurrent page", ""],
+      ["├─ page", "intege\nr", "Yes", "", "Current page\nnumber", ""],
+      ["├─ totalCount", "intege\nr", "Yes", "", "Total number of\nitems", ""],
+      ["├─ totalPage", "intege\nr", "Yes", "", "Total pages", ""]
+    ]}
+  ]
+}

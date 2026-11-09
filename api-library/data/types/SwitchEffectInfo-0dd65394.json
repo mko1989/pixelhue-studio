@@ -1,0 +1,9 @@
+{
+  "id": "SwitchEffectInfo-0dd65394",
+  "name": "SwitchEffectInfo",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/screen/screen.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 409,
+  "declaration": "interface SwitchEffectInfo {\n  list: {\n    sn: string;\n    switchEffectInfo: {\n      switchEffect: {\n        time: number;\n        type: number;\n      };\n    };\n  }[];\n}"
+}

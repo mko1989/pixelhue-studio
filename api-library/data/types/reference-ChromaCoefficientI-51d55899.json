@@ -1,0 +1,7 @@
+{
+  "id": "reference-ChromaCoefficientI-51d55899",
+  "name": "ChromaCoefficientI",
+  "availability": "referenced-only",
+  "references": [{"name":"ChromaCoefficientI","source":"src/api/correction/index.ts","line":106},{"name":"ChromaCoefficientI","source":"src/api/correction/index.ts","line":107},{"name":"ChromaCoefficientI","source":"src/api/correction/index.ts","line":130}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

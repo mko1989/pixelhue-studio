@@ -1,0 +1,10 @@
+{
+  "page": 9,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\nbackup data.\n10: Loaded, in\ndevice diagnosis.\n11: HDR\nactivated.\n12: Loaded,\nsaving cabinets.\n13: Loaded,\nreloading cabinet\nparameters.\n14: Loaded,\ncapturing image.\n15: Loaded, in\nTake process.\nOnly applicable\nwhen in Take,\nCut and T-Bar at\n100%.\n16: Loaded,\nupdating the\nreceiving cards.\n17: Loaded,\nrefreshing the\nreceiving cards.\n18: Loaded, the\nreceiving card\nsending\nconfiguration file.\n19: Loaded,\nconverting\ninternal source\nimages.\n20: Loaded, in\ncabinet rotation.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["", "", "", "", "backup data.\n10: Loaded, in\ndevice diagnosis.\n11: HDR\nactivated.\n12: Loaded,\nsaving cabinets.\n13: Loaded,\nreloading cabinet\nparameters.\n14: Loaded,\ncapturing image.\n15: Loaded, in\nTake process.\nOnly applicable\nwhen in Take,\nCut and T-Bar at\n100%.\n16: Loaded,\nupdating the\nreceiving cards.\n17: Loaded,\nrefreshing the\nreceiving cards.\n18: Loaded, the\nreceiving card\nsending\nconfiguration file.\n19: Loaded,\nconverting\ninternal source\nimages.\n20: Loaded, in\ncabinet rotation.", ""]
+    ]}
+  ]
+}

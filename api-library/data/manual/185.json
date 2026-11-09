@@ -1,0 +1,18 @@
+{
+  "page": 185,
+  "text": "Default\nName Type Required Remarks More\nValue\nProvide at least one of\nname or namePrefix; if\nboth are provided, name\ntakes precedence.\npresetIdObj object Yes The preset ID information\n├─ id integer Yes The preset number ID\nThe preset is from PVW\n├─\nnumber Yes or PGM: [2: PGM; 4:\nsceneType\nPVW）\nItem\ninteger The key position index,\ntype:\nkeyPosition Yes\n[] starting from 0\ninteger\nThe position sequence\n├─ No\nvalue\nThe parameter of the\nItem\nscreen in the preset.\nobject\ntype:\nscreenInfo Yes Fill in this value in\n[]\nobject\nindependent preset\nmode.\nThe ID of the screen in\nthe preset. Provide at\n├─ least one of screenId or\ninteger No\nscreenId screenName; if both are\nprovided, screenId takes\nprecedence.\nThe screen name.\nProvide at least one of\n├─ screenId or screenName;\nstring No\nscreenName if both are provided,\nscreenId takes\nprecedence.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "Provide at least one of\nname or namePrefix; if\nboth are provided, name\ntakes precedence.", ""],
+      ["presetIdObj", "object", "Yes", "", "The preset ID information", ""],
+      ["├─ id", "integer", "Yes", "", "The preset number ID", ""],
+      ["├─\nsceneType", "number", "Yes", "", "The preset is from PVW\nor PGM: [2: PGM; 4:\nPVW）", ""],
+      ["keyPosition", "integer\n[]", "Yes", "", "The key position index,\nstarting from 0", "Item\ntype:\ninteger"],
+      ["├─", "", "No", "", "The position sequence\nvalue", ""],
+      ["screenInfo", "object\n[]", "Yes", "", "The parameter of the\nscreen in the preset.\nFill in this value in\nindependent preset\nmode.", "Item\ntype:\nobject"],
+      ["├─\nscreenId", "integer", "No", "", "The ID of the screen in\nthe preset. Provide at\nleast one of screenId or\nscreenName; if both are\nprovided, screenId takes\nprecedence.", ""],
+      ["├─\nscreenName", "string", "No", "", "The screen name.\nProvide at least one of\nscreenId or screenName;\nif both are provided,\nscreenId takes\nprecedence.", ""]
+    ]}
+  ]
+}

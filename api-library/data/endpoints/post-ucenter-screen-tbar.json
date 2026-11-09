@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/screen/tbar",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","tbar"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/screen/tbar","dynamic":false,"source":"src/api/screen/screen.ts","line":927,"client":"API","symbol":"response","comment":"","parameters":["data: TBarData[]","seq: number","performanceTime: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      performanceTime: performanceTime,\n      seq: seq,\n    }","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/screen/tbar',\n    headers: {\n      performanceTime: performanceTime,\n      seq: seq,\n    },\n    data,\n  }","context":"async (\n  data: TBarData[],\n  seq: number,\n  performanceTime: number,\n): Promise<IResponseData<ResponseT>> => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'POST',\n    url: 'ucenter/screen/tbar',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-screen-tbar",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "depthRectifyDataT-0a8fd9de",
+  "name": "depthRectifyDataT",
+  "kind": "TSTypeAliasDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 402,
+  "declaration": "type depthRectifyDataT = {\n  interfaceId: number;\n  tagName: number; // 变化字段【    0：colorSpace    1：dynamicRange】\n  tagValueMax: number; // 位深字段可调最大值\n  tagValueMin: number; // 位深字段可调最小值\n  tagValueEnum: number[]; // 位深字段可调枚举值。当该字段数组为空时,字段支持值由tagValueMax和tagValueMin决定。\n};"
+}

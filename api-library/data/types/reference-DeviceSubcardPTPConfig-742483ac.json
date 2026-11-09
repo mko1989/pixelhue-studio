@@ -1,0 +1,7 @@
+{
+  "id": "reference-DeviceSubcardPTPConfig-742483ac",
+  "name": "DeviceSubcardPTPConfig",
+  "availability": "referenced-only",
+  "references": [{"name":"DeviceSubcardPTPConfig","source":"src/api/device/device-subcard.ts","line":17}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

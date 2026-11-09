@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/ucenter/video-station/key/response-state",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","key","response-state"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"ucenter/video-station/key/response-state","dynamic":false,"source":"src/api/custom/index.ts","line":150,"client":"API","symbol":"response","comment":"*\n * 是否响应控台按键开关\n * state=1，是屏蔽；state=0，是不屏蔽。该接口为put请求。","parameters":["data: {\n  state: number;\n}"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'PUT',\n    url: 'ucenter/video-station/key/response-state',\n    data,\n  }","context":"async (data: {\n  state: number;\n}): Promise<IResponseData<{ state: number }>> => {\n  const response = await API.request<IResponseData<{ state: number }>>({\n    method: 'PUT',\n    url: 'ucenter/video-station/key/response-state',\n    data,\n  });","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-ucenter-video-station-key-response-state",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

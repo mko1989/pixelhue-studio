@@ -1,0 +1,8 @@
+{
+  "id": "InterfacesListDetailData-9f85c95d",
+  "name": "InterfacesListDetailData",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Interface.ts",
+  "line": 1,
+  "declaration": "interface InterfacesListDetailData {\n\ttotalCount: number\n\tlist: Interface[]\n}"
+}

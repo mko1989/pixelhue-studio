@@ -1,0 +1,7 @@
+{
+  "id": "reference-DoubleCardBackupParamsT-39a602bf",
+  "name": "DoubleCardBackupParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"DoubleCardBackupParamsT","source":"src/api/device/double-card-backup.ts","line":18},{"name":"DoubleCardBackupParamsT","source":"src/api/device/double-card-backup.ts","line":19}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

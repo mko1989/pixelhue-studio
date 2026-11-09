@@ -1,0 +1,17 @@
+{
+  "page": 221,
+  "text": "Default\nName Type Required Remarks More\nValue\n9. Bottom-left\nrectangle.\n10. Top-center\nrectangle.\n11. Right-center\nrectangle.\n12. Bottom-center\nrectangle.\n13. Left-center\nrectangle.\n14. Cross shape.\n15. Center diamond.\n16. Center ellipse.\n17. Top-left triangle.\n18. Top-right triangle.\nSymmetry, ranging\nfrom 0% to 100%,\n├─ symmetry integer No with a coefficient of\n100 (needs to be\nmultiplied by 100)\nThe X position where\n├─ posX integer No\nthe pattern appears\nThe Y position where\n├─ posY integer No\nthe pattern appears\n├─ frameW integer No Border width\n├─ frameS integer No Border softness\nDirection:\n1. Forward.\n├─ direction integer No\n2. Reverse.\n3. Switch.\n├─ source object No",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "9. Bottom-left\nrectangle.\n10. Top-center\nrectangle.\n11. Right-center\nrectangle.\n12. Bottom-center\nrectangle.\n13. Left-center\nrectangle.\n14. Cross shape.\n15. Center diamond.\n16. Center ellipse.\n17. Top-left triangle.\n18. Top-right triangle.", ""],
+      ["├─ symmetry", "integer", "No", "", "Symmetry, ranging\nfrom 0% to 100%,\nwith a coefficient of\n100 (needs to be\nmultiplied by 100)", ""],
+      ["├─ posX", "integer", "No", "", "The X position where\nthe pattern appears", ""],
+      ["├─ posY", "integer", "No", "", "The Y position where\nthe pattern appears", ""],
+      ["├─ frameW", "integer", "No", "", "Border width", ""],
+      ["├─ frameS", "integer", "No", "", "Border softness", ""],
+      ["├─ direction", "integer", "No", "", "Direction:\n1. Forward.\n2. Reverse.\n3. Switch.", ""],
+      ["├─ source", "object", "No", "", "", ""]
+    ]}
+  ]
+}

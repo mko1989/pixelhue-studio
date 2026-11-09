@@ -1,0 +1,9 @@
+{
+  "id": "EffectTypeE-0975c3d2",
+  "name": "EffectTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/components/SourcePanel/components/UDiskAttr/enum.ts",
+  "sourceMap": "index-BJcacpMZ.js.map",
+  "line": 7,
+  "declaration": "enum EffectTypeE {\n  RIPPLES_WATER_WAVES = 0, //水波涟漪\n  LENS_ZOOMING_IN = 1, //镜头拉近\n  DIRECT_LAUNCH = 2, //直接切出\n  STEREO_FLIPPING = 3, //立体翻转\n  LOUVERS = 4, //百叶窗\n  LEFT_RIGHT_ERASING = 5, //左右擦除\n  UP_DOWN_ERASE = 6, //上下擦除\n  CUBE_ROTATION = 7, //立方体旋转\n  DISSOLUTION_TRSNSITION = 8, //溶解转场\n  GRID_TRANSITION = 9, //网格转场\n  FAN_SWEEP_TRANSITION = 10, //扇扫转场\n  SCROLL_TRANSITION = 11, //画卷转场\n  FADE_IN_OUT = 12, //淡入淡出\n  ROTATION_TWIST = 13, //旋转扭曲\n  HEART_SHAPED_TRANSITION = 14, //心形转场\n  PULL_OUT_CURTAIN = 15, //开门推出\n  PERSPECTIVE_TRIANGLE = 16, //透视三角\n  CIRCULAR_DISAPPEARANCE = 17, //圆形消失\n  RECTANGULAR_BOUNCE = 18, //矩形弹跳\n  STAR_ROTATION = 19, //轮辐旋转\n  RANDOM = 20, //随机\n}"
+}

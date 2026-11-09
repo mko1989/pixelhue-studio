@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/video-station/position/batchBinding",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","position","batchBinding"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/video-station/position/batchBinding","dynamic":false,"source":"src/api/custom/index.ts","line":519,"client":"API","symbol":"response","comment":"*\n * 批量绑定数据\n * @param data\n * @returns","parameters":["data: {\n    habitId: number;\n    configId: number;\n    areaType: number;\n    keyPosition: number;\n    businessObject: { id: number; originId: string };\n    projectId: string;\n  }[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'post',\n    url: 'ucenter/video-station/position/batchBinding',\n    data,\n  }","context":"async (\n  data: {\n    habitId: number;\n    configId: number;\n    areaType: number;\n    keyPosition: number;\n    businessObject: { id: number; originId: string };\n    projectId: string;","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-video-station-position-batchbinding",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

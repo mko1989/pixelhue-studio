@@ -1,0 +1,9 @@
+{
+  "id": "ESignalType-6d781620",
+  "name": "ESignalType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 531,
+  "declaration": "enum ESignalType {\n  input,\n  screen,\n  image,\n}"
+}

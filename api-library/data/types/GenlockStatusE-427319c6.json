@@ -1,0 +1,9 @@
+{
+  "id": "GenlockStatusE-427319c6",
+  "name": "GenlockStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 99,
+  "declaration": "enum GenlockStatusE {\n  /** 关闭 */\n  off,\n  /** 调节中 */\n  adjust,\n  /** 同步成功 */\n  success,\n  /** 同步失败，帧频不一致 */\n  failedFrame,\n  /** 同步失败，同步信号丢失 */\n  failedSignal,\n  /** 同步失败，无可用屏幕。 */\n  failedScreen,\n  /** 同步失败，带宽超限 */\n  failedBandWidth,\n  /** 同步失败, 同步帧频 > 240Hz */\n  failedOverTake,\n}"
+}

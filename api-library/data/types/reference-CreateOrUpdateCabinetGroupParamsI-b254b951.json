@@ -1,0 +1,7 @@
+{
+  "id": "reference-CreateOrUpdateCabinetGroupParamsI-b254b951",
+  "name": "CreateOrUpdateCabinetGroupParamsI",
+  "availability": "referenced-only",
+  "references": [{"name":"CreateOrUpdateCabinetGroupParamsI","source":"src/api/screen/controller.ts","line":298},{"name":"CreateOrUpdateCabinetGroupParamsI","source":"src/api/screen/controller.ts","line":334}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

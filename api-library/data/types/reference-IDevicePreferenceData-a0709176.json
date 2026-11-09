@@ -1,0 +1,7 @@
+{
+  "id": "reference-IDevicePreferenceData-a0709176",
+  "name": "IDevicePreferenceData",
+  "availability": "referenced-only",
+  "references": [{"name":"IDevicePreferenceData","source":"src/api/device/deviceInfo.ts","line":618},{"name":"IDevicePreferenceData","source":"src/api/device/deviceInfo.ts","line":635}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

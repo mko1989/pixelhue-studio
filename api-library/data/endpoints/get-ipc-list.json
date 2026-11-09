@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ipc/list",
+  "group": "ipc",
+  "summary": "response",
+  "tags": ["ipc","list"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ipc/list","dynamic":false,"source":"src/api/ipc/index.ts","line":45,"client":"API","symbol":"response","comment":"0x04-IPC管理列表","parameters":["params: IPCManageListQueryT","headers: AxiosRequestHeaders = {}"],"bodyExpression":null,"queryExpression":"params","headerExpression":"headers","configExpression":"{\n    method: 'get',\n    url: 'ipc/list',\n    params,\n    headers,\n  }","context":"async (\n  params: IPCManageListQueryT,\n  headers: AxiosRequestHeaders = {},\n) => {\n  const response = await API.request<IResponseData<IPCManageT>>({\n    method: 'get',\n    url: 'ipc/list',\n    params,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ipc-list",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

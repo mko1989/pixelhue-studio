@@ -1,0 +1,9 @@
+{
+  "id": "EEdidType-9b3e9cd5",
+  "name": "EEdidType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 773,
+  "declaration": "enum EEdidType {\n  input = 2, // 输入接口\n  output = 60, // 输出接口\n  screen, // 屏幕时序\n}"
+}

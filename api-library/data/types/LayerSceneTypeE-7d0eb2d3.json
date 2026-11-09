@@ -1,0 +1,9 @@
+{
+  "id": "LayerSceneTypeE-7d0eb2d3",
+  "name": "LayerSceneTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 643,
+  "declaration": "enum LayerSceneTypeE {\n  /** 不属于PGM或PVW； */\n  null = 1,\n  /** PGM　*/\n  PGM = 2,\n  /** Pvw　*/\n  PVW = 4,\n}"
+}

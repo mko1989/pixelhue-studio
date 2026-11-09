@@ -1,0 +1,14 @@
+{
+  "page": 156,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nr @integ\ner\nItem\nobject UMD settings (Members\n├─ UMD Yes type:\n[] in the array can be zero.)\nobject\nUMD switch:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\nUMD display region:\n0: Top left.\n1: Middle left.\n2: Bottom left.\nnumb 3: Top center.\n├─ area Yes\ner 4: Middle center.\n5: Bottom center.\n6: Top right.\n7: Middle right.\n8: Bottom right.\nUMD display content\n(bitwise OR relationship):\nBit 0: Source name.\nBit 1: Source type.\nBit 2: Source resolution.\nBit 3: Display AUX\nnumb\n├─ type Yes identifier when the source\ner\nis used on the AUX\nscreen.\nBit 4: Display FTB when\nthe source is a screen and\nthe screen is FTB.\nBit 5: Display FREEZE",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "r", "", "", "", "@integ\ner"],
+      ["├─ UMD", "object\n[]", "Yes", "", "UMD settings (Members\nin the array can be zero.)", "Item\ntype:\nobject"],
+      ["├─ enable", "numb\ner", "Yes", "", "UMD switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─ area", "numb\ner", "Yes", "", "UMD display region:\n0: Top left.\n1: Middle left.\n2: Bottom left.\n3: Top center.\n4: Middle center.\n5: Bottom center.\n6: Top right.\n7: Middle right.\n8: Bottom right.", ""],
+      ["├─ type", "numb\ner", "Yes", "", "UMD display content\n(bitwise OR relationship):\nBit 0: Source name.\nBit 1: Source type.\nBit 2: Source resolution.\nBit 3: Display AUX\nidentifier when the source\nis used on the AUX\nscreen.\nBit 4: Display FTB when\nthe source is a screen and\nthe screen is FTB.\nBit 5: Display FREEZE", ""]
+    ]}
+  ]
+}

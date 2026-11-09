@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/video-station/system/key-skin",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","system","key-skin"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/video-station/system/key-skin","dynamic":false,"source":"src/api/setting/setting.ts","line":90,"client":"API","symbol":"response","comment":"*\n * 获取当前选中的皮肤ID\n * @returns id","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'GET',\n    url: 'ucenter/video-station/system/key-skin',\n  }","context":"async (): Promise<IResponseData<ESettingAttrPeeling>> => {\n  const response = await API.request<IResponseData<ESettingAttrPeeling>>({\n    method: 'GET',\n    url: 'ucenter/video-station/system/key-skin',\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-video-station-system-key-skin",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

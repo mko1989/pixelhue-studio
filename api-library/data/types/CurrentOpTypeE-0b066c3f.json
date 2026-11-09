@@ -1,0 +1,9 @@
+{
+  "id": "CurrentOpTypeE-0b066c3f",
+  "name": "CurrentOpTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/correction/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 102,
+  "declaration": "enum CurrentOpTypeE {\n  /****上传***/\n  Upload,\n  /****导出***/\n  Export,\n}"
+}

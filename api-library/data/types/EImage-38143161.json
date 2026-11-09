@@ -1,0 +1,9 @@
+{
+  "id": "EImage-38143161",
+  "name": "EImage",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 248,
+  "declaration": "enum EImage {\n  contrast = 'contrast', // 对比度\n  brightness = 'brightness', // 亮度\n  hue = 'hue', // 色调\n  saturation = 'saturation', // 饱和度\n  gamma = 'gamma', // Gamma\n  colorTemperature = 'colorTemperature', // 色温\n  eyeCare = 'eyeCare', // 护眼\n  imageQualityMode = 'imageQualityMode', // 模式\n}"
+}

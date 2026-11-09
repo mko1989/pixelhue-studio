@@ -1,0 +1,9 @@
+{
+  "id": "EColorGamutPreset-a162898b",
+  "name": "EColorGamutPreset",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 171,
+  "declaration": "enum EColorGamutPreset {\n  'Rec.601' = 0,\n  'Rec.709',\n  'DCI-P3',\n  'Rec.2020',\n  NTSC,\n  aRGB,\n  AUTO = 255,\n}"
+}

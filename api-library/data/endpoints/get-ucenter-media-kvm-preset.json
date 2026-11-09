@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/media/kvm-preset",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","media","kvm-preset"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/media/kvm-preset","dynamic":false,"source":"src/api/media/kvm-setting.ts","line":15,"client":"API","symbol":"response","comment":"*\n * 获取kvm预设信息\n * @returns","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'ucenter/media/kvm-preset',\n  }","context":"async (): Promise<IResponseData<IKvmPreset[]>> => {\n  const response = await API.request<IResponseData<IKvmPreset[]>>({\n    method: 'get',\n    url: 'ucenter/media/kvm-preset',\n  });\n  return response.data;\n}","sourceMap":"index-CjV3BkZw.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-media-kvm-preset",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

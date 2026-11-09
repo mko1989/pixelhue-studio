@@ -1,0 +1,9 @@
+{
+  "id": "BitTypeE-3b2365f8",
+  "name": "BitTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 475,
+  "declaration": "enum BitTypeE {\n  bit18 = 1,\n  bit22,\n}"
+}

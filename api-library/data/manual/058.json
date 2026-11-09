@@ -1,0 +1,14 @@
+{
+  "page": 58,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nMin: 0\n├─ integ The key position index, Item type:\nYes\ninteger\nkeyPosition er [] starting from 0\nThe position sequence\n├─ No\nvalue\nItem type:\nobjec\n├─ metadata Yes metadata data\nobject\nt []\nThe meaning of the para\nfield for different type\nvalues: When type==0, para\nmeaning: Electro-optical\nconversion\n(electroOpticalTransferFun\nction).\nWhen type==1, para\nmeaning: White point x-\ncoordinate (whitePointX).\nWhen type==2, para\nnumb\n├─ type Yes meaning: White point y-\ner\ncoordinate (whitePointY).\nWhen type==3, para\nmeaning: MaxDML\n(maxDisplayMasteringLumi\nnance).\nWhen type==4, para\nmeaning: MinDML\n(minDisplayMasteringLumi\nnance).\nWhen type==5, para\nmeaning: MaxCLL",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "", "Min: 0"],
+      ["├─\nkeyPosition", "integ\ner []", "Yes", "", "The key position index,\nstarting from 0", "Item type:\ninteger"],
+      ["├─", "", "No", "", "The position sequence\nvalue", ""],
+      ["├─ metadata", "objec\nt []", "Yes", "", "metadata data", "Item type:\nobject"],
+      ["├─ type", "numb\ner", "Yes", "", "The meaning of the para\nfield for different type\nvalues: When type==0, para\nmeaning: Electro-optical\nconversion\n(electroOpticalTransferFun\nction).\nWhen type==1, para\nmeaning: White point x-\ncoordinate (whitePointX).\nWhen type==2, para\nmeaning: White point y-\ncoordinate (whitePointY).\nWhen type==3, para\nmeaning: MaxDML\n(maxDisplayMasteringLumi\nnance).\nWhen type==4, para\nmeaning: MinDML\n(minDisplayMasteringLumi\nnance).\nWhen type==5, para\nmeaning: MaxCLL", ""]
+    ]}
+  ]
+}

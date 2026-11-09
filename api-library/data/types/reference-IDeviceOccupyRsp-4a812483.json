@@ -1,0 +1,7 @@
+{
+  "id": "reference-IDeviceOccupyRsp-4a812483",
+  "name": "IDeviceOccupyRsp",
+  "availability": "referenced-only",
+  "references": [{"name":"IDeviceOccupyRsp","source":"src/api/device/device-occupancy.ts","line":13},{"name":"IDeviceOccupyRsp","source":"src/api/device/device-occupancy.ts","line":14},{"name":"IDeviceOccupyRsp","source":"src/api/device/device-occupancy.ts","line":32},{"name":"IDeviceOccupyRsp","source":"src/api/device/device-occupancy.ts","line":34}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "QualityEnhanceE-ad2d0ab0",
+  "name": "QualityEnhanceE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 114,
+  "declaration": "enum QualityEnhanceE {\n  /** 自然 */\n  normal,\n  /** 文本 */\n  text,\n}"
+}

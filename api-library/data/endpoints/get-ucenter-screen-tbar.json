@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/screen/tbar",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","screen","tbar"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/screen/tbar?{params}","dynamic":true,"pathParameters":[{"name":"params","expression":"params"}],"source":"src/api/screen/screen.ts","line":763,"client":"API","symbol":"response","comment":"0x01-UCenter-获取屏幕Tbar状态","parameters":["options?: ExtraReqParamsT","params?: string"],"bodyExpression":null,"queryExpression":null,"headerExpression":"{\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    }","configExpression":"{\n    method: 'get',\n    url: `ucenter/screen/tbar?${params}`,\n    headers: {\n      ip: options?.ip || '',\n      port: options?.port || '',\n      Authorization: options?.token || '',\n      protocol: options?.protocol || '',\n    },\n  }","context":"async (\n  options?: ExtraReqParamsT,\n  params?: string,\n): Promise<IResponseData<TBarDataList>> => {\n  const response = await API.request<IResponseData<TBarDataList>>({\n    method: 'get',\n    url: `ucenter/screen/tbar?${params}`,\n    headers: {","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-screen-tbar",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

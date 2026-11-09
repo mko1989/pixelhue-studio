@@ -1,0 +1,7 @@
+{
+  "id": "reference-CutBodyT-d3a38c60",
+  "name": "CutBodyT",
+  "availability": "referenced-only",
+  "references": [{"name":"CutBodyT","source":"src/api/screen/screen.ts","line":777}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

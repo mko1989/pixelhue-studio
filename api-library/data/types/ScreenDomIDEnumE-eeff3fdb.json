@@ -1,0 +1,9 @@
+{
+  "id": "ScreenDomIDEnumE-eeff3fdb",
+  "name": "ScreenDomIDEnumE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 300,
+  "declaration": "enum ScreenDomIDEnumE {\n  screen_pc_0 = 'pcScreen',\n  screen0 = 'screen1',\n  screen1 = 'screen2',\n  screen2 = 'screen3',\n  screen3 = 'screen4',\n}"
+}

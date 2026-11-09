@@ -1,0 +1,7 @@
+{
+  "id": "reference-IUSBportLink-298be3a2",
+  "name": "IUSBportLink",
+  "availability": "referenced-only",
+  "references": [{"name":"IUSBportLink","source":"src/api/device/deviceList.ts","line":706},{"name":"IUSBportLink","source":"src/api/device/deviceList.ts","line":707}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

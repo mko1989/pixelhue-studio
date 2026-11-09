@@ -1,0 +1,7 @@
+{
+  "id": "reference-ISlotModelIdInfo-44ae6c74",
+  "name": "ISlotModelIdInfo",
+  "availability": "referenced-only",
+  "references": [{"name":"ISlotModelIdInfo","source":"src/api/device/deviceList.ts","line":929}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

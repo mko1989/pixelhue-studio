@@ -1,0 +1,9 @@
+{
+  "id": "TbarDropItemE-26b4bbda",
+  "name": "TbarDropItemE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 209,
+  "declaration": "enum TbarDropItemE {\n  /** tbar */\n  sider0,\n  /** 推杆1 */\n  sider1,\n  /** 推杆2 */\n  sider2,\n  sider3,\n  sider4,\n  sider5,\n  sider6,\n  sider7,\n  sider8,\n}"
+}

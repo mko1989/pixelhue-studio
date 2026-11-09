@@ -1,0 +1,26 @@
+{
+  "page": 168,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\ner\n├─ label string Yes Wind speed label\n├─ value string Yes Wind speed information\n├─ humidity object Yes Humidity\nnumb\n├─ enable Yes Whether to display\ner\n├─ label string Yes Humidity label\n├─ value string Yes Humidity information\nRequired when\n├─ picture object Yes\nosdType=2\nnumb\n├─ pictureId Yes Image ID\ner\n├─\nstring Yes The widget’s unique ID\ncomponentId\nnumb\n├─ opacity Yes Opacity\ner\n├─ position object Yes Position\nnumb\n├─ x Yes Position: x-coordinate\ner\nnumb\n├─ y Yes Position: y-coordinate\ner\nnumb\n├─ width Yes Position: width\ner\nnumb\n├─ height Yes Position: height\ner\nintege Number of items on the\n├─ count Yes\nr current page",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "er", "", "", "", ""],
+      ["├─ label", "string", "Yes", "", "Wind speed label", ""],
+      ["├─ value", "string", "Yes", "", "Wind speed information", ""],
+      ["├─ humidity", "object", "Yes", "", "Humidity", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Whether to display", ""],
+      ["├─ label", "string", "Yes", "", "Humidity label", ""],
+      ["├─ value", "string", "Yes", "", "Humidity information", ""],
+      ["├─ picture", "object", "Yes", "", "Required when\nosdType=2", ""],
+      ["├─ pictureId", "numb\ner", "Yes", "", "Image ID", ""],
+      ["├─\ncomponentId", "string", "Yes", "", "The widget’s unique ID", ""],
+      ["├─ opacity", "numb\ner", "Yes", "", "Opacity", ""],
+      ["├─ position", "object", "Yes", "", "Position", ""],
+      ["├─ x", "numb\ner", "Yes", "", "Position: x-coordinate", ""],
+      ["├─ y", "numb\ner", "Yes", "", "Position: y-coordinate", ""],
+      ["├─ width", "numb\ner", "Yes", "", "Position: width", ""],
+      ["├─ height", "numb\ner", "Yes", "", "Position: height", ""],
+      ["├─ count", "intege\nr", "Yes", "", "Number of items on the\ncurrent page", ""]
+    ]}
+  ]
+}

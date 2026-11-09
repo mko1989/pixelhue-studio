@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/cabinet/correction/flash",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","cabinet","correction","flash"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/cabinet/correction/flash","dynamic":false,"source":"src/api/correction/index.ts","line":147,"client":"API","symbol":"response","comment":"****获取箱体flash状态***","parameters":["data: {\n    sn: string;\n    data: { cabinetIds: string[] };\n  }[]"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      'Content-Type': 'application/json',\n    }","configExpression":"{\n    method: 'post',\n    url: 'ucenter/cabinet/correction/flash',\n    data,\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    timeout: 60000,\n  }","context":"async (\n  data: {\n    sn: string;\n    data: { cabinetIds: string[] };\n  }[],\n): Promise<GetCorrectionFlashResponseI> => {\n  const response = await API.request<GetCorrectionFlashResponseI>({\n    method: 'post',","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-cabinet-correction-flash",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

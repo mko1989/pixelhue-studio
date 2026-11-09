@@ -1,0 +1,11 @@
+{
+  "page": 26,
+  "text": "Default\nName Type Required Remarks More\nValue\nsettings.\nWhen type=5, para\nmeans project file.\nWhen type=6, para\nmeans preset.\nWhen type=7, para\nmeans layer preset.\nWhen type=8, para\nmeans user file.\nWhen type=9, para\nmeans device mode.\nThe meaning of para\nvalues for different type\nvalues:\nWhen type=0, para value:\n0: Restart device.\nWhen type=1, para value:\n0: Retain IP settings.\nWhen type=2, para value:\n0: Retain EDID settings.\nWhen type=3, para value:\n0: Retain gallery.\n├─ para number Yes When type=4, para value:\n0: Retain language\nsettings.\nWhen type=5, para value:\n0: Retain project files.\nWhen type=6, para value:\n0: Retain presets.\nWhen type=7, para value:\n0: Retain layer presets.\nWhen type=8, para value:\n0: Retain user file. When\ntype=9, para value: 0:",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "settings.\nWhen type=5, para\nmeans project file.\nWhen type=6, para\nmeans preset.\nWhen type=7, para\nmeans layer preset.\nWhen type=8, para\nmeans user file.\nWhen type=9, para\nmeans device mode.", ""],
+      ["├─ para", "number", "Yes", "", "The meaning of para\nvalues for different type\nvalues:\nWhen type=0, para value:\n0: Restart device.\nWhen type=1, para value:\n0: Retain IP settings.\nWhen type=2, para value:\n0: Retain EDID settings.\nWhen type=3, para value:\n0: Retain gallery.\nWhen type=4, para value:\n0: Retain language\nsettings.\nWhen type=5, para value:\n0: Retain project files.\nWhen type=6, para value:\n0: Retain presets.\nWhen type=7, para value:\n0: Retain layer presets.\nWhen type=8, para value:\n0: Retain user file. When\ntype=9, para value: 0:", ""]
+    ]}
+  ]
+}

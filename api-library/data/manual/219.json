@@ -1,0 +1,13 @@
+{
+  "page": 219,
+  "text": "Default\nName Type Required Remarks More\nValue\nduration (unit: ms)\nTransition effects:\n0: Cut.\n1: Fade.\n├─ type number Yes 2. Dip.\n3. Wipe.\n4. Stinger.\n5. DVE.\n├─ wipe object No Wipe\nPattern settings:\n1. Vertical rectangle:\nThe height remains\nconstant while the\nwidth increases from\nleft to right, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only\non the moving edge\n(middle vertical line).\n├─ image integer No\n2. Horizontal\nrectangle: The width\nremains constant\nwhile the height\nincreases from top to\nbottom, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only\non the moving edge\n(middle horizontal",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "duration (unit: ms)", ""],
+      ["├─ type", "number", "Yes", "", "Transition effects:\n0: Cut.\n1: Fade.\n2. Dip.\n3. Wipe.\n4. Stinger.\n5. DVE.", ""],
+      ["├─ wipe", "object", "No", "", "Wipe", ""],
+      ["├─ image", "integer", "No", "", "Pattern settings:\n1. Vertical rectangle:\nThe height remains\nconstant while the\nwidth increases from\nleft to right, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only\non the moving edge\n(middle vertical line).\n2. Horizontal\nrectangle: The width\nremains constant\nwhile the height\nincreases from top to\nbottom, and\ndecreases in the\nopposite direction\nwhen reversed. The\nborder appears only\non the moving edge\n(middle horizontal", ""]
+    ]}
+  ]
+}

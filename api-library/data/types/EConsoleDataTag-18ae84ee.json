@@ -1,0 +1,9 @@
+{
+  "id": "EConsoleDataTag-18ae84ee",
+  "name": "EConsoleDataTag",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 452,
+  "declaration": "enum EConsoleDataTag {\n  screenBlockListTag = 'console-tbar-start-tag', // tabr状态：是否开始\n  workModeStatusTag = 'work-mode-status-tag', // 是否疫控多状态\n  isVirtualConsoleReady = 'is-virtual-console-ready', // pc虚拟控台是否已打开\n  consoleType = 'console-type', // pc虚拟控台-控台类型\n  activeConfigMidiInfo = 'active-config-midiInfo', // 激活的midi配置\n  activeHabitConfig = 'active-habit-config', // 当前应用的使用习惯\n  screensBlockageStatusTag = 'screens-blockage-status-tag', // 屏幕阻塞态状态\n}"
+}

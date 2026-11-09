@@ -1,0 +1,7 @@
+{
+  "id": "reference-MatrixMappingParamsT-4961172b",
+  "name": "MatrixMappingParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"MatrixMappingParamsT","source":"src/api/audio-matrix/index.ts","line":34}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

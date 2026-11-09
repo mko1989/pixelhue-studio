@@ -1,0 +1,9 @@
+{
+  "id": "createEmptyScreenT-97713568",
+  "name": "createEmptyScreenT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/screen/screen.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 530,
+  "declaration": "interface createEmptyScreenT {\n  type: number;\n  namePrefix: string;\n  layout: layoutT;\n  keyPosition?: number[];\n}"
+}

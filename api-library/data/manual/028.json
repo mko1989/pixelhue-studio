@@ -1,0 +1,27 @@
+{
+  "page": 28,
+  "text": "Default\nName Type Required Remarks More\nValue\ncode integer Yes Response code\nResponse\nmessage string Yes\nmessage\nItem type:\nobject\ndata Yes\nobject\n[]\n2.4 Set Swap\n Basic Information\nPath: /v1/screen/global/swap\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nAuthorization Yes token\nBody\nName Type Required Default Value Remarks More\nSwap switch:\nenable number Yes 0: Disable.\n1: Enable.\n Return Data\nName Type Required Default Value Remarks More\ncode integer Yes Response code\nmessage string Yes Response message\ndata object Yes",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response\nmessage", ""],
+      ["data", "object\n[]", "Yes", "", "", "Item type:\nobject"]
+    ]},
+    {"contextBefore": "2.4 Set Swap\n Basic Information\nPath: /v1/screen/global/swap\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""],
+      ["Authorization", "", "Yes", "", "token"]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["enable", "number", "Yes", "", "Swap switch:\n0: Disable.\n1: Enable.", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", ""],
+      ["message", "string", "Yes", "", "Response message", ""],
+      ["data", "object", "Yes", "", "", ""]
+    ]}
+  ]
+}

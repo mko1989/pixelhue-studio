@@ -1,0 +1,7 @@
+{
+  "id": "reference-CorrectionUploadCheckResultT-42788841",
+  "name": "CorrectionUploadCheckResultT",
+  "availability": "referenced-only",
+  "references": [{"name":"CorrectionUploadCheckResultT","source":"src/api/correction/index.ts","line":162},{"name":"CorrectionUploadCheckResultT","source":"src/api/correction/index.ts","line":163}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

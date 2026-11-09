@@ -1,0 +1,7 @@
+{
+  "id": "reference-DeviceNoSignalBackgroundColor-f274db6a",
+  "name": "DeviceNoSignalBackgroundColor",
+  "availability": "referenced-only",
+  "references": [{"name":"DeviceNoSignalBackgroundColor","source":"src/api/device/deviceInfo.ts","line":896}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

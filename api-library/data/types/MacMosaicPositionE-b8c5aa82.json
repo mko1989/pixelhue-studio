@@ -1,0 +1,9 @@
+{
+  "id": "MacMosaicPositionE-b8c5aa82",
+  "name": "MacMosaicPositionE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 818,
+  "declaration": "enum MacMosaicPositionE {\n  none = 0, // 关\n  left = 1, //左\n  right = 2, // 右\n}"
+}

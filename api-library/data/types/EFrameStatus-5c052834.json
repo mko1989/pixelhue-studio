@@ -1,0 +1,9 @@
+{
+  "id": "EFrameStatus-5c052834",
+  "name": "EFrameStatus",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 1217,
+  "declaration": "enum EFrameStatus {\n  real,\n  showError,\n  adaptive,\n}"
+}

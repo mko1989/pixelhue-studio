@@ -1,0 +1,23 @@
+{
+  "page": 5,
+  "text": "Name Type Required Default Value Remarks More\ndata object Yes\n├─ token string Yes\n1.2 Read Node Public Information\n Basic Information\nPath: /v1/node/open-detail\nMethod: GET\nDescription:\n Request Parameters\nQuery\nName Required Example Remarks\nnodeId No Node ID\n Return Data\nDefault\nName Type Required Remarks More\nValue\nmock: 200\ncode integer Yes 200 Error code\nok\nmock: ok\nmessage string Yes\nError description\ndata object Yes Business data\nmock:\n├─ sn string Yes Serial number (SN)\newrqwerqwe\nNode startup time\n├─\nstring Yes (timestamp, in\nstartTime\nmilliseconds)",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["data", "object", "Yes", "", "", ""],
+      ["├─ token", "string", "Yes", "", "", ""]
+    ]},
+    {"contextBefore": "1.2 Read Node Public Information\n Basic Information\nPath: /v1/node/open-detail\nMethod: GET\nDescription:\n Request Parameters\nQuery", "rows": [
+      ["Name", "Required", "Example", "Remarks"],
+      ["nodeId", "No", "", "Node ID"]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["code", "integer", "Yes", "200", "Error code", "mock: 200"],
+      ["message", "string", "Yes", "", "ok\nError description", "mock: ok"],
+      ["data", "object", "Yes", "", "Business data", ""],
+      ["├─ sn", "string", "Yes", "", "Serial number (SN)", "mock:\newrqwerqwe"],
+      ["├─\nstartTime", "string", "Yes", "", "Node startup time\n(timestamp, in\nmilliseconds)", ""]
+    ]}
+  ]
+}

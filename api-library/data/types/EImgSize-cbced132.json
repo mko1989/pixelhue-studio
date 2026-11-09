@@ -1,0 +1,9 @@
+{
+  "id": "EImgSize-cbced132",
+  "name": "EImgSize",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 258,
+  "declaration": "enum EImgSize {\n  width = 16,\n  height1 = 60,\n  height2 = 53,\n  height3 = 59,\n}"
+}

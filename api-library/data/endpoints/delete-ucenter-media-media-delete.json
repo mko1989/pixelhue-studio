@@ -1,0 +1,23 @@
+{
+  "method": "DELETE",
+  "path": "/unico/v1/ucenter/media/media-delete",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","media","media-delete"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"DELETE","path":"ucenter/media/media-delete","dynamic":false,"source":"src/api/media/index.ts","line":31,"client":"API","symbol":"response","comment":"*\n * 删除媒体服务器\n * @returns","parameters":["serverId: number"],"bodyExpression":"[serverId]","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'delete',\n    url: 'ucenter/media/media-delete',\n    data: [serverId],\n  }","context":"async (\n  serverId: number,\n): Promise<IResponseData<PaginationT<IMediaDevice>>> => {\n  const response = await API.request<IResponseData<PaginationT<IMediaDevice>>>({\n    method: 'delete',\n    url: 'ucenter/media/media-delete',\n    data: [serverId],\n  });","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "delete-ucenter-media-media-delete",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

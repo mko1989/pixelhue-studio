@@ -1,0 +1,14 @@
+{
+  "page": 45,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nnone\nB component: 0~255,\nnumb\n├─ B Yes default: 255, step: 1, unit:\ner\nnone\nWhether to enable\n├─ numb Monochrome:\nYes\nisMonochrome er 0: No.\n1: Yes.\nWhether to invert colors:\nnumb\n├─ isInverse Yes 0: No.\ner\n1: Yes.\nConnector cropping\ninformation. To ensure that\nthe cropping ratio is not\naffected by the actual size\nof the source after\nconnector cropping, a\ncropping ratio is used. The\nratio is magnified 100,000\ntimes because the current\nobjec maximum width is 8192,\n├─ crop Yes\nt corresponding to a\nminimum crop of 64. A\nmagnification greater than\n8192/64=128 times\nensures an error of less\nthan 1. A magnification of\n100,000 times can\naccommodate a resolution\nof 640,000.\n“widthResolution”",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "none", ""],
+      ["├─ B", "numb\ner", "Yes", "", "B component: 0~255,\ndefault: 255, step: 1, unit:\nnone", ""],
+      ["├─\nisMonochrome", "numb\ner", "Yes", "", "Whether to enable\nMonochrome:\n0: No.\n1: Yes.", ""],
+      ["├─ isInverse", "numb\ner", "Yes", "", "Whether to invert colors:\n0: No.\n1: Yes.", ""],
+      ["├─ crop", "objec\nt", "Yes", "", "Connector cropping\ninformation. To ensure that\nthe cropping ratio is not\naffected by the actual size\nof the source after\nconnector cropping, a\ncropping ratio is used. The\nratio is magnified 100,000\ntimes because the current\nmaximum width is 8192,\ncorresponding to a\nminimum crop of 64. A\nmagnification greater than\n8192/64=128 times\nensures an error of less\nthan 1. A magnification of\n100,000 times can\naccommodate a resolution\nof 640,000.\n“widthResolution”", ""]
+    ]}
+  ]
+}

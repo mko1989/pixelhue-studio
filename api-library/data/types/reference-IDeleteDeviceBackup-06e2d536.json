@@ -1,0 +1,7 @@
+{
+  "id": "reference-IDeleteDeviceBackup-06e2d536",
+  "name": "IDeleteDeviceBackup",
+  "availability": "referenced-only",
+  "references": [{"name":"IDeleteDeviceBackup","source":"src/api/device-backup/index.ts","line":20}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-ScreenAudioI-678a4dcd",
+  "name": "ScreenAudioI",
+  "availability": "referenced-only",
+  "references": [{"name":"ScreenAudioI","source":"src/api/screen/screen.ts","line":1505},{"name":"ScreenAudioI","source":"src/api/screen/screen.ts","line":1513}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

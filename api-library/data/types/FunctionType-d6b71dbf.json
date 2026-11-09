@@ -1,0 +1,9 @@
+{
+  "id": "FunctionType-d6b71dbf",
+  "name": "FunctionType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 141,
+  "declaration": "enum FunctionType {\n  screen = 'screen',\n  layer = 'layer',\n  input = 'input',\n  preset = 'preset',\n  device = 'device',\n  system = 'system-functions', // 系统功能\n  layerEdit = 'layer-edit', // 图层编辑\n  time = 'time-edit', // 时码编辑区\n  cueEdit = 'cue-edit', // CUE编辑\n  wisdom = 'wisdom-control', //智慧屏\n  PTZControl = 'console-tab-PTZ', // 云台控制\n  inputParamAdjustment = 'input-param-adjustment', // 输入参数调节\n  outputParamAdjustment = 'output-param-adjustment', // 输出参数调节\n  layerParamAdjustment = 'layer-param-adjustment', // 图层属性调节\n  screenParamAdjustment = 'screen-param-adjustment', // 配屏\n  PTZParamAdjustment = 'ptz-param-adjustment', // 云台参数调节\n  mvrParamAdjustment = 'mvr-param-adjustment', // mvr\n  number = 'number',\n}"
+}

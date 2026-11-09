@@ -1,0 +1,7 @@
+{
+  "id": "reference-ImageQualityT-9d6e35b7",
+  "name": "ImageQualityT",
+  "availability": "referenced-only",
+  "references": [{"name":"ImageQualityT","source":"src/api/device/deviceInfo.ts","line":167},{"name":"ImageQualityT","source":"src/types/device/typing.ts","line":105}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

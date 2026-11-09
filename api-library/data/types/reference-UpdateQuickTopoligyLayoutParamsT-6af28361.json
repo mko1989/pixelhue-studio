@@ -1,0 +1,7 @@
+{
+  "id": "reference-UpdateQuickTopoligyLayoutParamsT-6af28361",
+  "name": "UpdateQuickTopoligyLayoutParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"UpdateQuickTopoligyLayoutParamsT","source":"src/api/screen/controller.ts","line":405}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

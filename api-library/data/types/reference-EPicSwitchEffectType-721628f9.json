@@ -1,0 +1,7 @@
+{
+  "id": "reference-EPicSwitchEffectType-721628f9",
+  "name": "EPicSwitchEffectType",
+  "availability": "referenced-only",
+  "references": [{"name":"EPicSwitchEffectType","source":"src/api/u-disk/index.ts","line":37}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

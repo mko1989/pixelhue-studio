@@ -1,0 +1,9 @@
+{
+  "id": "EPanelMsg-bdae6b69",
+  "name": "EPanelMsg",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 515,
+  "declaration": "enum EPanelMsg {\n  blur,\n}"
+}

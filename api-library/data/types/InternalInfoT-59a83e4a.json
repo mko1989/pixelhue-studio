@@ -1,0 +1,9 @@
+{
+  "id": "InternalInfoT-59a83e4a",
+  "name": "InternalInfoT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/config/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 241,
+  "declaration": "interface InternalInfoT {\n  width: number;\n  height: number;\n  frame: number;\n}"
+}

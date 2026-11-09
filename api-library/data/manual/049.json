@@ -1,0 +1,16 @@
+{
+  "page": 49,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n1: Rec.709. 3, 4, 5\n2: DCI-P3.\n3: Rec.2020.\n4: NTSC.\n5: aRGB.\n254: Unknown.\nPreset color gamut:\n0: Rec.601.\n1: Rec.709.\nEnumerati\nnumb 2: DCI-P3.\n├─ preset Yes on: 0, 1, 2,\ner 3: Rec.2020.\n3, 4, 5\n4: NTSC.\n5: aRGB.\n255: AUTO.\n├─\nobjec\ncolorDynamicR Yes Dynamic range\nt\nange\nActual dynamic range:\nEnumerati\nnumb 0: SDR.\n├─ actual Yes\non: 0, 1, 2\ner 1: HDR10.\n2: HLG.\nPreset dynamic range:\nEnumerati\n0: SDR.\nnumb\n├─ preset Yes 1: HDR10. on: 0, 1, 2,\ner\n255\n2: HLG.\n255: AUTO.\n├─ objec\nYes Test pattern\ntestPattern t\nnumb Enable:\n├─ enable Yes\ner 0: Disable.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "1: Rec.709.\n2: DCI-P3.\n3: Rec.2020.\n4: NTSC.\n5: aRGB.\n254: Unknown.", "3, 4, 5"],
+      ["├─ preset", "numb\ner", "Yes", "", "Preset color gamut:\n0: Rec.601.\n1: Rec.709.\n2: DCI-P3.\n3: Rec.2020.\n4: NTSC.\n5: aRGB.\n255: AUTO.", "Enumerati\non: 0, 1, 2,\n3, 4, 5"],
+      ["├─\ncolorDynamicR\nange", "objec\nt", "Yes", "", "Dynamic range", ""],
+      ["├─ actual", "numb\ner", "Yes", "", "Actual dynamic range:\n0: SDR.\n1: HDR10.\n2: HLG.", "Enumerati\non: 0, 1, 2"],
+      ["├─ preset", "numb\ner", "Yes", "", "Preset dynamic range:\n0: SDR.\n1: HDR10.\n2: HLG.\n255: AUTO.", "Enumerati\non: 0, 1, 2,\n255"],
+      ["├─\ntestPattern", "objec\nt", "Yes", "", "Test pattern", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Enable:\n0: Disable.", ""]
+    ]}
+  ]
+}

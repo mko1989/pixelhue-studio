@@ -1,0 +1,8 @@
+{
+  "id": "EWebsocketCallbackType-555c5fc4",
+  "name": "EWebsocketCallbackType",
+  "kind": "TSEnumDeclaration",
+  "source": "Companion/src/interfaces/WebsocketCallbackData.ts",
+  "line": 9,
+  "declaration": "enum EWebsocketCallbackType {\n\t/** Normal business report */\n\treport,\n\n\t/** Console panel button report */\n\tpanel,\n}"
+}

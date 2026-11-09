@@ -1,0 +1,9 @@
+{
+  "id": "LayerEffectChangeTypeE-16cf02d5",
+  "name": "LayerEffectChangeTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 82,
+  "declaration": "enum LayerEffectChangeTypeE {\n  imageQuality = 'layerImageQualityAction', // 图层效果\n  opacity = 'layerOpacityAction', // 图层效果 - 不透明度\n  isInverse = 'layerSetInverseAction', // 图层效果 - 单色\n  isMonochrome = 'layerSetMonochromeAction',\n}"
+}

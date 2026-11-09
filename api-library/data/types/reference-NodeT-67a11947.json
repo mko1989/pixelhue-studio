@@ -1,0 +1,7 @@
+{
+  "id": "reference-NodeT-67a11947",
+  "name": "NodeT",
+  "availability": "referenced-only",
+  "references": [{"name":"NodeT","source":"src/api/device/deviceList.ts","line":187},{"name":"NodeT","source":"src/api/device/deviceList.ts","line":195},{"name":"NodeT","source":"src/api/device/device-upgrade.ts","line":124}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

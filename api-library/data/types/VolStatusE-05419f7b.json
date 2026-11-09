@@ -1,0 +1,9 @@
+{
+  "id": "VolStatusE-05419f7b",
+  "name": "VolStatusE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 810,
+  "declaration": "enum VolStatusE {\n  Normal, // 无异常\n  Warning, // 需要软件界面提示升级\n}"
+}

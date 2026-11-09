@@ -1,0 +1,19 @@
+{
+  "page": 171,
+  "text": "Default\nName Type Required Remarks More\nValue\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n9: Mosaic source.\n10: IPC mosaic\nscreen.\n11: 11: Internal\nsource.\n12: Internal shape\nsource.\n├─ margin object Yes Border information\nExternal border -\n├─ top integer Yes\ntop\nOuter border -\n├─ bottom string Yes\nbottom\n├─ left string Yes Outer border - left\n├─ right string Yes Outer border - right\nTemplate unique\n├─ templateId number Yes\nID (original field)\n├─ Template ID OBJ\nobject Yes\ntemplateIdObj (original field)\n├─ id number Yes Template ID\nTemplate type:\n├─ type number Yes 1: Built-in template.\n2: Custom",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source\ntype.\n9: Mosaic source.\n10: IPC mosaic\nscreen.\n11: 11: Internal\nsource.\n12: Internal shape\nsource.", ""],
+      ["├─ margin", "object", "Yes", "", "Border information", ""],
+      ["├─ top", "integer", "Yes", "", "External border -\ntop", ""],
+      ["├─ bottom", "string", "Yes", "", "Outer border -\nbottom", ""],
+      ["├─ left", "string", "Yes", "", "Outer border - left", ""],
+      ["├─ right", "string", "Yes", "", "Outer border - right", ""],
+      ["├─ templateId", "number", "Yes", "", "Template unique\nID (original field)", ""],
+      ["├─\ntemplateIdObj", "object", "Yes", "", "Template ID OBJ\n(original field)", ""],
+      ["├─ id", "number", "Yes", "", "Template ID", ""],
+      ["├─ type", "number", "Yes", "", "Template type:\n1: Built-in template.\n2: Custom", ""]
+    ]}
+  ]
+}

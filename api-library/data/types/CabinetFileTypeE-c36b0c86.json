@@ -1,0 +1,9 @@
+{
+  "id": "CabinetFileTypeE-c36b0c86",
+  "name": "CabinetFileTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/ncpLibrary/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 35,
+  "declaration": "enum CabinetFileTypeE {\n  NCP = 1,\n  RCFGX,\n  VIRTUAL,\n}"
+}

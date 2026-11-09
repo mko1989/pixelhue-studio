@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/node/beacon",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","node","beacon"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/node/beacon","dynamic":false,"source":"src/api/device/deviceInfo.ts","line":691,"client":"API","symbol":"response","comment":"*\n * 0x0b-设置设备定位\n * @returns","parameters":["enable: EnableE","snList: string[]"],"bodyExpression":"{\n      enable,\n      snList,\n    }","queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'post',\n    url: 'ucenter/node/beacon',\n    data: {\n      enable,\n      snList,\n    },\n  }","context":"async (enable: EnableE, snList: string[]) => {\n  const response = await API.request<IResponseData<ResponseT>>({\n    method: 'post',\n    url: 'ucenter/node/beacon',\n    data: {\n      enable,\n      snList,\n    },","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-node-beacon",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

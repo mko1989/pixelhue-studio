@@ -1,0 +1,15 @@
+{
+  "page": 138,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\n0: No. er\n1: Yes.\nWhether it is a\nmock:\n├─ intege monochrome layer:\n@integ\nYes\nisMonochrome r 0: No.\ner\n1: Yes.\nWhether it is a color-\nmock:\nintege inverted layer:\n├─ isInverse Yes @integ\nr 0: No.\ner\n1: Yes.\nFlip type:\n0: Normal.\nmock:\nintege 1: Flip horizontally.\n├─ flipType Yes @integ\nr 2: Flip vertically.\ner\n3: Flip horizontally\nand vertically.\nLayer capacity status:\n0: SL.\nintege\n├─ capacity Yes 1: DL.\nr\n2: 4K.\n65535: Auto.\nLayer resource utilization\nstatus: 0: No resource\nutilization, resources not\nallocated. 1: Resource\nnumb required, resources\n├─ resource Yes\ner allocated. 2: Resource\nrequired, resources not\nallocated. 3: No resource\nutilization, quantity\nexceeded.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "", "", "", "0: No.\n1: Yes.", "er"],
+      ["├─\nisMonochrome", "intege\nr", "Yes", "", "Whether it is a\nmonochrome layer:\n0: No.\n1: Yes.", "mock:\n@integ\ner"],
+      ["├─ isInverse", "intege\nr", "Yes", "", "Whether it is a color-\ninverted layer:\n0: No.\n1: Yes.", "mock:\n@integ\ner"],
+      ["├─ flipType", "intege\nr", "Yes", "", "Flip type:\n0: Normal.\n1: Flip horizontally.\n2: Flip vertically.\n3: Flip horizontally\nand vertically.", "mock:\n@integ\ner"],
+      ["├─ capacity", "intege\nr", "Yes", "", "Layer capacity status:\n0: SL.\n1: DL.\n2: 4K.\n65535: Auto.", ""],
+      ["├─ resource", "numb\ner", "Yes", "", "Layer resource utilization\nstatus: 0: No resource\nutilization, resources not\nallocated. 1: Resource\nrequired, resources\nallocated. 2: Resource\nrequired, resources not\nallocated. 3: No resource\nutilization, quantity\nexceeded.", ""]
+    ]}
+  ]
+}

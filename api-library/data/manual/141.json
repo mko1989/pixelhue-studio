@@ -1,0 +1,14 @@
+{
+  "page": 141,
+  "text": "Defau\nRequir\nName Type lt Remarks More\ned\nValue\nr for a specific source type\nSource type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\nintege 8: Cropped source type.\n├─ sourceType Yes\nr 9: Mosaic source.\n10: IPC mosaic screen.\n11: Internal source.\n12: Internal shape source.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit Meter.\n17: Streaming.\n18: Recording.\nTh actual displayed layer\n├─ actual object Yes\nsource\nintege Source ID, which is unique\n├─ sourceId Yes\nr for a specific source type\nSource type:\n0: Empty layer.\n1: No-source layer.\nintege\n├─ sourceType Yes 2: Input type.\nr\n3: PGM.\n4: PVW.\n5: BKG image.",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defau\nlt\nValue", "Remarks", "More"],
+      ["", "r", "", "", "for a specific source type", ""],
+      ["├─ sourceType", "intege\nr", "Yes", "", "Source type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.\n6: LOGO image.\n7: IPC type.\n8: Cropped source type.\n9: Mosaic source.\n10: IPC mosaic screen.\n11: Internal source.\n12: Internal shape source.\n13: USB drive source.\n14: Image OSD.\n15: Text OSD.\n16: Volume Unit Meter.\n17: Streaming.\n18: Recording.", ""],
+      ["├─ actual", "object", "Yes", "", "Th actual displayed layer\nsource", ""],
+      ["├─ sourceId", "intege\nr", "Yes", "", "Source ID, which is unique\nfor a specific source type", ""],
+      ["├─ sourceType", "intege\nr", "Yes", "", "Source type:\n0: Empty layer.\n1: No-source layer.\n2: Input type.\n3: PGM.\n4: PVW.\n5: BKG image.", ""]
+    ]}
+  ]
+}

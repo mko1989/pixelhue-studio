@@ -1,0 +1,7 @@
+{
+  "id": "reference-ICabinetLightStateUcParams-9e257fa8",
+  "name": "ICabinetLightStateUcParams",
+  "availability": "referenced-only",
+  "references": [{"name":"ICabinetLightStateUcParams","source":"src/api/screen/controller.ts","line":177},{"name":"ICabinetLightStateUcParams","source":"src/api/screen/controller.ts","line":196}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

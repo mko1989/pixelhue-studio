@@ -1,0 +1,7 @@
+{
+  "id": "reference-DanteInfoT-316c18d0",
+  "name": "DanteInfoT",
+  "availability": "referenced-only",
+  "references": [{"name":"DanteInfoT","source":"src/api/device/device-subcard.ts","line":57}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

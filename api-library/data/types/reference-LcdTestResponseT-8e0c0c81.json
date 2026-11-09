@@ -1,0 +1,7 @@
+{
+  "id": "reference-LcdTestResponseT-8e0c0c81",
+  "name": "LcdTestResponseT",
+  "availability": "referenced-only",
+  "references": [{"name":"LcdTestResponseT","source":"src/api/production/index.ts","line":267},{"name":"LcdTestResponseT","source":"src/api/production/index.ts","line":268}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

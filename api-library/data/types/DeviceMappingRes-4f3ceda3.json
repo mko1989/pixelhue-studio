@@ -1,0 +1,9 @@
+{
+  "id": "DeviceMappingRes-4f3ceda3",
+  "name": "DeviceMappingRes",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceList.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 345,
+  "declaration": "interface DeviceMappingRes {\n  enable: number;\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-AxiosRequestConfig-43a51551",
+  "name": "AxiosRequestConfig",
+  "availability": "referenced-only",
+  "references": [{"name":"AxiosRequestConfig","source":"src/api/index.ts","line":92},{"name":"AxiosRequestConfig","source":"src/api/index.ts","line":90},{"name":"AxiosRequestConfig","source":"src/api/index.ts","line":165},{"name":"AxiosRequestConfig","source":"src/api/index.ts","line":165},{"name":"AxiosRequestConfig","source":"src/api/index.ts","line":164},{"name":"AxiosRequestConfig","source":"src/api/index.ts","line":381},{"name":"AxiosRequestConfig","source":"src/api/index.ts","line":381},{"name":"AxiosRequestConfig","source":"src/api/index.ts","line":381},{"name":"AxiosRequestConfig","source":"src/api/preset/index.ts","line":141},{"name":"AxiosRequestConfig","source":"src/api/preset/index.ts","line":383}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

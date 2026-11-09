@@ -1,0 +1,9 @@
+{
+  "id": "FeatherE-40a4e7ed",
+  "name": "FeatherE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/screen1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 163,
+  "declaration": "enum FeatherE {\n  /** 上边缘 */\n  top,\n  /** 下边缘 */\n  bottom,\n  /** 左边缘 */\n  left,\n  /** 右边缘 */\n  right,\n}"
+}

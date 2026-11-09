@@ -1,0 +1,7 @@
+{
+  "id": "reference-TSetGenlockParams-b9a70ee2",
+  "name": "TSetGenlockParams",
+  "availability": "referenced-only",
+  "references": [{"name":"TSetGenlockParams","source":"src/api/device/deviceInfo.ts","line":289},{"name":"TSetGenlockParams","source":"src/api/device/deviceInfo.ts","line":290},{"name":"TSetGenlockParams","source":"src/api/device/deviceInfo.ts","line":307},{"name":"TSetGenlockParams","source":"src/api/device/deviceInfo.ts","line":308},{"name":"TSetGenlockParams","source":"src/api/device/deviceInfo.ts","line":373}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

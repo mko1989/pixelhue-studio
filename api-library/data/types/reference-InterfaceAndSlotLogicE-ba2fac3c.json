@@ -1,0 +1,7 @@
+{
+  "id": "reference-InterfaceAndSlotLogicE-ba2fac3c",
+  "name": "InterfaceAndSlotLogicE",
+  "availability": "referenced-only",
+  "references": [{"name":"InterfaceAndSlotLogicE","source":"src/enum/common.ts","line":797},{"name":"InterfaceAndSlotLogicE","source":"src/types/device/typing.ts","line":239}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-KeyModeStatusD-3356c62e",
+  "name": "KeyModeStatusD",
+  "availability": "referenced-only",
+  "references": [{"name":"KeyModeStatusD","source":"src/api/plug-in/plugIn.ts","line":150},{"name":"KeyModeStatusD","source":"src/api/plug-in/plugIn.ts","line":151}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

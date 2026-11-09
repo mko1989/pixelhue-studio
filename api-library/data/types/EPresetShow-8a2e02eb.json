@@ -1,0 +1,9 @@
+{
+  "id": "EPresetShow-8a2e02eb",
+  "name": "EPresetShow",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/preset/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 60,
+  "declaration": "enum EPresetShow {\n  none,\n  screenPreset,\n  all,\n}"
+}

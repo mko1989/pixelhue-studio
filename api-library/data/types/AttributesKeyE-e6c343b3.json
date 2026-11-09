@@ -1,0 +1,9 @@
+{
+  "id": "AttributesKeyE-e6c343b3",
+  "name": "AttributesKeyE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 671,
+  "declaration": "enum AttributesKeyE {\n  /** 自定义底图 */\n  Customize,\n  /** 纯色排除黑 */\n  PureNoBlack,\n  /** 纯黑 */\n  Black,\n  /** 黑白闪 */\n  BWAlternate,\n  /** 渐变 */\n  Gradient,\n  /** 斜线 */\n  Slash,\n}"
+}

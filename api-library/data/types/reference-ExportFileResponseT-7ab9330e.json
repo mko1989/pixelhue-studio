@@ -1,0 +1,7 @@
+{
+  "id": "reference-ExportFileResponseT-7ab9330e",
+  "name": "ExportFileResponseT",
+  "availability": "referenced-only",
+  "references": [{"name":"ExportFileResponseT","source":"src/api/correction/index.ts","line":61},{"name":"ExportFileResponseT","source":"src/api/correction/index.ts","line":63},{"name":"ExportFileResponseT","source":"src/api/correction/index.ts","line":77},{"name":"ExportFileResponseT","source":"src/api/correction/index.ts","line":78}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

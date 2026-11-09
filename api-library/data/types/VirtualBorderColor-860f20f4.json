@@ -1,0 +1,9 @@
+{
+  "id": "VirtualBorderColor-860f20f4",
+  "name": "VirtualBorderColor",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/virtual-console/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 172,
+  "declaration": "enum VirtualBorderColor {\n  valid = 'g06',\n  invalid = 'r05',\n}"
+}

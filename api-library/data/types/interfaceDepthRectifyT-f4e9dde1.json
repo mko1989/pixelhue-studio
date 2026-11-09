@@ -1,0 +1,9 @@
+{
+  "id": "interfaceDepthRectifyT-f4e9dde1",
+  "name": "interfaceDepthRectifyT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 395,
+  "declaration": "interface interfaceDepthRectifyT {\n  interfaceId: number | string;\n  tagName: number; // 变化字段【    0：colorSpace    1：dynamicRange】\n  value: number; // tagName为0时代表预设色彩空间 【0:RGB 4:4:4; 1:YCbCr 4:2:2; 2:YCbCr 4:4:4; 3:YCbCr 4:2:0; 255:AUTO】\n  // tagName为1时代表预设动态范围【0:SDR;1:HDR10;2:HLG;255:AUTO】\n}"
+}

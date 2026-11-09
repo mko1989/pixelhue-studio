@@ -1,0 +1,7 @@
+{
+  "id": "reference-UploadResponseT-17ceac7a",
+  "name": "UploadResponseT",
+  "availability": "referenced-only",
+  "references": [{"name":"UploadResponseT","source":"src/api/correction/index.ts","line":248},{"name":"UploadResponseT","source":"src/api/correction/index.ts","line":249},{"name":"UploadResponseT","source":"src/api/correction/index.ts","line":260},{"name":"UploadResponseT","source":"src/api/correction/index.ts","line":263}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

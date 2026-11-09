@@ -1,0 +1,18 @@
+{
+  "page": 24,
+  "text": "Requir Defaul\nName Type Remarks More\ned t Value\ner 0: Full screen\n1: Keep ratio\nDisplay on/off\n├─ displaySwitchInfo object Yes\ninformation.\nStartup image\nswitch:\n├─ intege\nYes 0: Disable.\nstartupPictureEnable r\n1: Enable.\n(Default)\nManufacture\n├─ logo switch:\nintege\nmanufacturerIdentityE Yes 0: Disable.\nr\nnable 1: Enable.\n(Default)\nAntistatic\n├─ antiStatic object Yes\ninformation\nAntistatic\nnumb\n├─ time Yes duration (unit:\ner\nms)\nAntistatic switch:\nnumb\n├─ enable Yes 0: Disable.\ner\n1: Enable.\nDevice loading\n├─\nobject Yes mode\nsenderCapacityInfo\nInformation\nLoading mode:\n0: Default loading\nintege\n├─ capacity Yes capacity\nr\n2: 2.2 million\npixels",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defaul\nt Value", "Remarks", "More"],
+      ["", "er", "", "", "0: Full screen\n1: Keep ratio", ""],
+      ["├─ displaySwitchInfo", "object", "Yes", "", "Display on/off\ninformation.", ""],
+      ["├─\nstartupPictureEnable", "intege\nr", "Yes", "", "Startup image\nswitch:\n0: Disable.\n1: Enable.\n(Default)", ""],
+      ["├─\nmanufacturerIdentityE\nnable", "intege\nr", "Yes", "", "Manufacture\nlogo switch:\n0: Disable.\n1: Enable.\n(Default)", ""],
+      ["├─ antiStatic", "object", "Yes", "", "Antistatic\ninformation", ""],
+      ["├─ time", "numb\ner", "Yes", "", "Antistatic\nduration (unit:\nms)", ""],
+      ["├─ enable", "numb\ner", "Yes", "", "Antistatic switch:\n0: Disable.\n1: Enable.", ""],
+      ["├─\nsenderCapacityInfo", "object", "Yes", "", "Device loading\nmode\nInformation", ""],
+      ["├─ capacity", "intege\nr", "Yes", "", "Loading mode:\n0: Default loading\ncapacity\n2: 2.2 million\npixels", ""]
+    ]}
+  ]
+}

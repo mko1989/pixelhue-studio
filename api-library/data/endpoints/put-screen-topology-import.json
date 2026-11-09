@@ -1,0 +1,23 @@
+{
+  "method": "PUT",
+  "path": "/unico/v1/screen/topology/import",
+  "group": "screen",
+  "summary": "response",
+  "tags": ["screen","topology","import"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"PUT","path":"screen/topology/import","dynamic":false,"pathParameters":[],"source":"src/api/screen/screen.ts","line":997,"client":"API","symbol":"response","comment":"导入连屏文件","parameters":["file: Blob","screenId: string","guid: string","type: string","headers: AxiosRequestHeaders = {}"],"bodyExpression":"formData","queryExpression":null,"headerExpression":"{\n      'Content-Type': 'multipart/form-data',\n      ...headers,\n      ...getExtraReqIpParamsByGuid(guid),\n    }","configExpression":"{\n    method: 'PUT',\n    url: `screen/topology/import`,\n    headers: {\n      'Content-Type': 'multipart/form-data',\n      ...headers,\n      ...getExtraReqIpParamsByGuid(guid),\n    },\n    timeout: 1000 * 300, // 超时设置300秒，不用公共的两秒\n    data: formData,\n  }","context":"async (\n  file: Blob,\n  screenId: string,\n  guid: string,\n  type: string,\n  headers: AxiosRequestHeaders = {},\n) => {\n  const formData = new FormData();","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "put-screen-topology-import",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

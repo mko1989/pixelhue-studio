@@ -1,0 +1,20 @@
+{
+  "page": 106,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\nembedded\naudio:\n0: Disable.\n1: Enable.\nItem type:\nintege\n├─ analogVideo Yes Analog audio\ninteger\nr []\nAnalog audio\n├─ No\nconnectors\nItem type:\nintege Dante channel\n├─ danteChannelIndex Yes\ninteger\nr [] array\n├─ No\n├─ pvwAudio object Yes PVW audio\nnumb 0: Normal.\n├─ isMute Yes\ner 1: Mute.\nnumb Volume range:\n├─ volume Yes\ner 0~100, unit: %\nItem type:\nobject Input audio\n├─ source Yes\nobject\n[] source list\nAudio type:\n-1: No audio.\n0: Embedded\nnumb\n├─ type Yes audio.\ner\n1: Analog audio.\n2: Dante audio.\n3: Layer.\nConnector ID\nnumb\n├─ id Yes (The layer sends\ner\nthe layer ID.)",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "embedded\naudio:\n0: Disable.\n1: Enable.", ""],
+      ["├─ analogVideo", "intege\nr []", "Yes", "", "Analog audio", "Item type:\ninteger"],
+      ["├─", "", "No", "", "Analog audio\nconnectors", ""],
+      ["├─ danteChannelIndex", "intege\nr []", "Yes", "", "Dante channel\narray", "Item type:\ninteger"],
+      ["├─", "", "No", "", "", ""],
+      ["├─ pvwAudio", "object", "Yes", "", "PVW audio", ""],
+      ["├─ isMute", "numb\ner", "Yes", "", "0: Normal.\n1: Mute.", ""],
+      ["├─ volume", "numb\ner", "Yes", "", "Volume range:\n0~100, unit: %", ""],
+      ["├─ source", "object\n[]", "Yes", "", "Input audio\nsource list", "Item type:\nobject"],
+      ["├─ type", "numb\ner", "Yes", "", "Audio type:\n-1: No audio.\n0: Embedded\naudio.\n1: Analog audio.\n2: Dante audio.\n3: Layer.", ""],
+      ["├─ id", "numb\ner", "Yes", "", "Connector ID\n(The layer sends\nthe layer ID.)", ""]
+    ]}
+  ]
+}

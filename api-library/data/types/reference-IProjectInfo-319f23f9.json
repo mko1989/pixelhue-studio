@@ -1,0 +1,7 @@
+{
+  "id": "reference-IProjectInfo-319f23f9",
+  "name": "IProjectInfo",
+  "availability": "referenced-only",
+  "references": [{"name":"IProjectInfo","source":"src/api/engine/engine.ts","line":52},{"name":"IProjectInfo","source":"src/api/engine/engine.ts","line":60}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

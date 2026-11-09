@@ -1,0 +1,9 @@
+{
+  "id": "ERestoreFactoryType-636461b4",
+  "name": "ERestoreFactoryType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 752,
+  "declaration": "enum ERestoreFactoryType {\n  reboot, // 重启条件配置\n  ipExclude, // Ip设置配置\n  edidExclude, // edid设置\n  picExclude, // 图库数据\n  languageExclude, // 语言设置\n  projectFiles, // 工程文件\n  scene, // 场景\n  preset, // 预设\n  userFiles, // 用户文件\n  deviceMode, // 设备模式\n}"
+}

@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/cabinet/correction/avgcoefficient",
+  "group": "cabinet",
+  "summary": "response",
+  "tags": ["cabinet","correction","avgcoefficient"],
+  "authentication": "device-token",
+  "serverKind": "device",
+  "protocol": "http",
+  "defaultPort": 8088,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"cabinet/correction/avgcoefficient","dynamic":false,"source":"src/api/ctl-fix/index.ts","line":256,"client":"API","symbol":"response","comment":"****多批次系数导出***","parameters":["data: ExportAvgCoefficientParamsT","extraReqParams: ExtraReqParamsT"],"bodyExpression":null,"queryExpression":"{ cabinetId: data.cabinetId, x: data.x, y: data.y, h: data.height, w: data.width }","headerExpression":"{\r\n      'Content-Type': 'application/json',\r\n      ip: extraReqParams?.ip || '',\r\n      port: extraReqParams?.port || '',\r\n      Authorization: extraReqParams?.token || '',\r\n      protocol: extraReqParams?.protocol || '',\r\n    }","configExpression":"{\r\n    method: 'get',\r\n    url: 'cabinet/correction/avgcoefficient',\r\n    responseType: 'arraybuffer',\r\n    params: { cabinetId: data.cabinetId, x: data.x, y: data.y, h: data.height, w: data.width },\r\n    headers: {\r\n      'Content-Type': 'application/json',\r\n      ip: extraReqParams?.ip || '',\r\n      port: extraReqParams?.port || '',\r\n      Authorization: extraReqParams?.token || '',\r\n      protocol: extraReqParams?.protocol || '',\r\n    },\r\n  }","context":"async (\r\n  data: ExportAvgCoefficientParamsT,\r\n  extraReqParams: ExtraReqParamsT,\r\n): Promise<ArrayBuffer> => {\r\n  const response = await API.request<ArrayBuffer>({\r\n    method: 'get',\r\n    url: 'cabinet/correction/avgcoefficient',\r\n    responseType: 'arraybuffer',\r","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-cabinet-correction-avgcoefficient",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

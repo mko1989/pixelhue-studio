@@ -1,0 +1,23 @@
+{
+  "method": "GET",
+  "path": "/unico/v1/ucenter/video-station/midi/cap-state",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","video-station","midi","cap-state"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"GET","path":"ucenter/video-station/midi/cap-state","dynamic":false,"source":"src/api/console-production/index.ts","line":122,"client":"API","symbol":"response","comment":"*\n * 控台生产老化工具获取合盖状态\n * @returns","parameters":[],"bodyExpression":null,"queryExpression":null,"headerExpression":null,"configExpression":"{\n    method: 'get',\n    url: 'ucenter/video-station/midi/cap-state',\n    timeout: consoleTimeout, // 通知超时时间为5s\n  }","context":"async (): Promise<IResponseData<ConsoleTestCapStateI>> => {\n  const response = await API.request<IResponseData<ConsoleTestCapStateI>>({\n    method: 'get',\n    url: 'ucenter/video-station/midi/cap-state',\n    timeout: consoleTimeout, // 通知超时时间为5s\n  });\n  return response.data;\n}","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "get-ucenter-video-station-midi-cap-state",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

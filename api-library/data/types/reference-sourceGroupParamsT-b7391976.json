@@ -1,0 +1,7 @@
+{
+  "id": "reference-sourceGroupParamsT-b7391976",
+  "name": "sourceGroupParamsT",
+  "availability": "referenced-only",
+  "references": [{"name":"sourceGroupParamsT","source":"src/api/source/index.ts","line":66},{"name":"sourceGroupParamsT","source":"src/api/source/index.ts","line":80}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

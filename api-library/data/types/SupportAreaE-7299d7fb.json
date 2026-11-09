@@ -1,0 +1,9 @@
+{
+  "id": "SupportAreaE-7299d7fb",
+  "name": "SupportAreaE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 735,
+  "declaration": "enum SupportAreaE {\n  China,\n  Foreign,\n  All,\n}"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "reference-ColorTemperatureRequestT-5f38e3f0",
+  "name": "ColorTemperatureRequestT",
+  "availability": "referenced-only",
+  "references": [{"name":"ColorTemperatureRequestT","source":"src/api/screen/screen-adjust.ts","line":308}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

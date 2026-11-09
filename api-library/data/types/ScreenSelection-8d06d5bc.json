@@ -1,0 +1,8 @@
+{
+  "id": "ScreenSelection-8d06d5bc",
+  "name": "ScreenSelection",
+  "kind": "TSInterfaceDeclaration",
+  "source": "Companion/src/interfaces/Screen.ts",
+  "line": 17,
+  "declaration": "interface ScreenSelection {\n\tscreenId: number\n\tselect: 0 | 1\n}"
+}

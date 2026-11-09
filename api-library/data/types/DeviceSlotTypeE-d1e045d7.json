@@ -1,0 +1,9 @@
+{
+  "id": "DeviceSlotTypeE-d1e045d7",
+  "name": "DeviceSlotTypeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 400,
+  "declaration": "enum DeviceSlotTypeE {}"
+}

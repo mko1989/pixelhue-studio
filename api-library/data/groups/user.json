@@ -1,0 +1,4 @@
+{
+  "group": "user",
+  "endpoints": [{"id":"get-user-info","method":"GET","path":"/unico/v1/user/info","group":"user","summary":"get Users Info","tags":["user","info"],"models":[],"symbols":["getUsersInfo"],"keywords":" level?: 1 | 2 {\n      level,\n    }","serverKind":"device","manual":false,"file":"endpoints/get-user-info.json"}]
+}

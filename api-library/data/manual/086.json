@@ -1,0 +1,13 @@
+{
+  "page": 86,
+  "text": "Defa\nRequir ult\nName Type Remarks More\ned Valu\ne\n0: SDR.\n1: HDR10.\n2: HLG.\n255: AUTO.\nActual dynamic\nrange:\nnumb\n├─ actual Yes 0: SDR.\ner\n1: HDR10.\n2: HLG.\nSMPTE 425M\nMapping:\n0: Unused.\n1: Level A.\n2: Level B.\nCurrently, only\n├─ smpteMapping object Yes SDI connectors\nsupport Level\nA/Level B\nsettings; other\nconnectors\ndefault to\nunused.\nSMPTE 425M\nMapping:\n0: Unused.\n1: Level A.\nnumb\n├─ preset Yes 2: Level B.\ner\nCurrently, only\nSDI connectors\nsupport Level\nA/Level B",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Requir\ned", "Defa\nult\nValu\ne", "Remarks", "More"],
+      ["", "", "", "", "0: SDR.\n1: HDR10.\n2: HLG.\n255: AUTO.", ""],
+      ["├─ actual", "numb\ner", "Yes", "", "Actual dynamic\nrange:\n0: SDR.\n1: HDR10.\n2: HLG.", ""],
+      ["├─ smpteMapping", "object", "Yes", "", "SMPTE 425M\nMapping:\n0: Unused.\n1: Level A.\n2: Level B.\nCurrently, only\nSDI connectors\nsupport Level\nA/Level B\nsettings; other\nconnectors\ndefault to\nunused.", ""],
+      ["├─ preset", "numb\ner", "Yes", "", "SMPTE 425M\nMapping:\n0: Unused.\n1: Level A.\n2: Level B.\nCurrently, only\nSDI connectors\nsupport Level\nA/Level B", ""]
+    ]}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "method": "POST",
+  "path": "/unico/v1/ucenter/preset/create",
+  "group": "ucenter",
+  "summary": "response",
+  "tags": ["ucenter","preset","create"],
+  "authentication": "device-token",
+  "serverKind": "controller",
+  "protocol": "http",
+  "defaultPort": null,
+  "responseType": "json",
+  "requestSchema": null,
+  "exampleBody": null,
+  "queryExample": null,
+  "manualSections": [],
+  "vendorEvidence": [{"method":"POST","path":"ucenter/preset/create","dynamic":false,"source":"src/api/preset/index.ts","line":279,"client":"API_U_CENTER","symbol":"response","comment":"*\n * 更新场景按键位置\n * @param params\n * @returns","parameters":["data: PresetCreateParamsT[]","seq?: number"],"bodyExpression":"data","queryExpression":null,"headerExpression":"{\n      seq: seq || 0,\n    }","configExpression":"{\n    method: 'POST',\n    url: 'ucenter/preset/create',\n    data,\n    timeout: 5000,\n    headers: {\n      seq: seq || 0,\n    },\n  }","context":"async (\n  data: PresetCreateParamsT[],\n  seq?: number,\n): Promise<IResponseData<unknown>> => {\n  const response = await API_U_CENTER.request<IResponseData<unknown>>({\n    method: 'POST',\n    url: 'ucenter/preset/create',\n    data,","sourceMap":"main-Cpb41LiE.js.map"}],
+  "companionEvidence": [],
+  "notes": [],
+  "support": {"documentedModels":[],"companionConfiguredModels":[],"studioUsedModels":[],"deviceVerified":false},
+  "id": "post-ucenter-preset-create",
+  "contractStatus": "observed source contracts only",
+  "pathParameters": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ESourceEcho-4ea4a00b",
+  "name": "ESourceEcho",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 70,
+  "declaration": "enum ESourceEcho {\n  close = 'close',\n  open = 'open',\n}"
+}

@@ -1,0 +1,26 @@
+{
+  "page": 27,
+  "text": "Default\nName Type Required Remarks More\nValue\nRetain device mode.\n Return Data\nName Type Required Default Value Remarks More\nmock: 200\ncode integer Yes Response code\nmock: ok\nmessage string Yes Response message\ndata object Yes\n2.3 Set Transition Effect\n Basic Information\nPath: /v1/screen/global/switch-effect\nMethod: PUT\nDescription:\n Request Parameters\nHeaders\nName Value Required Example Remarks\nContent-Type application/json Yes\nBody\nDefault\nName Type Required Remarks More\nValue\nswitchEffect object Yes The global transition effect\nThe transition duration\n├─ time number Yes\n(unit: ms)\nTransition method:\n├─ type number Yes 0: CUT.\n1: FADE.\n Return Data",
+  "tables": [
+    {"contextBefore": "", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["", "", "", "", "Retain device mode.", ""]
+    ]},
+    {"contextBefore": " Return Data", "rows": [
+      ["Name", "Type", "Required", "Default Value", "Remarks", "More"],
+      ["code", "integer", "Yes", "", "Response code", "mock: 200"],
+      ["message", "string", "Yes", "", "Response message", "mock: ok"],
+      ["data", "object", "Yes", "", "", ""]
+    ]},
+    {"contextBefore": "2.3 Set Transition Effect\n Basic Information\nPath: /v1/screen/global/switch-effect\nMethod: PUT\nDescription:\n Request Parameters\nHeaders", "rows": [
+      ["Name", "Value", "Required", "Example", "Remarks"],
+      ["Content-Type", "application/json", "Yes", "", ""]
+    ]},
+    {"contextBefore": "Body", "rows": [
+      ["Name", "Type", "Required", "Default\nValue", "Remarks", "More"],
+      ["switchEffect", "object", "Yes", "", "The global transition effect", ""],
+      ["├─ time", "number", "Yes", "", "The transition duration\n(unit: ms)", ""],
+      ["├─ type", "number", "Yes", "", "Transition method:\n0: CUT.\n1: FADE.", ""]
+    ]}
+  ]
+}

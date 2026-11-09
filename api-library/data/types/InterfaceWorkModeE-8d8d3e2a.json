@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceWorkModeE-8d8d3e2a",
+  "name": "InterfaceWorkModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/editor1/common/enum.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 918,
+  "declaration": "enum InterfaceWorkModeE {\n  /** 主模式 */\n  main,\n  /** 复制模式 */\n  copy,\n  /** 无输出输入模式 */\n  none,\n  /** 备份模式 */\n  backup,\n  /** 拆分模式 */\n  Split,\n}"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "LEDScreenWorkModeE-34aeb498",
+  "name": "LEDScreenWorkModeE",
+  "kind": "TSEnumDeclaration",
+  "source": "src/enum/common.ts",
+  "sourceMap": "commandWorker-Ot4Pi2Hi.js.map",
+  "line": 384,
+  "declaration": "enum LEDScreenWorkModeE {\n  /** 视频控制器 */\n  VIDEO_CTRL = 0,\n  /** 独立主控 */\n  INDEPENDENT_CTRL = 1,\n}"
+}

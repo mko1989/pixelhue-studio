@@ -1,0 +1,9 @@
+{
+  "id": "ESetType-6ce22ae5",
+  "name": "ESetType",
+  "kind": "TSEnumDeclaration",
+  "source": "src/pages/devices/enum.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 779,
+  "declaration": "enum ESetType {\n  width,\n  height,\n  frame,\n}"
+}

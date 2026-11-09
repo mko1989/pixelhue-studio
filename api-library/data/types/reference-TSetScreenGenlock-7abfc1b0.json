@@ -1,0 +1,7 @@
+{
+  "id": "reference-TSetScreenGenlock-7abfc1b0",
+  "name": "TSetScreenGenlock",
+  "availability": "referenced-only",
+  "references": [{"name":"TSetScreenGenlock","source":"src/api/screen/screen.ts","line":1216},{"name":"TSetScreenGenlock","source":"src/api/screen/screen-adjust.ts","line":209}],
+  "note": "The wrapper references this type, but its definition is not present in the supplied source maps. Consult manual tables and observed expressions; no definition has been invented."
+}

@@ -1,0 +1,9 @@
+{
+  "id": "InterfaceDpOutputDriverT-3c4e3a9a",
+  "name": "InterfaceDpOutputDriverT",
+  "kind": "TSInterfaceDeclaration",
+  "source": "src/api/device/deviceInterface.ts",
+  "sourceMap": "main-Cpb41LiE.js.map",
+  "line": 639,
+  "declaration": "interface InterfaceDpOutputDriverT {\n  interfaceId: number | string;\n  mode: number;\n  preEmphasisLevel: number;\n}"
+}
