@@ -3,6 +3,8 @@ import { paintStage, bindStage, dropWindow, canvasOf, SOURCE_MIME } from './prog
 import { renderPresets } from './presets-ui.js';
 import { renderLayerPanel } from './layer-inspector.js';
 import { renderLayerToolbar, clearLayer } from './layer-tools.js';
+import { renderSourceTabs, parseDragKey } from './source-tabs.js';
+import { groupSize } from './group-geometry.js';
 import { groupOf, unionWindow } from './group-geometry.js';
 
 // Programming (WO-016): several screens at once, PGM band on top and PVW below, drag sources
@@ -11,7 +13,7 @@ const STORE = 'program-screens';
 export function createProgrammingUI({ api, notice, operation, getSession, invalidate }) {
   const root = $('programming-content');
   let state, session, selectedId, sourceKey, busy = false, refreshTimer, durationMs = 500, shouldSwap = true;
-  let shown = null, sideTab = 'layer', loadTarget = 4, savingFrom = null, editingPresets = false, loadOptions = { keyframes: false, effect: false }; const stages = [];
+  let shown = null, sideTab = 'layer', sourceTab = 'inputs', gallery = null, loadTarget = 4, savingFrom = null, editingPresets = false, loadOptions = { keyframes: false, effect: false }; const stages = [];
   try { shown = JSON.parse(localStorage.getItem(STORE) || 'null'); } catch {}
   const visible = () => state.screens.filter(s => shown.includes(s.id));
   const layer = () => state?.layers.find(l => l.id === selectedId);
@@ -54,7 +56,18 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     setDisabled(root, busy);
   }
   function addLayer(key, screen, scene, point) {
-    const source = sourceFor(key); if (!source || !screen) { notice('Choose a source first.'); return; }
+    const drag = parseDragKey(key), at = point || { x: screen?.width / 2, y: screen?.height / 2 };
+    if (!screen) { notice('Show a screen first.'); return; }
+    if (drag.kind === 'bkg') return command({ action: 'bkg', screenId: screen.id, scene, pictureId: drag.id, enable: true }, `Background set on ${screen.name} ${scene === 2 ? 'PGM' : 'PVW'}.`);
+    if (drag.kind === 'logo') return command({ action: 'logo', screenId: screen.id, scene, pictureId: drag.id, point: { x: Math.round(at.x), y: Math.round(at.y) } }, 'Logo placed.');
+    if (drag.kind === 'group') {
+      const g = state.groupSources.find(x => x.id === drag.id); if (!g) return;
+      if (!g.available) { notice('A source of this group is no longer available.', 'error'); return; }
+      const size = groupSize(sourceFor(`${g.a.type}:${g.a.id}`), sourceFor(`${g.b.type}:${g.b.id}`), g.orient);
+      const window = { x: Math.round(at.x - size.width / 2), y: Math.round(at.y - size.height / 2), width: size.width, height: size.height };
+      return command({ action: 'group-create', screenId: screen.id, scene, orientation: g.orient, sources: [g.a, g.b], window }, `${g.name} placed.`);
+    }
+    const source = sourceFor(key); if (!source) { notice('Choose a source first.'); return; }
     if ([3, 4].includes(source.type) && source.id === screen.id) { notice('A screen cannot show its own PGM/PVW.', 'error'); return; }
     const window = dropWindow(source, screen, point || { x: screen.width / 2, y: screen.height / 2 });
     command({ action: 'create', screenId: screen.id, scene, source: { id: source.id, type: source.type }, window, name: 'Layer' }, 'Layer created.');
@@ -62,7 +75,9 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
   function paintAll() {
     for (const node of root.querySelectorAll('.program-stage')) {
       const screen = state.screens.find(s => s.id === Number(node.dataset.screen)), scene = Number(node.dataset.scene);
-      paintStage(node, screen, state.layers.filter(l => l.screenId === screen.id && l.scene === scene), selectedId);
+      const bkg = state.backgrounds?.find(b => b.screenId === screen.id && b.scene === scene && b.enabled && b.pictureId != null);
+      paintStage(node, screen, state.layers.filter(l => l.screenId === screen.id && l.scene === scene), selectedId,
+        bkg ? `/api/gallery/thumb?session=${encodeURIComponent(session)}&id=${bkg.pictureId}` : null);
     }
   }
   function band(scene, label) {
@@ -79,6 +94,11 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
       const stage = el('div', { className: `program-stage${locked ? ' locked' : ''}`, tabindex: 0, 'data-screen': screen.id, 'data-scene': scene, 'aria-label': `${screen.name} ${label}${locked ? ' (locked)' : ''}` });
       stage.style.aspectRatio = `${canvasOf(screen).width}/${canvasOf(screen).height}`;
       const head = el('div', { className: 'program-cell-head' }); head.append(el('span', {}, `${screen.name} · ${screen.width} × ${screen.height}`));
+      const bkg = state.backgrounds?.find(b => b.screenId === screen.id && b.scene === scene);
+      if (bkg?.pictureId != null) {
+        const chip = button(bkg.enabled ? 'BKG on' : 'BKG off', () => command({ action: 'bkg', screenId: screen.id, scene, enable: !bkg.enabled }, `Background ${bkg.enabled ? 'off' : 'on'} on ${screen.name} ${label}.`), `button lock-toggle${bkg.enabled ? ' on' : ''}`);
+        chip.title = `Background: ${bkg.name || `picture ${bkg.pictureId}`}`; head.append(chip);
+      }
       if (scene === 2) {
         const lock = button(screen.pgmLocked ? 'PGM locked' : 'PGM unlocked', () => command({ action: 'pgm-lock', screenId: screen.id, locked: !screen.pgmLocked },
           screen.pgmLocked ? `${screen.name} PGM unlocked.` : `${screen.name} PGM locked.`), `button lock-toggle${screen.pgmLocked ? ' on' : ''}`);
@@ -95,6 +115,8 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
         commitGroup: (l, window) => command({ action: 'group-window', screenId: screen.id, id: l.id, window }, 'Group position saved.'),
         drop: (key, point) => addLayer(key, screen, scene, point),
         replace: (key, l) => {
+          // Backgrounds, logos and groups are placed, not swapped into a layer.
+          if (parseDragKey(key).kind !== 'source') { addLayer(key, screen, scene, { x: l.window.x + l.window.width / 2, y: l.window.y + l.window.height / 2 }); return; }
           const source = sourceFor(key); if (!source) return;
           if ([3, 4].includes(source.type) && source.id === screen.id) { notice('A screen cannot show its own PGM/PVW.', 'error'); return; }
           selectedId = l.id;
@@ -130,38 +152,38 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     root.append(bar);
     if (!state.screens.length) { root.append(text('Create or map a screen in Screens first.')); return; }
     const workspace = el('div', { className: 'program-workspace' }), sources = el('aside', { className: 'program-sources' });
-    const search = input('', 'Filter programming sources'); search.placeholder = 'Filter sources';
-    sources.append(el('h2', {}, 'Sources'), text('Drag into empty space to add at native size · drop on a layer to swap its source (Shift adds instead) · double-click adds to PVW'), search);
-    const list = el('div', { className: 'source-list' });
-    for (const item of state.sources) {
-      const key = `${item.type}:${item.id}`;
-      const row = button(item.name, () => { sourceKey = key; for (const c of list.children) c.classList.toggle('selected', c.dataset.key === key); }, `button source-choice${sourceKey === key ? ' selected' : ''}`);
-      Object.assign(row.dataset, { key, search: item.name.toLowerCase() }); row.draggable = true;
-      row.ondragstart = event => { sourceKey = key; event.dataTransfer.setData(SOURCE_MIME, key); event.dataTransfer.effectAllowed = 'copy'; };
-      row.ondblclick = () => { sourceKey = key; addLayer(key, active(), 4); };
-      row.append(text(`${item.width || '?'} × ${item.height || '?'}${item.type === 2 && !item.connected ? ' · No signal' : ''}`)); list.append(row);
-    }
-    search.oninput = () => { for (const row of list.children) row.hidden = !row.dataset.search.includes(search.value.toLowerCase()); };
-    sources.append(list, groupForm());
+    sources.append(el('h2', {}, 'Sources'), el('div', { id: 'source-tabs-body', className: 'source-tabs-body' }));
     const views = el('section', { className: 'program-views' });
     // WO-026: the selected layer's position/size tools sit under the screens; presets moved to an inspector tab.
     views.append(band(2, 'PGM'), band(4, 'PVW'), el('section', { id: 'layer-tools', className: 'layer-tools', 'aria-label': 'Selected layer position and size' }));
     workspace.append(sources, views, el('aside', { id: 'program-properties', className: 'program-properties' })); root.append(workspace);
-    paintAll(); renderInspector(); setDisabled(root, busy);
+    paintAll(); renderInspector(); renderSources(); setDisabled(root, busy);
+    if (!gallery) loadGallery();
   }
-  // Grouped inputs (WO-025): two sources as one layer pair on the active screen.
-  function groupForm() {
-    const box = el('details', { className: 'group-form' }); box.append(el('summary', {}, 'Group two sources…'));
-    const options = state.sources.map(s => [`${s.type}:${s.id}`, s.name]), s = active();
-    const a = select(options, sourceKey || options[0]?.[0], 'Group source A'), b = select(options, options[1]?.[0], 'Group source B');
-    const orient = select([['H', 'Side by side'], ['V', 'Top / bottom']], 'H', 'Group layout'), scene = select([[4, 'PVW'], [2, 'PGM']], 4, 'Group target');
-    const create = button('Create group', () => {
-      if (a.value === b.value) { notice('Choose two different sources.', 'error'); return; }
-      const pick = v => { const [type, id] = v.split(':').map(Number); return { type, id }; };
-      command({ action: 'group-create', screenId: s.id, scene: Number(scene.value), orientation: orient.value, sources: [pick(a.value), pick(b.value)] }, 'Group created.');
-    }, 'button primary');
-    box.append(field(orient.value === 'H' ? 'Left (A)' : 'Top (A)', a), field('Right / bottom (B)', b), field('Layout', orient), field(`Target on ${s?.name || 'screen'}`, scene), create);
-    return box;
+  // Source tabs (WO-027): Inputs, Screens, Groups, Backgrounds, Logos.
+  function renderSources() {
+    const body = $('source-tabs-body'); if (!body) return;
+    renderSourceTabs(body, { state, gallery, session, tab: sourceTab, sourceKey, notice, command, screenId: () => active()?.id,
+      setTab: t => { sourceTab = t; renderSources(); if (['bkg', 'logo'].includes(t) && !gallery) loadGallery(); },
+      pick: key => { sourceKey = key; for (const n of body.querySelectorAll('[data-key]')) n.classList.toggle('selected', n.dataset.key === key); },
+      addToPvw: key => { sourceKey = key; addLayer(key, active(), 4); }, upload });
+  }
+  async function loadGallery() {
+    try { gallery = await api(sessionPath('gallery', session)); } catch (error) { gallery = { pictures: [], support: {} }; notice(error.message, 'error'); }
+    renderSources();
+  }
+  async function upload(type, file) {
+    let size; try { const bitmap = await createImageBitmap(file); size = { width: bitmap.width, height: bitmap.height }; bitmap.close?.(); }
+    catch { notice('That file is not a readable image.', 'error'); return; }
+    const name = file.name.replace(/\.[^.]+$/, '').slice(0, 64) || 'Picture';
+    await operation(async () => {
+      notice(`Uploading ${file.name}…`);
+      const query = new URLSearchParams({ session, type, name, width: size.width, height: size.height });
+      const response = await fetch(`/api/gallery/upload?${query}`, { method: 'PUT', headers: { 'Content-Type': file.type }, body: file });
+      const result = await response.json(); if (!response.ok) throw new Error(result.error || `Upload failed (${response.status}).`);
+      gallery = result; notice(`${result.uploaded.name} uploaded to the device gallery.`, 'success');
+    });
+    renderSources();
   }
   function presetsPanel() {
     return renderPresets({ presets: state.presets, loadTarget, saving: savingFrom, editing: editingPresets,

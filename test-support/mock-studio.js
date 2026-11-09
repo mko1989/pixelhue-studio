@@ -39,21 +39,39 @@ export function createMockStudio({ model = 'P20' } = {}) {
   // Serials are per screen and scene on the P20 (live: PGM and PVW each have serial 1, WO-024).
   const nextSerial = (screenId, scene) => 1 + Math.max(0, ...layers.filter(l => l.layerIdObj?.attachScreenId === screenId && l.layerIdObj?.sceneType === scene && l.serial != null).map(l => l.serial));
   for (const l of layers) l.serial ??= nextSerial(l.layerIdObj?.attachScreenId, l.layerIdObj?.sceneType);
+  // Gallery and BKG layers (WO-027), shaped like live P20 picture/list and layers/list-detail.
+  const pictures = [{ pictureId: 1, isUsed: 2, pictureObj: { id: 1, type: 1 }, general: { name: 'Grid', width: 1920, height: 1080 }, path: [{ type: 0, url: '/picture/bkg/grid_1.jpg' }] }];
+  for (const scene of [2, 4]) layers.push({ layerId: 900 + scene, serial: 0, layerIdObj: { attachScreenId: 1, attachScreenType: 0, screenGuid: 'main-screen', sceneType: scene, type: 16 },
+    general: { name: '' }, source: { general: { sourceType: 0, sourceId: 0, sourceName: '' } }, window: { x: -100, y: 50, width: 1920, height: 1080 }, enable: 0, zorder: 0 });
   const ethernet = { mode: 0, infos: [{ index: 0, mac: '54:B5:6C:00:00:01', dhcp: 0, ip: '192.168.0.20', netmask: '255.255.255.0', gateway: '192.168.0.1', interfaceType: 25, autoDNS: 0, dns: [] }] };
   behavior.geometryDelay = 0; behavior.ignoreSetup = false;
   const config = umdXml.replace('<Features>', `<DCS><Device><Features><Device>
     <LayerModes Support="1" Editable="1"><Enum Value="0"/><Enum Value="1"/></LayerModes>
     <FanMode Support="1" Editable="1"><Enum Value="1"/><Enum Value="2"/></FanMode></Device>
     <DeviceModes Support="1" Editable="1"><DeviceMode Value="4"/><DeviceMode Value="8"/></DeviceModes>
+    <Pictures Support="1" Editable="0"><Picture type="1" Support="1"><Width Min="0" Max="65535"/><Height Min="0" Max="65535"/></Picture>
+      <Picture type="2" Support="1"><Width Min="0" Max="512"/><Height Min="0" Max="512"/></Picture><Picture type="3" Support="0"><Width Max="16384"/><Height Max="8192"/></Picture></Pictures>
     <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
     .replace('</Features>', '</Features></Device></DCS>');
-  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset'];
-  const customPuts = ['layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity'];
+  const customPuts = ['picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
-    const path = new URL(request.url, 'http://localhost').pathname.replace('/unico/v1/', '');
+    const url = new URL(request.url, 'http://localhost'), path = url.pathname.replace('/unico/v1/', '');
+    if (request.method === 'GET' && url.pathname.startsWith('/picture/')) { // device web-root thumbnails
+      if (!pictures.some(p => p.path.some(x => x.url === url.pathname))) { response.writeHead(404).end(); return; }
+      response.writeHead(200, { 'Content-Type': 'image/jpeg' }); response.end(Buffer.from([0xff, 0xd8, 0xff, 0xd9])); return;
+    }
+    if (request.method === 'PUT' && path === 'picture/import') { // multipart: description + pictureFile
+      let raw = Buffer.alloc(0); for await (const chunk of request) raw = Buffer.concat([raw, chunk]);
+      const text = raw.toString('latin1'), desc = JSON.parse(text.match(/name="description"\r\n\r\n([^\r]*)\r\n/)[1]);
+      writes.push({ path, method: 'PUT', body: { description: desc, contentType: request.headers['content-type'], fileBytes: raw.length } });
+      const id = Math.max(0, ...pictures.map(p => p.pictureId)) + 1, folder = desc.pictureObj.type === 2 ? 'logo' : 'bkg';
+      pictures.push({ pictureId: id, isUsed: 2, pictureObj: { id, type: desc.pictureObj.type }, general: desc.general, path: [{ type: 0, url: `/picture/${folder}/up_${id}.jpg` }] });
+      response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 0, data: {} })); return;
+    }
     if (!(request.method === 'GET' ? customGets : customPuts).includes(path)) {
       if (path === 'layers/window' && behavior.geometryDelay) await new Promise(r => setTimeout(r, behavior.geometryDelay));
       return original(request, response);
@@ -65,11 +83,15 @@ export function createMockStudio({ model = 'P20' } = {}) {
       if (path === 'node/detail') return send(node);
       if (path === 'node/ethernet') return send({ nodeId: 1, state: 0, ethernet });
       if (path === 'preset') return send({ list: presets, page: 1, totalPage: 1, totalCount: presets.length });
+      if (path === 'picture/list') { const t = Number(url.searchParams.get('type')); return send({ list: pictures.filter(p => !t || p.pictureObj.type === t), page: 1, totalPage: 1 }); }
+      if (path === 'picture/capacity') return send({ type: 1, usedCapacity: 1.5, totalCapacity: 512 });
       response.setHeader('Content-Type', 'application/xml'); response.end(config); return;
     }
     let raw = ''; for await (const chunk of request) raw += chunk;
     const body = JSON.parse(raw); writes.push({ path, body, method: request.method });
     if (behavior.ignoreSetup && path.startsWith('node/')) return send({});
+    if (path === 'layers/switch') for (const change of body) layers.find(l => l.layerId === change.layerId).enable = change.enable;
+    if (path === 'layers/source') for (const change of body) { const pic = pictures.find(p => p.pictureId === change.source.general.sourceId); if (pic && [5, 6].includes(change.source.general.sourceType)) change.source.general.sourceName = pic.general.name; }
     if (path === 'layers/general') for (const change of body) layers.find(l => l.layerId === change.layerId).general = { ...layers.find(l => l.layerId === change.layerId).general, ...change.general };
     if (path === 'layers/key-frame') for (const change of body) layers.find(l => l.layerId === change.layerId).keyFrame = change.keyFrame;
     if (path === 'preset/apply' && body.targetRegion === 4 && !behavior.ignorePresetApply) {
@@ -143,5 +165,5 @@ export function createMockStudio({ model = 'P20' } = {}) {
     }
     return send({});
   });
-  return { ...base, server, node, primary, ethernet, presets };
+  return { ...base, server, node, primary, ethernet, presets, pictures };
 }

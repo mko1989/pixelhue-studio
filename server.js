@@ -7,6 +7,7 @@ import { readInputs, applyInputs } from './lib/inputs.js';
 import { discoverPixelhue } from './lib/discovery.js';
 import { studioRoutes } from './lib/studio-routes.js';
 import { applyMvrLayer } from './lib/mvr-layers.js';
+import { readGallery, uploadPicture, streamThumb } from './lib/gallery.js';
 
 const publicFiles = new Map([
   ['/', ['index.html', 'text/html']], ['/app.js', ['app.js', 'text/javascript']],
@@ -14,7 +15,7 @@ const publicFiles = new Map([
   ['/inputs.js', ['inputs.js', 'text/javascript']], ['/inputs.css', ['inputs.css', 'text/css']],
   ['/connection.css', ['connection.css', 'text/css']],
   ['/mvr-geometry.js', ['mvr-geometry.js', 'text/javascript']],
-  ...['mvr-sync.js', 'mvr-reconcile.js', 'mvr-sources.js', 'device-ui.js', 'device-maintenance-ui.js', 'outputs-ui.js', 'screens-ui.js', 'programming-ui.js', 'layer-inspector.js', 'layer-tools.js', 'program-stage.js', 'group-geometry.js', 'presets-ui.js', 'ui.js', 'studio-panels.js', 'discovery-ui.js'].map(file => [`/${file}`, [file, 'text/javascript']]),
+  ...['mvr-sync.js', 'mvr-reconcile.js', 'mvr-sources.js', 'device-ui.js', 'device-maintenance-ui.js', 'outputs-ui.js', 'screens-ui.js', 'programming-ui.js', 'layer-inspector.js', 'layer-tools.js', 'program-stage.js', 'group-geometry.js', 'source-tabs.js', 'presets-ui.js', 'ui.js', 'studio-panels.js', 'discovery-ui.js'].map(file => [`/${file}`, [file, 'text/javascript']]),
   ['/studio.css', ['studio.css', 'text/css']],
   ['/fonts/Rewir-Light.woff', ['fonts/Rewir-Light.woff', 'font/woff']],
   ['/fonts/Rewir-Light.ttf', ['fonts/Rewir-Light.ttf', 'font/ttf']],
@@ -86,6 +87,23 @@ export function createApp({ discover = discoverPixelhue } = {}) {
             if (!client || body?.session !== client.session) throw fail('Connection changed. Refresh before changing MVR windows.', 409);
             return applyMvrLayer(client, body);
           }));
+        }
+        // Gallery (WO-027): list, raw image upload (proxied as multipart to picture/import), thumbnails.
+        if (url.pathname.startsWith('/api/gallery')) {
+          const session = url.searchParams.get('session');
+          const guard = () => { if (!client || session !== client.session) throw fail('Connection changed. Reconnect before using the gallery.', 409); };
+          if (request.method === 'GET' && url.pathname === '/api/gallery') return json(200, await exclusive(() => { guard(); return readGallery(client); }));
+          if (request.method === 'GET' && url.pathname === '/api/gallery/thumb') {
+            await exclusive(() => { guard(); return streamThumb(client, Number(url.searchParams.get('id')), response); });
+            return;
+          }
+          if (request.method === 'PUT' && url.pathname === '/api/gallery/upload') {
+            const chunks = []; let size = 0;
+            for await (const chunk of request) { size += chunk.length; if (size > 64_000_000) throw fail('Image is larger than 64 MB.', 413); chunks.push(chunk); }
+            const q = name => url.searchParams.get(name);
+            return json(200, await exclusive(() => { guard(); return uploadPicture(client, { type: Number(q('type')), name: q('name'), width: Number(q('width')), height: Number(q('height')),
+              mime: (request.headers['content-type'] || '').split(';')[0], buffer: Buffer.concat(chunks) }); }));
+          }
         }
         if (request.method === 'GET' && url.pathname === '/api/inputs') {
           return json(200, await exclusive(() => {

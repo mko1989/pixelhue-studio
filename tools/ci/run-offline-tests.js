@@ -6,7 +6,7 @@ const FILES = [
   'test/capacity-policy.test.js', 'test/device.test.js', 'test/editor.test.js',
   'test/inputs.test.js', 'test/multi-model.test.js', 'test/mvr-aspect.test.js',
   'test/mvr-repeat-apply.test.js', 'test/mvr-screen-umd.test.js',
-  'test/mvr-sync.test.js', 'test/q8.test.js', 'test/studio-client.test.js', 'test/device-maintenance.test.js', 'test/programming-presets.test.js', 'test/mvr-layers.test.js', 'test/layer-groups.test.js',
+  'test/mvr-sync.test.js', 'test/q8.test.js', 'test/studio-client.test.js', 'test/device-maintenance.test.js', 'test/programming-presets.test.js', 'test/mvr-layers.test.js', 'test/layer-groups.test.js', 'test/gallery-sources.test.js',
   'api-library/test/catalog.test.cjs',
 ];
 const root = new URL('../../', import.meta.url);

@@ -71,10 +71,11 @@ export function dropWindow(source, screen, point) {
   return { x: Math.round(point.x - width / 2), y: Math.round(point.y - height / 2), width, height };
 }
 
-export function paintStage(stage, screen, layers, selectedId) {
+export function paintStage(stage, screen, layers, selectedId, background = null) {
   stage.replaceChildren();
   const c = canvasOf(screen), pct = (value, total) => `${100 * value / total}%`;
   const frame = el('div', { className: 'screen-frame' });
+  if (background) { frame.style.backgroundImage = `url("${background}")`; frame.classList.add('has-bkg'); }
   Object.assign(frame.style, { left: pct(c.mx, c.width), top: pct(c.my, c.height), width: pct(screen.width, c.width), height: pct(screen.height, c.height) });
   stage.append(frame);
   for (const [index, l] of layers.slice().sort((a, b) => a.zorder - b.zorder).entries()) {
