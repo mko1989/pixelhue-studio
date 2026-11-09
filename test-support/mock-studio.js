@@ -47,7 +47,7 @@ export function createMockStudio({ model = 'P20' } = {}) {
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
     .replace('</Features>', '</Features></Device></DCS>');
   const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset'];
-  const customPuts = ['preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+  const customPuts = ['screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
@@ -68,11 +68,14 @@ export function createMockStudio({ model = 'P20' } = {}) {
     let raw = ''; for await (const chunk of request) raw += chunk;
     const body = JSON.parse(raw); writes.push({ path, body, method: request.method });
     if (behavior.ignoreSetup && path.startsWith('node/')) return send({});
+    if (path === 'screen/pgm-edit') for (const change of body) screens.find(x => x.screenId === change.screenId).pgmEdit = change.pgmEdit;
     if (path === 'preset/create') {
       // Device rule seen on P20 V2.0.0 (WO-018): presets may only name enabled screens.
       const off = body.screens.map(b => screens.find(x => x.guid === b.guid)).find(x => !x || x.enable === 0);
       if (off) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: `manage param invalid: check screen faild: screen ${off?.screenId} is not enabled` })); return; }
-      presets.push({ ...body, guid: `preset-${body.serial}` });
+      // P20 replaces an existing serial (WO-022 live test).
+      const same = presets.findIndex(p => p.serial === body.serial); if (same >= 0) presets.splice(same, 1);
+      presets.push({ ...body, guid: same >= 0 ? `preset-${body.serial}-overwritten` : `preset-${body.serial}` });
     }
     if (path === 'preset/update-name') for (const change of body) presets.find(p => p.guid === change.guid).name = change.name;
     if (path === 'preset/delete') for (const guid of body) presets.splice(presets.findIndex(p => p.guid === guid), 1);

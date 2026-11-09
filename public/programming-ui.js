@@ -8,7 +8,7 @@ const STORE = 'program-screens';
 export function createProgrammingUI({ api, notice, operation, getSession, invalidate }) {
   const root = $('programming-content');
   let state, session, selectedId, sourceKey, busy = false, refreshTimer, durationMs = 500, shouldSwap = true;
-  let shown = null, presetRegion = 4, editingPresets = false; const stages = [];
+  let shown = null, loadTarget = 4, savingFrom = null, editingPresets = false; const stages = [];
   try { shown = JSON.parse(localStorage.getItem(STORE) || 'null'); } catch {}
   const visible = () => state.screens.filter(s => shown.includes(s.id));
   const layer = () => state?.layers.find(l => l.id === selectedId);
@@ -71,12 +71,22 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     row.style.maxWidth = `max(320px, calc((100dvh - 330px) / 2 * ${(total / tallest).toFixed(5)}))`;
     for (const screen of screens) {
       const cell = el('div', { className: 'program-cell' }); cell.style.flex = `${screen.width} 1 0`;
-      const stage = el('div', { className: 'program-stage', tabindex: 0, 'data-screen': screen.id, 'data-scene': scene, 'aria-label': `${screen.name} ${label}` });
+      const locked = scene === 2 && screen.pgmLocked;
+      const stage = el('div', { className: `program-stage${locked ? ' locked' : ''}`, tabindex: 0, 'data-screen': screen.id, 'data-scene': scene, 'aria-label': `${screen.name} ${label}${locked ? ' (locked)' : ''}` });
       stage.style.aspectRatio = `${screen.width}/${screen.height}`;
-      cell.append(el('div', { className: 'program-cell-head' }, `${screen.name} · ${screen.width} × ${screen.height}`), stage); row.append(cell);
+      const head = el('div', { className: 'program-cell-head' }); head.append(el('span', {}, `${screen.name} · ${screen.width} × ${screen.height}`));
+      if (scene === 2) {
+        const lock = button(screen.pgmLocked ? 'PGM locked' : 'PGM unlocked', () => command({ action: 'pgm-lock', screenId: screen.id, locked: !screen.pgmLocked },
+          screen.pgmLocked ? `${screen.name} PGM unlocked.` : `${screen.name} PGM locked.`), `button lock-toggle${screen.pgmLocked ? ' on' : ''}`);
+        lock.setAttribute('aria-pressed', String(screen.pgmLocked)); lock.title = screen.pgmLocked ? 'PGM editing is locked. Click to allow editing PGM layers.' : 'PGM layers can be edited. Click to lock.';
+        head.append(lock);
+      }
+      cell.append(head, stage); row.append(cell);
       stages.push(bindStage(stage, screen, {
         layers: () => state.layers.filter(l => l.screenId === screen.id && l.scene === scene),
         select: id => { selectedId = id; paintAll(); renderInspector(); }, busy: () => busy, repaint: paintAll,
+        locked: () => scene === 2 && Boolean(state.screens.find(s => s.id === screen.id)?.pgmLocked),
+        onLocked: () => notice(`PGM of ${screen.name} is locked. Unlock it to edit.`, 'error'),
         commit: (l, window) => command({ action: 'window', screenId: screen.id, id: l.id, window }, 'Layer position saved.'),
         drop: (key, point) => addLayer(key, screen, scene, point),
       }));
@@ -123,8 +133,9 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     search.oninput = () => { for (const row of list.children) row.hidden = !row.dataset.search.includes(search.value.toLowerCase()); };
     sources.append(list);
     const views = el('section', { className: 'program-views' });
-    views.append(band(2, 'PGM'), band(4, 'PVW'), renderPresets({ presets: state.presets, region: presetRegion, editing: editingPresets,
-      setRegion: r => { presetRegion = r; render(); }, setEditing: v => { editingPresets = v; render(); }, command, screenIds: ids }));
+    views.append(band(2, 'PGM'), band(4, 'PVW'), renderPresets({ presets: state.presets, loadTarget, saving: savingFrom, editing: editingPresets,
+      setLoadTarget: r => { loadTarget = r; render(); }, setSaving: v => { savingFrom = v; render(); },
+      setEditing: v => { editingPresets = v; render(); }, command, screenIds: ids }));
     workspace.append(sources, views, el('aside', { id: 'program-properties', className: 'program-properties' })); root.append(workspace);
     paintAll(); renderInspector(); setDisabled(root, busy);
   }
@@ -134,6 +145,8 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     if (!l) node.append(text('Click a layer, or drag a source onto PGM or PVW.'));
     else {
       node.append(el('strong', {}, l.name), text(`${screen.name} · ${l.scene === 2 ? 'PGM' : 'PVW'}`));
+      const lockedLayer = l.scene === 2 && screen.pgmLocked;
+      if (lockedLayer) node.append(text('PGM is locked: unlock it above the PGM view to edit this layer.', 'lock-note'));
       const options = state.sources.filter(s => s.type === 2 || s.id !== l.screenId).map(s => [`${s.type}:${s.id}`, s.name]);
       const current = `${l.sourceType}:${l.sourceId}`; if (!options.some(([key]) => key === current)) options.unshift([current, l.sourceName || 'Current source']);
       const routing = select(options, current, 'Selected layer source');
@@ -149,6 +162,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
         button('Bring to front', () => command({ action: 'zorder', screenId: l.screenId, id: l.id, to: 3 })),
         button('Send to back', () => command({ action: 'zorder', screenId: l.screenId, id: l.id, to: 4 })),
         button('Delete layer', () => command({ action: 'delete', screenId: l.screenId, id: l.id }, 'Layer deleted.'), 'button danger'));
+      if (lockedLayer) for (const control of node.querySelectorAll('input,select,button')) control.dataset.fixed = 'true';
     }
     const s = active(); if (!s) return;
     const list = el('div', { className: 'program-layer-list' }); list.append(el('h2', {}, `${s.name} layers`));

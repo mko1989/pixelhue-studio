@@ -105,3 +105,34 @@ test('screens are created enabled with the ucenter body, mapped with a reference
   state = await applyScreens(client, { action: 'delete', id: created.id });
   assert.ok(!state.screens.some(s => s.id === created.id)); assert.equal(mock.screens.find(s => s.screenId === created.id).enable, 0);
 });
+
+test('preset save picks a slot, refuses silent overwrite, overwrites on confirmation, rejects duplicate names (WO-022)', async t => {
+  const { client, mock } = await fixture(t);
+  let state = await applyProgramming(client, { action: 'preset-save', name: 'Wide', scene: 2, serial: 7, screenIds: [1] });
+  assert.deepEqual(state.presets.map(p => [p.serial, p.name, p.sourceRegion]), [[1, 'Opening', 4], [7, 'Wide', 2]]);
+  const writes = mock.writes.length;
+  await assert.rejects(applyProgramming(client, { action: 'preset-save', name: 'Tight', scene: 4, serial: 1, screenIds: [1] }), /Slot 1 holds Opening/);
+  await assert.rejects(applyProgramming(client, { action: 'preset-save', name: 'Wide', scene: 4, serial: 9, screenIds: [1] }), /already named Wide/);
+  await assert.rejects(applyProgramming(client, { action: 'preset-save', name: 'Bad', scene: 4, serial: 129, screenIds: [1] }), /1–128/);
+  assert.equal(mock.writes.length, writes);
+  state = await applyProgramming(client, { action: 'preset-save', name: 'Tight', scene: 4, serial: 1, overwrite: true, screenIds: [1] });
+  assert.deepEqual(state.presets.map(p => [p.serial, p.name, p.sourceRegion]), [[1, 'Tight', 4], [7, 'Wide', 2]]);
+  assert.equal(mock.writes.filter(w => w.path === 'preset/create').at(-1).body.serial, 1);
+});
+
+test('PGM lock toggles pgmEdit and blocks PGM layer edits server-side; PVW stays editable (WO-022)', async t => {
+  const { client, mock } = await fixture(t);
+  let state = await applyProgramming(client, { action: 'pgm-lock', screenId: 1, locked: true });
+  assert.equal(state.screens.find(s => s.id === 1).pgmLocked, true);
+  assert.deepEqual(mock.writes.at(-1), { path: 'screen/pgm-edit', method: 'PUT', body: [{ screenId: 1, pgmEdit: 0 }] });
+  const pgm = state.layers.find(l => l.screenId === 1 && l.scene === 2), pvw = state.layers.find(l => l.screenId === 1 && l.scene === 4);
+  const writes = mock.writes.length, source = state.sources.find(s => s.type === 2);
+  await assert.rejects(applyProgramming(client, { action: 'window', screenId: 1, id: pgm.id, window: { ...pgm.window, x: pgm.window.x + 10 } }), /PGM of Main screen is locked/);
+  await assert.rejects(applyProgramming(client, { action: 'delete', screenId: 1, id: pgm.id }), /locked/);
+  await assert.rejects(applyProgramming(client, { action: 'create', screenId: 1, scene: 2, source }), /locked/);
+  assert.equal(mock.writes.length, writes);
+  await applyProgramming(client, { action: 'window', screenId: 1, id: pvw.id, window: { ...pvw.window, x: pvw.window.x + 10 } });
+  await applyProgramming(client, { action: 'take', screenIds: [1] });
+  state = await applyProgramming(client, { action: 'pgm-lock', screenId: 1, locked: false });
+  await applyProgramming(client, { action: 'window', screenId: 1, id: pgm.id, window: { ...pgm.window, x: pgm.window.x + 10 } });
+});

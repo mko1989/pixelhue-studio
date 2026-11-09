@@ -69,6 +69,7 @@ export function bindStage(stage, screen, ctx) {
     const target = event.target.closest('.program-layer'); if (!target) return;
     const layer = ctx.layers().find(l => l.id === Number(target.dataset.id)); if (!layer) return;
     ctx.select(layer.id);
+    if (ctx.locked?.()) return; // PGM lock (WO-022): select only, no move/resize.
     drag = { layer, before: structuredClone(layer.window), x: event.clientX, y: event.clientY, handle: event.target.dataset.handle, rect: stage.getBoundingClientRect() };
     stage.setPointerCapture(event.pointerId); event.preventDefault();
   };
@@ -88,11 +89,12 @@ export function bindStage(stage, screen, ctx) {
     else ctx.repaint();
   };
   stage.onpointerup = end; stage.onpointercancel = end;
-  stage.ondragover = event => { if (!ctx.busy() && event.dataTransfer.types.includes(SOURCE_MIME)) { event.preventDefault(); event.dataTransfer.dropEffect = 'copy'; stage.classList.add('drop-target'); } };
+  stage.ondragover = event => { if (!ctx.busy() && !ctx.locked?.() && event.dataTransfer.types.includes(SOURCE_MIME)) { event.preventDefault(); event.dataTransfer.dropEffect = 'copy'; stage.classList.add('drop-target'); } };
   stage.ondragleave = () => stage.classList.remove('drop-target');
   stage.ondrop = event => {
     stage.classList.remove('drop-target');
     const key = event.dataTransfer.getData(SOURCE_MIME); if (!key || ctx.busy()) return;
+    if (ctx.locked?.()) { event.preventDefault(); ctx.onLocked?.(); return; }
     event.preventDefault(); const rect = stage.getBoundingClientRect();
     ctx.drop(key, { x: (event.clientX - rect.left) * screen.width / rect.width, y: (event.clientY - rect.top) * screen.height / rect.height });
   };
