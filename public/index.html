@@ -15,31 +15,30 @@
 <body>
   <header class="masthead">
     <div class="brand">Pixelhue <small>Studio</small></div>
+    <nav class="studio-tabs" role="tablist" aria-label="Device tools">
+      <button id="device-tab" role="tab" aria-selected="true" aria-controls="device-panel">Device</button>
+      <button id="inputs-tab" role="tab" aria-selected="false" aria-controls="inputs-panel" tabindex="-1">Inputs</button>
+      <button id="outputs-tab" role="tab" aria-selected="false" aria-controls="outputs-panel" tabindex="-1">Outputs</button>
+      <button id="screens-tab" role="tab" aria-selected="false" aria-controls="screens-panel" tabindex="-1">Screens</button>
+      <button id="programming-tab" role="tab" aria-selected="false" aria-controls="programming-panel" tabindex="-1">Programming</button>
+      <button id="mvr-tab" role="tab" aria-selected="false" aria-controls="mvr-panel" tabindex="-1">MVR</button>
+    </nav>
     <div class="connection-controls">
-  <form id="connect-form" class="connect-bar">
-    <label class="host-field">Device address <input id="host" placeholder="192.168.0.10" autocomplete="off" spellcheck="false" required></label>
-    <button id="connect" class="button primary" type="submit">Connect</button>
-    <button id="find-devices" class="button secondary" type="button">Find devices</button>
-    <details class="advanced"><summary>Connection options</summary><div class="advanced-fields">
-      <label>API port <input id="api-port" type="number" min="1" max="65535" placeholder="Auto-discover"></label>
-      <label>Device serial <input id="serial" placeholder="Optional override" autocomplete="off"></label>
-      <p>Leave the port empty to discover via HTTPS :19998.</p>
-    </div></details>
-  </form>
-    <div class="connection-state"><span class="dot" id="connection-dot"></span><span id="connection-label">No device connected · P10 / P20 / P80 / Q8</span></div>
+      <form id="connect-form" class="connect-bar">
+        <label class="host-field"><span class="visually-hidden">Device address</span><input id="host" placeholder="Device IP" autocomplete="off" spellcheck="false" required></label>
+        <button id="connect" class="button primary" type="submit">Connect</button>
+        <button id="find-devices" class="button secondary" type="button">Find</button>
+        <details class="advanced"><summary title="Connection options" aria-label="Connection options">⋯</summary><div class="advanced-fields">
+          <label>API port <input id="api-port" type="number" min="1" max="65535" placeholder="Auto-discover"></label>
+          <label>Device serial <input id="serial" placeholder="Optional override" autocomplete="off"></label>
+          <p>Leave the port empty to discover via HTTPS :19998.</p>
+        </div></details>
+      </form>
+      <div class="connection-state"><span class="dot" id="connection-dot"></span><span id="connection-label">Not connected</span></div>
     </div>
   </header>
 
   <div id="notice" role="status" aria-live="polite">Find a Pixelhue device or enter its address.</div>
-
-  <nav class="studio-tabs" role="tablist" aria-label="Device tools">
-    <button id="device-tab" role="tab" aria-selected="true" aria-controls="device-panel">Device</button>
-    <button id="inputs-tab" role="tab" aria-selected="false" aria-controls="inputs-panel" tabindex="-1">Inputs</button>
-    <button id="outputs-tab" role="tab" aria-selected="false" aria-controls="outputs-panel" tabindex="-1">Outputs</button>
-    <button id="screens-tab" role="tab" aria-selected="false" aria-controls="screens-panel" tabindex="-1">Screens</button>
-    <button id="programming-tab" role="tab" aria-selected="false" aria-controls="programming-panel" tabindex="-1">Programming</button>
-    <button id="mvr-tab" role="tab" aria-selected="false" aria-controls="mvr-panel" tabindex="-1">MVR</button>
-  </nav>
 
   <section id="device-panel" class="tool-panel" role="tabpanel" aria-labelledby="device-tab">
     <section class="discovery-section"><div class="tool-heading"><h1>Devices</h1><button id="scan-lan" class="button secondary">Scan LAN</button></div><p id="discovery-status" class="muted">Finding devices…</p><div id="discovered-devices" class="discovered-devices"></div></section>

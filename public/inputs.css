@@ -1,13 +1,13 @@
 .studio-tabs { display: flex; gap: 22px; margin: 0 18px 12px; border-bottom: 1px solid var(--border); }
 .studio-tabs button { padding: 8px 1px; border: 0; border-bottom: 2px solid transparent; color: var(--muted); background: transparent; font-size: 16px; }
 .studio-tabs button[aria-selected=true] { color: var(--text); border-bottom-color: var(--text); }
-#inputs-panel { margin: 0 18px 16px; }
-.inputs-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 16px 0 12px; }
+#inputs-panel { margin: 0 12px 12px; }
+.inputs-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 10px 0 8px; }
 .input-bulk { display: flex; align-items: end; flex-wrap: wrap; gap: 12px; padding: 12px; background: var(--panel); border: 1px solid var(--border); }
 .input-bulk label:not(.checkbox-label) { display: grid; gap: 4px; }
 .input-bulk .checkbox-label { align-self: center; margin: 16px 4px 0 0; }
 .bulk-name-field { flex: 1; min-width: 160px; }.bulk-name-field input { width: 100%; }
-.input-table-wrap { border: 1px solid var(--border); border-top: 0; background: #1c1c1c; overflow: auto; max-height: max(300px, calc(100dvh - 435px)); }
+.input-table-wrap { border: 1px solid var(--border); border-top: 0; background: #1c1c1c; overflow: auto; max-height: max(300px, calc(100dvh - 315px)); }
 .input-table { width: 100%; min-width: 1060px; border-collapse: collapse; text-align: left; }
 .input-table th { position: sticky; top: 0; z-index: 1; padding: 8px 10px; color: #ddd; background: #303030; font-size: 14px; font-weight: 300; border-bottom: 1px solid #666; }
 .input-table td { padding: 10px; border-top: 1px solid var(--border); vertical-align: top; }
