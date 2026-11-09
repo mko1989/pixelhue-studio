@@ -1,0 +1,29 @@
+**Status: DONE (2026-11-09, 79 tests, mock Chrome and live read-only P20 checks, four verified v1.5.0 archives; physical Apply/output QA pending)**
+
+## Investigation FIRST
+
+Owner requests that Fix aspect ratios also fixes screen sources, and compensates for the UMD strip inside the full MVR window.
+
+- WO-006 intentionally limited fixes to connected sourceType=2 inputs. WO-007 preserves established PGM/PVW locks, but still skips those sources during Fix. `lib/mvr-signals.js`, `public/mvr-geometry.js:45`, `app.js:239` only resolve input interfaces and compare width/height for the entire rectangle.
+- Supplied PixelFlow `pages/mvr/components/MVRSourceList.tsx:412,430` references screens by screenId. SourceTypeE PGM=3, PVW=4; source resolution comes from the referenced screen's mosaic.window (sourceListPresenter/utils.ts:79). Screen and interface IDs are separate namespaces.
+- Read-only P20 discovery/live API on 2026-11-09: 192.168.0.7:8088, model 28944. Its MVR includes input sources and PGM/PVW sourceId=1. Screen 1 is 2560×640. Current MVR screen windows are 777×259 and 783×261, which do not match that source ratio; UMD is enabled. Raw read-only snapshots saved temporarily under `/private/tmp/pixelhue-umd-live/`.
+- **Exact device evidence:** authenticated GET `node/config-file?nodeId=1&para=0` returns XML. `deviceconfig/device/feature.xml` has `<UMD ...><OccupyHeight ... Value="24"/></UMD>` (capture line 109261). `deviceconfig/device/layer_8.xml` has UMD Borders for source types 2/3/4 with VWidth Value=24 (lines 117888–117948). Thus this P20's UMD occupies **24 output pixels**. PixelFlow's editor renderer constant UMDH=45 is a preview implementation detail and must not override device XML. Generic echo composition separately subtracts 24.
+- API layer UMD entries contain enable/type/name/color, not a height. Read/cache configuration per connection and apply only to enabled UMD windows. The XML is 8.56 million characters, larger than the current JSON response limit; add a separately bounded raw-text transport mode. Unknown UMD dimensions must be reported rather than guessed.
+- Geometry, corner/numeric resizing, lock validation, native lock readback, undo, saved layouts and overlap checks all need the same content-height calculation: total height = round(width / content ratio) + UMD height. Keep full rectangles for collisions. Use native Custom=5 for compensated locks, since Original=8 represents the outer/source ratio without the additive strip.
+
+## What was done
+
+- Added `lib/mvr-umd.js`: scoped device XML parsing for feature OccupyHeight and MVR UMD border VWidth by source type. `pixelhue.js` supports bounded raw-text responses, reads/caches configuration per connection when UMD is enabled, and reports unknown heights without guessing.
+- `lib/mvr-signals.js` resolves PGM/PVW sourceId against screenId and mosaic dimensions, separately from input IDs. Valid screen previews are eligible even with physical output disabled. Actual input connection rules remain in place. Layer metadata includes enabled UMD height; readback retains exact source ratios when rounded content dimensions match.
+- Geometry, corner/numeric resizing, server lock validation, preview strips and manual locks use content height = total height minus UMD. Full outer rectangles remain authoritative for overlap/bounds/write ordering. Compensated fixes use native Custom=5; UMD-off fixes retain Original=8.
+- Fix refreshes source dimensions, checks stale UMD settings, stages an undoable action and reports skipped missing sources/heights. Inspector shows screen/input dimensions and UMD pixels. Save includes UMD height; imports reject incompatible settings and convert legacy outer-rectangle locks while preserving geometry.
+- Added device-derived XML fixture, HTTP mock support and seven regression tests. Updated documentation/package instructions and prepared v1.5.0 distributions.
+
+## What was verified
+
+- `npm test`: **79 passing tests**, 0 failed. New coverage: scoped/per-source/unknown XML heights; input/screen ID collisions; Screen 2/3, PGM/PVW and disabled output previews; UMD on/off; exact source ratios after rounded readback; minimum-size/no-space fits; all resize corners; saved metadata/legacy imports; cached XML retrieval; repeated Apply and native Custom/Original readback.
+- Implemented client against live P20: retrieved the full 8.56-million-character XML successfully through the new text transport; parsed height=24 and per-source 2/3/4=24. Dry-run fixed eight eligible windows, including both 2560×640 Screen 1 previews at content ratio 4:1, and skipped six disconnected inputs. Complete rectangles remained non-overlapping.
+- Chrome mock: connected input plus PGM/PVW Screen 1/2/3, portrait source, visible UMD strips/24 px inspector, read-only staging, Undo/Redo, numeric resizing, Save/Load, repeated Apply/readback, desktop and 390 px viewport fit; no page errors. Screenshots visually reviewed. Temporary QA script: `/private/tmp/pixelhue-browser-qa/umd-check.mjs`.
+- Chrome live P20 **read-only**: Connect, Fix, Save staged JSON; both screen-source content ratios validated with 24 px compensation; no Apply requests; before/after device layer snapshots equal. Temporary screenshot: `/private/tmp/pixelhue-browser-qa/live-umd-staged.png`. No physical P20 settings changed.
+- `npm run build:dist` / `npm run verify:dist`: all four v1.5.0 archives passed checksum, current-source hashes, architecture and archive/font/license checks. Extracted Intel Mac launcher/runtime/HTTP smoke passed. Apple Silicon, Windows and Ubuntu runtimes were inspected, not executed on their target systems.
+- Physical MVR output/native Custom lock behavior after Apply remains owner QA; exact height comes from device configuration, not visual estimation. Changed application source files remain below 500 lines. No commit: this workspace has no Git repository.
