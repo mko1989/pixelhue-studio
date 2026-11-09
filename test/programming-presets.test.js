@@ -4,7 +4,7 @@ import { once } from 'node:events';
 import { PixelhueClient } from '../lib/pixelhue.js';
 import { readProgramming, applyProgramming } from '../lib/studio-programming.js';
 import { applyScreens } from '../lib/studio-screens.js';
-import { moveWindow, snapWindow, dropWindow } from '../public/program-stage.js';
+import { moveWindow, snapWindow, dropWindow, canvasOf } from '../public/program-stage.js';
 import { createMockStudio } from '../test-support/mock-studio.js';
 
 const listen = async server => { server.listen(0, '127.0.0.1'); await once(server, 'listening'); return server.address().port; };
@@ -70,8 +70,14 @@ test('stage geometry: free move/resize, snapping to edges and neighbours, centre
   assert.deepEqual(snapWindow({ x: 6, y: 1075 - 360, width: 640, height: 360 }, screen, [], 10), { x: 0, y: 720, width: 640, height: 360 });
   assert.deepEqual(snapWindow({ x: 648, y: 300, width: 640, height: 360 }, screen, [{ x: 0, y: 0, width: 640, height: 360 }], 10).x, 640);
   assert.deepEqual(snapWindow({ x: 0, y: 0, width: 1915, height: 360 }, screen, [], 10, 'se'), { x: 0, y: 0, width: 1920, height: 360 });
-  assert.deepEqual(dropWindow({ width: 3840, height: 2160 }, screen, { x: 960, y: 540 }), { x: 0, y: 0, width: 1920, height: 1080 });
-  assert.deepEqual(dropWindow({}, screen, { x: 100, y: 100 }), { x: -380, y: -170, width: 960, height: 540 });
+  // WO-023: native resolution, centred on the drop point, never scaled to the screen.
+  assert.deepEqual(dropWindow({ width: 3840, height: 2160 }, screen, { x: 960, y: 540 }), { x: -960, y: -540, width: 3840, height: 2160 });
+  assert.deepEqual(dropWindow({}, screen, { x: 100, y: 100 }), { x: -860, y: -440, width: 1920, height: 1080 });
+  // Aspect-locked resize keeps the ratio and anchors the opposite corner.
+  assert.deepEqual(moveWindow({ x: 0, y: 0, width: 1600, height: 900 }, 320, 0, 'se', 16 / 9), { x: 0, y: 0, width: 1920, height: 1080 });
+  assert.deepEqual(moveWindow({ x: 100, y: 100, width: 1600, height: 900 }, 0, -90, 'nw', 16 / 9), { x: -60, y: 10, width: 1760, height: 990 });
+  assert.deepEqual(snapWindow({ x: 0, y: 0, width: 1915, height: 1077 }, screen, [], 10, 'se', 16 / 9), { x: 0, y: 0, width: 1920, height: 1080 });
+  assert.deepEqual(canvasOf(screen), { mx: 384, my: 216, width: 2688, height: 1512 });
 });
 
 test('disabled placeholder Main screens are hidden like PixelFlow and never reach the device (WO-018/019)', async t => {
@@ -135,4 +141,26 @@ test('PGM lock toggles pgmEdit and blocks PGM layer edits server-side; PVW stays
   await applyProgramming(client, { action: 'take', screenIds: [1] });
   state = await applyProgramming(client, { action: 'pgm-lock', screenId: 1, locked: false });
   await applyProgramming(client, { action: 'window', screenId: 1, id: pgm.id, window: { ...pgm.window, x: pgm.window.x + 10 } });
+});
+
+test('new layers are created aspect-locked to the source; lock toggles; resource shortage is explained (WO-023)', async t => {
+  const { client, mock } = await fixture(t);
+  let state = await readProgramming(client);
+  const source = state.sources.find(s => s.type === 2 && s.width);
+  state = await applyProgramming(client, { action: 'create', screenId: 1, scene: 4, source: { id: source.id, type: 2 },
+    window: { x: -200, y: -100, width: source.width, height: source.height }, name: 'Native' });
+  const body = mock.writes.filter(w => w.path === 'layers/create').at(-1).body;
+  assert.deepEqual([body.locked, body.aspectRatio, body.window.width, body.window.height], [1, { aspectRatio: 8, locked: 1 }, source.width, source.height]);
+  const created = state.layers.find(l => l.name === 'Native'); assert.equal(created.aspectLocked, true);
+  state = await applyProgramming(client, { action: 'aspect', screenId: 1, id: created.id, locked: false });
+  assert.deepEqual(mock.writes.at(-1).body, [{ layerId: created.id, aspectRatio: 8, locked: 0 }]);
+  assert.equal(state.layers.find(l => l.id === created.id).aspectLocked, false);
+  state = await applyProgramming(client, { action: 'aspect', screenId: 1, id: created.id, locked: true });
+  assert.equal(state.layers.find(l => l.id === created.id).aspectLocked, true);
+  const other = state.sources.find(s => s.type === 2 && s.id !== source.id);
+  state = await applyProgramming(client, { action: 'source', screenId: 1, id: created.id, source: { id: other.id, type: 2 } });
+  assert.equal(state.layers.find(l => l.id === created.id).sourceId, other.id, 'drop-on-layer swaps the source in place');
+  mock.behavior.resourceShort = true;
+  await assert.rejects(applyProgramming(client, { action: 'source', screenId: 1, id: created.id, source: { id: source.id, type: 2 } }), /no free layer resources/);
+  await assert.rejects(applyProgramming(client, { action: 'create', screenId: 1, scene: 4, source: { id: source.id, type: 2 } }), /no free layer resources/);
 });

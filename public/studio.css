@@ -82,3 +82,6 @@
 .preset-save-form input { width: 220px; }.segment-label { align-self: center; color: var(--muted); font-size: 12px; margin-right: 4px; }
 .program-cell-head > span { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }.lock-toggle { flex: none; }
 .program-views { grid-template-columns: minmax(0, 1fr); }.program-band, .preset-bar { min-width: 0; }
+.screen-frame { position: absolute; border: 1px dashed #8e9ba6; background: #151a1f; pointer-events: none; z-index: 0; }
+.program-stage { background: #0b0b0b; }.program-layer.replace-target { outline: 2px dashed #edcd89; outline-offset: -3px; }
+.program-layer.aspect-locked::after { content: ''; position: absolute; right: 3px; bottom: 3px; width: 6px; height: 6px; border-right: 1px solid #c7d0d8; border-bottom: 1px solid #c7d0d8; }

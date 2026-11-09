@@ -111,6 +111,10 @@ export function createMockStudio({ model = 'P20' } = {}) {
       else screens.splice(screens.indexOf(gone), 1);
       for (let i = layers.length - 1; i >= 0; i--) if (layers[i].layerIdObj.attachScreenId === change.screenId) layers.splice(i, 1);
     }
+    if (behavior.resourceShort && ['layers/create', 'layers/source'].includes(path)) {
+      response.setHeader('Content-Type', 'application/json');
+      response.end(JSON.stringify({ code: 8212, message: 'manage mio error: create layer {...} resource not enough' })); return;
+    }
     if (path === 'layers/create') {
       const id = Math.max(...layers.map(l => l.layerId)) + 1;
       layers.push({ ...body, layerId: id, zorder: layers.filter(l => l.layerIdObj.attachScreenId === body.layerIdObj.attachScreenId).length + 1 });

@@ -1,5 +1,5 @@
 import { $, el, text, button, input, select, field, sessionPath, setDisabled } from './ui.js';
-import { paintStage, bindStage, dropWindow, SOURCE_MIME } from './program-stage.js';
+import { paintStage, bindStage, dropWindow, canvasOf, SOURCE_MIME } from './program-stage.js';
 import { renderPresets } from './presets-ui.js';
 
 // Programming (WO-016): several screens at once, PGM band on top and PVW below, drag sources
@@ -67,13 +67,13 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     const row = el('div', { className: 'program-band-row' }), screens = visible();
     // Cells flex by pixel width so all screens share one scale; the row is capped so the
     // tallest stage leaves room for both bands (stage height = rowWidth * height / totalWidth).
-    const total = screens.reduce((sum, s) => sum + s.width, 0), tallest = Math.max(...screens.map(s => s.height));
+    const total = screens.reduce((sum, s) => sum + canvasOf(s).width, 0), tallest = Math.max(...screens.map(s => canvasOf(s).height));
     row.style.maxWidth = `max(320px, calc((100dvh - 330px) / 2 * ${(total / tallest).toFixed(5)}))`;
     for (const screen of screens) {
-      const cell = el('div', { className: 'program-cell' }); cell.style.flex = `${screen.width} 1 0`;
+      const cell = el('div', { className: 'program-cell' }); cell.style.flex = `${canvasOf(screen).width} 1 0`;
       const locked = scene === 2 && screen.pgmLocked;
       const stage = el('div', { className: `program-stage${locked ? ' locked' : ''}`, tabindex: 0, 'data-screen': screen.id, 'data-scene': scene, 'aria-label': `${screen.name} ${label}${locked ? ' (locked)' : ''}` });
-      stage.style.aspectRatio = `${screen.width}/${screen.height}`;
+      stage.style.aspectRatio = `${canvasOf(screen).width}/${canvasOf(screen).height}`;
       const head = el('div', { className: 'program-cell-head' }); head.append(el('span', {}, `${screen.name} · ${screen.width} × ${screen.height}`));
       if (scene === 2) {
         const lock = button(screen.pgmLocked ? 'PGM locked' : 'PGM unlocked', () => command({ action: 'pgm-lock', screenId: screen.id, locked: !screen.pgmLocked },
@@ -89,6 +89,12 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
         onLocked: () => notice(`PGM of ${screen.name} is locked. Unlock it to edit.`, 'error'),
         commit: (l, window) => command({ action: 'window', screenId: screen.id, id: l.id, window }, 'Layer position saved.'),
         drop: (key, point) => addLayer(key, screen, scene, point),
+        replace: (key, l) => {
+          const source = sourceFor(key); if (!source) return;
+          if ([3, 4].includes(source.type) && source.id === screen.id) { notice('A screen cannot show its own PGM/PVW.', 'error'); return; }
+          selectedId = l.id;
+          command({ action: 'source', screenId: screen.id, id: l.id, source: { id: source.id, type: source.type } }, `${l.name} now shows ${source.name}.`);
+        },
       }));
     }
     wrap.append(row); return wrap;
@@ -120,7 +126,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     if (!state.screens.length) { root.append(text('Create or map a screen in Screens first.')); return; }
     const workspace = el('div', { className: 'program-workspace' }), sources = el('aside', { className: 'program-sources' });
     const search = input('', 'Filter programming sources'); search.placeholder = 'Filter sources';
-    sources.append(el('h2', {}, 'Sources'), text('Drag onto PGM or PVW · double-click adds to PVW'), search);
+    sources.append(el('h2', {}, 'Sources'), text('Drag into empty space to add at native size · drop on a layer to swap its source (Shift adds instead) · double-click adds to PVW'), search);
     const list = el('div', { className: 'source-list' });
     for (const item of state.sources) {
       const key = `${item.type}:${item.id}`;
@@ -151,12 +157,21 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
       const current = `${l.sourceType}:${l.sourceId}`; if (!options.some(([key]) => key === current)) options.unshift([current, l.sourceName || 'Current source']);
       const routing = select(options, current, 'Selected layer source');
       routing.onchange = () => { const [type, id] = routing.value.split(':').map(Number); command({ action: 'source', screenId: l.screenId, id: l.id, source: { id, type } }, 'Layer source saved.'); };
-      const geometry = el('div', { className: 'field-grid' });
+      const geometry = el('div', { className: 'field-grid' }), ratio = l.window.width / l.window.height;
       for (const [key, label] of [['x', 'X'], ['y', 'Y'], ['width', 'Width'], ['height', 'Height']]) {
         const control = input(l.window[key], `Layer ${label}`, 'number'); if (key === 'width' || key === 'height') control.min = 64;
-        control.onchange = () => command({ action: 'window', screenId: l.screenId, id: l.id, window: { ...l.window, [key]: Number(control.value) } }, 'Layer position saved.');
+        control.onchange = () => {
+          const next = { ...l.window, [key]: Number(control.value) };
+          if (l.aspectLocked && key === 'width') next.height = Math.max(64, Math.round(next.width / ratio));
+          if (l.aspectLocked && key === 'height') next.width = Math.max(64, Math.round(next.height * ratio));
+          command({ action: 'window', screenId: l.screenId, id: l.id, window: next }, 'Layer position saved.');
+        };
         geometry.append(field(label, control));
       }
+      const keep = input('', 'Keep aspect ratio', 'checkbox'); keep.checked = Boolean(l.aspectLocked);
+      keep.onchange = () => command({ action: 'aspect', screenId: l.screenId, id: l.id, locked: keep.checked }, keep.checked ? 'Aspect ratio locked to the source.' : 'Aspect ratio unlocked.');
+      const keepLabel = el('label', { className: 'checkbox-label' }); keepLabel.append(keep, document.createTextNode(' Keep aspect ratio'));
+      geometry.append(keepLabel);
       const fill = button('Fill screen', () => command({ action: 'window', screenId: l.screenId, id: l.id, window: { x: 0, y: 0, width: screen.width, height: screen.height } }, 'Layer position saved.'));
       node.append(field('Source', routing), geometry, fill,
         button('Bring to front', () => command({ action: 'zorder', screenId: l.screenId, id: l.id, to: 3 })),
