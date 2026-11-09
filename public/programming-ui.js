@@ -2,6 +2,7 @@ import { $, el, text, button, input, select, field, sessionPath, setDisabled } f
 import { paintStage, bindStage, dropWindow, canvasOf, SOURCE_MIME } from './program-stage.js';
 import { renderPresets } from './presets-ui.js';
 import { renderLayerPanel } from './layer-inspector.js';
+import { renderLayerToolbar, clearLayer } from './layer-tools.js';
 import { groupOf, unionWindow } from './group-geometry.js';
 
 // Programming (WO-016): several screens at once, PGM band on top and PVW below, drag sources
@@ -10,7 +11,7 @@ const STORE = 'program-screens';
 export function createProgrammingUI({ api, notice, operation, getSession, invalidate }) {
   const root = $('programming-content');
   let state, session, selectedId, sourceKey, busy = false, refreshTimer, durationMs = 500, shouldSwap = true;
-  let shown = null, loadTarget = 4, savingFrom = null, editingPresets = false, loadOptions = { keyframes: false, effect: false }; const stages = [];
+  let shown = null, sideTab = 'layer', loadTarget = 4, savingFrom = null, editingPresets = false, loadOptions = { keyframes: false, effect: false }; const stages = [];
   try { shown = JSON.parse(localStorage.getItem(STORE) || 'null'); } catch {}
   const visible = () => state.screens.filter(s => shown.includes(s.id));
   const layer = () => state?.layers.find(l => l.id === selectedId);
@@ -143,11 +144,8 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     search.oninput = () => { for (const row of list.children) row.hidden = !row.dataset.search.includes(search.value.toLowerCase()); };
     sources.append(list, groupForm());
     const views = el('section', { className: 'program-views' });
-    views.append(band(2, 'PGM'), band(4, 'PVW'), renderPresets({ presets: state.presets, loadTarget, saving: savingFrom, editing: editingPresets,
-      setLoadTarget: r => { loadTarget = r; render(); }, setSaving: v => { savingFrom = v; render(); },
-      loadOptions, setLoadOptions: v => { loadOptions = { ...loadOptions, ...v }; render(); },
-      transition: () => ({ time: durationMs, swap: shouldSwap }), layersFor: scene => visible().flatMap(s => state.layers.filter(l => l.screenId === s.id && l.scene === scene).map(l => ({ ...l, screenName: s.name }))),
-      setEditing: v => { editingPresets = v; render(); }, command, screenIds: ids }));
+    // WO-026: the selected layer's position/size tools sit under the screens; presets moved to an inspector tab.
+    views.append(band(2, 'PGM'), band(4, 'PVW'), el('section', { id: 'layer-tools', className: 'layer-tools', 'aria-label': 'Selected layer position and size' }));
     workspace.append(sources, views, el('aside', { id: 'program-properties', className: 'program-properties' })); root.append(workspace);
     paintAll(); renderInspector(); setDisabled(root, busy);
   }
@@ -165,15 +163,30 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     box.append(field(orient.value === 'H' ? 'Left (A)' : 'Top (A)', a), field('Right / bottom (B)', b), field('Layout', orient), field(`Target on ${s?.name || 'screen'}`, scene), create);
     return box;
   }
+  function presetsPanel() {
+    return renderPresets({ presets: state.presets, loadTarget, saving: savingFrom, editing: editingPresets,
+      setLoadTarget: r => { loadTarget = r; renderInspector(); }, setSaving: v => { savingFrom = v; renderInspector(); },
+      loadOptions, setLoadOptions: v => { loadOptions = { ...loadOptions, ...v }; renderInspector(); },
+      transition: () => ({ time: durationMs, swap: shouldSwap }), layersFor: scene => visible().flatMap(s => state.layers.filter(l => l.screenId === s.id && l.scene === scene).map(l => ({ ...l, screenName: s.name }))),
+      setEditing: v => { editingPresets = v; renderInspector(); }, command, screenIds: () => visible().map(s => s.id) });
+  }
   function renderInspector() {
-    const node = $('program-properties'); if (!node) return; node.replaceChildren(el('h2', {}, 'Layer'));
+    const node = $('program-properties'); if (!node) return; node.replaceChildren();
     const l = layer(), screen = l && state.screens.find(s => s.id === l.screenId);
+    const tools = $('layer-tools'); if (tools) renderLayerToolbar(tools, { state, layer: l, screen, command, locked: Boolean(l && l.scene === 2 && screen?.pgmLocked) });
+    const tabs = el('div', { className: 'inspector-tabs', role: 'tablist', 'aria-label': 'Inspector' });
+    for (const [id, label] of [['layer', 'Layer'], ['presets', 'Presets']]) {
+      const tab = button(label, () => { sideTab = id; renderInspector(); }, `button inspector-tab${sideTab === id ? ' active' : ''}`);
+      tab.setAttribute('role', 'tab'); tab.setAttribute('aria-selected', String(sideTab === id)); tabs.append(tab);
+    }
+    node.append(tabs);
+    if (sideTab === 'presets') { node.append(presetsPanel()); setDisabled(node, busy); return; }
     if (!l) node.append(text('Click a layer, or drag a source onto PGM or PVW.'));
     else {
       node.append(el('strong', {}, l.name), text(`${screen.name} · ${l.scene === 2 ? 'PGM' : 'PVW'}`));
       const lockedLayer = l.scene === 2 && screen.pgmLocked;
       if (lockedLayer) node.append(text('PGM is locked: unlock it above the PGM view to edit this layer.', 'lock-note'));
-      renderLayerPanel(node, { state, layer: l, screen, command });
+      renderLayerPanel(node, { state, layer: l, command });
       if (lockedLayer) for (const control of node.querySelectorAll('input,select,button')) control.dataset.fixed = 'true';
     }
     const s = active(); if (!s) return;
@@ -187,8 +200,10 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
   // Arrow keys nudge the selected layer (1 px, Shift 10 px) while a stage has focus (WO-024).
   root.addEventListener('keydown', event => {
     const keys = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[event.key];
-    const l = layer(); if (!keys || !l || busy || !event.target.closest?.('.program-stage')) return;
+    const l = layer(), clear = ['Delete', 'Backspace'].includes(event.key);
+    if ((!keys && !clear) || !l || busy || !event.target.closest?.('.program-stage')) return;
     const scr = state.screens.find(s => s.id === l.screenId); if (l.scene === 2 && scr?.pgmLocked) return;
+    if (clear) { event.preventDefault(); clearLayer(state, l, command); return; }
     event.preventDefault(); const step = event.shiftKey ? 10 : 1, group = groupOf(state.layers, l);
     const w = group ? unionWindow(group.a.window, group.b.window) : l.window, moved = { ...w, x: w.x + keys[0] * step, y: w.y + keys[1] * step };
     command(group ? { action: 'group-window', screenId: l.screenId, id: l.id, window: moved } : { action: 'window', screenId: l.screenId, id: l.id, window: moved }, 'Layer position saved.');

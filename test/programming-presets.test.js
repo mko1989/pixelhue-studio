@@ -222,7 +222,7 @@ test('auto-take loads to PVW, waits for the stored layout, then takes the preset
 });
 
 test('layer panel geometry helpers: align, fill output, native 1:1 (WO-024)', async () => {
-  const { alignWindow, outputTile, nativeWindow } = await import('../public/layer-inspector.js');
+  const { alignWindow, outputTile, nativeWindow, fillWindow, fillAxis } = await import('../public/layer-tools.js');
   const screen = { x: -100, y: 50, width: 3840, height: 1080, outputs: [
     { pos: { x: -100, y: 50, width: 1920, height: 1080 } }, { pos: { x: 1820, y: 50, width: 1920, height: 1080 } }] };
   const w = { x: 2500, y: 300, width: 640, height: 360 };
@@ -234,4 +234,12 @@ test('layer panel geometry helpers: align, fill output, native 1:1 (WO-024)', as
   assert.equal(outputTile(w, { ...screen, outputs: [] }), null);
   assert.deepEqual(nativeWindow(w, { width: 1280, height: 720 }), { x: 2180, y: 120, width: 1280, height: 720 });
   assert.equal(nativeWindow(w, { width: null }), null);
+  // WO-026: fills honour the aspect lock (fit inside, centred); width/height fills are separate.
+  const scr = { x: 0, y: 0, width: 3840, height: 1080 };
+  assert.deepEqual(fillWindow(scr), scr, 'unlocked fill = exact');
+  assert.deepEqual(fillWindow(scr, 16 / 9), { x: 960, y: 0, width: 1920, height: 1080 }, 'locked fill keeps 16:9');
+  assert.deepEqual(fillWindow({ x: 0, y: 0, width: 1920, height: 1920 }, 16 / 9), { x: 0, y: 420, width: 1920, height: 1080 });
+  assert.deepEqual(fillAxis(w, scr, 'width'), { x: 0, y: 300, width: 3840, height: 360 }, 'unlocked width fill keeps height');
+  assert.deepEqual(fillAxis(w, scr, 'width', 16 / 9), { x: 0, y: -600, width: 3840, height: 2160 }, 'locked width fill follows the ratio, centred');
+  assert.deepEqual(fillAxis(w, scr, 'height', 16 / 9), { x: 1860, y: 0, width: 1920, height: 1080 });
 });

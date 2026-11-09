@@ -14,7 +14,7 @@ const publicFiles = new Map([
   ['/inputs.js', ['inputs.js', 'text/javascript']], ['/inputs.css', ['inputs.css', 'text/css']],
   ['/connection.css', ['connection.css', 'text/css']],
   ['/mvr-geometry.js', ['mvr-geometry.js', 'text/javascript']],
-  ...['mvr-sync.js', 'mvr-reconcile.js', 'mvr-sources.js', 'device-ui.js', 'device-maintenance-ui.js', 'outputs-ui.js', 'screens-ui.js', 'programming-ui.js', 'layer-inspector.js', 'program-stage.js', 'group-geometry.js', 'presets-ui.js', 'ui.js', 'studio-panels.js', 'discovery-ui.js'].map(file => [`/${file}`, [file, 'text/javascript']]),
+  ...['mvr-sync.js', 'mvr-reconcile.js', 'mvr-sources.js', 'device-ui.js', 'device-maintenance-ui.js', 'outputs-ui.js', 'screens-ui.js', 'programming-ui.js', 'layer-inspector.js', 'layer-tools.js', 'program-stage.js', 'group-geometry.js', 'presets-ui.js', 'ui.js', 'studio-panels.js', 'discovery-ui.js'].map(file => [`/${file}`, [file, 'text/javascript']]),
   ['/studio.css', ['studio.css', 'text/css']],
   ['/fonts/Rewir-Light.woff', ['fonts/Rewir-Light.woff', 'font/woff']],
   ['/fonts/Rewir-Light.ttf', ['fonts/Rewir-Light.ttf', 'font/ttf']],

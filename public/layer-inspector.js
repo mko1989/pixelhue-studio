@@ -1,44 +1,18 @@
 import { el, text, button, input, select, field } from './ui.js';
-import { groupOf, unionWindow, groupSize } from './group-geometry.js';
+import { groupOf } from './group-geometry.js';
 
-// Selected-layer panel (WO-024), PixelFlow parity for position/size: X/Y/W/H with aspect lock, aspect
-// presets (layer_2.xml AspectRatioType), align to screen, fill screen / fill output / native 1:1, stacking,
-// and per-layer KeyFrame (enable, curve, start, duration as % of the take).
-export const ASPECTS = [[8, 'Source'], [3, '16:9'], [4, '16:10'], [1, '4:3'], [2, '3:2'], [7, '5:4'], [0, '1:1'], [5, 'Custom']];
-const RATIOS = { 0: 1, 1: 4 / 3, 2: 3 / 2, 3: 16 / 9, 4: 16 / 10, 7: 5 / 4 };
+// Inspector "Layer" tab (WO-024, WO-026): source, group info and per-layer KeyFrame. Position/size tools
+// live in the bar under the screens (public/layer-tools.js).
 const CURVES = [[3, 'Linear'], [0, 'S-curve'], [1, 'Logarithmic'], [2, 'Exponential']];
 
-export function alignWindow(w, screen, where) {
-  const x = { left: 0, hcenter: Math.round((screen.width - w.width) / 2), right: screen.width - w.width }[where];
-  const y = { top: 0, vcenter: Math.round((screen.height - w.height) / 2), bottom: screen.height - w.height }[where];
-  if (where === 'center') return { ...w, x: Math.round((screen.width - w.width) / 2), y: Math.round((screen.height - w.height) / 2) };
-  return { ...w, ...(x !== undefined ? { x } : {}), ...(y !== undefined ? { y } : {}) };
-}
-
-// Output tile (screen-local) under the layer centre, else the first tile; null when the screen has none.
-export function outputTile(w, screen) {
-  const tiles = (screen.outputs || []).map(o => ({ x: o.pos.x - screen.x, y: o.pos.y - screen.y, width: o.pos.width, height: o.pos.height }));
-  const cx = w.x + w.width / 2, cy = w.y + w.height / 2;
-  return tiles.find(t => cx >= t.x && cx < t.x + t.width && cy >= t.y && cy < t.y + t.height) || tiles[0] || null;
-}
-
-export function nativeWindow(w, source) {
-  if (!source?.width || !source?.height) return null;
-  return { x: Math.round(w.x + w.width / 2 - source.width / 2), y: Math.round(w.y + w.height / 2 - source.height / 2), width: source.width, height: source.height };
-}
-
-export function renderLayerPanel(node, { state, layer: l, screen, command }) {
+export function renderLayerPanel(node, { state, layer: l, command }) {
   // Grouped inputs (WO-025): position/size tools act on the group's combined rectangle.
-  const group = groupOf(state.layers, l), win = group ? unionWindow(group.a.window, group.b.window) : l.window;
-  const save = (window, message = 'Layer position saved.') => command(group ? { action: 'group-window', screenId: l.screenId, id: l.id, window }
-    : { action: 'window', screenId: l.screenId, id: l.id, window }, group ? message.replace('Layer', 'Group') : message);
-  const sourceOf = layer => state.sources.find(s => s.type === layer.sourceType && s.id === layer.sourceId);
-  const source = sourceOf(l);
+  const group = groupOf(state.layers, l);
   if (group) {
     const info = el('section', { className: 'inspector-section group-info' });
     info.append(el('h3', {}, `Group ${group.group} · ${group.orient === 'H' ? 'side by side' : 'top / bottom'}`),
       text(`${group.orient === 'H' ? 'Left' : 'Top'}: ${group.a.sourceName || group.a.name} · ${group.orient === 'H' ? 'Right' : 'Bottom'}: ${group.b.sourceName || group.b.name}`),
-      text('Move, resize, align and fill act on both layers. Source and keyframe below apply to the selected member.'),
+      text('Position, size, align, fill and Clear act on both layers. Source and keyframe here apply to the selected member.'),
       button('Ungroup', () => command({ action: 'group-ungroup', screenId: l.screenId, id: l.id }, 'Layers ungrouped.'), 'button quiet'));
     node.append(info);
   }
@@ -47,41 +21,6 @@ export function renderLayerPanel(node, { state, layer: l, screen, command }) {
   const routing = select(options, current, 'Selected layer source');
   routing.onchange = () => { const [type, id] = routing.value.split(':').map(Number); command({ action: 'source', screenId: l.screenId, id: l.id, source: { id, type } }, 'Layer source saved.'); };
   node.append(field('Source', routing));
-
-  const pos = el('section', { className: 'inspector-section' }); pos.append(el('h3', {}, 'Position & size'));
-  const geometry = el('div', { className: 'field-grid' }), ratio = win.width / win.height, keepRatio = group ? group.a.aspectLocked || group.b.aspectLocked : l.aspectLocked;
-  for (const [key, label] of [['x', 'X'], ['y', 'Y'], ['width', 'Width'], ['height', 'Height']]) {
-    const control = input(win[key], `Layer ${label}`, 'number'); if (key === 'width' || key === 'height') control.min = 64;
-    control.onchange = () => {
-      const next = { ...win, [key]: Number(control.value) };
-      if (keepRatio && key === 'width') next.height = Math.max(64, Math.round(next.width / ratio));
-      if (keepRatio && key === 'height') next.width = Math.max(64, Math.round(next.height * ratio));
-      save(next);
-    };
-    geometry.append(field(label, control));
-  }
-  const keep = input('', 'Keep aspect ratio', 'checkbox'); keep.checked = Boolean(l.aspectLocked);
-  keep.onchange = () => command({ action: 'aspect', screenId: l.screenId, id: l.id, locked: keep.checked }, keep.checked ? 'Aspect ratio locked to the source.' : 'Aspect ratio unlocked.');
-  const keepLabel = el('label', { className: 'checkbox-label' }); keepLabel.append(keep, document.createTextNode(' Keep aspect ratio'));
-  const aspect = select(ASPECTS, l.aspectMode, 'Layer aspect ratio');
-  aspect.onchange = () => {
-    const mode = Number(aspect.value), r = RATIOS[mode];
-    command({ action: 'aspect', screenId: l.screenId, id: l.id, mode, locked: mode !== 5 || l.aspectLocked,
-      ...(r ? { window: { ...l.window, height: Math.max(64, Math.round(l.window.width / r)) } } : {}) }, `Aspect ratio set to ${aspect.selectedOptions[0].text}.`);
-  };
-  pos.append(geometry, field('Aspect ratio', aspect), keepLabel);
-  const align = el('div', { className: 'align-grid', role: 'group', 'aria-label': 'Align to screen' });
-  for (const [where, label] of [['left', 'Left'], ['hcenter', 'Centre H'], ['right', 'Right'], ['top', 'Top'], ['vcenter', 'Centre V'], ['bottom', 'Bottom'], ['center', 'Centre']]) {
-    align.append(button(label, () => save(alignWindow(win, screen, where), `Layer aligned ${label.toLowerCase()}.`), 'button secondary'));
-  }
-  const tile = outputTile(win, screen);
-  const native = group ? nativeWindow(win, groupSize(sourceOf(group.a), sourceOf(group.b), group.orient)) : nativeWindow(l.window, source);
-  const fills = el('div', { className: 'align-grid' });
-  fills.append(button('Fill screen', () => save({ x: 0, y: 0, width: screen.width, height: screen.height }, 'Layer fills the screen.')),
-    button('Fill output', () => tile && save(tile, 'Layer fills its output.')), button('Native 1:1', () => native && save(native, 'Layer set to the source resolution.')));
-  if (!tile) fills.children[1].dataset.fixed = 'true';
-  if (!native) { fills.children[2].dataset.fixed = 'true'; fills.children[2].title = 'The source has no signal resolution.'; }
-  pos.append(el('span', { className: 'muted' }, 'Align to screen'), align, fills);
 
   const kf = l.keyFrame, frames = el('section', { className: 'inspector-section' }); frames.append(el('h3', {}, 'KeyFrame'));
   const kfSave = (changes, message) => command({ action: 'keyframe', screenId: l.screenId, id: l.id, keyFrame: changes }, message);
@@ -96,9 +35,5 @@ export function renderLayerPanel(node, { state, layer: l, screen, command }) {
   const timing = el('div', { className: 'field-grid' }); timing.append(field('Start % of take', start), field('Duration % of take', length));
   frames.append(enableLabel, field('Curve', curve), timing, text('Presets store keyframes when they include KF (absolute presets always do).'));
 
-  const order = el('div', { className: 'align-grid' });
-  order.append(button('Bring to front', () => command({ action: 'zorder', screenId: l.screenId, id: l.id, to: 3 })),
-    button('Send to back', () => command({ action: 'zorder', screenId: l.screenId, id: l.id, to: 4 })),
-    button('Delete layer', () => command({ action: 'delete', screenId: l.screenId, id: l.id }, 'Layer deleted.'), 'button danger'));
-  node.append(pos, frames, order);
+  node.append(frames);
 }

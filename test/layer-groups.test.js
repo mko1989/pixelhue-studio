@@ -51,3 +51,14 @@ test('create a side-by-side group, move/resize it as one, ungroup; failed second
   await assert.rejects(applyProgramming(client, { action: 'group-create', screenId: 1, scene: 4, orientation: 'V', sources: inputs.map(s => ({ id: s.id, type: 2 })) }), /no free layer resources/);
   assert.equal(mock.layers.length, count, 'rolled back');
 });
+
+test('Clear on a grouped layer deletes both members in one request (WO-026)', async t => {
+  const { client, mock } = await fixture(t);
+  let state = await readProgramming(client);
+  const inputs = state.sources.filter(s => s.type === 2).slice(0, 2);
+  state = await applyProgramming(client, { action: 'group-create', screenId: 1, scene: 4, orientation: 'V', sources: inputs.map(s => ({ id: s.id, type: 2 })) });
+  const a = state.layers.find(l => l.name === 'GRP1-V-A'), b = state.layers.find(l => l.name === 'GRP1-V-B');
+  state = await applyProgramming(client, { action: 'group-delete', screenId: 1, id: b.id });
+  assert.deepEqual(mock.writes.at(-1), { path: 'layers', method: 'DELETE', body: [{ layerId: a.id, sn: client.serial }, { layerId: b.id, sn: client.serial }] });
+  assert.ok(!state.layers.some(l => [a.id, b.id].includes(l.id)));
+});
