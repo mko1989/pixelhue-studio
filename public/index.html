@@ -9,15 +9,17 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/inputs.css">
   <link rel="stylesheet" href="/connection.css">
+  <link rel="stylesheet" href="/studio.css">
   <script type="module" src="/app.js"></script>
 </head>
 <body>
   <header class="masthead">
-    <div class="brand">Pixelhue <small>MVR & inputs</small></div>
+    <div class="brand">Pixelhue <small>Studio</small></div>
     <div class="connection-controls">
   <form id="connect-form" class="connect-bar">
     <label class="host-field">Device address <input id="host" placeholder="192.168.0.10" autocomplete="off" spellcheck="false" required></label>
     <button id="connect" class="button primary" type="submit">Connect</button>
+    <button id="find-devices" class="button secondary" type="button">Find devices</button>
     <details class="advanced"><summary>Connection options</summary><div class="advanced-fields">
       <label>API port <input id="api-port" type="number" min="1" max="65535" placeholder="Auto-discover"></label>
       <label>Device serial <input id="serial" placeholder="Optional override" autocomplete="off"></label>
@@ -28,14 +30,26 @@
     </div>
   </header>
 
-  <div id="notice" role="status" aria-live="polite">Connect to a P10, P20, P80 or Q8. MVR editing supports P20 and Q8.</div>
+  <div id="notice" role="status" aria-live="polite">Find a Pixelhue device or enter its address.</div>
 
   <nav class="studio-tabs" role="tablist" aria-label="Device tools">
-    <button id="mvr-tab" role="tab" aria-selected="true" aria-controls="mvr-panel">Multiviewer</button>
+    <button id="device-tab" role="tab" aria-selected="true" aria-controls="device-panel">Device</button>
     <button id="inputs-tab" role="tab" aria-selected="false" aria-controls="inputs-panel" tabindex="-1">Inputs</button>
+    <button id="outputs-tab" role="tab" aria-selected="false" aria-controls="outputs-panel" tabindex="-1">Outputs</button>
+    <button id="screens-tab" role="tab" aria-selected="false" aria-controls="screens-panel" tabindex="-1">Screens</button>
+    <button id="programming-tab" role="tab" aria-selected="false" aria-controls="programming-panel" tabindex="-1">Programming</button>
+    <button id="mvr-tab" role="tab" aria-selected="false" aria-controls="mvr-panel" tabindex="-1">MVR</button>
   </nav>
 
-  <div id="mvr-panel" role="tabpanel" aria-labelledby="mvr-tab">
+  <section id="device-panel" class="tool-panel" role="tabpanel" aria-labelledby="device-tab">
+    <section class="discovery-section"><div class="tool-heading"><h1>Devices</h1><button id="scan-lan" class="button secondary">Scan LAN</button></div><p id="discovery-status" class="muted">Finding devices…</p><div id="discovered-devices" class="discovered-devices"></div></section>
+    <section id="device-settings"><p class="muted">Connect a device to load its setup.</p></section>
+  </section>
+  <section id="outputs-panel" class="tool-panel" role="tabpanel" aria-labelledby="outputs-tab" hidden><div id="outputs-content"></div></section>
+  <section id="screens-panel" class="tool-panel" role="tabpanel" aria-labelledby="screens-tab" hidden><div id="screens-content"></div></section>
+  <section id="programming-panel" class="tool-panel" role="tabpanel" aria-labelledby="programming-tab" hidden><div id="programming-content"></div></section>
+
+  <div id="mvr-panel" role="tabpanel" aria-labelledby="mvr-tab" hidden>
   <main class="workspace">
     <aside class="panel windows-panel">
       <div class="panel-heading"><h1>Windows</h1><span id="window-count" class="count">0</span></div>
@@ -87,7 +101,7 @@
 
   <footer class="action-bar">
     <div class="layout-files"><button id="save" class="button secondary" disabled>Save layout</button><button id="load" class="button secondary" disabled>Load layout</button><input id="layout-file" type="file" accept="application/json,.json" hidden></div>
-    <div class="apply-actions"><span id="dirty-label">No pending changes</span><button id="refresh" class="button secondary" disabled>Refresh</button><button id="apply" class="button primary" disabled>Apply layout</button></div>
+    <div class="apply-actions"><span id="dirty-label" aria-live="polite">Changes save automatically</span><button id="refresh" class="button secondary" disabled>Refresh</button><button id="apply" class="button primary" disabled hidden>Retry save</button></div>
   </footer>
   </div>
 

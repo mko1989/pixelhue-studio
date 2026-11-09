@@ -41,7 +41,7 @@ input:hover, select:hover { border-color: #999; }
 .advanced-fields { position: absolute; top: 28px; right: 0; z-index: 20; width: 275px; background: var(--panel); border: 1px solid #777; padding: 14px; }
 .advanced-fields label { display: grid; gap: 4px; margin-bottom: 12px; }
 .advanced-fields p { color: var(--muted); font-size: 13px; margin-bottom: 0; }
-.button { border-radius: 2px; border: 1px solid #626262; min-height: 33px; padding: 5px 10px; white-space: nowrap; font-weight: 300; }
+.button { background: #303030; color: var(--text); border-radius: 2px; border: 1px solid #626262; min-height: 33px; padding: 5px 10px; white-space: nowrap; font-weight: 300; }
 .primary { background: #dedede; color: #151515; border-color: #dedede; }
 .primary:hover:enabled { background: #fff; }
 .secondary { background: #303030; color: var(--text); }

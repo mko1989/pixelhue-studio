@@ -1,0 +1,83 @@
+import { $, el, text, button, input, select, field, cell, table, panelHeader, sessionPath, setDisabled } from './ui.js';
+
+export function createDeviceUI({ api, notice, operation, getSession, invalidate }) {
+  const root = $('device-settings');
+  let state, session, busy = false, controls = {};
+  function values() {
+    if (!state) return {};
+    const changes = {};
+    if (controls.name.value !== state.node.name) changes.name = controls.name.value;
+    if (controls.beacon && Number(controls.beacon.value) !== state.node.beacon) changes.beacon = Number(controls.beacon.value);
+    if (controls.fan && Number(controls.fan.value) !== state.node.fanMode) changes.fanMode = Number(controls.fan.value);
+    if (controls.genlock && (Number(controls.genlock.value) !== state.node.genlock?.type ||
+      (Number(controls.genlock.value) === 2 && Number(controls.genlockInput.value) !== state.node.genlock?.sourceId))) {
+      changes.genlock = { type: Number(controls.genlock.value), sourceId: Number(controls.genlockInput.value) };
+    }
+    return changes;
+  }
+  async function refresh() {
+    if (!getSession()) return;
+    await operation(async () => { state = await api(sessionPath('device', getSession())); session = state.session; render(); });
+  }
+  async function apply(changes) {
+    await operation(async () => {
+      state = await api('device', { session, changes }, 'PUT');
+      invalidate('device'); render(); notice('Device settings saved.', 'success');
+    });
+  }
+  function render() {
+    root.replaceChildren(); controls = {};
+    if (!state) { root.append(text('Connect a device to load its setup.')); return; }
+    const { node, device, options } = state;
+    root.append(panelHeader(`${device.model} setup`, refresh));
+    const facts = el('dl', { className: 'device-facts' });
+    for (const [label, value] of [['Model', device.model], ['Serial', device.serial], ['Firmware', node.firmware || 'Unavailable'], ['Address', `${device.host}:${device.port}`]]) facts.append(el('dt', {}, label), el('dd', {}, value));
+    root.append(facts);
+    const form = el('form', { className: 'settings-grid' });
+    controls.name = input(node.name, 'Device name'); controls.name.maxLength = 32;
+    form.append(field('Device name', controls.name));
+    if (options.beacon) { controls.beacon = select([[0, 'Off'], [1, 'On']], node.beacon, 'Identify device'); form.append(field('Identify device', controls.beacon)); }
+    if (options.fanModes.length) {
+      controls.fan = select(options.fanModes.map(v => [v, v === 1 ? 'Standard' : v === 2 ? 'High performance' : `Mode ${v}`]), node.fanMode, 'Fan mode');
+      form.append(field('Fan mode', controls.fan));
+    }
+    if (options.genlockTypes.length) {
+      controls.genlock = select(options.genlockTypes.map(v => [v, ['Free-run', 'External genlock', 'Input'][v] || `Source ${v}`]), node.genlock?.type, 'Genlock source');
+      controls.genlockInput = select((state.inputs || []).map(i => [i.id, i.name]), node.genlock?.sourceId, 'Genlock input');
+      const inputField = field('Genlock input', controls.genlockInput);
+      controls.genlock.onchange = () => { inputField.hidden = Number(controls.genlock.value) !== 2; };
+      inputField.hidden = node.genlock?.type !== 2; form.append(field('Genlock', controls.genlock), inputField);
+    }
+    const save = button('Save device settings', () => { const changes = values(); if (Object.keys(changes).length) apply(changes); });
+    form.onsubmit = event => { event.preventDefault(); save.click(); }; form.append(save); root.append(form);
+    if (options.workModes.length > 1 || options.layerModes.length > 1) {
+      const modes = el('section', { className: 'settings-block' }); modes.append(el('h2', {}, 'Operating mode'));
+      if (options.workModes.length > 1) {
+        const choice = select(options.workModes.map(m => [m.value, m.label]), node.mode?.workMode, 'Device operating mode');
+        modes.append(field('Mode', choice), button('Change mode', () => {
+          if (Number(choice.value) === node.mode?.workMode) return;
+          if (window.confirm('Changing device mode can reset screens and routing. Change mode?')) apply({ workMode: Number(choice.value), confirmModeChange: true });
+        }));
+      }
+      if (options.layerModes.length > 1) {
+        const profile = select(options.layerModes.map(v => [v, `Profile ${v + 1}`]), node.layerMode, 'Layer profile');
+        modes.append(field('Layer profile', profile), button('Change layer profile', () => {
+          if (Number(profile.value) !== node.layerMode && window.confirm('Changing the layer profile can recreate layers. Change profile?')) apply({ layerMode: Number(profile.value) });
+        }));
+      }
+      root.append(modes);
+    }
+    if (node.subcards.length) {
+      const cards = table(['Slot', 'Card model', 'State']);
+      for (const card of node.subcards) { const row = el('tr'); cell(row, document.createTextNode(String(card.slotId))); cell(row, document.createTextNode(String(card.modelId))); cell(row, document.createTextNode(card.online === 0 ? 'Offline' : 'Online')); cards.body.append(row); }
+      root.append(el('h2', {}, 'Installed cards'), cards.wrap);
+    }
+    if (!state.configurationAvailable) root.append(text('Capability information is unavailable. Only reported settings are shown.'));
+    setDisabled(root, busy);
+  }
+  render();
+  return { open: () => state ? undefined : refresh(), refresh,
+    hasChanges: () => Object.keys(values()).length > 0,
+    reset(next) { if (session === next) return; session = next; state = undefined; render(); },
+    setBusy(value) { busy = value; setDisabled(root, busy); } };
+}

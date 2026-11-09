@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 import { PixelhueClient, fail } from './lib/pixelhue.js';
 import { readInputs, applyInputs } from './lib/inputs.js';
+import { discoverPixelhue } from './lib/discovery.js';
+import { studioRoutes } from './lib/studio-routes.js';
 
 const publicFiles = new Map([
   ['/', ['index.html', 'text/html']], ['/app.js', ['app.js', 'text/javascript']],
@@ -11,6 +13,8 @@ const publicFiles = new Map([
   ['/inputs.js', ['inputs.js', 'text/javascript']], ['/inputs.css', ['inputs.css', 'text/css']],
   ['/connection.css', ['connection.css', 'text/css']],
   ['/mvr-geometry.js', ['mvr-geometry.js', 'text/javascript']],
+  ...['mvr-sync.js', 'mvr-reconcile.js', 'device-ui.js', 'outputs-ui.js', 'screens-ui.js', 'programming-ui.js', 'ui.js', 'studio-panels.js', 'discovery-ui.js'].map(file => [`/${file}`, [file, 'text/javascript']]),
+  ['/studio.css', ['studio.css', 'text/css']],
   ['/fonts/Rewir-Light.woff', ['fonts/Rewir-Light.woff', 'font/woff']],
   ['/fonts/Rewir-Light.ttf', ['fonts/Rewir-Light.ttf', 'font/ttf']],
   ['/fonts/OFL.txt', ['fonts/OFL.txt', 'text/plain']],
@@ -27,7 +31,7 @@ async function readJson(request) {
   try { return JSON.parse(body); } catch { throw fail('Invalid JSON.'); }
 }
 
-export function createApp() {
+export function createApp({ discover = discoverPixelhue } = {}) {
   let client = null;
   let queue = Promise.resolve();
   function exclusive(action) {
@@ -47,6 +51,9 @@ export function createApp() {
       if (origin && origin !== `http://${request.headers.host}`) throw fail('Cross-origin request refused.', 403);
       if (request.headers['sec-fetch-site'] === 'cross-site') throw fail('Cross-site request refused.', 403);
       if (url.pathname.startsWith('/api/')) {
+        if (request.method === 'GET' && url.pathname === '/api/discovery') {
+          return json(200, await discover({ seed: url.searchParams.get('seed') || undefined, scan: url.searchParams.get('scan') === '1' }));
+        }
         if (request.method === 'POST' && url.pathname === '/api/connect') {
           const options = await readJson(request);
           if (!options || typeof options !== 'object') throw fail('Connection settings required.');
@@ -84,6 +91,16 @@ export function createApp() {
           return json(200, await exclusive(() => {
             if (!client || body?.session !== client.session) throw fail('Connection changed. Reconnect before applying inputs.', 409);
             return applyInputs(client, body.changes);
+          }));
+        }
+        const resource = studioRoutes[url.pathname];
+        if (resource && ['GET', 'PUT'].includes(request.method)) {
+          const body = request.method === 'PUT' ? await readJson(request) : null;
+          return json(200, await exclusive(() => {
+            if (!client) throw fail('Connect to a device first.', 409);
+            const session = body?.session ?? url.searchParams.get('session');
+            if (session !== client.session) throw fail('Connection changed. Reconnect before using these controls.', 409);
+            return body ? resource.write(client, body) : resource.read(client);
           }));
         }
         throw fail('API route not found.', 404);

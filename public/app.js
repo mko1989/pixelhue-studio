@@ -1,17 +1,22 @@
 import { keys, sameWindow, clone, fit, dragWindow, readLayout } from './editor.js';
 import { createInputsUI } from './inputs.js';
+import { createMvrSync } from './mvr-sync.js';
+import { reconcileMvr, sameEdit } from './mvr-reconcile.js';
+import { createStudioPanels } from './studio-panels.js';
+import { createDiscoveryUI } from './discovery-ui.js';
 import { canPlace, fixAspectRatios, ratioSize, sourceSignal, matchesRatio } from './mvr-geometry.js';
 
 const $ = (id) => document.getElementById(id);
 const color = () => '#aebdcb';
 let state, base, screenId, selectedId, busy = false, drag;
 let undo = [], redo = [];
-let activeTab = 'mvr';
+let activeTab = 'device', mvrStale = false, inputsStale = false;
+let mvrSaveFailed = false;
+const tabs = ['device', 'inputs', 'outputs', 'screens', 'programming', 'mvr'];
 const screen = () => state?.screens.find((item) => item.id === screenId);
 const selected = () => state?.layers.find((item) => item.id === selectedId);
 const windows = () => state?.layers.filter((item) => item.screenId === screenId) || [];
 const geometry = () => state.layers.map(({ id, window, aspectLock, aspectMode }) => ({ id, window: clone(window), aspectLock, aspectMode }));
-const sameEdit = (a, b) => b && sameWindow(a.window, b.window) && a.aspectLock === b.aspectLock && a.aspectMode === b.aspectMode;
 const changes = () => state?.layers.filter((item) => !sameEdit(item, base.layers.find((old) => old.id === item.id))) || [];
 
 function notice(message, kind = '') {
@@ -27,20 +32,20 @@ async function api(path, body, method = 'POST') {
     ...(body === undefined ? {} : { body: JSON.stringify(body) }),
   });
   const result = await response.json();
-  if (!response.ok) throw new Error(result.error || `Request failed (${response.status}).`);
+  if (!response.ok) throw Object.assign(new Error(result.error || `Request failed (${response.status}).`), { snapshot: result.snapshot });
   return result;
 }
 
 function adopt(next) {
   state = clone(next);
   base = clone(next);
-  inputsUI.reset(next.session);
+  inputsUI.reset(next.session); panels.reset(next.session); sync.reset(); mvrStale = false; mvrSaveFailed = false;
   screenId = next.screens.some((item) => item.id === screenId) ? screenId : next.screens[0]?.id;
   selectedId = windows().some((item) => item.id === selectedId) ? selectedId : windows()[0]?.id;
   undo = []; redo = [];
   $('screen').replaceChildren(...state.screens.map((item) => new Option(item.name, item.id)));
   if (!state.screens.length) $('screen').add(new Option('No MVR outputs found', ''));
-  showTab(next.capabilities?.mvr === false ? 'inputs' : activeTab, false);
+  showTab(next.capabilities?.mvr === false && activeTab === 'mvr' ? 'device' : activeTab, false);
   render();
 }
 
@@ -48,28 +53,33 @@ async function operation(action) {
   if (busy) return;
   busy = true; renderControls();
   try { await action(); } catch (error) { notice(error.message, 'error'); }
-  finally { busy = false; render(); }
+  finally { busy = false; render(); sync.schedule(0); }
 }
 
 function canDiscard() {
-  return (!changes().length && !inputsUI.hasChanges()) || window.confirm('Discard your pending changes?');
+  return (!changes().length && !inputsUI.hasChanges() && !panels.hasChanges()) || window.confirm('Discard your pending changes?');
 }
 
 async function connect() {
+  await finishMvrSave();
   if (!canDiscard()) return;
+  let connected = false;
   await operation(async () => {
     notice('Identifying the device at this address…');
     const next = await api('connect', { host: $('host').value.trim(), apiPort: $('api-port').value, serial: $('serial').value.trim() });
-    adopt(next);
+    adopt(next); connected = true;
     document.querySelector('.advanced').open = false;
     try { localStorage.setItem('mvr-connection', JSON.stringify({ host: $('host').value, apiPort: $('api-port').value, serial: $('serial').value })); } catch {}
     const fallback = next.screens.some((item) => item.dimensionsAssumed) ? ' Output dimensions were unavailable; 1920 × 1080 is assumed.' : '';
-    notice(next.capabilities?.mvr === false ? `Connected to ${next.device.model} · ${next.device.serial}. Loading inputs…` :
-      !next.screens.length ? 'Connected, but this device returned no MVR screens. Enable a multiviewer layout in PixelFlow, then refresh.' :
-      !next.layers.length ? 'MVR output found, with no windows. Choose a layout in PixelFlow, then refresh.' :
-      `Connected to ${next.device.model}.${fallback}`, 'success');
+    notice(`Connected to ${next.device.model}.${fallback}`, 'success');
   });
-  if (activeTab === 'inputs') await inputsUI.open();
+  if (connected) await openActivePanel();
+}
+
+async function finishMvrSave() {
+  await sync.idle();
+  while (changes().length && !sync.error && !busy && !drag) { await sync.flush(); await sync.idle(); }
+  return !sync.error && !changes().length;
 }
 
 function remember(before = geometry()) {
@@ -91,27 +101,28 @@ function edit(window) {
   if (!canPlace(selected(), next, state.layers)) { notice('MVR windows cannot overlap. Choose a smaller size or a free position.', 'error'); render(); return; }
   const resized = next.width !== selected().window.width || next.height !== selected().window.height;
   if (resized && selected().aspectLock && !matchesRatio(next, selected().aspectLock, selected().umdHeight)) { notice('This size cannot fit while keeping the locked aspect ratio.', 'error'); render(); return; }
-  remember(); selected().window = next; render();
+  remember(); selected().window = next; render(); sync.schedule();
 }
 
 function renderControls() {
   const connected = Boolean(state);
   const dirty = changes().length;
   for (const id of ['connect', 'host', 'api-port', 'serial']) $(id).disabled = busy;
-  $('mvr-tab').disabled = state?.capabilities?.mvr === false;
+  for (const tab of tabs) $(`${tab}-tab`).disabled = busy || (tab === 'mvr' && state?.capabilities?.mvr === false);
   $('mvr-tab').title = $('mvr-tab').disabled ? 'Multiviewer editing is available for P20 and Q8' : '';
-  inputsUI.setBusy(busy);
+  inputsUI.setBusy(busy); panels.setBusy(busy); discovery.setBusy(busy);
   $('screen').disabled = busy || !state?.screens.length;
   $('refresh').disabled = busy || !connected;
   $('save').disabled = busy || !windows().length;
   $('load').disabled = busy || !windows().length;
   $('fix-aspect').disabled = busy || !windows().length;
-  $('apply').disabled = busy || !dirty;
+  $('apply').disabled = busy || sync.saving || !dirty;
+  $('apply').hidden = !sync.error;
   $('undo').disabled = busy || !undo.length;
   $('redo').disabled = busy || !redo.length;
   $('inspector').disabled = busy || !selected();
-  $('apply').textContent = busy ? 'Working…' : 'Apply layout';
-  $('dirty-label').textContent = dirty ? `${dirty} pending ${dirty === 1 ? 'change' : 'changes'}` : 'No pending changes';
+  $('apply').textContent = 'Retry save';
+  $('dirty-label').textContent = sync.error ? 'Not saved' : sync.saving ? 'Saving…' : dirty ? 'Waiting to save…' : 'Saved · changes send automatically';
   $('dirty-label').className = dirty ? 'pending' : '';
 }
 
@@ -166,7 +177,7 @@ function renderStage() {
   }
 }
 
-function render() {
+function render(keepEditing = false) {
   renderControls();
   if (!state) return;
   $('connection-label').textContent = `${state.device.model} · ${state.device.host} · ${state.device.serial}`;
@@ -182,7 +193,7 @@ function render() {
     $('selected-source').textContent = selected().source || 'MVR window';
     $('selected-swatch').style.background = color(selected());
     $('layer-id').textContent = `Window ID ${selected().id}`;
-    for (const key of keys) $(key).value = selected().window[key];
+    for (const key of keys) if (!keepEditing || document.activeElement !== $(key)) $(key).value = selected().window[key];
     $('x').max = screen().width - selected().window.width;
     $('y').max = screen().height - selected().window.height;
     $('width').max = screen().width - selected().window.x;
@@ -194,31 +205,52 @@ function render() {
   renderList(); renderStage();
 }
 
-const inputsUI = createInputsUI({ api, notice, operation, getSession: () => state?.session });
+const inputsUI = createInputsUI({ api, notice, operation, getSession: () => state?.session, onApplied: () => panels.invalidate('inputs') });
+const panels = createStudioPanels({ api, notice, operation, getSession: () => state?.session,
+  invalidate(source) { mvrStale = true; if (source === 'device') inputsStale = true; } });
+const sync = createMvrSync({
+  getChanges: () => changes().map(({ id, window, aspectLock, aspectMode }) => ({ id, window, aspectLock, aspectMode })),
+  submit: pending => api('windows', { session: state.session, changes: pending }, 'PUT'),
+  canSend: () => Boolean(state?.capabilities?.mvr) && !busy && !drag,
+  onResult(next, sent) { state = reconcileMvr(state, base, next, sent); base = clone(next); if (mvrSaveFailed) { mvrSaveFailed = false; notice('MVR saved.', 'success'); } render(true); },
+  onError(error) { mvrSaveFailed = true; if (error.snapshot?.layers && state) { state = reconcileMvr(state, base, error.snapshot, []); base = clone(error.snapshot); } notice(`MVR not saved: ${error.message}`, 'error'); render(true); },
+  onStatus: () => renderControls(),
+});
+const discovery = createDiscoveryUI({ api, notice, getSeed: () => $('host').value,
+  async connectDevice(device) {
+    $('host').value = device.host; $('api-port').value = device.apiPort; $('serial').value = device.serial; await connect();
+  } });
+async function openActivePanel() {
+  if (!state || busy) return;
+  if (activeTab === 'inputs') { if (inputsStale && !inputsUI.hasChanges()) { inputsStale = false; return inputsUI.refresh(); } return inputsUI.open(); }
+  if (activeTab === 'mvr') {
+    if (mvrStale && !changes().length && !sync.saving) await operation(async () => adopt(await api('state')));
+    return;
+  }
+  await panels.open(activeTab);
+}
 function showTab(name, load = true) {
   if (name === 'mvr' && state?.capabilities?.mvr === false) return;
   activeTab = name;
-  for (const tab of ['mvr', 'inputs']) {
+  for (const tab of tabs) {
     $(`${tab}-tab`).setAttribute('aria-selected', String(tab === name));
-    $(`${tab}-tab`).tabIndex = tab === name ? 0 : -1;
-    $(`${tab}-panel`).hidden = tab !== name;
+    $(`${tab}-tab`).tabIndex = tab === name ? 0 : -1; $(`${tab}-panel`).hidden = tab !== name;
   }
-  if (name === 'inputs' && load) inputsUI.open();
+  if (load) openActivePanel();
 }
-for (const name of ['mvr', 'inputs']) {
+for (const name of tabs) {
   $(`${name}-tab`).onclick = () => showTab(name);
-  $(`${name}-tab`).onkeydown = (event) => {
-    if (['ArrowLeft', 'ArrowRight'].includes(event.key)) {
-      event.preventDefault(); const next = name === 'mvr' ? 'inputs' : 'mvr';
-      if ($(`${next}-tab`).disabled) return;
-      showTab(next); $(`${next}-tab`).focus();
-    }
+  $(`${name}-tab`).onkeydown = event => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault(); const enabled = tabs.filter(tab => !$(`${tab}-tab`).disabled);
+    const index = enabled.indexOf(name), step = event.key === 'ArrowRight' ? 1 : -1;
+    const next = enabled[(index + step + enabled.length) % enabled.length]; showTab(next); $(`${next}-tab`).focus();
   };
 }
 $('connect-form').onsubmit = (event) => { event.preventDefault(); connect(); };
 $('screen').onchange = () => { screenId = Number($('screen').value); selectedId = windows()[0]?.id; render(); };
-$('undo').onclick = () => { if (busy || !undo.length) return; redo.push(geometry()); restore(undo.pop()); render(); };
-$('redo').onclick = () => { if (busy || !redo.length) return; undo.push(geometry()); restore(redo.pop()); render(); };
+$('undo').onclick = () => { if (busy || !undo.length) return; redo.push(geometry()); restore(undo.pop()); render(); sync.schedule(0); };
+$('redo').onclick = () => { if (busy || !redo.length) return; undo.push(geometry()); restore(redo.pop()); render(); sync.schedule(0); };
 
 for (const key of keys) $(key).onchange = () => {
   if (!selected() || busy) return;
@@ -241,9 +273,11 @@ $('aspect').onchange = () => {
   if (!selected() || busy) return;
   if ($('aspect').checked && selected().umdHeight === null) { notice('UMD height is unavailable. Reconnect to read device configuration before locking the content ratio.', 'error'); render(); return; }
   remember(); selected().aspectLock = $('aspect').checked ? selected().window.width / (selected().window.height - (selected().umdHeight ?? 0)) : null;
-  selected().aspectMode = 5; render();
+  selected().aspectMode = 5; render(); sync.schedule(0);
 };
-$('fix-aspect').onclick = () => operation(async () => {
+$('fix-aspect').onclick = async () => {
+  if (!await finishMvrSave()) { notice('Retry the pending MVR save before fixing aspect ratios.', 'error'); return; }
+  await operation(async () => {
   notice('Reading input and screen resolutions…');
   const fresh = await api('state');
   const output = fresh.screens.find((item) => item.id === screenId);
@@ -254,11 +288,12 @@ $('fix-aspect').onclick = () => operation(async () => {
     })) throw new Error('The device layout or connection changed. Refresh before fixing aspect ratios.');
   const result = fixAspectRatios(windows(), fresh.signals || [], screen());
   if (result.layers.some((layer) => !sameEdit(layer, state.layers.find((item) => item.id === layer.id)))) { remember(); restore(result.layers); }
-  state.signals = fresh.signals;
+  state.signals = fresh.signals; sync.schedule(0);
   const tooSmall = result.skipped.filter((item) => item.reason.includes('64 px')).length;
-  notice(result.fixed.length ? `Fixed and locked ${result.fixed.length} input/screen windows; ${result.skipped.length} other windows unchanged.${tooSmall ? ` ${tooSmall} cannot fit the 64 px minimum.` : ''} Apply to send these changes.${result.skipped.some((item) => item.reason.includes('UMD')) ? ' Some windows were skipped because the device UMD height is unavailable.' : ''}` :
+  notice(result.fixed.length ? `Fixed and locked ${result.fixed.length} input/screen windows; ${result.skipped.length} other windows unchanged.${tooSmall ? ` ${tooSmall} cannot fit the 64 px minimum.` : ''} Saving these changes automatically.${result.skipped.some((item) => item.reason.includes('UMD')) ? ' Some windows were skipped because the device UMD height is unavailable.' : ''}` :
     tooSmall ? 'Source ratios cannot fit at the 64 px minimum. Make room first.' : 'No connected inputs or screen sources with usable resolution and UMD height were found.');
-});
+  });
+};
 
 $('stage').onpointerdown = (event) => {
   if (busy || !state || event.button !== 0) return;
@@ -282,7 +317,7 @@ function endDrag(event) {
   if (event.type === 'pointercancel') restore(drag.before);
   else if (!sameWindow(drag.window, selected().window)) remember(drag.before);
   if (drag.blocked) notice('Movement or resizing was limited to avoid overlapping another MVR window.');
-  drag = null;
+  drag = null; sync.schedule(0);
   if ($('stage').hasPointerCapture(event.pointerId)) $('stage').releasePointerCapture(event.pointerId);
   render();
 }
@@ -305,16 +340,12 @@ document.addEventListener('keydown', (event) => {
   edit(next);
 });
 
-$('refresh').onclick = () => {
+$('refresh').onclick = async () => {
+  await finishMvrSave();
   if (changes().length && !window.confirm('Discard your pending window changes?')) return;
   operation(async () => { notice('Reading layout…'); adopt(await api('state')); notice('Layout refreshed.', 'success'); });
 };
-$('apply').onclick = () => operation(async () => {
-  const pending = changes().map(({ id, window, aspectLock, aspectMode }) => ({ id, window, aspectLock, aspectMode }));
-  notice('Applying layout…');
-  adopt(await api('windows', { session: state.session, changes: pending }, 'PUT'));
-  notice('Layout applied.', 'success');
-});
+$('apply').onclick = () => sync.retry();
 $('save').onclick = () => {
   const document = { format: 'pixelhue-mvr-layout', version: 1, serial: state.device.serial, screenId,
     width: screen().width, height: screen().height, windows: windows().map(({ id, window, aspectLock, aspectMode, umdHeight }) => ({ id, window, aspectLock, aspectMode, umdHeight })) };
@@ -332,12 +363,14 @@ $('layout-file').onchange = async () => {
     let document;
     try { document = JSON.parse(await file.text()); } catch { throw new Error('Layout file is not valid JSON.'); }
     const layout = readLayout(document, state, screenId);
-    remember(); restore(layout); render(); notice('Layout loaded. Apply to update the device.');
+    remember(); restore(layout); render(); sync.schedule(0); notice('Layout loaded. Saving…');
   });
 };
-window.addEventListener('beforeunload', (event) => { if (changes().length || inputsUI.hasChanges()) { event.preventDefault(); event.returnValue = ''; } });
+window.addEventListener('beforeunload', (event) => { if (changes().length || sync.saving || inputsUI.hasChanges() || panels.hasChanges()) { event.preventDefault(); event.returnValue = ''; } });
 try {
   const settings = JSON.parse(localStorage.getItem('mvr-connection') || '{}');
   for (const [key, id] of [['host', 'host'], ['apiPort', 'api-port'], ['serial', 'serial']]) $(id).value = settings[key] || '';
 } catch {}
 render();
+
+discovery.find();

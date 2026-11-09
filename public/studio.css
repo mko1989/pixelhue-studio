@@ -1,0 +1,52 @@
+.tool-panel { padding: 16px 18px 0; }
+.tool-heading { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.tool-heading h1, .tool-heading h2 { margin: 0; margin-right: auto; font-size: 19px; font-weight: 400; }
+.tool-panel h2 { font-size: 17px; font-weight: 400; }
+.muted { color: var(--muted); font-size: 13px; }
+.tool-panel small { display: block; }
+.studio-tabs { overflow-x: auto; white-space: nowrap; }
+.studio-tabs button { flex: 0 0 auto; }
+.discovery-section { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+.discovered-devices { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 8px; }
+.discovered-device { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px; border: 1px solid var(--border); background: #212121; }
+.discovered-device strong { display: block; font-weight: 400; margin-bottom: 4px; }
+.device-facts { display: grid; grid-template-columns: 100px minmax(0,1fr); gap: 6px 16px; max-width: 650px; margin: 0 0 20px; }
+.device-facts dt { color: var(--muted); }.device-facts dd { margin: 0; overflow-wrap: anywhere; }
+.settings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); align-items: end; gap: 14px; max-width: 1050px; }
+.settings-grid label, .settings-block label, .studio-bulk label { display: grid; gap: 6px; font-size: 13px; color: var(--muted); }
+.settings-grid input, .settings-grid select, .settings-block select { width: 100%; min-height: 34px; }
+.settings-block { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; border-top: 1px solid var(--border); margin: 22px 0; padding-top: 14px; }
+.settings-block h2 { width: 100%; margin: 0; }.settings-block label { min-width: 170px; }
+.studio-bulk { display: flex; align-items: end; flex-wrap: wrap; gap: 10px; padding: 12px 0; }
+.studio-bulk input, .studio-bulk select { min-height: 34px; max-width: 190px; }
+.studio-table-wrap { max-height: calc(100vh - 360px); min-height: 180px; overflow: auto; border: 1px solid var(--border); }
+.studio-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 950px; }
+.studio-table th { position: sticky; top: 0; z-index: 2; background: #303030; color: #ddd; font-size: 13px; font-weight: 400; }
+.studio-table th, .studio-table td { padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.studio-table td input, .studio-table td select { width: 100%; min-width: 64px; }.studio-table td input[type="checkbox"] { width: auto; min-width: 0; }
+.studio-table td small { margin-top: 5px; }.studio-table .checkbox-label { white-space: nowrap; }
+.compact-fields { display: flex; gap: 5px; }.compact-fields input { width: 85px; }
+.danger { border-color: #8f6666; color: #e0b6b6; }
+.screen-editor { display: grid; grid-template-columns: 230px minmax(0,1fr); gap: 16px; }
+.screen-list { display: grid; align-content: start; gap: 5px; }.screen-choice { text-align: left; white-space: normal; }
+.screen-choice.selected, .source-choice.selected { border-color: #bbb; background: #353535; }
+.screen-editor-main { min-width: 0; }.screen-map { position: relative; width: 100%; max-height: 480px; border: 1px solid #777; background: #101010; overflow: hidden; }
+.screen-tile { position: absolute; display: grid; place-items: center; text-align: center; padding: 4px; background: #293039; border: 1px solid #a2b0bc; font-size: 13px; overflow: hidden; }
+.mapping-list { display: grid; gap: 6px; padding: 10px 0; }.mapping-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 8px; border: 1px solid var(--border); }
+.mapping-row label { display: grid; gap: 3px; font-size: 12px; color: var(--muted); }.mapping-row input[type="number"] { width: 85px; }
+.mapping-row label:first-child { min-width: 150px; display: flex; align-items: center; gap: 8px; color: var(--text); }
+.program-workspace { display: grid; grid-template-columns: 210px minmax(0,1fr) 220px; gap: 14px; }
+.program-sources, .program-properties { display: grid; align-content: start; gap: 10px; min-width: 0; }
+.program-sources h2, .program-properties h2 { margin: 0; }.program-sources input, .program-sources select, .program-properties input, .program-properties select { width: 100%; }
+.source-list { display: grid; grid-auto-rows: max-content; align-content: start; gap: 4px; max-height: calc(100vh - 450px); overflow: auto; }
+.source-choice { text-align: left; white-space: normal; display: block; width: 100%; min-height: 54px; }.source-choice small { margin-top: 4px; font-size: 11px; }
+.program-views { min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; align-content: start; }
+.program-view { min-width: 0; }.program-view h2 { padding: 8px; margin: 0; background: #292929; border-top: 2px solid #777; }
+.program-view.pgm h2 { border-top-color: #ad7272; }.program-view.pvw h2 { border-top-color: #7e9c82; }
+.program-stage { position: relative; width: 100%; background: #101010; border: 1px solid #666; touch-action: none; user-select: none; overflow: hidden; }
+.program-layer { position: absolute; background: #303942; border: 1px solid #8e9ba6; display: flex; align-items: center; justify-content: center; flex-direction: column; cursor: move; min-width: 0; }
+.program-layer.selected { outline: 2px solid #eee; outline-offset: -2px; }.program-layer small { font-size: 11px; max-width: 90%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.program-layer-list { display: grid; gap: 4px; margin-top: 10px; }.program-layer-list button { text-align: left; white-space: normal; font-size: 12px; }
+.program-properties label { display: grid; gap: 5px; color: var(--muted); font-size: 13px; }
+@media (max-width: 1150px) { .program-workspace { grid-template-columns: 180px minmax(0,1fr); }.program-properties { grid-column: 1/-1; grid-template-columns: repeat(4,minmax(0,1fr)); }.program-views { grid-template-columns: 1fr; }.program-properties .field-grid { grid-column: 1/-1; } }
+@media (max-width: 700px) { .tool-panel { padding: 12px; }.discovered-devices { grid-template-columns: minmax(0,1fr); }.screen-editor { grid-template-columns: minmax(0,1fr); }.screen-list { display: flex; overflow-x: auto; }.screen-choice { min-width: 180px; }.program-workspace { grid-template-columns: minmax(0,1fr); }.source-list { max-height: 180px; }.program-properties { grid-template-columns: repeat(2,minmax(0,1fr)); }.studio-table-wrap { max-height: 65vh; }.studio-bulk input, .studio-bulk select { max-width: 150px; } }

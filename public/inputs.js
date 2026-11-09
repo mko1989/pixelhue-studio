@@ -16,7 +16,7 @@ function field(value, label, type = 'text') {
 function cell(row, ...nodes) { const td = document.createElement('td'); td.append(...nodes); row.append(td); return td; }
 function small(text, className = 'input-signal') { const node = document.createElement('small'); node.className = className; node.textContent = text; return node; }
 
-export function createInputsUI({ api, notice, operation, getSession }) {
+export function createInputsUI({ api, notice, operation, getSession, onApplied = () => {} }) {
   let state, session, busy = false;
   let drafts = new Map(), checked = new Set();
   function makeDraft(row) {
@@ -154,12 +154,14 @@ export function createInputsUI({ api, notice, operation, getSession }) {
   $('apply-inputs').onclick = () => operation(async () => {
     notice('Applying inputs…');
     adopt(await api('inputs', { session, changes: pending() }, 'PUT'));
+    onApplied();
     notice('Inputs applied.', 'success');
   });
   return {
     reset(nextSession) { if (session === nextSession) return; session = nextSession; state = undefined; drafts.clear(); checked.clear(); render(); },
     hasChanges: () => pending().length > 0,
     setBusy(value) { busy = value; controls(); },
+    refresh,
     open() { if (!state) return refresh(); },
   };
 }

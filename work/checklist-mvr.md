@@ -2,7 +2,7 @@
 
 Offline and mock checks are recorded in [WO-001](work-orders/001_WO_mvr-editor.md). Run these with the intended device/firmware:
 
-- [ ] Start `mvr-app` with Node 22+ and connect using the P20 IP.
+- [ ] Start `pixelhue-studio` with Node 22+ and connect using the P20 IP.
 - [ ] Confirm the displayed serial and MVR output dimensions match the device.
 - [ ] Confirm all existing MVR windows appear, and no PGM/PVW layers are listed.
 - [ ] Move one MVR window, Apply, and confirm both device readback and the physical multiviewer output.
@@ -27,7 +27,7 @@ Offline and mock checks are recorded in [WO-001](work-orders/001_WO_mvr-editor.m
 ## Multi-model setup and top bar (WO-004)
 
 - [ ] Verify address, Connect button, connection options, detected model and serial are all in the top bar on desktop/tablet.
-- [ ] Connect by IP to P10 and P80. Confirm the detected model/serial and automatic Inputs tab; Multiviewer must be disabled.
+- [ ] Connect by IP to P10 and P80. Confirm the detected model/serial and initial Device tab; Multiviewer must be disabled.
 - [ ] Verify P10 lists four HDMI/DP and two SDI inputs. Bulk-apply names, capacities and HDMI/DP EDIDs; check source acquisition and unchanged output/optical connectors.
 - [ ] Verify P80 lists actual installed input connectors, including their correct port types and capacities. Check output/MVR interfaces are absent and fixed physical ports cannot be switched by bulk HDMI/DP choice.
 - [ ] Apply P80 names, supported capacities and EDIDs. Verify device-managed capacities and SDI/no-EDID connectors stay intact. Record card models and firmware tested.
@@ -76,3 +76,19 @@ Offline and mock checks are recorded in [WO-001](work-orders/001_WO_mvr-editor.m
 - [x] Automated/API/browser: input and Screen 1/2/3 PGM/PVW corrections, UMD on/off, fixed strip height during resize, complete-window collision prevention, Undo/Redo, Save/Load and repeated Apply/readback.
 - [ ] Physical P20/Q8: run Fix aspect ratios and Apply; confirm input and screen video areas keep their actual ratio above the label strip, including wide/portrait screens. Verify native Custom locks retain compensated geometry on hardware.
 - [ ] Toggle UMD in PixelFlow, Refresh, rerun Fix, and Apply. Confirm a disabled strip adds zero and an enabled strip uses the reported device height.
+
+
+## Full client and automatic MVR saves (WO-014)
+
+This section supersedes manual MVR Apply instructions above for v1.6.0-alpha.1; other setup panels still use explicit Apply/Save.
+
+- [x] Offline 98 tests; Chrome mock workflows across all six tabs and mobile fit, with zero live-video endpoint requests.
+- [x] Live P20 read-only native discovery, capability setup, Inputs/Outputs/Screens/Programming/MVR loading; no physical writes performed.
+- [x] Mock/browser: MVR numeric edits, drag completion, edits during saves, uncommitted typing, rejection/retry, Undo/Redo and UMD-aware input/PGM/PVW fix plus Save/Load automatically reach readback.
+- [ ] Physical P20/Q8: move/resize repeatedly and verify the MVR output after release, without an Apply click; repeat with Fix, Undo/Redo and layout import. Save alone must not write.
+- [ ] With PixelFlow closed, Find devices / Scan LAN on the actual subnet, select a device, then switch devices and confirm stale sessions cannot write.
+- [ ] Each intended model/firmware: validate advertised Device controls and physical genlock/beacon/name behavior. Only test work-mode/profile resets on a backed-up configuration.
+- [ ] Physical outputs: verify names, primary custom timing, depth, HDCP and pattern toggling; copy ports keep timing/routing and other settings.
+- [ ] Physical screens: create Main/AUX, map/unmap outputs, set global origin/dimensions, tile outputs and verify physical mapping/freeze/blackout/deletion.
+- [ ] Physical programming: create PVW layers, route inputs/other screens, drag/resize, stack/delete; verify Take/Cut duration and swap/copy behavior on physical outputs and MVR.
+- [ ] Run alpha portable builds on Apple Silicon, Windows and Ubuntu; Intel Mac launcher is checked locally during distribution verification.

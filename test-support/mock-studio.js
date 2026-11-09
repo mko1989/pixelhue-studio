@@ -1,0 +1,96 @@
+import http from 'node:http';
+import { createMockDevice } from './mock-p20.js';
+import { umdXml } from './mvr-umd.js';
+
+export function createMockStudio({ model = 'P20' } = {}) {
+  const base = createMockDevice({ model }), original = base.server.listeners('request')[0];
+  const { interfaces, screens, layers, writes, requests, behavior } = base;
+  const primary = interfaces.find(i => i.auxiliaryInfo.connectorInfo.interfaceType === 4);
+  for (const [id, role, type, mode, port] of [[400000, 4, 6, 1, 1], [400001, 8, 4, 0, 10], [400002, 16, 4, 0, 9]]) {
+    interfaces.push({ ...structuredClone(primary), interfaceId: id, interfaceIdObj: { nodeId: 1, slotId: role === 4 ? primary.interfaceIdObj.slotId : 100, connectorId: port },
+      general: { name: role === 4 ? 'Output copy' : role === 8 ? 'AUX output' : 'MVR output' },
+      auxiliaryInfo: { online: 1, connectorInfo: { interfaceType: role, type, workMode: mode, capacity: 2,
+        ...(mode === 1 ? { copyInfo: { id: primary.interfaceId, type } } : {}) } } });
+  }
+  for (const i of interfaces.filter(i => [4, 8, 16].includes(i.auxiliaryInfo.connectorInfo.interfaceType))) {
+    i.presetThumbTiming ||= { width: 1920, height: 1080, frame: 60, standardType: 6, interlaced: 0 };
+    i.colorDepth = { preset: 8, actual: 8 }; i.hdcp = { enable: 0, preset: 1, actual: 1 };
+    i.testPattern = { enable: 0, type: 5, bright: 3, grid: 7 };
+  }
+  screens.push({ screenId: 1, guid: 'main-screen', screenIdObj: { type: 2 }, general: { name: 'Main screen' },
+    mosaic: { type: 2, window: { x: -100, y: 50, width: 1920, height: 1080 }, outputs: [] }, enable: 1, freeze: 0, ftb: { enable: 0 }, keyPosition: [1] },
+  { screenId: 2, guid: 'aux-screen', screenIdObj: { type: 4 }, general: { name: 'AUX screen' },
+    mosaic: { type: 2, window: { x: 0, y: 0, width: 1280, height: 720 }, outputs: [] }, enable: 1, freeze: 0, ftb: { enable: 0 }, keyPosition: [2] });
+  const source = layers[0].source.general;
+  for (const [id, scene, x] of [[20, 2, -80], [21, 4, -60]]) layers.push({ layerId: id,
+    layerIdObj: { attachScreenId: 1, attachScreenType: 0, sceneType: scene, screenGuid: 'main-screen', type: 2 },
+    general: { name: scene === 2 ? 'Program layer' : 'Preview layer' }, source: { general: { ...source, sourceName: `Input ${scene}` } },
+    window: { x, y: 70, width: 640, height: 360 }, enable: 1, zorder: 1 });
+  const node = { nodeId: 1, modelId: { P20: 28944, P10: 28945, P80: 30006, Q8: 29974 }[model],
+    general: { name: 'Studio device' }, version: 'V2.0.0', mode: { workMode: 4, masterSlave: 0 }, layerMode: 0,
+    fanMode: 2, deviceBeacon: 0, genlock: { type: 0, sourceId: 0, phase: { enable: 0 } }, online: 1,
+    subcards: base.cards.map(c => ({ slotId: c.slotId, modelId: c.modelId, online: 1, cardType: c.cardType })) };
+  behavior.geometryDelay = 0; behavior.ignoreSetup = false;
+  const config = umdXml.replace('<Features>', `<DCS><Device><Features><Device>
+    <LayerModes Support="1" Editable="1"><Enum Value="0"/><Enum Value="1"/></LayerModes>
+    <FanMode Support="1" Editable="1"><Enum Value="1"/><Enum Value="2"/></FanMode></Device>
+    <DeviceModes Support="1" Editable="1"><DeviceMode Value="4"/><DeviceMode Value="8"/></DeviceModes>
+    <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
+    .replace('</Features>', '</Features></Device></DCS>');
+  const customGets = ['node/detail', 'node/config-file'];
+  const customPuts = ['node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+    'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
+    'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
+  const server = http.createServer(async (request, response) => {
+    const path = new URL(request.url, 'http://localhost').pathname.replace('/unico/v1/', '');
+    if (!(request.method === 'GET' ? customGets : customPuts).includes(path)) {
+      if (path === 'layers/window' && behavior.geometryDelay) await new Promise(r => setTimeout(r, behavior.geometryDelay));
+      return original(request, response);
+    }
+    requests.push({ path, method: request.method });
+    const send = data => { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 0, data })); };
+    if (!request.headers.authorization) { response.writeHead(401).end(); return; }
+    if (request.method === 'GET') {
+      if (path === 'node/detail') return send(node);
+      response.setHeader('Content-Type', 'application/xml'); response.end(config); return;
+    }
+    let raw = ''; for await (const chunk of request) raw += chunk;
+    const body = JSON.parse(raw); writes.push({ path, body, method: request.method });
+    if (behavior.ignoreSetup && path.startsWith('node/')) return send({});
+    if (path === 'node/general') node.general = body.general;
+    if (path === 'node/beacon') node.deviceBeacon = body.enable;
+    if (path === 'node/fan/mode') node.fanMode = body.mode;
+    if (path === 'node/layer-mode') node.layerMode = body.layerMode;
+    if (path === 'node/mode') node.mode = body.mode;
+    if (path === 'node/genlock') node.genlock = body.genlock;
+    if (path.startsWith('interface/')) for (const change of body) {
+      const row = interfaces.find(i => i.interfaceId === change.interfaceId), key = path.split('/')[1];
+      const field = { 'color-depth': 'colorDepth', hdcp: 'hdcp', 'test-pattern': 'testPattern' }[key]; row[field] = { ...row[field], ...change[field] };
+    }
+    if (path === 'screen/create-empty-screen') {
+      const id = Math.max(...screens.map(s => s.screenId)) + 1;
+      screens.push({ screenId: id, guid: `screen-${id}`, screenIdObj: { type: body.type }, general: { name: body.namePrefix + id },
+        mosaic: { window: { x: 0, y: 0, width: 1920, height: 1080 }, outputs: [] }, keyPosition: body.keyPosition, enable: 0 });
+    }
+    if (path === 'screen/crop-mosaic') for (const change of body) screens.find(s => s.screenId === change.screenId).mosaic = change.mosaic;
+    if (['screen/freeze', 'screen/ftb'].includes(path)) for (const change of body) {
+      const key = path.split('/')[1]; screens.find(s => s.screenId === change.screenId)[key] = change[key];
+    }
+    if (path === 'screen') for (const change of body) {
+      screens.splice(screens.findIndex(s => s.screenId === change.screenId), 1);
+      for (let i = layers.length - 1; i >= 0; i--) if (layers[i].layerIdObj.attachScreenId === change.screenId) layers.splice(i, 1);
+    }
+    if (path === 'layers/create') {
+      const id = Math.max(...layers.map(l => l.layerId)) + 1;
+      layers.push({ ...body, layerId: id, zorder: layers.filter(l => l.layerIdObj.attachScreenId === body.layerIdObj.attachScreenId).length + 1 });
+    }
+    if (path === 'layers/source') for (const change of body) layers.find(l => l.layerId === change.layerId).source = change.source;
+    if (path === 'layers') for (const change of body) layers.splice(layers.findIndex(l => l.layerId === change.layerId), 1);
+    if (path === 'layers/zorder') for (const change of body) {
+      const layer = layers.find(l => l.layerId === change.layerId), group = layers.filter(l => l.layerIdObj.attachScreenId === layer.layerIdObj.attachScreenId && l.layerIdObj.sceneType === layer.layerIdObj.sceneType);
+      layer.zorder = change.zorder.para === 3 ? Math.max(...group.map(l => l.zorder)) + 1 : change.zorder.para === 4 ? Math.min(...group.map(l => l.zorder)) - 1 : layer.zorder + (change.zorder.para === 1 ? 1 : -1);
+    }
+    return send({});
+  });
+  return { ...base, server, node, primary };
+}
