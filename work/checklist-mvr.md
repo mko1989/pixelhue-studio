@@ -100,3 +100,11 @@ This section supersedes manual MVR Apply instructions above for v1.6.0-alpha.1; 
 - [ ] Physical: Restart device and reconnect. Shut down only when someone can power the unit on.
 - [ ] Physical (backed-up configuration only): factory reset "Keep network settings only" and confirm the device stays at its address.
 - [ ] Kiosk 1920×1080: confirm the single-row header and tabs are comfortable to use by touch/mouse.
+
+## Programming, screens and presets (WO-016)
+
+- [x] Offline 107 tests; mock Chrome drag-drop, multi-screen, PGM-over-PVW, off-screen layer, two-screen Take, preset save/load; live P20 read-only rendering of screens/presets.
+- [ ] Physical: drag an input onto PVW, Take, and confirm the output. Drag a layer partly and fully off-screen and confirm the device keeps it.
+- [ ] Physical: Take/Cut with two screens shown changes both screens together.
+- [ ] Physical: load an existing preset (e.g. "ppt") to PVW, then to PGM. Save a new preset from PVW, rename it, delete it, and confirm it in PixelFlow.
+- [ ] Physical: + OUTPUT 2-3 to Screen 1 (placed right of OUTPUT 1), Apply, and confirm the mosaic spans both outputs.

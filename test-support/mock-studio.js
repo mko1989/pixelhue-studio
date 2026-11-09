@@ -30,6 +30,9 @@ export function createMockStudio({ model = 'P20' } = {}) {
     general: { name: 'Studio device' }, version: 'V2.0.0', mode: { workMode: 4, masterSlave: 0 }, layerMode: 0,
     fanMode: 2, deviceBeacon: 0, genlock: { type: 0, sourceId: 0, phase: { enable: 0 } }, online: 1,
     subcards: base.cards.map(c => ({ slotId: c.slotId, modelId: c.modelId, online: 1, cardType: c.cardType })) };
+  const presets = [{ guid: 'preset-a', serial: 1, name: 'Opening', type: 1, loadType: 1, sourceRegion: 4, params: ['3'],
+    screens: [{ guid: 'main-screen', name: 'Main screen', layers: [{ serial: 1, type: 2 }] }], interfaces: [] }];
+  layers.forEach((l, i) => { l.serial ??= i + 1; });
   const ethernet = { mode: 0, infos: [{ index: 0, mac: '54:B5:6C:00:00:01', dhcp: 0, ip: '192.168.0.20', netmask: '255.255.255.0', gateway: '192.168.0.1', interfaceType: 25, autoDNS: 0, dns: [] }] };
   behavior.geometryDelay = 0; behavior.ignoreSetup = false;
   const config = umdXml.replace('<Features>', `<DCS><Device><Features><Device>
@@ -39,8 +42,8 @@ export function createMockStudio({ model = 'P20' } = {}) {
     <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
     .replace('</Features>', '</Features></Device></DCS>');
-  const customGets = ['node/detail', 'node/config-file', 'node/ethernet'];
-  const customPuts = ['node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset'];
+  const customPuts = ['preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
@@ -55,11 +58,15 @@ export function createMockStudio({ model = 'P20' } = {}) {
     if (request.method === 'GET') {
       if (path === 'node/detail') return send(node);
       if (path === 'node/ethernet') return send({ nodeId: 1, state: 0, ethernet });
+      if (path === 'preset') return send({ list: presets, page: 1, totalPage: 1, totalCount: presets.length });
       response.setHeader('Content-Type', 'application/xml'); response.end(config); return;
     }
     let raw = ''; for await (const chunk of request) raw += chunk;
     const body = JSON.parse(raw); writes.push({ path, body, method: request.method });
     if (behavior.ignoreSetup && path.startsWith('node/')) return send({});
+    if (path === 'preset/create') presets.push({ ...body, guid: `preset-${body.serial}` });
+    if (path === 'preset/update-name') for (const change of body) presets.find(p => p.guid === change.guid).name = change.name;
+    if (path === 'preset/delete') for (const guid of body) presets.splice(presets.findIndex(p => p.guid === guid), 1);
     if (path === 'node/ethernet') ethernet.infos[0] = { ...ethernet.infos[0], ...body.ethernet.infos[0] };
     if (path === 'node/general') node.general = body.general;
     if (path === 'node/beacon') node.deviceBeacon = body.enable;
@@ -96,5 +103,5 @@ export function createMockStudio({ model = 'P20' } = {}) {
     }
     return send({});
   });
-  return { ...base, server, node, primary, ethernet };
+  return { ...base, server, node, primary, ethernet, presets };
 }
