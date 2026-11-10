@@ -7,6 +7,7 @@ import { applyProgramming, readProgramming } from '../lib/studio-programming.js'
 import { parseUmdConfig } from '../lib/mvr-umd.js';
 import { placeWindow } from '../public/mvr-sources.js';
 import { matchesRatio, hasOverlap } from '../public/mvr-geometry.js';
+import { fitSourceReplacement } from '../lib/source-aspect.js';
 import { createMockStudio } from '../test-support/mock-studio.js';
 
 async function fixture(t, config) {
@@ -111,4 +112,66 @@ test('background drops set native source locks and grouped source members are cr
   assert.ok(state.layers.filter(l => l.name.startsWith('GRP')).every(l => l.aspectLocked && l.aspectMode === 8));
   assert.ok(mock.writes.filter(w => w.path === 'layers/create').every(w => w.body.locked === 1));
   assert.ok((await readProgramming(client)).layers.length);
+});
+
+test('Programming replacement contains portrait/wide sources at the old X/Y and preserves other layers', async t => {
+  for (const [width, height, expected] of [[1600, 1200, [480, 360]], [1080, 1920, [203, 360]], [3840, 1080, [640, 180]]]) await t.test(`${width} × ${height}`, async t => {
+    const { client, mock } = await fixture(t), old = mock.layers.find(l => l.layerId === 21);
+    old.aspectRatio = { aspectRatio: 8, locked: 1 };
+    const previous = structuredClone(old.window), neighbour = structuredClone(mock.layers.find(l => l.layerId === 20));
+    const input = mock.interfaces.find(i => i.auxiliaryInfo.connectorInfo.interfaceType === 2 && i.auxiliaryInfo.connectorInfo.workMode === 0);
+    input.actualTiming = { horizontal: { addTime: width }, vertical: { addTime: height } };
+    const next = await applyProgramming(client, { action: 'source', screenId: 1, id: 21, source: { id: input.interfaceId, type: 2 } });
+    assert.deepEqual(old.window, { x: previous.x, y: previous.y, width: expected[0], height: expected[1] });
+    const layer = next.layers.find(l => l.id === 21);
+    assert.ok(layer.aspectLocked && matchesRatio(layer.window, width / height));
+    assert.deepEqual(mock.layers.find(l => l.layerId === 20), neighbour);
+    assert.deepEqual(mock.writes[0], { path: 'layers/aspect-ratio', body: [{ layerId: 21, aspectRatio: 5, locked: 1 }] });
+  });
+});
+
+test('MVR replacement keeps the previous top-left and full bounds including changed UMD heights', async t => {
+  for (const [width, height, umd] of [[1600, 1200, 28], [1080, 1920, 32], [3840, 1080, 0]]) await t.test(`${width} × ${height} + ${umd}`, async t => {
+    const { client, mock } = await fixture(t, { height: 24, bySourceType: { 2: umd, 4: 24 } });
+    const initial = await add(client), previous = initial.layers.find(l => l.id === initial.changedId);
+    const input = mock.interfaces.find(i => i.auxiliaryInfo.connectorInfo.interfaceType === 2 && i.auxiliaryInfo.connectorInfo.workMode === 0 && i.interfaceId !== initial.layers[0].sourceId);
+    input.actualTiming = { horizontal: { addTime: width }, vertical: { addTime: height } };
+    const neighbour = structuredClone(mock.layers.find(l => l.layerId === 10));
+    const next = await applyMvrLayer(client, { action: 'source', screenId: 8, layerId: previous.id, source: { type: 2, id: input.interfaceId } });
+    const layer = next.layers.find(l => l.id === previous.id);
+    assert.equal(layer.window.x, previous.window.x); assert.equal(layer.window.y, previous.window.y);
+    assert.ok(layer.window.width <= previous.window.width && layer.window.height <= previous.window.height);
+    assert.ok(layer.aspectLock && matchesRatio(layer.window, width / height, umd)); assert.equal(hasOverlap(next.layers), false);
+    assert.deepEqual(mock.layers.find(l => l.layerId === 10), neighbour);
+  });
+});
+
+test('unfit replacements fail before writing instead of exceeding old minimum-sized bounds', async t => {
+  const { client, mock } = await fixture(t), input = mock.interfaces.find(i => i.auxiliaryInfo.connectorInfo.interfaceType === 2 && i.auxiliaryInfo.connectorInfo.workMode === 0 && i.interfaceId !== mock.layers[0].source.general.sourceId);
+  input.actualTiming = { horizontal: { addTime: 1080 }, vertical: { addTime: 1920 } };
+  const pgm = mock.layers.find(l => l.layerId === 21); pgm.window = { x: 100, y: 100, width: 64, height: 64 };
+  await assert.rejects(applyProgramming(client, { action: 'source', screenId: 1, id: 21, source: { type: 2, id: input.interfaceId } }), /inside the previous layer.*64/);
+  const mvr = mock.layers.find(l => l.layerId === 10); mvr.window = { x: 10, y: 10, width: 64, height: 64 };
+  await assert.rejects(applyMvrLayer(client, { action: 'source', screenId: 8, layerId: 10, source: { type: 2, id: input.interfaceId } }), /inside the previous layer.*64/);
+  assert.equal(mock.writes.length, 0);
+});
+
+test('Programming verifies exact retained geometry even when the returned source ratio/lock are correct', async t => {
+  const { client, mock } = await fixture(t), transport = client.transport;
+  const input = mock.interfaces.find(i => i.auxiliaryInfo.connectorInfo.interfaceType === 2 && i.auxiliaryInfo.connectorInfo.workMode === 0);
+  client.transport = async options => {
+    const result = await transport(options);
+    if (options.path.endsWith('/layers/aspect-ratio') && options.body[0].aspectRatio === 8) mock.layers.find(l => l.layerId === 21).window.x++;
+    return result;
+  };
+  await assert.rejects(applyProgramming(client, { action: 'source', screenId: 1, id: 21, source: { type: 2, id: input.interfaceId } }), /did not retain.*fitted position/);
+});
+
+
+test('replacement rounding cannot grow a width when firmware derives it from the fitted height', () => {
+  const previous = { x: -17, y: 23, width: 100, height: 200 };
+  const fitted = fitSourceReplacement(previous, { width: 1500, height: 1000 });
+  assert.deepEqual(fitted, { x: -17, y: 23, width: 99, height: 66 });
+  assert.equal(Math.round(fitted.height * 1.5), fitted.width);
+  assert.deepEqual(fitSourceReplacement(previous, { width: null, height: null }), previous);
 });

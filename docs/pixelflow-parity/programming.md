@@ -40,11 +40,11 @@ X/Y/width/height; aspect; fit/fill; multi-selection; physical screen updates.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
-Studio has instant drag/numeric updates, source/preset aspect modes, fit to screen/width/height/output and native 1:1. PixelFlow multi-selection transforms remain incomplete.
+Studio has instant drag/numeric updates, source/preset aspect modes, fit to screen/width/height/output and native 1:1. PixelFlow multi-selection transforms remain incomplete. Replacement source drops keep X/Y and fit inside the previous width/height with aspect lock; impossible minimum-size fits are rejected.
 
 PixelFlow: `src/pages/editor1/components/LayerAttribute/components/LayerAttr/components/LayerBaseAttr/LayerPositionSizeWrapper.tsx:24` in `index-BJcacpMZ.js.map`.
 
-Studio: `public/layer-inspector.js`, `public/program-stage.js`, `lib/program-geometry.js`, `public/layer-tools.js`.
+Studio: `public/layer-inspector.js`, `public/program-stage.js`, `lib/program-geometry.js`, `public/layer-tools.js`, `lib/source-aspect.js`.
 
 ## PROGRAMMING-04 · Canvas tools
 

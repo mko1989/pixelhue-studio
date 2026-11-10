@@ -24,11 +24,11 @@ Aspect modes; lock; source-driven ratio; no overlap/bounds; window minimum and i
 
 Availability: Model, installed card, role and feature XML determine availability.
 
-Studio fixes connected input/screen ratio with configured UMD height and locks dropped sources; complete PixelFlow mode picker is missing.
+Studio fixes connected input/screen ratio with configured UMD height and locks dropped sources; complete PixelFlow mode picker is missing. Replacement drops keep X/Y and fit the video plus actual UMD strip inside the previous full window bounds.
 
 PixelFlow: `src/pages/mvr/components/MVRAttr.tsx:44` in `index-CFxZFQwf.js.map`.
 
-Studio: `public/mvr-geometry.js`, `lib/mvr-signals.js`, `lib/mvr-umd.js`.
+Studio: `public/mvr-geometry.js`, `lib/mvr-signals.js`, `lib/mvr-umd.js`, `lib/source-aspect.js`.
 
 ## MVR-03 · Native grid/templates
 
