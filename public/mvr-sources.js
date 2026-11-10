@@ -1,4 +1,4 @@
-import { overlaps } from './mvr-geometry.js';
+import { overlaps, ratioSize } from './mvr-geometry.js';
 
 // MVR source palette (WO-020): screen PGM/PVW and inputs not yet in the MVR. Drag onto empty
 // space to add a window, onto a window to change its source; double-click places automatically.
@@ -6,12 +6,15 @@ export const MVR_SOURCE = 'text/x-pixelhue-mvr-source';
 
 export function placeWindow(source, screen, layers, point, limit = null) {
   const ratio = source.width && source.height ? source.width / source.height : 16 / 9;
+  const offset = source.umdHeight ?? 0;
   let width = Math.round(screen.width / 4);
-  if (limit) width = Math.min(width, limit.width, Math.floor(limit.height * ratio)); // WO-028 input window limit
+  if (limit) width = Math.min(width, limit.width); // WO-028 input window limit includes UMD.
   const free = w => !layers.some(l => overlaps(w, l.window));
   for (let attempt = 0; attempt < 12 && width >= 64; attempt++, width = Math.round(width * 0.8)) {
-    const height = Math.max(64, Math.round(width / ratio));
-    if (height > screen.height) continue;
+    const size = ratioSize(ratio, Math.min(screen.width, limit?.width ?? Infinity), Math.min(screen.height, limit?.height ?? Infinity), width, offset);
+    if (!size) continue;
+    width = size.width;
+    const height = size.height;
     const clamp = (x, y) => ({ x: Math.max(0, Math.min(screen.width - width, Math.round(x))), y: Math.max(0, Math.min(screen.height - height, Math.round(y))), width, height });
     const at = point || { x: screen.width / 2, y: screen.height / 2 };
     const first = clamp(at.x - width / 2, at.y - height / 2);

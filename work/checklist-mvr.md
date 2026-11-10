@@ -127,3 +127,10 @@ This section supersedes manual MVR Apply instructions above for v1.6.0-alpha.1; 
 - [x] ARM64 and ARMv7 archives built with verified official Node runtimes, source hashes, ELF architecture checks, launcher modes and licenses; 138 tests pass under the bundled Node version.
 - [ ] Extract/run on Raspberry Pi OS 64-bit and 32-bit ARMv7, selecting by `getconf LONG_BIT`. Confirm the desktop launcher opens the UI and Ctrl+C stops the server.
 - [ ] On Pi OS Lite, launch with HOST=0.0.0.0 and PIXELHUE_NO_BROWSER=1; open Pi IP + printed port from another computer. Verify native discovery and normal device workflows, including live Programming geometry and MVR autosave.
+
+
+## Default aspect lock on source drops (WO-031)
+
+- [x] 149 tests and Chrome mock checks: new drops/replacements are locked; MVR uses exact per-source UMD height, actual UMD-off defaults, full-window collisions and input caps.
+- [ ] Physical Programming: drop inputs/screen sources into empty space and onto an unlocked layer; verify source proportions and default lock. Verify group members, logos and background pictures.
+- [ ] Physical MVR: add input/PGM/PVW with UMD on/off, confirm the video ratio above the strip without clicking Fix, resize, manually unlock, then replace the source and confirm it refits/relocks. Other windows and their manual locks should stay unchanged.

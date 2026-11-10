@@ -156,6 +156,7 @@ export function createMockStudio({ model = 'P20' } = {}) {
     if (path === 'layers/create') {
       const id = Math.max(...layers.map(l => l.layerId)) + 1;
       layers.push({ ...body, layerId: id, serial: nextSerial(body.layerIdObj.attachScreenId, body.layerIdObj.sceneType), zorder: layers.filter(l => l.layerIdObj.attachScreenId === body.layerIdObj.attachScreenId).length + 1 });
+      if (body.layerIdObj.type === 8) layers.at(-1).UMD ??= [{ enable: behavior.mvrUmd ?? 1 }];
     }
     if (path === 'layers/source') for (const change of body) layers.find(l => l.layerId === change.layerId).source = change.source;
     if (path === 'layers') for (const change of body) layers.splice(layers.findIndex(l => l.layerId === change.layerId), 1);

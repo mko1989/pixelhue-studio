@@ -24,10 +24,10 @@ test('MVR sources list enabled screen PGM/PVW and inputs, marking ones already i
 
 test('add a screen PVW window, change a source, delete; overlap/out-of-bounds/duplicate writes nothing (WO-020)', async t => {
   const { client, mock, state } = await fixture(t);
-  const window = { x: 1000, y: 600, width: 480, height: 270 };
+  const window = { x: 1000, y: 600, width: 480, height: 294 };
   let next = await applyMvrLayer(client, { action: 'create', screenId: 8, source: { type: 4, id: 1 }, window });
   const created = mock.writes.find(w => w.path === 'layers/create').body;
-  assert.deepEqual({ ...created, general: { name: created.general.name.replace(/-[0-9a-f]{8}$/, '-x') } }, { window, locked: 0, aspectRatio: { aspectRatio: 8, locked: 0 },
+  assert.deepEqual({ ...created, general: { name: created.general.name.replace(/-[0-9a-f]{8}$/, '-x') } }, { window, locked: 1, aspectRatio: { aspectRatio: 5, locked: 1 },
     layerIdObj: { type: 8, sceneType: 2, attachScreenType: 0, attachScreenId: 8, screenGuid: 'mvr-screen' }, general: { name: 'MVR-1-x' }, namePrefix: 'Layer',
     source: { general: { sourceId: 1, sourceType: 4 }, primary: { sourceId: 1, sourceType: 4 } } });
   const added = next.layers.find(l => l.id === next.changedId);

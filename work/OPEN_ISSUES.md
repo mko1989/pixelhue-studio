@@ -30,3 +30,4 @@
 | WO-028 | MVR input windows limited to 512 × 480 on P10/P20 | [Investigation and verification](work-orders/028_WO_mvr-input-window-limit.md) | DONE (130 tests, mock Chrome, live read-only drag/typing cap) |
 | WO-029 | Live Programming geometry, coalesced writes and lean readback | [Investigation and verification](work-orders/029_WO_programming-live-geometry.md) | DONE (138 tests, delayed-device Chrome and localhost:3211 deployment; physical smoothness owner QA) |
 | WO-030 | Raspberry Pi ARM64 and ARMv7 portable distributions | [Investigation and verification](work-orders/030_WO_raspberry-pi-dist.md) | DONE (six archives and 138 tests verified; native Pi QA pending) |
+| WO-031 | Default source-drop aspect locks and UMD-aware MVR creation/replacement | [Investigation and verification](work-orders/031_WO_default-drop-aspect-lock.md) | DONE (149 tests, mock Chrome, six archives; physical drop/lock QA pending) |

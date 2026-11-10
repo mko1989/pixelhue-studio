@@ -68,6 +68,10 @@ actual source dimensions. Enabled UMD height comes from the device configuration
 XML (the tested P20 reports 24 output pixels). Disabled UMD adds no height.
 The video ratio uses window height minus UMD height. The inspector shows the
 height and the canvas marks the strip. Unknown heights are reported and skipped.
+Dropped sources start aspect locked, including replacements on unlocked
+windows. New MVR windows include the device-reported UMD height automatically
+and verify their actual UMD setting after creation. No Fix button is needed
+for new drops. Unknown UMD height is reported rather than guessed.
 MVR edits save automatically after typing or drag completion, with readback.
 Undo/redo, Fix and Load also save automatically. A failed save shows Retry save.
 Numeric/corner resizing retains the video ratio and fixed strip height.

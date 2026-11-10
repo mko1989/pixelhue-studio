@@ -198,6 +198,7 @@ async function mvrStructure(request, success) {
   });
 }
 function addSource(source, point) {
+  if (source.umdHeight === null) { notice('UMD height is unavailable. Reconnect to read device configuration before dropping this source.', 'error'); return; }
   const window = placeWindow(source, screen(), windows(), point, windowLimit(state.device.model, source.type));
   if (!window) { notice('No free space in this MVR output. Shrink or delete a window first.', 'error'); return; }
   mvrStructure({ action: 'create', source: { type: source.type, id: source.id }, window }, `${source.name} added to the MVR.`);

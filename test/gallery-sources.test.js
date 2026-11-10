@@ -45,9 +45,10 @@ test('background: drop a picture sets the BKG layer source and switches it on; o
   await assert.rejects(applyProgramming(client, { action: 'bkg', screenId: 1, scene: 4, pictureId: 99 }), /from the gallery/);
   assert.equal(mock.writes.length, writes);
   state = await applyProgramming(client, { action: 'bkg', screenId: 1, scene: 4, pictureId: 1, enable: true });
-  assert.deepEqual(mock.writes.slice(-2).map(w => [w.path, w.body]), [['layers/source', [{ layerId: 904, source: { general: { sourceId: 1, sourceType: 5, sourceName: 'Grid' } } }]],
+  assert.deepEqual(mock.writes.slice(-3).map(w => [w.path, w.body]), [['layers/source', [{ layerId: 904, source: { general: { sourceId: 1, sourceType: 5, sourceName: 'Grid' } } }]],
+    ['layers/aspect-ratio', [{ layerId: 904, aspectRatio: 8, locked: 1 }]],
     ['layers/switch', [{ layerId: 904, enable: 1, sn: client.serial }]]]);
-  assert.deepEqual(state.backgrounds.find(b => b.layerId === 904), { screenId: 1, scene: 4, layerId: 904, enabled: true, pictureId: 1, name: 'Grid' });
+  assert.deepEqual(state.backgrounds.find(b => b.layerId === 904), { screenId: 1, scene: 4, layerId: 904, enabled: true, pictureId: 1, name: 'Grid', aspectLocked: true, aspectMode: 8 });
   state = await applyProgramming(client, { action: 'bkg', screenId: 1, scene: 4, enable: false });
   assert.equal(state.backgrounds.find(b => b.layerId === 904).enabled, false);
 });
@@ -59,6 +60,8 @@ test('logo: placed at native size, replaces the scene logo, then moves like a la
   let logos = state.layers.filter(l => l.type === 32);
   assert.equal(logos.length, 1); assert.deepEqual(logos[0].window, { x: 50, y: 40, width: 300, height: 120 });
   assert.deepEqual(mock.writes.filter(w => w.path === 'layers/create').at(-1).body.source.general, { sourceId: 2, sourceType: 6 });
+  assert.equal(mock.writes.filter(w => w.path === 'layers/create').at(-1).body.locked, 1);
+  assert.deepEqual(mock.writes.filter(w => w.path === 'layers/create').at(-1).body.aspectRatio, { aspectRatio: 8, locked: 1 });
   state = await applyProgramming(client, { action: 'logo', screenId: 1, scene: 4, pictureId: 2, point: { x: 900, y: 500 } });
   logos = state.layers.filter(l => l.type === 32);
   assert.equal(logos.length, 1, 'previous logo replaced'); assert.equal(logos[0].window.x, 750);
