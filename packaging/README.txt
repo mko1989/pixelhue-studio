@@ -12,10 +12,24 @@ macOS Intel / Apple Silicon:
 Windows x64:
   Extract the ZIP, then double-click "Start Pixelhue Studio.cmd".
 
-Ubuntu x64:
+Ubuntu x64 / Raspberry Pi:
   Extract the tar.gz, then run: ./"Start Pixelhue Studio.sh"
   If your file manager does not preserve permissions, run:
     chmod +x "Start Pixelhue Studio.sh" runtime/bin/node
+
+Raspberry Pi OS:
+  Choose raspberry-pi-arm64 for a 64-bit OS, raspberry-pi-armv7 for a 32-bit OS.
+  Run "getconf LONG_BIT" on the Pi to check OS bitness (64 or 32).
+  Use Raspberry Pi OS Bullseye or newer, with an ARM64 or ARMv7 CPU.
+  ARMv6 CPUs have no build here. Bundled Node requirements:
+  https://github.com/nodejs/node/blob/v22.23.4/BUILDING.md#platform-list
+  No separate Node/npm installation is needed.
+
+  Desktop: ./"Start Pixelhue Studio.sh"
+  Headless / Raspberry Pi OS Lite, accessible from another computer:
+    HOST=0.0.0.0 PIXELHUE_NO_BROWSER=1 ./"Start Pixelhue Studio.sh"
+  Open http://PI_IP:3210 on the other computer (use the printed port if changed).
+  Keep the Pi and controlling computer on your trusted control network.
 
 The app opens your default browser. Keep its terminal window open while using
 it; press Ctrl+C to stop. If no browser opens, use the URL printed in that window.
@@ -36,8 +50,10 @@ Find devices uses the native HTTPS :19998 service, with a bounded private /24
 LAN scan. Device setup follows advertised capabilities. Outputs supports bulk
 names/timing/depth/HDCP; copy timing stays fixed. Screens supports Main/AUX
 creation and output mapping. Programming has named-source PGM/PVW canvases,
-layer creation/routing/geometry/stacking/deletion and Take/Cut. No live input
-video is requested. LED topology, presets and full maintenance are future work.
+layer creation/routing/geometry/stacking/deletion, presets and Take/Cut. Layer
+position/size edits stream while dragging/resizing/typing; the newest update
+wins, with verified readback and Retry save on failure. No live input video
+is requested. LED topology and complete PixelFlow parity are future work.
 New setup/programming writes require physical-device QA; this is a full-client
 foundation, not complete PixelFlow parity.
 
@@ -67,4 +83,6 @@ in app/public/fonts/README.txt and app/public/fonts/OFL.txt.
 Node.js runtime version and original download checksum are in build-info.json.
 runtime/LICENSE contains Node.js and third-party license notices.
 Builds were prepared on Intel macOS. Native runtime execution on Windows,
-Ubuntu and Apple Silicon, and physical device operation, require target QA.
+Ubuntu, Apple Silicon and Raspberry Pi, and physical device operation, require
+target QA. Archive hashes/architectures are checked on the build host; this is
+not a claim that ARM binaries were executed on a Raspberry Pi.

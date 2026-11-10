@@ -4,6 +4,7 @@ import { promisify } from 'node:util';
 import { cp, mkdir, readFile, writeFile, chmod, rm, readdir, stat } from 'node:fs/promises';
 import { dirname, join, resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { targets } from '../packaging/targets.mjs';
 
 const run = promisify(execFile);
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -11,12 +12,6 @@ const { version } = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'
 const nodeVersion = 'v22.23.4';
 const base = `https://nodejs.org/dist/${nodeVersion}/`;
 const dist = join(root, 'dist'), cache = join(root, '.dist-cache', nodeVersion);
-const targets = [
-  { id: 'macos-intel', runtime: 'darwin-x64', format: 'zip', executable: 'bin/node', launcher: 'Start Pixelhue Studio.command' },
-  { id: 'macos-silicon', runtime: 'darwin-arm64', format: 'zip', executable: 'bin/node', launcher: 'Start Pixelhue Studio.command' },
-  { id: 'windows-x64', runtime: 'win-x64', format: 'zip', executable: 'node.exe', launcher: 'Start Pixelhue Studio.cmd' },
-  { id: 'ubuntu-x64', runtime: 'linux-x64', format: 'tar.gz', executable: 'bin/node', launcher: 'Start Pixelhue Studio.sh' },
-];
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
 async function download(url) {
   const response = await fetch(url, { signal: AbortSignal.timeout(180000) });
@@ -79,12 +74,12 @@ for (const target of targets) {
   if (target.format === 'zip') await run('zip', ['-q', '-r', '-X', archivePath, name], { cwd: dist, maxBuffer: 1024 * 1024 });
   else await run('tar', ['-czf', archivePath, name], { cwd: dist, env: { ...process.env, COPYFILE_DISABLE: '1' } });
   const archiveHash = hash(await readFile(archivePath));
-  manifest.targets.push({ target: target.id, archive, bytes: (await stat(archivePath)).size, sha256: archiveHash,
+  manifest.targets.push({ target: target.id, label: target.label, archive, bytes: (await stat(archivePath)).size, sha256: archiveHash,
     nodeRuntimeArchive: runtimeFile, runtimeArchiveSha256: expected });
   console.log(`Prepared ${archive}`);
 }
 await writeFile(join(dist, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 await writeFile(join(dist, 'SHASUMS256.txt'), manifest.targets.map((target) => `${target.sha256}  ${target.archive}`).join('\n') + '\n');
 await writeFile(join(dist, 'README.md'), '# Pixelhue Studio distributions\n\nExtract an archive and run the launcher in its folder. Node.js is bundled.\n\n' +
-  manifest.targets.map((target) => `- [${target.target}](${target.archive})`).join('\n') + '\n\nSee each bundle\'s README.txt for usage and verification limits. Checksums: SHASUMS256.txt.\n');
+  manifest.targets.map((target) => `- [${target.label}](${target.archive})`).join('\n') + '\n\nRaspberry Pi: choose the archive matching your OS bitness (`getconf LONG_BIT`). Extract it and run `./"Start Pixelhue Studio.sh"`. For headless access: `HOST=0.0.0.0 PIXELHUE_NO_BROWSER=1 ./"Start Pixelhue Studio.sh"`, then open the Pi\'s IP with the printed port from another computer. Raspberry Pi OS Bullseye or newer; ARMv7 or ARM64 CPU, no ARMv6 build.\n\nSee each bundle\'s README.txt for usage and verification limits. Checksums: SHASUMS256.txt.\n');
 console.log(`Done: ${dist}`);

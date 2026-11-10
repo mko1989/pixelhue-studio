@@ -120,3 +120,10 @@ This section supersedes manual MVR Apply instructions above for v1.6.0-alpha.1; 
 - [x] Updated local server on :3211 serves the live-edit module and guarded geometry route.
 - [ ] On a suitable physical screen, move/resize while holding the pointer and verify the output follows. Confirm the final release is exact, aspect lock and PGM lock still work, and grouped sources move together.
 - [ ] Cancel a held drag and confirm the original physical position is restored. Check rapid numeric/keyboard edits, Take after an edit, and rejected-write Retry on actual firmware.
+
+
+## Raspberry Pi distributions (WO-030)
+
+- [x] ARM64 and ARMv7 archives built with verified official Node runtimes, source hashes, ELF architecture checks, launcher modes and licenses; 138 tests pass under the bundled Node version.
+- [ ] Extract/run on Raspberry Pi OS 64-bit and 32-bit ARMv7, selecting by `getconf LONG_BIT`. Confirm the desktop launcher opens the UI and Ctrl+C stops the server.
+- [ ] On Pi OS Lite, launch with HOST=0.0.0.0 and PIXELHUE_NO_BROWSER=1; open Pi IP + printed port from another computer. Verify native discovery and normal device workflows, including live Programming geometry and MVR autosave.

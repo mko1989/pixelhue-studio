@@ -1,21 +1,21 @@
 import { createHash } from 'node:crypto';
 import { execFile, spawn } from 'node:child_process';
 import { promisify } from 'node:util';
-import { readFile, mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { readFile, mkdtemp, rm, writeFile, stat } from 'node:fs/promises';
 import { join, resolve, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import assert from 'node:assert/strict';
+import { targets, nativeTarget } from '../packaging/targets.mjs';
 
 const run = promisify(execFile), root = resolve(dirname(fileURLToPath(import.meta.url)), '..'), dist = join(root, 'dist');
 const manifest = JSON.parse(await readFile(join(dist, 'manifest.json'), 'utf8'));
 const sha = (data) => createHash('sha256').update(data).digest('hex');
-const formats = { 'macos-intel': /Mach-O 64-bit executable x86_64/, 'macos-silicon': /Mach-O 64-bit executable arm64/,
-  'windows-x64': /PE32\+ executable.*x86-64/, 'ubuntu-x64': /ELF 64-bit.*x86-64/ };
-const native = { 'darwin-x64': 'macos-intel', 'darwin-arm64': 'macos-silicon', 'win32-x64': 'windows-x64', 'linux-x64': 'ubuntu-x64' }[`${process.platform}-${process.arch}`];
-assert.equal(manifest.targets.length, 4);
+const native = nativeTarget();
+assert.deepEqual(manifest.targets.map(t => t.target).sort(), targets.map(t => t.id).sort(), 'all configured distribution targets must be present exactly once');
 const checks = [];
 for (const target of manifest.targets) {
+  const definition = targets.find(t => t.id === target.target);
   const archive = join(dist, target.archive), name = target.archive.replace(/\.(zip|tar\.gz)$/, ''), bundle = join(dist, name);
   assert.equal(sha(await readFile(archive)), target.sha256, `${target.target} archive checksum`);
   const info = JSON.parse(await readFile(join(bundle, 'build-info.json'), 'utf8'));
@@ -24,11 +24,12 @@ for (const target of manifest.targets) {
     assert.equal(sha(await readFile(join(bundle, file.path))), file.sha256);
     assert.equal(sha(await readFile(join(root, file.path.replace(/^app\//, '')))), file.sha256, 'distribution must match current source');
   }
-  const binary = join(bundle, 'runtime', target.target === 'windows-x64' ? 'node.exe' : 'bin/node');
+  const binary = join(bundle, 'runtime', definition.executable);
   const format = (await run('file', [binary])).stdout;
-  assert.match(format, formats[target.target]);
+  assert.match(format, definition.binaryFormat);
   const listing = target.archive.endsWith('.zip') ? (await run('unzip', ['-Z1', archive])).stdout : (await run('tar', ['-tzf', archive])).stdout;
-  const launcher = target.target.startsWith('macos') ? 'Start Pixelhue Studio.command' : target.target === 'ubuntu-x64' ? 'Start Pixelhue Studio.sh' : 'Start Pixelhue Studio.cmd';
+  const launcher = definition.launcher;
+  if (target.target !== 'windows-x64') for (const path of [binary, join(bundle, launcher)]) assert.ok((await stat(path)).mode & 0o111, 'Unix runtime and launcher must be executable');
   assert.ok(listing.includes(`${name}/app/server.js`)); assert.ok(listing.includes(`${name}/runtime/LICENSE`));
   assert.ok(listing.includes(`${name}/${launcher}`)); assert.ok(listing.includes(`${name}/app/public/index.html`));
   for (const fontFile of ['Rewir-Light.woff', 'Rewir-Light.ttf', 'OFL.txt', 'README.txt']) assert.ok(listing.includes(`${name}/app/public/fonts/${fontFile}`));
@@ -55,6 +56,7 @@ for (const target of manifest.targets) {
     const url = await ready;
     const response = await fetch(url); assert.equal(response.status, 200); assert.match(await response.text(), /Pixelhue Studio/);
     assert.equal((await fetch(`${url}/inputs.js`)).status, 200);
+    assert.equal((await fetch(`${url}/program-sync.js`)).status, 200);
     const font = await fetch(`${url}/fonts/Rewir-Light.woff`);
     assert.equal(font.status, 200); assert.equal(font.headers.get('content-type'), 'font/woff');
     assert.equal(sha(Buffer.from(await font.arrayBuffer())), sha(await readFile(join(root, 'public/fonts/Rewir-Light.woff'))));

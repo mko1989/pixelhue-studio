@@ -120,6 +120,14 @@ The previous stable MVR/input editor is [v1.5.0](https://github.com/mko1989/pixe
 
 Extract the full archive, then launch `Start Pixelhue Studio.command` on Mac, `Start Pixelhue Studio.cmd` on Windows, or `Start Pixelhue Studio.sh` on Ubuntu. The launcher opens your browser and prints the URL; keep the terminal window open and use Ctrl+C to stop. No separate Node/npm installation is required. The default port is 3210, with automatic fallback through 3220 if occupied. `PORT` overrides this choice; `PIXELHUE_NO_BROWSER=1` disables automatic browser opening.
 
+Current builds also include Raspberry Pi archives: **raspberry-pi-arm64** for a 64-bit OS and **raspberry-pi-armv7** for a 32-bit OS. Check with `getconf LONG_BIT` on the Pi; choose by OS bitness. Use Raspberry Pi OS Bullseye or newer on an ARM64/ARMv7 CPU; there is no ARMv6 build. Both include Node.js and the Unix launcher. Extract the archive and run `./"Start Pixelhue Studio.sh"` on the Pi desktop. For a headless Pi, run:
+
+```sh
+HOST=0.0.0.0 PIXELHUE_NO_BROWSER=1 ./"Start Pixelhue Studio.sh"
+```
+
+Then browse to `http://PI_IP:3210` from another computer on the control network (use the printed port if it changed). After building, local archives and checksums are listed in the generated `dist/README.md`. ARM archive contents and architecture are verified on the build host; native Raspberry Pi execution remains target QA. Runtime requirements follow the [pinned Node platform/toolchain list](https://github.com/nodejs/node/blob/v22.23.4/BUILDING.md#platform-list).
+
 These are portable folders, not signed installers or notarized macOS `.app` bundles. Runtime compatibility follows [Node 22's platform requirements](https://github.com/nodejs/node/blob/v22.23.4/BUILDING.md#platform-list). See each archive's `README.txt` and `build-info.json` for usage and runtime provenance. The release includes `SHASUMS256.txt` and `manifest.json` with archive checksums, plus `verification.json` recording performed checks and native execution limits. Current full-client alpha builds are written to `dist/`; no new GitHub release is published by this change.
 
 To rebuild on macOS/Linux with Node 22+, `tar`, `zip`, and `unzip`:
