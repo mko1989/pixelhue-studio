@@ -98,7 +98,7 @@ test('full-client HTTP resources preserve origin/session guards and discovery is
   const discovery = await (await fetch(url + 'discovery')).json(); assert.equal(discovery.devices.length, 1);
   assert.equal((await fetch(url + 'device?session=wrong')).status, 409);
   const connect = await (await fetch(url + 'connect', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ host: '127.0.0.1', apiPort: port }) })).json();
-  for (const resource of ['device', 'outputs', 'screens', 'programming']) {
+  for (const resource of ['device', 'outputs', 'screens', 'programming', 'input-advanced']) {
     assert.equal((await fetch(url + `${resource}?session=${connect.session}`)).status, 200);
     assert.equal((await fetch(url + `${resource}?session=wrong`)).status, 409);
   }

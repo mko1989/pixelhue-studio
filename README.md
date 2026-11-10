@@ -21,12 +21,14 @@ Open **http://127.0.0.1:3210** in your browser and enter the device IP in the to
 
 The app detects the model from the serial-verified discovery record, or authenticated node information when using an explicit API port. All models open the Device tab. Other panels load on demand; P10/P80 connection does not query screen/layer endpoints, and their MVR tab stays disabled. The server rejects Multiviewer writes for those models.
 
+See the [PixelFlow feature inventory and Studio gap checklist](docs/pixelflow-parity/README.md): 121 reviewed feature groups across every main tab and global tools, with original source references and searchable JSON.
+
 ## Client tabs
 
 Tabs stay in this order:
 
 1. **Device** — discover and connect, device name, identity, firmware and installed cards; identification beacon, genlock and supported fan controls. Work-mode and layer-profile choices come from device configuration. Mode changes use a separate confirmation because firmware may reset screens.
-2. **Inputs** — existing model-aware bulk port/capacity/name/EDID setup.
+2. **Inputs** — model-aware bulk port/capacity/name/EDID setup. Collapsed Advanced adds Mac compatibility (individual/all supported inputs), native Mac 1×2 tiled groups, input HDCP, advertised signal overrides and image-quality controls. Fields/ranges follow connector and card XML; existing nested values are preserved and writes are read back.
 3. **Outputs** — enumerate installed Main/AUX/MVR ports; bulk or individual names, custom timing, color depth, HDCP and test-pattern enable. Copy/optical ports keep their routing and have fixed timing controls. Fill stages a batch; Apply writes and verifies it.
 4. **Screens** — create Main/AUX screens, set global origin/dimensions, map actual outputs and position/tile them, freeze, blackout and delete. A port already used by another screen must be unmapped there first. LED screens are listed, but LED topology editing is not implemented.
 5. **Programming** — filter/select input or other-screen PGM/PVW sources, add layers to PVW or PGM, route sources, drag/resize or enter local coordinates, change stacking and delete layers. Take/Cut supports duration and swap/copy selection. Layout canvases display source names and geometry; monitoring uses the hardware MVR.

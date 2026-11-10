@@ -32,3 +32,8 @@
   .input-bulk { gap: 10px; padding: 10px; }.input-bulk label:not(.checkbox-label) { flex: 1; min-width: 120px; }
   .input-bulk .checkbox-label { width: 100%; margin-top: 0; }.inputs-actions { align-items: start; }
 }
+.input-advanced { margin: 12px 18px; border-top: 1px solid var(--border); padding-top: 10px; }
+.input-advanced summary { cursor: pointer; font-size: 14px; }
+.advanced-input-content { padding: 12px 0; }.advanced-input-group { border-top: 1px solid var(--border); padding: 10px 0; margin-top: 10px; }
+.advanced-input-group h2 { font-size: 15px; font-weight: 400; margin: 0 0 10px; }.advanced-input-content .tool-heading select { max-width: 100%; }
+.input-advanced .settings-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }

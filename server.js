@@ -13,6 +13,7 @@ const publicFiles = new Map([
   ['/', ['index.html', 'text/html']], ['/app.js', ['app.js', 'text/javascript']],
   ['/editor.js', ['editor.js', 'text/javascript']], ['/style.css', ['style.css', 'text/css']],
   ['/inputs.js', ['inputs.js', 'text/javascript']], ['/inputs.css', ['inputs.css', 'text/css']],
+  ['/input-advanced.js', ['input-advanced.js', 'text/javascript']],
   ['/connection.css', ['connection.css', 'text/css']],
   ['/mvr-geometry.js', ['mvr-geometry.js', 'text/javascript']],
   ...['mvr-sync.js', 'mvr-reconcile.js', 'mvr-sources.js', 'device-ui.js', 'device-maintenance-ui.js', 'outputs-ui.js', 'screens-ui.js', 'programming-ui.js', 'program-sync.js', 'layer-inspector.js', 'layer-tools.js', 'program-stage.js', 'group-geometry.js', 'source-tabs.js', 'presets-ui.js', 'ui.js', 'studio-panels.js', 'discovery-ui.js'].map(file => [`/${file}`, [file, 'text/javascript']]),

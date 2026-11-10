@@ -1,3 +1,4 @@
+import { createInputAdvanced } from './input-advanced.js';
 const $ = (id) => document.getElementById(id);
 const edidKeys = ['width', 'height', 'frame', 'standardType', 'interlaced'];
 const sameEdid = (a, b) => a && b && edidKeys.every((key) => a[key] === b[key]);
@@ -19,6 +20,7 @@ function small(text, className = 'input-signal') { const node = document.createE
 export function createInputsUI({ api, notice, operation, getSession, onApplied = () => {} }) {
   let state, session, busy = false;
   let drafts = new Map(), checked = new Set();
+  const advanced = createInputAdvanced({ api, notice, operation, getSession, hasBasicChanges: () => pending().length > 0 });
   function makeDraft(row) {
     const port = row.ports.find((port) => port.key === row.portKey) || row.ports[0];
     return { key: row.key, portKey: row.portKey, capacity: row.capacity, name: port.name,
@@ -50,11 +52,12 @@ export function createInputsUI({ api, notice, operation, getSession, onApplied =
     for (const node of document.querySelectorAll('#input-rows input, #input-rows select, .input-bulk select, #bulk-name')) node.disabled = busy || node.dataset.fixed === 'true';
     const changedKeys = new Set(pending().map((item) => item.key));
     for (const row of document.querySelectorAll('#input-rows tr[data-key]')) row.classList.toggle('pending', changedKeys.has(row.dataset.key));
+    advanced.setBusy(busy);
   }
   function adopt(next) {
     state = next; session = next.session;
     drafts = new Map(next.inputs.map((row) => [row.key, makeDraft(row)]));
-    checked = new Set(next.inputs.map((row) => row.key)); render();
+    checked = new Set(next.inputs.map((row) => row.key)); advanced.invalidate(); render();
   }
   function choosePort(row, draft, key) {
     const port = row.ports.find((port) => port.key === key);
@@ -132,7 +135,7 @@ export function createInputsUI({ api, notice, operation, getSession, onApplied =
   }
   async function refresh() {
     if (!getSession()) { notice('Connect to your device first.'); return; }
-    if (pending().length && !window.confirm('Discard your pending input changes?')) return;
+    if ((pending().length || advanced.hasChanges()) && !window.confirm('Discard your pending input changes?')) return;
     await operation(async () => { notice('Reading input ports and EDIDs…'); adopt(await api(`inputs?session=${encodeURIComponent(getSession())}`)); notice('Inputs loaded.', 'success'); });
   }
   $('input-select-all').onchange = () => { checked = new Set($('input-select-all').checked ? state.inputs.map((row) => row.key) : []); render(); };
@@ -152,14 +155,15 @@ export function createInputsUI({ api, notice, operation, getSession, onApplied =
   };
   $('refresh-inputs').onclick = refresh;
   $('apply-inputs').onclick = () => operation(async () => {
+    if (advanced.hasChanges()) { notice('Apply or discard the pending Advanced input settings first.', 'error'); return; }
     notice('Applying inputs…');
     adopt(await api('inputs', { session, changes: pending() }, 'PUT'));
     onApplied();
     notice('Inputs applied.', 'success');
   });
   return {
-    reset(nextSession) { if (session === nextSession) return; session = nextSession; state = undefined; drafts.clear(); checked.clear(); render(); },
-    hasChanges: () => pending().length > 0,
+    reset(nextSession) { if (session === nextSession) return; session = nextSession; state = undefined; drafts.clear(); checked.clear(); advanced.invalidate(); render(); },
+    hasChanges: () => pending().length > 0 || advanced.hasChanges(),
     setBusy(value) { busy = value; controls(); },
     refresh,
     open() { if (!state) return refresh(); },
