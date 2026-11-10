@@ -48,12 +48,13 @@ export function fillAxis(w, target, axis, ratio = null) {
   return { x: Math.round(w.x + w.width / 2 - width / 2), y: target.y, width, height: target.height };
 }
 
-export function renderLayerToolbar(node, { state, layer: l, screen, command, locked }) {
+export function renderLayerToolbar(node, { state, layer: l, screen, command, locked, liveGeometry, finishGeometry }) {
   node.replaceChildren();
   if (!l) { node.append(el('span', { className: 'muted' }, 'Select a layer to position and size it.')); return; }
   const group = groupOf(state.layers, l), win = group ? unionWindow(group.a.window, group.b.window) : l.window;
+  const currentWindow = () => group ? unionWindow(group.a.window, group.b.window) : l.window;
   const keepRatio = group ? group.a.aspectLocked || group.b.aspectLocked : l.aspectLocked, ratio = keepRatio ? win.width / win.height : null;
-  const save = (window, message = 'Layer position saved.') => command(group ? { action: 'group-window', screenId: l.screenId, id: l.id, window }
+  const save = (window, message = 'Layer position saved.', live = false) => (live && liveGeometry ? liveGeometry : command)(group ? { action: 'group-window', screenId: l.screenId, id: l.id, window }
     : { action: 'window', screenId: l.screenId, id: l.id, window }, group ? message.replace('Layer', 'Group') : message);
   const sourceOf = layer => state.sources.find(s => s.type === layer.sourceType && s.id === layer.sourceId);
   const tile = outputTile(win, screen), screenRect = { x: 0, y: 0, width: screen.width, height: screen.height };
@@ -66,12 +67,15 @@ export function renderLayerToolbar(node, { state, layer: l, screen, command, loc
   const fields = el('div', { className: 'tool-fields' });
   for (const [key, label] of [['x', 'X'], ['y', 'Y'], ['width', 'W'], ['height', 'H']]) {
     const control = input(win[key], `Layer ${label === 'W' ? 'Width' : label === 'H' ? 'Height' : label}`, 'number'); if (label === 'W' || label === 'H') control.min = MIN;
-    control.onchange = () => {
-      const next = { ...win, [key]: Number(control.value) };
+    const change = live => {
+      if (control.value === '' || !control.validity.valid || !Number.isSafeInteger(Number(control.value))) return;
+      const next = { ...currentWindow(), [key]: Number(control.value) };
       if (ratio && key === 'width') next.height = Math.max(MIN, Math.round(next.width / ratio));
       if (ratio && key === 'height') next.width = Math.max(MIN, Math.round(next.height * ratio));
-      save(next);
+      save(next, 'Layer position saved.', live);
     };
+    if (liveGeometry) control.oninput = () => change(true);
+    control.onchange = () => { if (liveGeometry) finishGeometry?.(); else change(false); };
     fields.append(field(label, control));
   }
   const aspect = select(ASPECTS, l.aspectMode, 'Layer aspect ratio');
@@ -86,14 +90,14 @@ export function renderLayerToolbar(node, { state, layer: l, screen, command, loc
 
   const align = el('div', { className: 'tool-buttons', role: 'group', 'aria-label': 'Align to screen' });
   for (const [where, label] of [['left', 'Left'], ['hcenter', 'Centre H'], ['right', 'Right'], ['top', 'Top'], ['vcenter', 'Centre V'], ['bottom', 'Bottom'], ['center', 'Centre']]) {
-    align.append(button(label, () => save(alignWindow(win, screen, where), `Layer aligned ${label.toLowerCase()}.`)));
+    align.append(button(label, () => save(alignWindow(currentWindow(), screen, where), `Layer aligned ${label.toLowerCase()}.`)));
   }
   const fill = el('div', { className: 'tool-buttons', role: 'group', 'aria-label': 'Fill' });
   const fills = [['Screen', () => save(fillWindow(screenRect, ratio), ratio ? 'Layer fitted to the screen (aspect kept).' : 'Layer fills the screen.')],
-    ['Width', () => save(fillAxis(win, screenRect, 'width', ratio), 'Layer fills the screen width.')],
-    ['Height', () => save(fillAxis(win, screenRect, 'height', ratio), 'Layer fills the screen height.')],
-    ['Output', () => tile && save(fillWindow(tile, ratio), ratio ? 'Layer fitted to its output (aspect kept).' : 'Layer fills its output.')],
-    ['Native 1:1', () => native && save(native, 'Layer set to the source resolution.')]];
+    ['Width', () => save(fillAxis(currentWindow(), screenRect, 'width', ratio), 'Layer fills the screen width.')],
+    ['Height', () => save(fillAxis(currentWindow(), screenRect, 'height', ratio), 'Layer fills the screen height.')],
+    ['Output', () => { const target = outputTile(currentWindow(), screen); if (target) save(fillWindow(target, ratio), ratio ? 'Layer fitted to its output (aspect kept).' : 'Layer fills its output.'); }],
+    ['Native 1:1', () => native && save(nativeWindow(currentWindow(), group ? groupSize(sourceOf(group.a), sourceOf(group.b), group.orient) : sourceOf(l)), 'Layer set to the source resolution.')]];
   for (const [label, action] of fills) fill.append(button(label, action));
   if (!tile) fill.children[3].dataset.fixed = 'true';
   if (!native) { fill.children[4].dataset.fixed = 'true'; fill.children[4].title = 'The source has no signal resolution.'; }

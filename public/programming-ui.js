@@ -5,7 +5,8 @@ import { renderLayerPanel } from './layer-inspector.js';
 import { renderLayerToolbar, clearLayer } from './layer-tools.js';
 import { renderSourceTabs, parseDragKey } from './source-tabs.js';
 import { groupSize } from './group-geometry.js';
-import { groupOf, unionWindow } from './group-geometry.js';
+import { groupOf, unionWindow, splitWindow } from './group-geometry.js';
+import { createProgramSync } from './program-sync.js';
 
 // Programming (WO-016): several screens at once, PGM band on top and PVW below, drag sources
 // onto a stage to create layers, free layer roaming, preset bank.
@@ -20,6 +21,57 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
   const active = () => state.screens.find(s => s.id === layer()?.screenId && shown.includes(s.id)) || visible()[0];
   const sourceFor = key => state?.sources.find(s => `${s.type}:${s.id}` === key);
   const remember = () => { try { localStorage.setItem(STORE, JSON.stringify(shown)); } catch {} };
+  let geometryFailed = false, geometryRevision = 0, geometrySuccess = '';
+  const geometrySync = createProgramSync({
+    canSend: () => Boolean(session) && session === getSession() && !busy,
+    submit: changes => api('programming/geometry', { session, changes }, 'PUT'),
+    onResult(next, accepted) {
+      const ids = new Set(accepted.flatMap(change => {
+        const l = state?.layers.find(l => l.id === change.id), g = change.action === 'group-window' && groupOf(state.layers, l);
+        return g ? [g.a.id, g.b.id] : [change.id];
+      }));
+      if (!stages.some(s => s.dragging())) for (const actual of next.layers) {
+        const local = state?.layers.find(l => l.id === actual.id);
+        if (local && ids.has(local.id)) local.window = { ...actual.window };
+      }
+      if (accepted.length) invalidate('programming');
+      paintAll(); updateGeometryFields();
+      if (geometryFailed || (accepted.length && !geometrySync.dirty && !stages.some(s => s.dragging()))) {
+        geometryFailed = false; notice(geometrySuccess || 'Layer position saved.', 'success'); geometrySuccess = '';
+      }
+    },
+    onError(error) { geometryFailed = true; notice(`Layer position not saved: ${error.message}`, 'error'); },
+    onStatus: geometryStatus,
+  });
+  function geometryStatus() {
+    const label = $('program-save-status'), retry = $('program-retry');
+    if (label) label.textContent = geometrySync.error ? 'Not saved' : geometrySync.saving || geometrySync.dirty ? 'Sending…' : 'Live · saved';
+    if (retry) retry.hidden = !geometrySync.error;
+  }
+  function updateGeometryFields() {
+    const l = layer(); if (!l) return;
+    const group = groupOf(state.layers, l), w = group ? unionWindow(group.a.window, group.b.window) : l.window;
+    for (const [key, label] of [['x', 'X'], ['y', 'Y'], ['width', 'Width'], ['height', 'Height']]) {
+      const control = root.querySelector(`input[aria-label="Layer ${label}"]`);
+      if (control && control !== document.activeElement) control.value = w[key];
+    }
+  }
+  function editGeometry(request, immediate = true) {
+    if (!state || busy) return;
+    const l = state.layers.find(l => l.id === request.id && l.screenId === request.screenId);
+    if (!l || (l.scene === 2 && state.screens.find(s => s.id === l.screenId)?.pgmLocked)) return;
+    const w = request.window;
+    if (!w || !['x', 'y', 'width', 'height'].every(k => Number.isSafeInteger(w[k])) || w.width < 64 || w.height < 64) return;
+    const group = request.action === 'group-window' && groupOf(state.layers, l);
+    if (request.action === 'group-window' && !group) return;
+    if (group) {
+      const share = group.orient === 'H' ? group.a.window.width / (group.a.window.width + group.b.window.width)
+        : group.a.window.height / (group.a.window.height + group.b.window.height);
+      [group.a.window, group.b.window] = splitWindow(w, group.orient, share);
+      request = { ...request, id: group.a.id };
+    } else l.window = { ...w };
+    geometryRevision++; geometrySync.put(request, immediate); paintAll(); updateGeometryFields();
+  }
   function adopt(next) {
     state = next; session = next.session;
     const ids = next.screens.map(s => s.id);
@@ -30,19 +82,28 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     sourceKey ||= next.sources.find(s => s.type === 2) ? `2:${next.sources.find(s => s.type === 2).id}` : undefined;
     render();
   }
-  async function refresh() { if (getSession()) await operation(async () => adopt(await api(sessionPath('programming', getSession())))); }
+  async function refresh() {
+    if (!getSession()) return;
+    if (!await geometrySync.drain()) {
+      if (!window.confirm('Discard the unsaved layer position changes and refresh?')) return;
+      geometrySync.reset();
+    }
+    await operation(async () => adopt(await api(sessionPath('programming', getSession()))));
+  }
   const editing = () => root.contains(document.activeElement) && document.activeElement.matches('input,select,textarea');
   function scheduleRefresh(delay) {
     const epoch = session; clearTimeout(refreshTimer);
     const update = async (attempt = 0) => {
       if (session !== epoch) return;
-      if (busy || stages.some(s => s.dragging()) || editing()) { if (attempt < 30) refreshTimer = setTimeout(() => update(attempt + 1), 150); return; }
-      try { const next = await api(sessionPath('programming', epoch)); if (session === epoch && !stages.some(s => s.dragging()) && !editing()) adopt(next); }
+      if (busy || geometrySync.dirty || geometrySync.saving || stages.some(s => s.dragging()) || editing()) { if (attempt < 30) refreshTimer = setTimeout(() => update(attempt + 1), 150); return; }
+      try { const version = geometryRevision, next = await api(sessionPath('programming', epoch)); if (session === epoch && version === geometryRevision && !geometrySync.dirty && !geometrySync.saving && !stages.some(s => s.dragging()) && !editing()) adopt(next); }
       catch (error) { if (!$('programming-panel').hidden) notice(error.message, 'error'); }
     };
     refreshTimer = setTimeout(update, delay);
   }
   async function command(request, success = 'Programming updated.') {
+    if (['window', 'group-window'].includes(request.action)) { geometrySuccess = success; editGeometry(request); return; }
+    if (!await geometrySync.drain()) { notice('Retry the unsaved layer positions before this action.', 'error'); return; }
     await operation(async () => {
       const before = new Set(state.layers.map(l => l.id));
       const next = await api('programming', { session, ...request }, 'PUT');
@@ -113,6 +174,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
         onLocked: () => notice(`PGM of ${screen.name} is locked. Unlock it to edit.`, 'error'),
         commit: (l, window) => command({ action: 'window', screenId: screen.id, id: l.id, window }, 'Layer position saved.'),
         commitGroup: (l, window) => command({ action: 'group-window', screenId: screen.id, id: l.id, window }, 'Group position saved.'),
+        preview: (l, window, group) => editGeometry({ action: group ? 'group-window' : 'window', screenId: screen.id, id: l.id, window }, false),
         drop: (key, point) => addLayer(key, screen, scene, point),
         replace: (key, l) => {
           // Backgrounds, logos and groups are placed, not swapped into a layer.
@@ -149,6 +211,8 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
       button('Cut', () => command({ action: 'cut', screenIds: ids(), swap: shouldSwap }, 'Cut sent.')),
       button('Take', () => command({ action: 'take', screenIds: ids(), time: Number(duration.value), swap: shouldSwap }, 'Take sent.'), 'button primary take'),
       button('Refresh', refresh, 'button quiet'));
+    const retry = button('Retry save', () => geometrySync.retry(), 'button secondary'); retry.id = 'program-retry';
+    bar.append(el('small', { id: 'program-save-status', 'aria-live': 'polite' }), retry);
     root.append(bar);
     if (!state.screens.length) { root.append(text('Create or map a screen in Screens first.')); return; }
     const workspace = el('div', { className: 'program-workspace' }), sources = el('aside', { className: 'program-sources' });
@@ -157,7 +221,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     // WO-026: the selected layer's position/size tools sit under the screens; presets moved to an inspector tab.
     views.append(band(2, 'PGM'), band(4, 'PVW'), el('section', { id: 'layer-tools', className: 'layer-tools', 'aria-label': 'Selected layer position and size' }));
     workspace.append(sources, views, el('aside', { id: 'program-properties', className: 'program-properties' })); root.append(workspace);
-    paintAll(); renderInspector(); renderSources(); setDisabled(root, busy);
+    paintAll(); renderInspector(); renderSources(); setDisabled(root, busy); geometryStatus();
     if (!gallery) loadGallery();
   }
   // Source tabs (WO-027): Inputs, Screens, Groups, Backgrounds, Logos.
@@ -195,7 +259,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
   function renderInspector() {
     const node = $('program-properties'); if (!node) return; node.replaceChildren();
     const l = layer(), screen = l && state.screens.find(s => s.id === l.screenId);
-    const tools = $('layer-tools'); if (tools) renderLayerToolbar(tools, { state, layer: l, screen, command, locked: Boolean(l && l.scene === 2 && screen?.pgmLocked) });
+    const tools = $('layer-tools'); if (tools) renderLayerToolbar(tools, { state, layer: l, screen, command, liveGeometry: request => editGeometry(request, false), finishGeometry: () => geometrySync.flush(true), locked: Boolean(l && l.scene === 2 && screen?.pgmLocked) });
     const tabs = el('div', { className: 'inspector-tabs', role: 'tablist', 'aria-label': 'Inspector' });
     for (const [id, label] of [['layer', 'Layer'], ['presets', 'Presets']]) {
       const tab = button(label, () => { sideTab = id; renderInspector(); }, `button inspector-tab${sideTab === id ? ' active' : ''}`);
@@ -231,7 +295,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     command(group ? { action: 'group-window', screenId: l.screenId, id: l.id, window: moved } : { action: 'window', screenId: l.screenId, id: l.id, window: moved }, 'Layer position saved.');
   });
   render();
-  return { open: () => state ? undefined : refresh(), refresh, hasChanges: () => stages.some(s => s.dragging()),
-    reset(next) { if (session === next) return; clearTimeout(refreshTimer); session = next; state = undefined; render(); },
-    setBusy(value) { busy = value; setDisabled(root, busy); } };
+  return { open: () => state ? undefined : refresh(), refresh, hasChanges: () => geometrySync.dirty || geometrySync.saving || stages.some(s => s.dragging()),
+    reset(next) { if (session === next) return; clearTimeout(refreshTimer); geometrySync.reset(); session = next; state = undefined; render(); },
+    setBusy(value) { busy = value; setDisabled(root, busy); if (!busy) geometrySync.resume(); } };
 }

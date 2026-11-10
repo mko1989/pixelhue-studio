@@ -124,15 +124,24 @@ export function bindStage(stage, screen, ctx) {
     let next = moveWindow(drag.before, (event.clientX - drag.x) * sx, (event.clientY - drag.y) * sy, drag.handle, drag.ratio);
     const others = ctx.layers().filter(l => l.id !== drag.layer.id && (!drag.group || ![drag.group.a.id, drag.group.b.id].includes(l.id))).map(l => l.window);
     if (!event.altKey) next = snapWindow(next, screen, others, 10 * sx, drag.handle, drag.ratio);
-    if (drag.group) { [drag.group.a.window, drag.group.b.window] = splitWindow(next, drag.group.orient, drag.share); drag.next = next; }
+    const changed = JSON.stringify(next) !== JSON.stringify(drag.next || drag.before);
+    if (drag.group) { [drag.group.a.window, drag.group.b.window] = splitWindow(next, drag.group.orient, drag.share); }
     else drag.layer.window = next;
-    ctx.repaint();
+    drag.next = next;
+    if (ctx.preview && changed) { drag.published = true; ctx.preview(drag.layer, next, Boolean(drag.group)); }
+    else ctx.repaint();
   };
   const end = event => {
     if (!drag) return;
-    const { layer, before, group, originals } = drag, next = group ? drag.next || before : structuredClone(layer.window); drag = null;
+    const { layer, before, group, originals, published } = drag, next = group ? drag.next || before : structuredClone(layer.window); drag = null;
     if (stage.hasPointerCapture(event.pointerId)) stage.releasePointerCapture(event.pointerId);
-    if (group) { group.a.window = originals[0]; group.b.window = originals[1]; } else layer.window = before;
+    if (!ctx.preview || event.type === 'pointercancel') {
+      if (group) { group.a.window = originals[0]; group.b.window = originals[1]; } else layer.window = before;
+    }
+    if (event.type === 'pointercancel' && published) {
+      if (group) ctx.commitGroup(layer, before); else ctx.commit(layer, before);
+      return;
+    }
     const changed = event.type !== 'pointercancel' && JSON.stringify(before) !== JSON.stringify(next);
     if (changed && group) ctx.commitGroup(layer, next);
     else if (changed) ctx.commit(layer, next);

@@ -112,3 +112,11 @@ This section supersedes manual MVR Apply instructions above for v1.6.0-alpha.1; 
 ## MVR windows (WO-020)
 - [ ] Physical: drag Screen 2 PVW and Screen 2 PGM from Add to MVR into empty space; confirm the windows and UMD labels on the MVR output.
 - [ ] Physical: drop a source onto an existing window to swap it; use the inspector Source menu; Delete window. Then confirm moving/resizing (autosave) still works on the new windows.
+
+
+## Live Programming geometry (WO-029)
+
+- [x] 138 offline tests; slow mock Chrome verifies numeric input before blur, live held drag/resize, repeated nudges, newest-wins, groups, cancellation restore, ordered source change and rejection/retry.
+- [x] Updated local server on :3211 serves the live-edit module and guarded geometry route.
+- [ ] On a suitable physical screen, move/resize while holding the pointer and verify the output follows. Confirm the final release is exact, aspect lock and PGM lock still work, and grouped sources move together.
+- [ ] Cancel a held drag and confirm the original physical position is restored. Check rapid numeric/keyboard edits, Take after an edit, and rejected-write Retry on actual firmware.
