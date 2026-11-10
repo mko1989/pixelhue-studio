@@ -8,7 +8,7 @@ const FILES = [
   'test/mvr-repeat-apply.test.js', 'test/mvr-screen-umd.test.js',
   'test/mvr-sync.test.js', 'test/q8.test.js', 'test/studio-client.test.js', 'test/device-maintenance.test.js', 'test/programming-presets.test.js', 'test/mvr-layers.test.js', 'test/layer-groups.test.js', 'test/gallery-sources.test.js', 'test/mvr-input-limit.test.js',
   'api-library/test/catalog.test.cjs',
-  'test/program-live.test.js', 'test/program-sources.test.js',
+  'test/program-live.test.js', 'test/program-sources.test.js', 'test/output-capacity.test.js',
   'test/drop-aspect.test.js', 'test/input-advanced.test.js', 'test/pixelflow-audit.test.js',
 ];
 const root = new URL('../../', import.meta.url);

@@ -24,11 +24,11 @@ Preset/custom width/height/frame; detailed timings; grouped connector timing; ac
 
 Availability: Model, installed card, role and feature XML determine availability.
 
-Basic timing exists; detailed timing and screen-owned editor routing are incomplete.
+Studio offers standard presets from device resolution XML with capacity/scan/range filtering, preserves fractional Hz and standard/custom mode, and assesses bandwidth before writes. Screen/genlock changes need confirmation. Full detailed blanking/porch timing editing and grouped screen-owned timing workflows remain incomplete.
 
 PixelFlow: `src/pages/devices/components/output-attr-panel/output-base-attr/components/outputAttrSettingPanel/index.tsx:15` in `index-CPe5AUX3.js.map`.
 
-Studio: `public/outputs-ui.js`, `lib/studio-outputs.js`.
+Studio: `public/outputs-ui.js`, `lib/studio-outputs.js`, `lib/output-options.js`, `lib/output-capacity.js`.
 
 ## OUTPUTS-03 · Output format
 
@@ -84,15 +84,17 @@ Studio: `public/outputs-ui.js`, `lib/studio-outputs.js`.
 
 ## OUTPUTS-07 · Copy/split and backup
 
-**Studio: missing. Placement: Advanced.**
+**Studio: partial. Placement: Advanced.**
 
 Select connector copies; independent/copy/split; optical backup.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
-Studio protects copied/fixed ports but does not configure their relationships.
+P20 DL/4K capacity changes now apply the working-mode-specific XML copy topology after assessment and confirmation; copy timing readouts follow the primary. Manual copy/split/backup editing and other models remain missing.
 
 PixelFlow: `src/pages/devices/components/output-attr-panel/output-mode-setting/index.tsx:22` in `index-CPe5AUX3.js.map`.
+
+Studio: `lib/output-capacity.js`, `lib/output-options.js`, `public/outputs-ui.js`.
 
 ## OUTPUTS-08 · Optical module mode
 

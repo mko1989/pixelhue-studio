@@ -122,3 +122,4 @@
 .source-signal { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--muted); }
 .source-signal::before { content: ''; width: 5px; height: 5px; flex: 0 0 5px; border-radius: 50%; background: currentColor; }
 .source-signal.live { color: #9bc7aa; }.source-signal.warning { color: #e4c77b; }
+.studio-table select[aria-label$="resolution"] { width: 100%; max-width: 310px; min-width: 190px; margin-bottom: 6px; }
