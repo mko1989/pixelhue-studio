@@ -13,6 +13,7 @@ import { createProgramSync } from './program-sync.js';
 const STORE = 'program-screens';
 export function createProgrammingUI({ api, notice, operation, getSession, invalidate }) {
   const root = $('programming-content');
+  let sourceTimer, sourceVersion = 0, sourceDragging = false, sourcePolling = false, sourceFilter = '';
   let state, session, selectedId, sourceKey, busy = false, refreshTimer, durationMs = 500, shouldSwap = true;
   let shown = null, sideTab = 'layer', sourceTab = 'inputs', gallery = null, loadTarget = 4, savingFrom = null, editingPresets = false, loadOptions = { keyframes: false, effect: false }; const stages = [];
   try { shown = JSON.parse(localStorage.getItem(STORE) || 'null'); } catch {}
@@ -73,6 +74,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     geometryRevision++; geometrySync.put(request, immediate); paintAll(); updateGeometryFields();
   }
   function adopt(next) {
+    sourceVersion++;
     state = next; session = next.session;
     const ids = next.screens.map(s => s.id);
     shown = (shown || []).filter(id => ids.includes(id));
@@ -80,7 +82,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     if (!shown.length) shown = ids.slice(0, 1);
     if (!next.layers.some(l => l.id === selectedId)) selectedId = undefined;
     sourceKey ||= next.sources.find(s => s.type === 2) ? `2:${next.sources.find(s => s.type === 2).id}` : undefined;
-    render();
+    render(); scheduleSources();
   }
   async function refresh() {
     if (!getSession()) return;
@@ -90,6 +92,37 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     }
     await operation(async () => adopt(await api(sessionPath('programming', getSession()))));
   }
+  const sourcePollSafe = () => state && session === getSession() && !$('programming-panel').hidden && !document.hidden &&
+    !busy && !geometrySync.dirty && !geometrySync.saving && !sourceDragging && !stages.some(s => s.dragging());
+  function scheduleSources() {
+    clearTimeout(sourceTimer);
+    if (!state || $('programming-panel').hidden) return;
+    const epoch = session;
+    sourceTimer = setTimeout(async () => {
+      const version = sourceVersion;
+      try {
+        if (!sourcePolling && sourcePollSafe()) {
+          sourcePolling = true;
+          try {
+            const next = await api(sessionPath('programming/sources', epoch));
+            if (version === sourceVersion && epoch === session && sourcePollSafe()) {
+              state.sources = [...next.sources, ...state.sources.filter(s => s.type !== 2)];
+              if (sourceTab === 'inputs') renderSources();
+            }
+          } finally { sourcePolling = false; }
+        }
+      } catch {
+        if (version === sourceVersion && epoch === session && sourcePollSafe()) {
+          state.sources = state.sources.map(s => s.type === 2 ? { ...s, connected: false, signalLabel: 'Status unavailable', signalHealth: 'off' } : s);
+          if (sourceTab === 'inputs') renderSources();
+        }
+      }
+      finally { if (epoch === session) scheduleSources(); }
+    }, 2000);
+  }
+  root.addEventListener('dragstart', () => { sourceDragging = true; });
+  root.addEventListener('drop', () => { sourceDragging = false; });
+  document.addEventListener('dragend', () => { sourceDragging = false; });
   const editing = () => root.contains(document.activeElement) && document.activeElement.matches('input,select,textarea');
   function scheduleRefresh(delay) {
     const epoch = session; clearTimeout(refreshTimer);
@@ -227,10 +260,17 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
   // Source tabs (WO-027): Inputs, Screens, Groups, Backgrounds, Logos.
   function renderSources() {
     const body = $('source-tabs-body'); if (!body) return;
-    renderSourceTabs(body, { state, gallery, session, tab: sourceTab, sourceKey, notice, command, screenId: () => active()?.id,
+    const filterFocused = body.contains(document.activeElement) && document.activeElement.getAttribute('aria-label') === 'Filter programming sources';
+    const focusedKey = body.contains(document.activeElement) ? document.activeElement.dataset.key : null;
+    const caret = filterFocused ? [document.activeElement.selectionStart, document.activeElement.selectionEnd] : null;
+    const scroll = body.querySelector('.source-list')?.scrollTop || 0;
+    renderSourceTabs(body, { state, gallery, session, filter: sourceFilter, setFilter: value => { sourceFilter = value; }, tab: sourceTab, sourceKey, notice, command, screenId: () => active()?.id,
       setTab: t => { sourceTab = t; renderSources(); if (['bkg', 'logo'].includes(t) && !gallery) loadGallery(); },
       pick: key => { sourceKey = key; for (const n of body.querySelectorAll('[data-key]')) n.classList.toggle('selected', n.dataset.key === key); },
       addToPvw: key => { sourceKey = key; addLayer(key, active(), 4); }, upload });
+    const list = body.querySelector('.source-list'); if (list) list.scrollTop = scroll;
+    if (filterFocused) { const filter = body.querySelector('[aria-label="Filter programming sources"]'); filter?.focus({ preventScroll: true }); if (filter && caret) filter.setSelectionRange(...caret); }
+    else if (focusedKey) [...body.querySelectorAll('[data-key]')].find(n => n.dataset.key === focusedKey)?.focus({ preventScroll: true });
   }
   async function loadGallery() {
     try { gallery = await api(sessionPath('gallery', session)); } catch (error) { gallery = { pictures: [], support: {} }; notice(error.message, 'error'); }
@@ -295,7 +335,7 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     command(group ? { action: 'group-window', screenId: l.screenId, id: l.id, window: moved } : { action: 'window', screenId: l.screenId, id: l.id, window: moved }, 'Layer position saved.');
   });
   render();
-  return { open: () => state ? undefined : refresh(), refresh, hasChanges: () => geometrySync.dirty || geometrySync.saving || stages.some(s => s.dragging()),
-    reset(next) { if (session === next) return; clearTimeout(refreshTimer); geometrySync.reset(); session = next; state = undefined; render(); },
+  return { open: () => { if (!state) return refresh(); scheduleSources(); }, refresh, hasChanges: () => geometrySync.dirty || geometrySync.saving || stages.some(s => s.dragging()),
+    reset(next) { if (session === next) return; clearTimeout(sourceTimer); sourceVersion++; sourceDragging = false; sourceFilter = ''; clearTimeout(refreshTimer); geometrySync.reset(); session = next; state = undefined; render(); },
     setBusy(value) { busy = value; setDisabled(root, busy); if (!busy) geometrySync.resume(); } };
 }

@@ -127,6 +127,7 @@ export function createApp({ discover = discoverPixelhue } = {}) {
             if (!client) throw fail('Connect to a device first.', 409);
             const session = body?.session ?? url.searchParams.get('session');
             if (session !== client.session) throw fail('Connection changed. Reconnect before using these controls.', 409);
+            if (body && !resource.write) throw fail('This resource is read-only.', 405);
             return body ? resource.write(client, body) : resource.read(client);
           }));
         }

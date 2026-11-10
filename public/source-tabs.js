@@ -21,9 +21,14 @@ function draggable(node, key, onPick, onDouble) {
 
 function sourceRow(item, ctx) {
   const key = `${item.type}:${item.id}`;
-  const row = draggable(button(item.name, () => {}, `button source-choice${ctx.sourceKey === key ? ' selected' : ''}`), key, ctx.pick, ctx.addToPvw);
-  row.dataset.search = item.name.toLowerCase();
-  row.append(text(`${item.width || '?'} × ${item.height || '?'}${item.type === 2 && !item.connected ? ' · No signal' : ''}`));
+  const row = draggable(button('', () => {}, `button source-choice${ctx.sourceKey === key ? ' selected' : ''}`), key, ctx.pick, ctx.addToPvw);
+  row.dataset.search = `${item.mapping || ''} ${item.name}`.toLowerCase();
+  if (item.type === 2) {
+    const heading = el('span', { className: 'source-input-heading' });
+    heading.append(el('strong', {}, item.mapping || 'Input'), el('span', { className: `source-signal ${item.signalHealth || 'off'}` }, item.signalLabel || (item.connected ? 'Live' : 'No signal')));
+    row.append(heading);
+  }
+  row.append(el('span', { className: 'source-input-name' }, item.name), text(`${item.width || '?'} × ${item.height || '?'}`));
   return row;
 }
 
@@ -39,7 +44,7 @@ function groupsTab(ctx) {
     box.append(wrap);
   }
   const form = el('details', { className: 'group-form' }); form.append(el('summary', {}, 'New group…'));
-  const options = state.sources.map(s => [`${s.type}:${s.id}`, s.name]);
+  const options = state.sources.map(s => [`${s.type}:${s.id}`, s.mapping ? `${s.mapping} · ${s.name}` : s.name]);
   const a = select(options, options[0]?.[0], 'Group source A'), b = select(options, options[1]?.[0], 'Group source B');
   const orient = select([['H', 'Side by side'], ['V', 'Top / bottom']], 'H', 'Group layout'), label = input('', 'Group name'); label.placeholder = 'Name (optional)';
   form.append(field('A (left / top)', a), field('B (right / bottom)', b), field('Layout', orient), field('Name', label), button('Save group source', () => {
@@ -82,9 +87,9 @@ export function renderSourceTabs(root, ctx) {
   root.append(bar);
   if (current === 'inputs' || current === 'screens') {
     const items = ctx.state.sources.filter(s => current === 'inputs' ? s.type === 2 : s.type !== 2);
-    const search = input('', 'Filter programming sources'); search.placeholder = 'Filter';
-    const list = el('div', { className: 'source-list' }); for (const item of items) list.append(sourceRow(item, ctx));
-    search.oninput = () => { for (const row of list.children) row.hidden = !row.dataset.search.includes(search.value.toLowerCase()); };
+    const search = input(ctx.filter || '', 'Filter programming sources'); search.placeholder = 'Filter';
+    const list = el('div', { className: 'source-list' }); for (const item of items) { const row = sourceRow(item, ctx); row.hidden = !row.dataset.search.includes(search.value.toLowerCase()); list.append(row); }
+    search.oninput = () => { ctx.setFilter?.(search.value); for (const row of list.children) row.hidden = !row.dataset.search.includes(search.value.toLowerCase()); };
     root.append(text('Drag into empty space to add at native size · drop on a layer to swap its source (Shift adds) · double-click adds to PVW'), search, list);
   } else if (current === 'groups') root.append(...groupsTab(ctx));
   else root.append(...picturesTab(ctx, current === 'bkg' ? 1 : 2));

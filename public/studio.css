@@ -117,3 +117,8 @@
 .screen-frame.has-bkg { background-size: 100% 100%; background-repeat: no-repeat; }
 .group-source-row { display: flex; gap: 2px; align-items: stretch; }.group-source-row .source-choice { flex: 1; }.remove-source { min-width: 28px; padding: 0 4px; }
 .group-source.unavailable { opacity: .5; }
+.source-input-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 6px; margin-bottom: 3px; font-size: 12px; }
+.source-input-heading strong { color: var(--text); font-weight: 400; }.source-input-name { display: block; }
+.source-signal { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--muted); }
+.source-signal::before { content: ''; width: 5px; height: 5px; flex: 0 0 5px; border-radius: 50%; background: currentColor; }
+.source-signal.live { color: #9bc7aa; }.source-signal.warning { color: #e4c77b; }

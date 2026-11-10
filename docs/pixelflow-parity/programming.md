@@ -214,11 +214,11 @@ Local/network/global sources; named groups; group hierarchy; signal-only filter;
 
 Availability: Model, installed card, role and feature XML determine availability.
 
-Studio source tabs/filtering exist; persistent native named groups and global-source mapping are missing.
+Studio source tabs, physical panel mapping, numeric slot/port sorting, live-first inputs, metadata-only status polling and name/mapping filtering exist. Persistent native named groups, a signal-only filter toggle and global-source mapping remain missing.
 
 PixelFlow: `src/pages/editor1/components/SourcePanel/components/source-group/index.tsx:49` in `index-BJcacpMZ.js.map`.
 
-Studio: `public/source-tabs.js`, `lib/group-sources.js`.
+Studio: `public/source-tabs.js`, `lib/group-sources.js`, `lib/program-sources.js`, `public/programming-ui.js`.
 
 ## PROGRAMMING-19 · Gallery and still sources
 

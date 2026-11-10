@@ -33,3 +33,4 @@
 | WO-031 | Default source-drop aspect locks and UMD-aware MVR creation/replacement | [Investigation and verification](work-orders/031_WO_default-drop-aspect-lock.md) | DONE (149 tests, mock Chrome, six archives; physical drop/lock QA pending) |
 | WO-032 | Source-backed PixelFlow tab inventory, Studio parity matrix and compact Advanced input settings | [Investigation and verification](work-orders/032_WO_pixelflow-feature-audit.md) | DONE — audit + Advanced inputs; full parity tracked |
 | WO-033 | Replacement drops fit previous bounds, keep X/Y and aspect lock | [Investigation and verification](work-orders/033_WO_replacement-fit-bounds.md) | DONE (169 tests + mock Chrome drops) |
+| WO-034 | Programming physical input labels, numeric mapping order and live-first status refresh | [Investigation and verification](work-orders/034_WO_programming-source-mapping-live.md) | DONE (175 tests + capture/mock Chrome) |
