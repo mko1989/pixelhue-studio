@@ -66,3 +66,12 @@ test('screen and genlock timing dependencies require explicit confirmation befor
   mock.primary.auxiliaryInfo.screenInfo.name = ''; mock.node.genlock.type = 1; const before = mock.writes.length;
   await assert.rejects(applyOutputs(client, [{ ...change, timing: { ...change.timing, frame: 60 } }]), /Confirm/); assert.equal(mock.writes.length, before);
 });
+
+test('timing classification alone does not reject an otherwise valid advertised preset', async t => {
+  const { client, mock } = await fixture(t); mock.behavior.nonstandardTiming = true;
+  const state = await readOutputs(client), output = state.outputs.find(o => o.id === mock.primary.interfaceId);
+  const preset = output.presets.find(p => p.width === 1920 && p.height === 1080 && p.frame === 50 && p.standardType === 6);
+  const timing = Object.fromEntries(['width', 'height', 'frame', 'standardType', 'interlaced'].map(k => [k, preset[k]]));
+  const next = await applyOutputs(client, [{ id: output.id, timing, timingMode: 0 }]);
+  assert.equal(next.outputs.find(o => o.id === output.id).timing.frame, 50); assert.equal(mock.assessments.length, 1);
+});

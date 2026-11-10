@@ -21,7 +21,7 @@ export function createOutputMock() {
     if (['system/auxiliary/assess/switch-capacity', 'interface/thumbtiming-check', 'node/subcard/mode'].includes(path) && req.method !== 'GET') {
       requests.push({ path, method: req.method }); let data = ''; for await (const part of req) data += part; const body = JSON.parse(data);
       if (path === 'system/auxiliary/assess/switch-capacity') { assessments.push({ path, body }); return send([{ state: behavior.assessmentState }]); }
-      if (path === 'interface/thumbtiming-check') { assessments.push({ path, body, method: req.method }); return send(body.map(i => ({ interfaceId: i.interfaceId, state: 0, currentBandwidth: behavior.bandwidthOver ? 2000 : 100, maxBandwidth: 1000, frame: { scale: 100, max: 6000, value: [5000, 5994, 6000] } }))); }
+      if (path === 'interface/thumbtiming-check') { assessments.push({ path, body, method: req.method }); return send(body.map(i => ({ interfaceId: i.interfaceId, state: behavior.nonstandardTiming ? 1 : 0, currentBandwidth: behavior.bandwidthOver ? 2000 : 100, maxBandwidth: 1000, frame: { scale: 100, max: 6000, value: [5000, 5994, 6000] } }))); }
       writes.push({ path, body }); if (behavior.ignoreCapacity) return send({});
       for (const subcard of body.subcards) for (const change of subcard.connectors) {
         Object.assign(card.connectors.find(c => c.index === change.index && c.type === change.type), change);
