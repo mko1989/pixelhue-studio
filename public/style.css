@@ -73,7 +73,8 @@ input:hover, select:hover { border-color: #999; }
 .toolbar-separator { width: 1px; height: 20px; background: var(--border); margin: 0 6px; }
 .snap-label { display: flex; align-items: center; gap: 7px; }
 #snap { padding: 4px 6px; font-size: 14px; }
-.canvas-surround { margin: auto 0; padding: 16px; }
+/* WO-040: the preview sits under the toolbar; spare height goes below it, not around it. */
+.canvas-surround { margin: 0 0 auto; padding: 16px; }
 .canvas-meta { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 8px; color: #b0b0b0; font-size: 13px; }
 .canvas-meta-bottom { padding: 8px 0 0; }
 .stage { position: relative; aspect-ratio: 16 / 9; border: 1px solid #777; background: #101010; touch-action: none; user-select: none; }

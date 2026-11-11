@@ -105,7 +105,8 @@
   </main>
 
   <footer class="action-bar">
-    <div class="layout-files"><button id="save" class="button secondary" disabled>Save layout</button><button id="load" class="button secondary" disabled>Load layout</button><input id="layout-file" type="file" accept="application/json,.json" hidden></div>
+    <div class="layout-files"><button id="save" class="button secondary" disabled>Save layout</button><button id="load" class="button secondary" disabled>Load layout</button><input id="layout-file" type="file" accept="application/json,.json" hidden>
+      <span class="toolbar-separator"></span><select id="mvr-preset" aria-label="MVR presets" disabled><option value="">No presets yet</option></select><button id="mvr-preset-recall" class="button secondary" disabled>Recall</button><button id="mvr-preset-save" class="button secondary" disabled>Save preset</button><button id="mvr-preset-delete" class="button quiet" disabled>Delete</button></div>
     <div class="apply-actions"><span id="dirty-label" aria-live="polite">Changes save automatically</span><button id="refresh" class="button secondary" disabled>Refresh</button><button id="apply" class="button primary" disabled hidden>Retry save</button></div>
   </footer>
   </div>

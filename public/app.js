@@ -5,6 +5,7 @@ import { reconcileMvr, sameEdit } from './mvr-reconcile.js';
 import { createStudioPanels } from './studio-panels.js';
 import { createDiscoveryUI } from './discovery-ui.js';
 import { createMvrTemplates } from './mvr-templates.js';
+import { createMvrPresets } from './mvr-presets.js';
 import { canPlace, fixAspectRatios, ratioSize, sourceSignal, matchesRatio, windowLimit, growsPastLimit, shrinkToLimit } from './mvr-geometry.js';
 import { renderMvrSources, placeWindow, sourceOptions, parseKey, MVR_SOURCE } from './mvr-sources.js';
 
@@ -122,7 +123,7 @@ function renderControls() {
   for (const id of ['connect', 'host', 'api-port', 'serial']) $(id).disabled = busy;
   for (const tab of tabs) $(`${tab}-tab`).disabled = busy || (tab === 'mvr' && state?.capabilities?.mvr === false);
   $('mvr-tab').title = $('mvr-tab').disabled ? 'Multiviewer editing is available for P20 and Q8' : '';
-  inputsUI.setBusy(busy); panels.setBusy(busy); discovery.setBusy(busy); templates.setBusy(busy);
+  inputsUI.setBusy(busy); panels.setBusy(busy); discovery.setBusy(busy); templates.setBusy(busy); mvrPresets.setBusy(busy);
   $('screen').disabled = busy || !state?.screens.length;
   $('refresh').disabled = busy || !connected;
   $('save').disabled = busy || !windows().length;
@@ -249,6 +250,7 @@ const sync = createMvrSync({
   onStatus: () => renderControls(),
 });
 const templates = createMvrTemplates({ api, operation, notice, getState: () => (changes().length || sync.saving ? null : state), adopt });
+const mvrPresets = createMvrPresets({ api, operation, notice, getState: () => state, getScreenId: () => screenId, getDocument: () => layoutDocument(), loadDocument: document => loadLayoutDocument(document) });
 const discovery = createDiscoveryUI({ api, notice, getSeed: () => $('host').value,
   async connectDevice(device) {
     $('host').value = device.host; $('api-port').value = device.apiPort; $('serial').value = device.serial; await connect();
@@ -258,7 +260,7 @@ async function openActivePanel() {
   if (activeTab === 'inputs') { if (inputsStale && !inputsUI.hasChanges()) { inputsStale = false; return inputsUI.refresh(); } return inputsUI.open(); }
   if (activeTab === 'mvr') {
     if (mvrStale && !changes().length && !sync.saving) await operation(async () => adopt(await api('state')));
-    return templates.load(state);
+    await templates.load(state); return mvrPresets.load();
   }
   await panels.open(activeTab);
 }
@@ -281,7 +283,7 @@ for (const name of tabs) {
   };
 }
 $('connect-form').onsubmit = (event) => { event.preventDefault(); connect(); };
-$('screen').onchange = () => { screenId = Number($('screen').value); selectedId = windows()[0]?.id; render(); };
+$('screen').onchange = () => { screenId = Number($('screen').value); selectedId = windows()[0]?.id; render(); mvrPresets.render(); };
 $('undo').onclick = () => { if (busy || !undo.length) return; redo.push(geometry()); restore(undo.pop()); render(); sync.schedule(0); };
 $('redo').onclick = () => { if (busy || !redo.length) return; undo.push(geometry()); restore(redo.pop()); render(); sync.schedule(0); };
 
@@ -392,10 +394,17 @@ $('refresh').onclick = async () => {
   operation(async () => { notice('Reading layout…'); adopt(await api('state')); notice('Layout refreshed.', 'success'); });
 };
 $('apply').onclick = () => sync.retry();
+const layoutDocument = () => ({ format: 'pixelhue-mvr-layout', version: 1, serial: state.device.serial, screenId,
+  width: screen().width, height: screen().height, windows: windows().map(({ id, window, aspectLock, aspectMode, umdHeight }) => ({ id, window, aspectLock, aspectMode, umdHeight })) });
+// Shared by "Load layout" (file) and MVR preset recall (WO-040): validate against the device, then let autosave send it.
+function loadLayoutDocument(document) {
+  const layout = readLayout(document, state, screenId);
+  const tooBig = layout.find(item => { const layer = state.layers.find(l => l.id === item.id); return growsPastLimit(item.window, layer.window, limitOf(layer)); });
+  if (tooBig) { const limit = limitOf(state.layers.find(l => l.id === tooBig.id)); throw new Error(`This layout makes an input window larger than ${limit.width} × ${limit.height}, the glitch-free limit on ${state.device.model}. Not loaded.`); }
+  remember(); restore(layout); render(); sync.schedule(0);
+}
 $('save').onclick = () => {
-  const document = { format: 'pixelhue-mvr-layout', version: 1, serial: state.device.serial, screenId,
-    width: screen().width, height: screen().height, windows: windows().map(({ id, window, aspectLock, aspectMode, umdHeight }) => ({ id, window, aspectLock, aspectMode, umdHeight })) };
-  const url = URL.createObjectURL(new Blob([JSON.stringify(document, null, 2)], { type: 'application/json' }));
+  const url = URL.createObjectURL(new Blob([JSON.stringify(layoutDocument(), null, 2)], { type: 'application/json' }));
   const link = window.document.createElement('a'); link.href = url; link.download = `mvr-layout-${screenId}.json`; link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   notice('Layout saved.');
@@ -408,10 +417,7 @@ $('layout-file').onchange = async () => {
     if (file.size > 256_000) throw new Error('Layout file is too large.');
     let document;
     try { document = JSON.parse(await file.text()); } catch { throw new Error('Layout file is not valid JSON.'); }
-    const layout = readLayout(document, state, screenId);
-    const tooBig = layout.find(item => { const layer = state.layers.find(l => l.id === item.id); return growsPastLimit(item.window, layer.window, limitOf(layer)); });
-    if (tooBig) { const limit = limitOf(state.layers.find(l => l.id === tooBig.id)); throw new Error(`This layout makes an input window larger than ${limit.width} × ${limit.height}, the glitch-free limit on ${state.device.model}. Not loaded.`); }
-    remember(); restore(layout); render(); sync.schedule(0); notice('Layout loaded. Saving…');
+    loadLayoutDocument(document); notice('Layout loaded. Saving…');
   });
 };
 window.addEventListener('beforeunload', (event) => { if (changes().length || sync.saving || inputsUI.hasChanges() || panels.hasChanges()) { event.preventDefault(); event.returnValue = ''; } });
