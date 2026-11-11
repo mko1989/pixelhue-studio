@@ -32,24 +32,39 @@ Owner (2026-11-11, after WO-036): "start implementing all the missing items". Sc
 - Colour temperature and gamma: feature XML marks them unsupported for outputs on the P20; the generic field builder does not emit them. Dynamic range/HDR for outputs is left out (dependent HDR parameters and `interface/hdr` not traced).
 - PixelFlow pre-checks link bandwidth before sampling changes and greys out YCbCr while the gamut is DCI-P3. Only the DCI-P3 rule is reproduced; the bandwidth check is left to the device.
 
+### Unit 4 — Keying (PROGRAMMING-10)
+- `PUT layers/cutout [{ layerId, cutout }]` with the whole `cutout` object (`api/layer/layer.ts:844`, `layerCutoutChangeHandle.ts`). Live shape: `{ cursor, enable, type, brightness { threshold, gain, foregroundColor { enable, R, G, B }, keyInverse, keySource }, hue { hueClip, hueRamp, saturationClip, saturationGain, spill, shadow, highLigh, edgeSmooth, color, pos }, intelligence { color, mattingStrength, gainAdjust, pos } }`.
+- layer_2.xml:146 `CutoutGeneral`: `Type` 0 luma, 1 chroma, 2 smart (default); luma threshold/gain 0–100; chroma hueClip/hueRamp 5–180, saturationClip 0–100, saturationGain 1–100, spill/shadow/highLigh 0–100, edgeSmooth 0/1; smart mattingStrength/gainAdjust 0–100.
+- `layerCutoutEnableHandle.ts`: enabling is refused on a fill layer with Cut & Fill on; disabling also sets `cursor.enable` 0 and `brightness.foregroundColor.enable` 0. PixelFlow pre-runs a resource assessment (not reproduced). The colour picker (`layers/cutout/color` with a cursor on the live image) needs the live view Studio does not have.
+
+### Unit 5 — Cut & Fill (PROGRAMMING-12)
+- `layerCutFillHandle.ts` + `controller/dispatcherUtils.ts:592-712`:
+  - Switch: `PUT layers/cut-fill-switch [{ layerId: <selected layer>, enable }]`; code 8298 = refused with keying/backup.
+  - The cut layer is the layer whose `layerId` equals the selected layer's `cutId` (`layerAttrUtils.ts:85`); layer types `cut = 128`, `fill = 256` (`common/enum.ts:619`).
+  - Position: `PUT layers/relative [{ layerId: <cut>, relative { x, y −100…100, width, height 5…200 } }]`. Curve: `PUT layers/curve [{ layerId: <cut>, curve { start {x,y}, end {x,y} } }]` 0–255. Invert: `layers/general` on the cut layer (`isInverse`). Cut source: `PUT layers/source [{ layerId: <cut>, source { general { sourceId, sourceType } } }]`; codes 8310 (backup source), 8341 (gallery image refused).
+  - Reset: `PUT layers/reset-cut [{ layerId: <cut>, isInverse: 0, source { sourceId: 0, sourceType: noSource }, curve, relative }]` with the XML defaults.
+- **Unproven**: what the device reports after the switch. The source implies the selected layer becomes type 256 with `cutId` set and a type-128 layer appears. Before this WO Studio listed only types 2/4/32, so a layer switched to Cut & Fill in PixelFlow would have vanished from Studio's Programming tab. `noSource` is taken as 1 from the layer_2.xml source-type comment; its enum definition was not found.
+- Layer freeze: searched every writer of `general.isFreeze`. The editor only reads it; the only writer is the layer-preset "freeze" option. It is not a missing direct control.
+
 ## What was done
 
 - **Source backup**: `lib/source-backup.js` (read, whole-object read-modify-write, pair rules checked before the write, 8297 explained, readback), `/api/source-backup`, `public/source-backup-ui.js` as a Device tab block (on/off, primary preferred, pair rows with Auto/Manual and source in use, add pair with same-capacity filtering, remove, remove all). Studio additionally refuses an input that already belongs to a pair; PixelFlow's rule for that was not traced, so this is the conservative reading of `SwitchStrategy 1`.
 - **Self-test**: `lib/self-test.js`, `/api/self-test`, `public/self-test-ui.js` (last result summary, abnormal items first, Run self-test with confirmation). A device that does not answer `node/selfcheck` simply hides the block.
 - **Output Advanced**: `lib/interface-config.js` role-aware lookup; `lib/output-advanced.js`, `/api/output-advanced`, `public/output-advanced.js` — a collapsed "Advanced · format and colour" section under the Outputs table, loaded when opened: per-output sampling/range/gamut and colour correction, Reset colour, and "Copy to all outputs" (one click for what PixelFlow needs per output). Copy ports are left out; they follow their primary.
+- **Keying and Cut & Fill**: `lib/layer-effects.js` (`key` and `cutFill` effects; whole `cutout` object; Cut & Fill writes go to the linked cut layer), `lib/program-geometry.js` (type 256 fill layers stay listed as normal layers; cut layers are not listed), `public/layer-effects-ui.js` (Keying and Cut & Fill sections). Keying and Cut & Fill refuse each other before writing.
 - Mock: `test-support/mock-studio.js`, `mock-output-advanced.js` enforce PUT/POST methods, whole objects, real input ids, enum sets, busy state for self-test and 8297 for keyed sources.
 - Audit records: DEVICE-09 and DEVICE-19 implemented; OUTPUTS-03/05 and DEVICE-10 partial with the exact remainder. Totals 19 implemented, 38 partial, 63 missing, 2 excluded, 1 not rendered.
 
 ## What was VERIFIED
 
-- `npm test`: **207 passing**, 0 failed (3 in `test/source-backup.test.js`, 1 in `test/self-test.test.js`, 3 in `test/output-advanced.test.js`; input Advanced tests unchanged and green after the role-aware lookup). `npm run check:size`: 132 files ≤ 500 lines. `npm run build:client` passes.
+- After units 4–5: `npm test` **209 passing**; Chrome against the mock: chroma key parameters, key on/off, Cut & Fill on, cut source, width; the fill layer stays in the layer list. The mock's Cut & Fill layer model is an assumption (see Unit 5).
+- Units 1–3: `npm test`: **207 passing**, 0 failed (3 in `test/source-backup.test.js`, 1 in `test/self-test.test.js`, 3 in `test/output-advanced.test.js`; input Advanced tests unchanged and green after the role-aware lookup). `npm run check:size`: 132 files ≤ 500 lines. `npm run build:client` passes.
 - `readOutputAdvanced` run read-only against the real P20 XML and interface capture: 4 independent HDMI outputs, MVR and 2 AUX with the fields listed above.
 - Headless Chrome against the mock: backup on, add pair, manual + backup in use, self-test with one abnormal item shown, output sampling + hue applied; no page errors; screenshots checked.
 - **No hardware write or read was possible** (P20 unreachable). In particular the response shapes of `system/ctrl/source-backup` and `node/selfcheck` have never been seen live. Owner QA: `work/checklist-wo037.md`.
 
 ## Still open (next units, in this order)
 
-1. Layer freeze, keying and Cut & Fill (PROGRAMMING-05/10/12) — needs the vendor-package caller traced.
 2. Layer presets and preset playlists (PROGRAMMING-23/24), multiselect/clipboard (PROGRAMMING-04).
 3. Screen test patterns, image quality, AOI, blending, bezel (SCREENS-05…13).
 4. Detailed EDID/timing editing and EDID file import/export (INPUTS-03/04, OUTPUTS-02).

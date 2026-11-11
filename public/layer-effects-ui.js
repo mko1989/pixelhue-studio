@@ -78,4 +78,33 @@ export function renderLayerEffects(node, { state, layer: l, command }) {
       grid(number('Width %', pct(c.width), 0.1, 100, v => set({ width: Math.min(raw(v), 100000 - c.x) }), 0.1), number('Height %', pct(c.height), 0.1, 100, v => set({ height: Math.min(raw(v), 100000 - c.y) }), 0.1)),
       button('Reset crop', () => set({ enable: false, x: 0, y: 0, width: 100000, height: 100000 }), 'button quiet'));
   }
+  if (can.key && fx.key && l.type === 2 && l.sourceType === 2) {
+    const k = fx.key, box = section(node, 'key', 'Keying', k.enable), set = (change, message = 'Keying saved.') => send({ key: change }, message);
+    const type = select([[0, 'Luma'], [1, 'Chroma'], [2, 'Smart']], k.type, 'Key type'); type.onchange = () => set({ type: Number(type.value) });
+    box.append(check('Key this layer', k.enable, v => set({ enable: v })), field('Type', type));
+    if (k.type === 0) box.append(grid(number('Threshold', k.threshold, 0, 100, v => set({ threshold: v })), number('Gain', k.gain, 0, 100, v => set({ gain: v }))),
+      grid(check('Fill colour', k.fill, v => set({ fill: v })), colour('Fill', k.fillColor, v => set({ fillColor: v }))));
+    else if (k.type === 1) box.append(grid(colour('Key colour', k.color, v => set({ color: v })), check('Smooth edges', k.edgeSmooth, v => set({ edgeSmooth: v }))),
+      grid(number('Hue tolerance', k.hueClip, 5, 180, v => set({ hueClip: v })), number('Hue threshold', k.hueRamp, 5, 180, v => set({ hueRamp: v }))),
+      grid(number('Saturation', k.satClip, 0, 100, v => set({ satClip: v })), number('Softness', k.softness, 1, 100, v => set({ softness: v }))),
+      grid(number('Spill', k.spill, 0, 100, v => set({ spill: v })), number('Shadow', k.shadow, 0, 100, v => set({ shadow: v }))), number('Highlight', k.highlight, 0, 100, v => set({ highlight: v })));
+    else box.append(grid(colour('Key colour', k.smartColor, v => set({ smartColor: v })), number('Strength', k.strength, 0, 100, v => set({ strength: v }))), number('Gain', k.gainAdjust, 0, 100, v => set({ gainAdjust: v })));
+    box.append(button('Reset keying', () => set({ enable: false, type: 2, threshold: 10, gain: 50, fill: false, fillColor: '#ffffff', hueClip: 10, hueRamp: 90, satClip: 10, softness: 100, spill: 50, shadow: 0, highlight: 0, edgeSmooth: false, color: '#000000', smartColor: '#000000', strength: 50, gainAdjust: 0 }), 'button quiet'));
+  }
+  if (can.cutFill && fx.cutFill && l.type === 2) {
+    const c = fx.cutFill, box = section(node, 'cutfill', 'Cut & Fill', c.enable), set = (change, message = 'Cut & Fill saved.') => send({ cutFill: change }, message);
+    box.append(check('Cut this layer with a key source', c.enable, v => set({ enable: v }, v ? 'Cut & Fill on.' : 'Cut & Fill off.')));
+    if (!c.enable) return;
+    // The cut source supplies the shape; this layer supplies the fill.
+    const options = [['0:0', 'No cut source'], ...state.sources.filter(s => s.type === 2).map(s => [`2:${s.id}`, s.name])], current = `${c.sourceType === 2 ? 2 : 0}:${c.sourceType === 2 ? c.sourceId : 0}`;
+    if (c.sourceType === 5) options.push([`5:${c.sourceId}`, 'Gallery image']);
+    const source = select(options, c.sourceType === 5 ? `5:${c.sourceId}` : current, 'Cut source');
+    source.onchange = () => { const [type, id] = source.value.split(':').map(Number); if (type) set({ source: { id, type } }, 'Cut source saved.'); else set({ reset: true }, 'Cut & Fill reset.'); };
+    box.append(field('Cut source', source), check('Invert cut', c.inverse, v => set({ inverse: v })),
+      grid(number('Offset X %', c.x, -100, 100, v => set({ x: v })), number('Offset Y %', c.y, -100, 100, v => set({ y: v }))),
+      grid(number('Width %', c.width, 5, 200, v => set({ width: v })), number('Height %', c.height, 5, 200, v => set({ height: v }))),
+      grid(number('Black in', c.startX, 0, 255, v => set({ startX: v })), number('Black out', c.startY, 0, 255, v => set({ startY: v }))),
+      grid(number('White in', c.endX, 0, 255, v => set({ endX: v })), number('White out', c.endY, 0, 255, v => set({ endY: v }))),
+      button('Reset Cut & Fill', () => set({ reset: true }, 'Cut & Fill reset.'), 'button quiet'));
+  }
 }

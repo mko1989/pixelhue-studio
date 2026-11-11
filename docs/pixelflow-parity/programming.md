@@ -68,7 +68,7 @@ Enable; name/serial; freeze; opacity; flip; source selection.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
-Opacity, flip H/V, monochrome, invert and device lock added (WO-036). Layer freeze is still missing: its PixelFlow caller is inside the vendor UI package and the endpoint is not established.
+Opacity, flip H/V, monochrome, invert and device lock added (WO-036). Layer freeze is not a direct control in PixelFlow either: the editor only reads general.isFreeze, and the only writer is the layer-preset "freeze" option (PROGRAMMING-23).
 
 PixelFlow: `src/pages/editor1/components/LayerAttribute/components/LayerAttr/components/LayerBaseAttr/LayerBaseWrapper.tsx:23` in `index-BJcacpMZ.js.map`.
 
@@ -132,13 +132,17 @@ Studio: `public/layer-effects-ui.js`, `lib/layer-effects.js`.
 
 ## PROGRAMMING-10 · Keying/DSK
 
-**Studio: missing. Placement: Advanced.**
+**Studio: partial. Placement: Advanced.**
 
 Luma/chroma; enable; key parameters; invert; reset.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Luma, chroma and smart keying with all XML parameters, luma fill colour, reset (WO-037). Missing: picking the key colour from the image (PixelFlow's cursor and layers/cutout/color); the colour is chosen with a colour field. Hardware QA pending.
+
 PixelFlow: `src/pages/editor1/components/LayerAttribute/components/LayerAttr/components/LayerCutout.tsx:45` in `index-BJcacpMZ.js.map`.
+
+Studio: `public/layer-effects-ui.js`, `lib/layer-effects.js`.
 
 ## PROGRAMMING-11 · Source crop
 
@@ -156,13 +160,17 @@ Studio: `public/layer-effects-ui.js`, `lib/layer-effects.js`.
 
 ## PROGRAMMING-12 · Cut & Fill
 
-**Studio: missing. Placement: Advanced.**
+**Studio: partial. Placement: Advanced.**
 
 Cut source layer; invert; reset; source/capacity/keying incompatibilities.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+On/off, cut source (inputs), invert, position/size, black/white curve points, reset (WO-037). The device-side layer model after switching on (fill type 256 + linked cut layer 128) is assumed from PixelFlow's source and has never been seen live; gallery images as cut source and the capacity pre-assessment are missing.
+
 PixelFlow: `src/pages/editor1/components/LayerAttribute/components/LayerCutFill/index.tsx:36` in `index-BJcacpMZ.js.map`.
+
+Studio: `public/layer-effects-ui.js`, `lib/layer-effects.js`.
 
 ## PROGRAMMING-13 · Keyframes
 

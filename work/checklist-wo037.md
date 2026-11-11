@@ -19,3 +19,9 @@ On a spare output.
 - [ ] Hue / saturation / brightness, then Reset colour and Apply.
 - [ ] Copy to all outputs.
 - [ ] Try YCbCr 4:2:2 at 4K60 and note whether the device refuses.
+
+## Programming → Layer inspector → Keying / Cut & Fill
+- [ ] Keying: Luma on a layer with a dark background; threshold/gain. Chroma with a green key colour. Smart.
+- [ ] Cut & Fill on: does the layer stay in Studio's layer list? Does PixelFlow show a cut layer?
+- [ ] Choose a cut source, invert, change width, Reset. Cut & Fill off.
+- [ ] If the layer disappears or anything is refused, note the exact message — the device's layer model here is assumed.
