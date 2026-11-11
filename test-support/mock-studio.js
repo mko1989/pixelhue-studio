@@ -22,7 +22,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     i.colorDepth = { preset: 8, actual: 8 }; i.hdcp = { enable: 0, preset: 1, actual: 1 };
     i.testPattern = { enable: 0, type: 5, bright: 3, grid: 7 }; enrichOutput(i);
   }
-  let selfCheckPolls = 0, selfChecked = false;
+  let selfCheckPolls = 0, selfChecked = false, capture = null;
   // Built-in MVR layouts (WO-037): cells are fractions of the output; applying replaces every MVR window.
   const mvrTemplates = [{ templateId: 3, templateIdObj: { moduleType: 0, type: 1 }, cells: [{ x: 0, y: 0, width: 0.5, height: 0.5 }, { x: 0.5, y: 0, width: 0.5, height: 0.5 }], layout: [{ type: 0 }] },
     { templateId: 9, templateIdObj: { moduleType: 1, type: 1 }, cells: [] }];
@@ -68,11 +68,11 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
     .replace('</Features>', `</Features><Timezone Support="1" Editable="1" Value="70"><Enum Value="0" Offset="-660" Name="Pacific/Midway"/><Enum Value="35" Offset="60" Name="Europe/Warsaw"/><Enum Value="70" Offset="480" Name="Asia/Shanghai"/></Timezone><DeviceSelfTest Support="1" Editable="1" IsBlock="0"/><SourceBackup Support="1" Editable="1"><SwitchStrategy Value="1"/><CapacityStrategy Value="0"/></SourceBackup>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`).replace('</Files>', `${layerXml}${outputXml}${screenXml}</Files>`);
-  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock', 'system/ctrl/source-backup', 'node/selfcheck', 'layers/layer-preset/list-detail', 'layers/template'];
+  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock', 'system/ctrl/source-backup', 'node/selfcheck', 'layers/layer-preset/list-detail', 'layers/template', 'picture/progress'];
   const effectPaths = ['layers/opacity', 'layers/lock', 'layers/border', 'layers/mask', 'layers/shadow', 'layers/crop', 'layers/image-quality', 'layers/cutout'];
   const cutFillPaths = ['layers/cut-fill-switch', 'layers/relative', 'layers/curve', 'layers/reset-cut'];
   const layerPresetPaths = ['create', 'apply-modify', 'delete', 'apply', 'apply-access'].map(p => `layers/layer-preset/${p}`), layerPresets = installLayerPresets(layers, screens);
-  const customPuts = [...effectPaths, ...cutFillPaths, ...layerPresetPaths, 'node/selfcheck', 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+  const customPuts = ['picture', 'picture/general', 'picture/capture', 'picture/capture/save', ...effectPaths, ...cutFillPaths, ...layerPresetPaths, 'node/selfcheck', 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/color-space', 'interface/color-range', 'interface/color-gamut', 'interface/image-quality', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/test-pattern', 'screen/image-quality', 'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/template/select', 'layers/create', 'layers/copy', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
@@ -112,6 +112,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       if (path === 'preset') return send({ list: presets, page: 1, totalPage: 1, totalCount: presets.length });
       if (path === 'picture/list') { const t = Number(url.searchParams.get('type')); return send({ list: pictures.filter(p => !t || p.pictureObj.type === t), page: 1, totalPage: 1 }); }
       if (path === 'picture/capacity') return send({ type: 1, usedCapacity: 1.5, totalCapacity: 512 });
+      if (path === 'picture/progress') { if (capture && --capture.polls <= 0) capture.status = behavior.captureFails ? 255 : 2; return send({ pictureProgress: capture ? { type: 1, percent: capture.status === 2 ? 100 : 50, status: capture.status } : { type: 0, percent: 0, status: 0 } }); }
       response.setHeader('Content-Type', 'application/xml'); response.end(config); return;
     }
     let raw = ''; for await (const chunk of request) raw += chunk;
@@ -178,6 +179,25 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     if (path === 'preset/update-name') for (const change of body) presets.find(p => p.guid === change.guid).name = change.name;
     if (path === 'preset/delete') for (const guid of body) presets.splice(presets.findIndex(p => p.guid === guid), 1);
     if (path === 'node/ethernet') ethernet.infos[0] = { ...ethernet.infos[0], ...body.ethernet.infos[0] };
+    if (path.startsWith('picture')) { // gallery rules: DELETE answers with the ids it kept (pictures in use); capture is POST then save
+      const refuse = message => { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message })); };
+      if (path === 'picture') {
+        if (request.method !== 'DELETE' || !Array.isArray(body.pictureIds)) return refuse('picture param invalid');
+        const kept = body.pictureIds.filter(id => { const index = pictures.findIndex(p => p.pictureId === id && p.isUsed !== 1 && !behavior.keepPictures); if (index < 0) return true; pictures.splice(index, 1); return false; });
+        return send(kept);
+      }
+      const picture = pictures.find(p => p.pictureId === body.pictureId) || (capture?.pictureId === body.pictureId ? capture : null);
+      if (path === 'picture/general') { if (request.method !== 'PUT' || !picture || !body.name) return refuse('picture param invalid'); picture.general.name = body.name; return send({}); }
+      if (path === 'picture/capture') {
+        const known = body.source?.type === 0 ? screens.some(x => x.screenId === body.source.id && x.screenIdObj.type !== 8) : body.source?.type === 1 && interfaces.some(i => i.interfaceId === body.source.id);
+        if (request.method !== 'POST' || !known || node.status !== 1) return refuse('capture param invalid');
+        capture = { pictureId: Math.max(0, ...pictures.map(p => p.pictureId)) + 1, status: 1, polls: 2, general: { name: '', width: 1920, height: 1080 } };
+        return send({ pictureId: capture.pictureId, general: capture.general });
+      }
+      if (request.method !== 'PUT' || !capture || capture.pictureId !== body.pictureId || capture.status !== 2 || body.type !== 1 || !body.name) return refuse('capture save invalid');
+      pictures.push({ pictureId: capture.pictureId, isUsed: 2, pictureObj: { id: capture.pictureId, type: 1 }, general: { ...capture.general, name: body.name }, path: [{ type: 0, url: `/picture/bkg/cap_${capture.pictureId}.jpg` }] });
+      capture = null; return send({});
+    }
     if (path === 'node/selfcheck') { // device rule: POST only, refused while busy
       if (request.method !== 'POST' || body.nodeId !== 1 || node.status !== 1) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: 'node busy' })); return; }
       node.status = 10; selfCheckPolls = 2; selfChecked = true; return send({});

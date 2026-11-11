@@ -63,14 +63,28 @@ function picturesTab(ctx, type) {
   for (const p of pictures) {
     const key = `${prefix}:${p.id}`, card = draggable(el('button', { type: 'button', className: `picture-card${ctx.sourceKey === key ? ' selected' : ''}`, title: `${p.name} · ${p.width} × ${p.height}` }), key, ctx.pick, ctx.addToPvw);
     const img = el('img', { alt: '', loading: 'lazy', src: `/api/gallery/thumb?${sessionPath('', ctx.session).slice(1)}&id=${p.id}` }); img.draggable = false;
-    card.append(img, el('span', {}, p.name), el('small', {}, `${p.width} × ${p.height}`)); box.append(card);
+    card.append(img, el('span', {}, p.name), el('small', {}, `${p.width} × ${p.height}${p.used ? ' · in use' : ''}`));
+    if (!ctx.galleryEdit) { box.append(card); continue; }
+    // Edit mode (WO-037): rename and delete; a picture in use on a screen cannot be deleted.
+    const wrap = el('div', { className: 'picture-edit' }), rename = button('✎', () => { const next = window.prompt('Picture name', p.name); if (next && next.trim() && next !== p.name) ctx.manage({ action: 'rename', id: p.id, name: next }, 'Picture renamed.'); }, 'button quiet');
+    const remove = button('×', () => { if (window.confirm(`Delete ${p.name} from the device gallery?`)) ctx.manage({ action: 'delete', ids: [p.id] }, 'Picture deleted.'); }, 'button quiet');
+    rename.setAttribute('aria-label', `Rename ${p.name}`); remove.setAttribute('aria-label', `Delete ${p.name}`); remove.dataset.fixed = String(p.used); remove.title = p.used ? 'In use on a screen' : '';
+    const tools = el('div', { className: 'picture-edit-tools' }); tools.append(rename, remove); wrap.append(card, tools); box.append(wrap);
   }
   const file = el('input', { type: 'file', accept: 'image/png,image/jpeg,image/bmp', hidden: true });
   file.onchange = () => { if (file.files[0]) ctx.upload(type, file.files[0]); file.value = ''; };
   const limit = type === 2 ? ctx.gallery?.support?.logo : ctx.gallery?.support?.bkg;
   const cap = ctx.gallery?.capacity ? ` · ${ctx.gallery.capacity.usedCapacity}/${ctx.gallery.capacity.totalCapacity} MB used` : '';
   const help = text(type === 1 ? `Drag onto PGM or PVW to set that screen's background${cap}` : `Drag onto PGM or PVW to place the logo (max ${limit?.maxWidth || 512} × ${limit?.maxHeight || 512})${cap}`);
-  return [box, button(type === 1 ? 'Upload background…' : 'Upload logo…', () => file.click(), 'button secondary'), file, help];
+  const actions = el('div', { className: 'picture-actions' }); actions.append(button(type === 1 ? 'Upload background…' : 'Upload logo…', () => file.click(), 'button secondary'));
+  // Capture the active screen's PGM into the gallery as a background (PixelFlow CaptureModal).
+  const screen = ctx.state.screens.find(s => s.id === ctx.screenId());
+  if (type === 1 && screen) actions.append(button('Capture PGM', () => {
+    let n = 1; while (pictures.some(p => p.name === `PGM ${n}`)) n++;
+    const name = window.prompt(`Capture ${screen.name} PGM as a background named`, `PGM ${n}`); if (name && name.trim()) ctx.manage({ action: 'capture', source: 'pgm', id: screen.id, name }, 'PGM captured to the gallery.');
+  }, 'button secondary'));
+  if (pictures.length) actions.append(button(ctx.galleryEdit ? 'Done' : 'Edit', () => ctx.setGalleryEdit(!ctx.galleryEdit), 'button quiet'));
+  return [box, actions, file, help];
 }
 
 export function renderSourceTabs(root, ctx) {

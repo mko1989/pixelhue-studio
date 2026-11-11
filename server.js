@@ -8,6 +8,7 @@ import { discoverPixelhue } from './lib/discovery.js';
 import { studioRoutes } from './lib/studio-routes.js';
 import { applyMvrLayer } from './lib/mvr-layers.js';
 import { readGallery, uploadPicture, streamThumb } from './lib/gallery.js';
+import { manageGallery } from './lib/gallery-manage.js';
 
 const publicFiles = new Map([
   ['/', ['index.html', 'text/html']], ['/app.js', ['app.js', 'text/javascript']],
@@ -98,6 +99,7 @@ export function createApp({ discover = discoverPixelhue } = {}) {
             await exclusive(() => { guard(); return streamThumb(client, Number(url.searchParams.get('id')), response); });
             return;
           }
+          if (request.method === 'PUT' && url.pathname === '/api/gallery/manage') { const body = await readJson(request); return json(200, await exclusive(() => { guard(); return manageGallery(client, body); })); }
           if (request.method === 'PUT' && url.pathname === '/api/gallery/upload') {
             const chunks = []; let size = 0;
             for await (const chunk of request) { size += chunk.length; if (size > 64_000_000) throw fail('Image is larger than 64 MB.', 413); chunks.push(chunk); }

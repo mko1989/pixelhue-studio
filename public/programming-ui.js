@@ -267,11 +267,13 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     renderSourceTabs(body, { state, gallery, session, filter: sourceFilter, setFilter: value => { sourceFilter = value; }, tab: sourceTab, sourceKey, notice, command, screenId: () => active()?.id,
       setTab: t => { sourceTab = t; renderSources(); if (['bkg', 'logo'].includes(t) && !gallery) loadGallery(); },
       pick: key => { sourceKey = key; for (const n of body.querySelectorAll('[data-key]')) n.classList.toggle('selected', n.dataset.key === key); },
-      addToPvw: key => { sourceKey = key; addLayer(key, active(), 4); }, upload });
+      addToPvw: key => { sourceKey = key; addLayer(key, active(), 4); }, upload, galleryEdit, setGalleryEdit: v => { galleryEdit = v; renderSources(); },
+      manage: async (body, done) => { await operation(async () => { notice(body.action === 'capture' ? 'Capturing…' : 'Updating gallery…'); gallery = await api(`gallery/manage?session=${encodeURIComponent(session)}`, body, 'PUT'); notice(done, 'success'); }); renderSources(); } });
     const list = body.querySelector('.source-list'); if (list) list.scrollTop = scroll;
     if (filterFocused) { const filter = body.querySelector('[aria-label="Filter programming sources"]'); filter?.focus({ preventScroll: true }); if (filter && caret) filter.setSelectionRange(...caret); }
     else if (focusedKey) [...body.querySelectorAll('[data-key]')].find(n => n.dataset.key === focusedKey)?.focus({ preventScroll: true });
   }
+  let galleryEdit = false;
   async function loadGallery() {
     try { gallery = await api(sessionPath('gallery', session)); } catch (error) { gallery = { pictures: [], support: {} }; notice(error.message, 'error'); }
     renderSources();
