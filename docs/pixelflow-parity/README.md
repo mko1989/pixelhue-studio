@@ -1,6 +1,6 @@
 # PixelFlow → Studio feature inventory
 
-Audit of the local `extracted-source` snapshot, 10 November 2026, reviewed again on 11 November 2026 (WO-036). **123 reviewed feature groups** (17 implemented, 36 partial, 68 missing, 1 excluded, 1 not rendered), backed by **3,097 unique application source files in 79 source maps**. No conflicting source variants or parser errors. This is the parity checklist; Studio does **not** have full PixelFlow functionality yet.
+Audit of the local `extracted-source` snapshot, 10 November 2026, reviewed again on 11 November 2026 (WO-036). **123 reviewed feature groups** (17 implemented, 36 partial, 67 missing, 2 excluded, 1 not rendered), backed by **3,097 unique application source files in 79 source maps**. No conflicting source variants or parser errors. This is the parity checklist; Studio does **not** have full PixelFlow functionality yet.
 
 | Studio area | Inventory | Groups | Main remaining work |
 | --- | --- | ---: | --- |
@@ -10,7 +10,7 @@ Audit of the local `extracted-source` snapshot, 10 November 2026, reviewed again
 | Screens | [Screens](screens.md) | 18 | Spatial mosaic editor, groups, detailed timing/HDR, AOI, rotation, blending, bezel compensation, patterns |
 | Programming | [Programming](programming.md) | 26 | Layer freeze, keying/Cut & Fill, crop capacity checks, motion, clipboard/multiselect, native composites, OSD, gallery management, layer presets/playlists |
 | MVR | [MVR](mvr.md) | 7 | Native templates, background/border/UMD editor, connector setup |
-| Audio | [Audio](audio.md) | 5 | Matrix, mute and test tone are implemented (WO-036). Remaining: screen audio (device route unresolved), input audio source and Dante, none offered by PixelFlow on the P20 inputs |
+| Audio | [Audio](audio.md) | 5 | Matrix, mute and test tone are implemented (WO-036). Screen audio is excluded by owner decision (routing only). Remaining: input audio source and Dante, neither offered by PixelFlow on the P20 |
 | Global tools | [Projects, maintenance, peripherals](global.md) | 14 | Project/resource files, firmware/log management, peripheral/controller integrations |
 
 PixelFlow's P/Q menu (`src/config/topMenu.ts`, `NPQD_MENUS`) is **Device → Screens → Edit → MVR → Audio Matrix**. Inputs and Outputs are Device subpanels; Studio keeps the requested **Device → Inputs → Outputs → Screens → Programming → MVR** order. Studio's Audio tab appears only when the connected device advertises the matrix. Global tools live in menus rather than main tabs.
@@ -19,7 +19,7 @@ LED cabinets, receiving-card topology, calibration, monitoring and controller-pa
 
 New input controls are in a **collapsed Advanced section**: per-input and bulk Mac compatibility, native Mac 1×2 tiled pairs (left/right, groups 1–16), input HDCP, advertised colour overrides and image-quality fields. XML determines editable fields and ranges; sparse card overrides inherit unspecified connector settings while explicit unsupported fields stay hidden. Native Mac groups are separate from Programming GRP pairs, network source groups and native composite/mosaic sources.
 
-The only intentional functional exclusion is **live input video preview**, following the owner's instruction to use MVR. Signal metadata, stream configuration, gallery stills, native Live BKG and composite sources remain in scope when hardware supports them. Commented-out output-rotation UI is marked `not-rendered`; working screen connector rotation is recorded separately.
+The intentional functional exclusions are **live input video preview** (owner: use MVR) and **screen audio** volume/mute/source (owner, 2026-11-11: only audio routing is wanted). Signal metadata, stream configuration, gallery stills, native Live BKG and composite sources remain in scope when hardware supports them. Commented-out output-rotation UI is marked `not-rendered`; working screen connector rotation is recorded separately.
 
 ## What PixelFlow itself hides on a P20
 

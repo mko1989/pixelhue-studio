@@ -44,13 +44,13 @@ PixelFlow: `src/pages/devices/components/device-info/dante-attr/components/Dante
 
 ## AUDIO-04 · Screen audio
 
-**Studio: missing. Placement: Advanced.**
+**Studio: excluded. Placement: Advanced.**
 
 Screen volume; mute; audio source (follow, analog in, layer).
 
 Availability: Programming toolbar; screen XML AudioSettings.
 
-PixelFlow posts to ucenter/screen/audio, its local controller service. No direct device route is established, so this is not added until one is captured from PixelFlow traffic (found in WO-036).
+Excluded by owner decision (2026-11-11): only audio routing is wanted in Studio, not screen volume/mute/source. For reference, PixelFlow posts to ucenter/screen/audio, its local controller service; no direct device route is established.
 
 PixelFlow: `src/pages/editor1/components/LayerEditor/components/MainArea/editorLayerPresenter/layerEventHandle/handleScreenAudioSetting.ts:11` in `main-Cpb41LiE.js.map`.
 

@@ -26,7 +26,7 @@ Follows WO-032 (source inventory, 121 feature groups) and WO-017 (programming pa
 - Channel data comes from `interface/list-detail` → `audio.channelInfo[] { channelId, channelIndex, channelType, channelLabel, isMute, state, isValid, testAudioEnable }`. Live capture (`/private/tmp/pixelhue-full-client/live-readonly.json`): 12 video inputs × 2 RX channels, 8 HDMI outputs × 2 TX, plus slot 3 analog `Audio In -1/-2` (type 52, interfaceType 256, RX) and `Audio Out -1/-2` (type 53, TX). OPT/AUX/MVR outputs report no channels. Signal state is shown only for non-analog inputs (`hasStatus`).
 
 ### Audio-adjacent items the WO-032 audit did not list
-- **Screen audio** (Programming toolbar volume/mute/source): `handleScreenAudioSetting.ts` → `setScreenAudio` posts to `ucenter/screen/audio`, PixelFlow's local controller service, not the device. No direct device route is established (catalog: `post-ucenter-screen-audio`, serverKind controller). Live screens report `audio { isMute, volume, source[] }`. Not added: unresolved device contract.
+- **Screen audio** (Programming toolbar volume/mute/source): `handleScreenAudioSetting.ts` → `setScreenAudio` posts to `ucenter/screen/audio`, PixelFlow's local controller service, not the device. No direct device route is established (catalog: `post-ucenter-screen-audio`, serverKind controller). Live screens report `audio { isMute, volume, source[] }`. Not added: unresolved device contract. **Owner decision 2026-11-11: "the screen audio does not need to be exposed, only routing" — AUDIO-04 is marked excluded, do not build it.**
 - **Input audio source** (none / embedded / analog in): `handleVideoSettingItemClick.ts` → `POST interface/audio-source [{ sourceId, interfaceId }]`. Feature XML `AudioInputSourceEdit` lists only connector types 2, 24, 26, 33, 51, 55; the P20's HDMI (6), DP (8) and SDI (13) inputs are not listed, so PixelFlow does not offer it on this hardware. Not added.
 - Input/analog audio info readouts (`AudioInfo.tsx`): channel count and sampling rate, read-only.
 
@@ -77,7 +77,7 @@ Traced so that these stop being counted as missing for the owner's device; each 
 - Mock: `node/clock` must be PUT with a listed zone; `node/anti-static` must be POST with 100–2000 ms.
 
 ### Unit 4 — Audit records
-- `docs/pixelflow-parity/features/*.json` and regenerated reports: AUDIO-01/02, PROGRAMMING-06…09, DEVICE-14/16 implemented; PROGRAMMING-05/11 partial with the exact remainder; new AUDIO-04 (screen audio) and AUDIO-05 (input audio source) records; P20 gates written into the availability of MVR-03/04/05/06, OUTPUTS-06, DEVICE-05/11/12/13/18. Totals: 123 groups — 17 implemented, 36 partial, 68 missing, 1 excluded, 1 not rendered. README gained "What PixelFlow itself hides on a P20" and the list of what is still open for a P20. `test/pixelflow-audit.test.js` pin 121 → 123.
+- `docs/pixelflow-parity/features/*.json` and regenerated reports: AUDIO-01/02, PROGRAMMING-06…09, DEVICE-14/16 implemented; PROGRAMMING-05/11 partial with the exact remainder; new AUDIO-04 (screen audio) and AUDIO-05 (input audio source) records; P20 gates written into the availability of MVR-03/04/05/06, OUTPUTS-06, DEVICE-05/11/12/13/18. Totals: 123 groups — 17 implemented, 36 partial, 67 missing, 2 excluded (live input video, screen audio), 1 not rendered. README gained "What PixelFlow itself hides on a P20" and the list of what is still open for a P20. `test/pixelflow-audit.test.js` pin 121 → 123.
 
 ## What was VERIFIED
 

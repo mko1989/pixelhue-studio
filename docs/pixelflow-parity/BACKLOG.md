@@ -11,7 +11,7 @@
 | 5 | Programming workflow | PROGRAMMING-04/15/16/18 through 24: multiselect/clipboard, supported native composites, persistent source organization, gallery CRUD/capture/export, OSD, layer presets and playlists. Keep the GRP workaround labelled. |
 | 6 | MVR completion | MVR-02 through 07: preserve ratio+UMD/no-overlap behavior; native templates, background/border/UMD editor, output mode/timing. |
 | 7 | Device completion | DEVICE-01/03/05 through 25: sync/internal timing, network modes, backup pairs/device backup, HDR/effect sync, internal source/time/standby, diagnostics and installed card configuration. |
-| 8 | Audio | AUDIO-01/02 done in WO-036 (hardware QA pending). AUDIO-03 Dante, AUDIO-04 screen audio (needs a captured device route) and AUDIO-05 input audio source remain conditional. |
+| 8 | Audio | AUDIO-01/02 done in WO-036 (hardware QA pending). AUDIO-04 screen audio is excluded by owner decision (routing only). AUDIO-03 Dante and AUDIO-05 input audio source remain conditional on other hardware. |
 | 9 | Projects and maintenance | GLOBAL-01 through 09, GLOBAL-13/14: project/resource backup/restore, firmware/log tools, peripheral/controller/Companion integration, preferences/help/customization. |
 | Conditional | LED/controller families | SCREENS-14 through 18, GLOBAL-10/11/12 and controller-only DEVICE fields: topology, receiving cards, calibration and monitor workflows only when model scope expands and hardware advertises support. |
 
