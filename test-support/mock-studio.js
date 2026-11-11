@@ -23,6 +23,9 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     i.testPattern = { enable: 0, type: 5, bright: 3, grid: 7 }; enrichOutput(i);
   }
   let selfCheckPolls = 0, selfChecked = false;
+  // Built-in MVR layouts (WO-037): cells are fractions of the output; applying replaces every MVR window.
+  const mvrTemplates = [{ templateId: 3, templateIdObj: { moduleType: 0, type: 1 }, cells: [{ x: 0, y: 0, width: 0.5, height: 0.5 }, { x: 0.5, y: 0, width: 0.5, height: 0.5 }], layout: [{ type: 0 }] },
+    { templateId: 9, templateIdObj: { moduleType: 1, type: 1 }, cells: [] }];
   const audio = installAudio(interfaces), sourceBackup = { enable: 0, primaryFirst: 0, backup: [] };
   screens[0].guid = 'mvr-screen';
   screens.push({ screenId: 1, guid: 'main-screen', screenIdObj: { type: 2 }, general: { name: 'Main screen' },
@@ -65,13 +68,13 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
     .replace('</Features>', `</Features><Timezone Support="1" Editable="1" Value="70"><Enum Value="0" Offset="-660" Name="Pacific/Midway"/><Enum Value="35" Offset="60" Name="Europe/Warsaw"/><Enum Value="70" Offset="480" Name="Asia/Shanghai"/></Timezone><DeviceSelfTest Support="1" Editable="1" IsBlock="0"/><SourceBackup Support="1" Editable="1"><SwitchStrategy Value="1"/><CapacityStrategy Value="0"/></SourceBackup>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`).replace('</Files>', `${layerXml}${outputXml}${screenXml}</Files>`);
-  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock', 'system/ctrl/source-backup', 'node/selfcheck', 'layers/layer-preset/list-detail'];
+  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock', 'system/ctrl/source-backup', 'node/selfcheck', 'layers/layer-preset/list-detail', 'layers/template'];
   const effectPaths = ['layers/opacity', 'layers/lock', 'layers/border', 'layers/mask', 'layers/shadow', 'layers/crop', 'layers/image-quality', 'layers/cutout'];
   const cutFillPaths = ['layers/cut-fill-switch', 'layers/relative', 'layers/curve', 'layers/reset-cut'];
   const layerPresetPaths = ['create', 'apply-modify', 'delete', 'apply', 'apply-access'].map(p => `layers/layer-preset/${p}`), layerPresets = installLayerPresets(layers, screens);
   const customPuts = [...effectPaths, ...cutFillPaths, ...layerPresetPaths, 'node/selfcheck', 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/color-space', 'interface/color-range', 'interface/color-gamut', 'interface/image-quality', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
-    'screen/test-pattern', 'screen/image-quality', 'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/copy', 'layers/source', 'layers/zorder', 'layers'];
+    'screen/test-pattern', 'screen/image-quality', 'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/template/select', 'layers/create', 'layers/copy', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
     const url = new URL(request.url, 'http://localhost'), path = url.pathname.replace('/unico/v1/', '');
     if (request.method === 'GET' && url.pathname.startsWith('/picture/')) { // device web-root thumbnails
@@ -99,6 +102,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       if (path === 'audio/matrix-detail') return send(audio.detail());
       if (path === 'node/clock') return send({ nodeId: 1, time: node.time });
       if (path === 'system/ctrl/source-backup') return send({ sourceBackup });
+      if (path === 'layers/template') return send(url.searchParams.get('moduleType') === '0' ? mvrTemplates : []);
       if (path === 'layers/layer-preset/list-detail') return send({ totalCount: layerPresets.presets.length, list: layerPresets.presets });
       if (path === 'node/selfcheck') { // checkType 0 = power-on check, 1 = last device test
         const tested = url.searchParams.get('checkType') === '1';
@@ -222,6 +226,14 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     if (behavior.resourceShort && ['layers/create', 'layers/source', 'layers/copy'].includes(path)) {
       response.setHeader('Content-Type', 'application/json');
       response.end(JSON.stringify({ code: 8212, message: 'manage mio error: create layer {...} resource not enough' })); return;
+    }
+    if (path === 'layers/template/select') {
+      const template = mvrTemplates.find(t => t.templateId === body.templateId && t.templateIdObj.type === body.templateType && t.templateIdObj.moduleType === body.moduleType), screen = screens.find(s => s.screenId === body.screenId);
+      if (!template || screen?.screenIdObj.type !== 8 || body.sceneType !== 2 || behavior.templateScaling) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: behavior.templateScaling ? 8307 : 8210, message: 'template invalid' })); return; }
+      for (let i = layers.length - 1; i >= 0; i--) if (layers[i].layerIdObj.attachScreenId === screen.screenId) layers.splice(i, 1);
+      const w = screen.timing.horizontal.addTime, h = screen.timing.vertical.addTime, input = interfaces.find(i => i.auxiliaryInfo.connectorInfo.interfaceType === 2 && i.auxiliaryInfo.connectorInfo.workMode === 0);
+      template.cells.forEach((c, i) => layers.push({ layerId: 700 + i, layerIdObj: { attachScreenId: screen.screenId }, general: { name: `Window ${i + 1}` }, source: { general: { sourceType: 2, sourceId: input.interfaceId } },
+        window: { x: Math.round(c.x * w), y: Math.round(c.y * h), width: Math.round(c.width * w), height: Math.round(c.height * h) } }));
     }
     if (path === 'layers/copy') for (const item of body) { // the copy keeps every property of its source; only window and flip are given
       const from = layers.find(l => l.layerId === item.layerId); if (!from || !item.window || ![0, 1, 2, 3].includes(item.flipType)) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: 'layer param invalid' })); return; }

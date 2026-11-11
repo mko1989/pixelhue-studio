@@ -4,6 +4,7 @@ import { createMvrSync } from './mvr-sync.js';
 import { reconcileMvr, sameEdit } from './mvr-reconcile.js';
 import { createStudioPanels } from './studio-panels.js';
 import { createDiscoveryUI } from './discovery-ui.js';
+import { createMvrTemplates } from './mvr-templates.js';
 import { canPlace, fixAspectRatios, ratioSize, sourceSignal, matchesRatio, windowLimit, growsPastLimit, shrinkToLimit } from './mvr-geometry.js';
 import { renderMvrSources, placeWindow, sourceOptions, parseKey, MVR_SOURCE } from './mvr-sources.js';
 
@@ -121,7 +122,7 @@ function renderControls() {
   for (const id of ['connect', 'host', 'api-port', 'serial']) $(id).disabled = busy;
   for (const tab of tabs) $(`${tab}-tab`).disabled = busy || (tab === 'mvr' && state?.capabilities?.mvr === false);
   $('mvr-tab').title = $('mvr-tab').disabled ? 'Multiviewer editing is available for P20 and Q8' : '';
-  inputsUI.setBusy(busy); panels.setBusy(busy); discovery.setBusy(busy);
+  inputsUI.setBusy(busy); panels.setBusy(busy); discovery.setBusy(busy); templates.setBusy(busy);
   $('screen').disabled = busy || !state?.screens.length;
   $('refresh').disabled = busy || !connected;
   $('save').disabled = busy || !windows().length;
@@ -247,6 +248,7 @@ const sync = createMvrSync({
   onError(error) { mvrSaveFailed = true; if (error.snapshot?.layers && state) { state = reconcileMvr(state, base, error.snapshot, []); base = clone(error.snapshot); } notice(`MVR not saved: ${error.message}`, 'error'); render(true); },
   onStatus: () => renderControls(),
 });
+const templates = createMvrTemplates({ api, operation, notice, getState: () => (changes().length || sync.saving ? null : state), adopt });
 const discovery = createDiscoveryUI({ api, notice, getSeed: () => $('host').value,
   async connectDevice(device) {
     $('host').value = device.host; $('api-port').value = device.apiPort; $('serial').value = device.serial; await connect();
@@ -256,7 +258,7 @@ async function openActivePanel() {
   if (activeTab === 'inputs') { if (inputsStale && !inputsUI.hasChanges()) { inputsStale = false; return inputsUI.refresh(); } return inputsUI.open(); }
   if (activeTab === 'mvr') {
     if (mvrStale && !changes().length && !sync.saving) await operation(async () => adopt(await api('state')));
-    return;
+    return templates.load(state);
   }
   await panels.open(activeTab);
 }

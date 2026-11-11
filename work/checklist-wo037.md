@@ -36,3 +36,7 @@ On a spare Main screen.
 - [ ] Pattern White, then Checkerboard with another spacing, then Grid with line width and motion. Off.
 - [ ] Brightness / hue, then Reset colour.
 - [ ] Note whether line patterns look right vertically (the vertical spacing field is taken from PixelFlow's code).
+
+## Programming → Duplicate / Mirror; MVR → Apply layout
+- [ ] Duplicate a PVW layer; Mirror a layer (appears on the opposite side, flipped).
+- [ ] MVR tab: is "Apply layout…" shown? Apply one on a moment you can afford to lose the MVR arrangement; note what the list shows.

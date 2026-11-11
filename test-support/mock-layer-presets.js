@@ -1,6 +1,6 @@
 // Layer preset store for the mock (WO-037). Device rules modelled: all eleven parts present, unique names (8311),
 // apply writes only the enabled parts, positions are relative to the screen.
-export const layerPresetXml = '<Layer Support="1" Editable="1"><LayerPreset Support="1" Editable="1" maxCount="3"><LabelColors><LabelColor Support="1" Editable="1" R="37" G="124" B="255"> </LabelColor><LabelColor Support="1" Editable="1" R="233" G="106" B="106"> </LabelColor></LabelColors></LayerPreset></Layer>';
+export const layerPresetXml = '<Layer Support="1" Editable="1"><LayerPreset Support="1" Editable="1" maxCount="3"><LabelColors><LabelColor Support="1" Editable="1" R="37" G="124" B="255"> </LabelColor><LabelColor Support="1" Editable="1" R="233" G="106" B="106"> </LabelColor></LabelColors></LayerPreset><DefaultMVRTemplate Support="1" Editable="1"/><CustomMVRTemplate Support="0" Editable="0"/></Layer>';
 const PARTS = ['source', 'pos', 'size', 'border', 'effect', 'shadow', 'flip', 'mask', 'cutFill', 'crop', 'freeze'];
 export function installLayerPresets(layers, screens) {
   const presets = [];

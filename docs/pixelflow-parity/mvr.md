@@ -38,11 +38,11 @@ Grid/snap settings; add template; auto arrange; edit/delete template; delete all
 
 Availability: Built-in templates via layers/template; custom templates need CustomMVRTemplate, Support=0 on the live P20.
 
-Studio local layout save/load, clear and canvas editor are not the native device template library.
+Device built-in layouts can be applied from the MVR toolbar (WO-037; the template object is only partly known, so layouts are listed by id and window count without a thumbnail). Studio local layout save/load, clear and snapping remain. Custom device templates are not a P20 feature.
 
 PixelFlow: `src/pages/mvr/components/MVRToolbar.tsx:54` in `index-CFxZFQwf.js.map`.
 
-Studio: `public/editor.js`, `public/app.js`.
+Studio: `public/editor.js`, `public/app.js`, `public/mvr-templates.js`, `lib/mvr-templates.js`.
 
 ## MVR-04 · Background
 

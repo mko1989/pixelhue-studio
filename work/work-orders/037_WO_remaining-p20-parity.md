@@ -1,6 +1,6 @@
 # WO-037 — Remaining PixelFlow features for the P20
 
-**Status: IN PROGRESS (2026-11-11 — units 1–7 landed: source backup, self-test, output format/colour, keying, Cut & Fill, layer presets, screen test pattern/colour; 214 offline tests + mock Chrome; no hardware write possible; remaining items listed under "Still open")**
+**Status: IN PROGRESS (2026-11-11 — units 1–8 landed: source backup, self-test, output format/colour, keying, Cut & Fill, layer presets, screen test pattern/colour, layer copy, MVR layouts; 217 offline tests + mock Chrome; no hardware write possible; remaining items listed under "Still open")**
 
 Owner (2026-11-11, after WO-036): "start implementing all the missing items". Scope is the list in `docs/pixelflow-parity/README.md` "Still shown by PixelFlow on a P20 and not yet in Studio". Screen audio is excluded by owner decision (routing only). Items PixelFlow hides on a P20 stay out. The P20 is still unreachable from this Mac, so each unit is proven against PixelFlow's source, the captured live XML/JSON and a mock that enforces the known device rules; hardware QA goes to `work/checklist-wo037.md`.
 
@@ -61,6 +61,10 @@ Owner (2026-11-11, after WO-036): "start implementing all the missing items". Sc
 - `PUT screen/image-quality [{ screenId, imageQuality }]` (`screen.ts:1104`) with the whole object (`changeImageQuality.ts` spreads the current value); reset = contrast/brightness 100, hue 0, saturation 100.
 - PixelFlow sends a `guid` header with both; it routes multi-device screens in its own service. Studio's other device-direct screen writes work without it (WO-019), so it is not sent.
 
+### Unit 8 — Layer copy (PROGRAMMING-04) and built-in MVR layouts (MVR-03)
+- Copy: `PUT layers/copy [{ layerId, flipType, window, namePrefix }]` (`api/layer/layer.ts:810`). PixelFlow's copy is a mirror copy: `x = screenW − width − (x − 2·screenX)` and `flipType ^ setFlipType` (`common/utils/commonUtils.ts:621 handleCopyParams`). For a Cut & Fill layer a second entry copies the cut layer, placed by its relative rectangle (`handleCutLayerPosition`, `calculateCutLayerPostion`). A resource assessment precedes it in PixelFlow.
+- MVR layouts: feature.xml:108 `DefaultMVRTemplate Support="1"`, `CustomMVRTemplate Support="0"`. `GET layers/template?moduleType=0` → array of `{ templateId, templateIdObj { moduleType, type }, cells[], layout[] }` (type 1 built-in, 2 custom); apply `PUT layers/template/select { templateId, screenId, sceneType: 2, templateType, moduleType: 0 }` (`pages/mvr/components/MVRToolbar.tsx:198`), code 8307 = scaling limit. The device replaces all MVR windows. The typing file is missing, so only the fields the toolbar reads are known; no live sample.
+
 ## What was done
 
 - **Source backup**: `lib/source-backup.js` (read, whole-object read-modify-write, pair rules checked before the write, 8297 explained, readback), `/api/source-backup`, `public/source-backup-ui.js` as a Device tab block (on/off, primary preferred, pair rows with Auto/Manual and source in use, add pair with same-capacity filtering, remove, remove all). Studio additionally refuses an input that already belongs to a pair; PixelFlow's rule for that was not traced, so this is the conservative reading of `SwitchStrategy 1`.
@@ -69,11 +73,14 @@ Owner (2026-11-11, after WO-036): "start implementing all the missing items". Sc
 - **Keying and Cut & Fill**: `lib/layer-effects.js` (`key` and `cutFill` effects; whole `cutout` object; Cut & Fill writes go to the linked cut layer), `lib/program-geometry.js` (type 256 fill layers stay listed as normal layers; cut layers are not listed), `public/layer-effects-ui.js` (Keying and Cut & Fill sections). Keying and Cut & Fill refuse each other before writing.
 - **Layer presets**: `lib/layer-presets.js` (list, save from a layer, assess-then-apply, rename/colour, delete), `layerpreset-*` actions in `lib/studio-programming.js`, `layerPresets` in the Programming state, `public/layer-presets-ui.js` in the Layer inspector: one click applies; saving remembers which parts were ticked and defaults to everything except the source (a look, not a route).
 - **Screen test pattern and colour**: `lib/screen-extras.js` (options per screen type from `screen_<type>.xml`, whole-object writes, readback), `pattern` and `quality` actions in `lib/studio-screens.js`, `public/screen-extras-ui.js`: a collapsed row in the Screens tab that applies on change; the spacing control switches between gear and pixels with the pattern.
+- **Layer copy**: `copy` action in `lib/studio-programming.js`; Duplicate (offset 40 px) and Mirror (PixelFlow's copy) buttons in `public/layer-tools.js`.
+- **MVR layouts**: `lib/mvr-templates.js`, `/api/mvr-templates`, `public/mvr-templates.js`: an "Apply layout…" select in the MVR toolbar, shown only when the device lists layouts; replaces all windows after a confirmation.
 - Mock: `test-support/mock-studio.js`, `mock-output-advanced.js` enforce PUT/POST methods, whole objects, real input ids, enum sets, busy state for self-test and 8297 for keyed sources.
 - Audit records: DEVICE-09 and DEVICE-19 implemented; OUTPUTS-03/05 and DEVICE-10 partial with the exact remainder. Totals 19 implemented, 38 partial, 63 missing, 2 excluded, 1 not rendered.
 
 ## What was VERIFIED
 
+- After unit 8: `npm test` **217 passing** (copy test in `test/layer-effects.test.js`, 2 in `test/mvr-templates.test.js`), 143 files ≤ 500 lines; Chrome against the mock: apply a layout (2 windows), Mirror copy.
 - After unit 7: `npm test` **214 passing** (2 in `test/screen-extras.test.js`), 140 files ≤ 500 lines; `screenOptions` run on the real P20 XML (22 patterns on Main, none on AUX, four colour fields on both); Chrome against the mock: grid pattern, line width, hue, pattern off.
 - After unit 6: `npm test` **212 passing** (3 in `test/layer-presets.test.js`), 136 files ≤ 500 lines; Chrome against the mock: save a preset from one layer, apply to another, delete.
 - After units 4–5: `npm test` **209 passing**; Chrome against the mock: chroma key parameters, key on/off, Cut & Fill on, cut source, width; the fill layer stays in the layer list. The mock's Cut & Fill layer model is an assumption (see Unit 5).
@@ -84,8 +91,8 @@ Owner (2026-11-11, after WO-036): "start implementing all the missing items". Sc
 
 ## Still open (next units, in this order)
 
-2. Multiselect/clipboard (PROGRAMMING-04). Preset playlists are not a P20 feature (see Unit 6).
+2. Multi-selection and distribute (PROGRAMMING-04). Preset playlists are not a P20 feature (see Unit 6).
 3. Screen test patterns, image quality, AOI, blending, bezel (SCREENS-05…13).
 4. Detailed EDID/timing editing and EDID file import/export (INPUTS-03/04, OUTPUTS-02).
-5. OSD and gallery management (PROGRAMMING-19/20), built-in MVR templates (MVR-03).
+5. OSD and gallery management (PROGRAMMING-19/20).
 6. Project import/export, firmware and log tools (GLOBAL-02/03/04).

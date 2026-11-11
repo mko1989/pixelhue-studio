@@ -54,7 +54,7 @@ Zoom/fit; snap; guides; selection; align/distribute; layer stack ordering; copy/
 
 Availability: Model, installed card, role and feature XML determine availability.
 
-Studio has zoom, fit, snapping, screen alignment, fills and stacking. Multi-selection transforms, clipboard/mirror and complete shortcuts are missing.
+Snap, align, fill and stack order exist; Duplicate and Mirror copy added through layers/copy (WO-037). Multi-selection, distribute and copy between screens are still missing.
 
 PixelFlow: `src/pages/editor1/components/LayerEditor/components/Toolbar/index.tsx:33` in `index-BJcacpMZ.js.map`.
 
