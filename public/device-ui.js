@@ -1,4 +1,5 @@
 import { $, el, text, button, input, select, field, panelHeader, sessionPath, setDisabled } from './ui.js';
+import { renderClock, renderAntiStatic } from './device-extras-ui.js';
 import { renderLayerProfile, renderNetwork, renderMaintenance, renderCards, reconnectHint } from './device-maintenance-ui.js';
 
 export function createDeviceUI({ api, notice, operation, getSession, invalidate }) {
@@ -68,6 +69,8 @@ export function createDeviceUI({ api, notice, operation, getSession, invalidate 
       root.append(modes);
     }
     if (options.layerModes.length > 1) root.append(renderLayerProfile(state, apply));
+    if (node.time) root.append(renderClock(state, apply));
+    if (node.antiStatic) root.append(renderAntiStatic(state, apply));
     root.append(renderNetwork(state.network, act));
     if (node.subcards.length) root.append(renderCards(node.subcards));
     root.append(renderMaintenance(options, device, act));

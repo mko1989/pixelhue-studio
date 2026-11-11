@@ -36,7 +36,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
   for (const l of layers.filter(l => [20, 21].includes(l.layerId))) enrichEffects(l);
   const node = { nodeId: 1, modelId: { P20: 28944, P10: 28945, P80: 30006, Q8: 29974 }[model],
     general: { name: 'Studio device' }, version: 'V2.0.0', mode: { workMode: 4, masterSlave: 0 }, layerMode: 0,
-    fanMode: 2, deviceBeacon: 0, genlock: { type: 0, sourceId: 0, phase: { enable: 0 } }, online: 1,
+    fanMode: 2, deviceBeacon: 0, time: { timestamp: 1794248988, timezone: 70 }, antiStatic: { enable: 0, time: 100 }, genlock: { type: 0, sourceId: 0, phase: { enable: 0 } }, online: 1,
     subcards: base.cards.map(c => ({ slotId: c.slotId, modelId: c.modelId, online: 1, cardType: c.cardType })) };
   const presets = [{ guid: 'preset-a', serial: 1, name: 'Opening', type: 1, loadType: 1, sourceRegion: 4, params: ['3'],
     screens: [{ guid: 'main-screen', name: 'Main screen', layers: [{ serial: 1, type: 2 }] }], interfaces: [] }];
@@ -51,16 +51,17 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
   behavior.geometryDelay = 0; behavior.ignoreSetup = false;
   const config = umdXml.replace('<Features>', `<DCS><Device><Features><Device>
     <LayerModes Support="1" Editable="1"><Enum Value="0"/><Enum Value="1"/></LayerModes>
-    <FanMode Support="1" Editable="1"><Enum Value="1"/><Enum Value="2"/></FanMode></Device>
+    <FanMode Support="1" Editable="1"><Enum Value="1"/><Enum Value="2"/></FanMode>
+    <AntiStatic Support="1" Editable="1"><Enable Support="1"/><Time Support="1" Editable="1" Value="100" Min="100" Max="2000"/></AntiStatic></Device>
     <DeviceModes Support="1" Editable="1"><DeviceMode Value="4"/><DeviceMode Value="8"/></DeviceModes>
     <Pictures Support="1" Editable="0"><Picture type="1" Support="1"><Width Min="0" Max="65535"/><Height Min="0" Max="65535"/></Picture>
       <Picture type="2" Support="1"><Width Min="0" Max="512"/><Height Min="0" Max="512"/></Picture><Picture type="3" Support="0"><Width Max="16384"/><Height Max="8192"/></Picture></Pictures>
     <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
-    .replace('</Features>', `</Features>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`).replace('</Files>', `${layerXml}</Files>`);
-  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail'];
+    .replace('</Features>', `</Features><Timezone Support="1" Editable="1" Value="70"><Enum Value="0" Offset="-660" Name="Pacific/Midway"/><Enum Value="35" Offset="60" Name="Europe/Warsaw"/><Enum Value="70" Offset="480" Name="Asia/Shanghai"/></Timezone>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`).replace('</Files>', `${layerXml}</Files>`);
+  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock'];
   const effectPaths = ['layers/opacity', 'layers/lock', 'layers/border', 'layers/mask', 'layers/shadow', 'layers/crop', 'layers/image-quality'];
-  const customPuts = [...effectPaths, 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+  const customPuts = [...effectPaths, 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
@@ -88,6 +89,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       if (path === 'node/detail') return send(node);
       if (path === 'node/ethernet') return send({ nodeId: 1, state: 0, ethernet });
       if (path === 'audio/matrix-detail') return send(audio.detail());
+      if (path === 'node/clock') return send({ nodeId: 1, time: node.time });
       if (path === 'preset') return send({ list: presets, page: 1, totalPage: 1, totalCount: presets.length });
       if (path === 'picture/list') { const t = Number(url.searchParams.get('type')); return send({ list: pictures.filter(p => !t || p.pictureObj.type === t), page: 1, totalPage: 1 }); }
       if (path === 'picture/capacity') return send({ type: 1, usedCapacity: 1.5, totalCapacity: 512 });
@@ -134,6 +136,12 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     if (path === 'preset/update-name') for (const change of body) presets.find(p => p.guid === change.guid).name = change.name;
     if (path === 'preset/delete') for (const guid of body) presets.splice(presets.findIndex(p => p.guid === guid), 1);
     if (path === 'node/ethernet') ethernet.infos[0] = { ...ethernet.infos[0], ...body.ethernet.infos[0] };
+    if (path === 'node/clock' || path === 'node/anti-static') { // device rules: clock is PUT, anti-static is POST with 100–2000 ms
+      const bad = path === 'node/clock' ? request.method !== 'PUT' || ![0, 35, 70].includes(body.time?.timezone) || !Number.isInteger(body.time?.timestamp)
+        : request.method !== 'POST' || ![0, 1].includes(body.antiStatic?.enable) || !(body.antiStatic.time >= 100 && body.antiStatic.time <= 2000);
+      if (bad) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: 'manage param invalid' })); return; }
+      if (path === 'node/clock') node.time = body.time; else node.antiStatic = body.antiStatic;
+    }
     if (path === 'node/general') node.general = body.general;
     if (path === 'node/beacon') node.deviceBeacon = body.enable;
     if (path === 'node/fan/mode') node.fanMode = body.mode;
