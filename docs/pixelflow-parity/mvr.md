@@ -36,7 +36,7 @@ Studio: `public/mvr-geometry.js`, `lib/mvr-signals.js`, `lib/mvr-umd.js`, `lib/s
 
 Grid/snap settings; add template; auto arrange; edit/delete template; delete all; zoom/fit; clear content.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: Built-in templates via layers/template; custom templates need CustomMVRTemplate, Support=0 on the live P20.
 
 Studio local layout save/load, clear and canvas editor are not the native device template library.
 
@@ -50,7 +50,7 @@ Studio: `public/editor.js`, `public/app.js`.
 
 MVR background colour; reset.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: MVR screen XML BackgroundColor; Support=0 in the live P20 screen_8.xml, so PixelFlow does not show it there.
 
 PixelFlow: `src/pages/mvr/components/MVR-attr-bg/index.tsx:20` in `index-CFxZFQwf.js.map`.
 
@@ -60,7 +60,7 @@ PixelFlow: `src/pages/mvr/components/MVR-attr-bg/index.tsx:20` in `index-CFxZFQw
 
 Border width/height; colour; enable/style.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: Hidden by PixelFlow on N/P series including the P20 (MVRAttr.tsx:453, N_DEVICE_LIST). Q8/P80 only.
 
 PixelFlow: `src/pages/mvr/components/MVR-attr-border/index.tsx:24` in `index-CFxZFQwf.js.map`.
 
@@ -70,7 +70,7 @@ PixelFlow: `src/pages/mvr/components/MVR-attr-border/index.tsx:24` in `index-CFx
 
 Enable; text/source labels; position/style; colours; field support.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: The UMD enable/colour editor is hidden by PixelFlow on N/P series including the P20 (MVRAttr.tsx:453). Q8/P80 only.
 
 Studio accounts for reported UMD height in sizing; no UMD styling/editor yet.
 

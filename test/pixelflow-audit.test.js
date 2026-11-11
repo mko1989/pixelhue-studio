@@ -26,7 +26,7 @@ test('PixelFlow inventory has valid unique source evidence, stable feature IDs a
       assert.ok(report.includes(row.id), `Report is stale: ${row.id}`);
     }
   }
-  assert.equal(features, 121);
+  assert.equal(features, 123); // 121 from WO-032 plus AUDIO-04/05 found in WO-036
 });
 test('census reference counts match chunks and commented placeholders are not advertised as controls', async () => {
   const index = await json('census/index.json');

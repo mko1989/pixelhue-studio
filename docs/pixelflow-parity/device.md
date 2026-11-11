@@ -62,7 +62,7 @@ Studio: `public/device-ui.js`, `lib/studio-device.js`.
 
 Silent/power fan mode; device location/mapping.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: Feature XML FanMode; the live P20 reports Support=0, so PixelFlow hides fan mode there and Studio follows the XML.
 
 Fan and beacon exist; physical mapping workflow differs.
 
@@ -134,7 +134,7 @@ PixelFlow: `src/pages/devices/components/device-info/DeviceHDCP.tsx:35` in `inde
 
 HDR format conversion switch.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: Feature XML DynamicRangConversion; Support=0 on the live P20, PixelFlow hides the switch.
 
 PixelFlow: `src/pages/devices/components/device-info/DeviceHdrSwitch.tsx:17` in `index-CPe5AUX3.js.map`.
 
@@ -144,7 +144,7 @@ PixelFlow: `src/pages/devices/components/device-info/DeviceHdrSwitch.tsx:17` in 
 
 Sync MVR/SDI matrix/PGM output effects.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: Feature XML Device/Preferences; absent on the live P20, PixelFlow hides the switch. One switch (POST node/preference), not three.
 
 PixelFlow: `src/pages/devices/components/device-info/DevicePreference.tsx:26` in `index-CPe5AUX3.js.map`.
 
@@ -154,19 +154,23 @@ PixelFlow: `src/pages/devices/components/device-info/DevicePreference.tsx:26` in
 
 Select colour; apply to all layers.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: Feature XML NoSignalBackgroundColor; Support=0 on the live P20, PixelFlow hides it.
 
 PixelFlow: `src/pages/devices/components/device-info/DeviceLayerBkgColor.tsx:27` in `index-CPe5AUX3.js.map`.
 
 ## DEVICE-14 · Electrostatic protection
 
-**Studio: missing. Placement: Advanced.**
+**Studio: implemented. Placement: Advanced.**
 
 Enable; hold-last-frame duration; reset.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Enable and hold time (XML range), POST node/anti-static. Verified offline and in Chrome against the mock; hardware QA pending (WO-036).
+
 PixelFlow: `src/pages/devices/components/device-info/DeviceAntistatic.tsx:25` in `index-CPe5AUX3.js.map`.
+
+Studio: `public/device-extras-ui.js`, `lib/device-extras.js`.
 
 ## DEVICE-15 · Internal test source
 
@@ -180,13 +184,17 @@ PixelFlow: `src/pages/devices/components/device-source/index.tsx:96` in `index-C
 
 ## DEVICE-16 · Device time
 
-**Studio: missing. Placement: Advanced.**
+**Studio: implemented. Placement: Advanced.**
 
 Time zone; date; time; edit/apply.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Time zone, date and time, plus one-click "use this computer's time"; PUT node/clock. Verified offline and in Chrome against the mock; hardware QA pending (WO-036).
+
 PixelFlow: `src/pages/devices/components/device-info/DeviceTimeSetting.tsx:33` in `index-CPe5AUX3.js.map`.
+
+Studio: `public/device-extras-ui.js`, `lib/device-extras.js`.
 
 ## DEVICE-17 · Power and reset
 
@@ -206,7 +214,7 @@ Studio: `public/device-maintenance-ui.js`, `lib/studio-maintenance.js`.
 
 Enter/exit standby; blackout warning.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: Feature XML Device/StandbyMode; absent on the live P20, PixelFlow hides it.
 
 PixelFlow: `src/pages/devices/components/device-info/StandbyMode.tsx:15` in `main-Cpb41LiE.js.map`.
 

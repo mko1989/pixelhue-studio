@@ -68,51 +68,67 @@ Enable; name/serial; freeze; opacity; flip; source selection.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
-Enable/name exist; freeze/opacity/flip parity is missing.
+Opacity, flip H/V, monochrome, invert and device lock added (WO-036). Layer freeze is still missing: its PixelFlow caller is inside the vendor UI package and the endpoint is not established.
 
 PixelFlow: `src/pages/editor1/components/LayerAttribute/components/LayerAttr/components/LayerBaseAttr/LayerBaseWrapper.tsx:23` in `index-BJcacpMZ.js.map`.
 
-Studio: `public/layer-inspector.js`, `lib/studio-programming.js`.
+Studio: `public/layer-inspector.js`, `public/layer-effects-ui.js`, `lib/layer-effects.js`, `lib/studio-programming.js`.
 
 ## PROGRAMMING-06 · Border
 
-**Studio: missing. Placement: Advanced.**
+**Studio: implemented. Placement: Advanced.**
 
 Enable; horizontal/vertical width; colour; reset.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Enable, width/height, style, colour, reset. PixelFlow pre-runs a resource assessment; Studio sends the write and reports a device refusal. Verified offline and in Chrome against the mock; hardware QA pending (WO-036).
+
 PixelFlow: `src/pages/editor1/components/LayerAttribute/components/LayerAttr/components/LayerBaseAttr/LayerBorderWrapper.tsx:23` in `index-BJcacpMZ.js.map`.
+
+Studio: `public/layer-effects-ui.js`, `lib/layer-effects.js`.
 
 ## PROGRAMMING-07 · Mask
 
-**Studio: missing. Placement: Advanced.**
+**Studio: implemented. Placement: Advanced.**
 
 Enable; top/bottom/left/right; reset.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Enable, left/right/top/bottom in pixels (ratios computed as PixelFlow does), reset. Verified offline and in Chrome against the mock; hardware QA pending (WO-036).
+
 PixelFlow: `src/pages/editor1/components/LayerAttribute/components/LayerAttr/components/LayerBaseAttr/LayerMaskWrapper.tsx:20` in `index-BJcacpMZ.js.map`.
+
+Studio: `public/layer-effects-ui.js`, `lib/layer-effects.js`.
 
 ## PROGRAMMING-08 · Shadow
 
-**Studio: missing. Placement: Advanced.**
+**Studio: implemented. Placement: Advanced.**
 
 Enable; position; size/colour; reset.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Enable, offset, size, feather, colour, opacity, reset. Verified offline and in Chrome against the mock; hardware QA pending (WO-036).
+
 PixelFlow: `src/pages/editor1/components/LayerAttribute/components/LayerAttr/components/LayerBaseAttr/LayerShadowWrapper.tsx:18` in `index-BJcacpMZ.js.map`.
+
+Studio: `public/layer-effects-ui.js`, `lib/layer-effects.js`.
 
 ## PROGRAMMING-09 · Layer image effects
 
-**Studio: missing. Placement: Advanced.**
+**Studio: implemented. Placement: Advanced.**
 
 Brightness; contrast; hue; saturation; per-layer effect settings; reset.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Brightness, contrast, saturation, hue, reset (the fields layer_2.xml supports on the P20). Verified offline and in Chrome against the mock; hardware QA pending (WO-036).
+
 PixelFlow: `src/pages/editor1/components/LayerAttribute/components/LayerAttr/components/LayerEffectWrap.tsx:22` in `index-BJcacpMZ.js.map`.
+
+Studio: `public/layer-effects-ui.js`, `lib/layer-effects.js`.
 
 ## PROGRAMMING-10 · Keying/DSK
 
@@ -126,13 +142,17 @@ PixelFlow: `src/pages/editor1/components/LayerAttribute/components/LayerAttr/com
 
 ## PROGRAMMING-11 · Source crop
 
-**Studio: missing. Placement: Advanced.**
+**Studio: partial. Placement: Advanced.**
 
 Enable; source crop rectangle; ratio/pixel controls; capacity checks.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Enable and crop rectangle in percent of the source, reset (WO-036). Pixel entry and the capacity pre-assessment are missing; a device refusal is reported.
+
 PixelFlow: `src/pages/editor1/components/LayerAttribute/components/LayerAttr/components/LayerAttrAdvanced.tsx:26` in `index-BJcacpMZ.js.map`.
+
+Studio: `public/layer-effects-ui.js`, `lib/layer-effects.js`.
 
 ## PROGRAMMING-12 · Cut & Fill
 

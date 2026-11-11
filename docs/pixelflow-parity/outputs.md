@@ -74,7 +74,7 @@ PixelFlow: `src/pages/devices/components/output-attr-panel/output-output-attr/in
 
 Enable; pattern type; brightness; grid spacing/width; motion.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: Feature XML VideoInterfaceTestPattern; Support=0 on the live P20, where PixelFlow hides the whole section.
 
 Studio toggles existing pattern only; preserves its parameters.
 

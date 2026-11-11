@@ -43,7 +43,8 @@ export function renderLayerEffects(node, { state, layer: l, command }) {
     const b = fx.border, box = section(node, 'border', 'Border', b.enable), set = (change, message = 'Border saved.') => send({ border: change }, message);
     const style = select(can.borderStyles || [[b.style, `Style ${b.style}`]], b.style, 'Border style'); style.onchange = () => set({ style: Number(style.value) });
     box.append(check('Show border', b.enable, v => set({ enable: v })), grid(number('Width', b.h, 0, 512, v => set({ h: v })), number('Height', b.v, 0, 512, v => set({ v }))),
-      grid(field('Style', style), colour('Colour', b.color, v => set({ color: v }))));
+      grid(field('Style', style), colour('Colour', b.color, v => set({ color: v }))),
+      button('Reset border', () => set({ enable: false, style: 1, h: 2, v: 2, color: '#3460d8', opacity: 100 }), 'button quiet')); // layer_2.xml defaults
   }
   if (can.mask && fx.mask && [2, 4].includes(l.type)) {
     const m = fx.mask, box = section(node, 'mask', 'Mask', m.enable), set = change => send({ mask: change }, 'Mask saved.');
@@ -58,7 +59,8 @@ export function renderLayerEffects(node, { state, layer: l, command }) {
       grid(number('Offset X %', s.x, -100, 100, v => set({ x: v })), number('Offset Y %', s.y, -100, 100, v => set({ y: v }))),
       grid(number('Width %', s.width, 5, 200, v => set({ width: v })), number('Height %', s.height, 5, 200, v => set({ height: v }))),
       grid(number('Feather', s.feather, 0, 100, v => set({ feather: v })), number('Opacity %', s.opacity, 0, 100, v => set({ opacity: v }))),
-      colour('Colour', s.color, v => set({ color: v })));
+      colour('Colour', s.color, v => set({ color: v })),
+      button('Reset shadow', () => set({ enable: false, feather: 5, width: 100, height: 100, x: 5, y: 5, color: '#000000', opacity: 100 }), 'button quiet'));
   }
   if (can.quality && fx.quality) {
     const q = fx.quality, changed = q.brightness !== 100 || q.contrast !== 100 || q.hue !== 0 || q.saturation !== 100;

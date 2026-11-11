@@ -12,3 +12,7 @@ Owner (2026-11-09): "i want all the capabilities of pixelflow programming but in
 ## Source audit follow-up (WO-032)
 
 The reviewed [Programming inventory](../../docs/pixelflow-parity/programming.md) now identifies 26 feature groups and their current implementation evidence. The [full matrix and implementation sequence](../../docs/pixelflow-parity/README.md) records other-tab gaps too. Existing source/aspect/fit/alignment, live geometry, keyframe timing/curve and relative/absolute preset controls are recognized; remaining effects, crop/keying, native composites, OSD, gallery management and playlist work keep this WO OPEN.
+
+## WO-036 follow-up (2026-11-11)
+
+Layer opacity, flip, mono/invert, device lock, border, mask, shadow, colour adjustment and source crop are in the inspector ([WO-036](036_WO_pixelflow-review-audio.md)), hardware QA pending. Still open here: layer freeze (endpoint not established), keying and Cut & Fill, crop capacity pre-check, transitions beyond Cut/Fade, T-bar, layer presets, preset playlists, OSD, multiselect/clipboard, gallery management.
