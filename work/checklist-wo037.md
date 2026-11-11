@@ -30,3 +30,9 @@ On a spare output.
 - [ ] Presets made in PixelFlow are listed (if the list is empty although PixelFlow has some, note it: the list route is taken from the Companion module).
 - [ ] Save this layer as a preset; it appears in PixelFlow.
 - [ ] Apply it to another layer; rename; delete.
+
+## Screens → Test pattern and colour
+On a spare Main screen.
+- [ ] Pattern White, then Checkerboard with another spacing, then Grid with line width and motion. Off.
+- [ ] Brightness / hue, then Reset colour.
+- [ ] Note whether line patterns look right vertically (the vertical spacing field is taken from PixelFlow's code).

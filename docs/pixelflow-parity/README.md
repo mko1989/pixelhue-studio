@@ -1,6 +1,6 @@
 # PixelFlow → Studio feature inventory
 
-Audit of the local `extracted-source` snapshot, 10 November 2026, reviewed again on 11 November 2026 (WO-036). **123 reviewed feature groups** (20 implemented, 40 partial, 60 missing, 2 excluded, 1 not rendered), backed by **3,097 unique application source files in 79 source maps**. No conflicting source variants or parser errors. This is the parity checklist; Studio does **not** have full PixelFlow functionality yet.
+Audit of the local `extracted-source` snapshot, 10 November 2026, reviewed again on 11 November 2026 (WO-036). **123 reviewed feature groups** (21 implemented, 41 partial, 58 missing, 2 excluded, 1 not rendered), backed by **3,097 unique application source files in 79 source maps**. No conflicting source variants or parser errors. This is the parity checklist; Studio does **not** have full PixelFlow functionality yet.
 
 | Studio area | Inventory | Groups | Main remaining work |
 | --- | --- | ---: | --- |
@@ -25,7 +25,7 @@ The intentional functional exclusions are **live input video preview** (owner: u
 
 Checked against the live P20 XML in WO-036. These groups stay in the inventory for other models, but they are not gaps on the owner's P20 because PixelFlow does not show them there: MVR window border and UMD editor (N/P series), MVR background (`screen_8.xml` BackgroundColor Support=0), custom MVR templates, output test-pattern section (`VideoInterfaceTestPattern` Support=0), preset playlists (no `PresetGroup` in the XML), fan mode, HDR conversion switch, display-effect sync, no-signal layer colour, standby, Dante, and every LED/controller, ST2110/IP, optical-module, COM/IPC and KVM group.
 
-Still shown by PixelFlow on a P20 and not yet in Studio (after WO-037): one-switch global HDCP, output HDR/dynamic range, detailed EDID/timing editing, screen patterns/AOI/blending groups, picking a key colour from the image, OSD, gallery management, project import/export and firmware/log tools.
+Still shown by PixelFlow on a P20 and not yet in Studio (after WO-037): one-switch global HDCP, output HDR/dynamic range, detailed EDID/timing editing, screen AOI/blending/bezel groups, picking a key colour from the image, OSD, gallery management, project import/export and firmware/log tools.
 
 ## Compact UI rule
 

@@ -86,13 +86,17 @@ PixelFlow: `src/pages/screen1/components/Attr/components/HDCP/index.tsx:13` in `
 
 ## SCREENS-08 · Screen image correction
 
-**Studio: missing. Placement: Advanced.**
+**Studio: implemented. Placement: Advanced.**
 
 Screen/output image quality and colour adjustments.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Screen brightness, contrast, saturation, hue and reset: the fields the P20 screen XML supports (WO-037). Hardware QA pending.
+
 PixelFlow: `src/pages/screen1/components/Attr/components/ScreenImageQualityWrap/index.tsx:18` in `SuperScreenAttr-Cy0bH4Ty.js.map`.
+
+Studio: `public/screen-extras-ui.js`, `lib/screen-extras.js`.
 
 ## SCREENS-09 · AOI and output location
 
@@ -136,13 +140,17 @@ PixelFlow: `src/pages/screen1/components/Attr/components/ScreenEdgeCompensationW
 
 ## SCREENS-13 · Test patterns
 
-**Studio: missing. Placement: Advanced.**
+**Studio: partial. Placement: Advanced.**
 
 Solid RGBW; horizontal/vertical/slash lines; gradient; aging; spacing and controls.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Solid colours, bars, checkerboard, gradients and line patterns with brightness, spacing, line width and motion, from the screen XML (WO-037). Main screens only on the P20 (AUX XML has no pattern). Locate/custom/aging patterns are not offered. Hardware QA pending.
+
 PixelFlow: `src/pages/screen1/components/Attr/components/TestPattern/index.tsx:39` in `SuperScreenAttr-Cy0bH4Ty.js.map`.
+
+Studio: `public/screen-extras-ui.js`, `lib/screen-extras.js`.
 
 ## SCREENS-14 · 3D and virtual pixels
 

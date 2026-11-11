@@ -1,5 +1,6 @@
 import { $, el, text, button, input, select, field, panelHeader, sessionPath, setDisabled } from './ui.js';
 import { snapWindow } from './program-stage.js';
+import { renderScreenExtras } from './screen-extras-ui.js';
 
 // Output tiles (WO-016): explicit Add/Remove, drag tiles on the map with edge snapping,
 // and the screen grows to the outputs' bounding box so tiles always fit.
@@ -85,6 +86,7 @@ export function createScreensUI({ api, notice, operation, getSession, invalidate
       button(screen.ftb ? 'Clear blackout' : 'Blackout', () => command({ action: 'ftb', id: screen.id, enable: screen.ftb ? 0 : 1 }, true)),
       button('Delete screen', () => { if (window.confirm(`Delete ${screen.name} and its layers?`)) command({ action: 'delete', id: screen.id }); }, 'button danger'));
     content.append(heading);
+    const extras = renderScreenExtras(screen, state.options, command); if (extras) content.append(extras);
     if (screen.type === 32) { content.append(text('This screen uses LED topology. Its current dimensions are shown; LCD output mapping is unavailable.')); setDisabled(root, busy); return; }
     const dimensions = el('div', { className: 'studio-bulk' });
     for (const [key, label] of [['x', 'Origin X'], ['y', 'Origin Y'], ['width', 'Width'], ['height', 'Height']]) {

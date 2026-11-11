@@ -9,7 +9,7 @@ const FILES = [
   'test/mvr-sync.test.js', 'test/q8.test.js', 'test/studio-client.test.js', 'test/device-maintenance.test.js', 'test/programming-presets.test.js', 'test/mvr-layers.test.js', 'test/layer-groups.test.js', 'test/gallery-sources.test.js', 'test/mvr-input-limit.test.js',
   'api-library/test/catalog.test.cjs',
   'test/program-live.test.js', 'test/program-sources.test.js', 'test/output-capacity.test.js',
-  'test/drop-aspect.test.js', 'test/audio.test.js', 'test/layer-effects.test.js', 'test/device-extras.test.js', 'test/source-backup.test.js', 'test/self-test.test.js', 'test/output-advanced.test.js', 'test/layer-presets.test.js', 'test/input-advanced.test.js', 'test/pixelflow-audit.test.js',
+  'test/drop-aspect.test.js', 'test/audio.test.js', 'test/layer-effects.test.js', 'test/device-extras.test.js', 'test/source-backup.test.js', 'test/self-test.test.js', 'test/output-advanced.test.js', 'test/layer-presets.test.js', 'test/screen-extras.test.js', 'test/input-advanced.test.js', 'test/pixelflow-audit.test.js',
 ];
 const root = new URL('../../', import.meta.url);
 const missing = (await sourceFiles()).filter(path => /\.test\.[cm]?js$/.test(path))

@@ -1,0 +1,53 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { once } from 'node:events';
+import { PixelhueClient } from '../lib/pixelhue.js';
+import { readScreens, applyScreens } from '../lib/studio-screens.js';
+import { createMockStudio } from '../test-support/mock-studio.js';
+
+const listen = async server => { server.listen(0, '127.0.0.1'); await once(server, 'listening'); return server.address().port; };
+const close = server => new Promise(resolve => { server.close(resolve); server.closeAllConnections(); });
+async function fixture(t) {
+  const mock = createMockStudio(), port = await listen(mock.server), client = new PixelhueClient();
+  t.after(() => close(mock.server)); await client.connect({ host: '127.0.0.1', apiPort: port }); return { mock, client };
+}
+const last = (mock, path) => mock.writes.filter(w => w.path === path).at(-1)?.body;
+
+test('screen test pattern options come from screen XML per type; the spacing unit follows the pattern', async t => {
+  const { client, mock } = await fixture(t);
+  let state = await readScreens(client);
+  assert.equal(state.options[2].pattern.types.length, 22); assert.ok(!state.options[2].pattern.types.some(([v]) => v === 768 || v === 65535)); // only patterns PixelFlow offers
+  assert.equal(state.options[4].pattern, null); assert.deepEqual(state.options[4].quality, ['brightness', 'contrast', 'hue', 'saturation']);
+  assert.deepEqual(state.screens.find(s => s.id === 1).pattern, { enable: false, type: 0, bright: 3, grid: 5, lineWidth: 1, speed: 3 });
+  state = await applyScreens(client, { action: 'pattern', id: 1, pattern: { enable: true, type: 7, bright: 4 } });
+  assert.deepEqual(last(mock, 'screen/test-pattern'), [{ screenId: 1, testPattern: { enable: 1, type: 7, bright: 4, grid: 5, gridType: 0, gridLineWidth: 1, speed: 3 } }]);
+  // Checkerboard (gear) → grid lines (pixels): spacing falls back to the XML pixel default and carries a vertical spacing.
+  state = await applyScreens(client, { action: 'pattern', id: 1, pattern: { type: 516 } });
+  assert.deepEqual(last(mock, 'screen/test-pattern')[0].testPattern, { enable: 1, type: 516, bright: 4, grid: 32, gridType: 1, gridLineWidth: 1, speed: 3, verticalGrid: 32 });
+  state = await applyScreens(client, { action: 'pattern', id: 1, pattern: { grid: 100, lineWidth: 4, speed: 0 } });
+  assert.deepEqual(state.screens.find(s => s.id === 1).pattern, { enable: true, type: 516, bright: 4, grid: 100, lineWidth: 4, speed: 0 });
+  state = await applyScreens(client, { action: 'pattern', id: 1, pattern: { type: 2 } }); // back to a solid colour: gear unit, no vertical spacing
+  assert.deepEqual(last(mock, 'screen/test-pattern')[0].testPattern, { enable: 1, type: 2, bright: 4, grid: 5, gridType: 0, gridLineWidth: 4, speed: 0 });
+  state = await applyScreens(client, { action: 'pattern', id: 1, pattern: { enable: false } });
+  assert.equal(state.screens.find(s => s.id === 1).pattern.enable, false); assert.equal(mock.screens.find(s => s.screenId === 1).testPattern.type, 2);
+});
+
+test('screen colour sends the whole imageQuality object; invalid requests and AUX patterns write nothing', async t => {
+  const { client, mock } = await fixture(t), before = structuredClone(mock.screens.find(s => s.screenId === 2).imageQuality);
+  const state = await applyScreens(client, { action: 'quality', id: 2, quality: { brightness: 120, hue: -10 } });
+  assert.deepEqual(last(mock, 'screen/image-quality'), [{ screenId: 2, imageQuality: { ...before, brightness: { ...before.brightness, coefficient: 120 }, hue: -10 } }]);
+  assert.deepEqual(state.screens.find(s => s.id === 2).quality, { brightness: 120, contrast: 100, hue: -10, saturation: 90 });
+  const writes = mock.writes.length;
+  await assert.rejects(applyScreens(client, { action: 'pattern', id: 2, pattern: { enable: true } }), /unavailable on this screen/); // AUX
+  await assert.rejects(applyScreens(client, { action: 'pattern', id: 1, pattern: { type: 768 } }), /Unsupported test pattern/);
+  await assert.rejects(applyScreens(client, { action: 'pattern', id: 1, pattern: { type: 7, grid: 9 } }), /Unsupported pattern spacing/);
+  await assert.rejects(applyScreens(client, { action: 'pattern', id: 1, pattern: { type: 512, grid: 2000 } }), /Pattern spacing/);
+  await assert.rejects(applyScreens(client, { action: 'pattern', id: 1, pattern: { colour: 1 } }), /Unsupported test pattern setting/);
+  await assert.rejects(applyScreens(client, { action: 'quality', id: 1, quality: { gamma: 2 } }), /Unsupported screen colour/);
+  await assert.rejects(applyScreens(client, { action: 'quality', id: 1, quality: { saturation: 201 } }), /Saturation/);
+  assert.equal(mock.writes.length, writes);
+  await assert.rejects(client.call('screen/test-pattern', [{ screenId: 1, testPattern: { enable: 1, type: 512, bright: 3, grid: 5, gridType: 0, gridLineWidth: 1, speed: 3 } }]), /code 8210/); // wrong unit
+  await assert.rejects(client.call('screen/image-quality', [{ screenId: 1, imageQuality: { hue: 1 } }]), /code 8210/);
+  mock.behavior.ignoreScreenExtras = true;
+  await assert.rejects(applyScreens(client, { action: 'pattern', id: 1, pattern: { enable: true } }), /did not retain the test pattern/);
+});
