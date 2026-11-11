@@ -105,6 +105,8 @@ export function renderLayerToolbar(node, { state, layer: l, screen, command, loc
   const order = el('div', { className: 'tool-buttons' });
   order.append(button('Front', () => command({ action: 'zorder', screenId: l.screenId, id: l.id, to: 3 }, 'Layer brought to front.')),
     button('Back', () => command({ action: 'zorder', screenId: l.screenId, id: l.id, to: 4 }, 'Layer sent to back.')),
+    button('Duplicate', () => command({ action: 'copy', screenId: l.screenId, id: l.id }, 'Layer duplicated.')),
+    button('Mirror', () => command({ action: 'copy', screenId: l.screenId, id: l.id, mirror: true }, 'Mirrored copy created.')),
     button('Clear', () => clearLayer(state, l, command), 'button danger'));
   node.append(name, block('Position & size', fields), block('Aspect', aspect, keepLabel), block('Align to screen', align), block('Fill', fill), block('Layer', order));
   if (locked) for (const control of node.querySelectorAll('input,select,button')) control.dataset.fixed = 'true';

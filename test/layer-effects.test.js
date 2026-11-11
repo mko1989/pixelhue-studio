@@ -156,3 +156,23 @@ test('Cut & Fill switches on the selected layer and edits curve, position, inver
   await assert.rejects(fx(client, { cutFill: { enable: true } }), /cannot be combined with keying/);
   await assert.rejects(client.call('layers/cut-fill-switch', [{ layerId: 20, enable: 1 }]), /code 8298/);
 });
+
+test('duplicate and mirror copy use layers/copy with the PixelFlow body; a Cut & Fill layer brings its cut layer', async t => {
+  const { client, mock } = await fixture(t), copy = extra => applyProgramming(client, { action: 'copy', screenId: 1, id: 20, ...extra });
+  const before = { ...raw(mock).window }; // global; main screen origin (-100, 50), 1920 wide
+  let state = await copy({});
+  assert.deepEqual(last(mock, 'layers/copy'), [{ layerId: 20, flipType: 0, window: { ...before, x: before.x + 40, y: before.y + 40 }, namePrefix: 'Layer ' }]);
+  assert.equal(state.layers.filter(l => l.screenId === 1 && l.scene === 2).length, 2);
+  state = await copy({ mirror: true });
+  const localX = before.x + 100, mirrored = 1920 - before.width - localX;
+  assert.deepEqual(last(mock, 'layers/copy'), [{ layerId: 20, flipType: 1, window: { ...before, x: mirrored - 100 }, namePrefix: 'Layer ' }]);
+  assert.ok(state.layers.some(l => l.window.x === mirrored && l.fx.flipH));
+  await fx(client, { cutFill: { enable: true } }); await fx(client, { cutFill: { x: 50, width: 50 } });
+  await copy({});
+  const body = last(mock, 'layers/copy'); assert.equal(body.length, 2); assert.equal(body[1].layerId, raw(mock).cutId);
+  assert.deepEqual(body[1].window, { x: Math.round(640 * 0.5) + body[0].window.x, y: body[0].window.y, width: 320, height: 360 });
+  mock.behavior.resourceShort = true; const writes = mock.writes.length;
+  await assert.rejects(copy({}), /no free layer resources/);
+  await assert.rejects(copy({ mirror: 'yes' }), /Unsupported copy mode/);
+  assert.equal(mock.writes.length, writes + 1);
+});

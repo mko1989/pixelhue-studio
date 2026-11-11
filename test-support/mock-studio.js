@@ -71,7 +71,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
   const layerPresetPaths = ['create', 'apply-modify', 'delete', 'apply', 'apply-access'].map(p => `layers/layer-preset/${p}`), layerPresets = installLayerPresets(layers, screens);
   const customPuts = [...effectPaths, ...cutFillPaths, ...layerPresetPaths, 'node/selfcheck', 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/color-space', 'interface/color-range', 'interface/color-gamut', 'interface/image-quality', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
-    'screen/test-pattern', 'screen/image-quality', 'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
+    'screen/test-pattern', 'screen/image-quality', 'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/copy', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
     const url = new URL(request.url, 'http://localhost'), path = url.pathname.replace('/unico/v1/', '');
     if (request.method === 'GET' && url.pathname.startsWith('/picture/')) { // device web-root thumbnails
@@ -219,9 +219,14 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       else screens.splice(screens.indexOf(gone), 1);
       for (let i = layers.length - 1; i >= 0; i--) if (layers[i].layerIdObj.attachScreenId === change.screenId) layers.splice(i, 1);
     }
-    if (behavior.resourceShort && ['layers/create', 'layers/source'].includes(path)) {
+    if (behavior.resourceShort && ['layers/create', 'layers/source', 'layers/copy'].includes(path)) {
       response.setHeader('Content-Type', 'application/json');
       response.end(JSON.stringify({ code: 8212, message: 'manage mio error: create layer {...} resource not enough' })); return;
+    }
+    if (path === 'layers/copy') for (const item of body) { // the copy keeps every property of its source; only window and flip are given
+      const from = layers.find(l => l.layerId === item.layerId); if (!from || !item.window || ![0, 1, 2, 3].includes(item.flipType)) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: 'layer param invalid' })); return; }
+      const id = Math.max(...layers.map(l => l.layerId)) + 1, copy = structuredClone(from);
+      layers.push({ ...copy, layerId: id, cutId: 0, window: { ...item.window }, general: { ...copy.general, flipType: item.flipType, name: `${item.namePrefix}${id}` }, serial: nextSerial(from.layerIdObj.attachScreenId, from.layerIdObj.sceneType), zorder: Math.max(...layers.map(l => l.zorder || 0)) + 1 });
     }
     if (path === 'layers/create') {
       const id = Math.max(...layers.map(l => l.layerId)) + 1;
