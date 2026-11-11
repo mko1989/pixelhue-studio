@@ -2,6 +2,7 @@ import http from 'node:http';
 import { createMockDevice } from './mock-p20.js';
 import { umdXml } from './mvr-umd.js';
 import { installAudio } from './mock-audio.js';
+import { outputXml, enrichOutput, outputWriteError } from './mock-output-advanced.js';
 import { layerXml, enrichEffects, applyEffectWrite } from './mock-effects.js';
 
 export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
@@ -17,8 +18,9 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
   for (const i of interfaces.filter(i => [4, 8, 16].includes(i.auxiliaryInfo.connectorInfo.interfaceType))) {
     i.presetThumbTiming ||= { width: 1920, height: 1080, frame: 60, standardType: 6, interlaced: 0 };
     i.colorDepth = { preset: 8, actual: 8 }; i.hdcp = { enable: 0, preset: 1, actual: 1 };
-    i.testPattern = { enable: 0, type: 5, bright: 3, grid: 7 };
+    i.testPattern = { enable: 0, type: 5, bright: 3, grid: 7 }; enrichOutput(i);
   }
+  let selfCheckPolls = 0, selfChecked = false;
   const audio = installAudio(interfaces), sourceBackup = { enable: 0, primaryFirst: 0, backup: [] };
   screens[0].guid = 'mvr-screen';
   screens.push({ screenId: 1, guid: 'main-screen', screenIdObj: { type: 2 }, general: { name: 'Main screen' },
@@ -35,7 +37,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     window: { x, y: 70, width: 640, height: 360 }, enable: 1, zorder: 1 });
   for (const l of layers.filter(l => [20, 21].includes(l.layerId))) enrichEffects(l);
   const node = { nodeId: 1, modelId: { P20: 28944, P10: 28945, P80: 30006, Q8: 29974 }[model],
-    general: { name: 'Studio device' }, version: 'V2.0.0', mode: { workMode: 4, masterSlave: 0 }, layerMode: 0,
+    general: { name: 'Studio device' }, version: 'V2.0.0', status: 1, mode: { workMode: 4, masterSlave: 0 }, layerMode: 0,
     fanMode: 2, deviceBeacon: 0, time: { timestamp: 1794248988, timezone: 70 }, antiStatic: { enable: 0, time: 100 }, genlock: { type: 0, sourceId: 0, phase: { enable: 0 } }, online: 1,
     subcards: base.cards.map(c => ({ slotId: c.slotId, modelId: c.modelId, online: 1, cardType: c.cardType })) };
   const presets = [{ guid: 'preset-a', serial: 1, name: 'Opening', type: 1, loadType: 1, sourceRegion: 4, params: ['3'],
@@ -58,11 +60,11 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       <Picture type="2" Support="1"><Width Min="0" Max="512"/><Height Min="0" Max="512"/></Picture><Picture type="3" Support="0"><Width Max="16384"/><Height Max="8192"/></Picture></Pictures>
     <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
-    .replace('</Features>', `</Features><Timezone Support="1" Editable="1" Value="70"><Enum Value="0" Offset="-660" Name="Pacific/Midway"/><Enum Value="35" Offset="60" Name="Europe/Warsaw"/><Enum Value="70" Offset="480" Name="Asia/Shanghai"/></Timezone><SourceBackup Support="1" Editable="1"><SwitchStrategy Value="1"/><CapacityStrategy Value="0"/></SourceBackup>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`).replace('</Files>', `${layerXml}</Files>`);
-  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock', 'system/ctrl/source-backup'];
+    .replace('</Features>', `</Features><Timezone Support="1" Editable="1" Value="70"><Enum Value="0" Offset="-660" Name="Pacific/Midway"/><Enum Value="35" Offset="60" Name="Europe/Warsaw"/><Enum Value="70" Offset="480" Name="Asia/Shanghai"/></Timezone><DeviceSelfTest Support="1" Editable="1" IsBlock="0"/><SourceBackup Support="1" Editable="1"><SwitchStrategy Value="1"/><CapacityStrategy Value="0"/></SourceBackup>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`).replace('</Files>', `${layerXml}${outputXml}</Files>`);
+  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock', 'system/ctrl/source-backup', 'node/selfcheck'];
   const effectPaths = ['layers/opacity', 'layers/lock', 'layers/border', 'layers/mask', 'layers/shadow', 'layers/crop', 'layers/image-quality'];
-  const customPuts = [...effectPaths, 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
-    'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
+  const customPuts = [...effectPaths, 'node/selfcheck', 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+    'interface/color-depth', 'interface/color-space', 'interface/color-range', 'interface/color-gamut', 'interface/image-quality', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
     const url = new URL(request.url, 'http://localhost'), path = url.pathname.replace('/unico/v1/', '');
@@ -86,11 +88,16 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     const send = data => { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 0, data })); };
     if (!request.headers.authorization) { response.writeHead(401).end(); return; }
     if (request.method === 'GET') {
-      if (path === 'node/detail') return send(node);
+      if (path === 'node/detail') { if (node.status === 10 && --selfCheckPolls <= 0) node.status = 1; return send(node); }
       if (path === 'node/ethernet') return send({ nodeId: 1, state: 0, ethernet });
       if (path === 'audio/matrix-detail') return send(audio.detail());
       if (path === 'node/clock') return send({ nodeId: 1, time: node.time });
       if (path === 'system/ctrl/source-backup') return send({ sourceBackup });
+      if (path === 'node/selfcheck') { // checkType 0 = power-on check, 1 = last device test
+        const tested = url.searchParams.get('checkType') === '1';
+        return send({ nodeId: 1, checkType: tested ? 1 : 0, parts: tested && !selfChecked ? [] : [{ slotId: 100, modelId: node.modelId, boardId: 0, section: [
+          { sequence: 1, type: 1, index: 0, name: 'Temperature', value: '50', showBrief: 1, state: 0 }, { sequence: 2, type: 2, index: 0, name: 'Fan', value: '2400', showBrief: 1, state: behavior.fanFault ? 1 : 0 }] }] });
+      }
       if (path === 'preset') return send({ list: presets, page: 1, totalPage: 1, totalCount: presets.length });
       if (path === 'picture/list') { const t = Number(url.searchParams.get('type')); return send({ list: pictures.filter(p => !t || p.pictureObj.type === t), page: 1, totalPage: 1 }); }
       if (path === 'picture/capacity') return send({ type: 1, usedCapacity: 1.5, totalCapacity: 512 });
@@ -145,6 +152,10 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     if (path === 'preset/update-name') for (const change of body) presets.find(p => p.guid === change.guid).name = change.name;
     if (path === 'preset/delete') for (const guid of body) presets.splice(presets.findIndex(p => p.guid === guid), 1);
     if (path === 'node/ethernet') ethernet.infos[0] = { ...ethernet.infos[0], ...body.ethernet.infos[0] };
+    if (path === 'node/selfcheck') { // device rule: POST only, refused while busy
+      if (request.method !== 'POST' || body.nodeId !== 1 || node.status !== 1) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: 'node busy' })); return; }
+      node.status = 10; selfCheckPolls = 2; selfChecked = true; return send({});
+    }
     if (path === 'node/clock' || path === 'node/anti-static') { // device rules: clock is PUT, anti-static is POST with 100–2000 ms
       const bad = path === 'node/clock' ? request.method !== 'PUT' || ![0, 35, 70].includes(body.time?.timezone) || !Number.isInteger(body.time?.timestamp)
         : request.method !== 'POST' || ![0, 1].includes(body.antiStatic?.enable) || !(body.antiStatic.time >= 100 && body.antiStatic.time <= 2000);
@@ -157,9 +168,13 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     if (path === 'node/layer-mode') node.layerMode = body.layerMode;
     if (path === 'node/mode') node.mode = body.mode;
     if (path === 'node/genlock') node.genlock = body.genlock;
-    if (path.startsWith('interface/')) for (const change of body) {
-      const row = interfaces.find(i => i.interfaceId === change.interfaceId), key = path.split('/')[1];
-      const field = { 'color-depth': 'colorDepth', hdcp: 'hdcp', 'test-pattern': 'testPattern' }[key]; row[field] = { ...row[field], ...change[field] };
+    if (path.startsWith('interface/')) {
+      const key = path.split('/')[1], field = { 'color-depth': 'colorDepth', 'color-space': 'colorSpace', 'color-range': 'colorRange', 'color-gamut': 'colorGamut', 'image-quality': 'imageQuality', hdcp: 'hdcp', 'test-pattern': 'testPattern' }[key];
+      const refused = body.map(change => { const row = interfaces.find(i => i.interfaceId === change.interfaceId); return row ? outputWriteError(row, field, change[field]) : 'interface invalid'; }).find(Boolean);
+      if (refused) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: refused })); return; }
+      if (!behavior.ignoreOutputAdvanced || !['colorSpace', 'colorRange', 'colorGamut', 'imageQuality'].includes(field)) for (const change of body) {
+        const row = interfaces.find(i => i.interfaceId === change.interfaceId); row[field] = { ...row[field], ...change[field] };
+      }
     }
     if (path === 'screen/create-empty-screen') {
       // P20 rule (WO-019): only the full ucenter body (snList/guid/name) yields an enabled screen.

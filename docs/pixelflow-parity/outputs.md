@@ -38,11 +38,11 @@ Bit depth; sampling; gamut; dynamic range; HDR parameters.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
-Studio only edits bit depth.
+Bit depth in the table; sampling, quantization range and gamut in Advanced, from the connector XML for the output role (WO-037). Dynamic range/HDR parameters and PixelFlow's bandwidth pre-check are missing; a device refusal is reported.
 
 PixelFlow: `src/pages/devices/components/output-attr-panel/output-base-attr/OutputBaseField.tsx:19` in `index-CPe5AUX3.js.map`.
 
-Studio: `public/outputs-ui.js`, `lib/studio-outputs.js`.
+Studio: `public/outputs-ui.js`, `public/output-advanced.js`, `lib/output-advanced.js`, `lib/studio-outputs.js`.
 
 ## OUTPUTS-04 · HDCP policy
 
@@ -60,13 +60,17 @@ Studio: `public/outputs-ui.js`, `lib/studio-outputs.js`.
 
 ## OUTPUTS-05 · Output colour correction
 
-**Studio: missing. Placement: Advanced.**
+**Studio: partial. Placement: Advanced.**
 
 Colour temperature; RGB brightness/contrast; hue; saturation; reset.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+RGB/master brightness and contrast, hue, saturation, reset and copy to all outputs (WO-037). Colour temperature and gamma are not offered: the P20 feature XML marks them unsupported for outputs.
+
 PixelFlow: `src/pages/devices/components/output-attr-panel/output-output-attr/index.tsx:37` in `index-CPe5AUX3.js.map`.
+
+Studio: `public/output-advanced.js`, `lib/output-advanced.js`.
 
 ## OUTPUTS-06 · Output test pattern
 

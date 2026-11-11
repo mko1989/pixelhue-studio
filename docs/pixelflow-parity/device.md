@@ -110,23 +110,31 @@ PixelFlow: `src/pages/devices/components/device-info/deviceBackup/index.tsx:19` 
 
 ## DEVICE-09 · Source backup
 
-**Studio: missing. Placement: Advanced.**
+**Studio: implemented. Placement: Advanced.**
 
 Primary/backup source pairs; auto switch; primary preferred; crop auto backup; delete pair/all; backup status.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Enable, primary preferred, add/remove pairs (same capacity), auto/manual and source in use, remove all. Crop-source backup is not offered (AutoCropSourceConfig Support=0 on the P20). Verified offline and in Chrome against the mock; hardware QA pending (WO-037).
+
 PixelFlow: `src/pages/devices/components/device-info/inputSourceBackup/index.tsx:79` in `index-CPe5AUX3.js.map`.
+
+Studio: `public/source-backup-ui.js`, `lib/source-backup.js`.
 
 ## DEVICE-10 · Global HDCP
 
-**Studio: missing. Placement: Advanced.**
+**Studio: partial. Placement: Advanced.**
 
 Input/output HDCP policy.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+No single device-wide switch: outputs have a bulk HDCP fill, inputs are per input in Advanced. PixelFlow also sends screen/hdcp for MVR screens with the output switch.
+
 PixelFlow: `src/pages/devices/components/device-info/DeviceHDCP.tsx:35` in `index-CPe5AUX3.js.map`.
+
+Studio: `public/outputs-ui.js`, `lib/studio-outputs.js`, `lib/input-advanced.js`.
 
 ## DEVICE-11 · HDR conversion
 
@@ -220,13 +228,17 @@ PixelFlow: `src/pages/devices/components/device-info/StandbyMode.tsx:15` in `mai
 
 ## DEVICE-19 · Diagnostics
 
-**Studio: missing. Placement: Advanced.**
+**Studio: implemented. Placement: Advanced.**
 
 Diagnostic items; values; normal/abnormal status; exception details.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Power-on check result, run self-test on an idle device, abnormal items first. Verified offline and in Chrome against the mock; hardware QA pending (WO-037).
+
 PixelFlow: `src/pages/devices/components/device-self-check/device-self-check-table/index.tsx:23` in `index-CPe5AUX3.js.map`.
+
+Studio: `public/self-test-ui.js`, `lib/self-test.js`.
 
 ## DEVICE-20 · MVR connector configuration
 

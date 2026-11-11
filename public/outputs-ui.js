@@ -1,7 +1,9 @@
 import { $, el, text, button, input, select, field, cell, table, panelHeader, sessionPath, setDisabled } from './ui.js';
+import { createOutputAdvanced } from './output-advanced.js';
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 export function createOutputsUI({ api, notice, operation, getSession, invalidate }) {
   const root = $('outputs-content'); let state, session, busy = false, drafts = new Map(), checked = new Set();
+  const advanced = createOutputAdvanced({ api, notice, operation, getSession });
   function pending() {
     return (state?.outputs || []).flatMap(row => {
       const draft = drafts.get(row.id), change = { id: row.id };
@@ -23,7 +25,7 @@ export function createOutputsUI({ api, notice, operation, getSession, invalidate
   async function refresh() {
     if (!getSession()) return;
     if (pending().length && !window.confirm('Discard pending output changes?')) return;
-    await operation(async () => adopt(await api(sessionPath('outputs', getSession()))));
+    await operation(async () => adopt(await api(sessionPath('outputs', getSession())))); await advanced.refresh();
   }
   const presetTiming = p => Object.fromEntries(['width', 'height', 'frame', 'standardType', 'interlaced'].map(k => [k, p[k]]));
   function renderCapacity() {
@@ -102,7 +104,7 @@ export function createOutputsUI({ api, notice, operation, getSession, invalidate
       }
       body.append(tr);
     }
-    root.append(wrap, text('Copy ports retain their routing. Timing changes apply to primary ports.'));
+    root.append(wrap, text('Copy ports retain their routing. Timing changes apply to primary ports.'), advanced.element);
     const footer = el('footer', { className: 'action-bar' });
     const dirty = el('span', { id: 'output-dirty' });
     const save = button('Apply outputs', () => operation(async () => {
@@ -115,7 +117,7 @@ export function createOutputsUI({ api, notice, operation, getSession, invalidate
     }), 'button primary'); save.id = 'output-save'; footer.append(dirty, save); root.append(footer); controls();
   }
   render();
-  return { open: () => state ? undefined : refresh(), refresh, hasChanges: () => pending().length > 0,
-    reset(next) { if (session === next) return; session = next; state = undefined; drafts.clear(); render(); },
-    setBusy(value) { busy = value; controls(); } };
+  return { open: () => state ? undefined : refresh(), refresh, hasChanges: () => pending().length > 0 || advanced.hasChanges(),
+    reset(next) { if (session === next) return; session = next; state = undefined; drafts.clear(); advanced.reset(); render(); },
+    setBusy(value) { busy = value; controls(); advanced.setBusy(value); } };
 }

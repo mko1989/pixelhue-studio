@@ -1,12 +1,13 @@
 import { $, el, text, button, input, select, field, panelHeader, sessionPath, setDisabled } from './ui.js';
 import { createSourceBackup } from './source-backup-ui.js';
+import { createSelfTest } from './self-test-ui.js';
 import { renderClock, renderAntiStatic } from './device-extras-ui.js';
 import { renderLayerProfile, renderNetwork, renderMaintenance, renderCards, reconnectHint } from './device-maintenance-ui.js';
 
 export function createDeviceUI({ api, notice, operation, getSession, invalidate }) {
   const root = $('device-settings');
   let state, session, busy = false, controls = {};
-  const backup = createSourceBackup({ api, operation, notice });
+  const backup = createSourceBackup({ api, operation, notice }), selfTest = createSelfTest({ api, operation, notice });
   function values() {
     if (!state) return {};
     const changes = {};
@@ -21,7 +22,7 @@ export function createDeviceUI({ api, notice, operation, getSession, invalidate 
   }
   async function refresh() {
     if (!getSession()) return;
-    await operation(async () => { state = await api(sessionPath('device', getSession())); session = state.session; await backup.load(session); render(); });
+    await operation(async () => { state = await api(sessionPath('device', getSession())); session = state.session; await Promise.all([backup.load(session).catch(() => backup.reset()), selfTest.load(session).catch(() => selfTest.reset())]); render(); });
   }
   async function apply(changes) {
     await operation(async () => {
@@ -76,6 +77,7 @@ export function createDeviceUI({ api, notice, operation, getSession, invalidate 
     backup.render(); root.append(backup.element);
     root.append(renderNetwork(state.network, act));
     if (node.subcards.length) root.append(renderCards(node.subcards));
+    selfTest.render(); root.append(selfTest.element);
     root.append(renderMaintenance(options, device, act));
     if (!state.configurationAvailable) root.append(text('Capability information is unavailable. Only reported settings are shown.'));
     setDisabled(root, busy);
@@ -83,6 +85,6 @@ export function createDeviceUI({ api, notice, operation, getSession, invalidate 
   render();
   return { open: () => state ? undefined : refresh(), refresh,
     hasChanges: () => Object.keys(values()).length > 0,
-    reset(next) { if (session === next) return; session = next; state = undefined; backup.reset(); render(); },
+    reset(next) { if (session === next) return; session = next; state = undefined; backup.reset(); selfTest.reset(); render(); },
     setBusy(value) { busy = value; setDisabled(root, busy); } };
 }
