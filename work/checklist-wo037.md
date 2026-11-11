@@ -25,3 +25,8 @@ On a spare output.
 - [ ] Cut & Fill on: does the layer stay in Studio's layer list? Does PixelFlow show a cut layer?
 - [ ] Choose a cut source, invert, change width, Reset. Cut & Fill off.
 - [ ] If the layer disappears or anything is refused, note the exact message — the device's layer model here is assumed.
+
+## Programming → Layer inspector → Layer presets
+- [ ] Presets made in PixelFlow are listed (if the list is empty although PixelFlow has some, note it: the list route is taken from the Companion module).
+- [ ] Save this layer as a preset; it appears in PixelFlow.
+- [ ] Apply it to another layer; rename; delete.

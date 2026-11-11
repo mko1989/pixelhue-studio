@@ -150,3 +150,5 @@
 .backup-block .checkbox-label { align-self: center; }.backup-block .mapping-row label:first-child { display: grid; min-width: 0; color: var(--muted); }
 .selftest-bad { color: #ffc4ba; }.selftest-details { width: 100%; }.selftest-details summary { cursor: pointer; font-size: 13px; }.selftest-block > span { align-self: center; }
 .backup-block > .checkbox-label { display: flex; align-items: center; gap: 6px; min-width: 0; min-height: 34px; color: var(--text); }.backup-block input[type="checkbox"] { width: auto; min-height: 0; }
+.layer-preset-list { display: grid; gap: 4px; }.layer-preset-list .preset-item { display: flex; gap: 2px; }
+.program-properties .layer-preset-apply { flex: 1 1 auto; text-align: left; min-width: 0; overflow: hidden; text-overflow: ellipsis; }.layer-presets .button.quiet { flex: 0 0 auto; width: auto; }

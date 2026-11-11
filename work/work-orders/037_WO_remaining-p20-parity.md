@@ -1,6 +1,6 @@
 # WO-037 — Remaining PixelFlow features for the P20
 
-**Status: IN PROGRESS (2026-11-11 — units 1–3 landed: source backup, self-test, output format/colour; 207 offline tests + mock Chrome; no hardware write possible; remaining items listed under "Still open")**
+**Status: IN PROGRESS (2026-11-11 — units 1–6 landed: source backup, self-test, output format/colour, keying, Cut & Fill, layer presets; 212 offline tests + mock Chrome; no hardware write possible; remaining items listed under "Still open")**
 
 Owner (2026-11-11, after WO-036): "start implementing all the missing items". Scope is the list in `docs/pixelflow-parity/README.md` "Still shown by PixelFlow on a P20 and not yet in Studio". Screen audio is excluded by owner decision (routing only). Items PixelFlow hides on a P20 stay out. The P20 is still unreachable from this Mac, so each unit is proven against PixelFlow's source, the captured live XML/JSON and a mock that enforces the known device rules; hardware QA goes to `work/checklist-wo037.md`.
 
@@ -46,17 +46,28 @@ Owner (2026-11-11, after WO-036): "start implementing all the missing items". Sc
 - **Unproven**: what the device reports after the switch. The source implies the selected layer becomes type 256 with `cutId` set and a type-128 layer appears. Before this WO Studio listed only types 2/4/32, so a layer switched to Cut & Fill in PixelFlow would have vanished from Studio's Programming tab. `noSource` is taken as 1 from the layer_2.xml source-type comment; its enum definition was not found.
 - Layer freeze: searched every writer of `general.isFreeze`. The editor only reads it; the only writer is the layer-preset "freeze" option. It is not a missing direct control.
 
+### Unit 6 — Layer presets (PROGRAMMING-23); preset playlists are not a P20 feature
+- Preset playlists ("loop" tab, `preset/group/*`): the tab is added only when feature XML `Features/Preset/PresetGroup` is supported (`editor1/hooks/scenseHooks.ts:78,138`). The live P20 XML has no `PresetGroup` element, so PixelFlow does not show it on a P20. `preset/group/play` has no caller in the recovered app source. PROGRAMMING-24 is therefore not a P20 gap and is not built.
+- Layer presets: gate `Features/Layer/LayerPreset` (`scenseHooks.ts:97`); live feature.xml:96 `<LayerPreset Support="1" Editable="1" maxCount="1024">` with eight `LabelColor R/G/B` entries.
+- API (`src/api/layer-preset/index.ts`):
+  - List: PixelFlow uses `ucenter/layers/layer-preset/list-detail` (its controller service). The device-direct `GET layers/layer-preset/list-detail` → `{ totalCount, list: [{ layerPresetId, general { name, labelColor { R, G, B } }, … }] }` is what the Companion module uses (`companion …/src/services/ApiClient.ts:325`, `interfaces/LayerPreset.ts`).
+  - Create: `PUT layers/layer-preset/create [preset]`. Apply: first `PUT layers/layer-preset/apply-access [{ layerPreset, layerIds: [{ layerId }] }]` → `data.fails[].results[]`; when empty, `PUT layers/layer-preset/apply` with the same body (`handleLayerPresetApply.ts`). Rename/colour: `PUT layers/layer-preset/apply-modify [whole preset with general changed]`. Delete: `DELETE layers/layer-preset/delete [{ layerPresetId }]` → `data.fails`. Duplicate name = code 8311.
+  - Preset body (`handleLayerPresetCreate.ts`, `LayerPreset/const.ts`): every part is always sent with its own `enable`: `sourcePreset { source }`, `posPreset { x, y }` (relative to the screen), `sizePreset { width, height }`, `borderPreset { border }`, `effectPreset { isMonochrome, isInverse, imageQuality, opacity }`, `shadowPreset { shadow }`, `flipPreset { flipType }`, `maskPreset { mask }`, `cutFillPreset { isInverse, cutFill, source }` (from the linked cut layer, or defaults), `cropPreset { crop }`, `freezePreset { isFreeze }`, plus `general { name, labelColor }`. In `sourcePreset.source` the `primary` ids replace `general` ids and `primary` is removed.
+- No live sample of a stored layer preset exists.
+
 ## What was done
 
 - **Source backup**: `lib/source-backup.js` (read, whole-object read-modify-write, pair rules checked before the write, 8297 explained, readback), `/api/source-backup`, `public/source-backup-ui.js` as a Device tab block (on/off, primary preferred, pair rows with Auto/Manual and source in use, add pair with same-capacity filtering, remove, remove all). Studio additionally refuses an input that already belongs to a pair; PixelFlow's rule for that was not traced, so this is the conservative reading of `SwitchStrategy 1`.
 - **Self-test**: `lib/self-test.js`, `/api/self-test`, `public/self-test-ui.js` (last result summary, abnormal items first, Run self-test with confirmation). A device that does not answer `node/selfcheck` simply hides the block.
 - **Output Advanced**: `lib/interface-config.js` role-aware lookup; `lib/output-advanced.js`, `/api/output-advanced`, `public/output-advanced.js` — a collapsed "Advanced · format and colour" section under the Outputs table, loaded when opened: per-output sampling/range/gamut and colour correction, Reset colour, and "Copy to all outputs" (one click for what PixelFlow needs per output). Copy ports are left out; they follow their primary.
 - **Keying and Cut & Fill**: `lib/layer-effects.js` (`key` and `cutFill` effects; whole `cutout` object; Cut & Fill writes go to the linked cut layer), `lib/program-geometry.js` (type 256 fill layers stay listed as normal layers; cut layers are not listed), `public/layer-effects-ui.js` (Keying and Cut & Fill sections). Keying and Cut & Fill refuse each other before writing.
+- **Layer presets**: `lib/layer-presets.js` (list, save from a layer, assess-then-apply, rename/colour, delete), `layerpreset-*` actions in `lib/studio-programming.js`, `layerPresets` in the Programming state, `public/layer-presets-ui.js` in the Layer inspector: one click applies; saving remembers which parts were ticked and defaults to everything except the source (a look, not a route).
 - Mock: `test-support/mock-studio.js`, `mock-output-advanced.js` enforce PUT/POST methods, whole objects, real input ids, enum sets, busy state for self-test and 8297 for keyed sources.
 - Audit records: DEVICE-09 and DEVICE-19 implemented; OUTPUTS-03/05 and DEVICE-10 partial with the exact remainder. Totals 19 implemented, 38 partial, 63 missing, 2 excluded, 1 not rendered.
 
 ## What was VERIFIED
 
+- After unit 6: `npm test` **212 passing** (3 in `test/layer-presets.test.js`), 136 files ≤ 500 lines; Chrome against the mock: save a preset from one layer, apply to another, delete.
 - After units 4–5: `npm test` **209 passing**; Chrome against the mock: chroma key parameters, key on/off, Cut & Fill on, cut source, width; the fill layer stays in the layer list. The mock's Cut & Fill layer model is an assumption (see Unit 5).
 - Units 1–3: `npm test`: **207 passing**, 0 failed (3 in `test/source-backup.test.js`, 1 in `test/self-test.test.js`, 3 in `test/output-advanced.test.js`; input Advanced tests unchanged and green after the role-aware lookup). `npm run check:size`: 132 files ≤ 500 lines. `npm run build:client` passes.
 - `readOutputAdvanced` run read-only against the real P20 XML and interface capture: 4 independent HDMI outputs, MVR and 2 AUX with the fields listed above.
@@ -65,7 +76,7 @@ Owner (2026-11-11, after WO-036): "start implementing all the missing items". Sc
 
 ## Still open (next units, in this order)
 
-2. Layer presets and preset playlists (PROGRAMMING-23/24), multiselect/clipboard (PROGRAMMING-04).
+2. Multiselect/clipboard (PROGRAMMING-04). Preset playlists are not a P20 feature (see Unit 6).
 3. Screen test patterns, image quality, AOI, blending, bezel (SCREENS-05…13).
 4. Detailed EDID/timing editing and EDID file import/export (INPUTS-03/04, OUTPUTS-02).
 5. OSD and gallery management (PROGRAMMING-19/20), built-in MVR templates (MVR-03).

@@ -16,7 +16,7 @@ const publicFiles = new Map([
   ['/input-advanced.js', ['input-advanced.js', 'text/javascript']],
   ['/connection.css', ['connection.css', 'text/css']],
   ['/mvr-geometry.js', ['mvr-geometry.js', 'text/javascript']],
-  ...['mvr-sync.js', 'mvr-reconcile.js', 'mvr-sources.js', 'device-ui.js', 'device-maintenance-ui.js', 'device-extras-ui.js', 'source-backup-ui.js', 'self-test-ui.js', 'outputs-ui.js', 'output-advanced.js', 'audio-ui.js', 'screens-ui.js', 'programming-ui.js', 'program-sync.js', 'layer-inspector.js', 'layer-effects-ui.js', 'layer-tools.js', 'program-stage.js', 'group-geometry.js', 'source-tabs.js', 'presets-ui.js', 'ui.js', 'studio-panels.js', 'discovery-ui.js'].map(file => [`/${file}`, [file, 'text/javascript']]),
+  ...['mvr-sync.js', 'mvr-reconcile.js', 'mvr-sources.js', 'device-ui.js', 'device-maintenance-ui.js', 'device-extras-ui.js', 'source-backup-ui.js', 'self-test-ui.js', 'outputs-ui.js', 'output-advanced.js', 'audio-ui.js', 'screens-ui.js', 'programming-ui.js', 'program-sync.js', 'layer-inspector.js', 'layer-effects-ui.js', 'layer-presets-ui.js', 'layer-tools.js', 'program-stage.js', 'group-geometry.js', 'source-tabs.js', 'presets-ui.js', 'ui.js', 'studio-panels.js', 'discovery-ui.js'].map(file => [`/${file}`, [file, 'text/javascript']]),
   ['/studio.css', ['studio.css', 'text/css']],
   ['/fonts/Rewir-Light.woff', ['fonts/Rewir-Light.woff', 'font/woff']],
   ['/fonts/Rewir-Light.ttf', ['fonts/Rewir-Light.ttf', 'font/ttf']],

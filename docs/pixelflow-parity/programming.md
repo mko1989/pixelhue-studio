@@ -298,13 +298,17 @@ Studio: `public/presets-ui.js`, `lib/studio-presets.js`.
 
 ## PROGRAMMING-23 · Layer presets
 
-**Studio: missing. Placement: Advanced.**
+**Studio: implemented. Placement: Advanced.**
 
 Save/apply layer input/flip/border/mask/effects/shadow/freeze subsets.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Save the selected layer with chosen parts and a label colour, apply to any layer (assessed first), rename, delete. The list uses the device-direct route the Companion module uses. Verified offline and in Chrome against the mock; hardware QA pending (WO-037).
+
 PixelFlow: `src/pages/editor1/components/LayerPreset/index.tsx:29` in `index-DRegRgjP.js.map`.
+
+Studio: `public/layer-presets-ui.js`, `lib/layer-presets.js`.
 
 ## PROGRAMMING-24 · Preset playlists
 
@@ -312,7 +316,7 @@ PixelFlow: `src/pages/editor1/components/LayerPreset/index.tsx:29` in `index-DRe
 
 Create/edit groups; ordered presets; intervals; loop; play/pause; delete/ungroup.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: Feature XML Features/Preset/PresetGroup; absent on the live P20, where PixelFlow does not add the loop tab (scenseHooks.ts:138).
 
 PixelFlow: `src/pages/editor1/components/PresetLoopPanel/index.tsx:26` in `index-BJcacpMZ.js.map`.
 

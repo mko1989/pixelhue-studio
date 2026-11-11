@@ -3,6 +3,7 @@ import { createMockDevice } from './mock-p20.js';
 import { umdXml } from './mvr-umd.js';
 import { installAudio } from './mock-audio.js';
 import { outputXml, enrichOutput, outputWriteError } from './mock-output-advanced.js';
+import { layerPresetXml, installLayerPresets } from './mock-layer-presets.js';
 import { layerXml, enrichEffects, applyEffectWrite, applyCutFillWrite } from './mock-effects.js';
 
 export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
@@ -55,16 +56,18 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     <LayerModes Support="1" Editable="1"><Enum Value="0"/><Enum Value="1"/></LayerModes>
     <FanMode Support="1" Editable="1"><Enum Value="1"/><Enum Value="2"/></FanMode>
     <AntiStatic Support="1" Editable="1"><Enable Support="1"/><Time Support="1" Editable="1" Value="100" Min="100" Max="2000"/></AntiStatic></Device>
+    ${layerPresetXml}
     <DeviceModes Support="1" Editable="1"><DeviceMode Value="4"/><DeviceMode Value="8"/></DeviceModes>
     <Pictures Support="1" Editable="0"><Picture type="1" Support="1"><Width Min="0" Max="65535"/><Height Min="0" Max="65535"/></Picture>
       <Picture type="2" Support="1"><Width Min="0" Max="512"/><Height Min="0" Max="512"/></Picture><Picture type="3" Support="0"><Width Max="16384"/><Height Max="8192"/></Picture></Pictures>
     <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
     .replace('</Features>', `</Features><Timezone Support="1" Editable="1" Value="70"><Enum Value="0" Offset="-660" Name="Pacific/Midway"/><Enum Value="35" Offset="60" Name="Europe/Warsaw"/><Enum Value="70" Offset="480" Name="Asia/Shanghai"/></Timezone><DeviceSelfTest Support="1" Editable="1" IsBlock="0"/><SourceBackup Support="1" Editable="1"><SwitchStrategy Value="1"/><CapacityStrategy Value="0"/></SourceBackup>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`).replace('</Files>', `${layerXml}${outputXml}</Files>`);
-  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock', 'system/ctrl/source-backup', 'node/selfcheck'];
+  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock', 'system/ctrl/source-backup', 'node/selfcheck', 'layers/layer-preset/list-detail'];
   const effectPaths = ['layers/opacity', 'layers/lock', 'layers/border', 'layers/mask', 'layers/shadow', 'layers/crop', 'layers/image-quality', 'layers/cutout'];
   const cutFillPaths = ['layers/cut-fill-switch', 'layers/relative', 'layers/curve', 'layers/reset-cut'];
-  const customPuts = [...effectPaths, ...cutFillPaths, 'node/selfcheck', 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+  const layerPresetPaths = ['create', 'apply-modify', 'delete', 'apply', 'apply-access'].map(p => `layers/layer-preset/${p}`), layerPresets = installLayerPresets(layers, screens);
+  const customPuts = [...effectPaths, ...cutFillPaths, ...layerPresetPaths, 'node/selfcheck', 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/color-space', 'interface/color-range', 'interface/color-gamut', 'interface/image-quality', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
@@ -94,6 +97,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       if (path === 'audio/matrix-detail') return send(audio.detail());
       if (path === 'node/clock') return send({ nodeId: 1, time: node.time });
       if (path === 'system/ctrl/source-backup') return send({ sourceBackup });
+      if (path === 'layers/layer-preset/list-detail') return send({ totalCount: layerPresets.presets.length, list: layerPresets.presets });
       if (path === 'node/selfcheck') { // checkType 0 = power-on check, 1 = last device test
         const tested = url.searchParams.get('checkType') === '1';
         return send({ nodeId: 1, checkType: tested ? 1 : 0, parts: tested && !selfChecked ? [] : [{ slotId: 100, modelId: node.modelId, boardId: 0, section: [
@@ -114,6 +118,11 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       if (bad || keyed) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: keyed ? 8297 : 8210, message: keyed ? 'source used by cut fill' : 'manage param invalid' })); return; }
       if (!behavior.ignoreBackup) Object.assign(sourceBackup, structuredClone(next));
       return send({});
+    }
+    if (layerPresetPaths.includes(path)) {
+      const result = layerPresets.handle(path, request.method, body, behavior);
+      if (Array.isArray(result)) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: result[0], message: result[1] })); return; }
+      return send(result.data);
     }
     if (cutFillPaths.includes(path)) {
       const refused = applyCutFillWrite(layers, path, body);
@@ -220,5 +229,5 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     }
     return send({});
   });
-  return { ...base, server, node, primary, ethernet, presets, pictures, audio, sourceBackup };
+  return { ...base, server, node, primary, ethernet, presets, pictures, audio, sourceBackup, layerPresets: layerPresets.presets };
 }
