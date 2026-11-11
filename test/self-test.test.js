@@ -17,6 +17,10 @@ test('self-test reads the power-on check, runs only on an idle device and waits 
   let state = await readSelfTest(client);
   assert.equal(state.supported, true); assert.equal(state.checkType, 0); assert.equal(state.total, 2); assert.equal(state.abnormal, 0);
   assert.deepEqual(state.parts[0].items[0], { type: 1, index: 0, name: 'Temperature', value: '50', ok: true });
+  // Live P20 (WO-039): an empty power-on check falls back to the stored device test.
+  mock.behavior.noPowerOnCheck = true; mock.behavior.storedTest = true;
+  state = await readSelfTest(client); assert.equal(state.checkType, 1); assert.equal(state.total, 2);
+  mock.behavior.noPowerOnCheck = false; mock.behavior.storedTest = false;
   mock.behavior.fanFault = true;
   state = await runSelfTest(client, { action: 'run' });
   assert.deepEqual(mock.writes.at(-1), { path: 'node/selfcheck', method: 'POST', body: { nodeId: 1 } });

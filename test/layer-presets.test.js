@@ -70,4 +70,6 @@ test('preset bodies take the cut layer for Cut & Fill and the primary source ids
   assert.deepEqual(body.cutFillPreset, { enable: 1, isInverse: 1, cutFill: cut.cutFill, source: cut.source });
   assert.deepEqual(body.posPreset, { enable: 0, x: 50, y: 30 }); assert.deepEqual(body.flipPreset, { enable: 1, flipType: 2 }); assert.deepEqual(body.freezePreset, { enable: 1, isFreeze: 1 });
   assert.equal(buildLayerPreset(raw, undefined, { x: 0, y: 0 }, { name: 'n', color: {}, parts: ['cutFill'] }).cutFillPreset.enable, 0);
+  // Live P20 reports primary { 0, 0 } without a backup relation; the layer's own source must be kept.
+  assert.deepEqual(buildLayerPreset({ ...raw, source: { general: { sourceId: 38, sourceType: 2 }, primary: { sourceType: 0, sourceId: 0 } } }, undefined, { x: 0, y: 0 }, { name: 'n', color: {}, parts: ['source'] }).sourcePreset.source, { general: { sourceId: 38, sourceType: 2 } });
 });

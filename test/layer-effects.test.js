@@ -151,7 +151,12 @@ test('Cut & Fill switches on the selected layer and edits curve, position, inver
   assert.equal(mock.writes.length, writes);
   await assert.rejects(client.call('layers/relative', [{ layerId: 20, relative: { x: 0, y: 0, width: 100, height: 100 } }]), /code 8210/); // not a cut layer
   state = await fx(client, { cutFill: { enable: false } });
-  assert.equal(raw(mock).layerIdObj.type, 2); assert.equal(state.layers.find(l => l.id === 20).fx.cutFill.enable, false); assert.ok(!mock.layers.some(l => l.layerId === cutId));
+  // Live P20 (WO-039): switching off keeps the cut layer and cutId, both with cutFill.enable 0; Studio still reports it as off and hides the cut layer.
+  assert.equal(raw(mock).layerIdObj.type, 2); assert.equal(state.layers.find(l => l.id === 20).fx.cutFill.enable, false);
+  assert.equal(raw(mock).cutId, cutId); assert.equal(mock.layers.find(l => l.layerId === cutId).cutFill.enable, 0); assert.ok(!state.layers.some(l => l.id === cutId));
+  await assert.rejects(fx(client, { cutFill: { x: 5 } }), /Turn Cut & Fill on first/);
+  state = await fx(client, { cutFill: { enable: true } }); assert.equal(raw(mock).cutId, cutId); assert.equal(state.layers.find(l => l.id === 20).fx.cutFill.enable, true); // the same cut layer is reused
+  await fx(client, { cutFill: { enable: false } });
   await fx(client, { key: { enable: true } });
   await assert.rejects(fx(client, { cutFill: { enable: true } }), /cannot be combined with keying/);
   await assert.rejects(client.call('layers/cut-fill-switch', [{ layerId: 20, enable: 1 }]), /code 8298/);

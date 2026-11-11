@@ -77,6 +77,8 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
   const customPuts = ['picture', 'picture/general', 'picture/capture', 'picture/capture/save', ...effectPaths, ...cutFillPaths, ...layerPresetPaths, 'node/selfcheck', 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/preset-timing', 'interface/color-depth', 'interface/color-space', 'interface/color-range', 'interface/color-gamut', 'interface/image-quality', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/test-pattern', 'screen/image-quality', 'screen/color-dynamic-range', 'screen/color-gamut', 'screen/color-space', 'screen/color-depth', 'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/template/select', 'layers/create', 'layers/copy', 'layers/source', 'layers/zorder', 'layers'];
+  // A saved capture is listed only after a few reads, like the device's ~5 s save (node status 7).
+  const finishSave = () => { if (--capture.polls > 0) return false; pictures.push(capture.picture); capture = null; node.status = 1; return true; };
   const server = http.createServer(async (request, response) => {
     const url = new URL(request.url, 'http://localhost'), path = url.pathname.replace('/unico/v1/', '');
     if (request.method === 'GET' && url.pathname.startsWith('/picture/')) { // device web-root thumbnails
@@ -125,13 +127,21 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       if (path === 'layers/layer-preset/list-detail') return send({ totalCount: layerPresets.presets.length, list: layerPresets.presets });
       if (path === 'node/selfcheck') { // checkType 0 = power-on check, 1 = last device test
         const tested = url.searchParams.get('checkType') === '1';
-        return send({ nodeId: 1, checkType: tested ? 1 : 0, parts: tested && !selfChecked ? [] : [{ slotId: 100, modelId: node.modelId, boardId: 0, section: [
+        return send({ nodeId: 1, checkType: tested ? 1 : 0, parts: (tested ? !selfChecked && !behavior.storedTest : behavior.noPowerOnCheck) ? [] : [{ slotId: 100, modelId: node.modelId, boardId: 0, section: [
           { sequence: 1, type: 1, index: 0, name: 'Temperature', value: '50', showBrief: 1, state: 0 }, { sequence: 2, type: 2, index: 0, name: 'Fan', value: '2400', showBrief: 1, state: behavior.fanFault ? 1 : 0 }] }] });
       }
       if (path === 'preset') return send({ list: presets, page: 1, totalPage: 1, totalCount: presets.length });
+      if (path === 'picture/list' && capture?.saving) finishSave();
       if (path === 'picture/list') { const t = Number(url.searchParams.get('type')); return send({ list: pictures.filter(p => !t || p.pictureObj.type === t), page: 1, totalPage: 1 }); }
       if (path === 'picture/capacity') return send({ type: 1, usedCapacity: 1.5, totalCapacity: 512 });
-      if (path === 'picture/progress') { if (capture && --capture.polls <= 0) capture.status = behavior.captureFails ? 255 : 2; return send({ pictureProgress: capture ? { type: 1, percent: capture.status === 2 ? 100 : 50, status: capture.status } : { type: 0, percent: 0, status: 0 } }); }
+      // Live P20 sequence (WO-039): idle for the first poll, "ongoing" while node status is 14, then idle again (never "complete");
+      // saving sets node status 7 for a few polls before the picture is listed.
+      if (path === 'picture/progress') {
+        if (capture?.saving) { const id = capture.pictureId; return send(finishSave() ? { percent: 0, pictureId: 0, type: 0, status: 0 } : { percent: 95, pictureId: id, type: 2, status: 1 }); }
+        if (!capture || capture.done) return send({ percent: 0, pictureId: 0, type: 0, status: 0 });
+        if (--capture.polls <= 0) { if (behavior.captureFails) return send({ percent: 0, pictureId: capture.pictureId, type: 1, status: 255 }); capture.done = true; node.status = 1; return send({ percent: 0, pictureId: 0, type: 0, status: 0 }); }
+        return send(capture.polls >= 2 ? { percent: 0, pictureId: 0, type: 0, status: 0 } : { percent: 50, pictureId: capture.pictureId, type: 1, status: 1 });
+      }
       response.setHeader('Content-Type', 'application/xml'); response.end(config); return;
     }
     let raw = ''; for await (const chunk of request) raw += chunk;
@@ -207,6 +217,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       const refuse = message => { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message })); };
       if (path === 'picture') {
         if (request.method !== 'DELETE' || !Array.isArray(body.pictureIds)) return refuse('picture param invalid');
+        if (capture && body.pictureIds.includes(capture.pictureId)) { capture = null; node.status = 1; return send([]); }
         const kept = body.pictureIds.filter(id => { const index = pictures.findIndex(p => p.pictureId === id && p.isUsed !== 1 && !behavior.keepPictures); if (index < 0) return true; pictures.splice(index, 1); return false; });
         return send(kept);
       }
@@ -215,12 +226,13 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       if (path === 'picture/capture') {
         const known = body.source?.type === 0 ? screens.some(x => x.screenId === body.source.id && x.screenIdObj.type !== 8) : body.source?.type === 1 && interfaces.some(i => i.interfaceId === body.source.id);
         if (request.method !== 'POST' || !known || node.status !== 1) return refuse('capture param invalid');
-        capture = { pictureId: Math.max(0, ...pictures.map(p => p.pictureId)) + 1, status: 1, polls: 2, general: { name: '', width: 1920, height: 1080 } };
-        return send({ pictureId: capture.pictureId, general: capture.general });
+        capture = { pictureId: Math.max(0, ...pictures.map(p => p.pictureId)) + 1, polls: 3, general: { name: '', width: 1920, height: 1080 } }; node.status = 14;
+        return send({ pictureId: capture.pictureId, isUsed: 0, pictureObj: { id: 0, order: 0, type: 1 }, general: capture.general });
       }
-      if (request.method !== 'PUT' || !capture || capture.pictureId !== body.pictureId || capture.status !== 2 || body.type !== 1 || !body.name) return refuse('capture save invalid');
-      pictures.push({ pictureId: capture.pictureId, isUsed: 2, pictureObj: { id: capture.pictureId, type: 1 }, general: { ...capture.general, name: body.name }, path: [{ type: 0, url: `/picture/bkg/cap_${capture.pictureId}.jpg` }] });
-      capture = null; return send({});
+      if (request.method !== 'PUT' || !capture || capture.pictureId !== body.pictureId || body.type !== 1 || !body.name) return refuse('capture save invalid');
+      if (!capture.done) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8306, message: 'Capturing image... Please retry later.' })); return; }
+      Object.assign(capture, { saving: true, polls: 2, picture: { pictureId: capture.pictureId, isUsed: 2, pictureObj: { id: capture.pictureId, type: 1 }, general: { ...capture.general, name: body.name }, path: [{ type: 0, url: `/picture/bkg/cap_${capture.pictureId}.jpg` }] } });
+      node.status = 7; return send({});
     }
     if (path === 'node/selfcheck') { // device rule: POST only, refused while busy
       if (request.method !== 'POST' || body.nodeId !== 1 || node.status !== 1) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: 'node busy' })); return; }

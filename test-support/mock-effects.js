@@ -22,8 +22,8 @@ export function enrichEffects(layer) {
 const within = (value, min, max) => Number.isInteger(value) && value >= min && value <= max;
 const complete = (value, shape) => value && typeof value === 'object' && Object.keys(shape).every(key => key in value && (shape[key] === null || typeof shape[key] !== 'object' || complete(value[key], shape[key])));
 // Returns an error message when the device would refuse the body: unknown layer, incomplete section or XML range violation.
-// Assumed device behaviour (never seen live): the switch turns the layer into a fill layer (type 256) and creates a
-// linked cut layer (type 128) that carries curve, position, invert and source; 8298 when the layer is keyed.
+// Device behaviour confirmed on the live P20 (WO-039): the switch turns the layer into a fill layer (type 256) and creates a
+// linked cut layer (type 128, source type 1 = none) that carries curve, position, invert and source; 8298 when the layer is keyed.
 export function applyCutFillWrite(layers, path, body) {
   if (!Array.isArray(body) || !body.length) return [8210, 'layer param invalid'];
   for (const item of body) {
@@ -36,8 +36,11 @@ export function applyCutFillWrite(layers, path, body) {
         layers.push({ layerId: id, fillId: layer.layerId, layerIdObj: { ...layer.layerIdObj, type: 128 }, general: { name: '', isInverse: 0 }, source: { general: { sourceId: 0, sourceType: 1 } },
           window: { ...layer.window }, enable: 1, zorder: layer.zorder, cutFill: { enable: 1, curve: { start: { x: 0, y: 0 }, end: { x: 255, y: 255 } }, relative: { x: 0, y: 0, width: 100, height: 100 } } });
         Object.assign(layer, { cutId: id, cutFill: { ...layer.cutFill, enable: 1 } }); layer.layerIdObj.type = 256;
+      } else if (item.enable && layer.cutId) { // re-enabling reuses the kept cut layer
+        const cut = layers.find(l => l.layerId === layer.cutId); cut.cutFill.enable = 1; layer.cutFill = { ...layer.cutFill, enable: 1 }; layer.layerIdObj.type = 256;
       } else if (!item.enable && layer.cutId) {
-        layers.splice(layers.findIndex(l => l.layerId === layer.cutId), 1); Object.assign(layer, { cutId: 0, cutFill: { ...layer.cutFill, enable: 0 } }); layer.layerIdObj.type = 2;
+        // Seen on the live P20 (WO-039): switching off keeps the cut layer and cutId, with cutFill.enable 0 on both; the layer type returns to 2.
+        const cut = layers.find(l => l.layerId === layer.cutId); cut.cutFill.enable = 0; layer.cutFill = { ...layer.cutFill, enable: 0 }; layer.layerIdObj.type = 2;
       }
       continue;
     }

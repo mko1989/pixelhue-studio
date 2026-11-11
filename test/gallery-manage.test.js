@@ -42,6 +42,11 @@ test('capture posts the source, waits for the capture to complete, then saves it
   assert.deepEqual(calls[0], { path: 'picture/capture', method: 'POST', body: { source: { type: 0, id: 1 } } });
   assert.deepEqual(calls[1], { path: 'picture/capture/save', method: 'PUT', body: { pictureId: gallery.captured.id, name: 'PGM 1', type: 1 } });
   assert.equal(gallery.captured.name, 'PGM 1'); assert.ok(mock.requests.filter(r => r.path === 'picture/progress').length >= 2);
+  assert.equal(mock.node.status, 1); // 14 while capturing and 7 while saving on the live P20 (WO-039); the save waits for 1
+  // Saving while the device is still capturing is refused with 8306, as seen live.
+  await client.call('picture/capture', { source: { type: 0, id: 1 } }, { method: 'POST' });
+  await assert.rejects(client.call('picture/capture/save', { pictureId: gallery.captured.id + 1, name: 'Early', type: 1 }), /code 8306/);
+  await client.call('picture', { pictureIds: [gallery.captured.id + 1] }, { method: 'DELETE' }); assert.equal(mock.node.status, 1);
   const input = mock.interfaces.find(i => i.auxiliaryInfo.connectorInfo.interfaceType === 2).interfaceId;
   await manageGallery(client, { action: 'capture', source: 'input', id: input, name: 'In 1' });
   assert.deepEqual(mock.writes.filter(w => w.path === 'picture/capture').at(-1).body, { source: { type: 1, id: input } });
