@@ -14,7 +14,7 @@ let state, base, screenId, selectedId, busy = false, drag;
 let undo = [], redo = [];
 let activeTab = 'device', mvrStale = false, inputsStale = false;
 let mvrSaveFailed = false;
-const tabs = ['device', 'inputs', 'outputs', 'screens', 'programming', 'mvr'];
+const tabs = ['device', 'inputs', 'outputs', 'screens', 'programming', 'mvr', 'audio'];
 const screen = () => state?.screens.find((item) => item.id === screenId);
 const selected = () => state?.layers.find((item) => item.id === selectedId);
 const windows = () => state?.layers.filter((item) => item.screenId === screenId) || [];
@@ -47,7 +47,8 @@ function adopt(next) {
   undo = []; redo = [];
   $('screen').replaceChildren(...state.screens.map((item) => new Option(item.name, item.id)));
   if (!state.screens.length) $('screen').add(new Option('No MVR outputs found', ''));
-  showTab(next.capabilities?.mvr === false && activeTab === 'mvr' ? 'device' : activeTab, false);
+  $('audio-tab').hidden = !next.capabilities?.audio;
+  showTab((next.capabilities?.mvr === false && activeTab === 'mvr') || (!next.capabilities?.audio && activeTab === 'audio') ? 'device' : activeTab, false);
   render();
 }
 
@@ -272,7 +273,7 @@ for (const name of tabs) {
   $(`${name}-tab`).onclick = () => showTab(name);
   $(`${name}-tab`).onkeydown = event => {
     if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
-    event.preventDefault(); const enabled = tabs.filter(tab => !$(`${tab}-tab`).disabled);
+    event.preventDefault(); const enabled = tabs.filter(tab => !$(`${tab}-tab`).disabled && !$(`${tab}-tab`).hidden);
     const index = enabled.indexOf(name), step = event.key === 'ArrowRight' ? 1 : -1;
     const next = enabled[(index + step + enabled.length) % enabled.length]; showTab(next); $(`${next}-tab`).focus();
   };

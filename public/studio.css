@@ -123,3 +123,20 @@
 .source-signal::before { content: ''; width: 5px; height: 5px; flex: 0 0 5px; border-radius: 50%; background: currentColor; }
 .source-signal.live { color: #9bc7aa; }.source-signal.warning { color: #e4c77b; }
 .studio-table select[aria-label$="resolution"] { width: 100%; max-width: 310px; min-width: 190px; margin-bottom: 6px; }
+.audio-matrix-wrap { max-height: calc(100vh - 190px); overflow: auto; border: 1px solid var(--border); }
+.audio-matrix { border-collapse: separate; border-spacing: 0; font-size: 12px; }
+.audio-matrix th { position: sticky; z-index: 2; background: #2a2a2a; font-weight: 400; color: #ddd; padding: 3px 5px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); white-space: nowrap; }
+.audio-matrix thead tr:first-child th { top: 0; }.audio-matrix thead tr:nth-child(2) th { top: 27px; }
+.audio-corner { left: 0; z-index: 4 !important; color: var(--muted) !important; text-align: left; }
+.audio-port-col { text-align: center; height: 27px; }.audio-port-col span { margin-right: 4px; }
+.audio-chan-col { text-align: center; min-width: 46px; }.audio-chan-col span { display: block; color: var(--muted); }
+.audio-port-row { left: 0; text-align: left; vertical-align: top; box-sizing: border-box; width: 150px; min-width: 150px; max-width: 150px; overflow: hidden; text-overflow: ellipsis; }
+.audio-port-row > span:first-child { display: block; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
+.audio-chan-row { left: 150px; text-align: left; }.audio-chan-row > span { vertical-align: middle; margin-right: 5px; }
+.audio-matrix td { padding: 0; text-align: center; border-right: 1px solid #2b2b2b; border-bottom: 1px solid #2b2b2b; }
+.audio-port-start > * { border-top: 1px solid #555; }
+.audio-point { width: 100%; min-width: 22px; height: 24px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.audio-point:hover:enabled { background: #3a3a3a; }.audio-point.active { background: #d8e1eb; }.audio-point.active:hover:enabled { background: #b9c6d4; }
+.audio-flag { min-height: 0; height: 18px; min-width: 20px; padding: 0 4px; font-size: 11px; line-height: 1; color: var(--muted); border: 1px solid var(--border); background: transparent; cursor: pointer; }
+.audio-flag.active { color: #151515; background: #e0b35a; border-color: #e0b35a; }.audio-flag.mixed { border-color: #e0b35a; color: #e0b35a; }
+.audio-signal { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #555; }.audio-signal.on { background: #6fa77a; }.audio-signal.none { visibility: hidden; }

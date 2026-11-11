@@ -81,7 +81,9 @@ test('verified discovery model selects P80 without querying MVR endpoints', asyn
     throw new Error('Unexpected model or MVR request');
   });
   assert.equal((await client.connect({ host: '192.168.0.10' })).device.model, 'P80');
-  assert.equal(calls.length, 2);
+  // WO-036: the feature XML is read once for the audio capability; still no MVR list endpoints.
+  assert.equal(calls.length, 3); assert.match(calls[2], /node\/config-file/);
+  assert.ok(!calls.some(path => /list-detail/.test(path)));
 });
 test('unsupported models are rejected before MVR reads or writes', async () => {
   const calls = [];

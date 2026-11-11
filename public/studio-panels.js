@@ -2,15 +2,16 @@ import { createDeviceUI } from './device-ui.js';
 import { createOutputsUI } from './outputs-ui.js';
 import { createScreensUI } from './screens-ui.js';
 import { createProgrammingUI } from './programming-ui.js';
+import { createAudioUI } from './audio-ui.js';
 
 export function createStudioPanels(context) {
-  const stale = new Set(['device', 'outputs', 'screens', 'programming']);
+  const stale = new Set(['device', 'outputs', 'screens', 'programming', 'audio']);
   const invalidate = source => {
     for (const name of Object.keys(panels)) if (name !== source) stale.add(name);
     context.invalidate(source);
   };
   const options = { ...context, invalidate };
-  const panels = { device: createDeviceUI(options), outputs: createOutputsUI(options), screens: createScreensUI(options), programming: createProgrammingUI(options) };
+  const panels = { device: createDeviceUI(options), outputs: createOutputsUI(options), screens: createScreensUI(options), programming: createProgrammingUI(options), audio: createAudioUI(options) };
   return {
     async open(name) {
       const panel = panels[name]; if (!panel) return;

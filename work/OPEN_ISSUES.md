@@ -35,3 +35,4 @@
 | WO-033 | Replacement drops fit previous bounds, keep X/Y and aspect lock | [Investigation and verification](work-orders/033_WO_replacement-fit-bounds.md) | DONE (169 tests + mock Chrome drops) |
 | WO-034 | Programming physical input labels, numeric mapping order and live-first status refresh | [Investigation and verification](work-orders/034_WO_programming-source-mapping-live.md) | DONE (175 tests + capture/mock Chrome) |
 | WO-035 | P20 output DL/4K dependencies and per-output standard resolutions | [Investigation and verification](work-orders/035_WO_output-capacity-presets.md) | DONE (185 tests + captured XML/mock Chrome; hardware QA pending) |
+| WO-036 | PixelFlow parity review; Audio matrix tab and further missing P20 features | [Investigation and verification](work-orders/036_WO_pixelflow-review-audio.md) | IN PROGRESS |

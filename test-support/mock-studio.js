@@ -1,8 +1,9 @@
 import http from 'node:http';
 import { createMockDevice } from './mock-p20.js';
 import { umdXml } from './mvr-umd.js';
+import { installAudio } from './mock-audio.js';
 
-export function createMockStudio({ model = 'P20' } = {}) {
+export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
   const base = createMockDevice({ model }), original = base.server.listeners('request')[0];
   const { interfaces, screens, layers, writes, requests, behavior } = base;
   const primary = interfaces.find(i => i.auxiliaryInfo.connectorInfo.interfaceType === 4);
@@ -17,6 +18,7 @@ export function createMockStudio({ model = 'P20' } = {}) {
     i.colorDepth = { preset: 8, actual: 8 }; i.hdcp = { enable: 0, preset: 1, actual: 1 };
     i.testPattern = { enable: 0, type: 5, bright: 3, grid: 7 };
   }
+  const audio = installAudio(interfaces);
   screens[0].guid = 'mvr-screen';
   screens.push({ screenId: 1, guid: 'main-screen', screenIdObj: { type: 2 }, general: { name: 'Main screen' },
     mosaic: { type: 2, window: { x: -100, y: 50, width: 1920, height: 1080 }, outputs: [] }, enable: 1, freeze: 0, ftb: { enable: 0 }, keyPosition: [1] },
@@ -53,9 +55,9 @@ export function createMockStudio({ model = 'P20' } = {}) {
       <Picture type="2" Support="1"><Width Min="0" Max="512"/><Height Min="0" Max="512"/></Picture><Picture type="3" Support="0"><Width Max="16384"/><Height Max="8192"/></Picture></Pictures>
     <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
-    .replace('</Features>', '</Features></Device></DCS>');
-  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity'];
-  const customPuts = ['picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+    .replace('</Features>', `</Features>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`);
+  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail'];
+  const customPuts = ['audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
@@ -82,6 +84,7 @@ export function createMockStudio({ model = 'P20' } = {}) {
     if (request.method === 'GET') {
       if (path === 'node/detail') return send(node);
       if (path === 'node/ethernet') return send({ nodeId: 1, state: 0, ethernet });
+      if (path === 'audio/matrix-detail') return send(audio.detail());
       if (path === 'preset') return send({ list: presets, page: 1, totalPage: 1, totalCount: presets.length });
       if (path === 'picture/list') { const t = Number(url.searchParams.get('type')); return send({ list: pictures.filter(p => !t || p.pictureObj.type === t), page: 1, totalPage: 1 }); }
       if (path === 'picture/capacity') return send({ type: 1, usedCapacity: 1.5, totalCapacity: 512 });
@@ -90,6 +93,11 @@ export function createMockStudio({ model = 'P20' } = {}) {
     let raw = ''; for await (const chunk of request) raw += chunk;
     const body = JSON.parse(raw); writes.push({ path, body, method: request.method });
     if (behavior.ignoreSetup && path.startsWith('node/')) return send({});
+    if (path.startsWith('audio/')) { // POST only, like PixelFlow; refused bodies answer with a device error code.
+      const error = request.method === 'POST' ? audio.write(path, body, behavior) : 'method not allowed';
+      if (error) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: error })); return; }
+      return send({});
+    }
     if (path === 'layers/switch') for (const change of body) layers.find(l => l.layerId === change.layerId).enable = change.enable;
     if (path === 'layers/source') for (const change of body) { const pic = pictures.find(p => p.pictureId === change.source.general.sourceId); if (pic && [5, 6].includes(change.source.general.sourceType)) change.source.general.sourceName = pic.general.name; }
     if (path === 'layers/general') for (const change of body) layers.find(l => l.layerId === change.layerId).general = { ...layers.find(l => l.layerId === change.layerId).general, ...change.general };
@@ -166,5 +174,5 @@ export function createMockStudio({ model = 'P20' } = {}) {
     }
     return send({});
   });
-  return { ...base, server, node, primary, ethernet, presets, pictures };
+  return { ...base, server, node, primary, ethernet, presets, pictures, audio };
 }

@@ -58,7 +58,7 @@ test('Q8 IP-only and explicit-port connections enable two MVR outputs', async ()
     const { client } = fixture();
     const state = await client.connect(options);
     assert.equal(state.device.model, 'Q8');
-    assert.deepEqual(state.capabilities, { inputs: true, mvr: true });
+    assert.deepEqual(state.capabilities, { inputs: true, mvr: true, audio: false });
     assert.deepEqual(state.screens.map(s => s.id), [1, 2]);
   }
 });
