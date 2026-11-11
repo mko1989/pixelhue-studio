@@ -66,13 +66,17 @@ PixelFlow: `src/pages/screen1/components/EDID/index.tsx:13` in `SuperScreenAttr-
 
 ## SCREENS-06 · Output format and HDR
 
-**Studio: missing. Placement: Advanced.**
+**Studio: partial. Placement: Advanced.**
 
 Colour space/depth/gamut; SDR/HDR; gamma; peak brightness; ST2110 parameters.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Dynamic range (SDR/HDR10/HLG), sampling, bit depth and gamut with the per-range rules from the screen XML (WO-037). HDR parameters (peak luminance, tone mapping, MaxCLL, HLG grade) and the bandwidth pre-check are missing. Hardware QA pending (WO-037).
+
 PixelFlow: `src/pages/screen1/components/Attr/components/ScreenOutputHDR/index.tsx:18` in `SuperScreenAttr-Cy0bH4Ty.js.map`.
+
+Studio: `public/screen-extras-ui.js`, `lib/screen-extras.js`.
 
 ## SCREENS-07 · HDCP
 
@@ -104,7 +108,7 @@ Studio: `public/screen-extras-ui.js`, `lib/screen-extras.js`.
 
 Active image area; output offsets; interface positions.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: PixelFlow drives this only through its local controller service (ucenter/screen/edge, edge-fusion-*, mosaic/feather, physical-size); no device-direct route is in the source. Needs a traffic capture before it can be built (WO-037).
 
 PixelFlow: `src/pages/screen1/components/Attr/components/AOI/index.tsx:11` in `SuperScreenAttr-Cy0bH4Ty.js.map`.
 
@@ -124,7 +128,7 @@ PixelFlow: `src/pages/screen1/components/Attr/components/InterfaceRotate/index.t
 
 Basic/irregular arrangement; edge blending regions and parameters.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: PixelFlow drives this only through its local controller service (ucenter/screen/edge, edge-fusion-*, mosaic/feather, physical-size); no device-direct route is in the source. Needs a traffic capture before it can be built (WO-037).
 
 PixelFlow: `src/pages/screen1/components/Attr/components/ScreenEdgeBlending/index.tsx:17` in `index-6SVZoEOg.js.map`.
 
@@ -134,7 +138,7 @@ PixelFlow: `src/pages/screen1/components/Attr/components/ScreenEdgeBlending/inde
 
 LCD bezel compensation; mutually exclusive blending; crop consequences.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: PixelFlow drives this only through its local controller service (ucenter/screen/edge, edge-fusion-*, mosaic/feather, physical-size); no device-direct route is in the source. Needs a traffic capture before it can be built (WO-037).
 
 PixelFlow: `src/pages/screen1/components/Attr/components/ScreenEdgeCompensationWrap/index.tsx:23` in `index-6SVZoEOg.js.map`.
 

@@ -40,3 +40,17 @@ On a spare Main screen.
 ## Programming → Duplicate / Mirror; MVR → Apply layout
 - [ ] Duplicate a PVW layer; Mirror a layer (appears on the opposite side, flipped).
 - [ ] MVR tab: is "Apply layout…" shown? Apply one on a moment you can afford to lose the MVR arrangement; note what the list shows.
+
+## Programming → Backgrounds: Edit and Capture PGM
+- [ ] Capture PGM: a new background appears. Rename it. Delete it.
+- [ ] A background in use on a screen cannot be deleted.
+
+## Inputs → Advanced → Detailed timing and EDID file
+On a spare HDMI/DP input.
+- [ ] The timing shown matches PixelFlow's detailed timing. Change the refresh, apply, check in PixelFlow, set it back.
+- [ ] Export EDID… gives a .bin; Import EDID file… with that same file succeeds.
+
+## Screens → Format
+On a spare Main screen with an output mapped.
+- [ ] Sampling and bit depth. Dynamic range HDR10 (depth and gamut follow), then back to SDR.
+- [ ] Note any refusal text (bandwidth is checked by the device only).

@@ -38,21 +38,25 @@ Preset/custom resolution and frame; detailed blanking/porches/sync/polarity; app
 
 Availability: Model, installed card, role and feature XML determine availability.
 
-Studio basic thumbnail timing editor is not the full PixelFlow detailed timing editor.
+Preset/custom resolution in the table; detailed timing (active, front porch, sync, total, polarity, refresh) in Advanced with derived back porch and pixel clock (WO-037). Hardware QA pending (WO-037).
 
 PixelFlow: `src/pages/devices/components/input-attr-panel/edidAttrInfo/index.tsx:14` in `main-Cpb41LiE.js.map`.
 
-Studio: `public/inputs.js`, `lib/inputs.js`.
+Studio: `public/inputs.js`, `lib/inputs.js`, `public/input-edid-ui.js`, `lib/input-edid.js`.
 
 ## INPUTS-04 · EDID files
 
-**Studio: missing. Placement: Advanced.**
+**Studio: implemented. Placement: Advanced.**
 
 Import/export EDID file; size and format validation.
 
 Availability: Model, installed card, role and feature XML determine availability.
 
+Import with EDID structure checks (blocks, header, checksums, extension count) and export as .bin (WO-037). Hardware QA pending (WO-037).
+
 PixelFlow: `src/components/common/edid-export/index.tsx:57` in `SourceTitle-Cz-58G7-.js.map`.
+
+Studio: `public/input-edid-ui.js`, `lib/input-edid.js`.
 
 ## INPUTS-05 · Mac compatibility
 

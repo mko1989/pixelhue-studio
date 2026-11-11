@@ -24,7 +24,7 @@ Studio: `public/discovery-ui.js`, `lib/discovery.js`.
 
 Import/export parameters and resource files; progress; project naming and synchronization.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: PixelFlow uses its local controller service and Electron file transfer (ucenter/device/upgrade*, project files); only progress reads are device-direct. Needs a traffic capture before it can be built (WO-037).
 
 PixelFlow: `src/components/common/project/export-project/ExportProjectModal.tsx:34` in `main-Cpb41LiE.js.map`.
 
@@ -34,7 +34,7 @@ PixelFlow: `src/components/common/project/export-project/ExportProjectModal.tsx:
 
 Device and receiving-card lists; firmware upload/upgrade; progress/results; restart; batch naming/diagnostics.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: PixelFlow uses its local controller service and Electron file transfer (ucenter/device/upgrade*, project files); only progress reads are device-direct. Needs a traffic capture before it can be built (WO-037).
 
 PixelFlow: `src/pages/maintain/deviceMaintain/components/DeviceUpgrade/index.tsx:29` in `index-D_EADrom.js.map`.
 

@@ -256,11 +256,11 @@ BKG/LOGO list; thumbnails; upload; import/export/delete/cancel; storage; capture
 
 Availability: Model, installed card, role and feature XML determine availability.
 
-Studio lists/uploads/uses images; complete gallery export/delete/capture/storage workflows are missing.
+List, thumbnails, upload, rename, delete (pictures in use are protected) and PGM capture into the gallery (WO-037). Export of a picture file and capture of an input are not in the UI. Hardware QA pending (WO-037).
 
 PixelFlow: `src/pages/editor1/components/SourcePanel/components/image-source/index.tsx:41` in `index-BJcacpMZ.js.map`.
 
-Studio: `public/source-tabs.js`, `lib/gallery.js`.
+Studio: `public/source-tabs.js`, `lib/gallery.js`, `lib/gallery-manage.js`.
 
 ## PROGRAMMING-20 · OSD
 
@@ -268,7 +268,7 @@ Studio: `public/source-tabs.js`, `lib/gallery.js`.
 
 Image OSD; static/dynamic text; weather/time OSD; styles; fonts; clear/apply; OSD presets.
 
-Availability: Model, installed card, role and feature XML determine availability.
+Availability: Device configuration OSD element (osdConfig.OSD.Support); absent on the live P20, so PixelFlow does not load OSD there.
 
 PixelFlow: `src/pages/editor1/components/SourcePanel/components/text-osd/index.tsx:12` in `index-BJcacpMZ.js.map`.
 

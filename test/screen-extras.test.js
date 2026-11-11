@@ -51,3 +51,27 @@ test('screen colour sends the whole imageQuality object; invalid requests and AU
   mock.behavior.ignoreScreenExtras = true;
   await assert.rejects(applyScreens(client, { action: 'pattern', id: 1, pattern: { enable: true } }), /did not retain the test pattern/);
 });
+
+test('screen format follows the XML rules per dynamic range and orders writes so every step is valid', async t => {
+  const { client, mock } = await fixture(t), tile = { id: mock.primary.interfaceId, pos: { x: 0, y: 0, width: 1920, height: 1080 } };
+  await assert.rejects(applyScreens(client, { action: 'format', id: 1, format: { colorDepth: 10 } }), /Map an output/);
+  let state = await applyScreens(client, { action: 'update', id: 1, window: { x: -100, y: 50, width: 1920, height: 1080 }, outputs: [tile] });
+  assert.deepEqual(state.options[2].format.rules[1], { depths: [10, 12], fixed422: 12, gamuts: [2, 3] }); assert.equal(state.options[4].format, null);
+  const sent = () => mock.writes.filter(w => w.path.startsWith('screen/color-')).map(w => [w.path.replace('screen/color-', ''), Object.values(w.body[0])[1].preset, w.body[0].connectorType]);
+  state = await applyScreens(client, { action: 'format', id: 1, format: { dynamicRange: 1, colorDepth: 10, colorGamut: 3 } });
+  assert.deepEqual(sent(), [['depth', 10, 6], ['gamut', 3, 6], ['dynamic-range', 1, 6]]); // depth and gamut before the range
+  assert.deepEqual(state.screens.find(s => s.id === 1).format, { dynamicRange: 1, colorGamut: 3, colorSpace: 0, colorDepth: 10 });
+  state = await applyScreens(client, { action: 'format', id: 1, format: { colorSpace: 1 } }); // 4:2:2 fixes 12 bit
+  assert.deepEqual(sent().slice(3), [['space', 1, 6], ['depth', 12, 6]]);
+  state = await applyScreens(client, { action: 'format', id: 1, format: { dynamicRange: 0, colorSpace: 0, colorDepth: 8, colorGamut: 1 } });
+  assert.deepEqual(sent().slice(5), [['dynamic-range', 0, 6], ['gamut', 1, 6], ['space', 0, 6], ['depth', 8, 6]]); // leaving HDR: range first
+  const writes = mock.writes.length;
+  await assert.rejects(applyScreens(client, { action: 'format', id: 1, format: { dynamicRange: 2 } }), /bit depth for this dynamic range|gamut for this dynamic range/);
+  await assert.rejects(applyScreens(client, { action: 'format', id: 1, format: { colorGamut: 2, colorSpace: 2 } }), /DCI-P3 needs RGB/);
+  await assert.rejects(applyScreens(client, { action: 'format', id: 1, format: { colorSpace: 1, colorDepth: 10 } }), /4:2:2 uses 12 bit/);
+  await assert.rejects(applyScreens(client, { action: 'format', id: 1, format: { hdr: 1 } }), /Unsupported screen format/);
+  await assert.rejects(applyScreens(client, { action: 'format', id: 2, format: { colorDepth: 10 } }), /unavailable on this screen/); // AUX XML has no rules
+  assert.equal(mock.writes.length, writes);
+  await assert.rejects(client.call('screen/color-dynamic-range', [{ screenId: 1, dynamicRange: { preset: 1 }, connectorType: 6 }]), /code 8210/); // 8 bit Rec.709 cannot be HDR
+  await assert.rejects(client.call('screen/color-depth', [{ screenId: 1, colorDepth: { preset: 10 } }]), /code 8210/); // connectorType missing
+});

@@ -1,6 +1,6 @@
 # WO-037 — Remaining PixelFlow features for the P20
 
-**Status: IN PROGRESS (2026-11-11 — units 1–8 landed: source backup, self-test, output format/colour, keying, Cut & Fill, layer presets, screen test pattern/colour, layer copy, MVR layouts; 217 offline tests + mock Chrome; no hardware write possible; remaining items listed under "Still open")**
+**Status: IN PROGRESS (2026-11-11 — units 1–11 landed: source backup, self-test, output format/colour, keying, Cut & Fill, layer presets, screen test pattern/colour/format, layer copy, MVR layouts, gallery management, detailed timing and EDID files; 224 offline tests + mock Chrome; no hardware write possible; remaining items listed under "Still open")**
 
 Owner (2026-11-11, after WO-036): "start implementing all the missing items". Scope is the list in `docs/pixelflow-parity/README.md` "Still shown by PixelFlow on a P20 and not yet in Studio". Screen audio is excluded by owner decision (routing only). Items PixelFlow hides on a P20 stay out. The P20 is still unreachable from this Mac, so each unit is proven against PixelFlow's source, the captured live XML/JSON and a mock that enforces the known device rules; hardware QA goes to `work/checklist-wo037.md`.
 
@@ -77,6 +77,18 @@ Owner (2026-11-11, after WO-036): "start implementing all the missing items". Sc
 - EDID import: `PUT interface/edid-file`, multipart with fields `interfaceIds` (JSON `[{ interfaceId }]`) and `file` (`api/device/deviceInterface.ts:479`, 60 s). EDID export: `GET interface/edid-file?interfaceId=&respondsType=0` → binary (`:498`; `RespondsTypeE` 0 = the file itself). Call sites: `components/common/edid-export/index.tsx:286,355`.
 - PixelFlow's size/format check for imported files was not traced; Studio checks the EDID standard itself: 128-byte blocks, the fixed 8-byte header, block checksums, and the extension count in byte 126.
 
+### Unit 11 — Screen output format (SCREENS-06)
+- `changeScreenHDR.ts:810-946`: `PUT screen/color-space | color-depth | color-gamut | color-dynamic-range [{ screenId, <key>: { preset }, connectorType }]` (`api/screen/screen.ts:1123-1186`) and `PUT screen/hdr [{ screenId, hdr }]`. `connectorType` is the connector type of the screen's outputs. PixelFlow pre-checks link bandwidth for sampling, depth and dynamic range.
+- Live Main screen: `dynamicRange { preset 0 }`, `colorGamut { preset 1 }`, `colorDepth { preset 8 }`, `colorSpace { preset 0 }`, `hdr { sdr, hdr10 { peakLuminance, toneMapping, maxcll }, hlg }`.
+- Live `screen_2.xml` `Features/DynamicRange`: SDR depth 8/10/12; HDR10 and HLG depth 10/12 and gamut 2/3 (DCI-P3, Rec.2020) only; with sampling value 1 (YCbCr 4:2:2) the depth is fixed at 12 in every range. `HDR/DynamicRange/PresetDynamicRange/Type` 0 SDR, 1 HDR10, 2 HLG.
+- Not built: the HDR parameters themselves (`screen/hdr`: peak luminance, tone mapping, MaxCLL, HLG grade); the defaults stay as the device has them.
+
+### Checked and not P20 features, or not reachable without a capture
+- **OSD** (PROGRAMMING-20): PixelFlow enables it from `osdConfig.OSD.Support` (`core/DeviceManager.ts:734`); the live P20 configuration has no `<OSD>` element anywhere. Not a P20 feature.
+- **Screen edge/bezel, edge blending, AOI feather, physical size** (SCREENS-09/11/12): PixelFlow only has `ucenter/screen/edge`, `ucenter/screen/edge-fusion-mode`, `ucenter/screen/edge-fusion-flag`, `ucenter/screen/mosaic/feather`, `ucenter/screen/physical-size` — its local controller service. No device-direct route exists in the source. Needs a traffic capture like WO-019 before it can be built.
+- **Firmware upgrade, log export, project import/export** (GLOBAL-02/03/04): `ucenter/device/upgrade*` and Electron file transfer; only the progress reads (`node/upgrade/progress`, `node/compresslog/progress`) are device-direct. Needs a traffic capture.
+- **Multi-selection / distribute** (PROGRAMMING-04): a Studio-side interaction change with no new device contract; left for a session with the device, where drag behaviour can be tried.
+
 ## What was done
 
 - **Source backup**: `lib/source-backup.js` (read, whole-object read-modify-write, pair rules checked before the write, 8297 explained, readback), `/api/source-backup`, `public/source-backup-ui.js` as a Device tab block (on/off, primary preferred, pair rows with Auto/Manual and source in use, add pair with same-capacity filtering, remove, remove all). Studio additionally refuses an input that already belongs to a pair; PixelFlow's rule for that was not traced, so this is the conservative reading of `SwitchStrategy 1`.
@@ -87,11 +99,15 @@ Owner (2026-11-11, after WO-036): "start implementing all the missing items". Sc
 - **Screen test pattern and colour**: `lib/screen-extras.js` (options per screen type from `screen_<type>.xml`, whole-object writes, readback), `pattern` and `quality` actions in `lib/studio-screens.js`, `public/screen-extras-ui.js`: a collapsed row in the Screens tab that applies on change; the spacing control switches between gear and pixels with the pattern.
 - **Layer copy**: `copy` action in `lib/studio-programming.js`; Duplicate (offset 40 px) and Mirror (PixelFlow's copy) buttons in `public/layer-tools.js`.
 - **MVR layouts**: `lib/mvr-templates.js`, `/api/mvr-templates`, `public/mvr-templates.js`: an "Apply layout…" select in the MVR toolbar, shown only when the device lists layouts; replaces all windows after a confirmation.
+- **Gallery management**: `lib/gallery-manage.js`, `PUT /api/gallery/manage`; Backgrounds/Logos tabs gain Edit (rename, delete; pictures in use cannot be deleted) and Capture PGM.
+- **Detailed timing and EDID files**: `lib/input-edid.js`, `/api/input-timing`, binary `GET`/`PUT /api/edid`; `public/input-edid-ui.js` in Inputs → Advanced with derived back porch and pixel clock, Import EDID file… and Export EDID….
+- **Screen format**: `planScreenFormat` in `lib/screen-extras.js`, `format` action; a Format row in the Screens tab. Entering HDR moves depth and gamut first and the range last, leaving HDR the reverse, so the device never holds an invalid combination.
 - Mock: `test-support/mock-studio.js`, `mock-output-advanced.js` enforce PUT/POST methods, whole objects, real input ids, enum sets, busy state for self-test and 8297 for keyed sources.
 - Audit records: DEVICE-09 and DEVICE-19 implemented; OUTPUTS-03/05 and DEVICE-10 partial with the exact remainder. Totals 19 implemented, 38 partial, 63 missing, 2 excluded, 1 not rendered.
 
 ## What was VERIFIED
 
+- After units 9–11: `npm test` **224 passing** (3 in `test/gallery-manage.test.js`, 3 in `test/input-edid.test.js`, format test in `test/screen-extras.test.js`), 149 files ≤ 500 lines; `screenOptions` format rules read from the real P20 XML; Chrome against the mock: capture PGM / rename / delete, detailed timing with the invalid-total guard, EDID file import, screen HDR10 switch moving depth and gamut.
 - After unit 8: `npm test` **217 passing** (copy test in `test/layer-effects.test.js`, 2 in `test/mvr-templates.test.js`), 143 files ≤ 500 lines; Chrome against the mock: apply a layout (2 windows), Mirror copy.
 - After unit 7: `npm test` **214 passing** (2 in `test/screen-extras.test.js`), 140 files ≤ 500 lines; `screenOptions` run on the real P20 XML (22 patterns on Main, none on AUX, four colour fields on both); Chrome against the mock: grid pattern, line width, hue, pattern off.
 - After unit 6: `npm test` **212 passing** (3 in `test/layer-presets.test.js`), 136 files ≤ 500 lines; Chrome against the mock: save a preset from one layer, apply to another, delete.
@@ -101,10 +117,10 @@ Owner (2026-11-11, after WO-036): "start implementing all the missing items". Sc
 - Headless Chrome against the mock: backup on, add pair, manual + backup in use, self-test with one abnormal item shown, output sampling + hue applied; no page errors; screenshots checked.
 - **No hardware write or read was possible** (P20 unreachable). In particular the response shapes of `system/ctrl/source-backup` and `node/selfcheck` have never been seen live. Owner QA: `work/checklist-wo037.md`.
 
-## Still open (next units, in this order)
+## Still open
 
-2. Multi-selection and distribute (PROGRAMMING-04). Preset playlists are not a P20 feature (see Unit 6).
-3. Screen test patterns, image quality, AOI, blending, bezel (SCREENS-05…13).
-4. Detailed EDID/timing editing and EDID file import/export (INPUTS-03/04, OUTPUTS-02).
-5. OSD and gallery management (PROGRAMMING-19/20).
-6. Project import/export, firmware and log tools (GLOBAL-02/03/04).
+Buildable without the device: multi-selection and distribute (PROGRAMMING-04), HDR parameters (`screen/hdr`), one-switch global HDCP, key-colour picking is not (needs live view).
+
+Blocked on a PixelFlow traffic capture (see "Checked and not P20 features, or not reachable without a capture"): screen bezel/edge blending/AOI/physical size, firmware upgrade, log export, project import/export.
+
+Everything in this WO still needs the hardware pass in `work/checklist-wo037.md`.

@@ -4,7 +4,7 @@ import { umdXml } from './mvr-umd.js';
 import { installAudio } from './mock-audio.js';
 import { outputXml, enrichOutput, outputWriteError } from './mock-output-advanced.js';
 import { sampleEdid, detailed, timingError } from './mock-edid.js';
-import { screenXml, enrichScreen, screenExtraError } from './mock-screen-extras.js';
+import { screenXml, enrichScreen, screenExtraError, screenFormatError } from './mock-screen-extras.js';
 import { layerPresetXml, installLayerPresets } from './mock-layer-presets.js';
 import { layerXml, enrichEffects, applyEffectWrite, applyCutFillWrite } from './mock-effects.js';
 
@@ -76,7 +76,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
   const layerPresetPaths = ['create', 'apply-modify', 'delete', 'apply', 'apply-access'].map(p => `layers/layer-preset/${p}`), layerPresets = installLayerPresets(layers, screens);
   const customPuts = ['picture', 'picture/general', 'picture/capture', 'picture/capture/save', ...effectPaths, ...cutFillPaths, ...layerPresetPaths, 'node/selfcheck', 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/preset-timing', 'interface/color-depth', 'interface/color-space', 'interface/color-range', 'interface/color-gamut', 'interface/image-quality', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
-    'screen/test-pattern', 'screen/image-quality', 'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/template/select', 'layers/create', 'layers/copy', 'layers/source', 'layers/zorder', 'layers'];
+    'screen/test-pattern', 'screen/image-quality', 'screen/color-dynamic-range', 'screen/color-gamut', 'screen/color-space', 'screen/color-depth', 'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/template/select', 'layers/create', 'layers/copy', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
     const url = new URL(request.url, 'http://localhost'), path = url.pathname.replace('/unico/v1/', '');
     if (request.method === 'GET' && url.pathname.startsWith('/picture/')) { // device web-root thumbnails
@@ -143,6 +143,11 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       const keyed = !bad && next.backup.some(p => behavior.keyedSources?.includes(p.primarySourceId));
       if (bad || keyed) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: keyed ? 8297 : 8210, message: keyed ? 'source used by cut fill' : 'manage param invalid' })); return; }
       if (!behavior.ignoreBackup) Object.assign(sourceBackup, structuredClone(next));
+      return send({});
+    }
+    if (path.startsWith('screen/color-')) {
+      const error = behavior.ignoreScreenExtras ? null : screenFormatError(screens, path, body);
+      if (error) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: error })); return; }
       return send({});
     }
     if (['screen/test-pattern', 'screen/image-quality'].includes(path)) {
