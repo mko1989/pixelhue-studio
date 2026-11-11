@@ -1,4 +1,5 @@
 import { el, text, button, input, select, field, setDisabled, sessionPath } from './ui.js';
+import { renderInputEdid } from './input-edid-ui.js';
 
 export function createInputAdvanced({ api, operation, notice, getSession, hasBasicChanges }) {
   const root = el('details', { className: 'input-advanced', id: 'input-advanced' });
@@ -73,6 +74,7 @@ export function createInputAdvanced({ api, operation, notice, getSession, hasBas
     const defaults = row.fields.filter(f => !f.options && Number.isFinite(f.default));
     if (defaults.length) actions.append(button('Reset image quality', () => { for (const f of defaults) values[f.key] = f.default; render(); }));
     body.append(actions);
+    renderInputEdid(body, row, { api, operation, notice, session: state.session, adopt: next => { state = next; pairTouched = false; choose(state.inputs.some(i => i.id === selectedId) ? selectedId : state.inputs[0]?.id); render(); } });
     const compat = state.inputs.filter(i => i.fields.some(f => f.key === 'compatibilityMode'));
     if (compat.length) {
       const mode = select([[1, 'On'], [0, 'Off']], 1, 'Bulk Mac compatibility'), bulk = el('div', { className: 'studio-bulk' });

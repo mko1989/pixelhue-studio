@@ -3,6 +3,7 @@ import { createMockDevice } from './mock-p20.js';
 import { umdXml } from './mvr-umd.js';
 import { installAudio } from './mock-audio.js';
 import { outputXml, enrichOutput, outputWriteError } from './mock-output-advanced.js';
+import { sampleEdid, detailed, timingError } from './mock-edid.js';
 import { screenXml, enrichScreen, screenExtraError } from './mock-screen-extras.js';
 import { layerPresetXml, installLayerPresets } from './mock-layer-presets.js';
 import { layerXml, enrichEffects, applyEffectWrite, applyCutFillWrite } from './mock-effects.js';
@@ -36,6 +37,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
   { screenId: 5, guid: 'spare-screen', screenIdObj: { type: 2 }, general: { name: 'Spare screen' },
     mosaic: { type: 0, window: { x: 0, y: 0, width: 1920, height: 1080 }, outputs: [] }, enable: 0, freeze: 0, ftb: { enable: 0 }, keyPosition: [3] });
   for (const s of screens.filter(s => s.screenIdObj.type !== 8)) enrichScreen(s);
+  const edids = new Map(); for (const i of interfaces.filter(i => i.auxiliaryInfo.connectorInfo.interfaceType === 2 && [6, 8].includes(i.auxiliaryInfo.connectorInfo.type))) i.presetTiming = detailed();
   const source = layers[0].source.general;
   for (const [id, scene, x] of [[20, 2, -80], [21, 4, -60]]) layers.push({ layerId: id,
     layerIdObj: { attachScreenId: 1, attachScreenType: 0, sceneType: scene, screenGuid: 'main-screen', type: 2 },
@@ -68,18 +70,35 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
     .replace('</Features>', `</Features><Timezone Support="1" Editable="1" Value="70"><Enum Value="0" Offset="-660" Name="Pacific/Midway"/><Enum Value="35" Offset="60" Name="Europe/Warsaw"/><Enum Value="70" Offset="480" Name="Asia/Shanghai"/></Timezone><DeviceSelfTest Support="1" Editable="1" IsBlock="0"/><SourceBackup Support="1" Editable="1"><SwitchStrategy Value="1"/><CapacityStrategy Value="0"/></SourceBackup>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`).replace('</Files>', `${layerXml}${outputXml}${screenXml}</Files>`);
-  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock', 'system/ctrl/source-backup', 'node/selfcheck', 'layers/layer-preset/list-detail', 'layers/template', 'picture/progress'];
+  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock', 'system/ctrl/source-backup', 'node/selfcheck', 'layers/layer-preset/list-detail', 'layers/template', 'picture/progress', 'interface/edid-file'];
   const effectPaths = ['layers/opacity', 'layers/lock', 'layers/border', 'layers/mask', 'layers/shadow', 'layers/crop', 'layers/image-quality', 'layers/cutout'];
   const cutFillPaths = ['layers/cut-fill-switch', 'layers/relative', 'layers/curve', 'layers/reset-cut'];
   const layerPresetPaths = ['create', 'apply-modify', 'delete', 'apply', 'apply-access'].map(p => `layers/layer-preset/${p}`), layerPresets = installLayerPresets(layers, screens);
   const customPuts = ['picture', 'picture/general', 'picture/capture', 'picture/capture/save', ...effectPaths, ...cutFillPaths, ...layerPresetPaths, 'node/selfcheck', 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
-    'interface/color-depth', 'interface/color-space', 'interface/color-range', 'interface/color-gamut', 'interface/image-quality', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
+    'interface/preset-timing', 'interface/color-depth', 'interface/color-space', 'interface/color-range', 'interface/color-gamut', 'interface/image-quality', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/test-pattern', 'screen/image-quality', 'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/template/select', 'layers/create', 'layers/copy', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
     const url = new URL(request.url, 'http://localhost'), path = url.pathname.replace('/unico/v1/', '');
     if (request.method === 'GET' && url.pathname.startsWith('/picture/')) { // device web-root thumbnails
       if (!pictures.some(p => p.path.some(x => x.url === url.pathname))) { response.writeHead(404).end(); return; }
       response.writeHead(200, { 'Content-Type': 'image/jpeg' }); response.end(Buffer.from([0xff, 0xd8, 0xff, 0xd9])); return;
+    }
+    if (path === 'interface/edid-file' && request.headers.authorization) { // GET answers with the binary file, PUT takes multipart interfaceIds + file
+      const id = Number(url.searchParams.get('interfaceId'));
+      if (request.method === 'GET') {
+        requests.push({ path, method: 'GET' });
+        if (!interfaces.some(i => i.interfaceId === id) || url.searchParams.get('respondsType') !== '0') { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: 'edid param invalid' })); return; }
+        response.writeHead(200, { 'Content-Type': 'application/octet-stream' }); response.end(edids.get(id) || sampleEdid()); return;
+      }
+      let raw = Buffer.alloc(0); for await (const chunk of request) raw = Buffer.concat([raw, chunk]);
+      const text = raw.toString('latin1'), ids = text.match(/name="interfaceIds"\r\n\r\n([^\r]*)\r\n/)?.[1], start = text.indexOf('\r\n\r\n', text.indexOf('name="file"')) + 4, end = text.lastIndexOf('\r\n--');
+      const targets = ids ? JSON.parse(ids) : [], file = raw.subarray(start, end);
+      writes.push({ path, method: request.method, body: { interfaceIds: targets, fileBytes: file.length, contentType: request.headers['content-type'] } });
+      const ok = request.method === 'PUT' && text.includes('name="file"') && targets.length && targets.every(t => interfaces.some(i => i.interfaceId === t.interfaceId)) && file.length >= 128 && file.length % 128 === 0;
+      response.setHeader('Content-Type', 'application/json');
+      if (!ok) { response.end(JSON.stringify({ code: 8210, message: 'edid file invalid' })); return; }
+      for (const t of targets) { edids.set(t.interfaceId, Buffer.from(file)); const port = interfaces.find(i => i.interfaceId === t.interfaceId); port.timingSelect = { ...port.timingSelect, select: 2, edidFileName: 'edid.bin' }; }
+      response.end(JSON.stringify({ code: 0, data: {} })); return;
     }
     if (request.method === 'PUT' && path === 'picture/import') { // multipart: description + pictureFile
       let raw = Buffer.alloc(0); for await (const chunk of request) raw = Buffer.concat([raw, chunk]);
@@ -215,10 +234,10 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     if (path === 'node/mode') node.mode = body.mode;
     if (path === 'node/genlock') node.genlock = body.genlock;
     if (path.startsWith('interface/')) {
-      const key = path.split('/')[1], field = { 'color-depth': 'colorDepth', 'color-space': 'colorSpace', 'color-range': 'colorRange', 'color-gamut': 'colorGamut', 'image-quality': 'imageQuality', hdcp: 'hdcp', 'test-pattern': 'testPattern' }[key];
-      const refused = body.map(change => { const row = interfaces.find(i => i.interfaceId === change.interfaceId); return row ? outputWriteError(row, field, change[field]) : 'interface invalid'; }).find(Boolean);
+      const key = path.split('/')[1], field = { 'color-depth': 'colorDepth', 'color-space': 'colorSpace', 'color-range': 'colorRange', 'color-gamut': 'colorGamut', 'image-quality': 'imageQuality', hdcp: 'hdcp', 'test-pattern': 'testPattern', 'preset-timing': 'presetTiming' }[key];
+      const refused = body.map(change => { const row = interfaces.find(i => i.interfaceId === change.interfaceId); return !row ? 'interface invalid' : field === 'presetTiming' ? timingError(change[field]) : outputWriteError(row, field, change[field]); }).find(Boolean);
       if (refused) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: refused })); return; }
-      if (!behavior.ignoreOutputAdvanced || !['colorSpace', 'colorRange', 'colorGamut', 'imageQuality'].includes(field)) for (const change of body) {
+      if (!(behavior.ignoreOutputAdvanced && ['colorSpace', 'colorRange', 'colorGamut', 'imageQuality'].includes(field)) && !(behavior.ignoreTiming && field === 'presetTiming')) for (const change of body) {
         const row = interfaces.find(i => i.interfaceId === change.interfaceId); row[field] = { ...row[field], ...change[field] };
       }
     }
