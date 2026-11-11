@@ -1,5 +1,6 @@
 import { el, text, button, input, select, field } from './ui.js';
 import { groupOf } from './group-geometry.js';
+import { renderLayerEffects } from './layer-effects-ui.js';
 
 // Inspector "Layer" tab (WO-024, WO-026): source, group info and per-layer KeyFrame. Position/size tools
 // live in the bar under the screens (public/layer-tools.js).
@@ -36,4 +37,5 @@ export function renderLayerPanel(node, { state, layer: l, command }) {
   frames.append(enableLabel, field('Curve', curve), timing, text('Presets store keyframes when they include KF (absolute presets always do).'));
 
   node.append(frames);
+  renderLayerEffects(node, { state, layer: l, command });
 }

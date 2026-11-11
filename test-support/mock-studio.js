@@ -2,6 +2,7 @@ import http from 'node:http';
 import { createMockDevice } from './mock-p20.js';
 import { umdXml } from './mvr-umd.js';
 import { installAudio } from './mock-audio.js';
+import { layerXml, enrichEffects, applyEffectWrite } from './mock-effects.js';
 
 export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
   const base = createMockDevice({ model }), original = base.server.listeners('request')[0];
@@ -32,6 +33,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     layerIdObj: { attachScreenId: 1, attachScreenType: 0, sceneType: scene, screenGuid: 'main-screen', type: 2 },
     general: { name: scene === 2 ? 'Program layer' : 'Preview layer' }, source: { general: { ...source, sourceName: `Input ${scene}` } },
     window: { x, y: 70, width: 640, height: 360 }, enable: 1, zorder: 1 });
+  for (const l of layers.filter(l => [20, 21].includes(l.layerId))) enrichEffects(l);
   const node = { nodeId: 1, modelId: { P20: 28944, P10: 28945, P80: 30006, Q8: 29974 }[model],
     general: { name: 'Studio device' }, version: 'V2.0.0', mode: { workMode: 4, masterSlave: 0 }, layerMode: 0,
     fanMode: 2, deviceBeacon: 0, genlock: { type: 0, sourceId: 0, phase: { enable: 0 } }, online: 1,
@@ -55,9 +57,10 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       <Picture type="2" Support="1"><Width Min="0" Max="512"/><Height Min="0" Max="512"/></Picture><Picture type="3" Support="0"><Width Max="16384"/><Height Max="8192"/></Picture></Pictures>
     <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
-    .replace('</Features>', `</Features>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`);
+    .replace('</Features>', `</Features>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`).replace('</Files>', `${layerXml}</Files>`);
   const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail'];
-  const customPuts = ['audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+  const effectPaths = ['layers/opacity', 'layers/lock', 'layers/border', 'layers/mask', 'layers/shadow', 'layers/crop', 'layers/image-quality'];
+  const customPuts = [...effectPaths, 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
@@ -93,6 +96,11 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     let raw = ''; for await (const chunk of request) raw += chunk;
     const body = JSON.parse(raw); writes.push({ path, body, method: request.method });
     if (behavior.ignoreSetup && path.startsWith('node/')) return send({});
+    if (effectPaths.includes(path)) {
+      const error = behavior.ignoreEffects ? null : applyEffectWrite(layers, path, body);
+      if (error) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: error })); return; }
+      return send({});
+    }
     if (path.startsWith('audio/')) { // POST only, like PixelFlow; refused bodies answer with a device error code.
       const error = request.method === 'POST' ? audio.write(path, body, behavior) : 'method not allowed';
       if (error) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: error })); return; }
