@@ -105,7 +105,8 @@ export function bindStage(stage, screen, ctx) {
   const local = (event, rect) => ({ x: (event.clientX - rect.left) * c.width / rect.width - c.mx, y: (event.clientY - rect.top) * c.height / rect.height - c.my });
   stage.onpointerdown = event => {
     if (ctx.busy() || event.button !== 0) return;
-    const target = event.target.closest('.program-layer, .group-frame'); if (!target) return;
+    // Clicking empty canvas (inside the screen or in the margin around it) clears the selection (WO-041).
+    const target = event.target.closest('.program-layer, .group-frame'); if (!target) { ctx.select(undefined); return; }
     const layer = ctx.layers().find(l => l.id === Number(target.dataset.id)); if (!layer) return;
     ctx.select(layer.id);
     if (ctx.locked?.()) return; // PGM lock (WO-022): select only, no move/resize.

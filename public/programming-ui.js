@@ -321,10 +321,15 @@ export function createProgrammingUI({ api, notice, operation, getSession, invali
     const list = el('div', { className: 'program-layer-list' }); list.append(el('h2', {}, `${s.name} layers`));
     for (const scene of [2, 4]) for (const item of state.layers.filter(x => x.screenId === s.id && x.scene === scene).sort((a, b) => b.zorder - a.zorder)) {
       list.append(button(`${scene === 2 ? 'PGM' : 'PVW'} · ${item.name} · ${item.sourceName || `Source ${item.sourceId}`}`,
-        () => { selectedId = item.id; paintAll(); renderInspector(); }, `button${item.id === selectedId ? ' selected' : ''}`));
+        () => { selectedId = item.id === selectedId ? undefined : item.id; paintAll(); renderInspector(); }, `button${item.id === selectedId ? ' selected' : ''}`)); // click the selected entry again to deselect
     }
     node.append(list); setDisabled(node, busy);
   }
+  // Escape clears the layer selection anywhere in Programming, except while typing in a field (WO-041).
+  root.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || selectedId === undefined || busy || stages.some(s => s.dragging()) || event.target.closest?.('input, select, textarea')) return;
+    event.preventDefault(); selectedId = undefined; paintAll(); renderInspector();
+  });
   // Arrow keys nudge the selected layer (1 px, Shift 10 px) while a stage has focus (WO-024).
   root.addEventListener('keydown', event => {
     const keys = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[event.key];

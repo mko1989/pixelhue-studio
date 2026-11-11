@@ -107,3 +107,11 @@ test('full-client HTTP resources preserve origin/session guards and discovery is
   assert.equal((await write({}, 'wrong')).status, 409);
   assert.equal((await write({ Origin: 'http://unrelated.example' }, connect.session)).status, 403); assert.equal(mock.writes.length, before);
 });
+
+test('Programming layers can be deselected: empty canvas click, Escape and the selected list entry (WO-041)', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const stage = await readFile(new URL('../public/program-stage.js', import.meta.url), 'utf8'), ui = await readFile(new URL('../public/programming-ui.js', import.meta.url), 'utf8');
+  assert.ok(stage.includes("if (!target) { ctx.select(undefined); return; }"));
+  assert.ok(ui.includes("event.key !== 'Escape' || selectedId === undefined"));
+  assert.ok(ui.includes("selectedId = item.id === selectedId ? undefined : item.id;"));
+});

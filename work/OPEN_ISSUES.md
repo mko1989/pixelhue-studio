@@ -40,3 +40,4 @@
 | WO-038 | Push and publish pre-release v1.6.0-alpha.2 | [Investigation and verification](work-orders/038_WO_release-1.6.0-alpha.2.md) | DONE (CI green, nine assets hash-verified, pre-release published; v1.5.0 stays latest) |
 | WO-039 | Live P20 verification of WO-036/037 features; capture, self-test read and preset source fixed | [Investigation and verification](work-orders/039_WO_live-p20-verification.md) | DONE (reversible writes proven live and restored; disruptive tests left for the owner) |
 | WO-040 | MVR layout preview aligned to the top; MVR presets kept in the app | [Investigation and verification](work-orders/040_WO_mvr-top-align-presets.md) | DONE (226 tests, mock Chrome, live save/validate without device writes; live recall owner QA) |
+| WO-041 | A Programming layer could not be deselected | [Investigation and verification](work-orders/041_WO_programming-deselect.md) | DONE (227 tests, mock Chrome) |
