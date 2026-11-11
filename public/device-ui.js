@@ -1,10 +1,12 @@
 import { $, el, text, button, input, select, field, panelHeader, sessionPath, setDisabled } from './ui.js';
+import { createSourceBackup } from './source-backup-ui.js';
 import { renderClock, renderAntiStatic } from './device-extras-ui.js';
 import { renderLayerProfile, renderNetwork, renderMaintenance, renderCards, reconnectHint } from './device-maintenance-ui.js';
 
 export function createDeviceUI({ api, notice, operation, getSession, invalidate }) {
   const root = $('device-settings');
   let state, session, busy = false, controls = {};
+  const backup = createSourceBackup({ api, operation, notice });
   function values() {
     if (!state) return {};
     const changes = {};
@@ -19,7 +21,7 @@ export function createDeviceUI({ api, notice, operation, getSession, invalidate 
   }
   async function refresh() {
     if (!getSession()) return;
-    await operation(async () => { state = await api(sessionPath('device', getSession())); session = state.session; render(); });
+    await operation(async () => { state = await api(sessionPath('device', getSession())); session = state.session; await backup.load(session); render(); });
   }
   async function apply(changes) {
     await operation(async () => {
@@ -71,6 +73,7 @@ export function createDeviceUI({ api, notice, operation, getSession, invalidate 
     if (options.layerModes.length > 1) root.append(renderLayerProfile(state, apply));
     if (node.time) root.append(renderClock(state, apply));
     if (node.antiStatic) root.append(renderAntiStatic(state, apply));
+    backup.render(); root.append(backup.element);
     root.append(renderNetwork(state.network, act));
     if (node.subcards.length) root.append(renderCards(node.subcards));
     root.append(renderMaintenance(options, device, act));
@@ -80,6 +83,6 @@ export function createDeviceUI({ api, notice, operation, getSession, invalidate 
   render();
   return { open: () => state ? undefined : refresh(), refresh,
     hasChanges: () => Object.keys(values()).length > 0,
-    reset(next) { if (session === next) return; session = next; state = undefined; render(); },
+    reset(next) { if (session === next) return; session = next; state = undefined; backup.reset(); render(); },
     setBusy(value) { busy = value; setDisabled(root, busy); } };
 }

@@ -19,7 +19,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     i.colorDepth = { preset: 8, actual: 8 }; i.hdcp = { enable: 0, preset: 1, actual: 1 };
     i.testPattern = { enable: 0, type: 5, bright: 3, grid: 7 };
   }
-  const audio = installAudio(interfaces);
+  const audio = installAudio(interfaces), sourceBackup = { enable: 0, primaryFirst: 0, backup: [] };
   screens[0].guid = 'mvr-screen';
   screens.push({ screenId: 1, guid: 'main-screen', screenIdObj: { type: 2 }, general: { name: 'Main screen' },
     mosaic: { type: 2, window: { x: -100, y: 50, width: 1920, height: 1080 }, outputs: [] }, enable: 1, freeze: 0, ftb: { enable: 0 }, keyPosition: [1] },
@@ -58,10 +58,10 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       <Picture type="2" Support="1"><Width Min="0" Max="512"/><Height Min="0" Max="512"/></Picture><Picture type="3" Support="0"><Width Max="16384"/><Height Max="8192"/></Picture></Pictures>
     <PowerCtrl Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></PowerCtrl>
     <Genlock Support="1" Editable="1"><Type><Enum Value="0"/><Enum Value="1"/><Enum Value="2"/></Type></Genlock>`)
-    .replace('</Features>', `</Features><Timezone Support="1" Editable="1" Value="70"><Enum Value="0" Offset="-660" Name="Pacific/Midway"/><Enum Value="35" Offset="60" Name="Europe/Warsaw"/><Enum Value="70" Offset="480" Name="Asia/Shanghai"/></Timezone>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`).replace('</Files>', `${layerXml}</Files>`);
-  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock'];
+    .replace('</Features>', `</Features><Timezone Support="1" Editable="1" Value="70"><Enum Value="0" Offset="-660" Name="Pacific/Midway"/><Enum Value="35" Offset="60" Name="Europe/Warsaw"/><Enum Value="70" Offset="480" Name="Asia/Shanghai"/></Timezone><SourceBackup Support="1" Editable="1"><SwitchStrategy Value="1"/><CapacityStrategy Value="0"/></SourceBackup>${audioFeature ? '<Audio Support="1" Editable="1"><AudioMatrix Support="1" Editable="1"/><AudioDante Support="0" Editable="0"/></Audio>' : ''}</Device></DCS>`).replace('</Files>', `${layerXml}</Files>`);
+  const customGets = ['node/detail', 'node/config-file', 'node/ethernet', 'preset', 'picture/list', 'picture/capacity', 'audio/matrix-detail', 'node/clock', 'system/ctrl/source-backup'];
   const effectPaths = ['layers/opacity', 'layers/lock', 'layers/border', 'layers/mask', 'layers/shadow', 'layers/crop', 'layers/image-quality'];
-  const customPuts = [...effectPaths, 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
+  const customPuts = [...effectPaths, 'system/ctrl/source-backup', 'audio/matrix-mapping', 'audio/matrix-base', 'picture/import', 'layers/switch', 'layers/general', 'layers/key-frame', 'screen/pgm-edit', 'preset/apply', 'preset/create', 'preset/update-name', 'preset/delete', 'node/ethernet', 'node/clock', 'node/anti-static', 'node/power', 'system/restore-factory', 'node/general', 'node/beacon', 'node/fan/mode', 'node/layer-mode', 'node/genlock', 'node/mode',
     'interface/color-depth', 'interface/hdcp', 'interface/test-pattern', 'screen/create-empty-screen', 'screen/crop-mosaic',
     'screen/freeze', 'screen/ftb', 'screen/take', 'screen/cut', 'screen', 'layers/create', 'layers/source', 'layers/zorder', 'layers'];
   const server = http.createServer(async (request, response) => {
@@ -90,6 +90,7 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
       if (path === 'node/ethernet') return send({ nodeId: 1, state: 0, ethernet });
       if (path === 'audio/matrix-detail') return send(audio.detail());
       if (path === 'node/clock') return send({ nodeId: 1, time: node.time });
+      if (path === 'system/ctrl/source-backup') return send({ sourceBackup });
       if (path === 'preset') return send({ list: presets, page: 1, totalPage: 1, totalCount: presets.length });
       if (path === 'picture/list') { const t = Number(url.searchParams.get('type')); return send({ list: pictures.filter(p => !t || p.pictureObj.type === t), page: 1, totalPage: 1 }); }
       if (path === 'picture/capacity') return send({ type: 1, usedCapacity: 1.5, totalCapacity: 512 });
@@ -98,6 +99,14 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     let raw = ''; for await (const chunk of request) raw += chunk;
     const body = JSON.parse(raw); writes.push({ path, body, method: request.method });
     if (behavior.ignoreSetup && path.startsWith('node/')) return send({});
+    if (path === 'system/ctrl/source-backup') { // device rules: whole object, real inputs, distinct sides; 8297 for keyed sources
+      const next = body.sourceBackup, isInput = id => interfaces.some(i => i.interfaceId === id && i.auxiliaryInfo.connectorInfo.interfaceType === 2);
+      const bad = request.method !== 'PUT' || !next || ![0, 1].includes(next.enable) || !Array.isArray(next.backup) || next.backup.some(p => !Number.isInteger(p.id) || !isInput(p.primarySourceId) || !isInput(p.backupSourceId) || p.primarySourceId === p.backupSourceId || ![0, 1].includes(p.switchMode));
+      const keyed = !bad && next.backup.some(p => behavior.keyedSources?.includes(p.primarySourceId));
+      if (bad || keyed) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: keyed ? 8297 : 8210, message: keyed ? 'source used by cut fill' : 'manage param invalid' })); return; }
+      if (!behavior.ignoreBackup) Object.assign(sourceBackup, structuredClone(next));
+      return send({});
+    }
     if (effectPaths.includes(path)) {
       const error = behavior.ignoreEffects ? null : applyEffectWrite(layers, path, body);
       if (error) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ code: 8210, message: error })); return; }
@@ -190,5 +199,5 @@ export function createMockStudio({ model = 'P20', audioFeature = true } = {}) {
     }
     return send({});
   });
-  return { ...base, server, node, primary, ethernet, presets, pictures, audio };
+  return { ...base, server, node, primary, ethernet, presets, pictures, audio, sourceBackup };
 }
