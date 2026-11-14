@@ -122,7 +122,7 @@ function renderControls() {
   const dirty = changes().length;
   for (const id of ['connect', 'host', 'api-port', 'serial']) $(id).disabled = busy;
   for (const tab of tabs) $(`${tab}-tab`).disabled = busy || (tab === 'mvr' && state?.capabilities?.mvr === false);
-  $('mvr-tab').title = $('mvr-tab').disabled ? 'Multiviewer editing is available for P20 and Q8' : '';
+  $('mvr-tab').title = $('mvr-tab').disabled ? 'Multiviewer editing is available for P20, P80 and Q8' : '';
   inputsUI.setBusy(busy); panels.setBusy(busy); discovery.setBusy(busy); templates.setBusy(busy); mvrPresets.setBusy(busy);
   $('screen').disabled = busy || !state?.screens.length;
   $('refresh').disabled = busy || !connected;

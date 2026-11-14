@@ -181,3 +181,11 @@ test('duplicate and mirror copy use layers/copy with the PixelFlow body; a Cut &
   await assert.rejects(copy({ mirror: 'yes' }), /Unsupported copy mode/);
   assert.equal(mock.writes.length, writes + 1);
 });
+test('opacity is never sent to bkg layers; the mock refuses it with 8210 as a P80 does (WO-042)', async t => {
+  const { mock, client } = await fixture(t), bkg = mock.layers.find(l => l.layerIdObj.type === 16);
+  assert.ok(bkg);
+  const before = mock.writes.length;
+  await assert.rejects(fx(client, { opacity: 40 }, bkg.layerId));
+  assert.equal(mock.writes.length, before);
+  await assert.rejects(client.call('layers/opacity', [{ layerId: bkg.layerId, opacity: 40 }]), /8210/);
+});

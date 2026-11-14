@@ -16,10 +16,10 @@ Open **http://127.0.0.1:3210** in your browser and enter the device IP in the to
 | --- | --- | --- | --- |
 | P10 | 4 HDMI/DP + 2 SDI inputs | SL / 4K | Disabled |
 | P20 | 8 HDMI/DP + 4 SDI inputs | DL / 4K | Supported |
-| P80 | Actual inputs from installed cards | 4K only | Disabled |
+| P80 | Actual inputs from installed cards | 4K only | Supported |
 | Q8 | Actual inputs from installed cards | Reported capacity, fixed | Supported |
 
-The app detects the model from the serial-verified discovery record, or authenticated node information when using an explicit API port. All models open the Device tab. Other panels load on demand; P10/P80 connection does not query screen/layer endpoints, and their MVR tab stays disabled. The server rejects Multiviewer writes for those models.
+The app detects the model from the serial-verified discovery record, or authenticated node information when using an explicit API port. All models open the Device tab. Other panels load on demand; a P10 connection does not query screen/layer endpoints, and its MVR tab stays disabled. The server rejects Multiviewer writes for the P10. On a P80 the Multiviewer has no 512 × 480 input-window cap (none has been measured) and AUX screens can be MVR sources.
 
 See the [PixelFlow feature inventory and Studio gap checklist](docs/pixelflow-parity/README.md): 121 reviewed feature groups across every main tab and global tools, with original source references and searchable JSON.
 
@@ -153,6 +153,6 @@ npm run check:size
 npm run build:client
 ```
 
-The Node test suite covers authentication, IP-only discovery in the presence of another device, serial/model verification, MVR membership, geometry limits, rejected and ignored writes, P10/P20/P80/Q8 input mapping and batch writes, P10/P80 MVR rejection, resource assessment, refreshed interface IDs, EDID payloads, stale sessions, origin checks, resize math, layout import validation, PGM/PVW screen-source resolution, device XML UMD heights and UMD-aware resize/save/readback. Tests need permission to listen on local loopback sockets.
+The Node test suite covers authentication, IP-only discovery in the presence of another device, serial/model verification, MVR membership, geometry limits, rejected and ignored writes, P10/P20/P80/Q8 input mapping and batch writes, P10 MVR rejection, P80 MVR editing, token renewal after a device restart, resource assessment, refreshed interface IDs, EDID payloads, stale sessions, origin checks, resize math, layout import validation, PGM/PVW screen-source resolution, device XML UMD heights and UMD-aware resize/save/readback. Tests need permission to listen on local loopback sockets.
 
 Version 1.6.0-alpha.2 passes 224 tests, including the offline API catalog. Chrome checks cover all six tabs, device/input/output/screen/programming mock writes, MVR autosave during typing/in-flight edits, drag completion, retry, UMD-aware input/PGM/PVW correction, locked resizing, Undo/Redo, Save/Load and mobile fit. CI runs the curated offline suite, the 500-line source limit and static client checks. P20 device configuration was read to confirm the 24-pixel UMD height; physical output verification after saves remains necessary.

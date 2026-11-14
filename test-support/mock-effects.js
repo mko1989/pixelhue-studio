@@ -60,6 +60,8 @@ export function applyEffectWrite(layers, path, body) {
     const layer = layers.find(l => l.layerId === item.layerId), value = item[key];
     if (!layer || value === undefined) return 'layer param invalid';
     if (key !== 'isLock' && layer.isLock === 1) return 'layer is locked';
+    // Measured on a P80 (HighAsCG WO-1050, WO-042): bkg and mvr layers refuse opacity with code 8210.
+    if (key === 'opacity' && [8, 16].includes(layer.layerIdObj?.type)) return 'manage param invalid';
     if (key === 'opacity' && !within(value, 0, 100)) return 'opacity out of range';
     if (key === 'isLock' && ![0, 1].includes(value)) return 'lock out of range';
     if (typeof value === 'object' && !complete(value, layer[key])) return `${key} section incomplete`;
